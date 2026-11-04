@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Quality Management">
+    <body>
+      <group id="body">
+        <trans-unit id="PermissionSet 1811208904 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bifrost Quality Full</source>
+          <target>Bifröst - gæði fullur aðgangur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - gæði fullur aðgangur</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST QM Full ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 2256845735 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bifrost Quality Read</source>
+          <target>Bifröst - gæði lesaðgangur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - gæði lesaðgangur</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST QM Read ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 3407348138 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bifrost Quality Management</source>
+          <target>Bifröst - gæðastjórnun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - gæðastjórnun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST Quality ori - Property Caption</note>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

@@ -13,7 +13,16 @@ Origo.Bifrost.QualityManagement (tests: Origo.Bifrost.QualityManagement.Test)
 App:   10035235-10035334
 Tests: 97200-97299
 
-No objects are allocated yet. Record every allocated id here as objects are created.
+| Type | ID | Name |
+| --- | --- | --- |
+| Codeunit | 10035235 | Quality Registration ori |
+| Permission set | 10035236 | BIFROST Quality ori |
+| Permission set | 10035237 | BIFROST QM Full ori |
+| Permission set | 10035238 | BIFROST QM Read ori |
+| Permission set extension | 10035239 | Quality Full Role ori |
+| Permission set extension | 10035240 | Quality Read Role ori |
+| Test codeunit | 97200 | Quality Scaffold Tst ori |
+| Test permission set | 97201 | QM Setup Test ori |
 
 ## Microsoft source
 Wrapped Microsoft app: Quality Management (`bc7b3891-f61b-4883-bbb3-384cdef88bec`, 28.5.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management
