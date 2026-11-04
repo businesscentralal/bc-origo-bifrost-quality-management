@@ -104,6 +104,20 @@ function Find-ShortKeywordTargets([string]$XlfPath) {
     return [pscustomobject]@{ Checked = $checked; Violations = $violations }
 }
 
+function Assert-KeywordCoverage([string]$Folder, [int]$Checked) {
+    if ($Checked -gt 0) { return }
+    # A registration-only scaffold has no message types or keyword lists yet.
+    # Keep the empty-scan failure for apps that declare message types or implementations.
+    $messageTypes = @(Get-ChildItem -LiteralPath $Folder -Recurse -Filter '*.al' | Where-Object {
+        $source = Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8
+        $source -match '(?s)\bimplements\b[^{}]*"Msg (Interface|Discovery) ori"|\bextends\s+"Message Type ori"'
+    })
+    if ($messageTypes.Count -gt 0) {
+        throw "No KeywordsLbl found under $Folder although message types are declared - the guard checked nothing."
+    }
+    Write-Host 'No message types are declared; keyword translation coverage is not applicable to this scaffold.'
+}
+
 function Invoke-SelfTest {
     $root = Join-Path ([System.IO.Path]::GetTempPath()) ("kwcount-" + [guid]::NewGuid().ToString('N'))
     New-Item -ItemType Directory -Path $root | Out-Null
@@ -140,6 +154,20 @@ function Invoke-SelfTest {
         if (-not ($xr.Violations | Where-Object { $_ -like 'u1*' })) { $failures.Add('did not report the short xlf target u1') }
         if ($xr.Violations | Where-Object { $_ -like 'u2*' -or $_ -like 'u3*' }) { $failures.Add('reported a unit that is fine (u2) or not a keyword list (u3)') }
 
+        $scaffold = Join-Path $root 'scaffold'
+        New-Item -ItemType Directory -Path $scaffold | Out-Null
+        Set-Content -LiteralPath (Join-Path $scaffold 'Registration.al') -Value 'codeunit 1 "Registration ori" { InherentPermissions = X; }'
+        try { Assert-KeywordCoverage $scaffold 0 } catch { $failures.Add('rejected a scaffold with no message types') }
+        foreach ($declarationWithoutKeywords in @(
+            'enumextension 2 "Types ori" extends "Message Type ori" { }',
+            'codeunit 2 "Impl ori" implements "Msg Interface ori", "Msg Discovery ori" { }'
+        )) {
+            Set-Content -LiteralPath (Join-Path $scaffold 'Message.al') -Value $declarationWithoutKeywords
+            $rejected = $false
+            try { Assert-KeywordCoverage $scaffold 0 } catch { $rejected = $true }
+            if (-not $rejected) { $failures.Add('accepted a message declaration without any keyword coverage') }
+        }
+
         if ($failures.Count -gt 0) {
             $failures | ForEach-Object { Write-Host "SELF-TEST FAILED: $_" }
             exit 1
@@ -158,7 +186,7 @@ $sourceResult = Find-ShortKeywordLists $AppFolder
 $xlfPath = Get-ChildItem -LiteralPath (Join-Path $AppFolder 'Translations') -Filter '*.is-IS.xlf' -ErrorAction SilentlyContinue | Select-Object -First 1
 $xlfResult = if ($xlfPath) { Find-ShortKeywordTargets $xlfPath.FullName } else { [pscustomobject]@{ Checked = 0; Violations = @() } }
 
-if ($sourceResult.Checked -eq 0) { throw "No KeywordsLbl found under $AppFolder - the guard checked nothing." }
+Assert-KeywordCoverage $AppFolder $sourceResult.Checked
 $all = @($sourceResult.Violations) + @($xlfResult.Violations)
 if ($all.Count -gt 0) {
     Write-Host "$($all.Count) Icelandic keyword list(s) have fewer entries than the English one:"
