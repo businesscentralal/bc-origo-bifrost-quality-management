@@ -1,9 +1,15 @@
 namespace Origo.Bifrost.QualityManagement.Test;
 
+using Microsoft.Finance.GeneralLedger.Account;
+using Microsoft.Finance.GeneralLedger.Setup;
+using Microsoft.Foundation.AuditCodes;
 using Microsoft.Foundation.UOM;
 using Microsoft.Inventory.Item;
 using Microsoft.Inventory.Journal;
+using Microsoft.Inventory.Ledger;
 using Microsoft.Inventory.Location;
+using Microsoft.Inventory.Posting;
+using Microsoft.Inventory.Setup;
 using Microsoft.Inventory.Tracking;
 using Microsoft.QualityManagement.Document;
 using Microsoft.QualityManagement.Setup;
@@ -160,6 +166,14 @@ codeunit 97220 "Quality Move Tst ori"
         VerifyScenario('count', 1033);
     end;
 
+    /// <summary>Posts a standard reclassification against self-seeded inventory and verifies ledger quantities.</summary>
+    [Test]
+    procedure Scenario_AC03_ImmediatePost_MovesInventory()
+    begin
+        // Story #12, AC03/AC04 | Time: standard posting uses WorkDate | Risk: owned zero-cost test inventory only
+        VerifyScenario('postSuccess', 1033);
+    end;
+
     /// <summary>Discovers the type and verifies its effect and help chapters through Foundation.</summary>
     [Test]
     procedure Scenario_AC01_Discovery_DeclaresAtomicEffect()
@@ -194,6 +208,8 @@ codeunit 97220 "Quality Move Tst ori"
         // [GIVEN] All business fixture records are created for this test, including both locations and the journal batch.
         Initialize();
         CreateFixture(Inspection);
+        if Scenario = 'postSuccess' then
+            SeedStock(Inspection);
         Request.Add('inspectionSystemId', Format(Inspection.SystemId, 0, 4));
         Request.Add('quantityBasis', 'failed');
         Request.Add('method', 'itemReclassification');
@@ -201,7 +217,7 @@ codeunit 97220 "Quality Move Tst ori"
         Request.Add('destinationLocationCode', 'D' + CopyStr(FixtureCode, 2));
         Request.Add('confirm', true);
         Request.Add('expectedCount', 1);
-        ExpectSuccess := Scenario in ['failed', 'passed'];
+        ExpectSuccess := Scenario in ['failed', 'passed', 'postSuccess'];
         case Scenario of
             'passed': Request.Replace('quantityBasis', 'passed');
             'count': Request.Replace('expectedCount', 0);
@@ -220,7 +236,7 @@ codeunit 97220 "Quality Move Tst ori"
                 Inspection."Fail Quantity" := 0;
                 Inspection.Modify(false);
             end;
-            'postFailure': Request.Add('postImmediately', true);
+            'postFailure', 'postSuccess': Request.Add('postImmediately', true);
             'worksheetPost': begin
                 Request.Replace('method', 'movementWorksheet');
                 Request.Add('postImmediately', true);
@@ -245,6 +261,12 @@ codeunit 97220 "Quality Move Tst ori"
         if ExpectSuccess then begin
             if ReadText(Response, 'status') <> 'Success' then
                 Assert.Fail(ReadText(Response, 'error'));
+            if Scenario = 'postSuccess' then begin
+                VerifyPostedInventory();
+                // Real ledger entries remain consistent until the test runner rolls back this isolated codeunit.
+                // A separate MCP read after the full suite verifies that no Q12 fixture remains.
+                exit;
+            end;
             Assert.AreEqual(1, JournalLine.Count(), 'Standard disposition must create exactly one owned line.');
             JournalLine.FindFirst();
             Assert.AreEqual(JournalLine."Entry Type"::Transfer, JournalLine."Entry Type", 'A reclassification must use the standard transfer entry type.');
@@ -317,6 +339,84 @@ codeunit 97220 "Quality Move Tst ori"
         Inspection."Fail Quantity" := 3;
         Inspection."Pass Quantity" := 2;
         Inspection.Insert(false);
+    end;
+
+    local procedure SeedStock(Inspection: Record "Qlty. Inspection Header")
+    var
+        Item: Record Item;
+        InventoryPostingGroup: Record "Inventory Posting Group";
+        GenProductPostingGroup: Record "Gen. Product Posting Group";
+        InventoryPostingSetup: Record "Inventory Posting Setup";
+        GeneralPostingSetup: Record "General Posting Setup";
+        GLAccount: Record "G/L Account";
+        SourceCode: Record "Source Code";
+        JournalTemplate: Record "Item Journal Template";
+        JournalLine: Record "Item Journal Line";
+        ItemJnlPostLine: Codeunit "Item Jnl.-Post Line";
+        LocationCode: Code[10];
+        LocationIndex: Integer;
+    begin
+        // All posting groups, their account, and both location setups belong to this fixture.
+        GLAccount."No." := FixtureCode;
+        GLAccount.Name := FixtureCode;
+        GLAccount."Direct Posting" := true;
+        GLAccount.Insert(false);
+        SourceCode.Code := FixtureCode;
+        SourceCode.Insert(false);
+        InventoryPostingGroup.Code := FixtureCode;
+        InventoryPostingGroup.Insert(false);
+        GenProductPostingGroup.Code := FixtureCode;
+        GenProductPostingGroup.Insert(false);
+        GeneralPostingSetup."Gen. Prod. Posting Group" := FixtureCode;
+        GeneralPostingSetup."Inventory Adjmt. Account" := FixtureCode;
+        GeneralPostingSetup."Direct Cost Applied Account" := FixtureCode;
+        GeneralPostingSetup."COGS Account" := FixtureCode;
+        GeneralPostingSetup.Insert(false);
+        for LocationIndex := 1 to 2 do begin
+            if LocationIndex = 1 then
+                LocationCode := FixtureCode
+            else
+                LocationCode := 'D' + CopyStr(FixtureCode, 2);
+            InventoryPostingSetup.Init();
+            InventoryPostingSetup."Location Code" := LocationCode;
+            InventoryPostingSetup."Invt. Posting Group Code" := FixtureCode;
+            InventoryPostingSetup."Inventory Account" := FixtureCode;
+            InventoryPostingSetup.Insert(false);
+        end;
+        Item.Get(FixtureCode);
+        Item."Inventory Posting Group" := FixtureCode;
+        Item."Gen. Prod. Posting Group" := FixtureCode;
+        Item.Modify(false);
+        JournalTemplate.Get(FixtureCode);
+        JournalTemplate."Source Code" := FixtureCode;
+        JournalTemplate.Modify(false);
+        JournalLine."Journal Template Name" := FixtureCode;
+        JournalLine."Journal Batch Name" := FixtureCode;
+        JournalLine."Line No." := 1000;
+        JournalLine."Entry Type" := JournalLine."Entry Type"::"Positive Adjmt.";
+        JournalLine.Validate("Posting Date", WorkDate());
+        JournalLine."Document No." := Inspection."No.";
+        JournalLine.Validate("Item No.", FixtureCode);
+        JournalLine.Validate("Location Code", FixtureCode);
+        JournalLine.Validate(Quantity, 5);
+        JournalLine."Source Code" := FixtureCode;
+        ItemJnlPostLine.RunWithCheck(JournalLine);
+    end;
+
+    local procedure VerifyPostedInventory()
+    var
+        Ledger: Record "Item Ledger Entry";
+        JournalLine: Record "Item Journal Line";
+    begin
+        Ledger.SetRange("Item No.", FixtureCode);
+        Ledger.SetRange("Location Code", 'D' + CopyStr(FixtureCode, 2));
+        Ledger.CalcSums(Quantity);
+        Assert.AreEqual(3, Ledger.Quantity, 'Immediate posting must move the failed quantity into the destination ledger.');
+        Ledger.SetRange("Location Code", FixtureCode);
+        Ledger.CalcSums(Quantity);
+        Assert.AreEqual(2, Ledger.Quantity, 'The source ledger must retain the passed quantity.');
+        JournalLine.SetRange("Journal Template Name", FixtureCode);
+        Assert.IsTrue(JournalLine.IsEmpty(), 'Posted reclassification lines must be removed by standard posting.');
     end;
 
     local procedure Dispatch(Request: JsonObject; LanguageId: Integer) Response: JsonObject
