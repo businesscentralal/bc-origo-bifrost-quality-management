@@ -342,14 +342,23 @@ codeunit 97202 "Quality Set Value Tst ori"
 
     local procedure CreateFixture(var Inspection: Record "Qlty. Inspection Header"; var InspectionLine: Record "Qlty. Inspection Line")
     var
+        FixtureCode: Code[20];
+    begin
+        FixtureCode := CopyStr('BIFTQ6-' + DelChr(Format(CreateGuid(), 0, 4), '=', '-'), 1, 20);
+        SeedFixture(FixtureCode, Inspection, InspectionLine);
+    end;
+
+    /// <summary>Creates only a uniquely named owned fixture for native, MCP and UI acceptance tests.</summary>
+    procedure SeedFixture(FixtureCode: Code[20]; var Inspection: Record "Qlty. Inspection Header"; var InspectionLine: Record "Qlty. Inspection Line")
+    var
         QualityTest: Record "Qlty. Test";
         InspectionTemplateHeader: Record "Qlty. Inspection Template Hdr.";
         InspectionTemplateLine: Record "Qlty. Inspection Template Line";
         InspectionResult: Record "Qlty. Inspection Result";
         ResultCondition: Record "Qlty. I. Result Condit. Conf.";
-        FixtureCode: Code[20];
     begin
-        FixtureCode := CopyStr(DelChr(Format(CreateGuid(), 0, 4), '=', '-'), 1, 20);
+        if CopyStr(FixtureCode, 1, 7) <> 'BIFTQ6-' then
+            Error('Only BIFTQ6- owned fixtures are permitted.');
         QualityTest.Code := FixtureCode;
         QualityTest."Test Value Type" := QualityTest."Test Value Type"::"Value Type Integer";
         QualityTest.Insert(false);
@@ -415,7 +424,8 @@ codeunit 97202 "Quality Set Value Tst ori"
         exit(Token.AsValue().AsText());
     end;
 
-    local procedure Cleanup(Inspection: Record "Qlty. Inspection Header"; InspectionLine: Record "Qlty. Inspection Line")
+    /// <summary>Deletes only the owned BIFTQ6- inspection and its fixture setup.</summary>
+    procedure Cleanup(Inspection: Record "Qlty. Inspection Header"; InspectionLine: Record "Qlty. Inspection Line")
     var
         QualityTest: Record "Qlty. Test";
         InspectionTemplateHeader: Record "Qlty. Inspection Template Hdr.";
@@ -423,6 +433,8 @@ codeunit 97202 "Quality Set Value Tst ori"
         InspectionResult: Record "Qlty. Inspection Result";
         ResultCondition: Record "Qlty. I. Result Condit. Conf.";
     begin
+        if CopyStr(Inspection."No.", 1, 7) <> 'BIFTQ6-' then
+            Error('Only BIFTQ6- owned fixtures can be deleted.');
         ResultCondition.SetRange("Target Code", Inspection."No.");
         ResultCondition.DeleteAll(false);
         InspectionLine.SetRange("Inspection No.", Inspection."No.");

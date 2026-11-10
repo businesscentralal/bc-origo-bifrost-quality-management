@@ -33,12 +33,6 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Staðfestir gildi nákvæmlega einnar prófunar í skoðun með SetTestValue frá Microsoft og endurreiknar og vistar niðurstöðu hauss með UpdateResultFromLines.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType OverviewLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 1135174596 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The BIFROST QM Full ori permission set and Quality Management inspection write permissions are required.</source>
-          <target>Heimildasafnið BIFROST QM Full ori og skrifheimildir fyrir gæðaskoðanir eru nauðsynleg.</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=Heimildasafnið BIFROST QM Full ori og skrifheimildir fyrir gæðaskoðanir eru nauðsynleg.</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType PermissionErr</note>
-        </trans-unit>
         <trans-unit id="Codeunit 1135174596 - NamedType 3255873965" size-unit="char" translate="yes" xml:space="preserve">
           <source>Parameter '%1' exceeds %2 characters.</source>
           <target>Færibreytan '%1' er lengri en %2 stafir.</target>
