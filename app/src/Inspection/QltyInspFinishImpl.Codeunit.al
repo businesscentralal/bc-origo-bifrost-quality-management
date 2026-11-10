@@ -133,14 +133,14 @@ codeunit 10035243 "Qlty Insp Finish Impl ori" implements "Msg Interface ori", "M
         exit(true);
     end;
 
-    /// <summary>Overview chapter, English only. States the effect and idempotency.</summary>
+    /// <summary>Translated overview chapter. States the effect and idempotency.</summary>
     procedure GetOverview(var Overview: Text): Boolean
     begin
         Overview := Contract.Overview();
         exit(true);
     end;
 
-    /// <summary>Notes chapter, English only. States confirmation and commit behaviour.</summary>
+    /// <summary>Translated notes chapter. States confirmation and commit behaviour.</summary>
     procedure GetNotes(var Notes: Text): Boolean
     begin
         Notes := Contract.Notes();

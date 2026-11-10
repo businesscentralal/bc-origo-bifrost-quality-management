@@ -5,6 +5,8 @@ using Microsoft.QualityManagement.Configuration.Result;
 using Microsoft.QualityManagement.Document;
 using Origo.Bifrost;
 using Origo.Bifrost.QualityManagement;
+using System.Security.AccessControl;
+using System.Security.User;
 using System.TestLibraries.Security.AccessControl;
 using System.TestLibraries.Utilities;
 using System.Utilities;
@@ -175,7 +177,9 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
     local procedure VerifyMissingAppRole(UseApiRole: Boolean)
     var
         Header: Record "Qlty. Inspection Header";
+        TempPermission: Record "Expanded Permission" temporary;
         PermissionsMock: Codeunit "Permissions Mock";
+        UserPermissions: Codeunit "User Permissions";
         Response: JsonObject;
     begin
         LowerPermissions.SetOutsideO365Scope();
@@ -188,7 +192,8 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
             LowerPermissions.SetExactPermissionSet('BIFROST Read ori');
         LowerPermissions.AddPermissionSet('QltyMgmt - Inspector');
         LowerPermissions.AddPermissionSet('QM Setup Test ori');
-        Assert.IsTrue(Header.WritePermission(), 'The caller must have native data write permission for this regression.');
+        TempPermission := UserPermissions.GetEffectivePermission(TempPermission."Object Type"::"Table Data", Database::"Qlty. Inspection Header");
+        Assert.IsTrue(TempPermission."Modify Permission" = TempPermission."Modify Permission"::Yes, 'The caller must have native Modify permission for this regression.');
         Response := Finish(Header."No.", 0, false);
         LowerPermissions.SetOutsideO365Scope();
         AssertRefusal(Response, 'PermissionDenied', 'permission');
@@ -273,6 +278,30 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
         EffectText := Token.AsValue().AsText();
         Assert.IsTrue(EffectText.Contains('FinishInspection'), EffectText);
         Assert.IsTrue(EffectText.Contains('Commit'), EffectText);
+    end;
+
+    [Test]
+    procedure AC06_IcelandicHelp_HasTranslatedEffectAndNotes()
+    var
+        Impl: Codeunit "Qlty Insp Finish Impl ori";
+        Effect: JsonObject;
+        Overview: Text;
+        Notes: Text;
+        Changes: Text;
+        PriorLanguage: Integer;
+    begin
+        // Story #4, AC06/AC07 | Time: none | Risk: no data writes
+        LowerPermissions.SetOutsideO365Scope();
+        PriorLanguage := GlobalLanguage();
+        GlobalLanguage(1039);
+        Impl.GetOverview(Overview);
+        Impl.GetNotes(Notes);
+        Impl.GetEffect(Effect);
+        Changes := GetText(Effect, 'changes');
+        GlobalLanguage(PriorLanguage);
+        Assert.IsTrue(Overview.Contains('Lýkur') and Overview.Contains('ítrekunaröruggt'), 'Icelandic overview must describe the effect and idempotency.');
+        Assert.IsTrue(Notes.Contains('staðfestingu') and Notes.Contains('Codeunit.Run'), 'Icelandic notes must explain confirmation and commit behavior.');
+        Assert.IsTrue(Changes.Contains('vörurekjanleika'), 'The effect changes chapter must be translated.');
     end;
 
     [ConfirmHandler]

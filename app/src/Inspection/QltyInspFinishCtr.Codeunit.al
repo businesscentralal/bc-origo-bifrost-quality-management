@@ -40,6 +40,47 @@ codeunit 10035242 "Qlty Insp Finish Ctr ori"
         DeclaredParameterTxt: Label 'a parameter this message type declares', Comment = 'is-IS=færibreyta sem þessi skilaboðategund skilgreinir';
         ExistingInspectionTxt: Label 'an existing quality inspection', Comment = 'is-IS=gæðaskoðun sem er til';
 
+        SubjectHelpTxt: Label 'The subject is not read. Send no under data.', Comment = 'is-IS=Subject er ekki lesið. Sendu no undir data.';
+        InspectionNoTxt: Label 'inspection no.', Comment = 'is-IS=númer skoðunar';
+        InspectionTargetTxt: Label 'The quality inspection header to finish.', Comment = 'is-IS=Haus gæðaskoðunarinnar sem á að ljúka.';
+        ReinspectionNoTxt: Label 'reinspection no.', Comment = 'is-IS=númer endurskoðunar';
+        ReinspectionHelpTxt: Label 'The reinspection number. Omit it, or send 0, for the original inspection.', Comment = 'is-IS=Númer endurskoðunar. Slepptu því, eða sendu 0, fyrir upphaflegu skoðunina.';
+        InspectionNoHelpTxt: Label 'The quality inspection number.', Comment = 'is-IS=Númer gæðaskoðunarinnar.';
+        SuccessHelpTxt: Label 'Success. Foundation reserves this key for the outcome of the message.', Comment = 'is-IS=Success. Foundation áskilur þennan lykil fyrir niðurstöðu skilaboðanna.';
+        ReinspectionResponseTxt: Label 'The reinspection number. Zero is the original inspection.', Comment = 'is-IS=Númer endurskoðunar. Núll táknar upphaflegu skoðunina.';
+        PreviousStatusHelpTxt: Label 'The status before the call: Open or Finished.', Comment = 'is-IS=Staða fyrir kallið: Open eða Finished.';
+        RecordStatusHelpTxt: Label 'The status after the call. This is not the message outcome; that is status.', Comment = 'is-IS=Staða eftir kallið. Þetta er ekki niðurstaða skilaboðanna; hún er í status.';
+        ChangedHelpTxt: Label 'False when the inspection was already finished and the item-tracking check passed. Nothing is written in that case.', Comment = 'is-IS=False þegar skoðuninni var þegar lokið og athugun vörurekjanleika tókst. Ekkert er skrifað í því tilviki.';
+        MessageHelpTxt: Label 'Present only when changed is false.', Comment = 'is-IS=Aðeins til staðar þegar changed er false.';
+        FinishedByHelpTxt: Label 'The user who finished the inspection, when Business Central recorded one.', Comment = 'is-IS=Notandinn sem lauk skoðuninni, þegar Business Central skráði hann.';
+        FinishedDateHelpTxt: Label 'The finish timestamp in invariant format, when Business Central recorded one.', Comment = 'is-IS=Tímastimpill þegar skoðun lauk á stöðluðu sniði, þegar Business Central skráði hann.';
+        MissingConditionTxt: Label 'no is missing or blank.', Comment = 'is-IS=no vantar eða er tómt.';
+        FormatConditionTxt: Label 'no is not text of at most 20 characters, or reinspectionNo is not a whole number from 0 upward.', Comment = 'is-IS=no er ekki texti að hámarki 20 stafir, eða reinspectionNo er ekki heiltala sem er 0 eða hærri.';
+        NotFoundConditionTxt: Label 'The inspection does not exist.', Comment = 'is-IS=Skoðunin er ekki til.';
+        StillOpenConditionTxt: Label 'FinishInspection returned and the inspection is still open, for example because a screen confirmation was declined.', Comment = 'is-IS=FinishInspection skilaði og skoðunin er enn opin, til dæmis vegna þess að staðfestingu á skjá var hafnað.';
+        UnknownConditionTxt: Label 'The request names a key other than no or reinspectionNo.', Comment = 'is-IS=Beiðnin nefnir annan lykil en no eða reinspectionNo.';
+        RemoveUnknownTxt: Label 'Remove the unknown key.', Comment = 'is-IS=Fjarlægðu óþekkta lykilinn.';
+        MultipleConditionTxt: Label 'Several of these problems were found in one call. errors lists each of them.', Comment = 'is-IS=Nokkur þessara vandamála fundust í einu kalli. errors telur þau öll upp.';
+        CorrectAllTxt: Label 'Correct every listed problem and send the request again.', Comment = 'is-IS=Lagfærðu öll tilgreind vandamál og sendu beiðnina aftur.';
+        BusinessConditionTxt: Label 'Business Central refused to finish the inspection. The record is unchanged.', Comment = 'is-IS=Business Central hafnaði því að ljúka skoðuninni. Færslan er óbreytt.';
+        PermissionConditionTxt: Label 'The caller lacks the Full app role or cannot read and write the quality inspection header.', Comment = 'is-IS=Kallandinn hefur ekki fullt aðgangshlutverk appsins eða les- og skrifheimild á haus gæðaskoðunar.';
+        RetryConditionTxt: Label 'The call can be sent again after the data it names is corrected.', Comment = 'is-IS=Hægt er að senda kallið aftur eftir að gögnin sem það nefnir hafa verið leiðrétt.';
+        CorrectDataTxt: Label 'Correct the data and send the same request again.', Comment = 'is-IS=Lagfærðu gögnin og sendu sömu beiðni aftur.';
+        ChangesHelpTxt: Label 'Calls FinishInspection on the quality inspection header. That procedure checks item tracking, then validates Status to Finished, which checks that the result allows finishing, records the finish user and timestamp, and modifies the header. It does not write Status on its own. FinishInspection does not call Commit. Unless the caller set Omit Commit, this message runs that call inside Codeunit.Run, which commits when finishing succeeds. A configured inspection-finished workflow can also commit inside Business Central. Finishing an inspection that is already finished does not write again when the item-tracking check passes.', Comment = 'is-IS=Kallar FinishInspection á haus gæðaskoðunar. Aðgerðin athugar vörurekjanleika og staðfestir síðan Status sem Finished, sem athugar hvort niðurstaðan leyfi að ljúka, skráir notanda og tímastimpil og breytir hausnum. Skilaboðin skrifa ekki Status sjálf. FinishInspection kallar ekki Commit. Nema kallandinn setji Omit Commit keyra skilaboðin kallið innan Codeunit.Run, sem staðfestir færsluna þegar skoðun lýkur. Uppsett verkflæði við lok skoðunar getur einnig staðfest færslu innan Business Central. Engin endurskrifun á sér stað þegar skoðuninni er þegar lokið og athugun vörurekjanleika tekst.';
+        ExistsPreconditionTxt: Label 'The inspection already exists. This call does not create it.', Comment = 'is-IS=Skoðunin er þegar til. Þetta kall stofnar hana ekki.';
+        DataPermissionPreconditionTxt: Label 'The caller can read and write the quality inspection header.', Comment = 'is-IS=Kallandinn getur lesið og skrifað haus gæðaskoðunar.';
+        AppPermissionPreconditionTxt: Label 'The caller has the BIFROST QM Full ori permission set.', Comment = 'is-IS=Kallandinn hefur heimildasafnið BIFROST QM Full ori.';
+        ResultPreconditionTxt: Label 'The result, when set, is configured to allow finishing, and required item tracking is present.', Comment = 'is-IS=Niðurstaðan, ef hún er stillt, er uppsett þannig að ljúka megi skoðuninni og nauðsynlegur vörurekjanleiki er til staðar.';
+        ReadRelatedTxt: Label 'Read the inspection before and after the finish.', Comment = 'is-IS=Lestu skoðunina fyrir og eftir lok hennar.';
+        WriteRelatedTxt: Label 'Cannot finish the inspection. Writing Status there skips the result and item-tracking checks.', Comment = 'is-IS=Getur ekki lokið skoðuninni. Að skrifa Status þar sleppir athugunum á niðurstöðu og vörurekjanleika.';
+        ReadWorkflowTxt: Label 'Read the open inspection and its result.', Comment = 'is-IS=Lestu opnu skoðunina og niðurstöðu hennar.';
+        FinishWorkflowTxt: Label 'Finish the inspection through FinishInspection.', Comment = 'is-IS=Ljúktu skoðuninni með FinishInspection.';
+        ReadBackWorkflowTxt: Label 'Read the finished status back.', Comment = 'is-IS=Lestu lokastöðuna aftur.';
+        WorkflowHelpTxt: Label 'Read the inspection, finish it, then read the status. The call is idempotent when the inspection is already finished and the item-tracking check passes.', Comment = 'is-IS=Lestu skoðunina, ljúktu henni og lestu svo stöðuna. Kallið er ítrekunaröruggt þegar skoðuninni er þegar lokið og athugun vörurekjanleika tekst.';
+        FinishExampleTxt: Label 'Finish an inspection', Comment = 'is-IS=Ljúka skoðun';
+        OverviewHelpTxt: Label 'Finishes one quality inspection by calling FinishInspection on the quality inspection header, after the standard result and item-tracking checks. Send no. Send reinspectionNo only for a reinspection; omit it for the original inspection. The effect is a write. The call is idempotent: finishing an inspection that is already finished does not write again when the item-tracking check passes.', Comment = 'is-IS=Lýkur einni gæðaskoðun með því að kalla FinishInspection á haus gæðaskoðunar eftir venjulegar athuganir á niðurstöðu og vörurekjanleika. Sendu no. Sendu reinspectionNo aðeins fyrir endurskoðun; slepptu því fyrir upphaflegu skoðunina. Áhrifin eru skrif. Kallið er ítrekunaröruggt: engin endurskrifun á sér stað þegar skoðuninni er þegar lokið og athugun vörurekjanleika tekst.';
+        NotesHelpTxt: Label 'FinishInspection asks for confirmation when a user interface is available. A service call has no screen, so Business Central finishes without that question and still runs the checks. When a screen is present and the confirmation is declined, the inspection stays open and this message returns PreconditionFailed. A result configured to disallow finishing, or missing required item tracking, is returned as BusinessCentralError and leaves the inspection unchanged. FinishInspection does not call Commit. Unless Omit Commit is set, Codeunit.Run commits a successful finish. The answer uses status Success and recordStatus for the inspection, because Foundation reserves status for the outcome.', Comment = 'is-IS=FinishInspection biður um staðfestingu þegar notendaviðmót er tiltækt. Þjónustukall hefur engan skjá, svo Business Central lýkur án þessarar spurningar en keyrir samt athuganirnar. Þegar skjár er tiltækur og staðfestingu er hafnað er skoðunin áfram opin og skilaboðin skila PreconditionFailed. Niðurstaða sem bannar að ljúka, eða nauðsynlegur vörurekjanleiki sem vantar, skilar BusinessCentralError og skilur skoðunina eftir óbreytta. FinishInspection kallar ekki Commit. Nema Omit Commit sé stillt staðfestir Codeunit.Run færsluna þegar skoðun lýkur. Svarið notar status Success og recordStatus fyrir skoðunina því Foundation áskilur status fyrir niðurstöðu skilaboðanna.';
+
     /// <summary>Reads no and optional reinspectionNo. Collects every problem and returns false when any were collected.</summary>
     /// <param name="Argument">The message argument. Errors are collected on it.</param>
     /// <param name="InspectionNo">Receives the inspection number.</param>
@@ -169,7 +210,7 @@ codeunit 10035242 "Qlty Insp Finish Ctr ori"
         Subject: JsonObject;
     begin
         Subject.Add('use', 'notUsed');
-        Subject.Add('description', 'The subject is not read. Send no under data.');
+        Subject.Add('description', SubjectHelpTxt);
         EnvelopeChapter.Add('subject', Subject);
         EnvelopeChapter.Add('dataRequired', true);
         EnvelopeChapter.Add('version', '1.0');
@@ -180,16 +221,16 @@ codeunit 10035242 "Qlty Insp Finish Ctr ori"
     /// <param name="TargetEntries">Receives the chapter.</param>
     internal procedure Target(var TargetEntries: JsonArray)
     begin
-        TargetEntries.Add(ContractMgt.TargetEntry('data.no', 'inspection no.', 'The quality inspection header to finish.'));
-        TargetEntries.Add(ContractMgt.TargetEntry('data.reinspectionNo', 'reinspection no.', 'The reinspection number. Omit it, or send 0, for the original inspection.'));
+        TargetEntries.Add(ContractMgt.TargetEntry('data.no', InspectionNoTxt, InspectionTargetTxt));
+        TargetEntries.Add(ContractMgt.TargetEntry('data.reinspectionNo', ReinspectionNoTxt, ReinspectionHelpTxt));
     end;
 
     /// <summary>Builds the parameters chapter.</summary>
     /// <param name="ParameterEntries">Receives the chapter.</param>
     internal procedure Parameters(var ParameterEntries: JsonArray)
     begin
-        ParameterEntries.Add(ContractMgt.Parameter('no', 'string', true, 'The quality inspection number.'));
-        ParameterEntries.Add(ContractMgt.Parameter('reinspectionNo', 'integer', false, 'The reinspection number. Omit it, or send 0, for the original inspection.'));
+        ParameterEntries.Add(ContractMgt.Parameter('no', 'string', true, InspectionNoHelpTxt));
+        ParameterEntries.Add(ContractMgt.Parameter('reinspectionNo', 'integer', false, ReinspectionHelpTxt));
     end;
 
     /// <summary>Builds the response chapter.</summary>
@@ -198,15 +239,15 @@ codeunit 10035242 "Qlty Insp Finish Ctr ori"
     var
         Fields: JsonArray;
     begin
-        Fields.Add(ContractMgt.ResponseField('status', 'string', 'Success. Foundation reserves this key for the outcome of the message.'));
-        Fields.Add(ContractMgt.ResponseField('no', 'string', 'The quality inspection number.'));
-        Fields.Add(ContractMgt.ResponseField('reinspectionNo', 'integer', 'The reinspection number. Zero is the original inspection.'));
-        Fields.Add(ContractMgt.ResponseField('previousStatus', 'string', 'The status before the call: Open or Finished.'));
-        Fields.Add(ContractMgt.ResponseField('recordStatus', 'string', 'The status after the call. This is not the message outcome; that is status.'));
-        Fields.Add(ContractMgt.ResponseField('changed', 'boolean', 'False when the inspection was already finished and the item-tracking check passed. Nothing is written in that case.'));
-        Fields.Add(ContractMgt.ResponseField('message', 'string', 'Present only when changed is false.'));
-        Fields.Add(ContractMgt.ResponseField('finishedBy', 'string', 'The user who finished the inspection, when Business Central recorded one.'));
-        Fields.Add(ContractMgt.ResponseField('finishedDate', 'string', 'The finish timestamp in invariant format, when Business Central recorded one.'));
+        Fields.Add(ContractMgt.ResponseField('status', 'string', SuccessHelpTxt));
+        Fields.Add(ContractMgt.ResponseField('no', 'string', InspectionNoHelpTxt));
+        Fields.Add(ContractMgt.ResponseField('reinspectionNo', 'integer', ReinspectionResponseTxt));
+        Fields.Add(ContractMgt.ResponseField('previousStatus', 'string', PreviousStatusHelpTxt));
+        Fields.Add(ContractMgt.ResponseField('recordStatus', 'string', RecordStatusHelpTxt));
+        Fields.Add(ContractMgt.ResponseField('changed', 'boolean', ChangedHelpTxt));
+        Fields.Add(ContractMgt.ResponseField('message', 'string', MessageHelpTxt));
+        Fields.Add(ContractMgt.ResponseField('finishedBy', 'string', FinishedByHelpTxt));
+        Fields.Add(ContractMgt.ResponseField('finishedDate', 'string', FinishedDateHelpTxt));
         ResponseChapter.Add('fields', Fields);
     end;
 
@@ -214,15 +255,15 @@ codeunit 10035242 "Qlty Insp Finish Ctr ori"
     /// <param name="ErrorEntries">Receives the chapter.</param>
     internal procedure Errors(var ErrorEntries: JsonArray)
     begin
-        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::MissingParameter, 'no is missing or blank.', MissingNextStepTxt));
-        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::InvalidParameterFormat, 'no is not text of at most 20 characters, or reinspectionNo is not a whole number from 0 upward.', TooLongNextStepTxt));
-        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::RecordNotFound, 'The inspection does not exist.', RecordNextStepTxt));
-        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, 'FinishInspection returned and the inspection is still open, for example because a screen confirmation was declined.', NotFinishedNextStepTxt));
-        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::UnknownParameter, 'The request names a key other than no or reinspectionNo.', 'Remove the unknown key.'));
-        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::MultipleErrors, 'Several of these problems were found in one call. errors lists each of them.', 'Correct every listed problem and send the request again.'));
-        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::BusinessCentralError, 'Business Central refused to finish the inspection. The record is unchanged.', CheckFailedNextStepTxt));
-        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PermissionDenied, 'The caller cannot read or write the quality inspection header.', PermissionNextStepTxt));
-        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::Retryable, 'The call can be sent again after the data it names is corrected.', 'Correct the data and send the same request again.'));
+        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::MissingParameter, MissingConditionTxt, MissingNextStepTxt));
+        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::InvalidParameterFormat, FormatConditionTxt, TooLongNextStepTxt));
+        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::RecordNotFound, NotFoundConditionTxt, RecordNextStepTxt));
+        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, StillOpenConditionTxt, NotFinishedNextStepTxt));
+        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::UnknownParameter, UnknownConditionTxt, RemoveUnknownTxt));
+        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::MultipleErrors, MultipleConditionTxt, CorrectAllTxt));
+        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::BusinessCentralError, BusinessConditionTxt, CheckFailedNextStepTxt));
+        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::PermissionDenied, PermissionConditionTxt, PermissionNextStepTxt));
+        ErrorEntries.Add(ContractMgt.ErrorEntry("Bifrost Error Code ori"::Retryable, RetryConditionTxt, CorrectDataTxt));
     end;
 
     /// <summary>Builds the effect chapter. The effect is write.</summary>
@@ -232,13 +273,13 @@ codeunit 10035242 "Qlty Insp Finish Ctr ori"
         Preconditions: JsonArray;
     begin
         EffectChapter.Add('effect', 'write');
-        EffectChapter.Add('changes', 'Calls FinishInspection on the quality inspection header. That procedure checks item tracking, then validates Status to Finished, which checks that the result allows finishing, records the finish user and timestamp, and modifies the header. It does not write Status on its own. FinishInspection does not call Commit. Unless the caller set Omit Commit, this message runs that call inside Codeunit.Run, which commits when finishing succeeds. A configured inspection-finished workflow can also commit inside Business Central. Finishing an inspection that is already finished does not write again when the item-tracking check passes.');
+        EffectChapter.Add('changes', ChangesHelpTxt);
         EffectChapter.Add('idempotent', true);
         EffectChapter.Add('permissionSet', 'BIFROST QM Full ori');
-        Preconditions.Add('The inspection already exists. This call does not create it.');
-        Preconditions.Add('The caller can read and write the quality inspection header.');
-        Preconditions.Add('The caller can execute BIFROST QM Full ori.');
-        Preconditions.Add('The result, when set, is configured to allow finishing, and required item tracking is present.');
+        Preconditions.Add(ExistsPreconditionTxt);
+        Preconditions.Add(DataPermissionPreconditionTxt);
+        Preconditions.Add(AppPermissionPreconditionTxt);
+        Preconditions.Add(ResultPreconditionTxt);
         EffectChapter.Add('preconditions', Preconditions);
     end;
 
@@ -246,8 +287,8 @@ codeunit 10035242 "Qlty Insp Finish Ctr ori"
     /// <param name="RelatedEntries">Receives the chapter.</param>
     internal procedure Related(var RelatedEntries: JsonArray)
     begin
-        RelatedEntries.Add(ContractMgt.RelatedEntry('Data.Records.Get', 'Read the inspection before and after the finish.'));
-        RelatedEntries.Add(ContractMgt.RelatedEntry('Data.Records.Set', 'Cannot finish the inspection. Writing Status there skips the result and item-tracking checks.'));
+        RelatedEntries.Add(ContractMgt.RelatedEntry('Data.Records.Get', ReadRelatedTxt));
+        RelatedEntries.Add(ContractMgt.RelatedEntry('Data.Records.Set', WriteRelatedTxt));
     end;
 
     /// <summary>Builds the workflow chapter.</summary>
@@ -257,40 +298,34 @@ codeunit 10035242 "Qlty Insp Finish Ctr ori"
     var
         Steps: JsonArray;
     begin
-        Steps.Add(ContractMgt.WorkflowStep('Data.Records.Get', 'Read the open inspection and its result.'));
-        Steps.Add(ContractMgt.WorkflowStep(MessageType, 'Finish the inspection through FinishInspection.'));
-        Steps.Add(ContractMgt.WorkflowStep('Data.Records.Get', 'Read the finished status back.'));
+        Steps.Add(ContractMgt.WorkflowStep('Data.Records.Get', ReadWorkflowTxt));
+        Steps.Add(ContractMgt.WorkflowStep(MessageType, FinishWorkflowTxt));
+        Steps.Add(ContractMgt.WorkflowStep('Data.Records.Get', ReadBackWorkflowTxt));
         WorkflowChapter.Add('steps', Steps);
-        WorkflowChapter.Add('text', 'Read the inspection, finish it, then read the status. The call is idempotent when the inspection is already finished and the item-tracking check passes.');
+        WorkflowChapter.Add('text', WorkflowHelpTxt);
     end;
 
     /// <summary>Builds one success example.</summary>
     /// <param name="ExampleEntries">Receives the chapter.</param>
     internal procedure Examples(var ExampleEntries: JsonArray)
     begin
-        ExampleEntries.Add(ContractMgt.Example('Finish an inspection',
+        ExampleEntries.Add(ContractMgt.Example(FinishExampleTxt,
             '{"type":"Quality.Inspection.Finish","data":{"no":"QI00000001"}}',
             '{"status":"Success","no":"QI00000001","reinspectionNo":0,"previousStatus":"Open","recordStatus":"Finished","changed":true}'));
     end;
 
-    /// <summary>Overview text. English only, as a help chapter. States the effect and idempotency.</summary>
+    /// <summary>Translated overview help chapter. States the effect and idempotency.</summary>
     /// <returns>The overview.</returns>
     internal procedure Overview(): Text
     begin
-        exit('Finishes one quality inspection by calling FinishInspection on the quality inspection header, after the standard result and item-tracking checks. ' +
-            'Send no. Send reinspectionNo only for a reinspection; omit it for the original inspection. ' +
-            'The effect is a write. The call is idempotent: finishing an inspection that is already finished does not write again when the item-tracking check passes.');
+        exit(OverviewHelpTxt);
     end;
 
-    /// <summary>Notes text. English only, as a help chapter.</summary>
+    /// <summary>Translated notes help chapter.</summary>
     /// <returns>The notes.</returns>
     internal procedure Notes(): Text
     begin
-        exit('FinishInspection asks for confirmation when a user interface is available. A service call has no screen, so Business Central finishes without that question and still runs the checks. ' +
-            'When a screen is present and the confirmation is declined, the inspection stays open and this message returns PreconditionFailed. ' +
-            'A result configured to disallow finishing, or missing required item tracking, is returned as BusinessCentralError and leaves the inspection unchanged. ' +
-            'FinishInspection does not call Commit. Unless Omit Commit is set, Codeunit.Run commits a successful finish. ' +
-            'The answer uses status Success and recordStatus for the inspection, because Foundation reserves status for the outcome.');
+        exit(NotesHelpTxt);
     end;
 
     local procedure CollectUnknownKeys(var Argument: Record "Message Argument ori"; RequestJson: JsonObject)

@@ -2,6 +2,8 @@ namespace Origo.Bifrost.QualityManagement;
 
 using Microsoft.QualityManagement.Document;
 using Origo.Bifrost;
+using System.Security.AccessControl;
+using System.Security.User;
 
 /// <summary>
 /// Applies Quality.Inspection.Finish inside one transaction.
@@ -37,7 +39,7 @@ codeunit 10035244 "Qlty Insp Finish Proc ori"
             exit;
         end;
 
-        if not Contract.HasTablePermission(Argument, AccessCapability.WritePermission() and Header.ReadPermission(), Header.WritePermission()) then
+        if not Contract.HasTablePermission(Argument, AccessCapability.WritePermission() and Header.ReadPermission(), CanModifyInspection()) then
             exit;
 
         // FinishInspection reads tracking, result and audit fields, so this record is not load-field limited.
@@ -57,5 +59,14 @@ codeunit 10035244 "Qlty Insp Finish Proc ori"
         end;
 
         Contract.WriteSuccess(Argument, Header, PreviousToken, WasOpen and (Header.Status = Header.Status::Finished));
+    end;
+    local procedure CanModifyInspection(): Boolean
+    var
+        TempPermission: Record "Expanded Permission" temporary;
+        UserPermissions: Codeunit "User Permissions";
+    begin
+        // Finishing needs Modify, not Delete. This matches the native FinishInspection permission check.
+        TempPermission := UserPermissions.GetEffectivePermission(TempPermission."Object Type"::"Table Data", Database::"Qlty. Inspection Header");
+        exit(TempPermission."Modify Permission" in [TempPermission."Modify Permission"::Yes, TempPermission."Modify Permission"::Indirect]);
     end;
 }
