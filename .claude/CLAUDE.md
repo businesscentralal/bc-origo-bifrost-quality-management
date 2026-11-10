@@ -21,8 +21,13 @@ Tests: 97200-97299
 | Permission set | 10035238 | BIFROST QM Read ori |
 | Permission set extension | 10035239 | Quality Full Role ori |
 | Permission set extension | 10035240 | Quality Read Role ori |
+| Enum extension | 10035241 | Qlty Finish MsgType ori |
+| Codeunit | 10035242 | Qlty Insp Finish Ctr ori |
+| Codeunit | 10035243 | Qlty Insp Finish Impl ori |
+| Codeunit | 10035244 | Qlty Insp Finish Proc ori |
 | Test codeunit | 97200 | Quality Scaffold Tst ori |
 | Test permission set | 97201 | QM Setup Test ori |
+| Test codeunit | 97202 | Qlty Insp Finish Tst ori |
 
 ## Microsoft source
 Wrapped Microsoft app: Quality Management (`bc7b3891-f61b-4883-bbb3-384cdef88bec`, 28.5.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management
