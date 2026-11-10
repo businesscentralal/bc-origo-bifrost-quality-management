@@ -313,7 +313,7 @@ codeunit 10035242 "Qlty Insp Finish Ctr ori"
     var
         Raw: Text;
     begin
-        if not TryReadText(Token, Raw) then begin
+        if not ReadTextToken(Token, Raw) then begin
             Argument.AddError("Bifrost Error Code ori"::InvalidParameterFormat, StrSubstNo(NotACodeErr, ParameterName), ParameterName, '', CodeExpectedTxt, TooLongNextStepTxt);
             exit;
         end;
@@ -332,7 +332,7 @@ codeunit 10035242 "Qlty Insp Finish Ctr ori"
     var
         Raw: Text;
     begin
-        if not TryReadText(Token, Raw) then begin
+        if not ReadTextToken(Token, Raw) then begin
             Argument.AddError("Bifrost Error Code ori"::InvalidParameterFormat, StrSubstNo(NotAnIntegerErr, 'reinspectionNo'), 'reinspectionNo', '', IntegerExpectedTxt, IntegerNextStepTxt);
             exit;
         end;
@@ -348,7 +348,7 @@ codeunit 10035242 "Qlty Insp Finish Ctr ori"
             Argument.AddError("Bifrost Error Code ori"::InvalidParameterFormat, StrSubstNo(NotAnIntegerErr, 'reinspectionNo'), 'reinspectionNo', Raw.Trim(), IntegerExpectedTxt, IntegerNextStepTxt);
     end;
 
-    local procedure TryReadText(Token: JsonToken; var Raw: Text): Boolean
+    local procedure ReadTextToken(Token: JsonToken; var Raw: Text): Boolean
     begin
         Raw := '';
         if not Token.IsValue() then
