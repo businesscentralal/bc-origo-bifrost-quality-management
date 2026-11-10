@@ -345,9 +345,10 @@ codeunit 97207 "Quality Value Errors Tst ori"
         StructuredErrors.AsArray().Get(0, StructuredError);
         Assert.AreEqual(ExpectedCode, ReadText(StructuredError.AsObject(), 'code'), 'Error item code');
         Assert.AreEqual(ExpectedParameter, ReadText(StructuredError.AsObject(), 'parameter'), 'Error item parameter');
-        if LanguageId = 1039 then
-            Assert.IsTrue(ReadText(Response, 'nextStep').Contains('Leiðréttu') or ReadText(Response, 'nextStep').Contains('Lestu'), 'Icelandic recovery guidance')
-        else
+        if LanguageId = 1039 then begin
+            Assert.IsTrue(ReadText(Response, 'expected').Contains('text') or ReadText(Response, 'expected').Contains('skoðunar'), 'Icelandic expected guidance');
+            Assert.IsTrue(ReadText(Response, 'nextStep').Contains('Leiðréttu') or ReadText(Response, 'nextStep').Contains('Lestu'), 'Icelandic recovery guidance');
+        end else
             Assert.IsTrue(ReadText(Response, 'nextStep').Contains('Correct') or ReadText(Response, 'nextStep').Contains('Read'), 'English recovery guidance');
         if Scenario = 'notFound' then
             Assert.AreEqual(Format(UnknownId, 0, 4), ReadText(Response, 'received'), 'Unknown SystemId must be preserved exactly');

@@ -26,6 +26,8 @@ codeunit 10035242 "Quality Set Value Impl ori" implements "Msg Interface ori", "
         StatusErr: Label 'The quality inspection Status must be Open.', Comment = 'is-IS=Staða gæðaskoðunar verður að vera Opin.';
         OpenExpectedLbl: Label 'an open quality inspection', Comment = 'is-IS=opin gæðaskoðun';
         OpenNextLbl: Label 'Select an open inspection before setting a test value; nothing was changed.', Comment = 'is-IS=Veldu opna skoðun áður en prófunargildi er skráð; engu var breytt.';
+        NativeRefusalLbl: Label 'Microsoft validation refused the test value, test selection or setup.', Comment = 'is-IS=Staðfesting Microsoft hafnaði prófunargildi, vali á prófun eða uppsetningu.';
+        NativeNextLbl: Label 'Correct the inspection test, value or setup and retry.', Comment = 'is-IS=Leiðréttu skoðunarprófun, gildi eða uppsetningu og reyndu aftur.';
         OverviewLbl: Label 'Validates the value of exactly one inspection test through Microsoft SetTestValue, then recalculates and saves the header result through UpdateResultFromLines.', Comment = 'is-IS=Staðfestir gildi nákvæmlega einnar prófunar í skoðun með SetTestValue frá Microsoft og endurreiknar og vistar niðurstöðu hauss með UpdateResultFromLines.';
         NotesLbl: Label 'Identify the exact inspection, including its re-inspection, by inspectionSystemId. testCode is the test code, not its caption. value is text (maximum 250 characters); an empty string clears it if Microsoft permits. Unknown keys, missing keys, non-text values and overlong values are refused. The inspection must be open and have exactly one matching test line. Microsoft validation and result rules apply. The standard path has no explicit Commit; explicit commits from subscribers are prohibited. Normal execution uses a separate transaction, so a business refusal rolls back all writes. With Omit Commit, the caller owns rollback. Repeating the same value is not guaranteed idempotent because Microsoft validation can update related expressions and invoke subscribers. No external provider is called.', Comment = 'is-IS=Auðkenndu tiltekna skoðun, ásamt endurskoðun hennar, með inspectionSystemId. testCode er prófunarkóði, ekki heiti. value er texti (hámark 250 stafir); tómur strengur hreinsar gildið ef Microsoft leyfir. Óþekktum lyklum, lyklum sem vantar, öðrum gildum en texta og of löngum gildum er hafnað. Skoðunin verður að vera opin og hafa nákvæmlega eina samsvarandi prófunarlínu. Staðfestingar og niðurstöðureglur Microsoft gilda. Staðlaða leiðin inniheldur ekkert beint Commit; beinar staðfestingar frá áskrifendum eru bannaðar. Venjuleg keyrsla notar sérstaka færslu svo höfnun bakfærir allar breytingar. Með Omit Commit ber kallandi ábyrgð á bakfærslu. Endurtekning sama gildis tryggir ekki óbreytt ástand því staðfesting Microsoft getur uppfært tengdar segðir og kallað á áskrifendur. Engin ytri þjónusta er kölluð.';
 
@@ -222,8 +224,25 @@ codeunit 10035242 "Quality Set Value Impl ori" implements "Msg Interface ori", "
     /// <summary>Provides the errors contract chapter.</summary>
     procedure GetErrors(var Errors: JsonArray): Boolean
     begin
-        Errors.ReadFrom('[{"error":"MissingParameter","when":"A required key is absent or empty.","fix":"Supply the named parameter using expected and nextStep."},{"error":"InvalidParameter","when":"A parameter has the wrong type, format or length.","fix":"Correct the named parameter using expected and nextStep."},{"error":"RecordNotFound","when":"inspectionSystemId matches no inspection.","fix":"Read an existing inspection SystemId."},{"error":"PermissionDenied","when":"The Full-role capability is missing.","fix":"Ask an administrator for BIFROST QM Full ori."},{"error":"PreconditionFailed","when":"The inspection is not open.","fix":"Select an open inspection."},{"error":"Business Central refusal","when":"Microsoft validation failure: missing or ambiguous test line, invalid test value or missing setup.","fix":"Correct the request, inspection setup, status or permissions and retry."}]');
+        Clear(Errors);
+        AddErrorContract(Errors, 'MissingParameter', StrSubstNo(MissingKeyErr, 'inspectionSystemId / testCode / value'), FixParameterLbl);
+        AddErrorContract(Errors, 'InvalidParameter', TextExpectedLbl, FixParameterLbl);
+        AddErrorContract(Errors, 'UnknownParameter', StrSubstNo(UnknownKeyErr, 'data'), FixParameterLbl);
+        AddErrorContract(Errors, 'PermissionDenied', PermissionErr, PermissionNextLbl);
+        AddErrorContract(Errors, 'RecordNotFound', NotFoundErr, FindInspectionLbl);
+        AddErrorContract(Errors, 'PreconditionFailed', StatusErr, OpenNextLbl);
+        AddErrorContract(Errors, 'BusinessCentralError', NativeRefusalLbl, NativeNextLbl);
         exit(true);
+    end;
+
+    local procedure AddErrorContract(var Errors: JsonArray; ErrorCode: Text; WhenText: Text; FixText: Text)
+    var
+        Entry: JsonObject;
+    begin
+        Entry.Add('error', ErrorCode);
+        Entry.Add('when', WhenText);
+        Entry.Add('fix', FixText);
+        Errors.Add(Entry);
     end;
 
     /// <summary>Provides the effect contract chapter.</summary>

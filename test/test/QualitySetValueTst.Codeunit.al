@@ -222,6 +222,30 @@ codeunit 97202 "Quality Set Value Tst ori"
         VerifyRefusal('notFound', 1033);
     end;
 
+    /// <summary>Checks the typed Finished refusal and recovery fields in Icelandic.</summary>
+    [Test]
+    procedure Scenario_AC03_Finished_Typed1039()
+    begin
+        // Story #34, AC03 | Time: no date-dependent inputs | Risk: owned fixture only
+        VerifyRefusal('finished', 1039);
+    end;
+
+    /// <summary>Checks the typed ReadRole refusal and recovery fields in Icelandic.</summary>
+    [Test]
+    procedure Scenario_AC03_ReadRole_Typed1039()
+    begin
+        // Story #34, AC03 | Time: no date-dependent inputs | Risk: owned fixture only
+        VerifyRefusal('permission', 1039);
+    end;
+
+    /// <summary>Checks the typed NoAppGrant refusal and recovery fields in Icelandic.</summary>
+    [Test]
+    procedure Scenario_AC03_NoAppGrant_Typed1039()
+    begin
+        // Story #34, AC03 | Time: no date-dependent inputs | Risk: owned fixture only
+        VerifyRefusal('permissionNoApp', 1039);
+    end;
+
     local procedure VerifyValue(LanguageId: Integer)
     var
         Inspection: Record "Qlty. Inspection Header";
@@ -316,12 +340,12 @@ codeunit 97202 "Quality Set Value Tst ori"
             'unknown': Assert.AreEqual('UnknownParameter', ReadText(Response, 'code'), 'Foundation must reject unknown keys.');
             'longValue', 'longCode': Assert.IsTrue(ReadText(Response, 'error').Contains('exceeds'), 'The length guard must refuse truncation.');
             'guid': Assert.IsTrue(ReadText(Response, 'error').Contains('inspectionSystemId'), 'The identifier error must name the key.');
-            'finished': Assert.IsTrue(ReadText(Response, 'error').Contains('Status'), 'Microsoft must reject the finished status.');
+            'finished': Assert.AreEqual('PreconditionFailed', ReadText(Response, 'code'), 'A finished inspection must be refused.');
             'test', 'duplicate': Assert.IsTrue(ReadText(Response, 'error').Contains('matching inspection line'), 'Microsoft must reject the test selection.');
             'invalid': Assert.IsTrue(ReadText(Response, 'error').Contains('not allowed'), 'Microsoft must reject the invalid integer.');
             'template': Assert.IsTrue(ReadText(Response, 'error').Contains('does not exist'), 'Microsoft must reject missing setup.');
             'late': Assert.IsTrue(ReadText(Response, 'error').Contains('Injected late'), 'The failure must occur after the native line write.');
-            'permission', 'permissionNoApp': Assert.IsTrue(LowerCase(ReadText(Response, 'error')).Contains('permission'), 'The call must be refused for missing permissions.');
+            'permission', 'permissionNoApp': Assert.AreEqual('PermissionDenied', ReadText(Response, 'code'), 'The call must be refused for missing permissions.');
             'notFound': Assert.IsTrue(ReadText(Response, 'error').Contains('inspection was not found'), 'The missing inspection must be identified.');
         end;
         if Scenario in ['permission', 'permissionNoApp', 'finished'] then begin
@@ -331,6 +355,8 @@ codeunit 97202 "Quality Set Value Tst ori"
                 Assert.AreEqual('PermissionDenied', ReadText(Response, 'code'), 'Typed access refusal');
             Assert.IsTrue(ReadText(Response, 'expected') <> '', 'Actionable expected state or permission');
             Assert.IsTrue(ReadText(Response, 'nextStep') <> '', 'Actionable next step');
+            if LanguageId = 1039 then
+                Assert.IsTrue(ReadText(Response, 'nextStep').Contains('Biddu') or ReadText(Response, 'nextStep').Contains('Veldu'), 'Icelandic recovery guidance');
         end;
         if (Scenario = 'missing') and (LanguageId = 1039) then
             Assert.IsTrue(ReadText(Response, 'error').Contains('Nauðsynlega'), 'The refusal must be translated.');

@@ -207,6 +207,18 @@
           <note from="Developer" annotates="general" priority="2">%1 = parameter name|is-IS=Nauðsynlega færibreytu '%1' vantar eða hún er ógild.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType MissingKeyErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 2612954968" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the inspection test, value or setup and retry.</source>
+          <target>Leiðréttu skoðunarprófun, gildi eða uppsetningu og reyndu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu skoðunarprófun, gildi eða uppsetningu og reyndu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType NativeNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 2645344923" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Microsoft validation refused the test value, test selection or setup.</source>
+          <target>Staðfesting Microsoft hafnaði prófunargildi, vali á prófun eða uppsetningu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Staðfesting Microsoft hafnaði prófunargildi, vali á prófun eða uppsetningu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType NativeRefusalLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1135174596 - NamedType 963943359" size-unit="char" translate="yes" xml:space="preserve">
           <source>a non-empty text value</source>
           <target>textagildi sem er ekki tómt</target>
