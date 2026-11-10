@@ -6,7 +6,6 @@ using Microsoft.QualityManagement.Configuration.Template.Test;
 using Microsoft.QualityManagement.Document;
 using Microsoft.QualityManagement.Setup;
 using Origo.Bifrost;
-using Origo.Bifrost.QualityManagement;
 using System.TestLibraries.Utilities;
 
 /// <summary>Issue 7: exercises the registered action through the public Foundation dispatcher.</summary>
@@ -218,11 +217,12 @@ codeunit 97207 "Quality Reinspect Tst ori"
     [Test]
     procedure Scenario_AC01_Contract_DescribesWriteAndPermissions()
     var
-        Impl: Codeunit "Quality Reinspect Impl ori";
+        Impl: Interface "Msg Contract ori";
         Effect: JsonObject;
         Parameters: JsonArray;
     begin
         // Story #7, AC01 | Time: No date dependency | Risk: None
+        Impl := Enum::"Message Type ori"::"Quality.Inspection.CreateReinspection";
         Assert.IsTrue(Impl.GetEffect(Effect), 'Effect chapter must exist.');
         Assert.AreEqual('write', Effect.GetText('effect'), 'Effect must describe a write.');
         Assert.IsFalse(Effect.GetBoolean('idempotent'), 'Each success creates a new revision.');
@@ -235,12 +235,13 @@ codeunit 97207 "Quality Reinspect Tst ori"
     [Test]
     procedure Scenario_AC06_Icelandic_DiscoveryIsTranslated()
     var
-        Impl: Codeunit "Quality Reinspect Impl ori";
+        Impl: Interface "Msg Interface ori";
         English: Text;
         Icelandic: Text;
         PreviousLanguage: Integer;
     begin
         // Story #7, AC06 | Time: No date dependency | Risk: Session language restored
+        Impl := Enum::"Message Type ori"::"Quality.Inspection.CreateReinspection";
         PreviousLanguage := GlobalLanguage();
         GlobalLanguage(1033);
         English := Impl.GetDescription();

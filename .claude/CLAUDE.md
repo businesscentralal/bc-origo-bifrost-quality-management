@@ -21,6 +21,12 @@ Tests: 97200-97299
 | Permission set | 10035238 | BIFROST QM Read ori |
 | Permission set extension | 10035239 | Quality Full Role ori |
 | Permission set extension | 10035240 | Quality Read Role ori |
+| Table | 10035241 | Quality Action Access ori |
+| Codeunit | 10035242 | Quality Reinspect Impl ori |
+| Codeunit | 10035243 | Quality Reinspect Proc ori |
+| Enum extension | 10035244 | Quality Message Types ori |
+| Test codeunit | 97207 | Quality Reinspect Tst ori |
+| Test codeunit | 97208 | Quality Action Perm Tst ori |
 | Test codeunit | 97200 | Quality Scaffold Tst ori |
 | Test permission set | 97201 | QM Setup Test ori |
 

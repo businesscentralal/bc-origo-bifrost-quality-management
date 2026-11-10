@@ -2,7 +2,6 @@ namespace Origo.Bifrost.QualityManagement.Test;
 
 using Microsoft.QualityManagement.Document;
 using Origo.Bifrost;
-using Origo.Bifrost.QualityManagement;
 using System.TestLibraries.Security.AccessControl;
 using System.TestLibraries.Utilities;
 
@@ -20,10 +19,11 @@ codeunit 97208 "Quality Action Perm Tst ori"
     [Test]
     procedure Scenario_AC05_ReadRole_ActionIsDisabled()
     var
-        Impl: Codeunit "Quality Reinspect Impl ori";
+        Impl: Interface "Msg Interface ori";
         Enabled: Boolean;
     begin
         // Story #7, AC05 | Time: No date dependency | Risk: Permissions restored
+        Impl := Enum::"Message Type ori"::"Quality.Inspection.CreateReinspection";
         LowerPermissions.SetExactPermissionSet('BIFROST QM Read ori');
         Enabled := Impl.IsEnabled();
         LowerPermissions.SetOutsideO365Scope();
@@ -64,10 +64,11 @@ codeunit 97208 "Quality Action Perm Tst ori"
     [Test]
     procedure Scenario_AC05_FoundationFull_ActionIsEnabled()
     var
-        Impl: Codeunit "Quality Reinspect Impl ori";
+        Impl: Interface "Msg Interface ori";
         Enabled: Boolean;
     begin
         // Story #7, AC05 | Time: No date dependency | Risk: Permissions restored
+        Impl := Enum::"Message Type ori"::"Quality.Inspection.CreateReinspection";
         LowerPermissions.SetExactPermissionSet('BIFROST Full ori');
         Enabled := Impl.IsEnabled();
         LowerPermissions.SetOutsideO365Scope();
