@@ -1,6 +1,6 @@
 namespace Origo.Bifrost.QualityManagement.Test;
 
-using System.Utilities;
+using Microsoft.Utilities;
 
 /// <summary>Supplies platform execution for the dispatcher tests without product or business-data grants.</summary>
 permissionset 97204 "QM Message Test ori"
