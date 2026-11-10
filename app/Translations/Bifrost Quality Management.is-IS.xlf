@@ -1,105 +1,125 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Quality Management">
     <body>
       <group id="body">
         <trans-unit id="Table 2199334912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quality inventory movement</source><target>Birgðaflutningur gæðastjórnunar</target>
+          <source>Quality inventory movement</source>
+          <target>Birgðaflutningur gæðastjórnunar</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Birgðaflutningur gæðastjórnunar</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Quality Move Access ori - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 2199334912 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Primary Key</source><target>Aðallykill</target>
+          <source>Primary Key</source>
+          <target>Aðallykill</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Quality Move Access ori - Field Primary Key - Property Caption</note>
         </trans-unit>
         <trans-unit id="Codeunit 1955794892 - NamedType 3649760385" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Set confirm to true to authorize this inventory movement.</source><target>Stilltu confirm á true til að heimila þennan birgðaflutning.</target>
+          <source>Set confirm to true to authorize this inventory movement.</source>
+          <target>Stilltu confirm á true til að heimila þennan birgðaflutning.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Stilltu confirm á true til að heimila þennan birgðaflutning.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Impl ori - NamedType ConfirmErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1955794892 - NamedType 3569966352" maxwidth="250" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Moves failed or passed inspection inventory using standard quality disposition and optional posting.</source><target>Flytur birgðir sem standast eða falla í gæðaskoðun með staðlaðri ráðstöfun og valfrjálsri bókun.</target>
+          <source>Moves failed or passed inspection inventory using standard quality disposition and optional posting.</source>
+          <target>Flytur birgðir sem standast eða falla í gæðaskoðun með staðlaðri ráðstöfun og valfrjálsri bókun.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Flytur birgðir sem standast eða falla í gæðaskoðun með staðlaðri ráðstöfun og valfrjálsri bókun.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Impl ori - NamedType DescriptionLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 1955794892 - NamedType 1648229763" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Specify destinationLocationCode or destinationBinCode.</source><target>Tilgreindu destinationLocationCode eða destinationBinCode.</target>
+          <source>Specify destinationLocationCode or destinationBinCode.</source>
+          <target>Tilgreindu destinationLocationCode eða destinationBinCode.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Tilgreindu destinationLocationCode eða destinationBinCode.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Impl ori - NamedType DestinationErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1955794892 - NamedType 1575191754" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The required parameter %1 is missing or invalid.</source><target>Nauðsynlega færibreytu %1 vantar eða hún er ógild.</target>
+          <source>The required parameter %1 is missing or invalid.</source>
+          <target>Nauðsynlega færibreytu %1 vantar eða hún er ógild.</target>
           <note from="Developer" annotates="general" priority="2">%1 = parameter name|is-IS=Nauðsynlega færibreytu %1 vantar eða hún er ógild.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Impl ori - NamedType MissingKeyErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1955794892 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The quality inspection was not found.</source><target>Gæðaskoðunin fannst ekki.</target>
+          <source>The quality inspection was not found.</source>
+          <target>Gæðaskoðunin fannst ekki.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Gæðaskoðunin fannst ekki.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Impl ori - NamedType NotFoundErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1955794892 - NamedType 3349818935" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Business Central did not create or post an inventory movement. Check the inspection quantity and movement setup.</source><target>Business Central stofnaði ekki eða bókaði birgðaflutning. Athugaðu magn skoðunar og uppsetningu flutnings.</target>
+          <source>Business Central did not create or post an inventory movement. Check the inspection quantity and movement setup.</source>
+          <target>Business Central stofnaði ekki eða bókaði birgðaflutning. Athugaðu magn skoðunar og uppsetningu flutnings.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Business Central stofnaði ekki eða bókaði birgðaflutning. Athugaðu magn skoðunar og uppsetningu flutnings.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Impl ori - NamedType NothingMovedErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1955794892 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The BIFROST QM Full ori permission set is required.</source><target>Heimildasafnið BIFROST QM Full ori er nauðsynlegt.</target>
+          <source>The BIFROST QM Full ori permission set is required.</source>
+          <target>Heimildasafnið BIFROST QM Full ori er nauðsynlegt.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Heimildasafnið BIFROST QM Full ori er nauðsynlegt.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Impl ori - NamedType PermissionErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1955794892 - NamedType 3255873965" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Parameter %1 exceeds %2 characters.</source><target>Færibreytan %1 er lengri en %2 stafir.</target>
+          <source>Parameter %1 exceeds %2 characters.</source>
+          <target>Færibreytan %1 er lengri en %2 stafir.</target>
           <note from="Developer" annotates="general" priority="2">%1 = parameter name, %2 = limit|is-IS=Færibreytan %1 er lengri en %2 stafir.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Impl ori - NamedType TooLongErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1955794892 - NamedType 2912406318" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Unknown parameter %1.</source><target>Óþekkt færibreyta %1.</target>
+          <source>Unknown parameter %1.</source>
+          <target>Óþekkt færibreyta %1.</target>
           <note from="Developer" annotates="general" priority="2">%1 = parameter name|is-IS=Óþekkt færibreyta %1.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Impl ori - NamedType UnknownKeyErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1955794892 - NamedType 2614708797" size-unit="char" translate="yes" xml:space="preserve">
-          <source>The movement worksheet and internal movement methods prepare movements; they cannot post immediately.</source><target>Vinnublað flutnings og innri flutningur undirbúa flutninga; ekki er hægt að bóka þá strax.</target>
+          <source>The movement worksheet and internal movement methods prepare movements; they cannot post immediately.</source>
+          <target>Vinnublað flutnings og innri flutningur undirbúa flutninga; ekki er hægt að bóka þá strax.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Vinnublað flutnings og innri flutningur undirbúa flutninga; ekki er hægt að bóka þá strax.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Impl ori - NamedType WorksheetPostErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1955794892 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
-          <source>quality, disposition, move inventory, quarantine, failed quantity, passed quantity, reclassification</source><target>gæði, ráðstöfun, flytja birgðir, sóttkví, fallið magn, staðist magn, endurflokkun</target>
+          <source>quality, disposition, move inventory, quarantine, failed quantity, passed quantity, reclassification</source>
+          <target>gæði, ráðstöfun, flytja birgðir, sóttkví, fallið magn, staðist magn, endurflokkun</target>
           <note from="Developer" annotates="general" priority="2">is-IS=gæði, ráðstöfun, flytja birgðir, sóttkví, fallið magn, staðist magn, endurflokkun</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 1955794892 - Method 3650283039 - NamedType 2938128749" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Not idempotent: repeating a successful call can create another movement. No direct business-field writes bypass Microsoft validation. Immediate posting is atomic across all selected lines; a refusal rolls back journal creation and posting. Internal movement and worksheet prepare only. Normal success commits the isolated transaction; with Omit Commit the caller owns the transaction.</source><target>Ekki ídempótent: endurtekið heppnað kall getur stofnað annan flutning. Engin bein skrif í viðskiptareiti fara fram hjá staðfestingu Microsoft. Tafarlaus bókun er ein heild yfir allar valdar línur; höfnun bakfærir stofnun færslubókar og bókun. Innri flutningur og vinnublað undirbúa eingöngu. Venjuleg heppnuð keyrsla staðfestir einangraða færslu; með Omit Commit ber kallandi ábyrgð á færslunni.</target>
+          <source>Not idempotent: repeating a successful call can create another movement. No direct business-field writes bypass Microsoft validation. Immediate posting is atomic across all selected lines; a refusal rolls back journal creation and posting. Internal movement and worksheet prepare only. Normal success commits the isolated transaction; with Omit Commit the caller owns the transaction.</source>
+          <target>Ekki ídempótent: endurtekið heppnað kall getur stofnað annan flutning. Engin bein skrif í viðskiptareiti fara fram hjá staðfestingu Microsoft. Tafarlaus bókun er ein heild yfir allar valdar línur; höfnun bakfærir stofnun færslubókar og bókun. Innri flutningur og vinnublað undirbúa eingöngu. Venjuleg heppnuð keyrsla staðfestir einangraða færslu; með Omit Commit ber kallandi ábyrgð á færslunni.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Ekki ídempótent: endurtekið heppnað kall getur stofnað annan flutning. Engin bein skrif í viðskiptareiti fara fram hjá staðfestingu Microsoft. Tafarlaus bókun er ein heild yfir allar valdar línur; höfnun bakfærir stofnun færslubókar og bókun. Innri flutningur og vinnublað undirbúa eingöngu. Venjuleg heppnuð keyrsla staðfestir einangraða færslu; með Omit Commit ber kallandi ábyrgð á færslunni.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Impl ori - Method GetNotes - NamedType HelpLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 1955794892 - Method 2340569551 - NamedType 2938128749" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Moves the failed or passed quantity of one quality inspection through standard Microsoft disposition. Choose item or warehouse reclassification, movement worksheet, internal movement or automatic reclassification. confirm=true is required.</source><target>Flytur fallið eða staðist magn einnar gæðaskoðunar með staðlaðri ráðstöfun Microsoft. Veldu endurflokkun vöru eða vöruhúss, vinnublað flutnings, innri flutning eða sjálfvirka endurflokkun. confirm=true er nauðsynlegt.</target>
+          <source>Moves the failed or passed quantity of one quality inspection through standard Microsoft disposition. Choose item or warehouse reclassification, movement worksheet, internal movement or automatic reclassification. confirm=true is required.</source>
+          <target>Flytur fallið eða staðist magn einnar gæðaskoðunar með staðlaðri ráðstöfun Microsoft. Veldu endurflokkun vöru eða vöruhúss, vinnublað flutnings, innri flutning eða sjálfvirka endurflokkun. confirm=true er nauðsynlegt.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Flytur fallið eða staðist magn einnar gæðaskoðunar með staðlaðri ráðstöfun Microsoft. Veldu endurflokkun vöru eða vöruhúss, vinnublað flutnings, innri flutning eða sjálfvirka endurflokkun. confirm=true er nauðsynlegt.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Impl ori - Method GetOverview - NamedType HelpLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 2126333700 - NamedType 3472101043" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Another extension has replaced quality posting. Inventory movement was cancelled.</source><target>Önnur viðbót hefur tekið yfir gæðabókun. Hætt var við birgðaflutning.</target>
+          <source>Another extension has replaced quality posting. Inventory movement was cancelled.</source>
+          <target>Önnur viðbót hefur tekið yfir gæðabókun. Hætt var við birgðaflutning.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Önnur viðbót hefur tekið yfir gæðabókun. Hætt var við birgðaflutning.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Posting ori - NamedType ConflictingSubscriberErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 2126333700 - NamedType 3546242035" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quality posting did not identify a journal line. Inventory movement was cancelled.</source><target>Gæðabókun tilgreindi ekki færslubókarlínu. Hætt var við birgðaflutning.</target>
+          <source>Quality posting did not identify a journal line. Inventory movement was cancelled.</source>
+          <target>Gæðabókun tilgreindi ekki færslubókarlínu. Hætt var við birgðaflutning.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Gæðabókun tilgreindi ekki færslubókarlínu. Hætt var við birgðaflutning.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Posting ori - NamedType MissingFilterErr</note>
         </trans-unit>
         <trans-unit id="PermissionSet 1811208904 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bifrost Quality Full</source><target>Bifröst - gæði fullur aðgangur</target>
+          <source>Bifrost Quality Full</source>
+          <target>Bifröst - gæði fullur aðgangur</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - gæði fullur aðgangur</note>
           <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST QM Full ori - Property Caption</note>
         </trans-unit>
         <trans-unit id="PermissionSet 2256845735 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bifrost Quality Read</source><target>Bifröst - gæði lesaðgangur</target>
+          <source>Bifrost Quality Read</source>
+          <target>Bifröst - gæði lesaðgangur</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - gæði lesaðgangur</note>
           <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST QM Read ori - Property Caption</note>
         </trans-unit>
         <trans-unit id="PermissionSet 3407348138 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Bifrost Quality Management</source><target>Bifröst - gæðastjórnun</target>
+          <source>Bifrost Quality Management</source>
+          <target>Bifröst - gæðastjórnun</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - gæðastjórnun</note>
           <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST Quality ori - Property Caption</note>
         </trans-unit>
