@@ -99,6 +99,7 @@ codeunit 10035245 "Quality Purch Return Impl ori" implements "Msg Interface ori"
         ReturnOrderNo := Receipt.GetReturnOrderNo();
         if ReturnOrderNo = '' then
             Error(ErrorInfo.Create(NoReturnErr));
+        ReturnLine.ReadIsolation := IsolationLevel::ReadCommitted;
         ReturnLine.SetRange("Document Type", ReturnLine."Document Type"::"Return Order");
         ReturnLine.SetRange("Document No.", ReturnOrderNo);
         ReturnLine.SetRange(Type, ReturnLine.Type::Item);
