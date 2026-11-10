@@ -57,11 +57,35 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Skila föllnu magni</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType ExampleTitleLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3642161633 - NamedType 938906475" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a non-empty SystemId GUID of an existing quality inspection</source>
+          <target>SystemId GUID skoðunar sem er til og er ekki tómt</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId GUID skoðunar sem er til og er ekki tómt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType ExpectedIdLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3642161633 - NamedType 1884902963" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.</source>
+          <target>Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType FindInspectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3642161633 - NamedType 4195077024" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the named request parameter and retry.</source>
+          <target>Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType FixParameterLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3642161633 - NamedType 2133644830" size-unit="char" translate="yes" xml:space="preserve">
           <source>SystemId of the exact inspection and re-inspection.</source>
           <target>SystemId tiltekinnar skoðunar og endurskoðunar hennar.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=SystemId tiltekinnar skoðunar og endurskoðunar hennar.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType InspectionDescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3642161633 - NamedType 2052369097" size-unit="char" translate="yes" xml:space="preserve">
+          <source>text with at most %1 characters</source>
+          <target>texti með að hámarki %1 stöfum</target>
+          <note from="Developer" annotates="general" priority="2">%1 = maximum length|is-IS=texti með að hámarki %1 stöfum</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType MaximumTextLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 3642161633 - NamedType 1575191754" size-unit="char" translate="yes" xml:space="preserve">
           <source>The required parameter '%1' is missing or invalid.</source>
@@ -99,11 +123,23 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Heimildasafnið BIFROST QM Full ori er nauðsynlegt.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType PermissionErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3642161633 - NamedType 3932376842" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for BIFROST QM Full ori and the native purchase permissions.</source>
+          <target>Biddu stjórnanda um BIFROST QM Full ori og staðlaðar innkaupaheimildir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu stjórnanda um BIFROST QM Full ori og staðlaðar innkaupaheimildir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType PermissionNextLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3642161633 - NamedType 2530995935" size-unit="char" translate="yes" xml:space="preserve">
           <source>Microsoft purchase and Quality Management permissions.</source>
           <target>Innkaupa- og gæðastjórnunarheimildir Microsoft.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Innkaupa- og gæðastjórnunarheimildir Microsoft.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType PermissionPreconditionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3642161633 - NamedType 4169810136" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an inspection with a Purchase Line source</source>
+          <target>skoðun með innkaupalínu sem uppruna</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=skoðun með innkaupalínu sem uppruna</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType PurchaseSourceLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 3642161633 - NamedType 1953004132" size-unit="char" translate="yes" xml:space="preserve">
           <source>Return reason code, maximum 10 characters.</source>
@@ -116,6 +152,18 @@
           <target>Númer stofnaðrar óbókaðrar innkaupaskilapöntunar.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Númer stofnaðrar óbókaðrar innkaupaskilapöntunar.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType ReturnDescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3642161633 - NamedType 1525896738" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a created purchase return order with an item line for this inspection</source>
+          <target>stofnuð innkaupaskilapöntun með vörulínu fyrir þessa skoðun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=stofnuð innkaupaskilapöntun með vörulínu fyrir þessa skoðun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType ReturnExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3642161633 - NamedType 2428390145" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Check the inspection, purchase setup and disposition subscribers before retrying; nothing was changed.</source>
+          <target>Athugaðu skoðunina, innkaupauppsetningu og áskrifendur ráðstöfunar áður en þú reynir aftur; engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Athugaðu skoðunina, innkaupauppsetningu og áskrifendur ráðstöfunar áður en þú reynir aftur; engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType ReturnNextLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 3642161633 - NamedType 2911138619" size-unit="char" translate="yes" xml:space="preserve">
           <source>Received quantity sufficient for the return and valid Microsoft purchase setup.</source>
@@ -140,6 +188,12 @@
           <target>Tókst.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Tókst.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType SuccessDescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3642161633 - NamedType 1879669363" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a text value</source>
+          <target>textagildi</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=textagildi</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - NamedType TextExpectedLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 3642161633 - NamedType 3255873965" size-unit="char" translate="yes" xml:space="preserve">
           <source>Parameter '%1' exceeds %2 characters.</source>
