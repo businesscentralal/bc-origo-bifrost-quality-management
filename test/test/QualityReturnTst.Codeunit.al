@@ -299,6 +299,14 @@ codeunit 97210 "Quality Return Tst ori"
                 Assert.IsTrue(ReadText(Response, 'error').Contains('Nauðsynlega'), 'Refusal must be translated.');
             if Scenario = 'late' then
                 Assert.IsTrue(ReadText(Response, 'error').Contains('Injected late'), 'The refusal must originate after native writes.');
+            if Scenario in ['source', 'noop'] then begin
+                Assert.AreEqual('PreconditionFailed', ReadText(Response, 'code'), 'App-owned preconditions must be typed.');
+                Assert.AreEqual('inspectionSystemId', ReadText(Response, 'parameter'), 'Identify the source inspection.');
+                Assert.IsTrue(ReadText(Response, 'expected') <> '', 'Describe the expected disposition.');
+                Assert.IsTrue(ReadText(Response, 'nextStep') <> '', 'Explain recovery.');
+            end;
+            if Scenario in ['permission', 'noApp'] then
+                Assert.AreEqual('PermissionDenied', ReadText(Response, 'code'), 'App permission refusal must be typed.');
             if Scenario = 'unknown' then
                 Assert.AreEqual('UnknownParameter', ReadText(Response, 'code'), 'Unknown keys must use the standard refusal.');
         end;
