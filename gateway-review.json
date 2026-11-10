@@ -1,0 +1,30 @@
+{
+  "sha": "40a54b4a484fa4ab7cc3ec9c812f12216021c0d2",
+  "standardsSnapshot": "52ba4754cfd614e4a7c50af87b30149b18b313e3",
+  "layer1": {
+    "failed": 2,
+    "ready": false,
+    "total": 23,
+    "passed": 21
+  },
+  "filesScanned": 13,
+  "dispositions": [
+    {
+      "check": "caption_translation",
+      "reason": "Locked published message identifiers intentionally untranslated; translated user-facing labels are unchanged."
+    },
+    {
+      "check": "one_statement_per_line",
+      "reason": "AL procedure parameter separators, not multiple executable statements."
+    }
+  ],
+  "layer2": {
+    "scope": "Minimal Reopen capability evaluation grants in base permission set and corresponding docs. No handler/test/data/pipeline changes.",
+    "security": "Base and Read inherit only codeunit X, table X and marker tabledata R; WritePermission stays false. Full retains RIMD and native business grants. No Microsoft business-data rights added.",
+    "tests": "Existing restrictive role tests and all handler/tests unchanged; cold1/1 and configured full37/37/0/0 pass at candidate.",
+    "api": "No changes to public APIs, message envelope, effects or idempotency.",
+    "translations": "No user-facing AL labels changed; existing XLF retained.",
+    "docs": "README and CHANGELOG updated; existing bilingual Reopen help remains accurate about required Full write role.",
+    "pending": "Independent amended-head Claude resolution and Grok review; developer compile/full-suite/MCP/UI/cleanup and paired CI complete."
+  }
+}

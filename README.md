@@ -1,0 +1,21 @@
+# PR32 amendment verification
+
+Candidate: `40a54b4a484fa4ab7cc3ec9c812f12216021c0d2` ([source](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/commit/40a54b4a484fa4ab7cc3ec9c812f12216021c0d2)). Litr / worker-9,10November2026. Evidence only, not a second implementation PR.
+
+[Claude finding6762673977](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/pull/32#issuecomment-6762673977) identified missing Reopen Execute permission under the exact Read role on BC29. Base permission set10035236 now grants handler10035256 Execute, marker table10035258 Execute and read-only tabledata. Read can evaluate IsEnabled=false; Full retains marker RIMD and the write path. No handler, test, public contract, pipeline or existing suppression changed. README and CHANGELOG explain the repair.
+
+Both apps compiled at this SHA with CodeCop/UICop/AppSourceCop:0errors,0warnings. The unchanged restrictive test Scenario_AC05_ReadRole_ActionIsDisabled ran first in its own fresh Client Services session:1executed/1passed/0failed/0skipped. The full configured test extension then passed37/37/0/0, including all three role tests. This applies the cold-permission regression lesson. The historical discrepancy between earlier local and independent runs remains unproven; these results do not substitute for independent re-verification.
+
+Worker-owned local BC29 tenant: w129-19 / BC290 / CRONUS International Ltd. Foundation28.0.13.0 from35f0efa31b85402fe5628ae764bc5ee2209664e2 was built by this worker; Quality product/tests28.0.0.0 were compiled from the candidate. All publications used tenant scope. artifact-provenance.json records package IDs and hashes. No COSMO development container, foreign tenant or live-provider call was used.
+
+MCP:16/16/0/0 scenarios in1033/1039 for Quality.Inspection.Reopen: help, Finished→Open, idempotency, missing key, invalid GUID, unknown ID/key and native later-reinspection refusal. Four supporting state checks confirm the mutations/refusals. All fixtures are synthetic XA32-REOPEN*. The fixture setup initially tried an invalid Finished insert; native validation refused it and a zero-row readback was retained. Open fixtures were then created and finished through the native UI. A private driver also initially stopped on an expected MCP business refusal; it was corrected to assert the actual error code and resumed without repeating successful writes. Neither incident changed product source or assertions.
+
+UI:2/2 native Finished→Open scenarios, English and Icelandic, with before/after screenshots and final MCP readbacks. The provisioned SUPER identity was used for UI/MCP; least-privilege proof is the separate exact-role native test. All41 unique XLF units remain byte-identical; no new translatable labels were introduced.
+
+Gateway:21/23 static categories pass. The other two are documented false positives for locked public type-name captions and AL parameter semicolons. Layer2 confirms minimal grants, preserved write checks, unchanged handlers/tests, and current documentation. No assertion or warning gate was weakened.
+
+The acceptance matrix and finding dispositions are included. Independent Claude resolution of pr:amend, Grok clearance, eligible approval, Architect merge/deployment and Tester UAT remain separate; no issue completion is claimed.
+
+Paired CI [42794263853](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42794263853) is green. Workflow head is the candidate; the actual checkout is synthetic merge `5b2f7a19e532e54f1870e0c0c64c5d8ccc45cb28` against main `73198fcef58b5f96d7c4c92798bd2581a5352e90`. Its full suite passed 53/53/0/0, including 16 newer return-error tests from main. These 53 results are merge-checkout evidence, distinct from the 37 exact-candidate local tests. The final pipeline container-removal job succeeded; conditional intermediate cleanup jobs were skipped, not tests.
+
+Owned cleanup: all synthetic inspections/reinspections and the template were removed with zero-row readback. The four worker-built Origo apps were uninstalled with extension-data deletion and unpublished from w129-19; 84 Microsoft apps remain. English was restored and the browser closed. No owned fixture or app is left behind.

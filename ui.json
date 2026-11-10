@@ -1,0 +1,36 @@
+{
+  "sha": "40a54b4a484fa4ab7cc3ec9c812f12216021c0d2",
+  "tenant": "w129-19",
+  "verified": true,
+  "passed": 2,
+  "failed": 0,
+  "skipped": 0,
+  "scenarios": [
+    {
+      "scenario": "Native Reopen, Finished to Open",
+      "lcid": 1033,
+      "passed": true,
+      "url": "http://host.docker.internal:8080/BC290/?company=CRONUS%20International%20Ltd.&tenant=w129-19&bookmark=2D_tU8AAAJ7_1gAQQAzADIALQBSAEUATwBQAEUATgAtAEUATgAAAACH&page=20406&dc=0"
+    },
+    {
+      "scenario": "Native Enduropna, Loki\u00f0 to Opi\u00f0",
+      "lcid": 1039,
+      "passed": true,
+      "url": "http://host.docker.internal:8080/BC290/?company=CRONUS%20International%20Ltd.&tenant=w129-19&bookmark=2D_tU8AAAJ7_1gAQQAzADIALQBSAEUATwBQAEUATgAtAEkAUwAAAACH&page=20406&dc=0"
+    }
+  ],
+  "identity": "Provisioned SUPER; Read-role proof is cold native exact-role test, not this UI session.",
+  "languageRestored": true,
+  "browserClosed": true,
+  "executed": 2,
+  "lcids": [
+    1033,
+    1039
+  ],
+  "screenshots": [
+    "ui-en-finished.png",
+    "ui-en-reopened.png",
+    "ui-is-finished.png",
+    "ui-is-reopened.png"
+  ]
+}

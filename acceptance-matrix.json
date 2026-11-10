@@ -1,0 +1,72 @@
+{
+  "issue": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/5",
+  "candidateSha": "40a54b4a484fa4ab7cc3ec9c812f12216021c0d2",
+  "criteria": {
+    "AC01": {
+      "status": "verified-developer",
+      "evidence": [
+        "full-suite.json",
+        "mcp-responses.json"
+      ],
+      "detail": "Registration/contract/idempotency assertions; translated runtime help."
+    },
+    "AC02": {
+      "status": "verified-developer",
+      "evidence": [
+        "full-suite.json",
+        "mcp-responses.json"
+      ],
+      "detail": "Missing/invalid/unknown keys and unknown IDs refused in1033/1039."
+    },
+    "AC03": {
+      "status": "verified-developer",
+      "evidence": [
+        "full-suite.json",
+        "mcp-responses.json"
+      ],
+      "detail": "Standard ReopenInspection handler unchanged; happy and repeated calls persisted Open."
+    },
+    "AC04": {
+      "status": "verified-developer",
+      "evidence": [
+        "full-suite.json",
+        "mcp.json"
+      ],
+      "detail": "Native later-reinspection refusal; no partial state in bilingual MCP state checks."
+    },
+    "AC05": {
+      "status": "developer-verified-independent-pending",
+      "evidence": [
+        "cold-permission.json",
+        "full-suite.json",
+        "amendment.diff"
+      ],
+      "detail": "Minimal base grants repaired Execute denial; unchanged Read regression ran first in fresh session, then all three role cases passed full suite."
+    },
+    "AC06": {
+      "status": "verified-developer",
+      "evidence": [
+        "translation-check.json",
+        "mcp-responses.json",
+        "ui.json"
+      ],
+      "detail": "41 unchanged unique XLF units; bilingual MCP and native UI passed in1033/1039."
+    },
+    "AC07": {
+      "status": "verified-developer",
+      "evidence": [
+        "mcp-responses.json"
+      ],
+      "detail": "Both runtime help languages describe permission, effect and idempotency."
+    },
+    "AC08": {
+      "status": "verified-developer",
+      "evidence": [
+        "full-suite.json"
+      ],
+      "detail": "37 configured tests including all Reopen test families passed;0failed0skipped."
+    }
+  },
+  "independentVerification": "Claude finding6762673977 awaiting amended-tip receipt",
+  "delivery": "Not merged/deployed/UAT-passed or issue-complete"
+}

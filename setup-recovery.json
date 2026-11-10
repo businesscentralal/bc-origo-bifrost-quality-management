@@ -1,0 +1,6 @@
+{
+  "attempt1": "Test.Records.Set with Finished status refused by native table OnInsert requiring Open; no inspections persisted (verified).",
+  "recovery": "Seeded Open records, then use standard UI Finish action to prepare real Finished fixtures. Template retained from successful first seed; no duplicate template write.",
+  "counts": "Fixture setup attempt is not a product acceptance scenario.",
+  "driverRecovery": "Private driver initially treated expected MCP isError business refusals as transport failures. Parsed the standard business response and asserted its expected stable code instead; resumed after persisted successful scenarios, without repeating their writes."
+}
