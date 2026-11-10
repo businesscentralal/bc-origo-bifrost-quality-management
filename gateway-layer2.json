@@ -1,0 +1,28 @@
+{
+  "sha": "e54aced35b3f7ddcd3fb9b2e797f3300aad323a8",
+  "reviewedAt": "2026-11-10T08:07:27.823052+00:00",
+  "layer1Summary": {
+    "failed": 2,
+    "ready": false,
+    "total": 23,
+    "passed": 22
+  },
+  "falsePositiveDisposition": {
+    "one_statement_per_line": "All4findings are legal semicolon-delimited procedure parameters; no multiple executable statements. Same reviewed helper signatures retained byte-for-byte."
+  },
+  "layer2": {
+    "mergePreservation": "main versions of6conflicted paths equal original parent363e330. Candidate tree exactly equals reviewedaf5e112, so no introduced semantic source/test/doc changes. Main ancestry incorporated, no rebase/forcepush.",
+    "scope": "PR33issue31only; no pipeline, credential, licensing or foreign source changes.",
+    "contract": "Request-first helper signatures preserved; actual contract guard passes with0allow-list entries. Typed codes and parameter/expected/nextStep and received remain.",
+    "tests": "41full native tests passed including all16bilingual issue31cases, rollback, permissions and happy path; assertions unchanged.",
+    "translations": "Committed is-IS.XLF matches compiler-generated output; native and MCP check1033/1039.",
+    "compatibility": "No public procedures/fields/enum values removed or renamed. Existing message name/normal native BC classification unchanged.",
+    "security": "Native write capability and rollback retained; fixtures restricted CRONUS; fixture names isolated, cleanup pending UI.",
+    "documentation": "Both locale help andCHANGELOGissue31entry retained; no new claim or changed scope."
+  },
+  "appliedLessons": [
+    "quality31-worker7-request-reader-shape-20261110",
+    "core-pr853-worker8-20261004-conflict-preservation"
+  ],
+  "layer1SummaryNote": "Script summary reports22passed/2failed although checks map has22pass/1false: the only findings are4semicolon-delimited signatures. Raw summary retained without correction. No scanner or source suppressions changed."
+}

@@ -1,0 +1,131 @@
+{
+  "checks": {
+    "format_guid": {
+      "pass": true,
+      "findings": []
+    },
+    "today_vs_workdate": {
+      "pass": true,
+      "findings": []
+    },
+    "namespace": {
+      "pass": true,
+      "findings": []
+    },
+    "one_statement_per_line": {
+      "pass": false,
+      "findings": [
+        {
+          "text": "local procedure ReadOption(Request: JsonObject; ParameterName: Text; MaximumLength: Integer; var Argument: Record \"Message Argument ori\"): Text",
+          "file": "QualityPurchReturnImpl.Codeunit.al",
+          "line": 125
+        },
+        {
+          "text": "local procedure ReadText(Request: JsonObject; ParameterName: Text; AllowEmpty: Boolean; var Argument: Record \"Message Argument ori\") Value: Text",
+          "file": "QualityPurchReturnImpl.Codeunit.al",
+          "line": 137
+        },
+        {
+          "text": "local procedure Refuse(var Argument: Record \"Message Argument ori\"; ErrorCode: Enum \"Bifrost Error Code ori\"; Message: Text; Parameter: Text; Received: Text; Expected: Text; NextStep: Text)",
+          "file": "QualityPurchReturnImpl.Codeunit.al",
+          "line": 152
+        },
+        {
+          "text": "local procedure AddResponseField(var Fields: JsonArray; FieldName: Text; Description: Text)",
+          "file": "QualityPurchReturnImpl.Codeunit.al",
+          "line": 257
+        }
+      ]
+    },
+    "app_json": {
+      "pass": true,
+      "findings": []
+    },
+    "with_statements": {
+      "pass": true,
+      "findings": []
+    },
+    "try_prefix_convention": {
+      "pass": true,
+      "findings": []
+    },
+    "commit_in_loop": {
+      "pass": true,
+      "findings": []
+    },
+    "data_classification": {
+      "pass": true,
+      "findings": []
+    },
+    "xml_doc_comments": {
+      "pass": true,
+      "findings": []
+    },
+    "hardcoded_values": {
+      "pass": true,
+      "findings": []
+    },
+    "object_naming": {
+      "pass": true,
+      "findings": []
+    },
+    "page_code_minimal": {
+      "pass": true,
+      "findings": []
+    },
+    "caption_translation": {
+      "pass": true,
+      "findings": [],
+      "skipped": null
+    },
+    "format_evaluate_enum": {
+      "pass": true,
+      "findings": []
+    },
+    "read_isolation": {
+      "pass": true,
+      "findings": []
+    },
+    "modernization": {
+      "pass": true,
+      "findings": []
+    },
+    "reserved_var_names": {
+      "pass": true,
+      "findings": []
+    },
+    "event_subscriber_placement": {
+      "pass": true,
+      "findings": []
+    },
+    "global_variables": {
+      "pass": true,
+      "findings": []
+    },
+    "changelog": {
+      "pass": true,
+      "findings": []
+    },
+    "confirm_in_page": {
+      "pass": true,
+      "findings": []
+    },
+    "set_load_fields": {
+      "pass": true,
+      "advisory": "Loops without SetLoadFields - consider it only for wide tables; not a gate failure",
+      "findings": []
+    }
+  },
+  "files_scanned": 1,
+  "project": "Bifrost Quality Management",
+  "mode": "diff (vs 24190982c82e26ca55e415bed8569502dca50c61)",
+  "version": "28.0.0.0",
+  "summary": {
+    "failed": 2,
+    "ready": false,
+    "total": 23,
+    "passed": 22
+  },
+  "total_al_files": 10,
+  "publisher": "Origo"
+}

@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"table\": \"Purchase Header\",\n  \"skip\": 0,\n  \"take\": 50,\n  \"count\": 1,\n  \"records\": [\n    {\n      \"id\": \"C2C0488A-DDDC-F111-B6F8-00090FFE0001\",\n      \"primaryKey\": {\n        \"DocumentType\": \"Return Order\",\n        \"No_\": \"1006\"\n      },\n      \"fields\": {\n        \"VendorCr_MemoNo_\": \"BIFTQ13-Q33M1039\",\n        \"BuyfromVendorNo_\": \"BIFTQ13-Q33M1039\"\n      }\n    }\n  ],\n  \"noOfRecords\": 1\n}"
+    }
+  ]
+}

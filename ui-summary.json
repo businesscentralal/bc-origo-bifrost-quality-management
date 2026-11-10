@@ -1,0 +1,56 @@
+{
+  "sha": "e54aced35b3f7ddcd3fb9b2e797f3300aad323a8",
+  "tenant": "w129-14",
+  "tool": "Playwright MCP",
+  "executed": 6,
+  "passed": 6,
+  "failed": 0,
+  "skipped": 0,
+  "sessions": 2,
+  "scenarios": [
+    {
+      "lcid": 1033,
+      "scenario": "failedQuantity",
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "scenario": "returnReason",
+      "expected": "Q33M1033",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "scenario": "vendorCreditMemoNo",
+      "expected": "BIFTQ13-Q33M1033",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "scenario": "failedQuantity",
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "scenario": "returnReason",
+      "expected": "Q33M1039",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "scenario": "vendorCreditMemoNo",
+      "expected": "BIFTQ13-Q33M1039",
+      "passed": true
+    }
+  ],
+  "readOnly": true,
+  "languageRestore": "VERIFIED1033",
+  "nativeCaptionNote": "Microsoft W1 purchase fields retain English; platform Vinnudagsetning/Heim/Uppl\u00fdsingar confirm Icelandic session. Own catalogue/refusals localized over MCP.",
+  "diagnostics": [
+    "Navigation URL encoded spaces as+; BC treated it as literal company name. Corrected+to%20 and verified actual record.",
+    "Read-only form role differs from edit form; inspect actual frame, assert grid/fields and read-only URL. Failed diagnostic waits retained; final6assertions passed."
+  ],
+  "finishedAt": "2026-11-10T08:13:19.190467+00:00"
+}

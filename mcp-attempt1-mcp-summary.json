@@ -1,0 +1,25 @@
+{
+  "sha": "e54aced35b3f7ddcd3fb9b2e797f3300aad323a8",
+  "tenant": "w129-14",
+  "touchedMessageTypes": [
+    "Quality.Disposition.CreatePurchaseReturn"
+  ],
+  "createsOwnData": true,
+  "startedAt": "2026-11-10T08:04:58.392Z",
+  "scenarios": [
+    {
+      "label": "fixture1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n'Error' !== 'Success'\n"
+    }
+  ],
+  "passed": 0,
+  "failed": 1,
+  "skipped": 0,
+  "fixtures": [],
+  "history": [],
+  "error": "Expected values to be strictly equal:\n\n'Error' !== 'Success'\n",
+  "finishedAt": "2026-11-10T08:04:58.719Z"
+}

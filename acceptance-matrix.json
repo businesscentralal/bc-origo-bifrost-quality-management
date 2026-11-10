@@ -1,0 +1,28 @@
+{
+  "sha": "e54aced35b3f7ddcd3fb9b2e797f3300aad323a8",
+  "issueUrl": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/31",
+  "acceptance": [
+    {
+      "id": "AC1",
+      "criterion": "Missing/empty inspectionSystemId=>MissingParameter,parameter,expected,nextStep in1033/1039",
+      "developerStatus": "native+MCP passed"
+    },
+    {
+      "id": "AC2",
+      "criterion": "Unknown inspection=>RecordNotFound,received+guidance in1033/1039",
+      "developerStatus": "native+MCP passed"
+    },
+    {
+      "id": "AC3",
+      "criterion": "Other app-owned refusals typed; native BC classification/rollback retained",
+      "developerStatus": "native+MCP passed"
+    },
+    {
+      "id": "AC4",
+      "criterion": "Meaningful tests and synchronized is-IS XLF",
+      "developerStatus": "native41passed;XLF guard passed"
+    }
+  ],
+  "independentVerification": "PENDING at merge SHA; oldaf5e112receipt not asserted for new head",
+  "mergeTreeIdenticalTo": "af5e11280aea3bfc79d0e5584e3a15e074edc274"
+}

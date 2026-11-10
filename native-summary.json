@@ -1,0 +1,13 @@
+{
+  "sha": "e54aced35b3f7ddcd3fb9b2e797f3300aad323a8",
+  "fullSuite": true,
+  "executed": 41,
+  "passed": 41,
+  "failed": 0,
+  "skipped": 0,
+  "errors": 0,
+  "ok": true,
+  "tenant": "w129-14",
+  "mode": "local",
+  "expectedMethods": 41
+}

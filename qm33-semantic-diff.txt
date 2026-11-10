@@ -1,0 +1,158 @@
+diff --git a/app/src/Disposition/QualityPurchReturnImpl.Codeunit.al b/app/src/Disposition/QualityPurchReturnImpl.Codeunit.al
+index 6b52439..862df38 100644
+--- a/app/src/Disposition/QualityPurchReturnImpl.Codeunit.al
++++ b/app/src/Disposition/QualityPurchReturnImpl.Codeunit.al
+@@ -37,6 +37,15 @@ codeunit 10035245 "Quality Purch Return Impl ori" implements "Msg Interface ori"
+         SourcePreconditionLbl: Label 'Inspection with Purchase Line source and positive failed quantity.', Comment = 'is-IS=Skoðun með innkaupalínu sem uppruna og jákvætt fallið magn.';
+         SetupPreconditionLbl: Label 'Received quantity sufficient for the return and valid Microsoft purchase setup.', Comment = 'is-IS=Nægilegt móttekið magn fyrir skil og gild innkaupauppsetning Microsoft.';
+         PermissionPreconditionLbl: Label 'Microsoft purchase and Quality Management permissions.', Comment = 'is-IS=Innkaupa- og gæðastjórnunarheimildir Microsoft.';
++        ExpectedIdLbl: Label 'a non-empty SystemId GUID of an existing quality inspection', Comment = 'is-IS=SystemId GUID skoðunar sem er til og er ekki tómt';
++        FindInspectionLbl: Label 'Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.', Comment = 'is-IS=Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.';
++        TextExpectedLbl: Label 'a text value', Comment = 'is-IS=textagildi';
++        FixParameterLbl: Label 'Correct the named request parameter and retry.', Comment = 'is-IS=Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.';
++        MaximumTextLbl: Label 'text with at most %1 characters', Comment = '%1 = maximum length|is-IS=texti með að hámarki %1 stöfum';
++        PermissionNextLbl: Label 'Ask an administrator for BIFROST QM Full ori and the native purchase permissions.', Comment = 'is-IS=Biddu stjórnanda um BIFROST QM Full ori og staðlaðar innkaupaheimildir.';
++        PurchaseSourceLbl: Label 'an inspection with a Purchase Line source', Comment = 'is-IS=skoðun með innkaupalínu sem uppruna';
++        ReturnExpectedLbl: Label 'a created purchase return order with an item line for this inspection', Comment = 'is-IS=stofnuð innkaupaskilapöntun með vörulínu fyrir þessa skoðun';
++        ReturnNextLbl: Label 'Check the inspection, purchase setup and disposition subscribers before retrying; nothing was changed.', Comment = 'is-IS=Athugaðu skoðunina, innkaupauppsetningu og áskrifendur ráðstöfunar áður en þú reynir aftur; engu var breytt.';
+         ExampleTitleLbl: Label 'Return the failed quantity', Comment = 'is-IS=Skila föllnu magni';
+ 
+     trigger OnRun()
+@@ -73,39 +82,39 @@ codeunit 10035245 "Quality Purch Return Impl ori" implements "Msg Interface ori"
+         ParameterName: Text;
+     begin
+         if not WriteAccess.WritePermission() then
+-            Error(ErrorInfo.Create(PermissionErr));
++            Refuse(Argument, "Bifrost Error Code ori"::PermissionDenied, PermissionErr, 'permissionSet', '', 'BIFROST QM Full ori', PermissionNextLbl);
+         Request := Argument.GetRequestJson();
+         foreach ParameterName in Request.Keys() do
+             if not (ParameterName in ['inspectionSystemId', 'reasonCode', 'vendorCreditMemoNo']) then
+-                Error(ErrorInfo.Create(StrSubstNo(UnknownKeyErr, ParameterName)));
+-        if not Evaluate(InspectionSystemId, ReadText(Request, 'inspectionSystemId', false)) then
+-            Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, 'inspectionSystemId')));
++                Refuse(Argument, "Bifrost Error Code ori"::UnknownParameter, StrSubstNo(UnknownKeyErr, ParameterName), ParameterName, '', 'inspectionSystemId, reasonCode, vendorCreditMemoNo', FixParameterLbl);
++        if not Evaluate(InspectionSystemId, ReadText(Request, 'inspectionSystemId', false, Argument)) then
++            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(MissingKeyErr, 'inspectionSystemId'), 'inspectionSystemId', ReadText(Request, 'inspectionSystemId', false, Argument), ExpectedIdLbl, FindInspectionLbl);
+         if IsNullGuid(InspectionSystemId) then
+-            Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, 'inspectionSystemId')));
++            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(MissingKeyErr, 'inspectionSystemId'), 'inspectionSystemId', ReadText(Request, 'inspectionSystemId', false, Argument), ExpectedIdLbl, FindInspectionLbl);
+         TempInstructions."Disposition Action" := TempInstructions."Disposition Action"::"Create Purchase Return";
+         TempInstructions."Quantity Behavior" := TempInstructions."Quantity Behavior"::"Failed Quantity";
+-        TempInstructions."Reason Code" := CopyStr(ReadOption(Request, 'reasonCode', 10), 1, 10);
+-        TempInstructions."External Document No." := CopyStr(ReadOption(Request, 'vendorCreditMemoNo', 35), 1, 35);
++        TempInstructions."Reason Code" := CopyStr(ReadOption(Request, 'reasonCode', 10, Argument), 1, 10);
++        TempInstructions."External Document No." := CopyStr(ReadOption(Request, 'vendorCreditMemoNo', 35, Argument), 1, 35);
+         // Microsoft reads the complete inspection while calculating quantities and copying the receipt.
+         Inspection.ReadIsolation := IsolationLevel::UpdLock;
+         if not Inspection.GetBySystemId(InspectionSystemId) then
+-            Error(ErrorInfo.Create(NotFoundErr));
++            Refuse(Argument, "Bifrost Error Code ori"::RecordNotFound, NotFoundErr, 'inspectionSystemId', Format(InspectionSystemId, 0, 4), ExpectedIdLbl, FindInspectionLbl);
+         if Inspection."Source Table No." <> Database::"Purchase Line" then
+-            Error(ErrorInfo.Create(SourceErr));
++            Refuse(Argument, "Bifrost Error Code ori"::PreconditionFailed, SourceErr, 'inspectionSystemId', Format(InspectionSystemId, 0, 4), PurchaseSourceLbl, FindInspectionLbl);
+         Receipt.Initialize(Inspection.SystemId);
+         BindSubscription(Receipt);
+         PurchaseReturn.PerformDisposition(Inspection, TempInstructions);
+         UnbindSubscription(Receipt);
+         ReturnOrderNo := Receipt.GetReturnOrderNo();
+         if ReturnOrderNo = '' then
+-            Error(ErrorInfo.Create(NoReturnErr));
++            Refuse(Argument, "Bifrost Error Code ori"::PreconditionFailed, NoReturnErr, 'inspectionSystemId', Format(InspectionSystemId, 0, 4), ReturnExpectedLbl, ReturnNextLbl);
+         ReturnLine.ReadIsolation := IsolationLevel::ReadCommitted;
+         ReturnLine.SetRange("Document Type", ReturnLine."Document Type"::"Return Order");
+         ReturnLine.SetRange("Document No.", ReturnOrderNo);
+         ReturnLine.SetRange(Type, ReturnLine.Type::Item);
+         ReturnLine.SetRange("No.", Inspection."Source Item No.");
+         if ReturnLine.IsEmpty() then
+-            Error(ErrorInfo.Create(NoReturnErr));
++            Refuse(Argument, "Bifrost Error Code ori"::PreconditionFailed, NoReturnErr, 'inspectionSystemId', Format(InspectionSystemId, 0, 4), ReturnExpectedLbl, ReturnNextLbl);
+         Response.Add('status', 'Success');
+         Response.Add('inspectionSystemId', Format(Inspection.SystemId, 0, 4));
+         Response.Add('returnOrderNo', ReturnOrderNo);
+@@ -113,31 +122,38 @@ codeunit 10035245 "Quality Purch Return Impl ori" implements "Msg Interface ori"
+         Argument."Content Type" := Argument.GetContentTypeJson();
+     end;
+ 
+-    local procedure ReadOption(Request: JsonObject; ParameterName: Text; MaximumLength: Integer): Text
++    local procedure ReadOption(Request: JsonObject; ParameterName: Text; MaximumLength: Integer; var Argument: Record "Message Argument ori"): Text
+     var
+         Value: Text;
+     begin
+         if not Request.Contains(ParameterName) then
+             exit('');
+-        Value := ReadText(Request, ParameterName, true);
++        Value := ReadText(Request, ParameterName, true, Argument);
+         if StrLen(Value) > MaximumLength then
+-            Error(ErrorInfo.Create(StrSubstNo(TooLongErr, ParameterName, MaximumLength)));
++            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(TooLongErr, ParameterName, MaximumLength), ParameterName, Value, StrSubstNo(MaximumTextLbl, MaximumLength), FixParameterLbl);
+         exit(Value);
+     end;
+ 
+-    local procedure ReadText(Request: JsonObject; ParameterName: Text; AllowEmpty: Boolean) Value: Text
++    local procedure ReadText(Request: JsonObject; ParameterName: Text; AllowEmpty: Boolean; var Argument: Record "Message Argument ori") Value: Text
+     var
+         Token: JsonToken;
+         Serialized: Text;
+     begin
+         if not Request.Get(ParameterName, Token) then
+-            Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, ParameterName)));
++            Refuse(Argument, "Bifrost Error Code ori"::MissingParameter, StrSubstNo(MissingKeyErr, ParameterName), ParameterName, '', ExpectedIdLbl, FindInspectionLbl);
+         Token.WriteTo(Serialized);
+         if CopyStr(Serialized, 1, 1) <> '"' then
+-            Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, ParameterName)));
++            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(MissingKeyErr, ParameterName), ParameterName, Serialized, TextExpectedLbl, FixParameterLbl);
+         Value := Token.AsValue().AsText();
+         if (Value = '') and not AllowEmpty then
+-            Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, ParameterName)));
++            Refuse(Argument, "Bifrost Error Code ori"::MissingParameter, StrSubstNo(MissingKeyErr, ParameterName), ParameterName, '', ExpectedIdLbl, FindInspectionLbl);
++    end;
++
++    local procedure Refuse(var Argument: Record "Message Argument ori"; ErrorCode: Enum "Bifrost Error Code ori"; Message: Text; Parameter: Text; Received: Text; Expected: Text; NextStep: Text)
++    begin
++        // Foundation preserves this collection across Codeunit.Run rollback, including post-write refusals.
++        Argument.AddError(ErrorCode, Message, Parameter, Received, Expected, NextStep);
++        Argument.RaiseCollectedErrors(ErrorCode, Message);
+     end;
+ 
+     /// <summary>Provides the IsEnabled discovery or contract chapter.</summary>
+@@ -251,13 +267,16 @@ codeunit 10035245 "Quality Purch Return Impl ori" implements "Msg Interface ori"
+     /// <summary>Provides the errors contract chapter.</summary>
+     procedure GetErrors(var Errors: JsonArray): Boolean
+     var
+-        Entry: JsonObject;
++        Contract: Codeunit "Msg Contract Mgt ori";
+     begin
+         Clear(Errors);
+-        Entry.Add('error', BusinessRefusalLbl);
+-        Entry.Add('when', ErrorWhenLbl);
+-        Entry.Add('fix', ErrorFixLbl);
+-        Errors.Add(Entry);
++        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::MissingParameter, StrSubstNo(MissingKeyErr, 'inspectionSystemId'), FindInspectionLbl));
++        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::InvalidParameter, ErrorWhenLbl, FixParameterLbl));
++        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::UnknownParameter, StrSubstNo(UnknownKeyErr, '<parameter>'), FixParameterLbl));
++        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::RecordNotFound, NotFoundErr, FindInspectionLbl));
++        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::PermissionDenied, PermissionErr, PermissionNextLbl));
++        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, ErrorWhenLbl, ReturnNextLbl));
++        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::BusinessCentralError, BusinessRefusalLbl, ErrorFixLbl));
+         exit(true);
+     end;
+ 
+diff --git a/test/test/QualityReturnTst.Codeunit.al b/test/test/QualityReturnTst.Codeunit.al
+index b12634b..2c4de4c 100644
+--- a/test/test/QualityReturnTst.Codeunit.al
++++ b/test/test/QualityReturnTst.Codeunit.al
+@@ -299,6 +299,14 @@ codeunit 97210 "Quality Return Tst ori"
+                 Assert.IsTrue(ReadText(Response, 'error').Contains('Nauðsynlega'), 'Refusal must be translated.');
+             if Scenario = 'late' then
+                 Assert.IsTrue(ReadText(Response, 'error').Contains('Injected late'), 'The refusal must originate after native writes.');
++            if Scenario in ['source', 'noop'] then begin
++                Assert.AreEqual('PreconditionFailed', ReadText(Response, 'code'), 'App-owned preconditions must be typed.');
++                Assert.AreEqual('inspectionSystemId', ReadText(Response, 'parameter'), 'Identify the source inspection.');
++                Assert.IsTrue(ReadText(Response, 'expected') <> '', 'Describe the expected disposition.');
++                Assert.IsTrue(ReadText(Response, 'nextStep') <> '', 'Explain recovery.');
++            end;
++            if Scenario in ['permission', 'noApp'] then
++                Assert.AreEqual('PermissionDenied', ReadText(Response, 'code'), 'App permission refusal must be typed.');
+             if Scenario = 'unknown' then
+                 Assert.AreEqual('UnknownParameter', ReadText(Response, 'code'), 'Unknown keys must use the standard refusal.');
+         end;

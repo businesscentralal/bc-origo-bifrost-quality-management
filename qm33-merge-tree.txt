@@ -1,0 +1,29 @@
+12f26434127bf3eb82c01cd7391dd6bea84396d1
+100644 f34330eb47fe4d3103d36115b2082fbe079325ff 1	.claude/CLAUDE.md
+100644 528d52b0562e74d7ca61d0cf41c013de3d4779d7 2	.claude/CLAUDE.md
+100644 081dcc4e5fe3c26ee72b9d79c1dedb9e3ded5bc6 3	.claude/CLAUDE.md
+100644 d16aec169d6b59e41365e61d8c27070ce9cfd0ee 1	app/Translations/Bifrost Quality Management.is-IS.xlf
+100644 3e636c1a4559a916ad117a0347dca342ed548ddd 2	app/Translations/Bifrost Quality Management.is-IS.xlf
+100644 26631c255df7a5414d04a10763c25bf2bcc5aa0b 3	app/Translations/Bifrost Quality Management.is-IS.xlf
+100644 460811d4bc57f6da81bcf6f2aaf27278977e18f5 2	app/docs/en-us/CreatePurchaseReturn.md
+100644 aa92251579aaf49ef1d446058b59a710e796f406 3	app/docs/en-us/CreatePurchaseReturn.md
+100644 2aa5da57b34094ddf315e406f47dc53cfe370cba 2	app/docs/is-is/CreatePurchaseReturn.md
+100644 be65852b45c4b014e54b6e7c127569ae98e00b6e 3	app/docs/is-is/CreatePurchaseReturn.md
+100644 862df38532b7bad8b703e3104ab5661faa22bba8 2	app/src/Disposition/QualityPurchReturnImpl.Codeunit.al
+100644 6b524395cb5fe931b306dc9e66ee4e70e589e579 3	app/src/Disposition/QualityPurchReturnImpl.Codeunit.al
+100644 2c4de4c1a9adbef71f6e4918846f8f0879e934d7 2	test/test/QualityReturnTst.Codeunit.al
+100644 b12634bd8c91eba402542299504474a82d201bbe 3	test/test/QualityReturnTst.Codeunit.al
+
+Auto-merging .claude/CLAUDE.md
+CONFLICT (content): Merge conflict in .claude/CLAUDE.md
+Auto-merging CHANGELOG.md
+Auto-merging app/Translations/Bifrost Quality Management.is-IS.xlf
+CONFLICT (content): Merge conflict in app/Translations/Bifrost Quality Management.is-IS.xlf
+Auto-merging app/docs/en-us/CreatePurchaseReturn.md
+CONFLICT (add/add): Merge conflict in app/docs/en-us/CreatePurchaseReturn.md
+Auto-merging app/docs/is-is/CreatePurchaseReturn.md
+CONFLICT (add/add): Merge conflict in app/docs/is-is/CreatePurchaseReturn.md
+Auto-merging app/src/Disposition/QualityPurchReturnImpl.Codeunit.al
+CONFLICT (add/add): Merge conflict in app/src/Disposition/QualityPurchReturnImpl.Codeunit.al
+Auto-merging test/test/QualityReturnTst.Codeunit.al
+CONFLICT (add/add): Merge conflict in test/test/QualityReturnTst.Codeunit.al

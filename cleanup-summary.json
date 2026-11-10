@@ -1,0 +1,17 @@
+{
+  "sha": "e54aced35b3f7ddcd3fb9b2e797f3300aad323a8",
+  "tenant": "w129-14",
+  "owner": "worker-4",
+  "verified": true,
+  "fixtureSets": 2,
+  "fixtureTablesChecked": 10,
+  "remainingFixtureRows": 0,
+  "ownedAppsRemoved": 4,
+  "uninstallDeleteDataAndUnpublishActions": 8,
+  "origoAppsRemaining": 0,
+  "permanentTenantRetained": true,
+  "languageRestored": 1033,
+  "fixtureEvidence": "fixture-cleanup-e54aced.json",
+  "appEvidence": "app-cleanup.json",
+  "finishedAt": "2026-11-10T08:13:19.203259+00:00"
+}
