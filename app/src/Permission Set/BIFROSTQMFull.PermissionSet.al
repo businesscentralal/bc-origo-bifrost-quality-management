@@ -9,5 +9,5 @@ permissionset 10035237 "BIFROST QM Full ori"
     Access = Public;
     Caption = 'Bifrost Quality Full', MaxLength = 30, Comment = 'is-IS=Bifröst - gæði fullur aðgangur';
     IncludedPermissionSets = "BIFROST Quality ori";
-    Permissions = tabledata "Quality Action Access ori" = M;
+    Permissions = tabledata "Quality Action Access ori" = RIMD;
 }

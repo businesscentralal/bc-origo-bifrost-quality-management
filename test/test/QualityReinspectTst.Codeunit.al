@@ -20,6 +20,7 @@ codeunit 97207 "Quality Reinspect Tst ori"
 
     /// <summary>Creates a revision and regenerates the template line.</summary>
     [Test]
+    [HandlerFunctions('ConfirmYes')]
     procedure Scenario_AC03_FinishedSource_CreatesNativeRevision()
     var
         Source: Record "Qlty. Inspection Header";
@@ -47,6 +48,7 @@ codeunit 97207 "Quality Reinspect Tst ori"
 
     /// <summary>Repeated requests create consecutive revisions.</summary>
     [Test]
+    [HandlerFunctions('ConfirmYes')]
     procedure Scenario_AC01_OlderSource_UsesLatestRevision()
     var
         Source: Record "Qlty. Inspection Header";
@@ -132,6 +134,7 @@ codeunit 97207 "Quality Reinspect Tst ori"
 
     /// <summary>Native setup refusal rolls back an intermediate most-recent update.</summary>
     [Test]
+    [HandlerFunctions('ConfirmYes')]
     procedure Scenario_AC04_MissingSetup_RefusesWithoutPartialRevision()
     var
         Source: Record "Qlty. Inspection Header";
@@ -144,6 +147,8 @@ codeunit 97207 "Quality Reinspect Tst ori"
         Commit();
         Response := Invoke(IdRequest(Source.SystemId));
         Assert.AreEqual('Error', Response.GetText('status'), Serialize(Response));
+        Assert.AreEqual('BusinessCentralError', Response.GetText('code'), Serialize(Response));
+        Assert.IsFalse(Response.GetText('error').Contains('Unhandled UI'), 'The test must reach native validation, not fail on a missing UI handler.');
         Source.Get(Source."No.", 0);
         Assert.IsTrue(Source."Most Recent Re-inspection", 'A business refusal must preserve source flags.');
         Source.SetRange("No.", Source."No.");
@@ -169,6 +174,8 @@ codeunit 97207 "Quality Reinspect Tst ori"
         Commit();
         Response := Invoke(IdRequest(Source.SystemId));
         Assert.AreEqual('Error', Response.GetText('status'), Serialize(Response));
+        Assert.AreEqual('BusinessCentralError', Response.GetText('code'), Serialize(Response));
+        Assert.IsFalse(Response.GetText('error').Contains('Unhandled UI'), 'The test must reach native validation, not fail on a missing UI handler.');
         Source.Get(Source."No.", 0);
         Assert.AreEqual(Source.Status::Open, Source.Status, 'Native refusal must not finish the source.');
         Assert.AreEqual(0DT, Source."Finished Date", 'Native refusal must preserve finish date.');
@@ -177,6 +184,7 @@ codeunit 97207 "Quality Reinspect Tst ori"
 
     /// <summary>A failure after native insertion restores the source and removes the partial revision.</summary>
     [Test]
+    [HandlerFunctions('ConfirmYes')]
     procedure Scenario_AC04_InvalidTemplateLine_RollsBackNativeWrites()
     var
         Source: Record "Qlty. Inspection Header";
@@ -196,6 +204,8 @@ codeunit 97207 "Quality Reinspect Tst ori"
         Response := Invoke(IdRequest(Source.SystemId));
         // [THEN] All native changes are rolled back, including the old most-recent flag.
         Assert.AreEqual('Error', Response.GetText('status'), Serialize(Response));
+        Assert.AreEqual('BusinessCentralError', Response.GetText('code'), Serialize(Response));
+        Assert.IsFalse(Response.GetText('error').Contains('Unhandled UI'), 'The test must reach native validation, not fail on a missing UI handler.');
         Source.Get(Source."No.", 0);
         Assert.IsTrue(Source."Most Recent Re-inspection", 'The intermediate latest-flag update must roll back.');
         Source.SetRange("No.", Source."No.");
@@ -238,6 +248,14 @@ codeunit 97207 "Quality Reinspect Tst ori"
         Icelandic := Impl.GetDescription();
         GlobalLanguage(PreviousLanguage);
         Assert.AreNotEqual(English, Icelandic, 'Icelandic discovery must be translated.');
+    end;
+
+    /// <summary>Confirms the native action in the interactive test client.</summary>
+    [ConfirmHandler]
+    procedure ConfirmYes(Question: Text[1024]; var Reply: Boolean)
+    begin
+        Assert.IsTrue(Question <> '', 'The native confirmation must have a question.');
+        Reply := true;
     end;
 
     local procedure AssertInputRefusal(RequestText: Text; ExpectedCode: Text)
