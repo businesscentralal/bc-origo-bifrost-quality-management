@@ -1,0 +1,26 @@
+{
+  "sha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+  "status": "AMEND_REQUIRED",
+  "sourceUrl": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/pull/32#issuecomment-6762673977",
+  "sourceCreatedAt": "2026-11-10T08:27:43Z",
+  "sourceLogin": "gunnargestsson",
+  "finding": "Codeunit 97221 Scenario_AC05_ReadRole_ActionIsDisabled fails with missing Execute on Quality Reopen Impl ori under Read role.",
+  "reviewerEnvironment": "BC29 local w129-03; Foundation28.0.12.680",
+  "reviewerCounts": {
+    "executed": 12,
+    "passed": 11,
+    "failed": 1,
+    "skipped": 0
+  },
+  "localEnvironment": "BC29 w129-19; Foundation28.0.13.0 at 35f0efa31b85402fe5628ae764bc5ee2209664e2",
+  "localFullSuiteCounts": {
+    "executed": 37,
+    "passed": 37,
+    "failed": 0,
+    "skipped": 0
+  },
+  "disposition": "Open finding. Different local results do not supersede independent failure. Handoff helper refused pr:amend.",
+  "scopeBoundary": "Assigned conflict-only repair explicitly stops when semantic source/test changes are needed; the proposed new base permission grants are semantic. No amendment source edits made.",
+  "nextOwner": "Architect",
+  "nextAction": "Route/authorize focused permission amendment and result reconciliation under retained worker-9 custody; preserve existing test unchanged; then recompile, publish and repeat exact-tip native/UI/MCP and independent verification."
+}

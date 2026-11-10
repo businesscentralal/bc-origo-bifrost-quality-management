@@ -1,4 +1,6 @@
-# PR 32 verification evidence
+# PR 32 verification evidence — amendment open
+
+**Current disposition: AMEND REQUIRED.** Claude reported one independent BC29 permission failure at this source SHA after these local passes. See [review-amendment.json](review-amendment.json). Local and CI passes do not clear the finding. The guarded review handoff refused the open `pr:amend`; no clearance or handoff is claimed. The proposed base-permission change exceeds this assignment’s mechanical conflict-repair boundary and is escalated to Architect.
 
 Source candidate: `60ddc3d33cfc6f8244195cffbe04db8da6bfc3af` ([immutable source](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/commit/60ddc3d33cfc6f8244195cffbe04db8da6bfc3af)). Evidence only; this branch is not an implementation candidate or a second PR.
 
