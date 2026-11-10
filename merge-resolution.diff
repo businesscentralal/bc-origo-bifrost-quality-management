@@ -1,0 +1,165 @@
+commit 90e766ec2e33c3e168b1b7d9a589dc3978025f7d
+Merge: 40a54b4 854f1be
+Author: Gunnars Codex Developer[bot] <337391362+gunnars-codex-developer[bot]@users.noreply.github.com>
+Date:   Tue Nov 10 12:00:09 2026 +0000
+
+    Merge main into inspection reopen; preserve test-value and return behavior
+
+diff --git a/.claude/CLAUDE.md b/.claude/CLAUDE.md
+remerge CONFLICT (content): Merge conflict in .claude/CLAUDE.md
+index 608961c..7dd8370 100644
+--- a/.claude/CLAUDE.md
++++ b/.claude/CLAUDE.md
+@@ -21,11 +21,9 @@ Tests: 97200-97299
+ | Permission set | 10035238 | BIFROST QM Read ori |
+ | Permission set extension | 10035239 | Quality Full Role ori |
+ | Permission set extension | 10035240 | Quality Read Role ori |
+-<<<<<<< 40a54b4 (docs: explain read role reopen discovery)
+ | Enum extension | 10035255 | Quality Reopen Types ori (`Quality.Inspection.Reopen`) |
+ | Codeunit | 10035256 | Quality Reopen Impl ori |
+ | Table | 10035258 | Quality Reopen Access ori |
+-=======
+ | Enum extension | 10035241 | Quality Message Types ori |
+ | Codeunit | 10035242 | Quality Set Value Impl ori |
+ | Table | 10035243 | Quality Write Access ori (empty permission capability) |
+@@ -34,7 +32,6 @@ Tests: 97200-97299
+ | Test permission set | 97204 | QM Message Test ori |
+ | Test enum extension | 97205 | Quality Fixture Types ori |
+ | Test codeunit | 97206 | Quality Value Fixture ori |
+->>>>>>> 854f1be (feat: validate quality inspection test values (#6) (#25))
+ | Test codeunit | 97200 | Quality Scaffold Tst ori |
+ | Test codeunit | 97220 | Quality Reopen Tst ori |
+ | Test codeunit | 97221 | Quality Reopen Perm Tst ori |
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+remerge CONFLICT (content): Merge conflict in CHANGELOG.md
+index e7a625b..4d68abd 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -6,8 +6,6 @@
+ 
+ - #31: Purchase-return refusals now provide typed codes, parameter details and translated recovery guidance. Missing or empty inspection IDs use `MissingParameter`; unknown IDs use `RecordNotFound`. App-owned permission, format, source and result checks preserve transaction rollback (codeunit 10035245; tests 97210/97215).
+ 
+-### Fixed
+-
+ - #5 / PR #32: the base role (10035236) now grants Reopen handler execution (10035256) and read access to its capability marker (10035258), so Read callers can evaluate the disabled action on BC29. Marker writes remain exclusive to Full (10035237); tests 97220/97221 are unchanged.
+ 
+ ### Added
+@@ -17,12 +15,9 @@
+ 
+ ### Added
+ 
+-<<<<<<< 40a54b4 (docs: explain read role reopen discovery)
+ - [#5](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/5): `Quality.Inspection.Reopen` (enum extension 10035255, codeunit 10035256, permission marker table 10035258). The type calls `Qlty. Inspection Header.ReopenInspection` and does not write Status or quantities itself. `BIFROST QM Full ori` (10035237) includes `QltyMgmt - Admin` so the role can run the action; Microsoft still requires that admin role, or SUPER, to be assigned to the user. Tests 97220 and 97221.
+-=======
+ - [#6](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/6): `Quality.Inspection.SetTestValue` validates a named test and recalculates the open inspection result through Microsoft’s standard methods. Added enum extension 10035241, implementation 10035242, empty write-permission capability table 10035243, Full-role inspector permissions, bilingual help and regression tests and owned fixture helpers 97202–97206. Missing, malformed, unknown and overlong parameters are refused; transaction failures preserve header and line data.
+ 
+->>>>>>> 854f1be (feat: validate quality inspection test values (#6) (#25))
+ - [#1](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/1): Foundation application registration (codeunit 10035235), base/full/read permission sets (10035236–10035238) and Foundation role extensions (10035239–10035240). The scaffold adds no message types or Microsoft business-data grants.
+ - Registration, repeat-discovery and English/Icelandic licence-admin setup coverage in test codeunit 97200 (platform-only test permission set 97201), with Icelandic permission captions and the `quality-management` help entry.
+ - Corrected keyword-translation validation for the message-free scaffold; message declarations without keyword coverage still fail the guard, with regression checks for both cases.
+diff --git a/README.md b/README.md
+remerge CONFLICT (content): Merge conflict in README.md
+index 37fe987..4b23286 100644
+--- a/README.md
++++ b/README.md
+@@ -11,19 +11,11 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
+ 
+ **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management>
+ 
+-<<<<<<< 40a54b4 (docs: explain read role reopen discovery)
+-**Status:** registration, Foundation roles, `Quality.Inspection.Reopen`, and `Quality.Disposition.CreatePurchaseReturn` are implemented.
++**Status:** registration, Foundation roles, `Quality.Inspection.Reopen`, `Quality.Inspection.SetTestValue`, and `Quality.Disposition.CreatePurchaseReturn` are implemented.
+ 
+ Foundation discovers this app on **Bifrost Setup** through its application registry. All setup notifications stay on that Foundation page. Quality Management has no setup page of its own.
+ 
+-Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. The Full role grants inspection reopen and purchase-return execution and includes Microsoft `QltyMgmt - Admin` and `QltyMgmt - Inspector` permissions. Microsoft `ReopenInspection` still requires the Quality Admin & Supervisor role, or SUPER, to be assigned to the user. Purchase-return callers also need native purchase-document permissions. The base and Read roles grant registration and permission-safe Reopen discovery; the Reopen capability marker is read-only, so the action remains disabled. Neither role grants either write operation.
+-=======
+-**Status:** includes `Quality.Inspection.SetTestValue` and `Quality.Disposition.CreatePurchaseReturn`; see the [test-value contract](app/docs/en-us/SetTestValue.md) ([íslenska](app/docs/is-is/SetTestValue.md)).
+-
+-Foundation discovers this app on **Bifrost Setup** through its application registry. All setup notifications stay on that Foundation page. Quality Management has no setup page of its own.
+-
+-Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. The Full role grants test-value and purchase-return execution and includes Microsoft’s `QltyMgmt - Inspector` permissions; purchase-return callers also need native purchase-document permissions. Dedicated empty capability tables enforce the app Full grant even when a Foundation API role grants wildcard codeunit execution. The Read and base sets grant registration only; they cannot execute these write operations.
+->>>>>>> 854f1be (feat: validate quality inspection test values (#6) (#25))
++Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. The Full role grants inspection reopen, test-value and purchase-return execution and includes Microsoft `QltyMgmt - Admin` and `QltyMgmt - Inspector` permissions. Microsoft `ReopenInspection` still requires the Quality Admin & Supervisor role, or SUPER, to be assigned to the user. Purchase-return callers also need native purchase-document permissions. The base and Read roles grant registration and permission-safe Reopen discovery; the Reopen capability marker is read-only, so the action remains disabled. Dedicated empty capability tables enforce the app Full grant even when a Foundation API role grants wildcard codeunit execution. Neither role grants these write operations.
+ 
+ The app manifest exposes the `quality-management` documentation entry in English and Icelandic. The complete object allocation is recorded in [.claude/CLAUDE.md](.claude/CLAUDE.md).
+ 
+diff --git a/app/Translations/Bifrost Quality Management.is-IS.xlf b/app/Translations/Bifrost Quality Management.is-IS.xlf
+remerge CONFLICT (content): Merge conflict in app/Translations/Bifrost Quality Management.is-IS.xlf
+index 0132cab..eab8c74 100644
+--- a/app/Translations/Bifrost Quality Management.is-IS.xlf	
++++ b/app/Translations/Bifrost Quality Management.is-IS.xlf	
+@@ -297,25 +297,6 @@
+           <note from="Developer" annotates="general" priority="2">is-IS=Quality.Disposition.CreatePurchaseReturn, gæði, skoðun, innkaup, skil, fallið magn</note>
+           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+         </trans-unit>
+-<<<<<<< 40a54b4 (docs: explain read role reopen discovery)
+-        <trans-unit id="PermissionSet 1811208904 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>Bifrost Quality Full</source>
+-          <target>Bifröst - gæði fullur aðgangur</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - gæði fullur aðgangur</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST QM Full ori - Property Caption</note>
+-        </trans-unit>
+-        <trans-unit id="PermissionSet 2256845735 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>Bifrost Quality Read</source>
+-          <target>Bifröst - gæði lesaðgangur</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - gæði lesaðgangur</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST QM Read ori - Property Caption</note>
+-        </trans-unit>
+-        <trans-unit id="PermissionSet 3407348138 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>Bifrost Quality Management</source>
+-          <target>Bifröst - gæðastjórnun</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - gæðastjórnun</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST Quality ori - Property Caption</note>
+-        </trans-unit>
+         <trans-unit id="Table 3190541962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+           <source>Quality reopen access</source>
+           <target>Aðgangur að enduropnun skoðunar</target>
+@@ -388,8 +369,6 @@
+           <note from="Developer" annotates="general" priority="2">is-IS=Áhrif: lokin skoðun verður opin með staðlaðri ReopenInspection aðgerð. Magn sem stóðst og féll helst eins og aðgerðin skilur við það. Ídempotent: annað kall á opna skoðun breytir engu. Síðari endurskoðun er höfnun og breytir engu. Ekkert Commit er á staðlaðri leið. Viðskiptahöfnun bakfærir. Í ham án staðfestingar ber kallandi ábyrgð á bakfærslu.</note>
+           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - Method GetNotes - NamedType NotesLbl</note>
+         </trans-unit>
+-=======
+->>>>>>> 854f1be (feat: validate quality inspection test values (#6) (#25))
+       </group>
+     </body>
+   </file>
+diff --git a/app/src/Permission Set/BIFROSTQMFull.PermissionSet.al b/app/src/Permission Set/BIFROSTQMFull.PermissionSet.al
+remerge CONFLICT (content): Merge conflict in app/src/Permission Set/BIFROSTQMFull.PermissionSet.al
+index 5ab02ec..d44be80 100644
+--- a/app/src/Permission Set/BIFROSTQMFull.PermissionSet.al	
++++ b/app/src/Permission Set/BIFROSTQMFull.PermissionSet.al	
+@@ -3,29 +3,21 @@ namespace Origo.Bifrost.QualityManagement;
+ using Microsoft.QualityManagement.Permissions;
+ 
+ /// <summary>
+-<<<<<<< 40a54b4 (docs: explain read role reopen discovery)
+-/// Grants inspection reopen and purchase-return execution with Microsoft Quality Admin and Inspector permissions.
++/// Grants inspection reopen, test-value and purchase-return execution with Microsoft Quality Admin and Inspector permissions.
+ /// Microsoft ReopenInspection still requires the Quality Admin role, or SUPER, to be assigned to the user.
+-=======
+-/// Grants inspection test-value and purchase-return execution with Microsoft inspector permissions.
+->>>>>>> 854f1be (feat: validate quality inspection test values (#6) (#25))
+ /// </summary>
+ permissionset 10035237 "BIFROST QM Full ori"
+ {
+     Assignable = true;
+     Access = Public;
+     Caption = 'Bifrost Quality Full', MaxLength = 30, Comment = 'is-IS=Bifröst - gæði fullur aðgangur';
+-<<<<<<< 40a54b4 (docs: explain read role reopen discovery)
+     IncludedPermissionSets = "BIFROST Quality ori", "QltyMgmt - Admin", "QltyMgmt - Inspector";
+-    Permissions = codeunit "Quality Reopen Impl ori" = X,
+-        table "Quality Reopen Access ori" = X,
+-        tabledata "Quality Reopen Access ori" = RIMD,
+-=======
+-    IncludedPermissionSets = "BIFROST Quality ori", "QltyMgmt - Inspector";
+     Permissions = codeunit "Quality Set Value Impl ori" = X,
+         table "Quality Write Access ori" = X,
+         tabledata "Quality Write Access ori" = RIMD,
+->>>>>>> 854f1be (feat: validate quality inspection test values (#6) (#25))
++        codeunit "Quality Reopen Impl ori" = X,
++        table "Quality Reopen Access ori" = X,
++        tabledata "Quality Reopen Access ori" = RIMD,
+         codeunit "Quality Purch Return Impl ori" = X,
+         codeunit "Quality Return Receipt ori" = X,
+         table "Quality Return Access ori" = X,

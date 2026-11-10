@@ -1,0 +1,185 @@
+{
+  "sha": "90e766ec2e33c3e168b1b7d9a589dc3978025f7d",
+  "tenant": "w129-19",
+  "touchedMessageTypes": [
+    "Quality.Inspection.Reopen",
+    "Quality.Disposition.CreatePurchaseReturn",
+    "Quality.Inspection.SetTestValue"
+  ],
+  "createsOwnData": true,
+  "executed": 28,
+  "passed": 28,
+  "failed": 0,
+  "skipped": 0,
+  "checks": [
+    {
+      "name": "reopen-help-1033",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-help-1033.json"
+    },
+    {
+      "name": "reopen-happy-1033",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-happy-1033.json"
+    },
+    {
+      "name": "reopen-idempotent-1033",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-idempotent-1033.json"
+    },
+    {
+      "name": "reopen-missing-1033",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-missing-1033.json"
+    },
+    {
+      "name": "reopen-invalid-1033",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-invalid-1033.json"
+    },
+    {
+      "name": "reopen-unknown-id-1033",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-unknown-id-1033.json"
+    },
+    {
+      "name": "reopen-unknown-key-1033",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-unknown-key-1033.json"
+    },
+    {
+      "name": "reopen-business-refusal-1033",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-business-refusal-1033.json"
+    },
+    {
+      "name": "reopen-help-1039",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-help-1039.json"
+    },
+    {
+      "name": "reopen-happy-1039",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-happy-1039.json"
+    },
+    {
+      "name": "reopen-idempotent-1039",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-idempotent-1039.json"
+    },
+    {
+      "name": "reopen-missing-1039",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-missing-1039.json"
+    },
+    {
+      "name": "reopen-invalid-1039",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-invalid-1039.json"
+    },
+    {
+      "name": "reopen-unknown-id-1039",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-unknown-id-1039.json"
+    },
+    {
+      "name": "reopen-unknown-key-1039",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-unknown-key-1039.json"
+    },
+    {
+      "name": "reopen-business-refusal-1039",
+      "status": "PASS",
+      "evidence": "/workspace/private/quality32-merge-20261110T1200/reopen-business-refusal-1039.json"
+    },
+    {
+      "name": "BIFTQ13-M32-happy-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ13-M32-missing-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ13-M32-unknown-key-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ13-M32-happy-1039",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ13-M32-missing-1039",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ13-M32-unknown-key-1039",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-happy-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-missing-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-unknown-key-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-happy-1039",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-missing-1039",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-unknown-key-1039",
+      "status": "PASS"
+    }
+  ],
+  "stateChecks": [
+    {
+      "name": "state-after-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "state-refusal-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "state-after-1039",
+      "status": "PASS"
+    },
+    {
+      "name": "state-refusal-1039",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ13-M32-return-quantity",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ13-M32-cleanup",
+      "remaining": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-persisted-line",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-cleanup",
+      "remaining": 0,
+      "status": "PASS"
+    }
+  ],
+  "lcids": [
+    1033,
+    1039
+  ],
+  "verified": true
+}

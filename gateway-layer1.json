@@ -1,0 +1,122 @@
+{
+  "summary": {
+    "total": 23,
+    "failed": 2,
+    "passed": 21,
+    "ready": false
+  },
+  "version": "28.0.0.0",
+  "project": "Bifrost Quality Management",
+  "mode": "diff (vs origin/main)",
+  "publisher": "Origo",
+  "files_scanned": 5,
+  "total_al_files": 16,
+  "checks": {
+    "event_subscriber_placement": {
+      "pass": true,
+      "findings": []
+    },
+    "namespace": {
+      "pass": true,
+      "findings": []
+    },
+    "try_prefix_convention": {
+      "pass": true,
+      "findings": []
+    },
+    "one_statement_per_line": {
+      "pass": false,
+      "findings": [
+        {
+          "line": 134,
+          "text": "local procedure ReadInspectionId(var Argument: Record \"Message Argument ori\"; Request: JsonObject; var InspectionId: Guid): Boolean",
+          "file": "QualityReopenImpl.Codeunit.al"
+        }
+      ]
+    },
+    "set_load_fields": {
+      "pass": true,
+      "advisory": "Loops without SetLoadFields - consider it only for wide tables; not a gate failure",
+      "findings": []
+    },
+    "commit_in_loop": {
+      "pass": true,
+      "findings": []
+    },
+    "read_isolation": {
+      "pass": true,
+      "findings": []
+    },
+    "format_guid": {
+      "pass": true,
+      "findings": []
+    },
+    "app_json": {
+      "pass": true,
+      "findings": []
+    },
+    "data_classification": {
+      "pass": true,
+      "findings": []
+    },
+    "caption_translation": {
+      "pass": false,
+      "skipped": null,
+      "findings": [
+        {
+          "line": 10,
+          "text": "Caption = 'Quality.Inspection.Reopen', Locked = true;",
+          "file": "QualityReopenTypes.EnumExt.al"
+        }
+      ]
+    },
+    "confirm_in_page": {
+      "pass": true,
+      "findings": []
+    },
+    "with_statements": {
+      "pass": true,
+      "findings": []
+    },
+    "reserved_var_names": {
+      "pass": true,
+      "findings": []
+    },
+    "page_code_minimal": {
+      "pass": true,
+      "findings": []
+    },
+    "changelog": {
+      "pass": true,
+      "findings": []
+    },
+    "global_variables": {
+      "pass": true,
+      "findings": []
+    },
+    "today_vs_workdate": {
+      "pass": true,
+      "findings": []
+    },
+    "xml_doc_comments": {
+      "pass": true,
+      "findings": []
+    },
+    "modernization": {
+      "pass": true,
+      "findings": []
+    },
+    "object_naming": {
+      "pass": true,
+      "findings": []
+    },
+    "format_evaluate_enum": {
+      "pass": true,
+      "findings": []
+    },
+    "hardcoded_values": {
+      "pass": true,
+      "findings": []
+    }
+  }
+}

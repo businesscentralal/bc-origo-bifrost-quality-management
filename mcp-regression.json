@@ -1,0 +1,83 @@
+{
+  "sha": "90e766ec2e33c3e168b1b7d9a589dc3978025f7d",
+  "tenant": "w129-19",
+  "touchedMessageTypes": [
+    "Quality.Disposition.CreatePurchaseReturn",
+    "Quality.Inspection.SetTestValue"
+  ],
+  "createsOwnData": true,
+  "executed": 12,
+  "passed": 12,
+  "failed": 0,
+  "skipped": 0,
+  "checks": [
+    {
+      "name": "BIFTQ13-M32-happy-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ13-M32-missing-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ13-M32-unknown-key-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ13-M32-happy-1039",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ13-M32-missing-1039",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ13-M32-unknown-key-1039",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-happy-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-missing-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-unknown-key-1033",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-happy-1039",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-missing-1039",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-unknown-key-1039",
+      "status": "PASS"
+    }
+  ],
+  "stateChecks": [
+    {
+      "name": "BIFTQ13-M32-return-quantity",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ13-M32-cleanup",
+      "remaining": 0,
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-persisted-line",
+      "status": "PASS"
+    },
+    {
+      "name": "BIFTQ6-M32-cleanup",
+      "remaining": 0,
+      "status": "PASS"
+    }
+  ]
+}

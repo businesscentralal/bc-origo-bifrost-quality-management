@@ -1,0 +1,30 @@
+{
+  "sha": "90e766ec2e33c3e168b1b7d9a589dc3978025f7d",
+  "standardsSnapshot": "52ba4754cfd614e4a7c50af87b30149b18b313e3",
+  "standardsCapturedAt": "2026-11-02T10:35:08.581Z",
+  "layer1": {
+    "total": 23,
+    "failed": 2,
+    "passed": 21,
+    "ready": false
+  },
+  "filesScanned": 5,
+  "dispositions": [
+    {
+      "check": "caption_translation",
+      "reason": "Locked public message identifier, intentionally untranslated."
+    },
+    {
+      "check": "one_statement_per_line",
+      "reason": "AL procedure parameter separators, not multiple executable statements."
+    }
+  ],
+  "layer2": {
+    "scope": "Merge main854f1be into Reopen; resolve5 shared documentation/permission/XLF conflicts.26 source/test objects byte-identical to supplying parent.",
+    "security": "Full permissions exactly union both parents, preserves native Admin/Inspector and marker RIMD; base retains prior Reopen X/table X/marker R fix; no privilege widening beyond either parent.",
+    "api": "Handler logic, public API, contracts and tests unchanged; all objects within10035235..10035334/tests97200..97299.",
+    "docs": "README, object allocation, CHANGELOG and61-unit XLF preserve all three types. Reopen en-US/is-IS help preserved.",
+    "tests": "Both apps0errors0warnings; native73/73/0/0; coldRead1/1; MCP28/28/0/0; UI2/2. No new suppression, skip or weakened assertion.",
+    "limitations": "Existing manifest warning configuration preserved. UI/MCP use provisioned SUPER; least-privilege assertions run native exact-role tests. No claim of independent Claude/Grok verification, merge, deployment or UAT."
+  }
+}

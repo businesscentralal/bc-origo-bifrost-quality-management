@@ -1,0 +1,80 @@
+{
+  "sha": "90e766ec2e33c3e168b1b7d9a589dc3978025f7d",
+  "tenant": "w129-19",
+  "verified": true,
+  "checks": [
+    {
+      "name": "inspections",
+      "remaining": 0
+    },
+    {
+      "name": "template",
+      "remaining": 0
+    },
+    {
+      "name": "return-inspection",
+      "remaining": 0
+    },
+    {
+      "name": "return-orders",
+      "remaining": 0
+    },
+    {
+      "name": "return-lines",
+      "remaining": 0
+    },
+    {
+      "name": "return-receipt",
+      "remaining": 0
+    },
+    {
+      "name": "return-receipt-lines",
+      "remaining": 0
+    },
+    {
+      "name": "return-ledger",
+      "remaining": 0
+    },
+    {
+      "name": "return-item",
+      "remaining": 0
+    },
+    {
+      "name": "return-item-unit",
+      "remaining": 0
+    },
+    {
+      "name": "return-vendor",
+      "remaining": 0
+    },
+    {
+      "name": "value-inspection",
+      "remaining": 0
+    },
+    {
+      "name": "value-line",
+      "remaining": 0
+    },
+    {
+      "name": "value-test",
+      "remaining": 0
+    },
+    {
+      "name": "value-template",
+      "remaining": 0
+    },
+    {
+      "name": "value-template-line",
+      "remaining": 0
+    },
+    {
+      "name": "value-result",
+      "remaining": 0
+    },
+    {
+      "name": "value-result-condition",
+      "remaining": 0
+    }
+  ],
+  "finishedAt": "2026-11-10T12:08:23.578Z"
+}

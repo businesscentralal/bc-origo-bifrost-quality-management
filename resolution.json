@@ -1,0 +1,8 @@
+{
+  "translationUnits": 61,
+  "parents": [
+    "40a54b4a484fa4ab7cc3ec9c812f12216021c0d2",
+    "854f1be3e965ddaad7db4f614dd5cbb80b88fb63"
+  ],
+  "summary": "Union of permission grants, translations and documentation; all handlers and tests preserved from their original parent."
+}

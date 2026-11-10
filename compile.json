@@ -1,0 +1,26 @@
+{
+  "sha": "90e766ec2e33c3e168b1b7d9a589dc3978025f7d",
+  "analyzers": [
+    "CodeCop",
+    "UICop",
+    "AppSourceCop"
+  ],
+  "compiledAt": "2026-11-10T12:02:25.197661+00:00",
+  "attempt1": "Failed because analyzer paths used nonexistent bin/Analyzers directory; corrected to bin. No source change.",
+  "app": {
+    "sha": "90e766ec2e33c3e168b1b7d9a589dc3978025f7d",
+    "errors": 0,
+    "warnings": 0,
+    "artifact": "/workspace/private/quality32-merge-20261110T1200/build/quality.app",
+    "log": "/workspace/private/quality32-merge-20261110T1200/build/quality-app-corrected.log",
+    "sha256": "405d773f73c56e25f3f777afdac7f8c66bdf09488579101364572746f17fde34"
+  },
+  "testApp": {
+    "sha": "90e766ec2e33c3e168b1b7d9a589dc3978025f7d",
+    "errors": 0,
+    "warnings": 0,
+    "artifact": "/workspace/private/quality32-merge-20261110T1200/build/quality-test.app",
+    "log": "/workspace/private/quality32-merge-20261110T1200/build/quality-test.log",
+    "sha256": "c2ebf6981d123ec7ddd8814e70724b83dfa7c4da0b3eba258461f12aa2e3834f"
+  }
+}

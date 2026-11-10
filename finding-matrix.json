@@ -1,0 +1,28 @@
+{
+  "findingUrl": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/pull/32#issuecomment-6762673977",
+  "reviewedSha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+  "candidateSha": "90e766ec2e33c3e168b1b7d9a589dc3978025f7d",
+  "nonblockingSuggestions": [
+    {
+      "source": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/pull/32#issuecomment-6759030252",
+      "disposition": "Unknown-ID text wording unchanged; existing translated refusal is accurate that the id must identify an existing inspection. No requested blocking change."
+    },
+    {
+      "source": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/pull/32#issuecomment-6762308808",
+      "disposition": "Inspector-only purchase-return proof suggestion belongs to separately accepted issue13 and was previously disclosed for follow-up routing. This amendment changes only Reopen base grants; Full native Admin inclusion remains approved and unchanged."
+    },
+    {
+      "source": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/pull/32#issuecomment-6765122557",
+      "disposition": "Wider main purchase-return Read-role Execute suggestion remains outside issue5 scope; disclosed for Architect follow-up. No unrelated source changes."
+    }
+  ],
+  "testPreservation": "No changes under test/ or to any handler; unchanged restrictive codeunit97221 run first in a fresh Client Services session.",
+  "historicalDiscrepancy": "Reason prior local full suite passed but independent BC29 failed remains unproven. No causality assigned to Foundation/platform versions.",
+  "addressedFindings": [
+    {
+      "finding": "Read role cannot execute Reopen IsEnabled on BC29",
+      "fix": "Base10035236 now grants handler10035256 X, marker10035258 table X/tabledata R",
+      "status": "Fix preserved; cold1/1 and full73/73 pass. Independent current-head confirmation follows handoff; no developer clearance claim."
+    }
+  ]
+}
