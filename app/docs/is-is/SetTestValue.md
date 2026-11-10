@@ -22,3 +22,5 @@ Staðfestir eitt prófunargildi í opinni gæðaskoðun og endurreiknar heildarn
 Árangur skilar `status`, `inspectionSystemId`, `inspectionNo`, `reinspectionNo`, `testCode` og `resultCode`. Línugildi, tengdar segðir og niðurstaða hauss geta breyst; kveikjur og áskrifendur Microsoft keyra. Endurtekning sama gildis **tryggir ekki óbreytt ástand**. Úthlutaðu `BIFROST QM Full ori` ásamt viðeigandi Foundation vinnsluhlutverki; Full-safnið inniheldur skoðunarheimildir Microsoft. Read- og grunnsöfnin geta ekki keyrt aðgerðina. Engin ytri þjónusta er kölluð.
 
 Notaðu `Data.Records.Get` í Foundation fyrir venjulegan lestur. Beint `Data.Records.Set` jafngildir ekki staðfestingu og endurreikningi niðurstöðu með þessari aðgerð.
+
+Eigin athuganir á inntaki, heimildum, skoðun sem finnst ekki og stöðu skila `MissingParameter`, `InvalidParameter`, `UnknownParameter`, `PermissionDenied`, `RecordNotFound` eða `PreconditionFailed`. Svarið inniheldur `parameter`, `expected` og `nextStep`, ásamt `received` þegar við á. Kóðar og heiti færibreyta eru óháð tungumáli; leiðbeiningar eru þýddar. Staðfesting Microsoft getur skilað `BusinessCentralError`.

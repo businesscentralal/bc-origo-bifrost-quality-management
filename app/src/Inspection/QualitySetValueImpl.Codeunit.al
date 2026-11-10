@@ -16,6 +16,16 @@ codeunit 10035242 "Quality Set Value Impl ori" implements "Msg Interface ori", "
         TooLongErr: Label 'Parameter ''%1'' exceeds %2 characters.', Comment = '%1 = parameter name, %2 = limit|is-IS=Færibreytan ''%1'' er lengri en %2 stafir.';
         PermissionErr: Label 'The BIFROST QM Full ori permission set is required.', Comment = 'is-IS=Heimildasafnið BIFROST QM Full ori er nauðsynlegt.';
         NotFoundErr: Label 'The quality inspection was not found.', Comment = 'is-IS=Gæðaskoðunin fannst ekki.';
+        ExpectedIdLbl: Label 'a non-empty SystemId GUID of an existing quality inspection', Comment = 'is-IS=SystemId GUID skoðunar sem er til og er ekki tómt';
+        FindInspectionLbl: Label 'Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.', Comment = 'is-IS=Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.';
+        TextExpectedLbl: Label 'a text value', Comment = 'is-IS=textagildi';
+        NonEmptyTextLbl: Label 'a non-empty text value', Comment = 'is-IS=textagildi sem er ekki tómt';
+        FixParameterLbl: Label 'Correct the named request parameter and retry.', Comment = 'is-IS=Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.';
+        MaximumTextLbl: Label 'text with at most %1 characters', Comment = '%1 = maximum length|is-IS=texti með að hámarki %1 stöfum';
+        PermissionNextLbl: Label 'Ask an administrator for BIFROST QM Full ori and the native Quality Management permissions.', Comment = 'is-IS=Biddu stjórnanda um BIFROST QM Full ori og staðlaðar gæðastjórnunarheimildir.';
+        StatusErr: Label 'The quality inspection Status must be Open.', Comment = 'is-IS=Staða gæðaskoðunar verður að vera Opin.';
+        OpenExpectedLbl: Label 'an open quality inspection', Comment = 'is-IS=opin gæðaskoðun';
+        OpenNextLbl: Label 'Select an open inspection before setting a test value; nothing was changed.', Comment = 'is-IS=Veldu opna skoðun áður en prófunargildi er skráð; engu var breytt.';
         OverviewLbl: Label 'Validates the value of exactly one inspection test through Microsoft SetTestValue, then recalculates and saves the header result through UpdateResultFromLines.', Comment = 'is-IS=Staðfestir gildi nákvæmlega einnar prófunar í skoðun með SetTestValue frá Microsoft og endurreiknar og vistar niðurstöðu hauss með UpdateResultFromLines.';
         NotesLbl: Label 'Identify the exact inspection, including its re-inspection, by inspectionSystemId. testCode is the test code, not its caption. value is text (maximum 250 characters); an empty string clears it if Microsoft permits. Unknown keys, missing keys, non-text values and overlong values are refused. The inspection must be open and have exactly one matching test line. Microsoft validation and result rules apply. The standard path has no explicit Commit; explicit commits from subscribers are prohibited. Normal execution uses a separate transaction, so a business refusal rolls back all writes. With Omit Commit, the caller owns rollback. Repeating the same value is not guaranteed idempotent because Microsoft validation can update related expressions and invoke subscribers. No external provider is called.', Comment = 'is-IS=Auðkenndu tiltekna skoðun, ásamt endurskoðun hennar, með inspectionSystemId. testCode er prófunarkóði, ekki heiti. value er texti (hámark 250 stafir); tómur strengur hreinsar gildið ef Microsoft leyfir. Óþekktum lyklum, lyklum sem vantar, öðrum gildum en texta og of löngum gildum er hafnað. Skoðunin verður að vera opin og hafa nákvæmlega eina samsvarandi prófunarlínu. Staðfestingar og niðurstöðureglur Microsoft gilda. Staðlaða leiðin inniheldur ekkert beint Commit; beinar staðfestingar frá áskrifendum eru bannaðar. Venjuleg keyrsla notar sérstaka færslu svo höfnun bakfærir allar breytingar. Með Omit Commit ber kallandi ábyrgð á bakfærslu. Endurtekning sama gildis tryggir ekki óbreytt ástand því staðfesting Microsoft getur uppfært tengdar segðir og kallað á áskrifendur. Engin ytri þjónusta er kölluð.';
 
@@ -51,26 +61,27 @@ codeunit 10035242 "Quality Set Value Impl ori" implements "Msg Interface ori", "
         ParameterName: Text;
     begin
         if not WriteAccess.WritePermission() then
-            Error(ErrorInfo.Create(PermissionErr));
+            Refuse(Argument, "Bifrost Error Code ori"::PermissionDenied, PermissionErr, 'permissionSet', '', 'BIFROST QM Full ori', PermissionNextLbl);
         Request := Argument.GetRequestJson();
         foreach ParameterName in Request.Keys() do
             if not (ParameterName in ['inspectionSystemId', 'testCode', 'value']) then
-                Error(ErrorInfo.Create(StrSubstNo(UnknownKeyErr, ParameterName)));
-        if not Evaluate(InspectionSystemId, ReadText(Request, 'inspectionSystemId', false)) then
-            Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, 'inspectionSystemId')));
+                Refuse(Argument, "Bifrost Error Code ori"::UnknownParameter, StrSubstNo(UnknownKeyErr, ParameterName), ParameterName, '', 'inspectionSystemId, testCode, value', FixParameterLbl);
+        if not Evaluate(InspectionSystemId, ReadText(Request, 'inspectionSystemId', false, Argument)) then
+            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(MissingKeyErr, 'inspectionSystemId'), 'inspectionSystemId', ReadText(Request, 'inspectionSystemId', false, Argument), ExpectedIdLbl, FindInspectionLbl);
         if IsNullGuid(InspectionSystemId) then
-            Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, 'inspectionSystemId')));
-        TestCode := ReadText(Request, 'testCode', false);
-        TestValue := ReadText(Request, 'value', true);
+            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(MissingKeyErr, 'inspectionSystemId'), 'inspectionSystemId', ReadText(Request, 'inspectionSystemId', false, Argument), ExpectedIdLbl, FindInspectionLbl);
+        TestCode := ReadText(Request, 'testCode', false, Argument);
+        TestValue := ReadText(Request, 'value', true, Argument);
         if StrLen(TestCode) > MaxStrLen(InspectionLine."Test Code") then
-            Error(ErrorInfo.Create(StrSubstNo(TooLongErr, 'testCode', MaxStrLen(InspectionLine."Test Code"))));
+            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(TooLongErr, 'testCode', MaxStrLen(InspectionLine."Test Code")), 'testCode', TestCode, StrSubstNo(MaximumTextLbl, MaxStrLen(InspectionLine."Test Code")), FixParameterLbl);
         if StrLen(TestValue) > MaxStrLen(InspectionLine."Test Value") then
-            Error(ErrorInfo.Create(StrSubstNo(TooLongErr, 'value', MaxStrLen(InspectionLine."Test Value"))));
+            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(TooLongErr, 'value', MaxStrLen(InspectionLine."Test Value")), 'value', TestValue, StrSubstNo(MaximumTextLbl, MaxStrLen(InspectionLine."Test Value")), FixParameterLbl);
         // Load the complete mutable record: Microsoft validation reads and changes other fields.
         Inspection.ReadIsolation := IsolationLevel::UpdLock;
         if not Inspection.GetBySystemId(InspectionSystemId) then
-            Error(ErrorInfo.Create(NotFoundErr));
-        Inspection.TestField(Status, Inspection.Status::Open);
+            Refuse(Argument, "Bifrost Error Code ori"::RecordNotFound, NotFoundErr, 'inspectionSystemId', Format(InspectionSystemId, 0, 4), ExpectedIdLbl, FindInspectionLbl);
+        if Inspection.Status <> Inspection.Status::Open then
+            Refuse(Argument, "Bifrost Error Code ori"::PreconditionFailed, StatusErr, 'inspectionSystemId', Format(InspectionSystemId, 0, 4), OpenExpectedLbl, OpenNextLbl);
         Inspection.SetTestValue(TestCode, TestValue);
         Inspection.GetBySystemId(InspectionSystemId);
         Inspection.UpdateResultFromLines();
@@ -85,19 +96,42 @@ codeunit 10035242 "Quality Set Value Impl ori" implements "Msg Interface ori", "
         Argument."Content Type" := Argument.GetContentTypeJson();
     end;
 
-    local procedure ReadText(Request: JsonObject; ParameterName: Text; AllowEmpty: Boolean) Value: Text
+    local procedure ReadText(Request: JsonObject; ParameterName: Text; AllowEmpty: Boolean; var Argument: Record "Message Argument ori") Value: Text
     var
         Token: JsonToken;
         Serialized: Text;
     begin
         if not Request.Get(ParameterName, Token) then
-            Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, ParameterName)));
+            Refuse(Argument, "Bifrost Error Code ori"::MissingParameter, StrSubstNo(MissingKeyErr, ParameterName), ParameterName, '', ExpectedInput(ParameterName, AllowEmpty), RecoveryStep(ParameterName));
         Token.WriteTo(Serialized);
         if CopyStr(Serialized, 1, 1) <> '"' then
-            Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, ParameterName)));
+            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(MissingKeyErr, ParameterName), ParameterName, Serialized, TextExpectedLbl, FixParameterLbl);
         Value := Token.AsValue().AsText();
         if (Value = '') and not AllowEmpty then
-            Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, ParameterName)));
+            Refuse(Argument, "Bifrost Error Code ori"::MissingParameter, StrSubstNo(MissingKeyErr, ParameterName), ParameterName, '', ExpectedInput(ParameterName, AllowEmpty), RecoveryStep(ParameterName));
+    end;
+
+    local procedure ExpectedInput(ParameterName: Text; AllowEmpty: Boolean): Text
+    begin
+        if ParameterName = 'inspectionSystemId' then
+            exit(ExpectedIdLbl);
+        if AllowEmpty then
+            exit(TextExpectedLbl);
+        exit(NonEmptyTextLbl);
+    end;
+
+    local procedure RecoveryStep(ParameterName: Text): Text
+    begin
+        if ParameterName = 'inspectionSystemId' then
+            exit(FindInspectionLbl);
+        exit(FixParameterLbl);
+    end;
+
+    local procedure Refuse(var Argument: Record "Message Argument ori"; ErrorCode: Enum "Bifrost Error Code ori"; Message: Text; Parameter: Text; Received: Text; Expected: Text; NextStep: Text)
+    begin
+        // Foundation carries the structured collection across the transaction rollback.
+        Argument.AddError(ErrorCode, Message, Parameter, Received, Expected, NextStep);
+        Argument.RaiseCollectedErrors(ErrorCode, Message);
     end;
 
     /// <summary>Provides the IsEnabled discovery or contract chapter.</summary>
@@ -188,7 +222,7 @@ codeunit 10035242 "Quality Set Value Impl ori" implements "Msg Interface ori", "
     /// <summary>Provides the errors contract chapter.</summary>
     procedure GetErrors(var Errors: JsonArray): Boolean
     begin
-        Errors.ReadFrom('[{"error":"Business Central refusal","when":"Missing, malformed or unknown input; missing or finished inspection; missing or ambiguous test line; invalid test value or insufficient permissions.","fix":"Correct the request, inspection setup, status or permissions and retry."}]');
+        Errors.ReadFrom('[{"error":"MissingParameter","when":"A required key is absent or empty.","fix":"Supply the named parameter using expected and nextStep."},{"error":"InvalidParameter","when":"A parameter has the wrong type, format or length.","fix":"Correct the named parameter using expected and nextStep."},{"error":"RecordNotFound","when":"inspectionSystemId matches no inspection.","fix":"Read an existing inspection SystemId."},{"error":"PermissionDenied","when":"The Full-role capability is missing.","fix":"Ask an administrator for BIFROST QM Full ori."},{"error":"PreconditionFailed","when":"The inspection is not open.","fix":"Select an open inspection."},{"error":"Business Central refusal","when":"Microsoft validation failure: missing or ambiguous test line, invalid test value or missing setup.","fix":"Correct the request, inspection setup, status or permissions and retry."}]');
         exit(true);
     end;
 

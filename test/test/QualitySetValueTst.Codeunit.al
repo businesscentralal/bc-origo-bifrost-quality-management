@@ -324,6 +324,14 @@ codeunit 97202 "Quality Set Value Tst ori"
             'permission', 'permissionNoApp': Assert.IsTrue(LowerCase(ReadText(Response, 'error')).Contains('permission'), 'The call must be refused for missing permissions.');
             'notFound': Assert.IsTrue(ReadText(Response, 'error').Contains('inspection was not found'), 'The missing inspection must be identified.');
         end;
+        if Scenario in ['permission', 'permissionNoApp', 'finished'] then begin
+            if Scenario = 'finished' then
+                Assert.AreEqual('PreconditionFailed', ReadText(Response, 'code'), 'Typed status refusal')
+            else
+                Assert.AreEqual('PermissionDenied', ReadText(Response, 'code'), 'Typed access refusal');
+            Assert.IsTrue(ReadText(Response, 'expected') <> '', 'Actionable expected state or permission');
+            Assert.IsTrue(ReadText(Response, 'nextStep') <> '', 'Actionable next step');
+        end;
         if (Scenario = 'missing') and (LanguageId = 1039) then
             Assert.IsTrue(ReadText(Response, 'error').Contains('Nauðsynlega'), 'The refusal must be translated.');
         InspectionLine.Get(InspectionLine."Inspection No.", 0, 10000);

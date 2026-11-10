@@ -2,6 +2,10 @@
 
 ## [28.0.0.0]
 
+### Fixed
+
+- #34: `Quality.Inspection.SetTestValue` now returns typed input, access, inspection-not-found and status refusals with actionable structured fields in English and Icelandic (codeunit 10035242; tests 97207). Native Microsoft validation and atomic rollback remain in place.
+
 ### Added
 - #13: `Quality.Disposition.CreatePurchaseReturn` wraps the standard failed-quantity purchase return disposition, with strict inputs, transaction rollback, permission capability, bilingual contract/help and tests (10035244–10035247; tests 97210–97214). - Unreleased
 
