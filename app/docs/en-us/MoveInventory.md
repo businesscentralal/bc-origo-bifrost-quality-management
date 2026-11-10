@@ -8,7 +8,7 @@ Identify the exact inspection, including its re-inspection, with `inspectionSyst
 {"type":"Quality.Disposition.MoveInventory","data":{"inspectionSystemId":"<inspection-SystemId>","quantityBasis":"failed","method":"itemReclassification","destinationLocationCode":"QUARANTINE","confirm":true,"expectedCount":1}}
 ```
 
-The caller needs `BIFROST QM Full ori` and the standard Microsoft permissions for the selected inventory operation. No business-data permissions are elevated. Microsoft validates inventory, locations, bins and movement setup. The inspection's Pass Quantity or Fail Quantity must be positive. Use the help contract for the exact response fields.
+The caller needs `BIFROST QM Full ori` and the standard Microsoft permissions for the selected inventory operation. The Full role includes Microsoft's `QltyMgmt - Inspector` permissions; no other inventory permissions are elevated. Microsoft validates inventory, locations, bins and movement setup. The inspection's Pass Quantity or Fail Quantity must be positive. Use the help contract for the exact response fields.
 
 This is **not idempotent**. A repeated successful request may create another movement. Do not automatically retry a successful request. Posted entries affect inventory and cannot be undone by repeating the request.
 
