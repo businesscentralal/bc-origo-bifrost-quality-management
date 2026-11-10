@@ -14,6 +14,7 @@ codeunit 10035242 "Quality Set Value Impl ori" implements "Msg Interface ori", "
         MissingKeyErr: Label 'The required parameter ''%1'' is missing or invalid.', Comment = '%1 = parameter name|is-IS=Nauðsynlega færibreytu ''%1'' vantar eða hún er ógild.';
         UnknownKeyErr: Label 'Unknown parameter ''%1''.', Comment = '%1 = parameter name|is-IS=Óþekkt færibreyta ''%1''.';
         TooLongErr: Label 'Parameter ''%1'' exceeds %2 characters.', Comment = '%1 = parameter name, %2 = limit|is-IS=Færibreytan ''%1'' er lengri en %2 stafir.';
+        PermissionErr: Label 'The BIFROST QM Full ori permission set is required.', Comment = 'is-IS=Heimildasafnið BIFROST QM Full ori er nauðsynlegt.';
         NotFoundErr: Label 'The quality inspection was not found.', Comment = 'is-IS=Gæðaskoðunin fannst ekki.';
         OverviewLbl: Label 'Validates the value of exactly one inspection test through Microsoft SetTestValue, then recalculates and saves the header result through UpdateResultFromLines.', Comment = 'is-IS=Staðfestir gildi nákvæmlega einnar prófunar í skoðun með SetTestValue frá Microsoft og endurreiknar og vistar niðurstöðu hauss með UpdateResultFromLines.';
         NotesLbl: Label 'Identify the exact inspection, including its re-inspection, by inspectionSystemId. testCode is the test code, not its caption. value is text (maximum 250 characters); an empty string clears it if Microsoft permits. Unknown keys, missing keys, non-text values and overlong values are refused. The inspection must be open and have exactly one matching test line. Microsoft validation and result rules apply. The standard path has no explicit Commit; explicit commits from subscribers are prohibited. Normal execution uses a separate transaction, so a business refusal rolls back all writes. With Omit Commit, the caller owns rollback. Repeating the same value is not guaranteed idempotent because Microsoft validation can update related expressions and invoke subscribers. No external provider is called.', Comment = 'is-IS=Auðkenndu tiltekna skoðun, ásamt endurskoðun hennar, með inspectionSystemId. testCode er prófunarkóði, ekki heiti. value er texti (hámark 250 stafir); tómur strengur hreinsar gildið ef Microsoft leyfir. Óþekktum lyklum, lyklum sem vantar, öðrum gildum en texta og of löngum gildum er hafnað. Skoðunin verður að vera opin og hafa nákvæmlega eina samsvarandi prófunarlínu. Staðfestingar og niðurstöðureglur Microsoft gilda. Staðlaða leiðin inniheldur ekkert beint Commit; beinar staðfestingar frá áskrifendum eru bannaðar. Venjuleg keyrsla notar sérstaka færslu svo höfnun bakfærir allar breytingar. Með Omit Commit ber kallandi ábyrgð á bakfærslu. Endurtekning sama gildis tryggir ekki óbreytt ástand því staðfesting Microsoft getur uppfært tengdar segðir og kallað á áskrifendur. Engin ytri þjónusta er kölluð.';
@@ -39,6 +40,7 @@ codeunit 10035242 "Quality Set Value Impl ori" implements "Msg Interface ori", "
     [CommitBehavior(CommitBehavior::Error)]
     local procedure PerformWrite(var Argument: Record "Message Argument ori")
     var
+        WriteAccess: Record "Quality Write Access ori";
         Inspection: Record "Qlty. Inspection Header";
         InspectionLine: Record "Qlty. Inspection Line";
         Request: JsonObject;
@@ -48,6 +50,8 @@ codeunit 10035242 "Quality Set Value Impl ori" implements "Msg Interface ori", "
         TestValue: Text;
         ParameterName: Text;
     begin
+        if not WriteAccess.WritePermission() then
+            Error(ErrorInfo.Create(PermissionErr));
         Request := Argument.GetRequestJson();
         foreach ParameterName in Request.Keys() do
             if not (ParameterName in ['inspectionSystemId', 'testCode', 'value']) then

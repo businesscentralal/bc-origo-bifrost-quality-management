@@ -3,6 +3,18 @@
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Quality Management">
     <body>
       <group id="body">
+        <trans-unit id="Table 1183539652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality Write Access</source>
+          <target>Skrifaðgangur að gæðastjórnun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Skrifaðgangur að gæðastjórnun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Write Access ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1183539652 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <target>Aðallykill</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Write Access ori - Field Primary Key - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1135174596 - NamedType 3569966352" maxwidth="250" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sets a test value on an open quality inspection and recalculates its result.</source>
           <target>Skráir prófunargildi í opinni gæðaskoðun og endurreiknar niðurstöðu hennar.</target>
@@ -32,6 +44,12 @@
           <target>Staðfestir gildi nákvæmlega einnar prófunar í skoðun með SetTestValue frá Microsoft og endurreiknar og vistar niðurstöðu hauss með UpdateResultFromLines.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Staðfestir gildi nákvæmlega einnar prófunar í skoðun með SetTestValue frá Microsoft og endurreiknar og vistar niðurstöðu hauss með UpdateResultFromLines.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType OverviewLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The BIFROST QM Full ori permission set is required.</source>
+          <target>Heimildasafnið BIFROST QM Full ori er nauðsynlegt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Heimildasafnið BIFROST QM Full ori er nauðsynlegt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType PermissionErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 1135174596 - NamedType 3255873965" size-unit="char" translate="yes" xml:space="preserve">
           <source>Parameter '%1' exceeds %2 characters.</source>
