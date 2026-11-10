@@ -216,8 +216,35 @@ codeunit 10035270 "Quality Move Impl ori" implements "Msg Interface ori", "Msg D
 
     /// <summary>Returns the parameters contract chapter.</summary>
     procedure GetParameters(var Parameters: JsonArray): Boolean
+    var
+        ContractMgt: Codeunit "Msg Contract Mgt ori";
+        Parameter: JsonObject;
+        AllowedValues: JsonArray;
     begin
-        Parameters.ReadFrom('[{"name":"inspectionSystemId","type":"string","required":true,"description":"SystemId of the exact inspection."},{"name":"quantityBasis","type":"string","required":true,"allowed":["failed","passed"],"description":"Use Microsoft inspection Fail Quantity or Pass Quantity; must be positive."},{"name":"method","type":"string","required":true,"allowed":["automatic","itemReclassification","warehouseReclassification","movementWorksheet","internalMovement"],"description":"Standard Microsoft disposition. automatic chooses item or warehouse reclassification."},{"name":"sourceLocationCode","type":"string","required":false,"description":"Exact source location, up to 10 characters. No filter syntax. Omitted: Microsoft selects available inventory."},{"name":"sourceBinCode","type":"string","required":false,"description":"Exact source bin, up to 20 characters. No filter syntax. Omitted: Microsoft selects available bins."},{"name":"destinationLocationCode","type":"string","required":false,"description":"Target location, up to 10 characters. Supply at least this or destinationBinCode."},{"name":"destinationBinCode","type":"string","required":false,"description":"Target bin, up to 20 characters. Standard location/bin validation applies."},{"name":"postImmediately","type":"boolean","required":false,"default":false,"description":"Post item or warehouse reclassification in the same atomic transaction. Worksheet and internal movement only prepare movements."},{"name":"confirm","type":"boolean","required":true,"description":"Must be true to authorize creation or posting of inventory movements."}]');
+        Clear(Parameters);
+        Parameter := ContractMgt.Parameter('inspectionSystemId', 'string', true, 'SystemId of the exact inspection.');
+        Parameters.Add(Parameter);
+        Parameter := ContractMgt.Parameter('quantityBasis', 'string', true, 'Use Microsoft inspection Fail Quantity or Pass Quantity; must be positive.');
+        AllowedValues.ReadFrom('["failed","passed"]');
+        Parameter.Add('allowed', AllowedValues);
+        Parameters.Add(Parameter);
+        Parameter := ContractMgt.Parameter('method', 'string', true, 'Standard Microsoft disposition. automatic chooses item or warehouse reclassification.');
+        AllowedValues.ReadFrom('["automatic","itemReclassification","warehouseReclassification","movementWorksheet","internalMovement"]');
+        Parameter.Add('allowed', AllowedValues);
+        Parameters.Add(Parameter);
+        Parameter := ContractMgt.Parameter('sourceLocationCode', 'string', false, 'Exact source location, up to 10 characters. No filter syntax. Omitted: Microsoft selects available inventory.');
+        Parameters.Add(Parameter);
+        Parameter := ContractMgt.Parameter('sourceBinCode', 'string', false, 'Exact source bin, up to 20 characters. No filter syntax. Omitted: Microsoft selects available bins.');
+        Parameters.Add(Parameter);
+        Parameter := ContractMgt.Parameter('destinationLocationCode', 'string', false, 'Target location, up to 10 characters. Supply at least this or destinationBinCode.');
+        Parameters.Add(Parameter);
+        Parameter := ContractMgt.Parameter('destinationBinCode', 'string', false, 'Target bin, up to 20 characters. Standard location/bin validation applies.');
+        Parameters.Add(Parameter);
+        Parameter := ContractMgt.Parameter('postImmediately', 'boolean', false, 'Post item or warehouse reclassification in the same atomic transaction. Worksheet and internal movement only prepare movements.');
+        Parameter.Add('default', false);
+        Parameters.Add(Parameter);
+        Parameter := ContractMgt.Parameter('confirm', 'boolean', true, 'Must be true to authorize creation or posting of inventory movements.');
+        Parameters.Add(Parameter);
         exit(true);
     end;
 
