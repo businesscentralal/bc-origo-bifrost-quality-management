@@ -10,7 +10,7 @@ using System.Security.User;
 /// A failed check rolls back with the transaction. No write is performed inside a TryFunction.
 /// FinishInspection is not load-field limited: it reads tracking, result and audit fields.
 /// </summary>
-codeunit 10035244 "Qlty Insp Finish Proc ori"
+codeunit 10035283 "Qlty Insp Finish Proc ori"
 {
     Access = Internal;
     TableNo = "Message Argument ori";

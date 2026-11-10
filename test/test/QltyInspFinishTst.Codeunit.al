@@ -15,7 +15,7 @@ using System.Utilities;
 /// Native tests for Quality.Inspection.Finish.
 /// Fixtures are created by the test and removed before it returns.
 /// </summary>
-codeunit 97202 "Qlty Insp Finish Tst ori"
+codeunit 97230 "Qlty Insp Finish Tst ori"
 {
     Subtype = Test;
     TestPermissions = Restrictive;
@@ -242,16 +242,25 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
     end;
 
     [Test]
-    procedure AC05_FullSetWithoutTablePermission_IsPermissionDenied()
+    [HandlerFunctions('ConfirmFinish')]
+    procedure AC05_FullSetAlone_FinishesInspection()
     var
+        Header: Record "Qlty. Inspection Header";
         Response: JsonObject;
     begin
+        // Story #4, AC05 | Time: native finish timestamp only | Risk: owned inspection only
+        // The app Full set includes the Microsoft inspector role, like the other types of this app.
         LowerPermissions.SetOutsideO365Scope();
+        CreateOpenInspection(Header, '');
+        Commit();
         LowerPermissions.SetExactPermissionSet('BIFROST Full ori');
         LowerPermissions.AddPermissionSet('QM Setup Test ori');
-        Response := Finish('XQM4NOPERM', 0, true);
+        Response := Finish(Header."No.", 0, false);
         LowerPermissions.SetOutsideO365Scope();
-        AssertRefusal(Response, 'PermissionDenied', 'permission');
+        AssertSuccess(Response);
+        Header.Get(Header."No.", 0);
+        Assert.AreEqual(Header.Status::Finished, Header.Status, 'The Full role alone must permit finishing.');
+        DeleteInspection(Header."No.");
     end;
 
     [Test]

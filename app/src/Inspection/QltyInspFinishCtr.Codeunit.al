@@ -8,7 +8,7 @@ using Origo.Bifrost;
 /// The answer uses status Success and recordStatus for the inspection, because Foundation
 /// reserves status for the outcome of the message.
 /// </summary>
-codeunit 10035242 "Qlty Insp Finish Ctr ori"
+codeunit 10035281 "Qlty Insp Finish Ctr ori"
 {
     Access = Internal;
 

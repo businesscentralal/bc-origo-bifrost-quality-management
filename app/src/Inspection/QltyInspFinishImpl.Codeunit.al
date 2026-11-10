@@ -9,7 +9,7 @@ using Origo.Bifrost;
 /// result and item-tracking checks. The write runs in Qlty Insp Finish Proc ori unless the
 /// caller set Omit Commit, in which case the same apply runs in the caller's transaction.
 /// </summary>
-codeunit 10035243 "Qlty Insp Finish Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
+codeunit 10035282 "Qlty Insp Finish Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
     TableNo = "Message Argument ori";

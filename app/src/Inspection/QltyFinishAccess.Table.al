@@ -1,7 +1,7 @@
 namespace Origo.Bifrost.QualityManagement;
 
 /// <summary>Empty capability table that enforces the app Full role even when Foundation grants wildcard codeunit execution.</summary>
-table 10035245 "Qlty Finish Access ori"
+table 10035284 "Qlty Finish Access ori"
 {
     Access = Internal;
     DataClassification = SystemMetadata;
