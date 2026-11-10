@@ -21,10 +21,16 @@ Tests: 97200-97299
 | Permission set | 10035238 | BIFROST QM Read ori |
 | Permission set extension | 10035239 | Quality Full Role ori |
 | Permission set extension | 10035240 | Quality Read Role ori |
-| Enum extension | 10035241 | Quality Message Types ori (shared with issue 6) |
+| Enum extension | 10035241 | Quality Message Types ori (shared by issues 3 and 6) |
+| Codeunit | 10035242 | Quality Set Value Impl ori |
 | Table | 10035243 | Quality Write Access ori (shared empty permission capability) |
 | Codeunit | 10035250 | Quality Create Impl ori |
 | Codeunit | 10035251 | Quality Create Context ori |
+| Test codeunit | 97202 | Quality Set Value Tst ori |
+| Test codeunit | 97203 | Quality Value Fault ori |
+| Test permission set | 97204 | QM Message Test ori |
+| Test enum extension | 97205 | Quality Fixture Types ori |
+| Test codeunit | 97206 | Quality Value Fixture ori |
 | Test codeunit | 97240 | Quality Create Tst ori |
 | Test enum extension | 97211 | Quality Create Fixtures ori |
 | Test codeunit | 97242 | Quality Create Fixture Mgt ori |

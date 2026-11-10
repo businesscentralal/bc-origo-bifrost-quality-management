@@ -11,11 +11,11 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management>
 
-**Message types:** `Quality.Inspection.Create` creates or resolves an inspection using Microsoft generation rules, optionally selecting a template. See the [English contract guide](app/docs/en-us/CreateInspection.md) or [Icelandic guide](app/docs/is-is/CreateInspection.md). `Quality.Disposition.CreatePurchaseReturn` creates a purchase return through the native disposition workflow.
+**Message types:** `Quality.Inspection.Create` creates or resolves an inspection using Microsoft generation rules, optionally selecting a template; `Quality.Inspection.SetTestValue` validates a named test value and recalculates the open inspection result; `Quality.Disposition.CreatePurchaseReturn` creates a purchase return through the native disposition workflow. See the contract guides for [inspection creation](app/docs/en-us/CreateInspection.md) ([íslenska](app/docs/is-is/CreateInspection.md)) and [test values](app/docs/en-us/SetTestValue.md) ([íslenska](app/docs/is-is/SetTestValue.md)).
 
 Foundation discovers this app on **Bifrost Setup** through its application registry. All setup notifications stay on that Foundation page. Quality Management has no setup page of its own.
 
-Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. The Full role grants the app write capabilities and Microsoft Quality Inspector permissions. Callers also need native source-record permissions and, for purchase returns, purchase-document permissions. The Read role cannot create inspections or execute dispositions.
+Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. The Full role grants inspection creation, test-value and purchase-return execution and includes Microsoft’s `QltyMgmt - Inspector` permissions. Callers also need native source-record permissions and, for purchase returns, purchase-document permissions. Dedicated empty capability tables enforce the app Full grant even when a Foundation API role grants wildcard codeunit execution. The Read and base sets grant registration only; they cannot execute these write operations.
 
 The app manifest exposes the `quality-management` documentation entry in English and Icelandic. The complete object allocation is recorded in [.claude/CLAUDE.md](.claude/CLAUDE.md).
 
