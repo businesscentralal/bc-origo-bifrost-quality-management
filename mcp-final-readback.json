@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"table\": \"Qlty. Inspection Line\",\n  \"skip\": 0,\n  \"take\": 50,\n  \"count\": 1,\n  \"records\": [\n    {\n      \"id\": \"A3056CB0-FDDC-F111-B6F8-00090FFE0001\",\n      \"primaryKey\": {\n        \"InspectionNo_\": \"BIFTQ6-R634-1110\",\n        \"ReinspectionNo_\": \"0\",\n        \"LineNo_\": \"10000\"\n      },\n      \"fields\": {\n        \"TestValue\": \"20\",\n        \"ResultCode\": \"BIFTQ6-R634-1110\"\n      }\n    }\n  ],\n  \"noOfRecords\": 1\n}"
+    }
+  ]
+}

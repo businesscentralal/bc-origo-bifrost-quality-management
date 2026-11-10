@@ -1,0 +1,39 @@
+{
+  "sha": "645a4d99f795290919e20e6d7476e66c81727095",
+  "ac": [
+    {
+      "id": 1,
+      "status": "developer-verified",
+      "evidence": [
+        "native-full.json",
+        "mcp-missing-id-1033.json",
+        "mcp-missing-id-1039.json",
+        "mcp-empty-id-1033.json",
+        "mcp-empty-id-1039.json"
+      ]
+    },
+    {
+      "id": 2,
+      "status": "developer-verified",
+      "evidence": [
+        "native-full.json",
+        "mcp-unknown-id-1033.json",
+        "mcp-unknown-id-1039.json"
+      ]
+    },
+    {
+      "id": 3,
+      "status": "developer-verified",
+      "evidence": [
+        "native-full.json",
+        "mcp-summary.json",
+        "source-guards.json",
+        "ui-summary.json"
+      ]
+    }
+  ],
+  "pending": [
+    "Independent verification/review/approval",
+    "Architect merge/sameSHA deployment/Tester UAT"
+  ]
+}

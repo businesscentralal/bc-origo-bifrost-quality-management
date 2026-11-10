@@ -1,0 +1,66 @@
+{
+  "sha": "645a4d99f795290919e20e6d7476e66c81727095",
+  "tenant": "w129-16",
+  "checks": [
+    {
+      "table": "Qlty. I. Result Condit. Conf.",
+      "deleted": 1,
+      "remaining": 0
+    },
+    {
+      "table": "Qlty. Inspection Line",
+      "deleted": 1,
+      "remaining": 0
+    },
+    {
+      "table": "Qlty. Inspection Header",
+      "deleted": 1,
+      "remaining": 0
+    },
+    {
+      "table": "Qlty. Inspection Template Line",
+      "deleted": 1,
+      "remaining": 0
+    },
+    {
+      "table": "Qlty. Inspection Template Hdr.",
+      "deleted": 1,
+      "remaining": 0
+    },
+    {
+      "table": "Qlty. Test",
+      "deleted": 1,
+      "remaining": 0
+    },
+    {
+      "table": "Qlty. Inspection Result",
+      "deleted": 1,
+      "remaining": 0
+    }
+  ],
+  "remainingOwnedRecords": 0,
+  "taskAppsUninstalledAndUnpublished": 2,
+  "preservedBaselineApps": [
+    {
+      "id": "672df32a-a0c5-4a22-b591-0efa38023e95",
+      "packageId": "10b88cc7-cba6-4dac-ad42-3598d0b4e233",
+      "name": "Bifrost Attachments"
+    },
+    {
+      "id": "7cdb530b-b74b-446b-9ece-80e2b911bfb3",
+      "packageId": "ffa69ffa-b40c-43ca-b0c9-44ca2f696221",
+      "name": "Bifrost Attachments - Tests"
+    },
+    {
+      "id": "7505e808-6e52-4b96-a328-82573391297a",
+      "packageId": "2595fc66-fab7-41b8-bf87-ef98009a059a",
+      "name": "Bifrost Foundation"
+    },
+    {
+      "id": "9db1a0c9-c503-4793-a9e4-bcda3d3f3c94",
+      "packageId": "4bcb0914-5eb7-46bb-bfee-c9a2cd2e4691",
+      "name": "Bifrost Foundation - Tests"
+    }
+  ],
+  "finishedAt": "2026-11-10T12:01:31.743Z"
+}

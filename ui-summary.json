@@ -1,0 +1,38 @@
+{
+  "sha": "645a4d99f795290919e20e6d7476e66c81727095",
+  "tenant": "w129-16",
+  "verified": true,
+  "executed": 8,
+  "passed": 8,
+  "failed": 0,
+  "skipped": 0,
+  "lcids": [
+    1033,
+    1039
+  ],
+  "scenarios": [
+    {
+      "lcid": 1033,
+      "passed": 4,
+      "checks": [
+        "Own inspection number",
+        "Open status",
+        "Saved value20 after refusals",
+        "Test Value caption"
+      ]
+    },
+    {
+      "lcid": 1039,
+      "passed": 4,
+      "checks": [
+        "Own inspection number",
+        "Opi\u00f0 status",
+        "Saved value20 after refusals",
+        "Pr\u00f3funargildi caption"
+      ]
+    }
+  ],
+  "languageRestored": "English (United States)",
+  "uiScope": "Native state and persistence after typed JSON refusals; code/fields independently asserted in AL/MCP",
+  "finishedAt": "2026-11-10T12:02:38.371284+00:00"
+}

@@ -1,0 +1,31 @@
+{
+  "sha": "645a4d99f795290919e20e6d7476e66c81727095",
+  "targetBranch": "main",
+  "layer1": {
+    "summary": {
+      "passed": 22,
+      "total": 23,
+      "ready": false,
+      "failed": 2
+    },
+    "triage": "Only failed check one_statement_per_line: three procedure declarations have semicolon-delimited parameters. False positives; no executable multi-statement lines."
+  },
+  "layer2": {
+    "logic": "Typed input/access/status/lookup refusals retained. Microsoft SetTestValue/UpdateResultFromLines and rollback retained. main purchase return handler and16typed regressions merged; full96 passed.",
+    "compatibility": "Only internal/private error helpers changed; public signatures/fields preserved. No new suppressions or pipeline edits.",
+    "translations": "61unique generated units; current XLF source guard passes; bilingual native/MCP guidance assertions pass.",
+    "docs": "CHANGELOG,README,en-US/is-IS help retained and current.",
+    "permissions": "No new objects/grants; native restrictive-role assertions preserved.",
+    "scope": "#34 only; former #25 prerequisite merged; PR35 retargeted main.",
+    "limitations": [
+      "CI still running; no handoff until paired green.",
+      "Independent Claude/Grok/approval/merge/UAT pending."
+    ]
+  },
+  "appliedLessons": [
+    "quality34-worker5-single-refusal-shape-20261110",
+    "quality31-worker7-request-reader-shape-20261110",
+    "quality26-dainn-native-modify-and-app-capability-20261110"
+  ],
+  "learning": "Single-refusal array assumption -> Foundation flattens singleton -> retain typed top-level field assertions ->96native/39MCP passes."
+}

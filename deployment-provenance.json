@@ -1,0 +1,16 @@
+[
+  {
+    "app": "app",
+    "sourceSha": "645a4d99f795290919e20e6d7476e66c81727095",
+    "built": "58b89ffdfe7496af9395b879079f3c4822f36970bf6fdf1991a71a2aead47b6a",
+    "deployed": "58b89ffdfe7496af9395b879079f3c4822f36970bf6fdf1991a71a2aead47b6a",
+    "binaryMatch": true
+  },
+  {
+    "app": "test",
+    "sourceSha": "645a4d99f795290919e20e6d7476e66c81727095",
+    "built": "73427b1043f6dcb49de7a81b27165b419361468c38aec6722e7e5a4ca0a21e47",
+    "deployed": "73427b1043f6dcb49de7a81b27165b419361468c38aec6722e7e5a4ca0a21e47",
+    "binaryMatch": true
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "NoClientCallstack",
+    "exitCode": 0
+  },
+  {
+    "name": "ValidatedTableView",
+    "exitCode": 0
+  },
+  {
+    "name": "NoObsolete",
+    "exitCode": 0
+  },
+  {
+    "name": "PermissionCoverage",
+    "exitCode": 0
+  },
+  {
+    "name": "IcelandicKeywordCounts",
+    "exitCode": 0
+  },
+  {
+    "name": "ObjectIdsUnique",
+    "exitCode": 0
+  },
+  {
+    "name": "HelpLinks",
+    "exitCode": 0
+  },
+  {
+    "name": "ContractParameterKeys",
+    "exitCode": 0
+  },
+  {
+    "name": "MixedLanguageLabels",
+    "exitCode": 0
+  },
+  {
+    "name": "IcelandicXlfInSync",
+    "exitCode": 0
+  }
+]

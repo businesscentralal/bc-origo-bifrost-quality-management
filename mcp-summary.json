@@ -1,0 +1,547 @@
+{
+  "sha": "645a4d99f795290919e20e6d7476e66c81727095",
+  "tenant": "w129-16",
+  "runCode": "BIFTQ6-R634-1110",
+  "checks": [
+    {
+      "label": "missing-id",
+      "lcid": 1033,
+      "passed": true,
+      "code": "MissingParameter"
+    },
+    {
+      "label": "empty-id",
+      "lcid": 1033,
+      "passed": true,
+      "code": "MissingParameter"
+    },
+    {
+      "label": "unknown-id",
+      "lcid": 1033,
+      "passed": true,
+      "code": "RecordNotFound"
+    },
+    {
+      "label": "malformed-id",
+      "lcid": 1033,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "zero-guid",
+      "lcid": 1033,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "numeric-id",
+      "lcid": 1033,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "null-id",
+      "lcid": 1033,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "array-id",
+      "lcid": 1033,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "object-id",
+      "lcid": 1033,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "missing-code",
+      "lcid": 1033,
+      "passed": true,
+      "code": "MissingParameter"
+    },
+    {
+      "label": "empty-code",
+      "lcid": 1033,
+      "passed": true,
+      "code": "MissingParameter"
+    },
+    {
+      "label": "numeric-code",
+      "lcid": 1033,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "long-code",
+      "lcid": 1033,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "missing-value",
+      "lcid": 1033,
+      "passed": true,
+      "code": "MissingParameter"
+    },
+    {
+      "label": "numeric-value",
+      "lcid": 1033,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "long-value",
+      "lcid": 1033,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "unknown-key",
+      "lcid": 1033,
+      "passed": true,
+      "code": "UnknownParameter"
+    },
+    {
+      "label": "valid-value",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "native-invalid",
+      "lcid": 1033,
+      "passed": true,
+      "code": "BusinessCentralError"
+    },
+    {
+      "label": "missing-id",
+      "lcid": 1039,
+      "passed": true,
+      "code": "MissingParameter"
+    },
+    {
+      "label": "empty-id",
+      "lcid": 1039,
+      "passed": true,
+      "code": "MissingParameter"
+    },
+    {
+      "label": "unknown-id",
+      "lcid": 1039,
+      "passed": true,
+      "code": "RecordNotFound"
+    },
+    {
+      "label": "malformed-id",
+      "lcid": 1039,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "zero-guid",
+      "lcid": 1039,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "numeric-id",
+      "lcid": 1039,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "null-id",
+      "lcid": 1039,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "array-id",
+      "lcid": 1039,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "object-id",
+      "lcid": 1039,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "missing-code",
+      "lcid": 1039,
+      "passed": true,
+      "code": "MissingParameter"
+    },
+    {
+      "label": "empty-code",
+      "lcid": 1039,
+      "passed": true,
+      "code": "MissingParameter"
+    },
+    {
+      "label": "numeric-code",
+      "lcid": 1039,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "long-code",
+      "lcid": 1039,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "missing-value",
+      "lcid": 1039,
+      "passed": true,
+      "code": "MissingParameter"
+    },
+    {
+      "label": "numeric-value",
+      "lcid": 1039,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "long-value",
+      "lcid": 1039,
+      "passed": true,
+      "code": "InvalidParameter"
+    },
+    {
+      "label": "unknown-key",
+      "lcid": 1039,
+      "passed": true,
+      "code": "UnknownParameter"
+    },
+    {
+      "label": "valid-value",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "native-invalid",
+      "lcid": 1039,
+      "passed": true,
+      "code": "BusinessCentralError"
+    },
+    {
+      "label": "unchanged-after-native-refusal",
+      "passed": true
+    }
+  ],
+  "setup": [
+    {
+      "tableName": "Qlty. Test",
+      "fields": {
+        "Code": "BIFTQ6-R634-1110",
+        "Test Value Type": 1
+      },
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Test.Records.Set",
+        "status": "Success",
+        "tableId": 20401,
+        "inserted": 1,
+        "modified": 0,
+        "records": [
+          {
+            "Code": "BIFTQ6-R634-1110",
+            "Description": "",
+            "Test Value Type": "Integer",
+            "Allowable Values": "",
+            "Lookup Table No.": "0",
+            "Lookup Field No.": "0",
+            "Lookup Table Filter": "",
+            "Default Value": "",
+            "Case Sensitive": "Sensitive",
+            "Expression Formula": "",
+            "Unit of Measure Code": "",
+            "$systemId": "{99056CB0-FDDC-F111-B6F8-00090FFE0001}",
+            "SystemCreatedAt": "2026-11-10T11:55:58.059Z",
+            "SystemCreatedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}",
+            "SystemModifiedAt": "2026-11-10T11:55:58.061Z",
+            "SystemModifiedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}"
+          }
+        ]
+      }
+    },
+    {
+      "tableName": "Qlty. Inspection Template Hdr.",
+      "fields": {
+        "Code": "BIFTQ6-R634-1110"
+      },
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Test.Records.Set",
+        "status": "Success",
+        "tableId": 20402,
+        "inserted": 1,
+        "modified": 0,
+        "records": [
+          {
+            "Code": "BIFTQ6-R634-1110",
+            "Description": "",
+            "Copied From Template Code": "",
+            "Sample Source": " ",
+            "Sample Fixed Amount": "0",
+            "Sample Percentage": "0",
+            "$systemId": "{9B056CB0-FDDC-F111-B6F8-00090FFE0001}",
+            "SystemCreatedAt": "2026-11-10T11:55:58.164Z",
+            "SystemCreatedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}",
+            "SystemModifiedAt": "2026-11-10T11:55:58.164Z",
+            "SystemModifiedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}"
+          }
+        ]
+      }
+    },
+    {
+      "tableName": "Qlty. Inspection Template Line",
+      "fields": {
+        "Template Code": "BIFTQ6-R634-1110",
+        "Line No.": 10000,
+        "Test Code": "BIFTQ6-R634-1110"
+      },
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Test.Records.Set",
+        "status": "Success",
+        "tableId": 20403,
+        "inserted": 1,
+        "modified": 0,
+        "records": [
+          {
+            "Template Code": "BIFTQ6-R634-1110",
+            "Line No.": "10000",
+            "Test Code": "BIFTQ6-R634-1110",
+            "Description": "",
+            "Copied From Template Code": "",
+            "Expression Formula": "",
+            "Unit of Measure Code": "",
+            "$systemId": "{9D056CB0-FDDC-F111-B6F8-00090FFE0001}",
+            "SystemCreatedAt": "2026-11-10T11:55:58.253Z",
+            "SystemCreatedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}",
+            "SystemModifiedAt": "2026-11-10T11:55:58.258Z",
+            "SystemModifiedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}"
+          }
+        ]
+      }
+    },
+    {
+      "tableName": "Qlty. Inspection Result",
+      "fields": {
+        "Code": "BIFTQ6-R634-1110"
+      },
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Test.Records.Set",
+        "status": "Success",
+        "tableId": 20411,
+        "inserted": 1,
+        "modified": 0,
+        "records": [
+          {
+            "Code": "BIFTQ6-R634-1110",
+            "Description": "",
+            "Evaluation Sequence": "0",
+            "Copy Behavior": "Automatically copy the result",
+            "Result Visibility": "Configuration only",
+            "Default Number Condition": "",
+            "Default Text Condition": "",
+            "Default Boolean Condition": "",
+            "Result Category": " ",
+            "Finish Allowed": "Allow Finish",
+            "Item Tracking Allow Sales": "Allow",
+            "Item Tracking Allow Asm. Cons.": "Allow",
+            "Item Tracking Allow Consump.": "Allow",
+            "Item Tracking Allow Output": "Allow",
+            "Item Tracking Allow Purchase": "Allow",
+            "Item Tracking Allow Transfer": "Allow",
+            "Item Tracking Allow Asm. Out.": "Allow",
+            "Item Tracking Allow Invt. Mov.": "Allow",
+            "Item Tracking Allow Invt. Pick": "Allow",
+            "Item Tracking Allow Invt. PA": "Allow",
+            "Item Tracking Allow Movement": "Allow",
+            "Item Tracking Allow Pick": "Allow",
+            "Item Tracking Allow Put-Away": "Allow",
+            "Override Style": "",
+            "$systemId": "{9F056CB0-FDDC-F111-B6F8-00090FFE0001}",
+            "SystemCreatedAt": "2026-11-10T11:55:58.336Z",
+            "SystemCreatedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}",
+            "SystemModifiedAt": "2026-11-10T11:55:58.336Z",
+            "SystemModifiedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}"
+          }
+        ]
+      }
+    },
+    {
+      "tableName": "Qlty. Inspection Header",
+      "fields": {
+        "No.": "BIFTQ6-R634-1110",
+        "Template Code": "BIFTQ6-R634-1110",
+        "Assigned User ID": "GUNNAR"
+      },
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Test.Records.Set",
+        "status": "Success",
+        "tableId": 20405,
+        "inserted": 1,
+        "modified": 0,
+        "records": [
+          {
+            "No.": "BIFTQ6-R634-1110",
+            "Re-inspection No.": "0",
+            "Most Recent Re-inspection": "true",
+            "Template Code": "BIFTQ6-R634-1110",
+            "Description": "",
+            "Status": "Open",
+            "Source Quantity (Base)": "0",
+            "Pass Quantity": "0",
+            "Fail Quantity": "0",
+            "Sample Size": "0",
+            "Assigned User ID": "GUNNAR",
+            "Planned Start Date": "2026-11-10T11:55:58.44Z",
+            "Finished Date": "",
+            "Finished By User ID": "",
+            "Result Code": "",
+            "Evaluation Sequence": "0",
+            "Location Code": "",
+            "Most Recent Picture": "(binary)",
+            "Source Table No.": "0",
+            "Source Type": "0",
+            "Source Sub Type": "0",
+            "Source Document No.": "",
+            "Source Document Line No.": "0",
+            "Source Task No.": "",
+            "Source Item No.": "",
+            "Source Variant Code": "",
+            "Source Serial No.": "",
+            "Source Lot No.": "",
+            "Source Package No.": "",
+            "Trigger Record Table No.": "0",
+            "Trigger RecordId": "",
+            "Source Record Table No.": "0",
+            "Source RecordId": "",
+            "Source RecordId 2": "",
+            "Source RecordId 3": "",
+            "Source RecordId 4": "",
+            "Source Custom 1": "",
+            "Source Custom 2": "",
+            "Source Custom 3": "",
+            "Source Custom 4": "",
+            "Source Custom 5": "",
+            "Source Custom 6": "",
+            "Source Custom 7": "0",
+            "Source Custom 8": "0",
+            "Source Custom 9": "0",
+            "Source Custom 10": "0",
+            "$systemId": "{A1056CB0-FDDC-F111-B6F8-00090FFE0001}",
+            "SystemCreatedAt": "2026-11-10T11:55:58.431Z",
+            "SystemCreatedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}",
+            "SystemModifiedAt": "2026-11-10T11:55:58.459Z",
+            "SystemModifiedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}"
+          }
+        ]
+      }
+    },
+    {
+      "tableName": "Qlty. Inspection Line",
+      "fields": {
+        "Inspection No.": "BIFTQ6-R634-1110",
+        "Line No.": 10000,
+        "Template Code": "BIFTQ6-R634-1110",
+        "Template Line No.": 10000,
+        "Test Code": "BIFTQ6-R634-1110",
+        "Test Value": "1"
+      },
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Test.Records.Set",
+        "status": "Success",
+        "tableId": 20406,
+        "inserted": 1,
+        "modified": 0,
+        "records": [
+          {
+            "Inspection No.": "BIFTQ6-R634-1110",
+            "Re-inspection No.": "0",
+            "Line No.": "10000",
+            "Template Code": "BIFTQ6-R634-1110",
+            "Template Line No.": "10000",
+            "Test Code": "BIFTQ6-R634-1110",
+            "Description": "",
+            "Allowable Values": "",
+            "Test Value": "1",
+            "Test Value Blob": "(binary)",
+            "Derived Numeric Value": "1",
+            "Result Code": "",
+            "Evaluation Sequence": "0",
+            "Failure State": " ",
+            "Non-Conformance Inspection No.": "",
+            "Unit of Measure Code": "",
+            "$systemId": "{A3056CB0-FDDC-F111-B6F8-00090FFE0001}",
+            "SystemCreatedAt": "2026-11-10T11:55:58.546Z",
+            "SystemCreatedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}",
+            "SystemModifiedAt": "2026-11-10T11:55:58.557Z",
+            "SystemModifiedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}"
+          }
+        ]
+      }
+    },
+    {
+      "tableName": "Qlty. I. Result Condit. Conf.",
+      "fields": {
+        "Condition Type": 2,
+        "Target Code": "BIFTQ6-R634-1110",
+        "Target Line No.": 10000,
+        "Test Code": "BIFTQ6-R634-1110",
+        "Result Code": "BIFTQ6-R634-1110",
+        "Condition": "10..100"
+      },
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Test.Records.Set",
+        "status": "Success",
+        "tableId": 20412,
+        "inserted": 1,
+        "modified": 0,
+        "records": [
+          {
+            "Condition Type": "Inspection",
+            "Target Code": "BIFTQ6-R634-1110",
+            "Target Re-inspection No.": "0",
+            "Target Line No.": "10000",
+            "Test Code": "BIFTQ6-R634-1110",
+            "Result Code": "BIFTQ6-R634-1110",
+            "Condition": "10..100",
+            "Condition Description": "",
+            "Priority": "0",
+            "Result Visibility": "Configuration only",
+            "$systemId": "{A5056CB0-FDDC-F111-B6F8-00090FFE0001}",
+            "SystemCreatedAt": "2026-11-10T11:55:58.73Z",
+            "SystemCreatedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}",
+            "SystemModifiedAt": "2026-11-10T11:55:58.733Z",
+            "SystemModifiedBy": "{1BCFC6C3-BD95-4D79-95C9-6B872EE8549B}"
+          }
+        ]
+      }
+    }
+  ],
+  "startedAt": "2026-11-10T11:58:20.713Z",
+  "inspectionSystemId": "A1056CB0-FDDC-F111-B6F8-00090FFE0001",
+  "fullSuite": false,
+  "executed": 39,
+  "passed": 39,
+  "failed": 0,
+  "skipped": 0,
+  "createsOwnData": true,
+  "touchedMessageTypes": [
+    "Quality.Inspection.SetTestValue"
+  ],
+  "finishedAt": "2026-11-10T11:58:24.916Z"
+}
