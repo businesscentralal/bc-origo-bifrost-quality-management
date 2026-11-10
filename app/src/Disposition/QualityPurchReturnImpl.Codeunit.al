@@ -24,6 +24,21 @@ codeunit 10035245 "Quality Purch Return Impl ori" implements "Msg Interface ori"
         OverviewLbl: Label 'Creates an unposted purchase return order using Qlty. Disp. Purchase Return and the Failed Quantity behavior, with optional return reason and vendor credit memo number.', Comment = 'is-IS=Stofnar óbókaða innkaupaskilapöntun með Qlty. Disp. Purchase Return og föllnu magni ásamt valfrjálsri skilaástæðu og kreditreikningsnúmeri lánardrottins.';
         NotesLbl: Label 'inspectionSystemId selects exactly one inspection including its re-inspection. reasonCode (10 characters) and vendorCreditMemoNo (35 characters) are optional text. Missing, malformed and unknown inputs are refused before any business write. Only purchase line sources are accepted. Microsoft requires positive failed quantity, sufficient received quantity and valid purchase setup. No explicit Commit occurs on the standard disposition path; explicit subscriber commits are prohibited. Normal execution rolls back all writes on refusal. With Omit Commit the caller owns rollback. This operation is not idempotent: a retry can create another return. It creates an unposted return order; it does not post a vendor credit memo or call an external provider.', Comment = 'is-IS=inspectionSystemId velur nákvæmlega eina skoðun ásamt endurskoðun hennar. reasonCode (10 stafir) og vendorCreditMemoNo (35 stafir) eru valfrjálsir textar. Lyklum sem vantar og gölluðum eða óþekktum gildum er hafnað áður en viðskiptagögnum er breytt. Aðeins innkaupalínur eru leyfðar sem uppruni. Microsoft krefst jákvæðs fallins magns, nægs móttekins magns og gildrar innkaupauppsetningar. Staðlaða leiðin notar ekkert beint Commit; beinar staðfestingar frá áskrifendum eru bannaðar. Venjuleg keyrsla bakfærir allar breytingar við höfnun. Með Omit Commit ber kallandi ábyrgð á bakfærslu. Aðgerðin er ekki ítrekunarörugg: endurtekning getur stofnað aðra skilapöntun. Hún stofnar óbókaða skilapöntun, bókar ekki kreditreikning lánardrottins og kallar ekki á ytri þjónustu.';
 
+    var
+        InspectionDescriptionLbl: Label 'SystemId of the exact inspection and re-inspection.', Comment = 'is-IS=SystemId tiltekinnar skoðunar og endurskoðunar hennar.';
+        ReasonDescriptionLbl: Label 'Return reason code, maximum 10 characters.', Comment = 'is-IS=Skilaástæðukóði, að hámarki 10 stafir.';
+        CreditDescriptionLbl: Label 'Vendor credit memo number, maximum 35 characters.', Comment = 'is-IS=Kreditreikningsnúmer lánardrottins, að hámarki 35 stafir.';
+        SuccessDescriptionLbl: Label 'Success.', Comment = 'is-IS=Tókst.';
+        ReturnDescriptionLbl: Label 'Created unposted purchase return order number.', Comment = 'is-IS=Númer stofnaðrar óbókaðrar innkaupaskilapöntunar.';
+        BusinessRefusalLbl: Label 'Business Central refusal', Comment = 'is-IS=Höfnun frá Business Central';
+        ErrorWhenLbl: Label 'Invalid input, nonpurchase source, nonpositive failed quantity, unavailable receipt, setup or permission refusal.', Comment = 'is-IS=Ógilt inntak, uppruni er ekki innkaup, fallið magn er ekki jákvætt, móttöku vantar eða uppsetning eða heimildir hafna aðgerð.';
+        ErrorFixLbl: Label 'Correct the request, inspection, purchase setup or permissions.', Comment = 'is-IS=Leiðréttu beiðni, skoðun, innkaupauppsetningu eða heimildir.';
+        ChangesLbl: Label 'Creates an unposted purchase return header and lines through Microsoft disposition. Does not post a credit memo. No explicit Commit on the standard path; explicit subscriber commits prohibited.', Comment = 'is-IS=Stofnar óbókaðan innkaupaskilahaus og línur með stöðluðum aðgerðum Microsoft. Bókar ekki kreditreikning. Staðlaða leiðin inniheldur ekkert beint Commit; beinar staðfestingar frá áskrifendum eru bannaðar.';
+        SourcePreconditionLbl: Label 'Inspection with Purchase Line source and positive failed quantity.', Comment = 'is-IS=Skoðun með innkaupalínu sem uppruna og jákvætt fallið magn.';
+        SetupPreconditionLbl: Label 'Received quantity sufficient for the return and valid Microsoft purchase setup.', Comment = 'is-IS=Nægilegt móttekið magn fyrir skil og gild innkaupauppsetning Microsoft.';
+        PermissionPreconditionLbl: Label 'Microsoft purchase and Quality Management permissions.', Comment = 'is-IS=Innkaupa- og gæðastjórnunarheimildir Microsoft.';
+        ExampleTitleLbl: Label 'Return the failed quantity', Comment = 'is-IS=Skila föllnu magni';
+
     trigger OnRun()
     begin
         PerformWrite(Rec);
@@ -47,6 +62,7 @@ codeunit 10035245 "Quality Purch Return Impl ori" implements "Msg Interface ori"
     var
         WriteAccess: Record "Quality Return Access ori";
         Inspection: Record "Qlty. Inspection Header";
+        ReturnLine: Record "Purchase Line";
         TempInstructions: Record "Qlty. Disposition Buffer" temporary;
         PurchaseReturn: Codeunit "Qlty. Disp. Purchase Return";
         Receipt: Codeunit "Quality Return Receipt ori";
@@ -82,6 +98,12 @@ codeunit 10035245 "Quality Purch Return Impl ori" implements "Msg Interface ori"
         UnbindSubscription(Receipt);
         ReturnOrderNo := Receipt.GetReturnOrderNo();
         if ReturnOrderNo = '' then
+            Error(ErrorInfo.Create(NoReturnErr));
+        ReturnLine.SetRange("Document Type", ReturnLine."Document Type"::"Return Order");
+        ReturnLine.SetRange("Document No.", ReturnOrderNo);
+        ReturnLine.SetRange(Type, ReturnLine.Type::Item);
+        ReturnLine.SetRange("No.", Inspection."Source Item No.");
+        if ReturnLine.IsEmpty() then
             Error(ErrorInfo.Create(NoReturnErr));
         Response.Add('status', 'Success');
         Response.Add('inspectionSystemId', Format(Inspection.SystemId, 0, 4));
@@ -178,8 +200,14 @@ codeunit 10035245 "Quality Purch Return Impl ori" implements "Msg Interface ori"
 
     /// <summary>Provides the target contract chapter.</summary>
     procedure GetTarget(var Target: JsonArray): Boolean
+    var
+        Entry: JsonObject;
     begin
-        Target.ReadFrom('[{"source":"data.inspectionSystemId","form":"GUID","description":"SystemId of the exact inspection and re-inspection."}]');
+        Clear(Target);
+        Entry.Add('source', 'data.inspectionSystemId');
+        Entry.Add('form', 'GUID');
+        Entry.Add('description', InspectionDescriptionLbl);
+        Target.Add(Entry);
         exit(true);
     end;
 
@@ -189,37 +217,77 @@ codeunit 10035245 "Quality Purch Return Impl ori" implements "Msg Interface ori"
         ContractMgt: Codeunit "Msg Contract Mgt ori";
     begin
         Clear(Parameters);
-        Parameters.Add(ContractMgt.Parameter('inspectionSystemId', 'string', true, 'SystemId of the exact inspection and re-inspection.'));
-        Parameters.Add(ContractMgt.Parameter('reasonCode', 'string', false, 'Return reason code, maximum 10 characters.'));
-        Parameters.Add(ContractMgt.Parameter('vendorCreditMemoNo', 'string', false, 'Vendor credit memo number, maximum 35 characters.'));
+        Parameters.Add(ContractMgt.Parameter('inspectionSystemId', 'string', true, InspectionDescriptionLbl));
+        Parameters.Add(ContractMgt.Parameter('reasonCode', 'string', false, ReasonDescriptionLbl));
+        Parameters.Add(ContractMgt.Parameter('vendorCreditMemoNo', 'string', false, CreditDescriptionLbl));
         exit(true);
     end;
 
     /// <summary>Provides the response contract chapter.</summary>
     procedure GetResponse(var Response: JsonObject): Boolean
+    var
+        Fields: JsonArray;
     begin
-        Response.ReadFrom('{"contentType":"application/json","fields":[{"name":"status","type":"string","description":"Success."},{"name":"inspectionSystemId","type":"string","description":"Exact inspection SystemId."},{"name":"returnOrderNo","type":"string","description":"Created unposted purchase return order number."}]}');
+        Clear(Response);
+        AddResponseField(Fields, 'status', SuccessDescriptionLbl);
+        AddResponseField(Fields, 'inspectionSystemId', InspectionDescriptionLbl);
+        AddResponseField(Fields, 'returnOrderNo', ReturnDescriptionLbl);
+        Response.Add('contentType', 'application/json');
+        Response.Add('fields', Fields);
         exit(true);
+    end;
+
+    local procedure AddResponseField(var Fields: JsonArray; FieldName: Text; Description: Text)
+    var
+        FieldDefinition: JsonObject;
+    begin
+        FieldDefinition.Add('name', FieldName);
+        FieldDefinition.Add('type', 'string');
+        FieldDefinition.Add('description', Description);
+        Fields.Add(FieldDefinition);
     end;
 
     /// <summary>Provides the errors contract chapter.</summary>
     procedure GetErrors(var Errors: JsonArray): Boolean
+    var
+        Entry: JsonObject;
     begin
-        Errors.ReadFrom('[{"error":"Business Central refusal","when":"Invalid input, nonpurchase source, nonpositive failed quantity, unavailable receipt, setup or permission refusal.","fix":"Correct the request, inspection, purchase setup or permissions."}]');
+        Clear(Errors);
+        Entry.Add('error', BusinessRefusalLbl);
+        Entry.Add('when', ErrorWhenLbl);
+        Entry.Add('fix', ErrorFixLbl);
+        Errors.Add(Entry);
         exit(true);
     end;
 
     /// <summary>Provides the effect contract chapter.</summary>
     procedure GetEffect(var Effect: JsonObject): Boolean
+    var
+        Preconditions: JsonArray;
     begin
-        Effect.ReadFrom('{"effect":"write","changes":"Creates an unposted purchase return header and lines through Microsoft disposition. Does not post a credit memo. No explicit Commit on the standard path; explicit subscriber commits prohibited.","idempotent":false,"permissionSet":"BIFROST QM Full ori","preconditions":["Inspection with Purchase Line source and positive failed quantity.","Received quantity sufficient for the return and valid Microsoft purchase setup.","Microsoft purchase and Quality Management permissions."]}');
+        Clear(Effect);
+        Preconditions.Add(SourcePreconditionLbl);
+        Preconditions.Add(SetupPreconditionLbl);
+        Preconditions.Add(PermissionPreconditionLbl);
+        Effect.Add('effect', 'write');
+        Effect.Add('changes', ChangesLbl);
+        Effect.Add('idempotent', false);
+        Effect.Add('permissionSet', 'BIFROST QM Full ori');
+        Effect.Add('preconditions', Preconditions);
         exit(true);
     end;
 
     /// <summary>Provides the examples contract chapter.</summary>
     procedure GetExamples(var Examples: JsonArray): Boolean
+    var
+        EntryToken: JsonToken;
+        Entry: JsonObject;
     begin
         Examples.ReadFrom('[{"title":"Return the failed quantity","request":{"type":"Quality.Disposition.CreatePurchaseReturn","data":{"inspectionSystemId":"00000000-0000-0000-0000-000000000001","reasonCode":"QUALITY","vendorCreditMemoNo":"VC-001"}},"response":{"status":"Success","inspectionSystemId":"00000000-0000-0000-0000-000000000001","returnOrderNo":"PRO00001"}}]');
+        Examples.Get(0, EntryToken);
+        Entry := EntryToken.AsObject();
+        Entry.Replace('title', ExampleTitleLbl);
+        Examples.Set(0, Entry);
         exit(true);
     end;
 

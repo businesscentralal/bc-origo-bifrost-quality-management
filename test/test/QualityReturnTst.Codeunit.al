@@ -1,8 +1,13 @@
 namespace Origo.Bifrost.QualityManagement.Test;
 
+using Microsoft.Finance.GeneralLedger.Setup;
+using Microsoft.Finance.VAT.Setup;
 using Microsoft.Foundation.AuditCodes;
+using Microsoft.Foundation.UOM;
 using Microsoft.Inventory.Item;
 using Microsoft.Inventory.Ledger;
+using Microsoft.Inventory.Setup;
+using Microsoft.Purchases.Setup;
 using Microsoft.Purchases.Document;
 using Microsoft.Purchases.History;
 using Microsoft.Purchases.Vendor;
@@ -173,6 +178,22 @@ codeunit 97210 "Quality Return Tst ori"
         VerifyScenario('optional', 1033);
     end;
 
+    /// <summary>Refuses a standard event-handled no-op without reporting success.</summary>
+    [Test]
+    procedure Scenario_NoOpIsRefused()
+    begin
+        // #13 AC03/AC04 | Time: independent of dates | Risk: owned fixtures only.
+        VerifyScenario('noop', 1033);
+    end;
+
+    /// <summary>Prohibits an explicit subscriber commit after native writes and rolls them back.</summary>
+    [Test]
+    procedure Scenario_SubscriberCommitRollsBack()
+    begin
+        // #13 AC01/AC04 | Time: independent of dates | Risk: owned fixtures only.
+        VerifyScenario('commit', 1033);
+    end;
+
     local procedure VerifyScenario(Scenario: Text; LanguageId: Integer)
     var
         Inspection: Record "Qlty. Inspection Header";
@@ -225,8 +246,10 @@ codeunit 97210 "Quality Return Tst ori"
             end;
         end;
         Commit();
-        if Scenario = 'late' then
+        if Scenario in ['late', 'noop', 'commit'] then begin
+            Fault.SetMode(Scenario);
             BindSubscription(Fault);
+        end;
         case Scenario of
             'permission': LowerPermissions.SetExactPermissionSet('BIFROST Read ori');
             'noApp': begin
@@ -243,7 +266,7 @@ codeunit 97210 "Quality Return Tst ori"
         LowerPermissions.AddPermissionSet('QM Return Test ori');
         // [WHEN] The public dispatcher performs the real Microsoft disposition.
         Response := Dispatch(Request, LanguageId);
-        if Scenario = 'late' then
+        if Scenario in ['late', 'noop', 'commit'] then
             UnbindSubscription(Fault);
         LowerPermissions.SetOutsideO365Scope();
         // [THEN] It creates exactly the failed quantity, or refuses without leaving any return header/line.
@@ -293,16 +316,83 @@ codeunit 97210 "Quality Return Tst ori"
         ReceiptLine: Record "Purch. Rcpt. Line";
         Ledger: Record "Item Ledger Entry";
         ReturnReason: Record "Return Reason";
-        LibraryInventory: Codeunit "Library - Inventory";
-        LibraryPurchase: Codeunit "Library - Purchase";
+        GeneralPostingSetup: Record "General Posting Setup";
+        VATPostingSetup: Record "VAT Posting Setup";
+        InventoryPostingGroup: Record "Inventory Posting Group";
+        VendorPostingGroup: Record "Vendor Posting Group";
+        UnitOfMeasure: Record "Unit of Measure";
+        ItemUnit: Record "Item Unit of Measure";
     begin
         if CopyStr(RunCode, 1, 8) <> 'BIFTQ13-' then
             Error('Only BIFTQ13- fixtures are permitted.');
         if Inspection.Get(RunCode, 0) then
             Error('Fixture already exists; inspect instead of replaying creation.');
-        LibraryInventory.CreateItem(Item);
-        LibraryPurchase.CreateVendor(Vendor);
-        LibraryPurchase.CreatePurchaseDocumentWithItem(PurchaseHeader, PurchaseLine, PurchaseHeader."Document Type"::Order, Vendor."No.", Item."No.", 10, '', WorkDate());
+        // Reuse only posting configuration, never existing vendor/item/receipt fixtures.
+        // Seed synthetic rows directly so fixture creation cannot change number-series/setup or create contacts.
+        GeneralPostingSetup.SetFilter("Gen. Bus. Posting Group", '<>%1', '');
+        GeneralPostingSetup.SetFilter("Gen. Prod. Posting Group", '<>%1', '');
+        GeneralPostingSetup.FindFirst();
+        VATPostingSetup.SetFilter("VAT Bus. Posting Group", '<>%1', '');
+        VATPostingSetup.SetFilter("VAT Prod. Posting Group", '<>%1', '');
+        VATPostingSetup.SetRange("VAT Calculation Type", VATPostingSetup."VAT Calculation Type"::"Normal VAT");
+        VATPostingSetup.FindFirst();
+        InventoryPostingGroup.FindFirst();
+        VendorPostingGroup.FindFirst();
+        UnitOfMeasure.FindFirst();
+        Vendor."No." := RunCode;
+        Vendor.Name := RunCode;
+        Vendor."Gen. Bus. Posting Group" := GeneralPostingSetup."Gen. Bus. Posting Group";
+        Vendor."VAT Bus. Posting Group" := VATPostingSetup."VAT Bus. Posting Group";
+        Vendor."Vendor Posting Group" := VendorPostingGroup.Code;
+        Vendor.Insert(false);
+        Item."No." := RunCode;
+        Item.Description := RunCode;
+        Item."Base Unit of Measure" := UnitOfMeasure.Code;
+        Item."Gen. Prod. Posting Group" := GeneralPostingSetup."Gen. Prod. Posting Group";
+        Item."VAT Prod. Posting Group" := VATPostingSetup."VAT Prod. Posting Group";
+        Item."Inventory Posting Group" := InventoryPostingGroup.Code;
+        Item.Insert(false);
+        ItemUnit."Item No." := RunCode;
+        ItemUnit.Code := UnitOfMeasure.Code;
+        ItemUnit."Qty. per Unit of Measure" := 1;
+        ItemUnit.Insert(false);
+        PurchaseHeader."Document Type" := PurchaseHeader."Document Type"::Order;
+        PurchaseHeader."No." := RunCode;
+        PurchaseHeader."Buy-from Vendor No." := RunCode;
+        PurchaseHeader."Pay-to Vendor No." := RunCode;
+        PurchaseHeader."Buy-from Vendor Name" := RunCode;
+        PurchaseHeader."Posting Date" := WorkDate();
+        PurchaseHeader."Document Date" := WorkDate();
+        PurchaseHeader."Gen. Bus. Posting Group" := Vendor."Gen. Bus. Posting Group";
+        PurchaseHeader."VAT Bus. Posting Group" := Vendor."VAT Bus. Posting Group";
+        PurchaseHeader."Vendor Posting Group" := Vendor."Vendor Posting Group";
+        PurchaseHeader.Insert(false);
+        PurchaseLine."Document Type" := PurchaseHeader."Document Type";
+        PurchaseLine."Document No." := RunCode;
+        PurchaseLine."Line No." := 10000;
+        PurchaseLine.Type := PurchaseLine.Type::Item;
+        PurchaseLine."No." := Item."No.";
+        PurchaseLine."Buy-from Vendor No." := Vendor."No.";
+        PurchaseLine."Pay-to Vendor No." := Vendor."No.";
+        PurchaseLine.Description := Item.Description;
+        PurchaseLine."Unit of Measure Code" := UnitOfMeasure.Code;
+        PurchaseLine."Qty. per Unit of Measure" := 1;
+        PurchaseLine.Quantity := 10;
+        PurchaseLine."Quantity (Base)" := 10;
+        PurchaseLine."Qty. to Receive" := 10;
+        PurchaseLine."Qty. to Receive (Base)" := 10;
+        PurchaseLine."Qty. to Invoice" := 10;
+        PurchaseLine."Qty. to Invoice (Base)" := 10;
+        PurchaseLine."Outstanding Quantity" := 10;
+        PurchaseLine."Outstanding Qty. (Base)" := 10;
+        PurchaseLine."Gen. Bus. Posting Group" := Vendor."Gen. Bus. Posting Group";
+        PurchaseLine."Gen. Prod. Posting Group" := Item."Gen. Prod. Posting Group";
+        PurchaseLine."VAT Bus. Posting Group" := Vendor."VAT Bus. Posting Group";
+        PurchaseLine."VAT Prod. Posting Group" := Item."VAT Prod. Posting Group";
+        PurchaseLine."VAT Calculation Type" := VATPostingSetup."VAT Calculation Type";
+        PurchaseLine."VAT %" := VATPostingSetup."VAT %";
+        PurchaseLine."VAT Identifier" := VATPostingSetup."VAT Identifier";
+        PurchaseLine.Insert(false);
         ReceiptHeader.TransferFields(PurchaseHeader);
         ReceiptHeader."No." := RunCode;
         ReceiptHeader."Order No." := PurchaseHeader."No.";
