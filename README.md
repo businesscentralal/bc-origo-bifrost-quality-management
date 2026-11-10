@@ -11,11 +11,11 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management>
 
-**Status:** registration, Foundation roles, and `Quality.Disposition.CreatePurchaseReturn` are implemented.
+**Status:** includes `Quality.Inspection.SetTestValue` and `Quality.Disposition.CreatePurchaseReturn`; see the [test-value contract](app/docs/en-us/SetTestValue.md) ([íslenska](app/docs/is-is/SetTestValue.md)).
 
 Foundation discovers this app on **Bifrost Setup** through its application registry. All setup notifications stay on that Foundation page. Quality Management has no setup page of its own.
 
-Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. The Full role grants purchase-return execution and Microsoft Quality Inspector permissions; callers also need native purchase-document permissions. The Read role does not grant disposition execution.
+Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. The Full role grants test-value and purchase-return execution and includes Microsoft’s `QltyMgmt - Inspector` permissions; purchase-return callers also need native purchase-document permissions. Dedicated empty capability tables enforce the app Full grant even when a Foundation API role grants wildcard codeunit execution. The Read and base sets grant registration only; they cannot execute these write operations.
 
 The app manifest exposes the `quality-management` documentation entry in English and Icelandic. The complete object allocation is recorded in [.claude/CLAUDE.md](.claude/CLAUDE.md).
 
