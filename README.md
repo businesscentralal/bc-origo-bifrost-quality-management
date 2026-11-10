@@ -11,11 +11,11 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management>
 
-**Status:** installable scaffold; no message types yet.
+**Message type:** `Quality.Inspection.Create` creates or resolves an inspection using Microsoft generation rules, optionally selecting a template. See the [English contract guide](app/docs/en-us/CreateInspection.md) or [Icelandic guide](app/docs/is-is/CreateInspection.md).
 
 Foundation discovers this app on **Bifrost Setup** through its application registry. All setup notifications stay on that Foundation page. Quality Management has no setup page of its own.
 
-Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. These scaffold roles grant execution of registration only; they grant no access to Microsoft Quality Management business data.
+Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. Creation requires `BIFROST QM Full ori` plus the caller’s native Quality Management and source-record permissions. The Read role cannot create inspections. The app does not grant native business-data access.
 
 The app manifest exposes the `quality-management` documentation entry in English and Icelandic. The complete object allocation is recorded in [.claude/CLAUDE.md](.claude/CLAUDE.md).
 

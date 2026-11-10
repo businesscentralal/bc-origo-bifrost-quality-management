@@ -3,6 +3,96 @@
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Quality Management">
     <body>
       <group id="body">
+        <trans-unit id="Table 1183539652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality Write Access</source>
+          <target>Skrifaðgangur að gæðastjórnun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Skrifaðgangur að gæðastjórnun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Write Access ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1183539652 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <target>Aðallykill</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Write Access ori - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2755627535 - NamedType 3569966352" maxwidth="250" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creates or resolves a quality inspection for one source record through Microsoft generation rules.</source>
+          <target>Stofnar eða finnur gæðaskoðun fyrir eina upprunafærslu með stofnunarreglum Microsoft.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Stofnar eða finnur gæðaskoðun fyrir eina upprunafærslu með stofnunarreglum Microsoft.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2755627535 - NamedType 1575191754" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The required parameter '%1' is missing or invalid.</source>
+          <target>Nauðsynlega færibreytu '%1' vantar eða hún er ógild.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name|is-IS=Nauðsynlega færibreytu '%1' vantar eða hún er ógild.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType MissingKeyErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2755627535 - NamedType 662785972" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Business Central could not create or resolve an inspection. Check Quality Management setup and generation rules.</source>
+          <target>Business Central gat ekki stofnað eða fundið skoðun. Athugaðu uppsetningu gæðastjórnunar og stofnunarreglur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Business Central gat ekki stofnað eða fundið skoðun. Athugaðu uppsetningu gæðastjórnunar og stofnunarreglur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType NotCreatedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2755627535 - NamedType 2344026547" size-unit="char" translate="yes" xml:space="preserve">
+          <source>sourceTableId and sourceSystemId identify one visible record in the current company. templateCode optionally selects a template; otherwise Microsoft generation rules select it. Native source mapping, template validation, permissions, numbering and workflow events run. Repeated requests may create another inspection or reuse one according to setup; this operation is not idempotent. The standard creation path has no explicit Commit. Explicit subscriber commits are prohibited. Normal execution uses an isolated transaction and rolls back on refusal. With Omit Commit the caller owns rollback. No source document is posted and no external provider is called.</source>
+          <target>sourceTableId og sourceSystemId auðkenna eina sýnilega færslu í núverandi fyrirtæki. templateCode velur sniðmát ef það er gefið upp; annars velja stofnunarreglur Microsoft sniðmátið. Staðlaðar upprunavarpanir, sniðmátastaðfestingar, heimildir, númeraraðir og verkflæðisatburðir eru keyrð. Endurtekin köll geta stofnað aðra skoðun eða endurnýtt skoðun samkvæmt uppsetningu; aðgerðin er ekki endurtekningarörugg. Staðlaða stofnunarleiðin inniheldur ekkert beint Commit. Beinar staðfestingar frá áskrifendum eru bannaðar. Venjuleg keyrsla notar sérstaka færslu og bakfærir við höfnun. Með Omit Commit ber kallandi ábyrgð á bakfærslu. Ekkert upprunaskjal er bókað og engin ytri þjónusta er kölluð.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=sourceTableId og sourceSystemId auðkenna eina sýnilega færslu í núverandi fyrirtæki. templateCode velur sniðmát ef það er gefið upp; annars velja stofnunarreglur Microsoft sniðmátið. Staðlaðar upprunavarpanir, sniðmátastaðfestingar, heimildir, númeraraðir og verkflæðisatburðir eru keyrð. Endurtekin köll geta stofnað aðra skoðun eða endurnýtt skoðun samkvæmt uppsetningu; aðgerðin er ekki endurtekningarörugg. Staðlaða stofnunarleiðin inniheldur ekkert beint Commit. Beinar staðfestingar frá áskrifendum eru bannaðar. Venjuleg keyrsla notar sérstaka færslu og bakfærir við höfnun. Með Omit Commit ber kallandi ábyrgð á bakfærslu. Ekkert upprunaskjal er bókað og engin ytri þjónusta er kölluð.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType NotesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2755627535 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The source record was not found.</source>
+          <target>Upprunafærslan fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Upprunafærslan fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType NotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2755627535 - NamedType 3593894611" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creates or resolves an inspection for one source record using the standard Microsoft Create Inspection API and creation codeunit. The optional template is passed through the native template-selection event.</source>
+          <target>Stofnar eða finnur skoðun fyrir eina upprunafærslu með stöðluðu API og stofnunarkóðaeiningu Microsoft. Valfrjálst sniðmát er sent í gegnum staðlaðan atburð fyrir val á sniðmáti.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Stofnar eða finnur skoðun fyrir eina upprunafærslu með stöðluðu API og stofnunarkóðaeiningu Microsoft. Valfrjálst sniðmát er sent í gegnum staðlaðan atburð fyrir val á sniðmáti.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType OverviewLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2755627535 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The BIFROST QM Full ori permission set is required.</source>
+          <target>Heimildasafnið BIFROST QM Full ori er nauðsynlegt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Heimildasafnið BIFROST QM Full ori er nauðsynlegt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType PermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2755627535 - NamedType 1352505902" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SystemId of the source record, as a non-empty GUID string.</source>
+          <target>SystemId upprunafærslunnar sem ótómur GUID-strengur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId upprunafærslunnar sem ótómur GUID-strengur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType SourceIdLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2755627535 - NamedType 2089525003" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Numeric table ID of the source record in the current company.</source>
+          <target>Tölulegt töfluauðkenni upprunafærslunnar í núverandi fyrirtæki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Tölulegt töfluauðkenni upprunafærslunnar í núverandi fyrirtæki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType SourceTableLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2755627535 - NamedType 807217974" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Optional template code, at most 20 characters. Omit to use generation rules.</source>
+          <target>Valfrjáls sniðmátskóði, mest 20 stafir. Slepptu til að nota stofnunarreglur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Valfrjáls sniðmátskóði, mest 20 stafir. Slepptu til að nota stofnunarreglur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType TemplateLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2755627535 - NamedType 3255873965" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter '%1' exceeds %2 characters.</source>
+          <target>Færibreytan '%1' er lengri en %2 stafir.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name, %2 = limit|is-IS=Færibreytan '%1' er lengri en %2 stafir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType TooLongErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2755627535 - NamedType 2912406318" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unknown parameter '%1'.</source>
+          <target>Óþekkt færibreyta '%1'.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name|is-IS=Óþekkt færibreyta '%1'.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType UnknownKeyErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2755627535 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality.Inspection.Create, quality, inspection, create, template, source</source>
+          <target>Quality.Inspection.Create, gæði, skoðun, stofna, sniðmát, uppruni</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Quality.Inspection.Create, gæði, skoðun, stofna, sniðmát, uppruni</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
         <trans-unit id="PermissionSet 1811208904 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bifrost Quality Full</source>
           <target>Bifröst - gæði fullur aðgangur</target>
