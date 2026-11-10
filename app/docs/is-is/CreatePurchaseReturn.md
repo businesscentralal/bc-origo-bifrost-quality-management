@@ -9,3 +9,13 @@ Stofnar **óbókaða innkaupaskilapöntun** fyrir fallið magn skoðunar með `Q
 ```json
 {"status":"Success","inspectionSystemId":"00000000-0000-0000-0000-000000000001","returnOrderNo":"PRO00001"}
 ```
+
+| Kóði | Færibreyta | Úrbætur |
+| --- | --- | --- |
+| `MissingParameter` | `inspectionSystemId` | Sendu SystemId skoðunar sem er ekki tómt. |
+| `RecordNotFound` | `inspectionSystemId` | Lestu skoðun sem er til; `received` endurtekur óþekkta GUID gildið. |
+| `InvalidParameter` | Ógilt GUID eða valfrjáls texti | Leiðréttu snið eða lengd. |
+| `PermissionDenied` | `permissionSet` | Biddu um tilgreindar app- og staðlaðar heimildir. |
+| `PreconditionFailed` | `inspectionSystemId` | Veldu innkaupaskoðun og athugaðu uppsetningu og áskrifendur ráðstöfunar. |
+
+Hver höfnun úr eigin athugunum inniheldur `parameter`, `expected` og `nextStep`. Staðlaðar sannprófanir Business Central halda sinni villuflokkun. Höfnun eftir skrif bakfærir skilapöntunina.
