@@ -33,6 +33,7 @@ Tests: 97200-97299
 | Test codeunit | 97212 | Quality Return Fixture ori |
 | Test enum extension | 97213 | Quality Return Fixtures ori |
 | Test permission set | 97214 | QM Return Test ori |
+| Test codeunit | 97215 | Quality Return Errors Tst ori |
 
 ## Microsoft source
 Wrapped Microsoft app: Quality Management (`bc7b3891-f61b-4883-bbb3-384cdef88bec`, 28.5.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management
