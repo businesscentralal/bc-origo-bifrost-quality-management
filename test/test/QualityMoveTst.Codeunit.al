@@ -174,6 +174,14 @@ codeunit 97220 "Quality Move Tst ori"
         VerifyScenario('postSuccess', 1033);
     end;
 
+    /// <summary>A failure after standard posting restores both original stock and the journal.</summary>
+    [Test]
+    procedure Scenario_AC04_LatePostFailure_RollsBackInventory()
+    begin
+        // Story #12, AC04 | Time: WorkDate | Risk: owned zero-cost inventory only
+        VerifyScenario('latePost', 1033);
+    end;
+
     /// <summary>Discovers the type and verifies its effect and help chapters through Foundation.</summary>
     [Test]
     procedure Scenario_AC01_Discovery_DeclaresAtomicEffect()
@@ -208,7 +216,7 @@ codeunit 97220 "Quality Move Tst ori"
         // [GIVEN] All business fixture records are created for this test, including both locations and the journal batch.
         Initialize();
         CreateFixture(Inspection);
-        if Scenario = 'postSuccess' then
+        if Scenario in ['postSuccess', 'latePost'] then
             SeedStock(Inspection);
         Request.Add('inspectionSystemId', Format(Inspection.SystemId, 0, 4));
         Request.Add('quantityBasis', 'failed');
@@ -236,7 +244,7 @@ codeunit 97220 "Quality Move Tst ori"
                 Inspection."Fail Quantity" := 0;
                 Inspection.Modify(false);
             end;
-            'postFailure', 'postSuccess': Request.Add('postImmediately', true);
+            'postFailure', 'postSuccess', 'latePost': Request.Add('postImmediately', true);
             'worksheetPost': begin
                 Request.Replace('method', 'movementWorksheet');
                 Request.Add('postImmediately', true);
@@ -248,11 +256,13 @@ codeunit 97220 "Quality Move Tst ori"
             LowerPermissions.AddPermissionSet('QltyMgmt - Inspector');
             LowerPermissions.AddPermissionSet('QM Move Test ori');
         end;
-        if Scenario = 'late' then
+        if Scenario = 'latePost' then
+            Fault.SetPostingFault();
+        if Scenario in ['late', 'latePost'] then
             BindSubscription(Fault);
         // [WHEN] The real dispatcher executes the standard disposition.
         Response := Dispatch(Request, LanguageId);
-        if Scenario = 'late' then
+        if Scenario in ['late', 'latePost'] then
             UnbindSubscription(Fault);
         LowerPermissions.SetOutsideO365Scope();
         JournalLine.SetRange("Journal Template Name", FixtureCode);
@@ -280,10 +290,16 @@ codeunit 97220 "Quality Move Tst ori"
         end else begin
             Assert.AreEqual('Error', ReadText(Response, 'status'), 'The operation must return a refusal.');
             Assert.AreEqual(0, JournalLine.Count(), 'A refusal must leave no prepared lines.');
+            if Scenario = 'latePost' then
+                Assert.IsTrue(ReadText(Response, 'error').Contains('Q12 late posting failure'), 'The refusal must occur after real standard posting.');
             if Scenario = 'late' then
                 Assert.IsTrue(ReadText(Response, 'error').Contains('Q12 late failure'), 'The fault must occur after real line creation.');
             if (Scenario = 'missing') and (LanguageId = 1039) then
                 Assert.IsTrue(ReadText(Response, 'error').Contains('færibreytu'), 'The refusal must be Icelandic.');
+        end;
+        if Scenario = 'latePost' then begin
+            VerifyPostedRefusalInventory();
+            exit; // The isolated test runner rolls back the self-seeded stock and setup.
         end;
         Cleanup(Inspection);
     end;
@@ -416,7 +432,27 @@ codeunit 97220 "Quality Move Tst ori"
         Ledger.CalcSums(Quantity);
         Assert.AreEqual(2, Ledger.Quantity, 'The source ledger must retain the passed quantity.');
         JournalLine.SetRange("Journal Template Name", FixtureCode);
-        Assert.IsTrue(JournalLine.IsEmpty(), 'Posted reclassification lines must be removed by standard posting.');
+        // Standard non-recurring posting retains one blank starter line when the batch has no number series.
+        JournalLine.SetFilter("Item No.", '<>%1', '');
+        Assert.IsTrue(JournalLine.IsEmpty(), 'No movement line may remain after posting.');
+        JournalLine.SetRange("Item No.");
+        if JournalLine.FindFirst() then begin
+            Assert.AreEqual('', JournalLine."Item No.", 'Only a blank standard starter line may remain.');
+            Assert.AreEqual(0, JournalLine.Quantity, 'The starter line must carry no movement quantity.');
+        end;
+    end;
+
+    local procedure VerifyPostedRefusalInventory()
+    var
+        Ledger: Record "Item Ledger Entry";
+    begin
+        Ledger.SetRange("Item No.", FixtureCode);
+        Ledger.SetRange("Location Code", 'D' + CopyStr(FixtureCode, 2));
+        Ledger.CalcSums(Quantity);
+        Assert.AreEqual(0, Ledger.Quantity, 'A late refusal must roll back every destination ledger entry.');
+        Ledger.SetRange("Location Code", FixtureCode);
+        Ledger.CalcSums(Quantity);
+        Assert.AreEqual(5, Ledger.Quantity, 'A late refusal must preserve the original self-seeded stock.');
     end;
 
     local procedure Dispatch(Request: JsonObject; LanguageId: Integer) Response: JsonObject
