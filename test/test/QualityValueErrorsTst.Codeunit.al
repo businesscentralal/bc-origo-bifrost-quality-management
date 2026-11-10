@@ -284,8 +284,6 @@ codeunit 97207 "Quality Value Errors Tst ori"
         ResponseTime: Duration;
         ExpectedParameter: Text;
         NullToken: JsonToken;
-        StructuredErrors: JsonToken;
-        StructuredError: JsonToken;
     begin
         // [GIVEN] Fresh nonexistent identifiers and request values created by this test.
         UnknownId := CreateGuid();
@@ -335,16 +333,12 @@ codeunit 97207 "Quality Value Errors Tst ori"
         Dispatcher.EnqueueAndProcess(Enum::"Message Type ori"::"Quality.Inspection.SetTestValue", Enum::"Message Version ori"::"1.0", '', 'quality34-tests', 'application/json', RequestContent, TaskId, LanguageId, MessageId, ResponseContent, ResponseContentType, ResponseTime);
         ResponseContent.GetSubText(ResponseText, 1);
         Response.ReadFrom(ResponseText);
-        // [THEN] Both the top-level refusal and error item retain typed, actionable metadata.
+        // [THEN] The single refusal retains typed, actionable metadata after rollback.
         Assert.AreEqual('Error', ReadText(Response, 'status'), 'Refusal status');
         Assert.AreEqual(ExpectedCode, ReadText(Response, 'code'), 'Typed code');
         Assert.AreEqual(ExpectedParameter, ReadText(Response, 'parameter'), 'Parameter identity');
         Assert.IsTrue(ReadText(Response, 'expected') <> '', 'Expected input guidance');
-        Assert.IsTrue(Response.Get('errors', StructuredErrors), 'Structured error collection');
-        Assert.AreEqual(1, StructuredErrors.AsArray().Count(), 'One owned refusal');
-        StructuredErrors.AsArray().Get(0, StructuredError);
-        Assert.AreEqual(ExpectedCode, ReadText(StructuredError.AsObject(), 'code'), 'Error item code');
-        Assert.AreEqual(ExpectedParameter, ReadText(StructuredError.AsObject(), 'parameter'), 'Error item parameter');
+        Assert.IsFalse(Response.Contains('errors'), 'Foundation reports a single refusal at the top level.');
         if LanguageId = 1039 then begin
             Assert.IsTrue(ReadText(Response, 'expected').Contains('text') or ReadText(Response, 'expected').Contains('skoðunar'), 'Icelandic expected guidance');
             Assert.IsTrue(ReadText(Response, 'nextStep').Contains('Leiðréttu') or ReadText(Response, 'nextStep').Contains('Lestu'), 'Icelandic recovery guidance');
