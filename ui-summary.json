@@ -1,0 +1,33 @@
+{
+  "sha": "882981c12e3810ba9cc482ad9188c80148dd0330",
+  "tenant": "w129-14",
+  "tool": "Playwright MCP",
+  "executed": 4,
+  "passed": 4,
+  "failed": 0,
+  "skipped": 0,
+  "scenarios": [
+    {
+      "lcid": 1033,
+      "scenario": "Native inspection line displays persisted value20 after product write and refusals",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "scenario": "Native header displays recalculated result code BIFTQ6-MCP1033",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "scenario": "Native inspection line displays persisted value20 after product write and refusals",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "scenario": "Native header displays recalculated result code BIFTQ6-MCP1033",
+      "passed": true
+    }
+  ],
+  "languageRestore": "VERIFIED1033",
+  "history": "Initial page inspection used delayed snapshots; a double-click at an already open card timed out; no write was replayed. Initial language selection detached the frame after the expected locale reload; assertions used the fresh frame."
+}

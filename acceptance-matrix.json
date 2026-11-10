@@ -1,0 +1,82 @@
+{
+  "sha": "882981c12e3810ba9cc482ad9188c80148dd0330",
+  "issue": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/6",
+  "acceptanceMatrix": [
+    {
+      "id": "AC01",
+      "criterion": "`Quality.Inspection.SetTestValue` is registered with Bifr\u00f6st Foundation and appears in the message type catalogue with a contract (effect, changes, idempotent, permissionSet, preconditions) that matches what the wrapped Business Central object really does, including any `Commit()` on its path.",
+      "status": "developer-verified",
+      "independentReview": "pending"
+    },
+    {
+      "id": "AC02",
+      "criterion": "The request keys needed to identify the source record(s) and options are documented in the contract. A request with a missing or unknown required key is refused with a clear, translated refusal and changes nothing.",
+      "status": "developer-verified",
+      "independentReview": "pending"
+    },
+    {
+      "id": "AC03",
+      "criterion": "The type calls the standard Business Central object named above, so Business Central's own validation and checks run. It does not write fields directly around them.",
+      "status": "developer-verified",
+      "independentReview": "pending"
+    },
+    {
+      "id": "AC04",
+      "criterion": "A business refusal from Business Central (blocked record, wrong status, missing setup) is returned as a refusal in the response, not as an unhandled error, and leaves no partial data.",
+      "status": "developer-verified",
+      "independentReview": "pending"
+    },
+    {
+      "id": "AC05",
+      "criterion": "The caller needs the app's permission set; a user without it is refused. The type is granted through the Foundation role extensions like the other types of this app.",
+      "status": "developer-verified",
+      "independentReview": "pending"
+    },
+    {
+      "id": "AC06",
+      "criterion": "Captions, help text and refusal texts exist in en-US and is-IS, and the is-IS XLF is in sync.",
+      "status": "developer-verified",
+      "independentReview": "pending"
+    },
+    {
+      "id": "AC07",
+      "criterion": "The help chapter for this type exists and states its effect and idempotency.",
+      "status": "developer-verified",
+      "independentReview": "pending"
+    },
+    {
+      "id": "AC08",
+      "criterion": "Tests cover the happy path, a missing-key refusal, a Business Central refusal, and a permission refusal.",
+      "status": "developer-verified",
+      "independentReview": "pending"
+    }
+  ],
+  "verification": {
+    "compile": "Both apps0errors0warnings with CodeCop/UICop/AppSourceCop",
+    "native": "Full configured product test suite24executed24passed0failed0skipped",
+    "mcp": "23recorded checks23passed0failed0skipped;22acceptance/discovery/readback checks plus one fixture creation; first fixture creation separately retained",
+    "ui": "4assertions4passed0failed0skipped, native inspection line value and header result in1033/1039",
+    "cleanup": "Seven native tables contain0BIFTQ6-fixture records;8uninstall/deleteExtensionData/unpublish actions204;0Origo extensions remain"
+  },
+  "nativeProof": "Full role with normal BC platform access succeeds; Foundation Read and Foundation API + Microsoft Inspector without app Full grant are refused; late injected native failure rolls back line/header changes.",
+  "sourceAudit": {
+    "microsoftGitHub": "https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management",
+    "deployedMicrosoftVersion": "29.0.54011.55407",
+    "methods": [
+      "Qlty. Inspection Header.SetTestValue",
+      "Qlty. Inspection Header.UpdateResultFromLines"
+    ],
+    "explicitCommitOnStandardPath": false,
+    "commitSafety": "CommitBehavior Error prevents explicit subscriber commits; normal Codeunit.Run transaction catches business failures.",
+    "foundationOverlap": "Data.Records.Get remains for plain reads. Generic Data.Records.Set lacks the explicit combined standard operation and published contract."
+  },
+  "scope": "Issue6only; no .github/.AL-Go or pipeline tooling changes, no external provider calls, no release workflow or AppSource publication.",
+  "previousAttempts": "See gateway-layer2.json and retained native result files; no test exclusions, no new warning suppressions, no weakened assertions.",
+  "remaining": [
+    "Current-tip GitHub CI",
+    "Independent Claude exact-tip verification",
+    "Grok current-tip clearance and eligible approval",
+    "Architect merge/deploy and applicable postmerge UAT/closure"
+  ],
+  "issueCompletion": false
+}

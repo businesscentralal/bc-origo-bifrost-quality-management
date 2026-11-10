@@ -1,0 +1,174 @@
+{
+  "sha": "882981c12e3810ba9cc482ad9188c80148dd0330",
+  "tenant": "w129-14",
+  "touchedMessageTypes": [
+    "Quality.Inspection.SetTestValue"
+  ],
+  "createsOwnData": true,
+  "startedAt": "2026-11-10T01:56:21.653Z",
+  "scenarios": [
+    {
+      "label": "catalogue-1033",
+      "tool": "list_message_types",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "help-1033",
+      "tool": "get_message_type_help",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "happy-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "missing-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "unknown-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "invalid-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "missingTest-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "nonText-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "longValue-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "notFound-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "readback-1033",
+      "tool": "get_records",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "fixture1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "catalogue-1039",
+      "tool": "list_message_types",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "help-1039",
+      "tool": "get_message_type_help",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "happy-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "missing-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "unknown-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "invalid-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "missingTest-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "nonText-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "longValue-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "notFound-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "readback-1039",
+      "tool": "get_records",
+      "lcid": 1033,
+      "passed": true
+    }
+  ],
+  "passed": 23,
+  "failed": 0,
+  "skipped": 0,
+  "fixtures": [
+    {
+      "runCode": "BIFTQ6-MCP1033",
+      "company": "CRONUS International Ltd.",
+      "messageType": "Test.Quality.ValueFixture",
+      "inspectionSystemId": "3CA57EBD-A9DC-F111-B6F8-00090FFE0001",
+      "testCode": "BIFTQ6-MCP1033",
+      "inspectionNo": "BIFTQ6-MCP1033",
+      "status": "Success"
+    },
+    {
+      "runCode": "BIFTQ6-MCP1039",
+      "company": "CRONUS International Ltd.",
+      "messageType": "Test.Quality.ValueFixture",
+      "inspectionSystemId": "D7C9B0E8-A9DC-F111-B6F8-00090FFE0001",
+      "testCode": "BIFTQ6-MCP1039",
+      "inspectionNo": "BIFTQ6-MCP1039",
+      "status": "Success"
+    }
+  ],
+  "cleanupStatus": "VERIFIED: 0 BIFTQ6- records across seven tables; all four owned Origo apps uninstalled with deleteExtensionData and unpublished. Tenant retained.",
+  "finishedAt": "2026-11-10T01:56:26.750Z"
+}

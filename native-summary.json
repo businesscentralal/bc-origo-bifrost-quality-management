@@ -1,0 +1,14 @@
+{
+  "mode": "local",
+  "passed": 24,
+  "failed": 0,
+  "skipped": 0,
+  "errors": 0,
+  "durationMs": 8399,
+  "sha": "882981c12e3810ba9cc482ad9188c80148dd0330",
+  "fullSuite": true,
+  "total": 24,
+  "tenant": "w129-14",
+  "sourceTestMethods": 24,
+  "noExclusions": true
+}

@@ -1,0 +1,81 @@
+{
+  "sha": "882981c12e3810ba9cc482ad9188c80148dd0330",
+  "appVersion": "28.0.0.0",
+  "testVersion": "28.0.0.0",
+  "tenant": "w129-14",
+  "analyzers": [
+    "CodeCop",
+    "UICop",
+    "AppSourceCop"
+  ],
+  "rawLayer1": {
+    "ready": false,
+    "failed": 2,
+    "total": 23,
+    "passed": 21
+  },
+  "dispositions": [
+    {
+      "check": "caption_translation",
+      "classification": "false-positive",
+      "reason": "The enum caption is a locked external API identifier, identical in all locales; human-facing description, help and refusals have Icelandic labels and synchronized XLF."
+    },
+    {
+      "check": "one_statement_per_line",
+      "classification": "false-positive",
+      "reason": "Semicolons separate procedure parameters in one AL signature, not multiple statements."
+    }
+  ],
+  "layer2": {
+    "objectIds": "App10035241..10035243, tests97202..97206; scaffold unchanged except Full role permissions.",
+    "scope": "Only issue6; no pipeline/workflow edits.",
+    "nativeCalls": "Header.SetTestValue and UpdateResultFromLines, header refresh then Modify(true); CommitBehavior Error forbids explicit commit in delegated path.",
+    "permissions": "Empty marker capability enforces Full role despite API wildcard execute; native modification permissions remain; native tests prove Full positive and Read/no-app negative.",
+    "backwardCompatibility": "Adds a new enum value, implementation and internal capability table; no public object removed or changed.",
+    "translations": "14 translated product labels; contract machine chapter text follows Foundation English contract convention.",
+    "verification": "Current-tip24/24/0/0full native,23/23/0/0recordedMCP,4/4/0/0UIin1033/1039,allownedfixtures/appsremovedandverified;independentreviewandCIpending."
+  },
+  "initialFailures": [
+    {
+      "sha": "038b7d7cf9bea5e7d8b80a218aeff54564ec33fb",
+      "passed": 21,
+      "failed": 3,
+      "skipped": 0,
+      "cause": "Test fixture lacked platform table823 execute; translation assertion used message rather than error."
+    },
+    {
+      "sha": "b97589acfff22a8c3f8d7ea41f213b7c89e5c45c",
+      "passed": 22,
+      "failed": 2,
+      "skipped": 0,
+      "cause": "Overly broad business-table WritePermission check rejected native Inspector permissions."
+    },
+    {
+      "sha": "e66ef795eccab44bc885f53cf917c2e8f78cc2c2",
+      "passed": 22,
+      "failed": 2,
+      "skipped": 0,
+      "cause": "Same product permission guard; detailed error assertions exposed cause."
+    },
+    {
+      "sha": "4fc359d490438cb1ddd73612748387845b5825a0",
+      "passed": 23,
+      "failed": 1,
+      "skipped": 0,
+      "cause": "Foundation API wildcard codeunit execute bypassed execute-only app gate; fixed with empty capability table."
+    }
+  ],
+  "noNewSuppressions": true,
+  "assertionsWeakened": false,
+  "lessonsApplied": [
+    "core1134-worker10-review5597543670-native-and-rollback"
+  ],
+  "learning": [
+    {
+      "finding": "App execution is not a sufficient permission gate when Foundation API grants codeunit * = X.",
+      "cause": "The initial implementation assumed an execute-only Full grant restricted caller access.",
+      "prevention": "Use the existing empty capability-table pattern and test with native Inspector plus Foundation API and no app Full grant.",
+      "verification": "Scenario_AC05_NoAppGrant_RefusesWithoutWrite passes at882981c alongside positive Full-role scenarios and Read-role refusal."
+    }
+  ]
+}

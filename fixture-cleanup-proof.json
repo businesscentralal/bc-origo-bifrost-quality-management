@@ -1,0 +1,86 @@
+[
+  {
+    "table": "Qlty. Inspection Header",
+    "result": {
+      "company": "CRONUS International Ltd.",
+      "table": "Qlty. Inspection Header",
+      "skip": 0,
+      "take": 10,
+      "count": 0,
+      "records": [],
+      "noOfRecords": 0
+    }
+  },
+  {
+    "table": "Qlty. Inspection Line",
+    "result": {
+      "company": "CRONUS International Ltd.",
+      "table": "Qlty. Inspection Line",
+      "skip": 0,
+      "take": 10,
+      "count": 0,
+      "records": [],
+      "noOfRecords": 0
+    }
+  },
+  {
+    "table": "Qlty. Inspection Template Hdr.",
+    "result": {
+      "company": "CRONUS International Ltd.",
+      "table": "Qlty. Inspection Template Hdr.",
+      "skip": 0,
+      "take": 10,
+      "count": 0,
+      "records": [],
+      "noOfRecords": 0
+    }
+  },
+  {
+    "table": "Qlty. Inspection Template Line",
+    "result": {
+      "company": "CRONUS International Ltd.",
+      "table": "Qlty. Inspection Template Line",
+      "skip": 0,
+      "take": 10,
+      "count": 0,
+      "records": [],
+      "noOfRecords": 0
+    }
+  },
+  {
+    "table": "Qlty. Test",
+    "result": {
+      "company": "CRONUS International Ltd.",
+      "table": "Qlty. Test",
+      "skip": 0,
+      "take": 10,
+      "count": 0,
+      "records": [],
+      "noOfRecords": 0
+    }
+  },
+  {
+    "table": "Qlty. Inspection Result",
+    "result": {
+      "company": "CRONUS International Ltd.",
+      "table": "Qlty. Inspection Result",
+      "skip": 0,
+      "take": 10,
+      "count": 0,
+      "records": [],
+      "noOfRecords": 0
+    }
+  },
+  {
+    "table": "Qlty. I. Result Condit. Conf.",
+    "result": {
+      "company": "CRONUS International Ltd.",
+      "table": "Qlty. I. Result Condit. Conf.",
+      "skip": 0,
+      "take": 10,
+      "count": 0,
+      "records": [],
+      "noOfRecords": 0
+    }
+  }
+]

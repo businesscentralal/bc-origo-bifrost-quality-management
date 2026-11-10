@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Bifrost Quality Management - Tests",
+    "action": "uninstall",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"action\": \"uninstallAndDeleteExtensionData\",\n  \"packageId\": \"2f363b5a-8a20-49d0-b915-55f7938e0d23\",\n  \"statusCode\": 204,\n  \"durationMs\": 240,\n  \"ok\": true,\n  \"body\": null,\n  \"match\": {\n    \"packageId\": \"2f363b5a-8a20-49d0-b915-55f7938e0d23\",\n    \"id\": \"9193f6a2-0926-49bb-9fec-3c36a60c8b0e\",\n    \"displayName\": \"Bifrost Quality Management - Tests\",\n    \"publisher\": \"Origo\",\n    \"versionMajor\": 28,\n    \"versionMinor\": 0,\n    \"versionBuild\": 0,\n    \"versionRevision\": 0,\n    \"isInstalled\": true,\n    \"publishedAs\": \" Dev\"\n  }\n}"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bifrost Quality Management - Tests",
+    "action": "unpublish",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"action\": \"unpublish\",\n  \"packageId\": \"2f363b5a-8a20-49d0-b915-55f7938e0d23\",\n  \"statusCode\": 204,\n  \"durationMs\": 223,\n  \"ok\": true,\n  \"body\": null,\n  \"match\": {\n    \"packageId\": \"2f363b5a-8a20-49d0-b915-55f7938e0d23\",\n    \"id\": \"9193f6a2-0926-49bb-9fec-3c36a60c8b0e\",\n    \"displayName\": \"Bifrost Quality Management - Tests\",\n    \"publisher\": \"Origo\",\n    \"versionMajor\": 28,\n    \"versionMinor\": 0,\n    \"versionBuild\": 0,\n    \"versionRevision\": 0,\n    \"isInstalled\": false,\n    \"publishedAs\": \" Dev\"\n  }\n}"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bifrost Quality Management",
+    "action": "uninstall",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"action\": \"uninstallAndDeleteExtensionData\",\n  \"packageId\": \"53b536cd-83e3-4f4c-b438-fe3795ba4d2d\",\n  \"statusCode\": 204,\n  \"durationMs\": 360,\n  \"ok\": true,\n  \"body\": null,\n  \"match\": {\n    \"packageId\": \"53b536cd-83e3-4f4c-b438-fe3795ba4d2d\",\n    \"id\": \"d3ca6790-e2c1-44c1-a026-fd75a3f5b52d\",\n    \"displayName\": \"Bifrost Quality Management\",\n    \"publisher\": \"Origo\",\n    \"versionMajor\": 28,\n    \"versionMinor\": 0,\n    \"versionBuild\": 0,\n    \"versionRevision\": 0,\n    \"isInstalled\": true,\n    \"publishedAs\": \" Dev\"\n  }\n}"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bifrost Quality Management",
+    "action": "unpublish",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"action\": \"unpublish\",\n  \"packageId\": \"53b536cd-83e3-4f4c-b438-fe3795ba4d2d\",\n  \"statusCode\": 204,\n  \"durationMs\": 230,\n  \"ok\": true,\n  \"body\": null,\n  \"match\": {\n    \"packageId\": \"53b536cd-83e3-4f4c-b438-fe3795ba4d2d\",\n    \"id\": \"d3ca6790-e2c1-44c1-a026-fd75a3f5b52d\",\n    \"displayName\": \"Bifrost Quality Management\",\n    \"publisher\": \"Origo\",\n    \"versionMajor\": 28,\n    \"versionMinor\": 0,\n    \"versionBuild\": 0,\n    \"versionRevision\": 0,\n    \"isInstalled\": false,\n    \"publishedAs\": \" Dev\"\n  }\n}"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bifrost Foundation - Tests",
+    "action": "uninstall",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"action\": \"uninstallAndDeleteExtensionData\",\n  \"packageId\": \"517e961e-5499-4fa2-89ca-6b9a2e951591\",\n  \"statusCode\": 204,\n  \"durationMs\": 607,\n  \"ok\": true,\n  \"body\": null,\n  \"match\": {\n    \"packageId\": \"517e961e-5499-4fa2-89ca-6b9a2e951591\",\n    \"id\": \"9db1a0c9-c503-4793-a9e4-bcda3d3f3c94\",\n    \"displayName\": \"Bifrost Foundation - Tests\",\n    \"publisher\": \"Origo\",\n    \"versionMajor\": 28,\n    \"versionMinor\": 0,\n    \"versionBuild\": 13,\n    \"versionRevision\": 0,\n    \"isInstalled\": true,\n    \"publishedAs\": \" Dev\"\n  }\n}"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bifrost Foundation - Tests",
+    "action": "unpublish",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"action\": \"unpublish\",\n  \"packageId\": \"517e961e-5499-4fa2-89ca-6b9a2e951591\",\n  \"statusCode\": 204,\n  \"durationMs\": 280,\n  \"ok\": true,\n  \"body\": null,\n  \"match\": {\n    \"packageId\": \"517e961e-5499-4fa2-89ca-6b9a2e951591\",\n    \"id\": \"9db1a0c9-c503-4793-a9e4-bcda3d3f3c94\",\n    \"displayName\": \"Bifrost Foundation - Tests\",\n    \"publisher\": \"Origo\",\n    \"versionMajor\": 28,\n    \"versionMinor\": 0,\n    \"versionBuild\": 13,\n    \"versionRevision\": 0,\n    \"isInstalled\": false,\n    \"publishedAs\": \" Dev\"\n  }\n}"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bifrost Foundation",
+    "action": "uninstall",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"action\": \"uninstallAndDeleteExtensionData\",\n  \"packageId\": \"1ec5a0d2-2e73-44e5-890d-979a2aac90cd\",\n  \"statusCode\": 204,\n  \"durationMs\": 945,\n  \"ok\": true,\n  \"body\": null,\n  \"match\": {\n    \"packageId\": \"1ec5a0d2-2e73-44e5-890d-979a2aac90cd\",\n    \"id\": \"7505e808-6e52-4b96-a328-82573391297a\",\n    \"displayName\": \"Bifrost Foundation\",\n    \"publisher\": \"Origo\",\n    \"versionMajor\": 28,\n    \"versionMinor\": 0,\n    \"versionBuild\": 13,\n    \"versionRevision\": 0,\n    \"isInstalled\": true,\n    \"publishedAs\": \" Dev\"\n  }\n}"
+        }
+      ]
+    }
+  },
+  {
+    "name": "Bifrost Foundation",
+    "action": "unpublish",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"action\": \"unpublish\",\n  \"packageId\": \"1ec5a0d2-2e73-44e5-890d-979a2aac90cd\",\n  \"statusCode\": 204,\n  \"durationMs\": 282,\n  \"ok\": true,\n  \"body\": null,\n  \"match\": {\n    \"packageId\": \"1ec5a0d2-2e73-44e5-890d-979a2aac90cd\",\n    \"id\": \"7505e808-6e52-4b96-a328-82573391297a\",\n    \"displayName\": \"Bifrost Foundation\",\n    \"publisher\": \"Origo\",\n    \"versionMajor\": 28,\n    \"versionMinor\": 0,\n    \"versionBuild\": 13,\n    \"versionRevision\": 0,\n    \"isInstalled\": false,\n    \"publishedAs\": \" Dev\"\n  }\n}"
+        }
+      ]
+    }
+  }
+]

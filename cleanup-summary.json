@@ -1,0 +1,24 @@
+{
+  "sha": "882981c12e3810ba9cc482ad9188c80148dd0330",
+  "tenant": "w129-14",
+  "verified": true,
+  "fixturesRemoved": [
+    "BIFTQ6-MCP1033",
+    "BIFTQ6-MCP1039"
+  ],
+  "nativeTablesVerifiedEmpty": [
+    "Qlty. Inspection Header",
+    "Qlty. Inspection Line",
+    "Qlty. Inspection Template Hdr.",
+    "Qlty. Inspection Template Line",
+    "Qlty. Test",
+    "Qlty. Inspection Result",
+    "Qlty. I. Result Condit. Conf."
+  ],
+  "appActions": 8,
+  "allAppActionsStatus204": true,
+  "origoAppsRemaining": 0,
+  "tenantRetained": true,
+  "tenantReason": "Permanent worker4 binding; local tenant must not be deleted.",
+  "finishedAt": "2026-11-10T02:04:43.902888+00:00"
+}

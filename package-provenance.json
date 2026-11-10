@@ -1,0 +1,28 @@
+{
+  "sha": "882981c12e3810ba9cc482ad9188c80148dd0330",
+  "tenant": "w129-14",
+  "artifacts": [
+    {
+      "name": "Quality.app",
+      "sha256": "2494270deedc86cb0d93869d2c88127d2b1b64112f4f076652c39cfc520a8c38",
+      "source": [
+        {
+          "RepositoryUrl": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management",
+          "Commit": "882981c12e3810ba9cc482ad9188c80148dd0330"
+        }
+      ]
+    },
+    {
+      "name": "QualityTests.app",
+      "sha256": "53aa5c7f8c951bbb9941ac72bcb85b88b1f2d93f3a6593f252a0347ba1475139",
+      "source": [
+        {
+          "RepositoryUrl": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management",
+          "Commit": "882981c12e3810ba9cc482ad9188c80148dd0330"
+        }
+      ]
+    }
+  ],
+  "downloadedProductSha256": "2494270deedc86cb0d93869d2c88127d2b1b64112f4f076652c39cfc520a8c38",
+  "downloadMatchesLocalProduct": true
+}

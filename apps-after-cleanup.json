@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"entity\": \"extensions\",\n  \"method\": \"GET\",\n  \"statusCode\": 200,\n  \"durationMs\": 73,\n  \"rowCount\": 0,\n  \"hasMore\": false,\n  \"rows\": [],\n  \"odataContext\": \"http://host.docker.internal:7048/BC290/api/microsoft/automation/v2.0/$metadata#companies(233157a0-f5bb-f111-85bd-6045bdfdea7c)/extensions\"\n}"
+    }
+  ]
+}
