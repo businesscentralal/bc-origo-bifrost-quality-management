@@ -213,6 +213,29 @@ codeunit 97207 "Quality Reinspect Tst ori"
         Assert.IsTrue(InspectionLine.IsEmpty(), 'The partial result lines must roll back.');
     end;
 
+    /// <summary>Declining the native confirmation refuses and rolls back preliminary finishing.</summary>
+    [Test]
+    [HandlerFunctions('ConfirmNo')]
+    procedure Scenario_AC04_CancelledConfirmation_RestoresOpenSource()
+    var
+        Source: Record "Qlty. Inspection Header";
+        Response: JsonObject;
+    begin
+        // Story #7, AC04 | Time: Native finish uses CurrentDateTime | Risk: None
+        Initialize(Source);
+        Source.Status := Source.Status::Open;
+        Source.Modify();
+        Commit();
+        Response := Invoke(IdRequest(Source.SystemId));
+        Assert.AreEqual('Error', Response.GetText('status'), Serialize(Response));
+        Assert.AreEqual('BusinessCentralError', Response.GetText('code'), Serialize(Response));
+        Source.Get(Source."No.", 0);
+        Assert.AreEqual(Source.Status::Open, Source.Status, 'Declining must roll back preliminary finishing.');
+        Assert.AreEqual(0DT, Source."Finished Date", 'Declining must leave no completion timestamp.');
+        Source.SetRange("No.", Source."No.");
+        Assert.AreEqual(1, Source.Count(), 'Declining must create no revision.');
+    end;
+
     /// <summary>The contract identifies its write effect and retry behavior.</summary>
     [Test]
     procedure Scenario_AC01_Contract_DescribesWriteAndPermissions()
@@ -257,6 +280,14 @@ codeunit 97207 "Quality Reinspect Tst ori"
     begin
         Assert.IsTrue(Question <> '', 'The native confirmation must have a question.');
         Reply := true;
+    end;
+
+    /// <summary>Declines the standard confirmation without bypassing its GUI path.</summary>
+    [ConfirmHandler]
+    procedure ConfirmNo(Question: Text[1024]; var Reply: Boolean)
+    begin
+        Assert.IsTrue(Question <> '', 'The native confirmation must have a question.');
+        Reply := false;
     end;
 
     local procedure AssertInputRefusal(RequestText: Text; ExpectedCode: Text)

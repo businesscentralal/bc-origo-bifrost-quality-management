@@ -167,7 +167,7 @@ codeunit 10035242 "Quality Reinspect Impl ori" implements "Msg Interface ori", "
         Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::UnknownParameter, 'An undeclared data key was supplied.', 'Remove undeclared keys.'));
         Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::RecordNotFound, 'The inspection does not exist or is not visible.', 'Read the inspection with Data.Records.Get.'));
         Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::PermissionDenied, 'The app action permission is missing.', 'Ask an administrator for the documented roles.'));
-        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::BusinessCentralError, 'Standard Quality Management setup, permissions, tracking, result or template validation refused the action; the native translated message is returned and no partial changes remain.', 'Correct the native business condition before retrying.'));
+        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::BusinessCentralError, 'Standard Quality Management setup, permissions, tracking, result or template validation refused the action, or an interactive caller cancelled it. The translated message is returned and no partial changes remain.', 'Correct the native business condition before retrying.'));
         Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::Retryable, 'A transient native lock prevented the action.', 'Retry only after checking whether an earlier call succeeded.'));
         exit(true);
     end;

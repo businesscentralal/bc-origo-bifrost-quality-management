@@ -13,3 +13,5 @@ Opin upprunaskoðun er fyrst kláruð með stöðluðum athugunum. Ný útgáfa 
 **Ekki ídempotent:** hver keyrsla sem tekst stofnar aðra útgáfu. Lestu fyrra svar áður en þú reynir aftur. Staðlaða töfluaðferðin staðfestir ekki færslu með Commit; síðara Commit síðuaðgerðar er ekki keyrt. Sérstök Commit í áskrifendum eru höfnuð. Venjuleg keyrsla staðfestir breytingar eftir árangur; villa afturkallar allar breytingar staðlaðrar aðgerðar. Í ham án staðfestingar berst villa til umlykjandi færslu til afturköllunar. Engar ytri þjónustur eru kallaðar.
 
 Hjálparsamningur er einnig aðgengilegur með `Help.Implementation.Get` eða `get_message_type_help`.
+
+Ef notandi hættir við staðfestingu er aðgerðinni hafnað og fyrri lokun upprunalegrar skoðunar afturkölluð.

@@ -75,6 +75,12 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Ekki ídempotent: hver endurtekning sem tekst stofnar nýja útgáfu. Lestu niðurstöðuna áður en þú reynir aftur. Höfnun staðlaðrar aðgerðar skilur hvorki eftir hluta skoðunar né breytta stöðu upprunalegrar skoðunar. Í ham án staðfestingar berast villur til umlykjandi færslu til afturköllunar.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Impl ori - Method GetNotes - NamedType NotesLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 3770574194 - NamedType 3910898602" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No re-inspection was created. The operation was cancelled.</source>
+          <target>Engin endurskoðun var stofnuð. Hætt var við aðgerðina.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Engin endurskoðun var stofnuð. Hætt var við aðgerðina.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Proc ori - NamedType CancelledErr</note>
+        </trans-unit>
         <trans-unit id="PermissionSet 1811208904 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
           <source>Bifrost Quality Full</source>
           <target>Bifröst - gæði fullur aðgangur</target>

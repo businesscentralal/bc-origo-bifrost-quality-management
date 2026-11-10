@@ -9,6 +9,9 @@ codeunit 10035243 "Quality Reinspect Proc ori"
     Access = Internal;
     TableNo = "Message Argument ori";
 
+    var
+        CancelledErr: Label 'No re-inspection was created. The operation was cancelled.', Comment = 'is-IS=Engin endurskoðun var stofnuð. Hætt var við aðgerðina.';
+
     trigger OnRun()
     var
         Inspection: Record "Qlty. Inspection Header";
@@ -23,6 +26,8 @@ codeunit 10035243 "Quality Reinspect Proc ori"
         Evaluate(InspectionId, Request.GetText('inspectionSystemId'));
         Inspection.GetBySystemId(InspectionId);
         CreateReinspection(Inspection, Reinspection);
+        if IsNullGuid(Reinspection.SystemId) then
+            Error(ErrorInfo.Create(CancelledErr));
         Result.Add('systemId', Format(Reinspection.SystemId, 0, 4));
         Result.Add('inspectionNo', Reinspection."No.");
         Result.Add('reinspectionNo', Reinspection."Re-inspection No.");
