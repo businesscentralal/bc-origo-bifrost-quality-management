@@ -1,6 +1,7 @@
 namespace Origo.Bifrost.QualityManagement.Test;
 
 using Microsoft.Inventory.Journal;
+using Microsoft.Inventory.Posting;
 using Microsoft.Inventory.Tracking;
 using Microsoft.QualityManagement.Dispositions;
 using Microsoft.QualityManagement.Document;
@@ -29,10 +30,10 @@ codeunit 97221 "Quality Move Fault ori"
             Error(ErrorInfo.Create('Q12 late failure after native journal creation.'));
     end;
 
-    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Qlty. Item Journal Management", OnAfterPostItemJournal, '', false, false)]
-    local procedure FailAfterPost(var QltyInspectionHeader: Record "Qlty. Inspection Header"; var TempInstructionQltyDispositionBuffer: Record "Qlty. Disposition Buffer" temporary; var ItemJournalLine: Record "Item Journal Line"; var AllLinesPosted: Boolean)
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Item Jnl.-Post Batch", OnAfterPostLines, '', false, false)]
+    local procedure FailAfterPost(var ItemJournalLine: Record "Item Journal Line"; ItemRegNo: Integer; WhseRegNo: Integer)
     begin
-        if PostingFault and AllLinesPosted and (CopyStr(QltyInspectionHeader."No.", 1, 4) = 'Q12-') then
+        if PostingFault and (CopyStr(ItemJournalLine."Journal Template Name", 1, 4) = 'Q12-') then
             Error(ErrorInfo.Create('Q12 late posting failure after native ledger creation.'));
     end;
 }
