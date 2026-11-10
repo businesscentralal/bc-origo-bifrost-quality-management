@@ -1,0 +1,111 @@
+{
+  "sha": "90e766ec2e33c3e168b1b7d9a589dc3978025f7d",
+  "testedCheckoutSha": "6892baf5a6bd6042efc5fb6c18f5a940b8bfb1e2",
+  "testedCheckoutKind": "GitHub synthetic PR merge",
+  "baseSha": "854f1be3e965ddaad7db4f614dd5cbb80b88fb63",
+  "sourceTreeMatchesCandidate": true,
+  "treeSha": "60e0c6e536e227f8d5442e0f5d1bf7faac800cef",
+  "runUrl": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42812410701",
+  "conclusion": "success",
+  "tests": {
+    "executed": 73,
+    "passed": 73,
+    "failed": 0,
+    "skipped": 0
+  },
+  "countEvidence": [
+    "2026-11-10T12:16:53.6527423Z 1 TestApps, 73 tests, 0 failed, 0 skipped, 27.676 seconds",
+    "2026-11-10T12:16:53.6656197Z - Bifrost Quality Management - Tests, 73 tests, 73 passed, 0 failed, 0 skipped, 27.676 seconds"
+  ],
+  "jobs": [
+    {
+      "id": 129816895266,
+      "name": "Initialize COSMO Alpaca / COSMO Alpaca Initialization",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42812410701/job/129816895266"
+    },
+    {
+      "id": 129816895653,
+      "name": "Initialize COSMO Alpaca / COSMO Alpaca Settings Files Check / COSMO Alpaca Settings Files Check",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42812410701/job/129816895653"
+    },
+    {
+      "id": 129816895675,
+      "name": "Initialization",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42812410701/job/129816895675"
+    },
+    {
+      "id": 129816897143,
+      "name": "PregateCheck",
+      "status": "completed",
+      "conclusion": "skipped",
+      "url": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42812410701/job/129816897143"
+    },
+    {
+      "id": 129817130343,
+      "name": "Create COSMO Alpaca Containers / Create COSMO Alpaca Containers",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42812410701/job/129817130343"
+    },
+    {
+      "id": 129817264121,
+      "name": "Build . (Default then Test) / Default / . (Default)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42812410701/job/129817264121"
+    },
+    {
+      "id": 129820301286,
+      "name": "Build . (Default then Test) / Test / . (Test)",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42812410701/job/129820301286"
+    },
+    {
+      "id": 129820303030,
+      "name": "Build . (Default then Test) / Default / Remove COSMO Alpaca Containers",
+      "status": "completed",
+      "conclusion": "skipped",
+      "url": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42812410701/job/129820303030"
+    },
+    {
+      "id": 129823892245,
+      "name": "Build . (Default then Test) / Test / Remove COSMO Alpaca Containers",
+      "status": "completed",
+      "conclusion": "skipped",
+      "url": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42812410701/job/129823892245"
+    },
+    {
+      "id": 129823892889,
+      "name": "Remove COSMO Alpaca Containers / Remove COSMO Alpaca Containers",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42812410701/job/129823892889"
+    },
+    {
+      "id": 129823894873,
+      "name": "Code Analysis Processing",
+      "status": "completed",
+      "conclusion": "skipped",
+      "url": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42812410701/job/129823894873"
+    },
+    {
+      "id": 129824000717,
+      "name": "Pull Request Status Check",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/actions/runs/42812410701/job/129824000717"
+    }
+  ],
+  "limitations": [
+    "CI has no previous release package for upgrade/AppSource breaking-change baseline. Existing manifest/pipeline configuration preserved; no new suppressions.",
+    "Conditional orchestration jobs skipped are not skipped AL tests."
+  ],
+  "note": "CI counts retained separately from local native73. Actual CI merge commit source tree equals published candidate source tree."
+}

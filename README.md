@@ -15,3 +15,5 @@ Local BC29 tenant `w129-19`, CRONUS International Ltd., belongs solely to worker
 - Cleanup:18 filtered fixture readbacks show zero remaining Reopen, purchase-return or SetTestValue records/setup; owned Origo apps uninstalled with extension-data deletion and unpublished.84 Microsoft apps retained. No foreign tenant used.
 
 Gateway Layer1:21/23 categories pass; two reviewed false positives (AL parameter separators, locked public message identifier caption). Layer2 covers exact permission union, source/test preservation, contracts, docs, object allocation and unchanged public API. Snapshot52ba4754cfd614e4a7c50af87b30149b18b313e3 was captured2November, not freshly synchronized. Refer acceptance-matrix.json for AC01–AC08 and finding-matrix.json for previous amendment and wider suggestions. Independent Claude/Grok verification, approval, Architect merge/deploy and Tester UAT remain separate stages. This is not issue completion.
+
+Paired CI evidence is in [ci.json](ci.json), with actual tested checkout SHA and native counts recorded separately from local evidence.
