@@ -152,6 +152,14 @@ codeunit 97220 "Quality Move Tst ori"
         VerifyScenario('worksheetPost', 1033);
     end;
 
+    /// <summary>A stale expected count refuses before any movement.</summary>
+    [Test]
+    procedure Scenario_AC02_ExpectedCountMismatch_RefusesWithoutWrite()
+    begin
+        // Story #12, AC02 | Time: WorkDate | Risk: owned Q12 fixtures only
+        VerifyScenario('count', 1033);
+    end;
+
     /// <summary>Discovers the type and verifies its effect and help chapters through Foundation.</summary>
     [Test]
     procedure Scenario_AC01_Discovery_DeclaresAtomicEffect()
@@ -192,9 +200,11 @@ codeunit 97220 "Quality Move Tst ori"
         Request.Add('sourceLocationCode', FixtureCode);
         Request.Add('destinationLocationCode', 'D' + CopyStr(FixtureCode, 2));
         Request.Add('confirm', true);
+        Request.Add('expectedCount', 1);
         ExpectSuccess := Scenario in ['failed', 'passed'];
         case Scenario of
             'passed': Request.Replace('quantityBasis', 'passed');
+            'count': Request.Replace('expectedCount', 0);
             'missing': Request.Remove('quantityBasis');
             'unknown': Request.Add('unexpected', true);
             'boolean': Request.Add('postImmediately', 'true');
@@ -368,7 +378,7 @@ codeunit 97220 "Quality Move Tst ori"
         Location.Delete(false);
         if HadSetup then begin
             Setup.Get();
-            Setup.TransferFields(PriorSetup, true);
+            Setup."Item Reclass. Batch Name" := PriorSetup."Item Reclass. Batch Name";
             Setup.Modify(false);
         end else
             if Setup.Get() then

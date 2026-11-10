@@ -59,7 +59,7 @@ codeunit 10035270 "Quality Move Impl ori" implements "Msg Interface ori", "Msg D
             Error(ErrorInfo.Create(PermissionErr));
         Request := Argument.GetRequestJson();
         foreach ParameterName in Request.Keys() do
-            if not (ParameterName in ['inspectionSystemId', 'quantityBasis', 'method', 'sourceLocationCode', 'sourceBinCode', 'destinationLocationCode', 'destinationBinCode', 'postImmediately', 'confirm']) then
+            if not (ParameterName in ['inspectionSystemId', 'quantityBasis', 'method', 'sourceLocationCode', 'sourceBinCode', 'destinationLocationCode', 'destinationBinCode', 'postImmediately', 'confirm', 'expectedCount']) then
                 Error(ErrorInfo.Create(StrSubstNo(UnknownKeyErr, ParameterName)));
         if not Evaluate(InspectionId, ReadText(Request, 'inspectionSystemId', true, 50)) then
             Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, 'inspectionSystemId')));
@@ -245,7 +245,7 @@ codeunit 10035270 "Quality Move Impl ori" implements "Msg Interface ori", "Msg D
     /// <summary>Returns the examples contract chapter.</summary>
     procedure GetExamples(var Examples: JsonArray): Boolean
     begin
-        Examples.ReadFrom('[{"title":"Prepare a failed-quantity item reclassification","request":{"type":"Quality.Disposition.MoveInventory","data":{"inspectionSystemId":"00000000-0000-0000-0000-000000000001","quantityBasis":"failed","method":"itemReclassification","destinationLocationCode":"QUARANTINE","confirm":true}},"response":{"status":"Success","inspectionSystemId":"00000000-0000-0000-0000-000000000001","inspectionNo":"QI00001","reinspectionNo":0,"method":"itemReclassification","quantityBasis":"failed","posted":false}}]');
+        Examples.ReadFrom('[{"title":"Prepare a failed-quantity item reclassification","request":{"type":"Quality.Disposition.MoveInventory","data":{"inspectionSystemId":"00000000-0000-0000-0000-000000000001","quantityBasis":"failed","method":"itemReclassification","destinationLocationCode":"QUARANTINE","confirm":true,"expectedCount":1}},"response":{"status":"Success","inspectionSystemId":"00000000-0000-0000-0000-000000000001","inspectionNo":"QI00001","reinspectionNo":0,"method":"itemReclassification","quantityBasis":"failed","posted":false}}]');
         exit(true);
     end;
 

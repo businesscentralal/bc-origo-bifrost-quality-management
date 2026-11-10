@@ -9,3 +9,5 @@ Kallandi þarf `BIFROST QM Full ori` og staðlaðar heimildir Microsoft fyrir va
 Aðgerðin er **ekki ídempótent**. Endurtekið heppnað kall getur stofnað annan flutning. Ekki endurtaka sjálfkrafa heppnaða beiðni. Bókaðar færslur hafa áhrif á birgðir og endurtekin beiðni afturkallar þær ekki.
 
 Venjuleg gæðabókun Microsoft staðfestir fyrir hverja línu. Viðbótin bindur staðlaða bókun vöru eða vöruhúss með bældri staðfestingu og bannar beinar staðfestingar meðan ráðstöfun stendur. Viðskiptahöfnun bakfærir stofnun lína og bókun saman. Venjuleg heppnuð keyrsla staðfestir einangraða færslu einu sinni. Með `Omit Commit` ber kallandi viðbót ábyrgð á færslu og bakfærslu. Engu ástandi prufu, leyfis, samþykkis eða ytri þjónustu er breytt.
+
+Foundation notar einnig staðlaða forskoðun óafturkræfra aðgerða: sendu `expectedCount=1` fyrir eina skoðun. Röngum fjölda er hafnað áður en flutningur hefst. Þetta kemur ekki í stað `confirm=true`.
