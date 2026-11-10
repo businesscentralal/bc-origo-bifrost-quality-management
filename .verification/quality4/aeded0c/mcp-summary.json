@@ -1,0 +1,179 @@
+{
+  "sha": "aeded0caf4ec6573d37dca77e7bed642f0093b1e",
+  "containerId": "f018ccc95acc",
+  "touchedMessageTypes": [
+    "Quality.Inspection.Finish"
+  ],
+  "createsOwnData": true,
+  "executed": 10,
+  "passed": 10,
+  "failed": 0,
+  "skipped": 0,
+  "scenarios": [
+    {
+      "name": "finish",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Quality.Inspection.Finish",
+        "status": "Success",
+        "no": "XQM4D7MCP00000001",
+        "reinspectionNo": 0,
+        "previousStatus": "Open",
+        "recordStatus": "Finished",
+        "changed": true,
+        "finishedBy": "<owned test user>",
+        "finishedDate": "2026-11-10T04:00:59.143Z"
+      }
+    },
+    {
+      "name": "idempotent",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Quality.Inspection.Finish",
+        "status": "Success",
+        "no": "XQM4D7MCP00000001",
+        "reinspectionNo": 0,
+        "previousStatus": "Finished",
+        "recordStatus": "Finished",
+        "changed": false,
+        "message": "Quality inspection XQM4D7MCP00000001 reinspection 0 is already finished. Nothing was changed.",
+        "finishedBy": "<owned test user>",
+        "finishedDate": "2026-11-10T04:00:59.143Z"
+      }
+    },
+    {
+      "name": "missing",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "Parameter no is required.",
+        "parameter": "no",
+        "expected": "no",
+        "nextStep": "Send no. Send reinspectionNo only for a reinspection.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.Finish\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "name": "unknown",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "UnknownParameter",
+        "error": "Parameter \"status\" is not declared by this message type. Nothing was executed.",
+        "parameter": "status",
+        "expected": "declared request parameters",
+        "nextStep": "Remove this key or consult Help.Implementation.Get for the declared parameters.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.Finish\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "name": "notFound",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "RecordNotFound",
+        "error": "Quality inspection XQM4D7NOTFOUND reinspection 0 was not found.",
+        "parameter": "no",
+        "received": "XQM4D7NOTFOUND",
+        "expected": "an existing quality inspection",
+        "nextStep": "Read the inspection with Data.Records.Get.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.Finish\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "name": "finish",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Quality.Inspection.Finish",
+        "status": "Success",
+        "no": "XQM4D7MCP00000001",
+        "reinspectionNo": 0,
+        "previousStatus": "Finished",
+        "recordStatus": "Finished",
+        "changed": false,
+        "message": "Gæðaskoðun XQM4D7MCP00000001 endurskoðun 0 er þegar lokið. Engu var breytt.",
+        "finishedBy": "<owned test user>",
+        "finishedDate": "2026-11-10T04:00:59.143Z"
+      }
+    },
+    {
+      "name": "idempotent",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Quality.Inspection.Finish",
+        "status": "Success",
+        "no": "XQM4D7MCP00000001",
+        "reinspectionNo": 0,
+        "previousStatus": "Finished",
+        "recordStatus": "Finished",
+        "changed": false,
+        "message": "Gæðaskoðun XQM4D7MCP00000001 endurskoðun 0 er þegar lokið. Engu var breytt.",
+        "finishedBy": "<owned test user>",
+        "finishedDate": "2026-11-10T04:00:59.143Z"
+      }
+    },
+    {
+      "name": "missing",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "Færibreyta no er nauðsynleg.",
+        "parameter": "no",
+        "expected": "no",
+        "nextStep": "Sendu no. Sendu reinspectionNo aðeins fyrir endurskoðun.",
+        "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Finish\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+      }
+    },
+    {
+      "name": "unknown",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "UnknownParameter",
+        "error": "Viðfangið \"status\" er ekki skilgreint fyrir þessa skilaboðategund. Ekkert var keyrt.",
+        "parameter": "status",
+        "expected": "skilgreind beiðniviðföng",
+        "nextStep": "Fjarlægðu þennan lykil eða skoðaðu Help.Implementation.Get til að sjá skilgreind viðföng.",
+        "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Finish\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+      }
+    },
+    {
+      "name": "notFound",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "RecordNotFound",
+        "error": "Gæðaskoðun XQM4D7NOTFOUND endurskoðun 0 fannst ekki.",
+        "parameter": "no",
+        "received": "XQM4D7NOTFOUND",
+        "expected": "gæðaskoðun sem er til",
+        "nextStep": "Lestu skoðunina með Data.Records.Get.",
+        "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Finish\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+      }
+    }
+  ],
+  "cleanup": {
+    "verified": true,
+    "deletedId": "66475855-bbdc-f111-b7a5-c81affd03e02",
+    "deleteStatus": 204,
+    "inspectionPrefixCount": 0,
+    "resultPrefixCount": 0,
+    "verifiedAt": "2026-11-10T04:03:13.980Z"
+  }
+}

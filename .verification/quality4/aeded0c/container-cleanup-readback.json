@@ -1,0 +1,15 @@
+{
+  "id": "f018ccc95acc",
+  "workerId": "worker-7",
+  "taskId": "flow-continue-businesscentralal_bc-origo-bifrost-quality-management_4-2026-11-10T02_34",
+  "before": {
+    "statusCode": 200,
+    "state": "Running",
+    "displayName": "dainn-worker7-quality4-w1"
+  },
+  "deletionRequestedAt": "2026-11-10T04:03:45.066Z",
+  "deleteStatusCode": 204,
+  "getStatusCode": 404,
+  "verifiedDeleted": true,
+  "checkedAt": "2026-11-10T04:03:45.252Z"
+}

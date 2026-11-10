@@ -1,0 +1,55 @@
+{
+  "sha": "aeded0caf4ec6573d37dca77e7bed642f0093b1e",
+  "compiledAt": "2026-11-10T03:59:07.035595+00:00",
+  "compilerVersion": "30.0.42.60748",
+  "sourceFiles": {
+    "app/app.json": "4b4e6b065525667089b6d45c511b032828b3ca8ca9d1b915e5e851da17ffb13a",
+    "app/AppSourceCop.json": "3693ee0c9ff2b18b8528d8b9bc2ecb80610346762766e2d9c209e0742885f2e8",
+    "app/.vscode/settings.json": "5552574a9b19e5240b47c6654b4f67eddd873ec2c5bfde5340ec6a1e9f74f172",
+    "app/src/Common/QualityRegistration.Codeunit.al": "1dfec6572e3db8c142b6659370549d34a47947928b0a35aed2a1ad233122e74b",
+    "app/src/Inspection/QltyFinishAccess.Table.al": "49760e7e34d03def088e3523ebbb1b567bf88374258cf6928ae5c1053a249002",
+    "app/src/Inspection/QltyFinishMsgType.EnumExt.al": "3130a88c16601d146be8a97d2ab5ef6cedb54909aa5533279cd5b75e9defe90c",
+    "app/src/Inspection/QltyInspFinishCtr.Codeunit.al": "a1a63696c444b1cc67651a1bb01636cff112e8eb2fe4787fd83e9e69c9a99174",
+    "app/src/Inspection/QltyInspFinishImpl.Codeunit.al": "0c391bfebda23a02ba354aeb772065cbee9b5484965cb15fe353b0f804e2a06e",
+    "app/src/Inspection/QltyInspFinishProc.Codeunit.al": "a1ff755cf0e22047f75e9abdd86508ef2b2d33b7ee639f2cd2bfc82c53f7dc55",
+    "app/src/Permission Set/BIFROSTQMFull.PermissionSet.al": "fc871c56827e3189ec8c708ecd51ac55cbc7daeb3049fc66357a3709ebb47e76",
+    "app/src/Permission Set/BIFROSTQMRead.PermissionSet.al": "a84f63b86d862f21d1f9b9a92e78389b7ffdac921fe232c8a0ca335caee04c1c",
+    "app/src/Permission Set/BIFROSTQuality.PermissionSet.al": "c6c974dde35ce2440baabb32a454b2ca071a5454bbe84bb29d354635b9995034",
+    "app/src/Permission Set/QualityFullRole.PermissionSetExt.al": "daa0226117d2448e18a2da1831b4d519a8be25f01c3e90a51cd893ba82a5554b",
+    "app/src/Permission Set/QualityReadRole.PermissionSetExt.al": "d58c1090fb206279aa234df82b52bcab29b49d8c99f628021d429c9c41550514",
+    "app/Translations/Bifrost Quality Management.is-IS.xlf": "41518cef7a17439a4736f57177ab15f8a0fa2385de952c1c1d3213f0e752cb36",
+    "test/app.json": "ca75b675d43ec1f3596b885191cf21318d59c1fd6b390233b0269447a649a0f2",
+    "test/src/QMSetupTest.PermissionSet.al": "279130a2e76f8999c776ce0e76d86a94b78210d25048c43c032ee1ae3733906f",
+    "test/test/QltyInspFinishTst.Codeunit.al": "b783fd9da91f8ac65340c5016566d3a29a0f8725eab311dac80782cc65575ea6",
+    "test/test/QualityScaffoldTst.Codeunit.al": "928a0eb1c862e361be883b794cd1800c51e4bf14821eba9366e6c2cf08211190"
+  },
+  "compile": [
+    {
+      "app": "app",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "analyzers": [
+        "CodeCop",
+        "UICop",
+        "AppSourceCop"
+      ],
+      "sourceSha": "aeded0caf4ec6573d37dca77e7bed642f0093b1e",
+      "artifactSha256": "5419e899429fa5c18074645a84c094c886b24a842ecdff20d9199d867091be69"
+    },
+    {
+      "app": "test",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "analyzers": [
+        "CodeCop",
+        "UICop",
+        "AppSourceCop"
+      ],
+      "sourceSha": "aeded0caf4ec6573d37dca77e7bed642f0093b1e",
+      "artifactSha256": "19a3d82f3bf735771647d78e24800dce122deccd694155da6cc63e34351f0567"
+    }
+  ],
+  "provenance": "Built before commit; commit contains that exact AL/app.json/XLF tree. No code edits after compile."
+}
