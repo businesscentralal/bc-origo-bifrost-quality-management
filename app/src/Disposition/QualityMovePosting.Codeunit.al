@@ -28,8 +28,16 @@ codeunit 10035272 "Quality Move Posting ori"
     begin
         if IsHandled then
             Error(ErrorInfo.Create(ConflictingSubscriberErr));
-        if ItemJournalLine."Line No." = 0 then
+        if ItemJournalLine."Line No." <> 0 then
+            ItemJournalLine.SetRecFilter();
+        if (ItemJournalLine.GetFilter("Journal Template Name") = '') or
+           (ItemJournalLine.GetFilter("Journal Batch Name") = '') or
+           (ItemJournalLine.GetFilter("Line No.") = '')
+        then
             Error(ErrorInfo.Create(MissingFilterErr));
+        if ItemJournalLine.Count() <> 1 then
+            Error(ErrorInfo.Create(MissingFilterErr));
+        ItemJournalLine.FindFirst();
         ItemJournalLine.SetRecFilter();
         ItemJnlPostBatch.SetSuppressCommit(true);
         ItemJnlPostBatch.Run(ItemJournalLine);
@@ -44,8 +52,16 @@ codeunit 10035272 "Quality Move Posting ori"
     begin
         if IsHandled then
             Error(ErrorInfo.Create(ConflictingSubscriberErr));
-        if WarehouseJournalLine."Line No." = 0 then
+        if WarehouseJournalLine."Line No." <> 0 then
+            WarehouseJournalLine.SetRecFilter();
+        if (WarehouseJournalLine.GetFilter("Journal Template Name") = '') or
+           (WarehouseJournalLine.GetFilter("Journal Batch Name") = '') or
+           (WarehouseJournalLine.GetFilter("Line No.") = '')
+        then
             Error(ErrorInfo.Create(MissingFilterErr));
+        if WarehouseJournalLine.Count() <> 1 then
+            Error(ErrorInfo.Create(MissingFilterErr));
+        WarehouseJournalLine.FindFirst();
         WarehouseJournalLine.SetRecFilter();
         WhseJnlRegisterBatch.SetSuppressCommit(true);
         WhseJnlRegisterBatch.Run(WarehouseJournalLine);
