@@ -1,0 +1,26 @@
+{
+  "sha": "d85a9db642a6424f1a04c36344f0cfb282c0d0c2",
+  "checks": [
+    {
+      "type": "app",
+      "sha": "d85a9db642a6424f1a04c36344f0cfb282c0d0c2",
+      "exit": 0,
+      "errors": 0,
+      "warnings": 0,
+      "artifactSha256": "04ec9705742935cc4d1eb0219c6e877c97de131a03c9e8bf2a206c7266549cd8"
+    },
+    {
+      "type": "test",
+      "sha": "d85a9db642a6424f1a04c36344f0cfb282c0d0c2",
+      "exit": 0,
+      "errors": 0,
+      "warnings": 0,
+      "artifactSha256": "147beebba79896c50f1047a3f28c5680824a7b5ed872a070545ee14496337d0e"
+    }
+  ],
+  "analyzers": [
+    "CodeCop",
+    "UICop",
+    "AppSourceCop"
+  ]
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "check": "Test-ContractParameterKeys",
+    "exit": 0,
+    "summary": "Every contract parameter is a key the code reads, and every key the code reads is declared (0 allow-listed).\n"
+  },
+  {
+    "check": "Test-IcelandicXlfInSync",
+    "exit": 0,
+    "summary": "The committed is-IS.xlf is what tools/Update-IcelandicXlf.ps1 generates from the build.\n"
+  },
+  {
+    "check": "Test-IcelandicKeywordCounts",
+    "exit": 0,
+    "summary": "Every Icelandic keyword list has at least as many entries as the English one (2 in the source, 2 in the xlf).\n"
+  },
+  {
+    "check": "Test-MixedLanguageLabels",
+    "exit": 0,
+    "summary": "No procedure answers a Locked English sentence.\n"
+  },
+  {
+    "check": "Test-NoObsolete",
+    "exit": 0,
+    "summary": "No obsolete declaration and no AL0432/AL0667 pragma in the app, apart from the allow-listed VAT Amount Line pragmas.\n"
+  },
+  {
+    "check": "Test-ObjectIdsUnique",
+    "exit": 0,
+    "summary": "Object ID uniqueness check passed: no duplicate object type and ID within any app.\n"
+  },
+  {
+    "check": "Test-PermissionCoverage",
+    "exit": 0,
+    "summary": "Every page, query, report and xmlport is granted by an assignable permission set.\n"
+  },
+  {
+    "check": "Test-ValidatedTableView",
+    "exit": 0,
+    "summary": "Every applied tableView is validated first.\n"
+  },
+  {
+    "check": "Test-NoClientCallstack",
+    "exit": 0,
+    "summary": "No call stack is returned or documented to callers.\n"
+  },
+  {
+    "check": "Test-HelpLinks",
+    "exit": 0,
+    "summary": "Checked the app.json links and 0 page(s)\nThe app has no pages and no help instance; help, privacyStatement, EULA and contextSensitiveHelpUrl point at the app's pages on https://docs.bifrost.origo.is/.\n"
+  }
+]

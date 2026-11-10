@@ -1,0 +1,33 @@
+{
+  "sha": "d85a9db642a6424f1a04c36344f0cfb282c0d0c2",
+  "issue": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/34",
+  "dependency": "PR25 supplies SetTestValue implementation; this follow-up is stacked on its branch. No edits to PR25.",
+  "matrix": [
+    {
+      "ac": "AC01",
+      "implemented": true,
+      "verified": true,
+      "evidence": "Missing/empty inspectionSystemId cases in English/Icelandic, codes MissingParameter plus parameter/expected/nextStep; native and MCP."
+    },
+    {
+      "ac": "AC02",
+      "implemented": true,
+      "verified": true,
+      "evidence": "Nonexistent inspectionSystemId in both languages; RecordNotFound plus parameter/received/expected/nextStep, canonical unknown GUID."
+    },
+    {
+      "ac": "AC03",
+      "implemented": true,
+      "verified": true,
+      "evidence": "Owned input/access/status refusals use typed codes with metadata. Native wrong type/null/array/object/length/code/value tests and permission/status tests, both languages. Native Microsoft errors and late rollback tests preserved. XLF generated and10source guards pass."
+    }
+  ],
+  "stages": {
+    "implementation": "done",
+    "developerVerification": "done; compile0/0, native80/80, MCP39/39, UI7/7 in2locales and cleanup verified",
+    "independentVerification": "pending",
+    "reviewClearance": "pending",
+    "approval": "pending",
+    "mergeDeploymentUat": "pending"
+  }
+}

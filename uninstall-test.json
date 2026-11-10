@@ -1,0 +1,20 @@
+{
+  "action": "uninstallAndDeleteExtensionData",
+  "packageId": "8ce11558-9114-4a61-9dff-28e8abcb1384",
+  "statusCode": 204,
+  "durationMs": 231,
+  "ok": true,
+  "body": null,
+  "match": {
+    "packageId": "8ce11558-9114-4a61-9dff-28e8abcb1384",
+    "id": "9193f6a2-0926-49bb-9fec-3c36a60c8b0e",
+    "displayName": "Bifrost Quality Management - Tests",
+    "publisher": "Origo",
+    "versionMajor": 28,
+    "versionMinor": 0,
+    "versionBuild": 0,
+    "versionRevision": 0,
+    "isInstalled": true,
+    "publishedAs": " Dev"
+  }
+}

@@ -1,0 +1,718 @@
+{
+  "sha": "d85a9db642a6424f1a04c36344f0cfb282c0d0c2",
+  "tenant": "w129-15",
+  "note": "Includes harness diagnostic calls before final39-scenario passing run; repeated refusal probes do not write business data.",
+  "calls": [
+    {
+      "lcid": 1033,
+      "request": {
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "expected": "a non-empty SystemId GUID of an existing quality inspection",
+        "nextStep": "Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "expected": "a non-empty SystemId GUID of an existing quality inspection",
+        "nextStep": "Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "3160360e-5bb0-4877-b381-a8d6cfb384bb",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "RecordNotFound",
+        "error": "The quality inspection was not found.",
+        "parameter": "inspectionSystemId",
+        "received": "3160360E-5BB0-4877-B381-A8D6CFB384BB",
+        "expected": "a non-empty SystemId GUID of an existing quality inspection",
+        "nextStep": "Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "expected": "a non-empty SystemId GUID of an existing quality inspection",
+        "nextStep": "Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "expected": "a non-empty SystemId GUID of an existing quality inspection",
+        "nextStep": "Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "0A94FA56-5F19-4A6B-90C5-10AE7C86F850",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "RecordNotFound",
+        "error": "The quality inspection was not found.",
+        "parameter": "inspectionSystemId",
+        "received": "0A94FA56-5F19-4A6B-90C5-10AE7C86F850",
+        "expected": "a non-empty SystemId GUID of an existing quality inspection",
+        "nextStep": "Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "bad-guid",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "received": "bad-guid",
+        "expected": "a non-empty SystemId GUID of an existing quality inspection",
+        "nextStep": "Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "00000000-0000-0000-0000-000000000000",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "received": "00000000-0000-0000-0000-000000000000",
+        "expected": "a non-empty SystemId GUID of an existing quality inspection",
+        "nextStep": "Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": 12,
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "received": "12",
+        "expected": "a text value",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": null,
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "received": "null",
+        "expected": "a text value",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": [],
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "received": "[]",
+        "expected": "a text value",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": {},
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "received": "{}",
+        "expected": "a text value",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "The required parameter 'testCode' is missing or invalid.",
+        "parameter": "testCode",
+        "expected": "a non-empty text value",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "The required parameter 'testCode' is missing or invalid.",
+        "parameter": "testCode",
+        "expected": "a non-empty text value",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": 12,
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "The required parameter 'testCode' is missing or invalid.",
+        "parameter": "testCode",
+        "received": "12",
+        "expected": "a text value",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "xxxxxxxxxxxxxxxxxxxxx",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Parameter 'testCode' exceeds 20 characters.",
+        "parameter": "testCode",
+        "received": "xxxxxxxxxxxxxxxxxxxxx",
+        "expected": "text with at most 20 characters",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "BIFTQ6-A34-7AC2A502"
+      },
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "The required parameter 'value' is missing or invalid.",
+        "parameter": "value",
+        "expected": "a text value",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": 12
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "The required parameter 'value' is missing or invalid.",
+        "parameter": "value",
+        "received": "12",
+        "expected": "a text value",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Parameter 'value' exceeds 250 characters.",
+        "parameter": "value",
+        "received": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "expected": "text with at most 250 characters",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20",
+        "unexpected": true
+      },
+      "response": {
+        "status": "Error",
+        "code": "UnknownParameter",
+        "error": "Parameter \"unexpected\" is not declared by this message type. Nothing was executed.",
+        "parameter": "unexpected",
+        "expected": "declared request parameters",
+        "nextStep": "Remove this key or consult Help.Implementation.Get for the declared parameters.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Quality.Inspection.SetTestValue",
+        "status": "Success",
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "inspectionNo": "BIFTQ6-A34-7AC2A502",
+        "reinspectionNo": 0,
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "resultCode": "BIFTQ6-A34-7AC2A502"
+      }
+    },
+    {
+      "lcid": 1033,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "not an integer"
+      },
+      "response": {
+        "status": "Error",
+        "code": "BusinessCentralError",
+        "error": "The value \"not an integer\" is not allowed for BIFTQ6-A34-7AC2A502, it is not a Integer.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "Nau\u00f0synlega f\u00e6ribreytu 'inspectionSystemId' vantar e\u00f0a h\u00fan er \u00f3gild.",
+        "parameter": "inspectionSystemId",
+        "expected": "SystemId GUID sko\u00f0unar sem er til og er ekki t\u00f3mt",
+        "nextStep": "Lestu SystemId sko\u00f0unar me\u00f0 Data.Records.Get og sendu inspectionSystemId.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "Nau\u00f0synlega f\u00e6ribreytu 'inspectionSystemId' vantar e\u00f0a h\u00fan er \u00f3gild.",
+        "parameter": "inspectionSystemId",
+        "expected": "SystemId GUID sko\u00f0unar sem er til og er ekki t\u00f3mt",
+        "nextStep": "Lestu SystemId sko\u00f0unar me\u00f0 Data.Records.Get og sendu inspectionSystemId.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "3DA1A6A3-CDC3-423F-AC31-DF31257C8AA9",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "RecordNotFound",
+        "error": "G\u00e6\u00f0asko\u00f0unin fannst ekki.",
+        "parameter": "inspectionSystemId",
+        "received": "3DA1A6A3-CDC3-423F-AC31-DF31257C8AA9",
+        "expected": "SystemId GUID sko\u00f0unar sem er til og er ekki t\u00f3mt",
+        "nextStep": "Lestu SystemId sko\u00f0unar me\u00f0 Data.Records.Get og sendu inspectionSystemId.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "bad-guid",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Nau\u00f0synlega f\u00e6ribreytu 'inspectionSystemId' vantar e\u00f0a h\u00fan er \u00f3gild.",
+        "parameter": "inspectionSystemId",
+        "received": "bad-guid",
+        "expected": "SystemId GUID sko\u00f0unar sem er til og er ekki t\u00f3mt",
+        "nextStep": "Lestu SystemId sko\u00f0unar me\u00f0 Data.Records.Get og sendu inspectionSystemId.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "00000000-0000-0000-0000-000000000000",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Nau\u00f0synlega f\u00e6ribreytu 'inspectionSystemId' vantar e\u00f0a h\u00fan er \u00f3gild.",
+        "parameter": "inspectionSystemId",
+        "received": "00000000-0000-0000-0000-000000000000",
+        "expected": "SystemId GUID sko\u00f0unar sem er til og er ekki t\u00f3mt",
+        "nextStep": "Lestu SystemId sko\u00f0unar me\u00f0 Data.Records.Get og sendu inspectionSystemId.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": 12,
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Nau\u00f0synlega f\u00e6ribreytu 'inspectionSystemId' vantar e\u00f0a h\u00fan er \u00f3gild.",
+        "parameter": "inspectionSystemId",
+        "received": "12",
+        "expected": "textagildi",
+        "nextStep": "Lei\u00f0r\u00e9ttu tilgreinda f\u00e6ribreytu bei\u00f0ninnar og reyndu aftur.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": null,
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Nau\u00f0synlega f\u00e6ribreytu 'inspectionSystemId' vantar e\u00f0a h\u00fan er \u00f3gild.",
+        "parameter": "inspectionSystemId",
+        "received": "null",
+        "expected": "textagildi",
+        "nextStep": "Lei\u00f0r\u00e9ttu tilgreinda f\u00e6ribreytu bei\u00f0ninnar og reyndu aftur.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": [],
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Nau\u00f0synlega f\u00e6ribreytu 'inspectionSystemId' vantar e\u00f0a h\u00fan er \u00f3gild.",
+        "parameter": "inspectionSystemId",
+        "received": "[]",
+        "expected": "textagildi",
+        "nextStep": "Lei\u00f0r\u00e9ttu tilgreinda f\u00e6ribreytu bei\u00f0ninnar og reyndu aftur.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": {},
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Nau\u00f0synlega f\u00e6ribreytu 'inspectionSystemId' vantar e\u00f0a h\u00fan er \u00f3gild.",
+        "parameter": "inspectionSystemId",
+        "received": "{}",
+        "expected": "textagildi",
+        "nextStep": "Lei\u00f0r\u00e9ttu tilgreinda f\u00e6ribreytu bei\u00f0ninnar og reyndu aftur.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "Nau\u00f0synlega f\u00e6ribreytu 'testCode' vantar e\u00f0a h\u00fan er \u00f3gild.",
+        "parameter": "testCode",
+        "expected": "textagildi sem er ekki t\u00f3mt",
+        "nextStep": "Lei\u00f0r\u00e9ttu tilgreinda f\u00e6ribreytu bei\u00f0ninnar og reyndu aftur.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "Nau\u00f0synlega f\u00e6ribreytu 'testCode' vantar e\u00f0a h\u00fan er \u00f3gild.",
+        "parameter": "testCode",
+        "expected": "textagildi sem er ekki t\u00f3mt",
+        "nextStep": "Lei\u00f0r\u00e9ttu tilgreinda f\u00e6ribreytu bei\u00f0ninnar og reyndu aftur.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": 12,
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Nau\u00f0synlega f\u00e6ribreytu 'testCode' vantar e\u00f0a h\u00fan er \u00f3gild.",
+        "parameter": "testCode",
+        "received": "12",
+        "expected": "textagildi",
+        "nextStep": "Lei\u00f0r\u00e9ttu tilgreinda f\u00e6ribreytu bei\u00f0ninnar og reyndu aftur.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "xxxxxxxxxxxxxxxxxxxxx",
+        "value": "20"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "F\u00e6ribreytan 'testCode' er lengri en 20 stafir.",
+        "parameter": "testCode",
+        "received": "xxxxxxxxxxxxxxxxxxxxx",
+        "expected": "texti me\u00f0 a\u00f0 h\u00e1marki 20 st\u00f6fum",
+        "nextStep": "Lei\u00f0r\u00e9ttu tilgreinda f\u00e6ribreytu bei\u00f0ninnar og reyndu aftur.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "BIFTQ6-A34-7AC2A502"
+      },
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "Nau\u00f0synlega f\u00e6ribreytu 'value' vantar e\u00f0a h\u00fan er \u00f3gild.",
+        "parameter": "value",
+        "expected": "textagildi",
+        "nextStep": "Lei\u00f0r\u00e9ttu tilgreinda f\u00e6ribreytu bei\u00f0ninnar og reyndu aftur.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": 12
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Nau\u00f0synlega f\u00e6ribreytu 'value' vantar e\u00f0a h\u00fan er \u00f3gild.",
+        "parameter": "value",
+        "received": "12",
+        "expected": "textagildi",
+        "nextStep": "Lei\u00f0r\u00e9ttu tilgreinda f\u00e6ribreytu bei\u00f0ninnar og reyndu aftur.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+      },
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "F\u00e6ribreytan 'value' er lengri en 250 stafir.",
+        "parameter": "value",
+        "received": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "expected": "texti me\u00f0 a\u00f0 h\u00e1marki 250 st\u00f6fum",
+        "nextStep": "Lei\u00f0r\u00e9ttu tilgreinda f\u00e6ribreytu bei\u00f0ninnar og reyndu aftur.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20",
+        "unexpected": true
+      },
+      "response": {
+        "status": "Error",
+        "code": "UnknownParameter",
+        "error": "Vi\u00f0fangi\u00f0 \"unexpected\" er ekki skilgreint fyrir \u00feessa skilabo\u00f0ategund. Ekkert var keyrt.",
+        "parameter": "unexpected",
+        "expected": "skilgreind bei\u00f0nivi\u00f0f\u00f6ng",
+        "nextStep": "Fjarl\u00e6g\u00f0u \u00feennan lykil e\u00f0a sko\u00f0a\u00f0u Help.Implementation.Get til a\u00f0 sj\u00e1 skilgreind vi\u00f0f\u00f6ng.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "20"
+      },
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Quality.Inspection.SetTestValue",
+        "status": "Success",
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "inspectionNo": "BIFTQ6-A34-7AC2A502",
+        "reinspectionNo": 0,
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "resultCode": "BIFTQ6-A34-7AC2A502"
+      }
+    },
+    {
+      "lcid": 1039,
+      "request": {
+        "inspectionSystemId": "9FC9C907-E1DC-F111-B6F8-00090FFE0001",
+        "testCode": "BIFTQ6-A34-7AC2A502",
+        "value": "not an integer"
+      },
+      "response": {
+        "status": "Error",
+        "code": "BusinessCentralError",
+        "error": "Gildi\u00f0 \u201enot an integer\u201c er ekki leyfilegt fyrir BIFTQ6-A34-7AC2A502, \u00fea\u00f0 er ekki Heiltala.",
+        "hint": "Til a\u00f0 sj\u00e1 notkunaruppl\u00fdsingar skaltu kalla \u00e1 skilabo\u00f0ategundina \"Help.Implementation.Get\" me\u00f0 subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hj\u00e1lpina \u00e1\u00f0ur en \u00fe\u00fa kallar \u00e1 skilabo\u00f0ategund."
+      }
+    }
+  ]
+}

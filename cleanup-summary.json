@@ -1,0 +1,49 @@
+{
+  "sha": "d85a9db642a6424f1a04c36344f0cfb282c0d0c2",
+  "tenant": "w129-15",
+  "runCode": "BIFTQ6-A34-7AC2A502",
+  "verified": true,
+  "fixtures": [
+    {
+      "table": 20412,
+      "before": 1,
+      "remaining": 0
+    },
+    {
+      "table": 20406,
+      "before": 1,
+      "remaining": 0
+    },
+    {
+      "table": 20405,
+      "before": 1,
+      "remaining": 0
+    },
+    {
+      "table": 20403,
+      "before": 1,
+      "remaining": 0
+    },
+    {
+      "table": 20402,
+      "before": 1,
+      "remaining": 0
+    },
+    {
+      "table": 20401,
+      "before": 1,
+      "remaining": 0
+    },
+    {
+      "table": 20411,
+      "before": 1,
+      "remaining": 0
+    }
+  ],
+  "apps": {
+    "Bifrost Quality Management": "uninstalled with deleteExtensionData and unpublished; HTTP204",
+    "Bifrost Quality Management - Tests": "uninstalled with deleteExtensionData and unpublished; HTTP204"
+  },
+  "at": "2026-11-10T08:37:56.223Z",
+  "permanentTenant": "w129-15 retained under worker5 binding; preexisting Foundation/Manufacturing apps preserved"
+}

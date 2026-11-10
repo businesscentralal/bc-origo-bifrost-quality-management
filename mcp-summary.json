@@ -1,0 +1,166 @@
+{
+  "sha": "d85a9db642a6424f1a04c36344f0cfb282c0d0c2",
+  "tenant": "w129-15",
+  "passed": 39,
+  "failed": 0,
+  "skipped": 0,
+  "createsOwnData": true,
+  "scenarios": [
+    {
+      "name": "missing-id",
+      "lcid": 1033
+    },
+    {
+      "name": "empty-id",
+      "lcid": 1033
+    },
+    {
+      "name": "unknown-id",
+      "lcid": 1033
+    },
+    {
+      "name": "malformed-id",
+      "lcid": 1033
+    },
+    {
+      "name": "zero-guid",
+      "lcid": 1033
+    },
+    {
+      "name": "numeric-id",
+      "lcid": 1033
+    },
+    {
+      "name": "null-id",
+      "lcid": 1033
+    },
+    {
+      "name": "array-id",
+      "lcid": 1033
+    },
+    {
+      "name": "object-id",
+      "lcid": 1033
+    },
+    {
+      "name": "missing-code",
+      "lcid": 1033
+    },
+    {
+      "name": "empty-code",
+      "lcid": 1033
+    },
+    {
+      "name": "numeric-code",
+      "lcid": 1033
+    },
+    {
+      "name": "long-code",
+      "lcid": 1033
+    },
+    {
+      "name": "missing-value",
+      "lcid": 1033
+    },
+    {
+      "name": "numeric-value",
+      "lcid": 1033
+    },
+    {
+      "name": "long-value",
+      "lcid": 1033
+    },
+    {
+      "name": "unknown-key-standard-refusal",
+      "lcid": 1033
+    },
+    {
+      "name": "valid-value-recalculates-result",
+      "lcid": 1033
+    },
+    {
+      "name": "native-invalid-value-refused",
+      "lcid": 1033
+    },
+    {
+      "name": "missing-id",
+      "lcid": 1039
+    },
+    {
+      "name": "empty-id",
+      "lcid": 1039
+    },
+    {
+      "name": "unknown-id",
+      "lcid": 1039
+    },
+    {
+      "name": "malformed-id",
+      "lcid": 1039
+    },
+    {
+      "name": "zero-guid",
+      "lcid": 1039
+    },
+    {
+      "name": "numeric-id",
+      "lcid": 1039
+    },
+    {
+      "name": "null-id",
+      "lcid": 1039
+    },
+    {
+      "name": "array-id",
+      "lcid": 1039
+    },
+    {
+      "name": "object-id",
+      "lcid": 1039
+    },
+    {
+      "name": "missing-code",
+      "lcid": 1039
+    },
+    {
+      "name": "empty-code",
+      "lcid": 1039
+    },
+    {
+      "name": "numeric-code",
+      "lcid": 1039
+    },
+    {
+      "name": "long-code",
+      "lcid": 1039
+    },
+    {
+      "name": "missing-value",
+      "lcid": 1039
+    },
+    {
+      "name": "numeric-value",
+      "lcid": 1039
+    },
+    {
+      "name": "long-value",
+      "lcid": 1039
+    },
+    {
+      "name": "unknown-key-standard-refusal",
+      "lcid": 1039
+    },
+    {
+      "name": "valid-value-recalculates-result",
+      "lcid": 1039
+    },
+    {
+      "name": "native-invalid-value-refused",
+      "lcid": 1039
+    },
+    {
+      "name": "refusals-preserve-last-successful-write",
+      "lcid": 1033
+    }
+  ]
+}

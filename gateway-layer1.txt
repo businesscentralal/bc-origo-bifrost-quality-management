@@ -1,0 +1,126 @@
+{
+  "mode": "diff (vs origin/codex/quality-6-set-test-value)",
+  "publisher": "Origo",
+  "total_al_files": 13,
+  "project": "Bifrost Quality Management",
+  "version": "28.0.0.0",
+  "checks": {
+    "format_evaluate_enum": {
+      "pass": true,
+      "findings": []
+    },
+    "commit_in_loop": {
+      "pass": true,
+      "findings": []
+    },
+    "global_variables": {
+      "pass": true,
+      "findings": []
+    },
+    "xml_doc_comments": {
+      "pass": true,
+      "findings": []
+    },
+    "try_prefix_convention": {
+      "pass": true,
+      "findings": []
+    },
+    "object_naming": {
+      "pass": true,
+      "findings": []
+    },
+    "app_json": {
+      "pass": true,
+      "findings": []
+    },
+    "reserved_var_names": {
+      "pass": true,
+      "findings": []
+    },
+    "with_statements": {
+      "pass": true,
+      "findings": []
+    },
+    "hardcoded_values": {
+      "pass": true,
+      "findings": []
+    },
+    "changelog": {
+      "pass": true,
+      "findings": []
+    },
+    "read_isolation": {
+      "pass": true,
+      "findings": []
+    },
+    "one_statement_per_line": {
+      "pass": false,
+      "findings": [
+        {
+          "text": "local procedure ReadText(Request: JsonObject; ParameterName: Text; AllowEmpty: Boolean; var Argument: Record \"Message Argument ori\") Value: Text",
+          "file": "QualitySetValueImpl.Codeunit.al",
+          "line": 101
+        },
+        {
+          "text": "local procedure Refuse(var Argument: Record \"Message Argument ori\"; ErrorCode: Enum \"Bifrost Error Code ori\"; Message: Text; Parameter: Text; Received: Text; Expected: Text; NextStep: Text)",
+          "file": "QualitySetValueImpl.Codeunit.al",
+          "line": 132
+        },
+        {
+          "text": "local procedure AddErrorContract(var Errors: JsonArray; ErrorCode: Text; WhenText: Text; FixText: Text)",
+          "file": "QualitySetValueImpl.Codeunit.al",
+          "line": 238
+        }
+      ]
+    },
+    "set_load_fields": {
+      "advisory": "Loops without SetLoadFields - consider it only for wide tables; not a gate failure",
+      "pass": true,
+      "findings": []
+    },
+    "format_guid": {
+      "pass": true,
+      "findings": []
+    },
+    "page_code_minimal": {
+      "pass": true,
+      "findings": []
+    },
+    "modernization": {
+      "pass": true,
+      "findings": []
+    },
+    "event_subscriber_placement": {
+      "pass": true,
+      "findings": []
+    },
+    "data_classification": {
+      "pass": true,
+      "findings": []
+    },
+    "namespace": {
+      "pass": true,
+      "findings": []
+    },
+    "today_vs_workdate": {
+      "pass": true,
+      "findings": []
+    },
+    "caption_translation": {
+      "skipped": null,
+      "pass": true,
+      "findings": []
+    },
+    "confirm_in_page": {
+      "pass": true,
+      "findings": []
+    }
+  },
+  "summary": {
+    "failed": 2,
+    "passed": 22,
+    "ready": false,
+    "total": 23
+  },
+  "files_scanned": 1
+}

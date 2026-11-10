@@ -1,0 +1,12 @@
+{
+  "sha": "d85a9db642a6424f1a04c36344f0cfb282c0d0c2",
+  "tenant": "w129-15",
+  "ownCompilerArtifact": "04ec9705742935cc4d1eb0219c6e877c97de131a03c9e8bf2a206c7266549cd8",
+  "downloadedDeployedArtifact": "04ec9705742935cc4d1eb0219c6e877c97de131a03c9e8bf2a206c7266549cd8",
+  "binaryMatch": true,
+  "testApp": {
+    "ownCompilerArtifact": "147beebba79896c50f1047a3f28c5680824a7b5ed872a070545ee14496337d0e",
+    "downloadedDeployedArtifact": "147beebba79896c50f1047a3f28c5680824a7b5ed872a070545ee14496337d0e",
+    "binaryMatch": true
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "worker": "worker-5",
+  "tenant": "w129-15",
+  "BC": "29.0.54011.55407",
+  "company": "CRONUS International Ltd.",
+  "sourceSha": "d85a9db642a6424f1a04c36344f0cfb282c0d0c2",
+  "appVersions": {
+    "Bifrost Quality Management": "28.0.0.0",
+    "Bifrost Quality Management - Tests": "28.0.0.0",
+    "Bifrost Foundation": "28.0.11.669"
+  },
+  "fixtures": {
+    "selfSeeded": true,
+    "runCode": "BIFTQ6-A34-7AC2A502",
+    "tables": [
+      20401,
+      20402,
+      20403,
+      20405,
+      20406,
+      20411,
+      20412
+    ],
+    "setup": "Existing Foundation Test.Records.Set creates own synthetic native test/template/inspection/result condition rows; SetTestValue under test performs actual value validation and result recalculation.",
+    "cleanup": "All7tables read back0 owned rows."
+  },
+  "noLicenseEulaTrialBackendWrites": true,
+  "standardsSnapshot": "52ba4754cfd614e4a7c50af87b30149b18b313e3, captured2026-11-02, no fresh sync claimed"
+}

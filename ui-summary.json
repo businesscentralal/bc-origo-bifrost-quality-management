@@ -1,0 +1,31 @@
+{
+  "sha": "d85a9db642a6424f1a04c36344f0cfb282c0d0c2",
+  "tenant": "w129-15",
+  "verified": true,
+  "lcids": [
+    1033,
+    1039
+  ],
+  "passed": 7,
+  "failed": 0,
+  "skipped": 0,
+  "scenarios": [
+    {
+      "lcid": 1033,
+      "assertions": 3,
+      "description": "Owned quality inspection card shows its unique number, Open status and saved20 after MCP refusals."
+    },
+    {
+      "lcid": 1039,
+      "assertions": 4,
+      "description": "Same owned inspection card shows its number, Opi\u00f0 status, saved20 and localized Pr\u00f3funargildi caption."
+    }
+  ],
+  "languageRestored": "Verified: English(United States) restored; final Web Client displays Quality Inspection, Home, Status and no rows after fixture cleanup.",
+  "uiScope": "Native inspection state/persistence after valid and refused SetTestValue calls; typed JSON fields independently asserted by native suite and MCP.",
+  "screenshots": [
+    "inspection-1033.png",
+    "inspection-1039.png"
+  ],
+  "at": "2026-11-10T08:42:06.058921+00:00"
+}
