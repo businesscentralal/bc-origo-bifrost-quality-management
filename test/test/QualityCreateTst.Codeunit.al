@@ -106,6 +106,14 @@ codeunit 97210 "Quality Create Tst ori"
         VerifyScenario('empty', 1033);
     end;
 
+    /// <summary>BlankTemplate Refuses.</summary>
+    [Test]
+    procedure Scenario_AC02_BlankTemplate_Refuses()
+    begin
+        // Story #3 AC02 | Time: WorkDate controls native numbering | Risk: owned fixture only
+        VerifyScenario('blank', 1033);
+    end;
+
     /// <summary>MissingTemplate Refuses.</summary>
     [Test]
     procedure Scenario_AC04_MissingTemplate_Refuses()
@@ -255,6 +263,7 @@ codeunit 97210 "Quality Create Tst ori"
             'stringTable': Request.Replace('sourceTableId', '27');
             'long': Request.Replace('templateCode', PadStr('X', 21, 'X'));
             'empty': Request.Replace('templateCode', '');
+            'blank': Request.Replace('templateCode', '   ');
             'badTemplate': Request.Replace('templateCode', 'X-NO-SUCH-TEMPLATE');
             'numberSeries':
                 begin

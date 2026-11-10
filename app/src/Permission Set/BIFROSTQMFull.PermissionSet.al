@@ -1,7 +1,7 @@
 namespace Origo.Bifrost.QualityManagement;
 
 /// <summary>
-/// Grants Quality Management scaffold execution without access to Microsoft business data.
+/// Grants Quality Management execution and the app write capability without access to Microsoft business data.
 /// </summary>
 permissionset 10035237 "BIFROST QM Full ori"
 {

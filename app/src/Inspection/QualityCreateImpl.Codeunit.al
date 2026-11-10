@@ -73,6 +73,8 @@ codeunit 10035250 "Quality Create Impl ori" implements "Msg Interface ori", "Msg
             Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, 'sourceSystemId')));
         if Request.Contains('templateCode') then
             RequestedTemplate := ReadText(Request, 'templateCode', false);
+        if Request.Contains('templateCode') and (DelChr(RequestedTemplate, '=', ' ') = '') then
+            Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, 'templateCode')));
         if StrLen(RequestedTemplate) > 20 then
             Error(ErrorInfo.Create(StrSubstNo(TooLongErr, 'templateCode', 20)));
         SourceRecord.Open(SourceTableId);
