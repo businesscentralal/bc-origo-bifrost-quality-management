@@ -1,0 +1,115 @@
+{
+  "sha": "0b0ea843d1ee26cd553790369b968e7602b3ddef",
+  "inspectionCleanup": [
+    {
+      "no": "W2Q7ALLOC1",
+      "rev": 2,
+      "id": "0f862114-addc-f111-b6f8-00090ffe0001",
+      "entity": "qualityInspections",
+      "method": "DELETE",
+      "statusCode": 204,
+      "durationMs": 62,
+      "deleted": true
+    },
+    {
+      "no": "W2Q7ALLOC1",
+      "rev": 1,
+      "id": "0d862114-addc-f111-b6f8-00090ffe0001",
+      "entity": "qualityInspections",
+      "method": "DELETE",
+      "statusCode": 204,
+      "durationMs": 38,
+      "deleted": true
+    },
+    {
+      "no": "W2Q7ALLOC1",
+      "rev": 0,
+      "id": "ff852114-addc-f111-b6f8-00090ffe0001",
+      "entity": "qualityInspections",
+      "method": "DELETE",
+      "statusCode": 204,
+      "durationMs": 33,
+      "deleted": true
+    },
+    {
+      "no": "W2Q7ALLOC1",
+      "verifiedRemaining": 0
+    },
+    {
+      "no": "W2Q7ALLOC2",
+      "rev": 2,
+      "id": "1e862114-addc-f111-b6f8-00090ffe0001",
+      "entity": "qualityInspections",
+      "method": "DELETE",
+      "statusCode": 204,
+      "durationMs": 30,
+      "deleted": true
+    },
+    {
+      "no": "W2Q7ALLOC2",
+      "rev": 1,
+      "id": "1c862114-addc-f111-b6f8-00090ffe0001",
+      "entity": "qualityInspections",
+      "method": "DELETE",
+      "statusCode": 204,
+      "durationMs": 28,
+      "deleted": true
+    },
+    {
+      "no": "W2Q7ALLOC2",
+      "rev": 0,
+      "id": "00862114-addc-f111-b6f8-00090ffe0001",
+      "entity": "qualityInspections",
+      "method": "DELETE",
+      "statusCode": 204,
+      "durationMs": 34,
+      "deleted": true
+    },
+    {
+      "no": "W2Q7ALLOC2",
+      "verifiedRemaining": 0
+    }
+  ],
+  "additionalReadback": {
+    "cleanup-template-readback.json": {
+      "company": "CRONUS International Ltd.",
+      "table": "Qlty. Inspection Template Hdr.",
+      "skip": 0,
+      "take": 1,
+      "count": 0,
+      "records": [],
+      "noOfRecords": 0
+    },
+    "cleanup-result-readback.json": {
+      "company": "CRONUS International Ltd.",
+      "table": "Qlty. Inspection Result",
+      "skip": 0,
+      "take": 1,
+      "count": 0,
+      "records": [],
+      "noOfRecords": 0
+    },
+    "cleanup-lines-readback.json": {
+      "company": "CRONUS International Ltd.",
+      "table": "Qlty. Inspection Line",
+      "skip": 0,
+      "take": 1,
+      "count": 0,
+      "records": [],
+      "noOfRecords": 0
+    },
+    "cleanup-conditions-readback.json": {
+      "company": "CRONUS International Ltd.",
+      "table": "Qlty. I. Result Condit. Conf.",
+      "skip": 0,
+      "take": 1,
+      "count": 0,
+      "records": [],
+      "noOfRecords": 0
+    }
+  },
+  "languageRestored": 1033,
+  "retained": [
+    "Permanent worker2 tenant w129-12 and own current Quality product/test deployment; pre-existing Foundation/Subcontracting untouched."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "sha": "0b0ea843d1ee26cd553790369b968e7602b3ddef",
+  "owner": "worker-2",
+  "tenant": "w129-12",
+  "qualityManagementVersion": "29.0.54011.55407",
+  "foundationVersion": "28.0.13.0",
+  "artifacts": [
+    {
+      "name": "Bifrost Quality Management",
+      "appId": "d3ca6790-e2c1-44c1-a026-fd75a3f5b52d",
+      "version": "28.0.0.0",
+      "sourceSha": "0b0ea843d1ee26cd553790369b968e7602b3ddef",
+      "sha256": "d3ab554462fe5c83957a638dd44b5c24db897651d358ecc6d8d7ad43e9b7fd77",
+      "build": {
+        "Timestamp": "2026-11-10T02:15:53.8293873Z",
+        "CompilerVersion": "30.0.42.60748"
+      }
+    },
+    {
+      "name": "Bifrost Quality Management - Tests",
+      "appId": "9193f6a2-0926-49bb-9fec-3c36a60c8b0e",
+      "version": "28.0.0.0",
+      "sourceSha": "0b0ea843d1ee26cd553790369b968e7602b3ddef",
+      "sha256": "d1f4f7266747dc86bbdcf9759355d19ddcc4d83b0114aea165c2aedd86699e17",
+      "build": {
+        "Timestamp": "2026-11-10T02:16:06.3604479Z",
+        "CompilerVersion": "30.0.42.60748"
+      }
+    }
+  ],
+  "publication": [
+    {
+      "fileName": "product-allocated.app",
+      "bytes": 25606,
+      "statusCode": 200,
+      "durationMs": 1724,
+      "developerBaseUrl": "http://host.docker.internal:7049/BC290",
+      "body": null,
+      "ok": true
+    },
+    {
+      "fileName": "tests-allocated.app",
+      "bytes": 18443,
+      "statusCode": 200,
+      "durationMs": 933,
+      "developerBaseUrl": "http://host.docker.internal:7049/BC290",
+      "body": null,
+      "ok": true
+    }
+  ]
+}

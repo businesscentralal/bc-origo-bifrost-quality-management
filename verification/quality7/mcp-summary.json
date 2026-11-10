@@ -1,0 +1,95 @@
+{
+  "sha": "0b0ea843d1ee26cd553790369b968e7602b3ddef",
+  "tenant": "w129-12",
+  "touchedMessageTypes": [
+    "Quality.Inspection.CreateReinspection"
+  ],
+  "createsOwnData": true,
+  "scenarios": [
+    {
+      "lcid": 1033,
+      "name": "catalogue-and-contract",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "missing-no-changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "invalid-guid-no-changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "null-guid-no-changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "unknown-record-no-changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "unknown-key-no-changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "happy-path-finishes-open-source",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "intentional-retry-creates-next-latest-revision",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "catalogue-and-contract",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "missing-no-changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "invalid-guid-no-changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "null-guid-no-changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "unknown-record-no-changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "unknown-key-no-changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "happy-path-finishes-open-source",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "intentional-retry-creates-next-latest-revision",
+      "passed": true
+    }
+  ],
+  "total": 16,
+  "passed": 16,
+  "failed": 0,
+  "skipped": 0,
+  "finishedAt": "2026-11-10T02:18:59.878Z"
+}

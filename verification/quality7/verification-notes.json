@@ -1,0 +1,28 @@
+{
+  "sha": "0b0ea843d1ee26cd553790369b968e7602b3ddef",
+  "standardsSnapshot": "52ba4754cfd614e4a7c50af87b30149b18b313e3",
+  "gateway": {
+    "filesScanned": 10,
+    "checks": 23,
+    "falsePositives": [
+      "Parameter-list semicolons reported as multiple statements",
+      "Locked protocol enum name reported as missing translation"
+    ]
+  },
+  "objectAllocation": {
+    "ids": [
+      10035320,
+      10035321,
+      10035322,
+      10035323
+    ],
+    "reason": "Avoid live issue6 PR25 CU10035242 and shared enum-extension name; foreign source unchanged.",
+    "reservationTool": "vjeko-al-objid unavailable; actual main/open branch declarations checked and allocation sent to retained PR25 owner/root."
+  },
+  "priorAttempts": [
+    "Initial suite18/21 exposed native confirmation handlers and insufficient marker grant; repaired then22/22 final.",
+    "Data.Records.Set fixture seed refused by write guard; guard unchanged. Own template created through native UI and inspections created through native API via MCP.",
+    "Native API blocked-result fixture rejected because resultCode is read-only; no bypass. Native business-refusal/late rollback coverage is in full AL suite."
+  ],
+  "learning": "Native validation must be reached: refusal regressions reject Unhandled UI and confirm rollback after late native writes."
+}

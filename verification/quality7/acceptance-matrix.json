@@ -1,0 +1,47 @@
+{
+  "sha": "0b0ea843d1ee26cd553790369b968e7602b3ddef",
+  "issue": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/7",
+  "criteria": [
+    {
+      "id": "AC01",
+      "status": "verified",
+      "evidence": "Registered catalogue and structured write/idempotency/permissions contract; native next-revision and retry tests."
+    },
+    {
+      "id": "AC02",
+      "status": "verified",
+      "evidence": "Missing, malformed, null, zero and unknown GUIDs plus unknown keys refuse before writes; MCP before/after native records match."
+    },
+    {
+      "id": "AC03",
+      "status": "verified",
+      "evidence": "Public native table CreateReinspection(var header) dispatches the standard create codeunit; native template lines are regenerated."
+    },
+    {
+      "id": "AC04",
+      "status": "verified",
+      "evidence": "Native missing setup, blocked result, late template-line failure and interactive cancellation roll back; source state and partial records checked."
+    },
+    {
+      "id": "AC05",
+      "status": "verified",
+      "evidence": "Real restrictive read-role denial, actual API+read dispatcher refusal and Foundation Full capability tests; no native business-data elevation."
+    },
+    {
+      "id": "AC06",
+      "status": "verified",
+      "evidence": "en-US/is-IS XLF/keywords synchronized; discovery/refusals and native UI checked in1033/1039."
+    },
+    {
+      "id": "AC07",
+      "status": "verified",
+      "evidence": "Bilingual help chapters and live message contract describe effects, permissions and non-idempotency."
+    },
+    {
+      "id": "AC08",
+      "status": "verified",
+      "evidence": "Full22-test suite includes happy, missing input, native refusal and permission refusal scenarios."
+    }
+  ],
+  "scope": "Developer acceptance verification; independent review, paired CI, merge/deployment/UAT are separate stages."
+}

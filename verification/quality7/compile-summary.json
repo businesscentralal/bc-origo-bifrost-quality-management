@@ -1,0 +1,17 @@
+{
+  "sha": "0b0ea843d1ee26cd553790369b968e7602b3ddef",
+  "compiler": "30.0.42.60748",
+  "analyzers": [
+    "CodeCop",
+    "UICop",
+    "AppSourceCop"
+  ],
+  "app": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "testApp": {
+    "errors": 0,
+    "warnings": 0
+  }
+}
