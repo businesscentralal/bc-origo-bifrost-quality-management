@@ -25,6 +25,7 @@ Tests: 97200-97299
 | Codeunit | 10035242 | Qlty Insp Finish Ctr ori |
 | Codeunit | 10035243 | Qlty Insp Finish Impl ori |
 | Codeunit | 10035244 | Qlty Insp Finish Proc ori |
+| Table | 10035245 | Qlty Finish Access ori |
 | Test codeunit | 97200 | Quality Scaffold Tst ori |
 | Test permission set | 97201 | QM Setup Test ori |
 | Test codeunit | 97202 | Qlty Insp Finish Tst ori |

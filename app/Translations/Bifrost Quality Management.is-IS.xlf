@@ -3,6 +3,18 @@
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Quality Management">
     <body>
       <group id="body">
+        <trans-unit id="Table 812972941 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality inspection finish</source>
+          <target>Ljúka gæðaskoðun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Ljúka gæðaskoðun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Qlty Finish Access ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 812972941 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <target>Aðallykill</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Qlty Finish Access ori - Field Primary Key - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1985475394 - NamedType 4235606804" size-unit="char" translate="yes" xml:space="preserve">
           <source>Correct the result or the item tracking so finishing is allowed, then send the same request again.</source>
           <target>Lagfærðu niðurstöðuna eða vörurekjanleikann svo ljúka megi skoðuninni og sendu sömu beiðni aftur.</target>

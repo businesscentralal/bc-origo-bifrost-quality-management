@@ -25,6 +25,7 @@ codeunit 10035244 "Qlty Insp Finish Proc ori"
     /// <param name="Argument">The message argument.</param>
     internal procedure Apply(var Argument: Record "Message Argument ori")
     var
+        AccessCapability: Record "Qlty Finish Access ori";
         Header: Record "Qlty. Inspection Header";
         InspectionNo: Code[20];
         ReinspectionNo: Integer;
@@ -36,7 +37,7 @@ codeunit 10035244 "Qlty Insp Finish Proc ori"
             exit;
         end;
 
-        if not Contract.HasTablePermission(Argument, Header.ReadPermission(), Header.WritePermission()) then
+        if not Contract.HasTablePermission(Argument, AccessCapability.WritePermission() and Header.ReadPermission(), Header.WritePermission()) then
             exit;
 
         // FinishInspection reads tracking, result and audit fields, so this record is not load-field limited.

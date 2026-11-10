@@ -92,9 +92,9 @@ codeunit 10035242 "Qlty Insp Finish Ctr ori"
             end;
     end;
 
-    /// <summary>Refuses the call when the caller cannot read and write the inspection header.</summary>
+    /// <summary>Refuses the call without the app Full capability and native inspection read/write permissions.</summary>
     /// <param name="Argument">The message argument.</param>
-    /// <param name="CanRead">True when the caller can read the table.</param>
+    /// <param name="CanRead">True when the caller has the app Full capability and can read the table.</param>
     /// <param name="CanWrite">True when the caller can write the table.</param>
     /// <returns>True when the caller may continue.</returns>
     internal procedure HasTablePermission(var Argument: Record "Message Argument ori"; CanRead: Boolean; CanWrite: Boolean): Boolean

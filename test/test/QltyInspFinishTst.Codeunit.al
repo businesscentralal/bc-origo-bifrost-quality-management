@@ -16,7 +16,7 @@ using System.Utilities;
 codeunit 97202 "Qlty Insp Finish Tst ori"
 {
     Subtype = Test;
-    TestPermissions = Disabled;
+    TestPermissions = Restrictive;
 
     var
         Assert: Codeunit "Library Assert";
@@ -29,6 +29,7 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
         Header: Record "Qlty. Inspection Header";
         Response: JsonObject;
     begin
+        LowerPermissions.SetOutsideO365Scope();
         // [GIVEN] An open inspection with no result that would block finishing
         CreateOpenInspection(Header, '');
         Commit();
@@ -56,6 +57,7 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
         FinishedDate: DateTime;
         Response: JsonObject;
     begin
+        LowerPermissions.SetOutsideO365Scope();
         // [GIVEN] An inspection that is already finished. Validate runs the finish checks without the screen question.
         CreateOpenInspection(Header, '');
         Header.Validate(Status, Header.Status::Finished);
@@ -82,6 +84,7 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
         Before: Integer;
         Response: JsonObject;
     begin
+        LowerPermissions.SetOutsideO365Scope();
         Before := CountOwnedInspections();
         Response := Finish('', -1, true);
         AssertRefusal(Response, 'MissingParameter', 'no');
@@ -94,6 +97,7 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
         Request: JsonObject;
         Response: JsonObject;
     begin
+        LowerPermissions.SetOutsideO365Scope();
         Request.Add('no', 'XQM4UNKNOWN');
         Request.Add('status', 'Finished');
         Response := Invoke(Request, true);
@@ -106,6 +110,7 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
         Request: JsonObject;
         Response: JsonObject;
     begin
+        LowerPermissions.SetOutsideO365Scope();
         Request.Add('no', 'XQM4FORMAT');
         Request.Add('reinspectionNo', 'first');
         Response := Invoke(Request, true);
@@ -117,6 +122,7 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
     var
         Response: JsonObject;
     begin
+        LowerPermissions.SetOutsideO365Scope();
         Response := Finish('XQM4MISSING0000001', 0, true);
         AssertRefusal(Response, 'RecordNotFound', 'XQM4MISSING0000001');
     end;
@@ -129,6 +135,7 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
         Result: Record "Qlty. Inspection Result";
         Response: JsonObject;
     begin
+        LowerPermissions.SetOutsideO365Scope();
         // [GIVEN] An open inspection whose result is configured to disallow finishing.
         // Modify(false) keeps the result. Modify(true) would clear it when the inspection has no lines.
         CreateOpenInspection(Header, '');
@@ -151,18 +158,66 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
 
     [Test]
     procedure AC05_ReadSet_CannotRunTheType()
-    var
-        Request: JsonObject;
-        Response: JsonObject;
-        ErrorText: Text;
     begin
-        Request.Add('no', 'XQM4');
         LowerPermissions.SetOutsideO365Scope();
-        LowerPermissions.SetExactPermissionSet('BIFROST Read ori');
-        asserterror Response := Invoke(Request, false);
-        ErrorText := GetLastErrorText();
+        // Story #4, AC05 | Time: none | Risk: owned inspection only
+        VerifyMissingAppRole(false);
+    end;
+
+    [Test]
+    procedure AC05_ApiAndNativeData_WithoutAppRole_Refuses()
+    begin
         LowerPermissions.SetOutsideO365Scope();
-        Assert.IsTrue(LowerCase(ErrorText).Contains('permission') or LowerCase(ErrorText).Contains('heimild'), ErrorText);
+        // Story #4, AC05 | Time: none | Risk: owned inspection only
+        VerifyMissingAppRole(true);
+    end;
+
+    local procedure VerifyMissingAppRole(UseApiRole: Boolean)
+    var
+        Header: Record "Qlty. Inspection Header";
+        PermissionsMock: Codeunit "Permissions Mock";
+        Response: JsonObject;
+    begin
+        LowerPermissions.SetOutsideO365Scope();
+        Assert.IsTrue(PermissionsMock.IsStarted(), 'The test runner must enable permission mocking.');
+        CreateOpenInspection(Header, '');
+        Commit();
+        if UseApiRole then
+            LowerPermissions.SetExactPermissionSet('BIFROST API ori')
+        else
+            LowerPermissions.SetExactPermissionSet('BIFROST Read ori');
+        LowerPermissions.AddPermissionSet('QltyMgmt - Inspector');
+        LowerPermissions.AddPermissionSet('QM Setup Test ori');
+        Assert.IsTrue(Header.WritePermission(), 'The caller must have native data write permission for this regression.');
+        Response := Finish(Header."No.", 0, false);
+        LowerPermissions.SetOutsideO365Scope();
+        AssertRefusal(Response, 'PermissionDenied', 'permission');
+        Header.Get(Header."No.", 0);
+        Assert.AreEqual(Header.Status::Open, Header.Status, 'App permission refusal must not finish the inspection.');
+        Assert.AreEqual(0DT, Header."Finished Date", 'No partial finish timestamp.');
+        DeleteInspection(Header."No.");
+    end;
+
+    [Test]
+    [HandlerFunctions('ConfirmFinish')]
+    procedure AC05_FullAndNativeData_FinishesInspection()
+    var
+        Header: Record "Qlty. Inspection Header";
+        Response: JsonObject;
+    begin
+        // Story #4, AC05 | Time: native finish timestamp only | Risk: owned inspection only
+        LowerPermissions.SetOutsideO365Scope();
+        CreateOpenInspection(Header, '');
+        Commit();
+        LowerPermissions.SetExactPermissionSet('BIFROST Full ori');
+        LowerPermissions.AddPermissionSet('QltyMgmt - Inspector');
+        LowerPermissions.AddPermissionSet('QM Setup Test ori');
+        Response := Finish(Header."No.", 0, false);
+        LowerPermissions.SetOutsideO365Scope();
+        AssertSuccess(Response);
+        Header.Get(Header."No.", 0);
+        Assert.AreEqual(Header.Status::Finished, Header.Status, 'Full app role plus native data permission must permit finishing.');
+        DeleteInspection(Header."No.");
     end;
 
     [Test]
@@ -171,9 +226,11 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
         Request: JsonObject;
         Response: JsonObject;
     begin
+        LowerPermissions.SetOutsideO365Scope();
         Request.Add('reinspectionNo', 0);
         LowerPermissions.SetOutsideO365Scope();
         LowerPermissions.SetExactPermissionSet('BIFROST Full ori');
+        LowerPermissions.AddPermissionSet('QM Setup Test ori');
         Response := Invoke(Request, true);
         LowerPermissions.SetOutsideO365Scope();
         AssertRefusal(Response, 'MissingParameter', 'no');
@@ -186,6 +243,7 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
     begin
         LowerPermissions.SetOutsideO365Scope();
         LowerPermissions.SetExactPermissionSet('BIFROST Full ori');
+        LowerPermissions.AddPermissionSet('QM Setup Test ori');
         Response := Finish('XQM4NOPERM', 0, true);
         LowerPermissions.SetOutsideO365Scope();
         AssertRefusal(Response, 'PermissionDenied', 'permission');
@@ -200,6 +258,7 @@ codeunit 97202 "Qlty Insp Finish Tst ori"
         Overview: Text;
         EffectText: Text;
     begin
+        LowerPermissions.SetOutsideO365Scope();
         Assert.IsTrue(Impl.GetOverview(Overview), 'overview');
         Assert.IsTrue(Overview.Contains('idempotent'), Overview);
         Assert.IsTrue(Overview.Contains('FinishInspection'), Overview);

@@ -4,6 +4,10 @@
 
 - Repository scaffolded from Bifrost Subscription Billing setup.
 
+### Fixed
+
+- [#4](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/4): enforce the Full app role through empty capability table 10035245, including callers with Foundation API wildcard execution and native inspection permissions. Dispatcher tests verify read/API refusals without changing an inspection.
+
 ### Added
 
 - [#4](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/4): message type `Quality.Inspection.Finish` (enum extension 10035241, contract 10035242, implementation 10035243, process 10035244). Calls `FinishInspection` on the quality inspection header. Execute permission is on `BIFROST QM Full ori` (10035237), which the Foundation full role extension already includes. The read role does not grant the type.
