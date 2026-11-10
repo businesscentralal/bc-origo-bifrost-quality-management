@@ -87,14 +87,14 @@ codeunit 10035245 "Quality Purch Return Impl ori" implements "Msg Interface ori"
         foreach ParameterName in Request.Keys() do
             if not (ParameterName in ['inspectionSystemId', 'reasonCode', 'vendorCreditMemoNo']) then
                 Refuse(Argument, "Bifrost Error Code ori"::UnknownParameter, StrSubstNo(UnknownKeyErr, ParameterName), ParameterName, '', 'inspectionSystemId, reasonCode, vendorCreditMemoNo', FixParameterLbl);
-        if not Evaluate(InspectionSystemId, ReadText(Argument, Request, 'inspectionSystemId', false)) then
-            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(MissingKeyErr, 'inspectionSystemId'), 'inspectionSystemId', ReadText(Argument, Request, 'inspectionSystemId', false), ExpectedIdLbl, FindInspectionLbl);
+        if not Evaluate(InspectionSystemId, ReadText(Request, 'inspectionSystemId', false, Argument)) then
+            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(MissingKeyErr, 'inspectionSystemId'), 'inspectionSystemId', ReadText(Request, 'inspectionSystemId', false, Argument), ExpectedIdLbl, FindInspectionLbl);
         if IsNullGuid(InspectionSystemId) then
-            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(MissingKeyErr, 'inspectionSystemId'), 'inspectionSystemId', ReadText(Argument, Request, 'inspectionSystemId', false), ExpectedIdLbl, FindInspectionLbl);
+            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(MissingKeyErr, 'inspectionSystemId'), 'inspectionSystemId', ReadText(Request, 'inspectionSystemId', false, Argument), ExpectedIdLbl, FindInspectionLbl);
         TempInstructions."Disposition Action" := TempInstructions."Disposition Action"::"Create Purchase Return";
         TempInstructions."Quantity Behavior" := TempInstructions."Quantity Behavior"::"Failed Quantity";
-        TempInstructions."Reason Code" := CopyStr(ReadOption(Argument, Request, 'reasonCode', 10), 1, 10);
-        TempInstructions."External Document No." := CopyStr(ReadOption(Argument, Request, 'vendorCreditMemoNo', 35), 1, 35);
+        TempInstructions."Reason Code" := CopyStr(ReadOption(Request, 'reasonCode', 10, Argument), 1, 10);
+        TempInstructions."External Document No." := CopyStr(ReadOption(Request, 'vendorCreditMemoNo', 35, Argument), 1, 35);
         // Microsoft reads the complete inspection while calculating quantities and copying the receipt.
         Inspection.ReadIsolation := IsolationLevel::UpdLock;
         if not Inspection.GetBySystemId(InspectionSystemId) then
@@ -122,19 +122,19 @@ codeunit 10035245 "Quality Purch Return Impl ori" implements "Msg Interface ori"
         Argument."Content Type" := Argument.GetContentTypeJson();
     end;
 
-    local procedure ReadOption(var Argument: Record "Message Argument ori"; Request: JsonObject; ParameterName: Text; MaximumLength: Integer): Text
+    local procedure ReadOption(Request: JsonObject; ParameterName: Text; MaximumLength: Integer; var Argument: Record "Message Argument ori"): Text
     var
         Value: Text;
     begin
         if not Request.Contains(ParameterName) then
             exit('');
-        Value := ReadText(Argument, Request, ParameterName, true);
+        Value := ReadText(Request, ParameterName, true, Argument);
         if StrLen(Value) > MaximumLength then
             Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(TooLongErr, ParameterName, MaximumLength), ParameterName, Value, StrSubstNo(MaximumTextLbl, MaximumLength), FixParameterLbl);
         exit(Value);
     end;
 
-    local procedure ReadText(var Argument: Record "Message Argument ori"; Request: JsonObject; ParameterName: Text; AllowEmpty: Boolean) Value: Text
+    local procedure ReadText(Request: JsonObject; ParameterName: Text; AllowEmpty: Boolean; var Argument: Record "Message Argument ori") Value: Text
     var
         Token: JsonToken;
         Serialized: Text;
