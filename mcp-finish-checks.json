@@ -1,0 +1,65 @@
+{
+  "sha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+  "checks": [
+    {
+      "name": "reopen-is-after",
+      "result": "PASS",
+      "evidence": "/workspace/private/quality32-repair-20261110/reopen-is-after.json"
+    },
+    {
+      "name": "reopen-business-refusal-1033",
+      "result": "PASS",
+      "evidence": "/workspace/private/quality32-repair-20261110/reopen-business-refusal-1033.json"
+    },
+    {
+      "name": "reopen-business-refusal-1039",
+      "result": "PASS",
+      "evidence": "/workspace/private/quality32-repair-20261110/reopen-business-refusal-1039.json"
+    },
+    {
+      "name": "refusal-state-after",
+      "result": "PASS",
+      "evidence": "/workspace/private/quality32-repair-20261110/refusal-state-after.json"
+    },
+    {
+      "name": "return-happy-1033",
+      "result": "PASS",
+      "evidence": "/workspace/private/quality32-repair-20261110/return-happy-1033.json"
+    },
+    {
+      "name": "return-missing-1033",
+      "result": "PASS",
+      "evidence": "/workspace/private/quality32-repair-20261110/return-missing-1033.json"
+    },
+    {
+      "name": "return-unknown-key-1033",
+      "result": "PASS",
+      "evidence": "/workspace/private/quality32-repair-20261110/return-unknown-key-1033.json"
+    },
+    {
+      "name": "return-happy-1039",
+      "result": "PASS",
+      "evidence": "/workspace/private/quality32-repair-20261110/return-happy-1039.json"
+    },
+    {
+      "name": "return-missing-1039",
+      "result": "PASS",
+      "evidence": "/workspace/private/quality32-repair-20261110/return-missing-1039.json"
+    },
+    {
+      "name": "return-unknown-key-1039",
+      "result": "PASS",
+      "evidence": "/workspace/private/quality32-repair-20261110/return-unknown-key-1039.json"
+    },
+    {
+      "name": "return-headers",
+      "result": "PASS",
+      "evidence": "/workspace/private/quality32-repair-20261110/return-headers.json"
+    },
+    {
+      "name": "return-lines",
+      "result": "PASS",
+      "evidence": "/workspace/private/quality32-repair-20261110/return-lines.json"
+    }
+  ]
+}

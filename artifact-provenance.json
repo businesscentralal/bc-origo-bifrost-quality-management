@@ -1,0 +1,74 @@
+[
+  {
+    "name": "foundation",
+    "sha": "35f0efa31b85402fe5628ae764bc5ee2209664e2",
+    "version": "28.0.13.0",
+    "artifact": "/workspace/private/quality32-repair-20261110/build/foundation.app",
+    "sha256": "2817a71e5b58b688c60b9dfe20bb97c6aaf18c0cf73dab0cd10166b179cf1d45",
+    "builtBy": "worker-9",
+    "tenant": "w129-19",
+    "scope": "Tenant",
+    "manifest": {
+      "Id": "7505e808-6e52-4b96-a328-82573391297a",
+      "Name": "Bifrost Foundation",
+      "Publisher": "Origo",
+      "Version": "28.0.13.0",
+      "CompatibilityId": "0.0.0.0"
+    },
+    "packageId": "942961b1-cfe3-43d8-b717-56397ec12e1b"
+  },
+  {
+    "name": "foundation-test",
+    "sha": "35f0efa31b85402fe5628ae764bc5ee2209664e2",
+    "version": "28.0.13.0",
+    "artifact": "/workspace/private/quality32-repair-20261110/build/foundation-test.app",
+    "sha256": "064e6123e978be03f185b2e0a5a15013b543661cb6b821fbd6228a4127abde99",
+    "builtBy": "worker-9",
+    "tenant": "w129-19",
+    "scope": "Tenant",
+    "manifest": {
+      "Id": "9db1a0c9-c503-4793-a9e4-bcda3d3f3c94",
+      "Name": "Bifrost Foundation - Tests",
+      "Publisher": "Origo",
+      "Version": "28.0.13.0",
+      "CompatibilityId": "0.0.0.0"
+    },
+    "packageId": "c0693a8f-7592-489b-afe2-955d902156c1"
+  },
+  {
+    "name": "quality",
+    "sha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+    "version": "28.0.0.0",
+    "artifact": "/workspace/private/quality32-repair-20261110/build/quality.app",
+    "sha256": "6d84f6995a259b784e25678c55bb70e3786e623323aadf0bb843d8fbecc36c1d",
+    "builtBy": "worker-9",
+    "tenant": "w129-19",
+    "scope": "Tenant",
+    "manifest": {
+      "Id": "d3ca6790-e2c1-44c1-a026-fd75a3f5b52d",
+      "Name": "Bifrost Quality Management",
+      "Publisher": "Origo",
+      "Version": "28.0.0.0",
+      "CompatibilityId": "0.0.0.0"
+    },
+    "packageId": "7bb51b32-a060-424a-8264-d65cd570f899"
+  },
+  {
+    "name": "quality-test",
+    "sha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+    "version": "28.0.0.0",
+    "artifact": "/workspace/private/quality32-repair-20261110/build/quality-test.app",
+    "sha256": "aacbdcba9ec169476246142a3fdcc251590bc609521ab368f2c9cd20c2fd1633",
+    "builtBy": "worker-9",
+    "tenant": "w129-19",
+    "scope": "Tenant",
+    "manifest": {
+      "Id": "9193f6a2-0926-49bb-9fec-3c36a60c8b0e",
+      "Name": "Bifrost Quality Management - Tests",
+      "Publisher": "Origo",
+      "Version": "28.0.0.0",
+      "CompatibilityId": "0.0.0.0"
+    },
+    "packageId": "4b501eb9-bf47-47b2-8889-4dd6e991cbc6"
+  }
+]

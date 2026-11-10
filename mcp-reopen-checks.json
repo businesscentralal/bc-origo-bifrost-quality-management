@@ -1,0 +1,70 @@
+{
+  "sha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+  "checks": [
+    {
+      "name": "reopen-en-after",
+      "result": "PASS",
+      "response": "/workspace/private/quality32-repair-20261110/reopen-en-after.json"
+    },
+    {
+      "name": "reopen-help-1033",
+      "result": "PASS",
+      "response": "/workspace/private/quality32-repair-20261110/reopen-help-1033.json"
+    },
+    {
+      "name": "reopen-missing-1033",
+      "result": "PASS",
+      "response": "/workspace/private/quality32-repair-20261110/reopen-missing-1033.json"
+    },
+    {
+      "name": "reopen-invalid-1033",
+      "result": "PASS",
+      "response": "/workspace/private/quality32-repair-20261110/reopen-invalid-1033.json"
+    },
+    {
+      "name": "reopen-unknown-id-1033",
+      "result": "PASS",
+      "response": "/workspace/private/quality32-repair-20261110/reopen-unknown-id-1033.json"
+    },
+    {
+      "name": "reopen-unknown-key-1033",
+      "result": "PASS",
+      "response": "/workspace/private/quality32-repair-20261110/reopen-unknown-key-1033.json"
+    },
+    {
+      "name": "reopen-idempotent-1033",
+      "result": "PASS",
+      "response": "/workspace/private/quality32-repair-20261110/reopen-idempotent-1033.json"
+    },
+    {
+      "name": "reopen-help-1039",
+      "result": "PASS",
+      "response": "/workspace/private/quality32-repair-20261110/reopen-help-1039.json"
+    },
+    {
+      "name": "reopen-missing-1039",
+      "result": "PASS",
+      "response": "/workspace/private/quality32-repair-20261110/reopen-missing-1039.json"
+    },
+    {
+      "name": "reopen-invalid-1039",
+      "result": "PASS",
+      "response": "/workspace/private/quality32-repair-20261110/reopen-invalid-1039.json"
+    },
+    {
+      "name": "reopen-unknown-id-1039",
+      "result": "PASS",
+      "response": "/workspace/private/quality32-repair-20261110/reopen-unknown-id-1039.json"
+    },
+    {
+      "name": "reopen-unknown-key-1039",
+      "result": "PASS",
+      "response": "/workspace/private/quality32-repair-20261110/reopen-unknown-key-1039.json"
+    },
+    {
+      "name": "reopen-idempotent-1039",
+      "result": "PASS",
+      "response": "/workspace/private/quality32-repair-20261110/reopen-idempotent-1039.json"
+    }
+  ]
+}

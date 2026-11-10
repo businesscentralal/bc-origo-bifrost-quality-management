@@ -1,0 +1,77 @@
+{
+  "sha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+  "tenant": "w129-19",
+  "touchedMessageTypes": [
+    "Quality.Inspection.Reopen",
+    "Quality.Disposition.CreatePurchaseReturn"
+  ],
+  "verified": true,
+  "createsOwnData": true,
+  "executed": 22,
+  "passed": 22,
+  "failed": 0,
+  "skipped": 0,
+  "supportingStateChecks": 5,
+  "lcids": [
+    1033,
+    1039
+  ],
+  "summary": "Reopen: finished to open, idempotency, help, missing/invalid/unknown identifier, unknown key and later-reinspection refusal in both languages (16). Purchase-return union regression: happy, missing and unknown key in both languages (6). Five state assertions verify mutation/refusal outcomes. Permission refusal is covered by native tests; MCP/UI identity was SUPER.",
+  "fixtureSetup": "Own XQ32-REOPEN template/inspections, later reinspection, and Test.Quality.ReturnFixture BIFTQ13-W9R32. Unposted return orders 1001/1002.",
+  "cleanup": {
+    "sha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+    "tenant": "w129-19",
+    "verified": true,
+    "checks": [
+      {
+        "name": "reopen-inspections",
+        "remaining": 0
+      },
+      {
+        "name": "template",
+        "remaining": 0
+      },
+      {
+        "name": "return-inspection",
+        "remaining": 0
+      },
+      {
+        "name": "headers",
+        "remaining": 0
+      },
+      {
+        "name": "lines",
+        "remaining": 0
+      },
+      {
+        "name": "receipt",
+        "remaining": 0
+      },
+      {
+        "name": "receipt-lines",
+        "remaining": 0
+      },
+      {
+        "name": "ledger",
+        "remaining": 0
+      },
+      {
+        "name": "item",
+        "remaining": 0
+      },
+      {
+        "name": "item-unit",
+        "remaining": 0
+      },
+      {
+        "name": "vendor",
+        "remaining": 0
+      },
+      {
+        "name": "reason",
+        "remaining": 0
+      }
+    ],
+    "finishedAt": "2026-11-10T08:23:21.567Z"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "sha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+  "compiledAt": "2026-11-10T08:04:12.281215+00:00",
+  "analyzers": [
+    "CodeCop",
+    "UICop",
+    "AppSourceCop"
+  ],
+  "app": {
+    "sha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+    "errors": 0,
+    "warnings": 0,
+    "log": "/workspace/private/quality32-repair-20261110/build/quality-app.log",
+    "artifact": "/workspace/private/quality32-repair-20261110/build/quality.app",
+    "sha256": "6d84f6995a259b784e25678c55bb70e3786e623323aadf0bb843d8fbecc36c1d"
+  },
+  "testApp": {
+    "sha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+    "errors": 0,
+    "warnings": 0,
+    "log": "/workspace/private/quality32-repair-20261110/build/quality-test-attempt2.log",
+    "artifact": "/workspace/private/quality32-repair-20261110/build/quality-test.app",
+    "sha256": "aacbdcba9ec169476246142a3fdcc251590bc609521ab368f2c9cd20c2fd1633"
+  }
+}

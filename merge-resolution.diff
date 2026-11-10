@@ -1,0 +1,254 @@
+commit 60ddc3d33cfc6f8244195cffbe04db8da6bfc3af
+Merge: f5b8a10 2419098
+Author:     Gunnars Codex Developer[bot] <337391362+gunnars-codex-developer[bot]@users.noreply.github.com>
+AuthorDate: Tue Nov 10 08:00:10 2026 +0000
+Commit:     Gunnars Codex Developer[bot] <337391362+gunnars-codex-developer[bot]@users.noreply.github.com>
+CommitDate: Tue Nov 10 08:00:10 2026 +0000
+
+    Merge main into inspection reopen; preserve both quality operations
+
+diff --git a/README.md b/README.md
+remerge CONFLICT (content): Merge conflict in README.md
+index 1557d40..3991b3b 100644
+--- a/README.md
++++ b/README.md
+@@ -11,19 +11,11 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
+ 
+ **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management>
+ 
+-<<<<<<< f5b8a10 (feat: add Quality.Inspection.Reopen)
+-**Status:** installable scaffold plus `Quality.Inspection.Reopen`.
++**Status:** registration, Foundation roles, `Quality.Inspection.Reopen`, and `Quality.Disposition.CreatePurchaseReturn` are implemented.
+ 
+ Foundation discovers this app on **Bifrost Setup** through its application registry. All setup notifications stay on that Foundation page. Quality Management has no setup page of its own.
+ 
+-Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. The base and read sets grant registration only. `BIFROST QM Full ori` grants `Quality.Inspection.Reopen` and includes Microsoft `QltyMgmt - Admin` data permissions. Microsoft `ReopenInspection` still requires the Quality Admin & Supervisor role, or SUPER, to be assigned to the user.
+-=======
+-**Status:** registration, Foundation roles, and `Quality.Disposition.CreatePurchaseReturn` are implemented.
+-
+-Foundation discovers this app on **Bifrost Setup** through its application registry. All setup notifications stay on that Foundation page. Quality Management has no setup page of its own.
+-
+-Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. The Full role grants purchase-return execution and Microsoft Quality Inspector permissions; callers also need native purchase-document permissions. The Read role does not grant disposition execution.
+->>>>>>> 2419098 (feat: create quality purchase returns for failed quantity (#13) (#29))
++Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. The Full role grants inspection reopen and purchase-return execution and includes Microsoft `QltyMgmt - Admin` and `QltyMgmt - Inspector` permissions. Microsoft `ReopenInspection` still requires the Quality Admin & Supervisor role, or SUPER, to be assigned to the user. Purchase-return callers also need native purchase-document permissions. The base and Read roles grant registration only; they do not grant either operation.
+ 
+ The app manifest exposes the `quality-management` documentation entry in English and Icelandic. The complete object allocation is recorded in [.claude/CLAUDE.md](.claude/CLAUDE.md).
+ 
+@@ -42,6 +34,7 @@ The app manifest exposes the `quality-management` documentation entry in English
+ 
+ | Type | Effect | Retry behavior | Help |
+ | --- | --- | --- | --- |
++| `Quality.Inspection.Reopen` | Reopens an inspection through Microsoft `ReopenInspection` | Idempotent; an already open inspection stays open | [English](app/docs/en-us/Reopen.md), [íslenska](app/docs/is-is/Reopen.md) |
+ | `Quality.Disposition.CreatePurchaseReturn` | Creates an unposted purchase return for the failed quantity | Not idempotent; a retry can create another return | [English](app/docs/en-us/CreatePurchaseReturn.md), [íslenska](app/docs/is-is/CreatePurchaseReturn.md) |
+ 
+ ## Documentation
+diff --git a/app/Translations/Bifrost Quality Management.is-IS.xlf b/app/Translations/Bifrost Quality Management.is-IS.xlf
+remerge CONFLICT (content): Merge conflict in app/Translations/Bifrost Quality Management.is-IS.xlf
+index 8443902..62e732a 100644
+--- a/app/Translations/Bifrost Quality Management.is-IS.xlf	
++++ b/app/Translations/Bifrost Quality Management.is-IS.xlf	
+@@ -3,79 +3,6 @@
+   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Quality Management">
+     <body>
+       <group id="body">
+-<<<<<<< f5b8a10 (feat: add Quality.Inspection.Reopen)
+-        <trans-unit id="Table 3190541962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>Quality reopen access</source>
+-          <target>Aðgangur að enduropnun skoðunar</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=Aðgangur að enduropnun skoðunar</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Reopen Access ori - Property Caption</note>
+-        </trans-unit>
+-        <trans-unit id="Table 3190541962 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>Primary key</source>
+-          <target>Aðallykill</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Reopen Access ori - Field Primary Key - Property Caption</note>
+-        </trans-unit>
+-        <trans-unit id="Codeunit 2772215590 - NamedType 1477048533" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>an existing inspection SystemId</source>
+-          <target>SystemId skoðunar sem er til</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=SystemId skoðunar sem er til</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType ExpectedIdTxt</note>
+-        </trans-unit>
+-        <trans-unit id="Codeunit 2772215590 - NamedType 180107814" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>Read the inspection SystemId with Data.Records.Get.</source>
+-          <target>Lestu SystemId skoðunarinnar með Data.Records.Get.</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=Lestu SystemId skoðunarinnar með Data.Records.Get.</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType FixIdTxt</note>
+-        </trans-unit>
+-        <trans-unit id="Codeunit 2772215590 - NamedType 3820335595" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>inspectionSystemId must be a non-empty GUID.</source>
+-          <target>inspectionSystemId verður að vera GUID sem er ekki tómt.</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=inspectionSystemId verður að vera GUID sem er ekki tómt.</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType InvalidIdErr</note>
+-        </trans-unit>
+-        <trans-unit id="Codeunit 2772215590 - NamedType 823878488" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>inspectionSystemId is required and must identify an existing inspection.</source>
+-          <target>inspectionSystemId er áskilið og verður að auðkenna skoðun sem er til.</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=inspectionSystemId er áskilið og verður að auðkenna skoðun sem er til.</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType MissingIdErr</note>
+-        </trans-unit>
+-        <trans-unit id="Codeunit 2772215590 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>You need BIFROST QM Full ori to reopen an inspection.</source>
+-          <target>Þú þarft BIFROST QM Full ori til að enduropna skoðun.</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=Þú þarft BIFROST QM Full ori til að enduropna skoðun.</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType PermissionErr</note>
+-        </trans-unit>
+-        <trans-unit id="Codeunit 2772215590 - NamedType 1738233936" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>Ask an administrator for the Bifrost Quality Full role. Microsoft also requires the Quality Admin &amp; Supervisor role, or SUPER, before ReopenInspection runs.</source>
+-          <target>Biddu stjórnanda um hlutverkið Bifrost Quality Full. Microsoft krefst einnig hlutverksins Quality Admin &amp; Supervisor, eða SUPER, áður en ReopenInspection keyrir.</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=Biddu stjórnanda um hlutverkið Bifrost Quality Full. Microsoft krefst einnig hlutverksins Quality Admin &amp; Supervisor, eða SUPER, áður en ReopenInspection keyrir.</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType PermissionNextTxt</note>
+-        </trans-unit>
+-        <trans-unit id="Codeunit 2772215590 - NamedType 2912406318" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>Unknown parameter %1. Nothing was changed.</source>
+-          <target>Óþekkt viðfang %1. Engu var breytt.</target>
+-          <note from="Developer" annotates="general" priority="2">%1 = request key, is-IS=Óþekkt viðfang %1. Engu var breytt.</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType UnknownKeyErr</note>
+-        </trans-unit>
+-        <trans-unit id="Codeunit 2772215590 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>Reopens a finished quality inspection through the standard ReopenInspection action so test values can be changed again.</source>
+-          <target>Enduropnar lokinni gæðaskoðun með staðlaðri ReopenInspection aðgerð svo prófunargildum megi breyta aftur.</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=Enduropnar lokinni gæðaskoðun með staðlaðri ReopenInspection aðgerð svo prófunargildum megi breyta aftur.</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+-        </trans-unit>
+-        <trans-unit id="Codeunit 2772215590 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>reopen, finished inspection, quality inspection, test values, open status</source>
+-          <target>enduropna, lokin skoðun, gæðaskoðun, prófunargildi, opin staða</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=enduropna, lokin skoðun, gæðaskoðun, prófunargildi, opin staða</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+-        </trans-unit>
+-        <trans-unit id="Codeunit 2772215590 - Method 3650283039 - NamedType 2344026547" size-unit="char" translate="yes" xml:space="preserve">
+-          <source>Effect: a finished inspection becomes open by the standard ReopenInspection action. Pass and fail quantities stay as that action leaves them. Idempotent: calling it again on the open inspection changes nothing. A later re-inspection is a refusal and changes nothing. There is no Commit on the standard path. A business refusal rolls back. In omit-commit mode the caller owns rollback.</source>
+-          <target>Áhrif: lokin skoðun verður opin með staðlaðri ReopenInspection aðgerð. Magn sem stóðst og féll helst eins og aðgerðin skilur við það. Ídempotent: annað kall á opna skoðun breytir engu. Síðari endurskoðun er höfnun og breytir engu. Ekkert Commit er á staðlaðri leið. Viðskiptahöfnun bakfærir. Í ham án staðfestingar ber kallandi ábyrgð á bakfærslu.</target>
+-          <note from="Developer" annotates="general" priority="2">is-IS=Áhrif: lokin skoðun verður opin með staðlaðri ReopenInspection aðgerð. Magn sem stóðst og féll helst eins og aðgerðin skilur við það. Ídempotent: annað kall á opna skoðun breytir engu. Síðari endurskoðun er höfnun og breytir engu. Ekkert Commit er á staðlaðri leið. Viðskiptahöfnun bakfærir. Í ham án staðfestingar ber kallandi ábyrgð á bakfærslu.</note>
+-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - Method GetNotes - NamedType NotesLbl</note>
+-=======
+         <trans-unit id="Table 1178721009 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+           <source>Quality Write Access</source>
+           <target>Skrifaðgangur að gæðastjórnun</target>
+@@ -231,7 +158,6 @@
+           <target>Quality.Disposition.CreatePurchaseReturn, gæði, skoðun, innkaup, skil, fallið magn</target>
+           <note from="Developer" annotates="general" priority="2">is-IS=Quality.Disposition.CreatePurchaseReturn, gæði, skoðun, innkaup, skil, fallið magn</note>
+           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+->>>>>>> 2419098 (feat: create quality purchase returns for failed quantity (#13) (#29))
+         </trans-unit>
+         <trans-unit id="PermissionSet 1811208904 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+           <source>Bifrost Quality Full</source>
+@@ -251,6 +177,78 @@
+           <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - gæðastjórnun</note>
+           <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST Quality ori - Property Caption</note>
+         </trans-unit>
++        <trans-unit id="Table 3190541962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
++          <source>Quality reopen access</source>
++          <target>Aðgangur að enduropnun skoðunar</target>
++          <note from="Developer" annotates="general" priority="2">is-IS=Aðgangur að enduropnun skoðunar</note>
++          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Reopen Access ori - Property Caption</note>
++        </trans-unit>
++        <trans-unit id="Table 3190541962 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
++          <source>Primary key</source>
++          <target>Aðallykill</target>
++          <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
++          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Reopen Access ori - Field Primary Key - Property Caption</note>
++        </trans-unit>
++        <trans-unit id="Codeunit 2772215590 - NamedType 1477048533" size-unit="char" translate="yes" xml:space="preserve">
++          <source>an existing inspection SystemId</source>
++          <target>SystemId skoðunar sem er til</target>
++          <note from="Developer" annotates="general" priority="2">is-IS=SystemId skoðunar sem er til</note>
++          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType ExpectedIdTxt</note>
++        </trans-unit>
++        <trans-unit id="Codeunit 2772215590 - NamedType 180107814" size-unit="char" translate="yes" xml:space="preserve">
++          <source>Read the inspection SystemId with Data.Records.Get.</source>
++          <target>Lestu SystemId skoðunarinnar með Data.Records.Get.</target>
++          <note from="Developer" annotates="general" priority="2">is-IS=Lestu SystemId skoðunarinnar með Data.Records.Get.</note>
++          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType FixIdTxt</note>
++        </trans-unit>
++        <trans-unit id="Codeunit 2772215590 - NamedType 3820335595" size-unit="char" translate="yes" xml:space="preserve">
++          <source>inspectionSystemId must be a non-empty GUID.</source>
++          <target>inspectionSystemId verður að vera GUID sem er ekki tómt.</target>
++          <note from="Developer" annotates="general" priority="2">is-IS=inspectionSystemId verður að vera GUID sem er ekki tómt.</note>
++          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType InvalidIdErr</note>
++        </trans-unit>
++        <trans-unit id="Codeunit 2772215590 - NamedType 823878488" size-unit="char" translate="yes" xml:space="preserve">
++          <source>inspectionSystemId is required and must identify an existing inspection.</source>
++          <target>inspectionSystemId er áskilið og verður að auðkenna skoðun sem er til.</target>
++          <note from="Developer" annotates="general" priority="2">is-IS=inspectionSystemId er áskilið og verður að auðkenna skoðun sem er til.</note>
++          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType MissingIdErr</note>
++        </trans-unit>
++        <trans-unit id="Codeunit 2772215590 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
++          <source>You need BIFROST QM Full ori to reopen an inspection.</source>
++          <target>Þú þarft BIFROST QM Full ori til að enduropna skoðun.</target>
++          <note from="Developer" annotates="general" priority="2">is-IS=Þú þarft BIFROST QM Full ori til að enduropna skoðun.</note>
++          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType PermissionErr</note>
++        </trans-unit>
++        <trans-unit id="Codeunit 2772215590 - NamedType 1738233936" size-unit="char" translate="yes" xml:space="preserve">
++          <source>Ask an administrator for the Bifrost Quality Full role. Microsoft also requires the Quality Admin &amp; Supervisor role, or SUPER, before ReopenInspection runs.</source>
++          <target>Biddu stjórnanda um hlutverkið Bifrost Quality Full. Microsoft krefst einnig hlutverksins Quality Admin &amp; Supervisor, eða SUPER, áður en ReopenInspection keyrir.</target>
++          <note from="Developer" annotates="general" priority="2">is-IS=Biddu stjórnanda um hlutverkið Bifrost Quality Full. Microsoft krefst einnig hlutverksins Quality Admin &amp; Supervisor, eða SUPER, áður en ReopenInspection keyrir.</note>
++          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType PermissionNextTxt</note>
++        </trans-unit>
++        <trans-unit id="Codeunit 2772215590 - NamedType 2912406318" size-unit="char" translate="yes" xml:space="preserve">
++          <source>Unknown parameter %1. Nothing was changed.</source>
++          <target>Óþekkt viðfang %1. Engu var breytt.</target>
++          <note from="Developer" annotates="general" priority="2">%1 = request key, is-IS=Óþekkt viðfang %1. Engu var breytt.</note>
++          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType UnknownKeyErr</note>
++        </trans-unit>
++        <trans-unit id="Codeunit 2772215590 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
++          <source>Reopens a finished quality inspection through the standard ReopenInspection action so test values can be changed again.</source>
++          <target>Enduropnar lokinni gæðaskoðun með staðlaðri ReopenInspection aðgerð svo prófunargildum megi breyta aftur.</target>
++          <note from="Developer" annotates="general" priority="2">is-IS=Enduropnar lokinni gæðaskoðun með staðlaðri ReopenInspection aðgerð svo prófunargildum megi breyta aftur.</note>
++          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
++        </trans-unit>
++        <trans-unit id="Codeunit 2772215590 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
++          <source>reopen, finished inspection, quality inspection, test values, open status</source>
++          <target>enduropna, lokin skoðun, gæðaskoðun, prófunargildi, opin staða</target>
++          <note from="Developer" annotates="general" priority="2">is-IS=enduropna, lokin skoðun, gæðaskoðun, prófunargildi, opin staða</note>
++          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
++        </trans-unit>
++        <trans-unit id="Codeunit 2772215590 - Method 3650283039 - NamedType 2344026547" size-unit="char" translate="yes" xml:space="preserve">
++          <source>Effect: a finished inspection becomes open by the standard ReopenInspection action. Pass and fail quantities stay as that action leaves them. Idempotent: calling it again on the open inspection changes nothing. A later re-inspection is a refusal and changes nothing. There is no Commit on the standard path. A business refusal rolls back. In omit-commit mode the caller owns rollback.</source>
++          <target>Áhrif: lokin skoðun verður opin með staðlaðri ReopenInspection aðgerð. Magn sem stóðst og féll helst eins og aðgerðin skilur við það. Ídempotent: annað kall á opna skoðun breytir engu. Síðari endurskoðun er höfnun og breytir engu. Ekkert Commit er á staðlaðri leið. Viðskiptahöfnun bakfærir. Í ham án staðfestingar ber kallandi ábyrgð á bakfærslu.</target>
++          <note from="Developer" annotates="general" priority="2">is-IS=Áhrif: lokin skoðun verður opin með staðlaðri ReopenInspection aðgerð. Magn sem stóðst og féll helst eins og aðgerðin skilur við það. Ídempotent: annað kall á opna skoðun breytir engu. Síðari endurskoðun er höfnun og breytir engu. Ekkert Commit er á staðlaðri leið. Viðskiptahöfnun bakfærir. Í ham án staðfestingar ber kallandi ábyrgð á bakfærslu.</note>
++          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - Method GetNotes - NamedType NotesLbl</note>
++        </trans-unit>
+       </group>
+     </body>
+   </file>
+diff --git a/app/src/Permission Set/BIFROSTQMFull.PermissionSet.al b/app/src/Permission Set/BIFROSTQMFull.PermissionSet.al
+remerge CONFLICT (content): Merge conflict in app/src/Permission Set/BIFROSTQMFull.PermissionSet.al
+index 2d91e1b..dd2f0f2 100644
+--- a/app/src/Permission Set/BIFROSTQMFull.PermissionSet.al	
++++ b/app/src/Permission Set/BIFROSTQMFull.PermissionSet.al	
+@@ -3,28 +3,20 @@ namespace Origo.Bifrost.QualityManagement;
+ using Microsoft.QualityManagement.Permissions;
+ 
+ /// <summary>
+-<<<<<<< f5b8a10 (feat: add Quality.Inspection.Reopen)
+-/// Grants inspection reopen execution together with Microsoft Quality Admin data permissions.
++/// Grants inspection reopen and purchase-return execution with Microsoft Quality Admin and Inspector permissions.
+ /// Microsoft ReopenInspection still requires the Quality Admin role, or SUPER, to be assigned to the user.
+-=======
+-/// Grants purchase-return execution and Microsoft Quality Inspector permissions.
+->>>>>>> 2419098 (feat: create quality purchase returns for failed quantity (#13) (#29))
+ /// </summary>
+ permissionset 10035237 "BIFROST QM Full ori"
+ {
+     Assignable = true;
+     Access = Public;
+     Caption = 'Bifrost Quality Full', MaxLength = 30, Comment = 'is-IS=Bifröst - gæði fullur aðgangur';
+-<<<<<<< f5b8a10 (feat: add Quality.Inspection.Reopen)
+-    IncludedPermissionSets = "BIFROST Quality ori", "QltyMgmt - Admin";
++    IncludedPermissionSets = "BIFROST Quality ori", "QltyMgmt - Admin", "QltyMgmt - Inspector";
+     Permissions = codeunit "Quality Reopen Impl ori" = X,
+         table "Quality Reopen Access ori" = X,
+-        tabledata "Quality Reopen Access ori" = RIMD;
+-=======
+-    IncludedPermissionSets = "BIFROST Quality ori", "QltyMgmt - Inspector";
+-    Permissions = codeunit "Quality Purch Return Impl ori" = X,
++        tabledata "Quality Reopen Access ori" = RIMD,
++        codeunit "Quality Purch Return Impl ori" = X,
+         codeunit "Quality Return Receipt ori" = X,
+         table "Quality Return Access ori" = X,
+         tabledata "Quality Return Access ori" = RIMD;
+->>>>>>> 2419098 (feat: create quality purchase returns for failed quantity (#13) (#29))
+ }

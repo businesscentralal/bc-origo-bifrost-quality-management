@@ -1,0 +1,30 @@
+{
+  "candidateSha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+  "layer1": {
+    "failed": 2,
+    "passed": 21,
+    "ready": false,
+    "total": 23
+  },
+  "filesScanned": 4,
+  "dispositions": [
+    {
+      "check": "caption_translation",
+      "reason": "Locked published message identifier Quality.Inspection.Reopen is intentionally untranslated; user-facing descriptions and labels have is-IS translations."
+    },
+    {
+      "check": "one_statement_per_line",
+      "reason": "False positive: semicolons delimit AL procedure parameters; no executable statements share the line."
+    }
+  ],
+  "layer2": {
+    "scope": "behavior-preserving merge only",
+    "permissionUnion": "Exact union; no other grants",
+    "handlers": "PR and main handlers unchanged byte-for-byte",
+    "tests": "All parent test AL files preserved; runtime checks pending",
+    "translations": "41 unique trans-unit entries; duplicates were required to match exactly",
+    "pipeline": "No authored pipeline edits",
+    "readiness": "NOT_READY pending compile/full suite/UI/MCP and current-tip CI"
+  },
+  "standardsSnapshot": "52ba4754cfd614e4a7c50af87b30149b18b313e3"
+}

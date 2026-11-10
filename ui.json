@@ -1,0 +1,42 @@
+{
+  "sha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+  "tenant": "w129-19",
+  "verified": true,
+  "executed": 2,
+  "passed": 2,
+  "failed": 0,
+  "skipped": 0,
+  "lcids": [
+    1033,
+    1039
+  ],
+  "scenarios": [
+    {
+      "lcid": 1033,
+      "fixture": "XQ32-REOPEN-EN",
+      "action": "Reopen -> Yes",
+      "before": "Finished",
+      "after": "Open",
+      "screenshots": [
+        "/workspace/evidence/quality32-60ddc3d-en-finished.png",
+        "/workspace/evidence/quality32-60ddc3d-en-reopened.png"
+      ]
+    },
+    {
+      "lcid": 1039,
+      "fixture": "XQ32-REOPEN-IS",
+      "action": "Enduropna -> J\u00e1",
+      "before": "Loki\u00f0",
+      "after": "Opi\u00f0",
+      "screenshots": [
+        "/workspace/evidence/quality32-60ddc3d-is-finished.png",
+        "/workspace/evidence/quality32-60ddc3d-is-reopened.png"
+      ]
+    }
+  ],
+  "identity": "Provisioned SUPER; least-privilege permission proof belongs to full native suite",
+  "fixtureSetup": "Own template and inspections via Test.Records.Set; native Finish actions create finished state",
+  "cleanup": "Verified zero owned fixtures; see fixture-cleanup.json",
+  "languageRestored": true,
+  "browserClosed": true
+}

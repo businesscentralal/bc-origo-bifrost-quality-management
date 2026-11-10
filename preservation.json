@@ -1,0 +1,88 @@
+{
+  "sourceChecks": [
+    {
+      "ref": "HEAD",
+      "path": "app/src/Reopen/QualityReopenAccess.Table.al",
+      "unchanged": true
+    },
+    {
+      "ref": "HEAD",
+      "path": "app/src/Reopen/QualityReopenImpl.Codeunit.al",
+      "unchanged": true
+    },
+    {
+      "ref": "HEAD",
+      "path": "app/src/Reopen/QualityReopenTypes.EnumExt.al",
+      "unchanged": true
+    },
+    {
+      "ref": "HEAD",
+      "path": "test/test/QualityReopenPermTst.Codeunit.al",
+      "unchanged": true
+    },
+    {
+      "ref": "HEAD",
+      "path": "test/test/QualityReopenTst.Codeunit.al",
+      "unchanged": true
+    },
+    {
+      "ref": "origin/main",
+      "path": "app/src/Disposition/QualityPurchReturnImpl.Codeunit.al",
+      "unchanged": true
+    },
+    {
+      "ref": "origin/main",
+      "path": "app/src/Disposition/QualityReturnAccess.Table.al",
+      "unchanged": true
+    },
+    {
+      "ref": "origin/main",
+      "path": "app/src/Disposition/QualityReturnReceipt.Codeunit.al",
+      "unchanged": true
+    },
+    {
+      "ref": "origin/main",
+      "path": "app/src/Disposition/QualityReturnTypes.EnumExt.al",
+      "unchanged": true
+    },
+    {
+      "ref": "origin/main",
+      "path": "test/src/QMReturnTest.PermissionSet.al",
+      "unchanged": true
+    },
+    {
+      "ref": "origin/main",
+      "path": "test/src/QMSetupTest.PermissionSet.al",
+      "unchanged": true
+    },
+    {
+      "ref": "origin/main",
+      "path": "test/src/QualityReturnFault.Codeunit.al",
+      "unchanged": true
+    },
+    {
+      "ref": "origin/main",
+      "path": "test/src/QualityReturnFixture.Codeunit.al",
+      "unchanged": true
+    },
+    {
+      "ref": "origin/main",
+      "path": "test/src/QualityReturnFixtures.EnumExt.al",
+      "unchanged": true
+    },
+    {
+      "ref": "origin/main",
+      "path": "test/test/QualityReturnTst.Codeunit.al",
+      "unchanged": true
+    },
+    {
+      "ref": "origin/main",
+      "path": "test/test/QualityScaffoldTst.Codeunit.al",
+      "unchanged": true
+    }
+  ],
+  "permissionSet": "Exact union of grants and IncludedPermissionSets from both parents",
+  "newHandlerLogic": false,
+  "testsWeakened": false,
+  "translationUnits": 41
+}

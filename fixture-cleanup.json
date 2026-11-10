@@ -1,0 +1,56 @@
+{
+  "sha": "60ddc3d33cfc6f8244195cffbe04db8da6bfc3af",
+  "tenant": "w129-19",
+  "verified": true,
+  "checks": [
+    {
+      "name": "reopen-inspections",
+      "remaining": 0
+    },
+    {
+      "name": "template",
+      "remaining": 0
+    },
+    {
+      "name": "return-inspection",
+      "remaining": 0
+    },
+    {
+      "name": "headers",
+      "remaining": 0
+    },
+    {
+      "name": "lines",
+      "remaining": 0
+    },
+    {
+      "name": "receipt",
+      "remaining": 0
+    },
+    {
+      "name": "receipt-lines",
+      "remaining": 0
+    },
+    {
+      "name": "ledger",
+      "remaining": 0
+    },
+    {
+      "name": "item",
+      "remaining": 0
+    },
+    {
+      "name": "item-unit",
+      "remaining": 0
+    },
+    {
+      "name": "vendor",
+      "remaining": 0
+    },
+    {
+      "name": "reason",
+      "remaining": 0
+    }
+  ],
+  "finishedAt": "2026-11-10T08:23:21.567Z"
+}
