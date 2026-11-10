@@ -11,11 +11,11 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management>
 
-**Status:** installable scaffold; no message types yet.
+**Status:** registration, Foundation roles, and `Quality.Disposition.CreatePurchaseReturn` are implemented.
 
 Foundation discovers this app on **Bifrost Setup** through its application registry. All setup notifications stay on that Foundation page. Quality Management has no setup page of its own.
 
-Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. These scaffold roles grant execution of registration only; they grant no access to Microsoft Quality Management business data.
+Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. The Full role grants purchase-return execution and Microsoft Quality Inspector permissions; callers also need native purchase-document permissions. The Read role does not grant disposition execution.
 
 The app manifest exposes the `quality-management` documentation entry in English and Icelandic. The complete object allocation is recorded in [.claude/CLAUDE.md](.claude/CLAUDE.md).
 
@@ -29,6 +29,12 @@ The app manifest exposes the `quality-management` documentation entry in English
 | Test app (`test/`) | 97200-97299 |
 
 ---
+
+## Message types
+
+| Type | Effect | Retry behavior | Help |
+| --- | --- | --- | --- |
+| `Quality.Disposition.CreatePurchaseReturn` | Creates an unposted purchase return for the failed quantity | Not idempotent; a retry can create another return | [English](app/docs/en-us/CreatePurchaseReturn.md), [íslenska](app/docs/is-is/CreatePurchaseReturn.md) |
 
 ## Documentation
 
