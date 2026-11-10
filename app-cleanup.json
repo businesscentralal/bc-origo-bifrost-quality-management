@@ -1,0 +1,64 @@
+{
+  "tenant": "w129-14",
+  "actions": [
+    {
+      "id": "9193f6a2-0926-49bb-9fec-3c36a60c8b0e",
+      "name": "Bifrost Quality Management - Tests",
+      "packageId": "fbd5fe73-aeb4-49c0-a6d9-41976d7f5964",
+      "action": "uninstallAndDeleteExtensionData",
+      "statusCode": 204
+    },
+    {
+      "id": "9193f6a2-0926-49bb-9fec-3c36a60c8b0e",
+      "name": "Bifrost Quality Management - Tests",
+      "packageId": "fbd5fe73-aeb4-49c0-a6d9-41976d7f5964",
+      "action": "unpublish",
+      "statusCode": 204
+    },
+    {
+      "id": "d3ca6790-e2c1-44c1-a026-fd75a3f5b52d",
+      "name": "Bifrost Quality Management",
+      "packageId": "88bcab1c-6f02-45a2-ad31-62a36625be2a",
+      "action": "uninstallAndDeleteExtensionData",
+      "statusCode": 204
+    },
+    {
+      "id": "d3ca6790-e2c1-44c1-a026-fd75a3f5b52d",
+      "name": "Bifrost Quality Management",
+      "packageId": "88bcab1c-6f02-45a2-ad31-62a36625be2a",
+      "action": "unpublish",
+      "statusCode": 204
+    },
+    {
+      "id": "9db1a0c9-c503-4793-a9e4-bcda3d3f3c94",
+      "name": "Bifrost Foundation - Tests",
+      "packageId": "517e961e-5499-4fa2-89ca-6b9a2e951591",
+      "action": "uninstallAndDeleteExtensionData",
+      "statusCode": 204
+    },
+    {
+      "id": "9db1a0c9-c503-4793-a9e4-bcda3d3f3c94",
+      "name": "Bifrost Foundation - Tests",
+      "packageId": "517e961e-5499-4fa2-89ca-6b9a2e951591",
+      "action": "unpublish",
+      "statusCode": 204
+    },
+    {
+      "id": "7505e808-6e52-4b96-a328-82573391297a",
+      "name": "Bifrost Foundation",
+      "packageId": "1ec5a0d2-2e73-44e5-890d-979a2aac90cd",
+      "action": "uninstallAndDeleteExtensionData",
+      "statusCode": 204
+    },
+    {
+      "id": "7505e808-6e52-4b96-a328-82573391297a",
+      "name": "Bifrost Foundation",
+      "packageId": "1ec5a0d2-2e73-44e5-890d-979a2aac90cd",
+      "action": "unpublish",
+      "statusCode": 204
+    }
+  ],
+  "verified": true,
+  "origoAppsRemaining": 0,
+  "finishedAt": "2026-11-10T02:58:47.084Z"
+}

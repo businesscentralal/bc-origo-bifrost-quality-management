@@ -1,0 +1,213 @@
+{
+  "sha": "363e33089848eeb15e4d1eab1fafc86544e026c1",
+  "tenant": "w129-14",
+  "touchedMessageTypes": [
+    "Quality.Disposition.CreatePurchaseReturn"
+  ],
+  "createsOwnData": true,
+  "startedAt": "2026-11-10T02:46:57.492Z",
+  "scenarios": [
+    {
+      "label": "fixture1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "catalogue-1033",
+      "tool": "list_message_types",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "help-1033",
+      "tool": "get_message_type_help",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "happy-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "missing-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "unknown-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "invalidReason-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "invalidGuid-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "nonText-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "longReason-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "longCredit-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "notFound-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "header-1033",
+      "tool": "get_records",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "lines-1033",
+      "tool": "get_records",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "fixture1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "catalogue-1039",
+      "tool": "list_message_types",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "help-1039",
+      "tool": "get_message_type_help",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "happy-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "missing-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "unknown-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "invalidReason-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "invalidGuid-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "nonText-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "longReason-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "longCredit-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "notFound-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "header-1039",
+      "tool": "get_records",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "lines-1039",
+      "tool": "get_records",
+      "lcid": 1033,
+      "passed": true
+    }
+  ],
+  "passed": 28,
+  "failed": 0,
+  "skipped": 0,
+  "fixtures": [
+    {
+      "runCode": "BIFTQ13-MCP1033",
+      "company": "CRONUS International Ltd.",
+      "messageType": "Test.Quality.ReturnFixture",
+      "inspectionSystemId": "49AB6CFE-B0DC-F111-B6F8-00090FFE0001",
+      "inspectionNo": "BIFTQ13-MCP1033",
+      "status": "Success",
+      "returnOrderNo": "1003"
+    },
+    {
+      "runCode": "BIFTQ13-MCP1039",
+      "company": "CRONUS International Ltd.",
+      "messageType": "Test.Quality.ReturnFixture",
+      "inspectionSystemId": "72AB6CFE-B0DC-F111-B6F8-00090FFE0001",
+      "inspectionNo": "BIFTQ13-MCP1039",
+      "status": "Success",
+      "returnOrderNo": "1004"
+    }
+  ],
+  "history": [
+    {
+      "candidateSha": "c15f9dc367ed9dca40c3dda8aaca6d893c3a50a9",
+      "passed": 29,
+      "failed": 0,
+      "priorFailedExpectation": 1,
+      "reason": "Foundation deliberately keeps contract chapters in English; catalogue/refusals are localized. Incorrect initial test expectation retained privately and corrected. Prior fixtures removed before current-candidate tests."
+    }
+  ],
+  "cleanupStatus": "Fixtures retained for Web Client readback; cleanup follows UI.",
+  "finishedAt": "2026-11-10T02:47:08.959Z"
+}

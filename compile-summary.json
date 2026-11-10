@@ -1,0 +1,52 @@
+{
+  "sha": "363e33089848eeb15e4d1eab1fafc86544e026c1",
+  "tenant": "w129-14",
+  "startedAt": "2026-11-10T02:41:00.992956+00:00",
+  "analyzers": [
+    "CodeCop",
+    "UICop",
+    "AppSourceCop"
+  ],
+  "foundationDependency": {
+    "sha": "35f0efa31b85402fe5628ae764bc5ee2209664e2",
+    "repo": "OrigoSoftwareSolutions/bc-origo-bifrost-core",
+    "dependencyOnly": true
+  },
+  "app": {
+    "errors": 0,
+    "warnings": 0,
+    "exitCode": 0,
+    "sha256": "06d4c836f1be7310427792c208f0480f02f02726301ab7d0c90deb5c0a9bdc26",
+    "invocation": [
+      "/opt/devtools/dotnet/dotnet",
+      "/opt/devtools/al-language/extension/bin/alc.dll",
+      "/project:/workspace/private/quality13-worker4/app",
+      "/packagecachepath:/workspace/private/quality6-symbols",
+      "/out:/workspace/private/quality13-worker4-progress/Quality.app",
+      "/sourceRepositoryUrl:https://github.com/businesscentralal/bc-origo-bifrost-quality-management",
+      "/sourceCommit:363e33089848eeb15e4d1eab1fafc86544e026c1",
+      "/analyzer:/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.CodeCop.dll",
+      "/analyzer:/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.UICop.dll",
+      "/analyzer:/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.AppSourceCop.dll"
+    ]
+  },
+  "test": {
+    "errors": 0,
+    "warnings": 0,
+    "exitCode": 0,
+    "sha256": "63286f0b1fc63c20e222531930d146737c766153155a32286b8cccd9ac163301",
+    "invocation": [
+      "/opt/devtools/dotnet/dotnet",
+      "/opt/devtools/al-language/extension/bin/alc.dll",
+      "/project:/workspace/private/quality13-worker4/test",
+      "/packagecachepath:/workspace/private/quality6-symbols",
+      "/out:/workspace/private/quality13-worker4-progress/QualityTests.app",
+      "/sourceRepositoryUrl:https://github.com/businesscentralal/bc-origo-bifrost-quality-management",
+      "/sourceCommit:363e33089848eeb15e4d1eab1fafc86544e026c1",
+      "/analyzer:/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.CodeCop.dll",
+      "/analyzer:/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.UICop.dll",
+      "/analyzer:/opt/devtools/al-language/extension/bin/Microsoft.Dynamics.Nav.AppSourceCop.dll"
+    ]
+  },
+  "finishedAt": "2026-11-10T02:41:40.898876+00:00"
+}

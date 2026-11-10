@@ -1,0 +1,35 @@
+{
+  "sha": "363e33089848eeb15e4d1eab1fafc86544e026c1",
+  "reviewedAt": "2026-11-10T02:48:46.638645+00:00",
+  "layer1": {
+    "filesScanned": 5,
+    "passedChecks": 21,
+    "falsePositiveChecks": 2,
+    "disposition": {
+      "caption_translation": "Locked external API identifier is deliberately invariant; bilingual catalogue/refusal labels and help/XLF are present.",
+      "one_statement_per_line": "All findings are legal multi-parameter procedure signatures; no multiple executable statements on one line."
+    }
+  },
+  "layer2": {
+    "scope": "Only issue13 product/test/docs; no pipeline/runtime/credential/release changes.",
+    "logic": "Strict inputs before writes; Failed Quantity uses native public overload. Capture result through bounded event subscriber. Require actual item line; native validation retained. Normal Boolean Codeunit.Run plus explicit CommitBehavior prevents partial returns. Omit Commit caller ownership documented.",
+    "permissions": "Empty capability table enforces app Full permission under wildcard Foundation API execution; native purchase permissions also required. Restrictive Read/no-app regressions pass.",
+    "compatibility": "No existing public members/fields renamed/removed; allocated blocks avoid issue6 and issue7. BC29 local symbols compile0/0; BC28.5 paired CI remains required.",
+    "translations": "User-facing labels have en-US/is-IS comments/XLF; English/Icelandic Markdown help. Foundation public contract intentionally returns English chapters regardless of LCID; catalogue/refusals localized.",
+    "regression": "Native25 tests at finalhead; no skipped tests, no new exclusions/suppressions. Explicit no-op and commit rollback asserted.",
+    "fixtureSafety": "Synthetic owned receipt/ledger data; only posting configuration reused. No shared/customer fixtures; no live provider. First library-based prototype retired to avoid contact/number-series setup side effects. Native tests are isolated; MCP cleanup verified separately.",
+    "verification": "Final363e330: native25/25/0/0, MCP28/28/0/0, UI6/6/0/0in1033/1039, language restored1033; all owned fixture data and four apps removed and verified. Paired CI and independent review pending."
+  },
+  "learning": [
+    {
+      "finding": "MCP probe incorrectly expected localized contract chapters.",
+      "cause": "Test ignored Foundation Msg Contract interface/GetContract documented English chapter rule.",
+      "prevention": "Inspect dependency contract before asserting locale; assert Icelandic catalogue/refusal while requiring invariant English chapters.",
+      "verification": "Corrected MCP check passes, failure retained in prior-c15f9dc/mcp-attempt1-summary.json; no writes replayed."
+    }
+  ],
+  "readLessons": [
+    "quality23-c6b5c4f-keyword-guard-scaffold-worker10"
+  ],
+  "cleanupHistory": "First cleanup probe timed out while prototype UI session held a card; inspected actual remaining records, closed own browser, then cleaned only remaining fixtures. First app cleanup rejected Dev publication metadata before any mutation; confirmed four own tenant-scoped developer publications and preserved global Microsoft apps."
+}

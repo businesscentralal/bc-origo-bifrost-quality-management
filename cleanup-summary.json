@@ -1,0 +1,28 @@
+{
+  "sha": "363e33089848eeb15e4d1eab1fafc86544e026c1",
+  "tenant": "w129-14",
+  "verified": true,
+  "fixturesRemoved": [
+    "BIFTQ13-MCP1033",
+    "BIFTQ13-MCP1039"
+  ],
+  "nativeTablesVerifiedEmpty": [
+    "Qlty. Inspection Header",
+    "Purchase Header",
+    "Purchase Line",
+    "Purch. Rcpt. Header",
+    "Purch. Rcpt. Line",
+    "Item Ledger Entry",
+    "Item",
+    "Item Unit of Measure",
+    "Vendor",
+    "Return Reason"
+  ],
+  "appActions": 8,
+  "allAppActionsStatus204": true,
+  "origoAppsRemaining": 0,
+  "tenantRetained": true,
+  "tenantReason": "Permanent worker4 local BC29 binding; tenant must not be deleted.",
+  "languageRestored": 1033,
+  "finishedAt": "2026-11-10T02:59:22.968237+00:00"
+}

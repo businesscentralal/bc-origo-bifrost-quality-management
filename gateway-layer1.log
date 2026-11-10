@@ -1,0 +1,137 @@
+{
+  "publisher": "Origo",
+  "project": "Bifrost Quality Management",
+  "summary": {
+    "failed": 2,
+    "ready": false,
+    "total": 23,
+    "passed": 21
+  },
+  "version": "28.0.0.0",
+  "files_scanned": 5,
+  "mode": "diff (vs 124d5f5733ee478c42e0ac8bb47426c50273daef)",
+  "checks": {
+    "confirm_in_page": {
+      "pass": true,
+      "findings": []
+    },
+    "object_naming": {
+      "pass": true,
+      "findings": []
+    },
+    "data_classification": {
+      "pass": true,
+      "findings": []
+    },
+    "set_load_fields": {
+      "advisory": "Loops without SetLoadFields - consider it only for wide tables; not a gate failure",
+      "findings": [],
+      "pass": true
+    },
+    "today_vs_workdate": {
+      "pass": true,
+      "findings": []
+    },
+    "event_subscriber_placement": {
+      "pass": true,
+      "findings": []
+    },
+    "caption_translation": {
+      "skipped": null,
+      "findings": [
+        {
+          "text": "Caption = 'Quality.Disposition.CreatePurchaseReturn', Locked = true;",
+          "line": 11,
+          "file": "QualityReturnTypes.EnumExt.al"
+        }
+      ],
+      "pass": false
+    },
+    "format_guid": {
+      "pass": true,
+      "findings": []
+    },
+    "reserved_var_names": {
+      "pass": true,
+      "findings": []
+    },
+    "modernization": {
+      "pass": true,
+      "findings": []
+    },
+    "app_json": {
+      "pass": true,
+      "findings": []
+    },
+    "hardcoded_values": {
+      "pass": true,
+      "findings": []
+    },
+    "xml_doc_comments": {
+      "pass": true,
+      "findings": []
+    },
+    "one_statement_per_line": {
+      "pass": false,
+      "findings": [
+        {
+          "text": "local procedure ReadOption(Request: JsonObject; ParameterName: Text; MaximumLength: Integer): Text",
+          "line": 116,
+          "file": "QualityPurchReturnImpl.Codeunit.al"
+        },
+        {
+          "text": "local procedure ReadText(Request: JsonObject; ParameterName: Text; AllowEmpty: Boolean) Value: Text",
+          "line": 128,
+          "file": "QualityPurchReturnImpl.Codeunit.al"
+        },
+        {
+          "text": "local procedure AddResponseField(var Fields: JsonArray; FieldName: Text; Description: Text)",
+          "line": 241,
+          "file": "QualityPurchReturnImpl.Codeunit.al"
+        },
+        {
+          "text": "local procedure CaptureReturn(var QltyInspectionHeader: Record \"Qlty. Inspection Header\"; var TempInstructionQltyDispositionBuffer: Record \"Qlty. Disposition Buffer\" temporary; var CreatedReturnOrderPurchaseHeader: Record \"Purchase Header\"; var DidSomething: Boolean)",
+          "line": 32,
+          "file": "QualityReturnReceipt.Codeunit.al"
+        }
+      ]
+    },
+    "format_evaluate_enum": {
+      "pass": true,
+      "findings": []
+    },
+    "read_isolation": {
+      "pass": true,
+      "findings": []
+    },
+    "page_code_minimal": {
+      "pass": true,
+      "findings": []
+    },
+    "changelog": {
+      "pass": true,
+      "findings": []
+    },
+    "commit_in_loop": {
+      "pass": true,
+      "findings": []
+    },
+    "global_variables": {
+      "pass": true,
+      "findings": []
+    },
+    "namespace": {
+      "pass": true,
+      "findings": []
+    },
+    "try_prefix_convention": {
+      "pass": true,
+      "findings": []
+    },
+    "with_statements": {
+      "pass": true,
+      "findings": []
+    }
+  },
+  "total_al_files": 10
+}

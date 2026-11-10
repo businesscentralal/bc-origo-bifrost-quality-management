@@ -1,0 +1,13 @@
+{
+  "sha": "363e33089848eeb15e4d1eab1fafc86544e026c1",
+  "mode": "local",
+  "fullSuite": true,
+  "total": 25,
+  "passed": 25,
+  "failed": 0,
+  "skipped": 0,
+  "errors": 0,
+  "tenant": "w129-14",
+  "sourceTestMethods": 25,
+  "noExclusions": true
+}

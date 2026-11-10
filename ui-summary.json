@@ -1,0 +1,50 @@
+{
+  "sha": "363e33089848eeb15e4d1eab1fafc86544e026c1",
+  "tenant": "w129-14",
+  "tool": "Playwright MCP",
+  "executed": 6,
+  "passed": 6,
+  "failed": 0,
+  "skipped": 0,
+  "scenarios": [
+    {
+      "lcid": 1033,
+      "scenario": "failedQuantity",
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "scenario": "returnReason",
+      "expected": "MCP1033",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "scenario": "vendorCreditMemoNo",
+      "expected": "BIFTQ13-MCP1033",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "scenario": "failedQuantity",
+      "expected": 3,
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "scenario": "returnReason",
+      "expected": "MCP1039",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "scenario": "vendorCreditMemoNo",
+      "expected": "BIFTQ13-MCP1039",
+      "passed": true
+    }
+  ],
+  "languageRestore": "VERIFIED1033",
+  "nativeCaptionNote": "W1 Base Application purchase fields retain English captions; platform Vinnudagsetning and UI labels prove LCID1039. Own catalogue/refusals are localized and help/XLF bilingual.",
+  "history": "Prototype navigation saw delayed loads, edit/read-only form name differences and beforeunload; discarded prototype assertions. Final read-only assertions passed at current tip."
+}

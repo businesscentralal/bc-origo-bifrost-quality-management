@@ -1,0 +1,62 @@
+{
+  "issue": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/13",
+  "sha": "363e33089848eeb15e4d1eab1fafc86544e026c1",
+  "owner": "worker-4",
+  "criteria": [
+    {
+      "id": "AC01",
+      "implementation": "Enum10035244/value10035245 plus discovery/contract through Msg Contract ori; non-idempotent write, permissions/preconditions, explicit subscriber commits prohibited.",
+      "verification": "MCP catalogue/help and native subscriber-commit regression",
+      "status": "implemented and verified at current candidate; review/merge/deployment/UAT pending"
+    },
+    {
+      "id": "AC02",
+      "implementation": "Strict required inspectionSystemId plus optional reasonCode10/vendorCreditMemoNo35; unknown/invalid/overlong keys refused before writing.",
+      "verification": "Native malformed/missing/unknown/long/nontext tests and MCP refusals",
+      "status": "implemented and verified at current candidate; review/merge/deployment/UAT pending"
+    },
+    {
+      "id": "AC03",
+      "implementation": "Public Microsoft Qlty. Disp. Purchase Return.PerformDisposition buffer overload with Failed Quantity behavior; result event capture and item-line existence guard.",
+      "verification": "Native happy1033/1039; MCP persisted failed quantity and UI return readback",
+      "status": "implemented and verified at current candidate; review/merge/deployment/UAT pending"
+    },
+    {
+      "id": "AC04",
+      "implementation": "Boolean Codeunit.Run isolation and CommitBehavior::Error roll back business failures; Omit Commit documented caller responsibility.",
+      "verification": "Native blocked vendor, missing receipt, zero quantity, invalid reason, late failure, no-op and subscriber commit tests; MCP invalid reason no extra header",
+      "status": "implemented and verified at current candidate; review/merge/deployment/UAT pending"
+    },
+    {
+      "id": "AC05",
+      "implementation": "Full app role grants own capability table and implementation/receipt; Foundation full extension includes it; native purchase rights remain required.",
+      "verification": "Restrictive Full-role success and Read/no-app refusal tests",
+      "status": "implemented and verified at current candidate; review/merge/deployment/UAT pending"
+    },
+    {
+      "id": "AC06",
+      "implementation": "Bilingual captions/descriptions/refusal labels, en-US/is-IS help and synchronized XLF; Foundation contract chapters intentionally English per public interface.",
+      "verification": "Native and MCP1039 refusals/catalogue plus XLF/keyword guards and UI1039",
+      "status": "implemented and verified at current candidate; review/merge/deployment/UAT pending"
+    },
+    {
+      "id": "AC07",
+      "implementation": "app/docs/en-us/CreatePurchaseReturn.md and app/docs/is-is/CreatePurchaseReturn.md; contract Overview/Notes/Effect explain unposted result and retry risk.",
+      "verification": "MCP full-help chapters",
+      "status": "implemented and verified at current candidate; review/merge/deployment/UAT pending"
+    },
+    {
+      "id": "AC08",
+      "implementation": "21 issue13 dispatcher tests plus4 scaffold tests; self-created synthetic purchase/receipt/ledger fixtures use only existing posting configuration.",
+      "verification": "Full configured25-test suite, no exclusions",
+      "status": "implemented and verified at current candidate; review/merge/deployment/UAT pending"
+    }
+  ],
+  "verificationEvidence": {
+    "compile": "compile-summary.json",
+    "fullNative": "native-summary.json",
+    "mcp": "mcp-summary.json",
+    "ui": "ui-summary.json",
+    "cleanup": "cleanup-summary.json"
+  }
+}
