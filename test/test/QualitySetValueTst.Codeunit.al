@@ -235,7 +235,7 @@ codeunit 97202 "Quality Set Value Tst ori"
         Commit();
         // [WHEN] The public dispatcher invokes the Microsoft test validation.
         LowerPermissions.SetExactPermissionSet('BIFROST Full ori');
-        LowerPermissions.AddPermissionSet('QM Setup Test ori');
+        LowerPermissions.AddPermissionSet('QM Message Test ori');
         Response := Dispatch(Request, LanguageId);
         LowerPermissions.SetOutsideO365Scope();
         // [THEN] The line value and both result codes are recalculated and persisted.
@@ -292,12 +292,12 @@ codeunit 97202 "Quality Set Value Tst ori"
         Commit();
         if Scenario = 'permission' then begin
             LowerPermissions.SetExactPermissionSet('BIFROST Read ori');
-            LowerPermissions.AddPermissionSet('QM Setup Test ori');
+            LowerPermissions.AddPermissionSet('QM Message Test ori');
         end;
         if Scenario = 'permissionNoApp' then begin
             LowerPermissions.SetExactPermissionSet('BIFROST API ori');
             LowerPermissions.AddPermissionSet('QltyMgmt - Inspector');
-            LowerPermissions.AddPermissionSet('QM Setup Test ori');
+            LowerPermissions.AddPermissionSet('QM Message Test ori');
         end;
         if Scenario = 'late' then
             BindSubscription(Fault);
@@ -308,8 +308,21 @@ codeunit 97202 "Quality Set Value Tst ori"
         LowerPermissions.SetOutsideO365Scope();
         // [THEN] A structured refusal is returned and neither header nor line changed.
         Assert.AreEqual('Error', ReadText(Response, 'status'), 'The dispatcher must return a refusal.');
+        case Scenario of
+            'missing', 'number': Assert.IsTrue(ReadText(Response, 'error').Contains('value'), 'The refusal must identify the value input.');
+            'unknown': Assert.AreEqual('UnknownParameter', ReadText(Response, 'code'), 'Foundation must reject unknown keys.');
+            'longValue', 'longCode': Assert.IsTrue(ReadText(Response, 'error').Contains('exceeds'), 'The length guard must refuse truncation.');
+            'guid': Assert.IsTrue(ReadText(Response, 'error').Contains('inspectionSystemId'), 'The identifier error must name the key.');
+            'finished': Assert.IsTrue(ReadText(Response, 'error').Contains('Status'), 'Microsoft must reject the finished status.');
+            'test', 'duplicate': Assert.IsTrue(ReadText(Response, 'error').Contains('matching inspection line'), 'Microsoft must reject the test selection.');
+            'invalid': Assert.IsTrue(ReadText(Response, 'error').Contains('not allowed'), 'Microsoft must reject the invalid integer.');
+            'template': Assert.IsTrue(ReadText(Response, 'error').Contains('does not exist'), 'Microsoft must reject missing setup.');
+            'late': Assert.IsTrue(ReadText(Response, 'error').Contains('Injected late'), 'The failure must occur after the native line write.');
+            'permission', 'permissionNoApp': Assert.IsTrue(LowerCase(ReadText(Response, 'error')).Contains('permission'), 'The call must be refused for missing permissions.');
+            'notFound': Assert.IsTrue(ReadText(Response, 'error').Contains('inspection was not found'), 'The missing inspection must be identified.');
+        end;
         if (Scenario = 'missing') and (LanguageId = 1039) then
-            Assert.IsTrue(ReadText(Response, 'message').Contains('Nauðsynlega'), 'The refusal must be translated.');
+            Assert.IsTrue(ReadText(Response, 'error').Contains('Nauðsynlega'), 'The refusal must be translated.');
         InspectionLine.Get(InspectionLine."Inspection No.", 0, 10000);
         Inspection.GetBySystemId(Inspection.SystemId);
         Assert.AreEqual('1', InspectionLine."Test Value", 'Refusal must preserve the previous value.');

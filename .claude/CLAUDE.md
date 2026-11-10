@@ -25,6 +25,7 @@ Tests: 97200-97299
 | Codeunit | 10035242 | Quality Set Value Impl ori |
 | Test codeunit | 97202 | Quality Set Value Tst ori |
 | Test codeunit | 97203 | Quality Value Fault ori |
+| Test permission set | 97204 | QM Message Test ori |
 | Test codeunit | 97200 | Quality Scaffold Tst ori |
 | Test permission set | 97201 | QM Setup Test ori |
 
