@@ -21,10 +21,10 @@
     "scope": "behavior-preserving merge only",
     "permissionUnion": "Exact union; no other grants",
     "handlers": "PR and main handlers unchanged byte-for-byte",
-    "tests": "All parent test AL files preserved; runtime checks pending",
+    "tests": "All parent test AL files preserved; full suite 37/37/0/0 and two bilingual UI plus 22 MCP scenarios passed.",
     "translations": "41 unique trans-unit entries; duplicates were required to match exactly",
     "pipeline": "No authored pipeline edits",
-    "readiness": "NOT_READY pending compile/full suite/UI/MCP and current-tip CI"
+    "readiness": "Developer validation complete at candidate SHA; independent verification/review remain pending."
   },
   "standardsSnapshot": "52ba4754cfd614e4a7c50af87b30149b18b313e3"
 }

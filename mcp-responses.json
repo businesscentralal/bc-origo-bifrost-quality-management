@@ -327,6 +327,46 @@
     "nextStep": "Lestu SystemId skoðunarinnar með Data.Records.Get.",
     "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Reopen\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
   },
+  "reopen-unknown-id-1033": {
+    "status": "Error",
+    "code": "RecordNotFound",
+    "error": "inspectionSystemId is required and must identify an existing inspection.",
+    "parameter": "inspectionSystemId",
+    "received": "5F91B316-7CB2-4A9F-A8B7-8E2C2A613219",
+    "expected": "an existing inspection SystemId",
+    "nextStep": "Read the inspection SystemId with Data.Records.Get.",
+    "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.Reopen\". Always read the help before calling a message type."
+  },
+  "reopen-unknown-id-1039": {
+    "status": "Error",
+    "code": "RecordNotFound",
+    "error": "inspectionSystemId er áskilið og verður að auðkenna skoðun sem er til.",
+    "parameter": "inspectionSystemId",
+    "received": "5F91B316-7CB2-4A9F-A8B7-8E2C2A613219",
+    "expected": "SystemId skoðunar sem er til",
+    "nextStep": "Lestu SystemId skoðunarinnar með Data.Records.Get.",
+    "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Reopen\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+  },
+  "reopen-unknown-key-1033": {
+    "status": "Error",
+    "code": "UnknownParameter",
+    "error": "Parameter \"unexpected\" is not declared by this message type. Nothing was executed.",
+    "parameter": "unexpected",
+    "received": "true",
+    "expected": "declared request parameters",
+    "nextStep": "Remove this key or consult Help.Implementation.Get for the declared parameters.",
+    "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.Reopen\". Always read the help before calling a message type."
+  },
+  "reopen-unknown-key-1039": {
+    "status": "Error",
+    "code": "UnknownParameter",
+    "error": "Viðfangið \"unexpected\" er ekki skilgreint fyrir þessa skilaboðategund. Ekkert var keyrt.",
+    "parameter": "unexpected",
+    "received": "true",
+    "expected": "skilgreind beiðniviðföng",
+    "nextStep": "Fjarlægðu þennan lykil eða skoðaðu Help.Implementation.Get til að sjá skilgreind viðföng.",
+    "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Reopen\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+  },
   "reopen-idempotent-1033": {
     "company": "CRONUS International Ltd.",
     "messageType": "Quality.Inspection.Reopen",
