@@ -1,0 +1,6 @@
+{"sha":"916fa2f3cc8ba8f3d9ff00d939a7c2bd83f120cb","environment":"local BC29 W1 tenant w129-38, CRONUS International Ltd.","mergedFrom":"main 854f1be (conflicts in permission set, README, CHANGELOG, CLAUDE.md, is-IS XLF resolved; Full set now includes QltyMgmt - Inspector like main plus reinspect capability table)",
+"compile":{"app":{"errors":0,"warnings":0},"testApp":{"errors":0,"warnings":0,"note":"1 info AA0477 in main's QualityReturnTst.Codeunit.al"}},
+"fullSuite":{"range":"97200..97299","executed":79,"passed":79,"failed":0,"skipped":0},
+"mcp":{"types":["Quality.Inspection.CreateReinspection"],"fixtureType":"Test.Quality.ValueFixture (self-seeded, cleaned)","passed":14,"failed":0,"skipped":0,"languages":[1033,1039]},
+"ui":{"scenarios":"Quality Inspections list (page 20408) shows source Finished + generated revision 1 Open, in English and Icelandic (user language switched in My Settings and restored to English)","passed":2},
+"cleanup":"BIFTQ6-* fixtures removed (remainingInspections 0); user language restored to 1033"}
