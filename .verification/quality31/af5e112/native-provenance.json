@@ -1,0 +1,54 @@
+{
+  "sha": "af5e11280aea3bfc79d0e5584e3a15e074edc274",
+  "containerId": "f041514007da",
+  "owner": "worker-7",
+  "source": "/workspace/evidence/quality31-dainn-20261110/compile-provenance.json",
+  "executedAt": "2026-11-10T04:54:08.144Z",
+  "result": {
+    "ok": true,
+    "mode": "ssh",
+    "exitCode": 0,
+    "durationMs": 101959,
+    "passed": 41,
+    "failed": 0,
+    "skipped": 0,
+    "errors": 0,
+    "ssh": {
+      "available": true,
+      "ipAddress": "57.168.43.185",
+      "port": "22",
+      "httpStatus": 200
+    },
+    "cosmoExecTestEndpoint": "none",
+    "stdoutPreview": "[MCP] bc_dev_run_tests remote start\r\n[MCP] Cosmo SSH is typically inside the BC container (not a Docker host).\r\n[MCP] Dot-sourcing C:\\Run\\Prompt.ps1\r\nImport PPI Overrides from c:\\run\\helper\\PPIOverrides\\PPIOverrides.psm1\r\nWelcome to the Business Central Container PowerShell prompt\r\n\r\n[MCP] No Invoke-NavContainerTests / Run-TestsInBcContainer / Run-AlTests on SSH host - using in-container Client Services path.\r\n[MCP] Using scp-uploaded PsTestFunctions + ClientContext\r\n[MCP] Client Services URL candidates (auth=NavUserPassword): https://localhost:443/f041514007da/cs?tenant=default&company=CRONUS%20International%20Ltd. | https://localhost:443/f041514007da/cs?tenant=default | http://localhost:7046/f041514007da/cs?tenant=default&company=CRONUS%20International%20Ltd.\r\n[MCP] Enabling process-level SSL trust-any (pwsh-safe; no ICertificatePolicy)\r\n[MCP] Disable-SslVerification OK\r\n[MCP] Trying Client Services URL: https://localhost:443/f041514007da/cs?tenant=default&company=CRONUS%20International%20Ltd.\r\n[MCP] New-ClientContext + Run-Tests testPage=130455\r\n[MCP] Imported C:\\Run\\certificate.cer into LocalMachine\\Root\r\n[MCP] Walking InnerHandler from Microsoft.Dynamics.Framework.UI.Client.JsonHttpClient+BasicAuthHandler\r\n[MCP] SSL trust-any on System.Net.Http.HttpClientHandler (depth=2)\r\n[MCP] Page 130455 filters TestCodeunitRange='' TestCodeunit='' TestRunner='' RequiredTestIsolation=''\r\nSetting test codeunit range ''\r\n  Codeunit 97200 Quality Scaffold Tst ori Success (6.14 seconds)\r\n    Testfunction Scenario_AC01_AppIsRegistered Success (3.337 seconds)\r\n    Testfunction Scenario_AC01_RebuildHasNoDuplicates Success (0.01 seconds)\r\n    Testfunction Scenario_AC05_LicenceAdmin_OpensReadOnlySetupEnglish Success (2.683 seconds)\r\n    Testfunction Scenario_AC05_LicenceAdmin_OpensReadOnlySetupIcelandic Success (0.11 seconds)\r\n  Codeunit 97210 Quality Return Tst ori Success (10.634 seconds)\r\n    Testfunction Scenario_HappyEnglish Success (8.1 seconds)\r\n    Testfunction Scenario_HappyIcelandic Success (0.107 seconds)\r\n    Testfunction Scenario_MissingKey Success (0.13 seconds)\r\n    Testfunction Scenario_UnknownKey Success (0.114 seconds)\r\n    Testfunction Scenario_MalformedGuid Success (0.064 seconds)\r\n    Testfunction Scenario_UnknownInspection Success (0.077 seconds)\r\n    Testfunction Scenario_WrongSource Success (0.08 seconds)\r\n    Testfunction Scenario_ZeroFailedQuantity Success (0.084 seconds)\r\n    Testfunction Scenario_MissingReceipt Success (0.07 seconds)\r\n    Testfunction Scenario_BlockedVendor Success (0.113 seconds)\r\n    Testfunction Scenario_InvalidReasonRollsBack Success (0.107 seconds)\r\n    Testfunction Scenario_LateFailureRollsBack Success (0.133 seconds)\r\n    Testfunction Scenario_ReadRoleRefused Success (0.1 seconds)\r\n    Testfunction Scenario_NoAppGrantRefused Success (0.087 seconds)\r\n    Testfunction Scenario_LongReason Success (0.067 seconds)\r\n    Testfunction Scenario_LongCredit Success (0.067 seconds)\r\n    Testfunction Scenario_NonTextOption Success (0.067 seconds)\r\n    Testfunction Scenario_IcelandicRefusal Success (0.784 seconds)\r\n    Testfunction Scenario_OptionalKeysOmitted Success (0.12 seconds)\r\n    Testfunction Scenario_NoOpIsRefused Success (0.073 seconds)\r\n    Testfunction Scenario_SubscriberCommitRollsBack Success (0.09 seconds)\r\n  Codeunit 97215 Quality Return Errors Tst ori Success (0.392 seconds)\r\n    Testfunction Scenario_AC01_Missing_1033 Success (0.043 seconds)\r\n    Testfunction Scenario_AC01_Missing_1039 Success (0.016 seconds)\r\n    Testfunction Scenario_AC01_Empty_1033 Success (0.02 seconds)\r\n    Testfunction Scenario_AC01_Empty_1039 Success (0.02 seconds)\r\n    Testfunction Scenario_AC02_Unknown_1033 Success (0.023 seconds)\r\n    Testfunction Scenario_AC02_Unknown_1039 Success (0.026 seconds)\r\n    Testfunction Scenario_AC03_Malformed_1033 Success (0.023 seconds)\r\n    Testfunction Scenario_AC03_Malformed_1039 Success (0.023 seconds)\r\n    Testfunction Scenario_AC03_NonText_1033 Success (0.033 seconds)\r\n    Testfunction Scenario_AC03_NonText_1039 Success (0.023 seconds)\r\n    Testfunction Scenario_AC03_Null_1033 Success (0.027 seconds)\r\n    Testfunction Scenario_AC03_Null_1039 Success (0.023 seconds)\r\n    Testfunction Scenario_AC03_LongReason_1033 Success (0.023 seconds)\r\n    Testfunction Scenario_AC03_LongReason_1039 Success (0.023 seconds)\r\n    Testfunction Scenario_AC03_NonTextOption_1033 Success (0.023 seconds)\r\n    Testfunction Scenario_AC03_NonTextOption_1039 Success (0.023 seconds)\r\n[MCP_JUNIT_BEGIN]\r\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<testsuites>\r\n  <testsuite name=\"97200 Quality Scaffold Tst ori\" timestamp=\"2026-11-10T04:53:53\" hostname=\"f041514007da-business-central-586874c788-gtjgx\" time=\"6.14\" tests=\"4\" errors=\"0\" failures=\"0\" skipped=\"0\">\r\n    <properties>\r\n      <property name=\"extensionid\" value=\"9193f6a2-0926-49bb-9fec-3c36a60c8b0e\" />\r\n      <property name=\"appName\" value=\"Bifrost Quality Management - Tests\" />\r\n      <property name=\"processinfo.start\" value=\"{ &quot;CPU&quot;: &quot;203.688&quot;, &quot;Free Memory (Gb)&quot;: &quot;52.8&quot; }\" />\r\n      <property name=\"platform.info\" value=\"{ &quot;Version&quot;: &quot;28.0.54946.57759+3eeb9c3452f40eaba3a9d66650bca05d72c4be7c&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;Sales and Inventory Forecast&quot;, &quot;Publisher&quot;: &quot;Microsoft&quot;, &quot;Version&quot;: &quot;28.5.54151.57891&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;AI Development Toolkit - Evaluation&quot;, &quot;Publisher&quot;: &quot;Microsoft&quot;, &quot;Version&quot;: &quot;28.5.54151.57891&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;Performance Toolkit Tests&quot;, &quot;Publisher&quot;: &quot;Microsoft&quot;, &quot;Version&quot;: &quot;28.5.54151.57891&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;Intrastat Core Demo Data&quot;, &quot;Publisher&quot;: &quot;Microsoft&quot;, &quot;Version&quot;: &quot;28.5.54151.57891&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;Manufacturing&quot;, &quot;Publisher&quot;: &quot;Microsoft&quot;, &quot;Version&quot;: &quot;28.5.54151.57891&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;English language (Canada)&quot;, &quot;Publisher&quot;: &quot;Microsoft&quot;, &quot;Version&quot;: &quot;28.5.54151.57891&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;Subscription Billing Demo Data&quot;, &quot;Publisher&quot;: &quot;Microsoft&quot;, &quot;Version&quot;: &quot;28.5.54151.57891&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;Calculate Sustainability Emission with Copilot&quot;, &quot;Publisher&quot;: &quot;Microsoft&quot;, &quot;Version&quot;: &quot;28.5.54151.57891&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;Create Product Information With Copilot&quot;, &quot;Publisher&quot;: &quot;Microsoft&quot;, &quot;Version&quot;: &quot;28.5.54151.57891&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;Italian language (Switzerland)&quot;, &quot;Publisher&quot;: &quot;Microsoft&quot;, &quot;Version&quot;: &quot;28.5.54151.57891&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;Withholding Tax&quot;, &quot;Publisher&quot;: &quot;Microsoft&quot;, &quot;Version&quot;: &quot;28.5.54151.57891&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;Agent Samples Tests&quot;, &quot;Publisher&quot;: &quot;Microsoft&quot;, &quot;Version&quot;: &quot;28.5.54151.57891&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;System Application Test Library&quot;, &quot;Publisher&quot;: &quot;Microsoft&quot;, &quot;Version&quot;: &quot;28.5.54151.57891&quot; }\" />\r\n      <property name=\"app.info\" value=\"{ &quot;Name&quot;: &quot;External File Storage - Azure Blob Service Connector&quot;,\n…[truncated 32377 chars]",
+    "stderrPreview": "Warning: Permanently added '57.168.43.185' (ED25519) to the list of known hosts.\r\n",
+    "commandPreview": "scp -i <key> -P 22 run-tests.ps1[+pstest] sshuser@57.168.43.185:C:/Windows/Temp/origo-bc-run-tests-a411799c4c2aa56c.ps1 && ssh -i <key> -p 22 sshuser@57.168.43.185 pwsh|powershell -NoProfile -File C:\\Windows\\Temp\\origo-bc-run-tests-a411799c4c2aa56c.ps1  # extensionId=9193f6a2-0926-49bb-9fec-3c36a60c8b0e in-container Client Services",
+    "sshEnsure": {
+      "ready": true,
+      "containerId": "f041514007da",
+      "ipAddress": "57.168.43.185",
+      "port": "22",
+      "available": true,
+      "privateKeyPresent": true,
+      "containerState": "Running",
+      "steps": [
+        {
+          "atMs": 600,
+          "action": "notReady",
+          "detail": "ip=false key=false state=Running"
+        },
+        {
+          "atMs": 688,
+          "action": "enableSsh",
+          "detail": "PATCH sshEnabled=true → HTTP 204"
+        },
+        {
+          "atMs": 21411,
+          "action": "ready",
+          "detail": "SSH endpoint usable after enabling"
+        }
+      ],
+      "elapsedMs": 21411
+    }
+  }
+}

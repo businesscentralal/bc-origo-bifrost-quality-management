@@ -1,0 +1,56 @@
+{
+  "sha": "af5e11280aea3bfc79d0e5584e3a15e074edc274",
+  "status": "complete",
+  "verificationMethod": "Two screenshot-based UI scenario checks; not a claim of two automated harness assertions.",
+  "observations": [
+    {
+      "sha": "af5e11280aea3bfc79d0e5584e3a15e074edc274",
+      "containerId": "f041514007da",
+      "lcid": 1033,
+      "requestedLanguage": "en-US",
+      "languageEvidence": [
+        "Purchase Return Order",
+        "Home",
+        "Details"
+      ],
+      "languageVerification": "Visible platform/interface captions in the screenshot; not an unreturned DOM lang measurement.",
+      "returnOrderNo": "1011",
+      "fixture": "BIFTQ13-D7Q31-1033",
+      "returnVisible": true,
+      "fixtureVisible": true,
+      "vendorCreditMemoVisible": true,
+      "passed": true,
+      "screenshot": "ui-1033.png",
+      "method": "Playwright MCP navigation and screenshot, followed by direct visual review of the rendered screenshot by D\u00e1inn."
+    },
+    {
+      "sha": "af5e11280aea3bfc79d0e5584e3a15e074edc274",
+      "containerId": "f041514007da",
+      "lcid": 1039,
+      "requestedLanguage": "is-IS",
+      "languageEvidence": [
+        "Heim",
+        "Uppl\u00fdsingar",
+        "Fleiri valkostir",
+        "Stj\u00f3rna"
+      ],
+      "languageVerification": "Visible platform/interface captions in the screenshot; not an unreturned DOM lang measurement.",
+      "returnOrderNo": "1012",
+      "fixture": "BIFTQ13-D7Q31-1039",
+      "returnVisible": true,
+      "fixtureVisible": true,
+      "vendorCreditMemoVisible": true,
+      "passed": true,
+      "screenshot": "ui-1039.png",
+      "method": "Playwright MCP navigation and screenshot, followed by direct visual review of the rendered screenshot by D\u00e1inn."
+    }
+  ],
+  "verifiedAt": "2026-11-10T05:02:11.378720+00:00",
+  "diagnostics": [
+    "A beforeunload dialog interrupted initial navigation; explicit browser_handle_dialog acceptance allowed the same script to continue to My Settings and the Icelandic return card.",
+    "browser_run_code_unsafe does not return the async function result in this runtime. Final screenshots were retained and directly visually reviewed instead of inventing a script-return result."
+  ],
+  "limitations": [
+    "Microsoft W1 purchase fields retain some English captions in the1039 session; platform labels Heim/Uppl\u00fdsingar/Stj\u00f3rna establish the Icelandic interface."
+  ]
+}

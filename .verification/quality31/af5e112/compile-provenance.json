@@ -1,0 +1,33 @@
+{
+  "sha": "af5e11280aea3bfc79d0e5584e3a15e074edc274",
+  "compile": [
+    {
+      "app": "app",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "analyzers": [
+        "CodeCop",
+        "UICop",
+        "AppSourceCop"
+      ],
+      "sourceSha": "af5e11280aea3bfc79d0e5584e3a15e074edc274",
+      "artifactSha256": "679d22b11191d867cfaa5270c138a26e7bf0bd74087325b8c1c0d0c91a395d22"
+    },
+    {
+      "app": "test",
+      "exitCode": 0,
+      "errors": 0,
+      "warnings": 0,
+      "analyzers": [
+        "CodeCop",
+        "UICop",
+        "AppSourceCop"
+      ],
+      "sourceSha": "af5e11280aea3bfc79d0e5584e3a15e074edc274",
+      "artifactSha256": "4ea1cd0f81c838aa66e537789f019bfec81b1a530a0c914c8094805d39450411"
+    }
+  ],
+  "sourceTree": "e2506ccd054c205baad1f9b1033034ad17558c5e",
+  "note": "Exact compiled AL/XLF tree committed; no source edits since zero-warning compilation."
+}

@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"messageType\": \"Quality.Disposition.CreatePurchaseReturn\",\n  \"status\": \"Success\",\n  \"inspectionSystemId\": \"67152A24-C3DC-F111-B7A5-B105F9FEB423\",\n  \"returnOrderNo\": \"1012\"\n}"
+    }
+  ]
+}

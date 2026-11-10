@@ -1,0 +1,22 @@
+{
+  "sha": "af5e11280aea3bfc79d0e5584e3a15e074edc274",
+  "items": [
+    {
+      "phase": "readback",
+      "initialError": "Requested SystemId as selected BC field; tool rejected it. Record ID is returned as id.",
+      "resolution": "Corrected to records[0].id and retained original failed result. No fixture/return write repeated.",
+      "evidence": "mcp-return-header-1033.json"
+    },
+    {
+      "phase": "line-readback",
+      "initialAssertion": "Expected one line without filtering Type; native return includes a comment line.",
+      "resolution": "Filter Type=Item, as native unit tests do. One item line quantity3 verified. No product/source change.",
+      "evidence": "mcp-return-lines-1033.json"
+    }
+  ],
+  "scope": "These are verification-harness diagnostics; the22final message acceptance scenarios all passed.",
+  "uiDiagnostics": [
+    "A beforeunload dialog interrupted initial navigation; explicit browser_handle_dialog acceptance allowed the same script to continue to My Settings and the Icelandic return card.",
+    "browser_run_code_unsafe does not return the async function result in this runtime. Final screenshots were retained and directly visually reviewed instead of inventing a script-return result."
+  ]
+}

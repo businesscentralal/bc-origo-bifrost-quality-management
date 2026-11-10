@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"table\": \"Purchase Line\",\n  \"skip\": 0,\n  \"take\": 10,\n  \"count\": 2,\n  \"records\": [\n    {\n      \"id\": \"CDBE5BEC-C2DC-F111-B7A5-B105F9FEB423\",\n      \"primaryKey\": {\n        \"DocumentType\": \"Return Order\",\n        \"DocumentNo_\": \"1011\",\n        \"LineNo_\": \"10000\"\n      },\n      \"fields\": {\n        \"Quantity\": \"0\",\n        \"ReturnReasonCode\": \"\"\n      }\n    },\n    {\n      \"id\": \"CEBE5BEC-C2DC-F111-B7A5-B105F9FEB423\",\n      \"primaryKey\": {\n        \"DocumentType\": \"Return Order\",\n        \"DocumentNo_\": \"1011\",\n        \"LineNo_\": \"20000\"\n      },\n      \"fields\": {\n        \"Quantity\": \"3\",\n        \"ReturnReasonCode\": \"D7Q31-1033\"\n      }\n    }\n  ],\n  \"noOfRecords\": 2\n}"
+    }
+  ]
+}

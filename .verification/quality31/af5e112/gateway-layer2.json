@@ -1,0 +1,43 @@
+{
+  "sha": "af5e11280aea3bfc79d0e5584e3a15e074edc274",
+  "status": "Developer verification complete; paired CI/review pending",
+  "checkedAt": "2026-11-10T04:46:17.232695+00:00",
+  "findings": [],
+  "layer1FalsePositives": [
+    "Locked external message key is stable API identifier, not translatable caption.",
+    "Semicolons in procedure parameter declarations separate parameters, not multiple AL statements."
+  ],
+  "review": [
+    "Single existing implementation codeunit retained; no new product objects or permissions. Test97215 within assigned range97200..97299.",
+    "All own ErrorInfo.Create checks replaced with enum-based AddError/RaiseCollectedErrors; Foundation public API preserves collection across rollback. Native calls still use RespondWithLastError, CommitBehavior Error and same standard transaction path.",
+    "Missing/empty text classified MissingParameter; malformed/null/nontext/zero GUID InvalidParameter; unknown record includes normalized received GUID; optional text length checks retain prior limits.",
+    "Bilingual labels and generated XLF synchronized. Stable machine field names and enum codes are not translated.",
+    "Existing permission and rollback native tests strengthened; sixteen new dispatcher regressions assert exact machine code and actionable fields in1033/1039.",
+    "Underlying Microsoft28.5 QualityManagement codeunit20441 inspected from local package source; standard purchase return creation retained with no additional writes or Commit.",
+    "No app/test manifest, dependency floor, licensing, pipeline, public identifier or native validation changes.",
+    "Required runtime checks and exact-candidate deployed provenance are pending; no PR created."
+  ],
+  "sourceBaseline": "PR29 363e33089848eeb15e4d1eab1fafc86544e026c1; target main scaffold merged separately.",
+  "runtimeVerification": {
+    "native": {
+      "executed": 41,
+      "passed": 41,
+      "failed": 0,
+      "skipped": 0
+    },
+    "mcp": {
+      "executed": 22,
+      "passed": 22,
+      "failed": 0,
+      "skipped": 0
+    },
+    "ui": {
+      "executed": 2,
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "method": "Playwright screenshots directly visually reviewed in1033/1039"
+    },
+    "cleanup": "Owned fixtures0rows across10tables; COSMO deletion verified404"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Field 'SystemId' not found in table 'Purchase Header'."
+    }
+  ],
+  "isError": true
+}

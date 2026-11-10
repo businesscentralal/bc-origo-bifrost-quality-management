@@ -1,0 +1,541 @@
+{
+  "sha": "af5e11280aea3bfc79d0e5584e3a15e074edc274",
+  "containerId": "f041514007da",
+  "owner": "worker-7",
+  "startedAt": "2026-11-10T04:55:06.353Z",
+  "fixtures": [
+    {
+      "lcid": 1033,
+      "runCode": "BIFTQ13-D7Q31-1033",
+      "inspectionSystemId": "079956E6-C2DC-F111-B7A5-B105F9FEB423",
+      "returnOrderNo": "1011",
+      "header": {
+        "id": "CCBE5BEC-C2DC-F111-B7A5-B105F9FEB423",
+        "primaryKey": {
+          "DocumentType": "Return Order",
+          "No_": "1011"
+        },
+        "fields": {
+          "VendorCr_MemoNo_": "BIFTQ13-D7Q31-1033"
+        }
+      },
+      "returnSystemId": "CCBE5BEC-C2DC-F111-B7A5-B105F9FEB423",
+      "lines": [
+        {
+          "id": "CEBE5BEC-C2DC-F111-B7A5-B105F9FEB423",
+          "primaryKey": {
+            "DocumentType": "Return Order",
+            "DocumentNo_": "1011",
+            "LineNo_": "20000"
+          },
+          "fields": {
+            "Quantity": "3",
+            "ReturnReasonCode": "D7Q31-1033"
+          }
+        }
+      ],
+      "pageUrl": "https://cosmo-alpaca-enterprise.westeurope.cloudapp.azure.com:443/f041514007da/?company=CRONUS%20International%20Ltd.&page=6640&bookmark=25%3bJgAAAACLBQAAAAJ7BDEAMAAxADE%3d&tenant=default",
+      "cleanup": {
+        "requestedAt": "2026-11-10T05:02:13.471Z",
+        "response": {
+          "company": "CRONUS International Ltd.",
+          "messageType": "Test.Quality.ReturnFixture",
+          "remainingInspections": 0,
+          "remainingFixtures": 0,
+          "status": "Success"
+        }
+      }
+    },
+    {
+      "lcid": 1039,
+      "runCode": "BIFTQ13-D7Q31-1039",
+      "inspectionSystemId": "67152A24-C3DC-F111-B7A5-B105F9FEB423",
+      "returnOrderNo": "1012",
+      "header": {
+        "id": "9514262A-C3DC-F111-B7A5-B105F9FEB423",
+        "primaryKey": {
+          "DocumentType": "Return Order",
+          "No_": "1012"
+        },
+        "fields": {
+          "VendorCr_MemoNo_": "BIFTQ13-D7Q31-1039"
+        }
+      },
+      "returnSystemId": "9514262A-C3DC-F111-B7A5-B105F9FEB423",
+      "lines": [
+        {
+          "id": "9714262A-C3DC-F111-B7A5-B105F9FEB423",
+          "primaryKey": {
+            "DocumentType": "Return Order",
+            "DocumentNo_": "1012",
+            "LineNo_": "20000"
+          },
+          "fields": {
+            "Quantity": "3",
+            "ReturnReasonCode": "D7Q31-1039"
+          }
+        }
+      ],
+      "pageUrl": "https://cosmo-alpaca-enterprise.westeurope.cloudapp.azure.com:443/f041514007da/?company=CRONUS%20International%20Ltd.&page=6640&bookmark=25%3bJgAAAACLBQAAAAJ7BDEAMAAxADI%3d&tenant=default",
+      "cleanup": {
+        "requestedAt": "2026-11-10T05:02:19.404Z",
+        "response": {
+          "company": "CRONUS International Ltd.",
+          "messageType": "Test.Quality.ReturnFixture",
+          "remainingInspections": 0,
+          "remainingFixtures": 0,
+          "status": "Success"
+        }
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "missing",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "expected": "a non-empty SystemId GUID of an existing quality inspection",
+        "nextStep": "Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Disposition.CreatePurchaseReturn\". Always read the help before calling a message type."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "empty",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "expected": "a non-empty SystemId GUID of an existing quality inspection",
+        "nextStep": "Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Disposition.CreatePurchaseReturn\". Always read the help before calling a message type."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "notFound",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "RecordNotFound",
+        "error": "The quality inspection was not found.",
+        "parameter": "inspectionSystemId",
+        "received": "F1DAA8A2-AEBC-43B5-A36C-28378E36EDDF",
+        "expected": "a non-empty SystemId GUID of an existing quality inspection",
+        "nextStep": "Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Disposition.CreatePurchaseReturn\". Always read the help before calling a message type."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "guid",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "received": "not-a-guid",
+        "expected": "a non-empty SystemId GUID of an existing quality inspection",
+        "nextStep": "Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Disposition.CreatePurchaseReturn\". Always read the help before calling a message type."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "number",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "received": "12",
+        "expected": "a text value",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Disposition.CreatePurchaseReturn\". Always read the help before calling a message type."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "null",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+        "parameter": "inspectionSystemId",
+        "received": "null",
+        "expected": "a text value",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Disposition.CreatePurchaseReturn\". Always read the help before calling a message type."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "longReason",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Parameter 'reasonCode' exceeds 10 characters.",
+        "parameter": "reasonCode",
+        "received": "TOO-LONG-REASON",
+        "expected": "text with at most 10 characters",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Disposition.CreatePurchaseReturn\". Always read the help before calling a message type."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "longCredit",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Parameter 'vendorCreditMemoNo' exceeds 35 characters.",
+        "parameter": "vendorCreditMemoNo",
+        "received": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "expected": "text with at most 35 characters",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Disposition.CreatePurchaseReturn\". Always read the help before calling a message type."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "option",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "The required parameter 'reasonCode' is missing or invalid.",
+        "parameter": "reasonCode",
+        "received": "true",
+        "expected": "a text value",
+        "nextStep": "Correct the named request parameter and retry.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Disposition.CreatePurchaseReturn\". Always read the help before calling a message type."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "unknown",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "UnknownParameter",
+        "error": "Parameter \"bogusKey\" is not declared by this message type. Nothing was executed.",
+        "parameter": "bogusKey",
+        "expected": "declared request parameters",
+        "nextStep": "Remove this key or consult Help.Implementation.Get for the declared parameters.",
+        "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Disposition.CreatePurchaseReturn\". Always read the help before calling a message type."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "happy",
+      "lcid": 1033,
+      "passed": true,
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Quality.Disposition.CreatePurchaseReturn",
+        "status": "Success",
+        "inspectionSystemId": "079956E6-C2DC-F111-B7A5-B105F9FEB423",
+        "returnOrderNo": "1011"
+      }
+    },
+    {
+      "name": "missing",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "Nauðsynlega færibreytu 'inspectionSystemId' vantar eða hún er ógild.",
+        "parameter": "inspectionSystemId",
+        "expected": "SystemId GUID skoðunar sem er til og er ekki tómt",
+        "nextStep": "Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.",
+        "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Disposition.CreatePurchaseReturn\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "empty",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "MissingParameter",
+        "error": "Nauðsynlega færibreytu 'inspectionSystemId' vantar eða hún er ógild.",
+        "parameter": "inspectionSystemId",
+        "expected": "SystemId GUID skoðunar sem er til og er ekki tómt",
+        "nextStep": "Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.",
+        "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Disposition.CreatePurchaseReturn\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "notFound",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "RecordNotFound",
+        "error": "Gæðaskoðunin fannst ekki.",
+        "parameter": "inspectionSystemId",
+        "received": "CD1ED4BD-4A01-4F39-9E92-C579A51F45D9",
+        "expected": "SystemId GUID skoðunar sem er til og er ekki tómt",
+        "nextStep": "Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.",
+        "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Disposition.CreatePurchaseReturn\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "guid",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Nauðsynlega færibreytu 'inspectionSystemId' vantar eða hún er ógild.",
+        "parameter": "inspectionSystemId",
+        "received": "not-a-guid",
+        "expected": "SystemId GUID skoðunar sem er til og er ekki tómt",
+        "nextStep": "Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.",
+        "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Disposition.CreatePurchaseReturn\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "number",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Nauðsynlega færibreytu 'inspectionSystemId' vantar eða hún er ógild.",
+        "parameter": "inspectionSystemId",
+        "received": "12",
+        "expected": "textagildi",
+        "nextStep": "Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.",
+        "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Disposition.CreatePurchaseReturn\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "null",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Nauðsynlega færibreytu 'inspectionSystemId' vantar eða hún er ógild.",
+        "parameter": "inspectionSystemId",
+        "received": "null",
+        "expected": "textagildi",
+        "nextStep": "Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.",
+        "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Disposition.CreatePurchaseReturn\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "longReason",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Færibreytan 'reasonCode' er lengri en 10 stafir.",
+        "parameter": "reasonCode",
+        "received": "TOO-LONG-REASON",
+        "expected": "texti með að hámarki 10 stöfum",
+        "nextStep": "Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.",
+        "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Disposition.CreatePurchaseReturn\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "longCredit",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Færibreytan 'vendorCreditMemoNo' er lengri en 35 stafir.",
+        "parameter": "vendorCreditMemoNo",
+        "received": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "expected": "texti með að hámarki 35 stöfum",
+        "nextStep": "Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.",
+        "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Disposition.CreatePurchaseReturn\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "option",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "InvalidParameter",
+        "error": "Nauðsynlega færibreytu 'reasonCode' vantar eða hún er ógild.",
+        "parameter": "reasonCode",
+        "received": "true",
+        "expected": "textagildi",
+        "nextStep": "Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.",
+        "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Disposition.CreatePurchaseReturn\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "unknown",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "status": "Error",
+        "code": "UnknownParameter",
+        "error": "Viðfangið \"bogusKey\" er ekki skilgreint fyrir þessa skilaboðategund. Ekkert var keyrt.",
+        "parameter": "bogusKey",
+        "expected": "skilgreind beiðniviðföng",
+        "nextStep": "Fjarlægðu þennan lykil eða skoðaðu Help.Implementation.Get til að sjá skilgreind viðföng.",
+        "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Disposition.CreatePurchaseReturn\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+      },
+      "documentCount": 1
+    },
+    {
+      "name": "happy",
+      "lcid": 1039,
+      "passed": true,
+      "response": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Quality.Disposition.CreatePurchaseReturn",
+        "status": "Success",
+        "inspectionSystemId": "67152A24-C3DC-F111-B7A5-B105F9FEB423",
+        "returnOrderNo": "1012"
+      }
+    }
+  ],
+  "cleanup": {
+    "verified": true,
+    "verifiedAt": "2026-11-10T05:02:24.650Z",
+    "checkedTables": 10,
+    "fixtureSets": 2,
+    "remainingRows": 0,
+    "rows": [
+      {
+        "runCode": "BIFTQ13-D7Q31-1033",
+        "table": "Qlty. Inspection Header",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1033",
+        "table": "Purchase Header",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1033",
+        "table": "Purchase Line",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1033",
+        "table": "Purch. Rcpt. Header",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1033",
+        "table": "Purch. Rcpt. Line",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1033",
+        "table": "Item Ledger Entry",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1033",
+        "table": "Item",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1033",
+        "table": "Item Unit of Measure",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1033",
+        "table": "Vendor",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1033",
+        "table": "Return Reason",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1039",
+        "table": "Qlty. Inspection Header",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1039",
+        "table": "Purchase Header",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1039",
+        "table": "Purchase Line",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1039",
+        "table": "Purch. Rcpt. Header",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1039",
+        "table": "Purch. Rcpt. Line",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1039",
+        "table": "Item Ledger Entry",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1039",
+        "table": "Item",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1039",
+        "table": "Item Unit of Measure",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1039",
+        "table": "Vendor",
+        "count": 0
+      },
+      {
+        "runCode": "BIFTQ13-D7Q31-1039",
+        "table": "Return Reason",
+        "count": 0
+      }
+    ]
+  }
+}

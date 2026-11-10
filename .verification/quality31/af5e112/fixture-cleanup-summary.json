@@ -1,0 +1,109 @@
+{
+  "verified": true,
+  "verifiedAt": "2026-11-10T05:02:24.650Z",
+  "checkedTables": 10,
+  "fixtureSets": 2,
+  "remainingRows": 0,
+  "rows": [
+    {
+      "runCode": "BIFTQ13-D7Q31-1033",
+      "table": "Qlty. Inspection Header",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1033",
+      "table": "Purchase Header",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1033",
+      "table": "Purchase Line",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1033",
+      "table": "Purch. Rcpt. Header",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1033",
+      "table": "Purch. Rcpt. Line",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1033",
+      "table": "Item Ledger Entry",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1033",
+      "table": "Item",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1033",
+      "table": "Item Unit of Measure",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1033",
+      "table": "Vendor",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1033",
+      "table": "Return Reason",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1039",
+      "table": "Qlty. Inspection Header",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1039",
+      "table": "Purchase Header",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1039",
+      "table": "Purchase Line",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1039",
+      "table": "Purch. Rcpt. Header",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1039",
+      "table": "Purch. Rcpt. Line",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1039",
+      "table": "Item Ledger Entry",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1039",
+      "table": "Item",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1039",
+      "table": "Item Unit of Measure",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1039",
+      "table": "Vendor",
+      "count": 0
+    },
+    {
+      "runCode": "BIFTQ13-D7Q31-1039",
+      "table": "Return Reason",
+      "count": 0
+    }
+  ]
+}
