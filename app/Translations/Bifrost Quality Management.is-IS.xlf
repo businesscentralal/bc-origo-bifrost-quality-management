@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding='utf-8'?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Quality Management">
     <body>
       <group id="body">
@@ -65,8 +65,8 @@
         </trans-unit>
         <trans-unit id="Codeunit 1542610788 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
           <source>reinspection, re-inspection, inspect again, failed quality inspection, retest</source>
-          <target>endurskoðun, endurtaka skoðun, fallin gæðaskoðun, endurprófun</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=endurskoðun, endurtaka skoðun, fallin gæðaskoðun, endurprófun</note>
+          <target>endurskoðun, endurtaka skoðun, fallin gæðaskoðun, endurprófun, skoða aftur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=endurskoðun, endurtaka skoðun, fallin gæðaskoðun, endurprófun, skoða aftur</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 1542610788 - Method 3650283039 - NamedType 2344026547" size-unit="char" translate="yes" xml:space="preserve">

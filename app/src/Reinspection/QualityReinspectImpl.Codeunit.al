@@ -42,7 +42,7 @@ codeunit 10035242 "Quality Reinspect Impl ori" implements "Msg Interface ori", "
     /// <summary>Provides translated discovery terms.</summary>
     procedure GetKeywords(): Text
     var
-        KeywordsLbl: Label 'reinspection, re-inspection, inspect again, failed quality inspection, retest', Comment = 'is-IS=endurskoðun, endurtaka skoðun, fallin gæðaskoðun, endurprófun';
+        KeywordsLbl: Label 'reinspection, re-inspection, inspect again, failed quality inspection, retest', Comment = 'is-IS=endurskoðun, endurtaka skoðun, fallin gæðaskoðun, endurprófun, skoða aftur';
     begin
         exit(KeywordsLbl);
     end;
