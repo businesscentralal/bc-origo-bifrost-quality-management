@@ -1,7 +1,7 @@
 namespace Origo.Bifrost.QualityManagement;
 
 /// <summary>Permission marker for Quality Management actions; contains no business records.</summary>
-table 10035241 "Quality Action Access ori"
+table 10035320 "Quality Reinspect Access ori"
 {
     Caption = 'Quality action access', Comment = 'is-IS=Aðgangur að gæðaaðgerðum';
     DataClassification = SystemMetadata;

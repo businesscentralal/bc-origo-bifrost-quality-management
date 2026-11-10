@@ -4,7 +4,7 @@ using Microsoft.QualityManagement.Document;
 using Origo.Bifrost;
 
 /// <summary>Runs the native action in a transaction that rolls back on a business refusal.</summary>
-codeunit 10035243 "Quality Reinspect Proc ori"
+codeunit 10035322 "Quality Reinspect Proc ori"
 {
     Access = Internal;
     TableNo = "Message Argument ori";

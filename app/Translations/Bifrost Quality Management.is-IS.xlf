@@ -3,17 +3,17 @@
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Quality Management">
     <body>
       <group id="body">
-        <trans-unit id="Table 427225285 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 548483976 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quality action access</source>
           <target>Aðgangur að gæðaaðgerðum</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Aðgangur að gæðaaðgerðum</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Action Access ori - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Reinspect Access ori - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 427225285 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+        <trans-unit id="Table 548483976 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Primary key</source>
           <target>Aðallykill</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Action Access ori - Field Primary Key - Property Caption</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Reinspect Access ori - Field Primary Key - Property Caption</note>
         </trans-unit>
         <trans-unit id="Codeunit 1542610788 - NamedType 1477048533" size-unit="char" translate="yes" xml:space="preserve">
           <source>an existing inspection SystemId</source>

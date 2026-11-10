@@ -4,7 +4,7 @@ using Microsoft.QualityManagement.Document;
 using Origo.Bifrost;
 
 /// <summary>Creates a re-inspection through the standard inspection header action.</summary>
-codeunit 10035242 "Quality Reinspect Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
+codeunit 10035321 "Quality Reinspect Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
 
@@ -20,7 +20,7 @@ codeunit 10035242 "Quality Reinspect Impl ori" implements "Msg Interface ori", "
     /// <summary>Offers this action only to callers with the app action permission.</summary>
     procedure IsEnabled(): Boolean
     var
-        AccessMarker: Record "Quality Action Access ori";
+        AccessMarker: Record "Quality Reinspect Access ori";
     begin
         exit(AccessMarker.WritePermission());
     end;
