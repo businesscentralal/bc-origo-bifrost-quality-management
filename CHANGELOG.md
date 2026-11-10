@@ -2,6 +2,10 @@
 
 ## [28.0.0.0]
 
+### Fixed
+
+- #5 / PR #32: the base role (10035236) now grants Reopen handler execution (10035256) and read access to its capability marker (10035258), so Read callers can evaluate the disabled action on BC29. Marker writes remain exclusive to Full (10035237); tests 97220/97221 are unchanged.
+
 ### Added
 - #13: `Quality.Disposition.CreatePurchaseReturn` wraps the standard failed-quantity purchase return disposition, with strict inputs, transaction rollback, permission capability, bilingual contract/help and tests (10035244–10035247; tests 97210–97214). - Unreleased
 
