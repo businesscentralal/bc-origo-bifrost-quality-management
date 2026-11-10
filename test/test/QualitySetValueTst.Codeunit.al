@@ -197,7 +197,8 @@ codeunit 97202 "Quality Set Value Tst ori"
         // [WHEN] The request names the re-inspection SystemId.
         Response := Dispatch(MakeRequest(Reinspection, ReinspectionLine), 1033);
         // [THEN] Only the selected re-inspection changes.
-        Assert.AreEqual('Success', ReadText(Response, 'status'), 'Expected success.');
+        if ReadText(Response, 'status') <> 'Success' then
+            Assert.Fail(ReadText(Response, 'error'));
         InspectionLine.Get(Inspection."No.", 0, 10000);
         ReinspectionLine.Get(Inspection."No.", 1, 10000);
         Assert.AreEqual('1', InspectionLine."Test Value", 'Original inspection must remain unchanged.');
@@ -234,12 +235,14 @@ codeunit 97202 "Quality Set Value Tst ori"
         Request := MakeRequest(Inspection, InspectionLine);
         Commit();
         // [WHEN] The public dispatcher invokes the Microsoft test validation.
-        LowerPermissions.SetExactPermissionSet('BIFROST Full ori');
+        LowerPermissions.SetExactPermissionSet('D365 BASIC');
+        LowerPermissions.AddPermissionSet('BIFROST Full ori');
         LowerPermissions.AddPermissionSet('QM Message Test ori');
         Response := Dispatch(Request, LanguageId);
         LowerPermissions.SetOutsideO365Scope();
         // [THEN] The line value and both result codes are recalculated and persisted.
-        Assert.AreEqual('Success', ReadText(Response, 'status'), 'Expected success.');
+        if ReadText(Response, 'status') <> 'Success' then
+            Assert.Fail(ReadText(Response, 'error'));
         InspectionLine.Get(InspectionLine."Inspection No.", 0, 10000);
         Inspection.GetBySystemId(Inspection.SystemId);
         Assert.AreEqual('20', InspectionLine."Test Value", 'Native validation must persist the value.');
