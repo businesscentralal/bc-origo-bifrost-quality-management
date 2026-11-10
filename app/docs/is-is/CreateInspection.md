@@ -15,7 +15,7 @@ locale: is-is
 
 Aðgerðin kallar á Create Inspection API frá Microsoft og `Qlty. Inspection - Create`. Valfrjálst sniðmát er sent með stöðluðum atburði; staðfestingar, upprunavarpanir, númeraraðir og verkflæðisatburðir eru áfram keyrð. Ekkert upprunaskjal er bókað og engin ytri þjónusta er kölluð.
 
-Úthlutaðu `BIFROST QM Full ori` (innifalið í Foundation Full) og viðeigandi stöðluðum heimildum að upprunafærslum og gæðastjórnun. Foundation Read/API eitt og sér veitir ekki stofnunarheimild.
+Úthlutaðu `BIFROST QM Full ori` (innifalið í Foundation Full). Það inniheldur staðlaðar heimildir gæðaeftirlits Microsoft; kallandi þarf einnig viðeigandi heimildir að upprunafærslum. Foundation Read/API eitt og sér veitir ekki stofnunarheimild.
 
 Svarið inniheldur `status`, `inspectionSystemId`, `inspectionNo`, `reinspectionNo` og `templateCode`. Stofnun er **ekki endurtekningarörugg**: endurtekin köll fylgja uppsetningu Microsoft sem getur endurnýtt skoðun eða stofnað nýja. Venjuleg færsla bakfærir allar breytingar við höfnun, einnig eftir innsetningu. Staðlaða leiðin inniheldur ekkert beint Commit; beinar staðfestingar frá áskrifendum eru bannaðar. Með Omit Commit ber kallandi ábyrgð á bakfærslu.
 

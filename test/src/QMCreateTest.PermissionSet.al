@@ -4,7 +4,7 @@ using Microsoft.Inventory.Item;
 using Microsoft.Utilities;
 
 /// <summary>Platform and source reads for permission tests; grants no product write capability.</summary>
-permissionset 97214 "QM Create Test ori"
+permissionset 97244 "QM Create Test ori"
 {
     Assignable = true;
     Caption = 'Create test platform', Locked = true;

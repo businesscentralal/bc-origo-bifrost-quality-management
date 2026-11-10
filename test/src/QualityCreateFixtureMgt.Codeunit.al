@@ -5,7 +5,7 @@ using Microsoft.QualityManagement.Document;
 using Origo.Bifrost;
 
 /// <summary>Creates and cleans owned synthetic inspection data; never changes business values under test.</summary>
-codeunit 97212 "Quality Create Fixture Mgt ori" implements "Msg Interface ori"
+codeunit 97242 "Quality Create Fixture Mgt ori" implements "Msg Interface ori"
 {
     /// <summary>Exposes fixtures only on CRONUS demonstration companies.</summary>
     procedure IsEnabled(): Boolean

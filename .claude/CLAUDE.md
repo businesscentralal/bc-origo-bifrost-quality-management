@@ -25,14 +25,25 @@ Tests: 97200-97299
 | Table | 10035243 | Quality Write Access ori (shared empty permission capability) |
 | Codeunit | 10035250 | Quality Create Impl ori |
 | Codeunit | 10035251 | Quality Create Context ori |
-| Test codeunit | 97210 | Quality Create Tst ori |
+| Test codeunit | 97240 | Quality Create Tst ori |
 | Test enum extension | 97211 | Quality Create Fixtures ori |
-| Test codeunit | 97212 | Quality Create Fixture Mgt ori |
+| Test codeunit | 97242 | Quality Create Fixture Mgt ori |
 | Test codeunit | 97213 | Quality Create Fault ori |
-| Test permission set | 97214 | QM Create Test ori |
+| Test permission set | 97244 | QM Create Test ori |
 | Test table | 97215 | Quality Create Fixture ori |
 | Test codeunit | 97200 | Quality Scaffold Tst ori |
 | Test permission set | 97201 | QM Setup Test ori |
+
+| Enum extension | 10035244 | Quality Return Types ori |
+| Codeunit | 10035245 | Quality Purch Return Impl ori |
+| Table | 10035246 | Quality Return Access ori (permission capability) |
+| Codeunit | 10035247 | Quality Return Receipt ori |
+| Test codeunit | 97210 | Quality Return Tst ori |
+| Test codeunit | 97211 | Quality Return Fault ori |
+| Test codeunit | 97212 | Quality Return Fixture ori |
+| Test enum extension | 97213 | Quality Return Fixtures ori |
+| Test permission set | 97214 | QM Return Test ori |
+| Test codeunit | 97215 | Quality Return Errors Tst ori |
 
 ## Microsoft source
 Wrapped Microsoft app: Quality Management (`bc7b3891-f61b-4883-bbb3-384cdef88bec`, 28.5.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management

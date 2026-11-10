@@ -14,7 +14,7 @@ using System.TestLibraries.Security.AccessControl;
 using System.TestLibraries.Utilities;
 
 /// <summary>Verifies issue 3 through the public dispatcher using isolated, self-created source and setup data.</summary>
-codeunit 97210 "Quality Create Tst ori"
+codeunit 97240 "Quality Create Tst ori"
 {
     Subtype = Test;
     TestPermissions = Restrictive;

@@ -15,7 +15,7 @@ locale: en-us
 
 The operation calls Microsoft’s Create Inspection API and `Qlty. Inspection - Create`. The optional template is supplied through its native event; template validation, source mapping, numbering and workflow events still run. It does not post a source document or call an external provider.
 
-Assign `BIFROST QM Full ori` (included by Foundation Full) and appropriate native source/Quality Management permissions. Foundation Read/API roles alone do not grant creation.
+Assign `BIFROST QM Full ori` (included by Foundation Full). It includes Microsoft Quality Inspector permissions; callers also need appropriate native source-record permissions. Foundation Read/API roles alone do not grant creation.
 
 The response contains `status`, `inspectionSystemId`, `inspectionNo`, `reinspectionNo` and `templateCode`. Creation is **not idempotent**: repeated calls follow Microsoft setup, which can reuse an inspection or create a new one. The normal transaction rolls back all writes on a refusal, including a failure after native insertion. There is no explicit Commit on the standard creation path; explicit subscriber commits are prohibited. With Omit Commit the caller owns rollback.
 
