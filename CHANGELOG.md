@@ -1,6 +1,9 @@
 # Changelog
 
-## [28.0.0.0] - Unreleased
+## [28.0.0.0]
+
+### Added
+- #13: `Quality.Disposition.CreatePurchaseReturn` wraps the standard failed-quantity purchase return disposition, with strict inputs, transaction rollback, permission capability, bilingual contract/help and tests (10035244–10035247; tests 97210–97214). - Unreleased
 
 - Repository scaffolded from Bifrost Subscription Billing setup.
 
