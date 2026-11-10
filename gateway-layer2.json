@@ -1,0 +1,29 @@
+{
+  "sha": "7ebdcc23544f449a9a444e3896906171574bc10a",
+  "scope": "mechanical main merge conflict repair",
+  "summary": "Preserves both implementations, tests and effective Full grants. XML unique unit union40. No workflow changes or new suppressions. Original source and private checkpoints preserved.",
+  "layer1": {
+    "passed": 21,
+    "failed": 2,
+    "triage": [
+      {
+        "check": "caption_translation",
+        "finding": "Locked message type enum caption",
+        "disposition": "False positive; external API identifier intentionally locked."
+      },
+      {
+        "check": "one_statement_per_line",
+        "finding": "ReadText procedure parameter separators",
+        "disposition": "False positive; separators in one AL signature."
+      }
+    ]
+  },
+  "verification": {
+    "native": 45,
+    "mcp": 34,
+    "uiAssertions": 10
+  },
+  "limitations": [
+    "Independent verification, clearance, approval, merge/deployment/UAT remain pending."
+  ]
+}

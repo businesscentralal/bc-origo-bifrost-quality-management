@@ -1,0 +1,741 @@
+- form "Posted Return Shipment":
+  - main:
+    - button "Fara á fyrra skjal sömu gerðar"
+    - button "Bakka"
+    - 'heading "Posted Return Shipment | Vinnudagsetning: 1/27/2028" [level=1]'
+    - button "Gera breytingar á síðunni"
+    - button "Deila þessari síðu með öðrum notendum eða forritum"
+    - button "Stofna nýja færslu." [disabled]
+    - button "Eyða upplýsingunum"
+    - button "Þessari síðu verður lokað í þessum glugga og hún opnast í sprettiglugga.": 
+    - heading "105001 ∙ CoolWood Technologies" [level=2]
+    - menubar:
+      - menuitem "Heim" [expanded]
+      - menuitem "Shipment"
+      - menuitem "Certificate of Supply"
+      - menuitem "Fleiri valkostir"
+      - menuitemcheckbox "Sýna/fela upplýsingakassa" [checked]: 
+    - menubar:
+      - menuitem "Print..."
+      - menuitem "Find entries..."
+      - menuitem "Update Document"
+    - button "Festa" [pressed]: 
+    - button "General" [expanded]:
+      - heading "General" [level=3]
+    - button "General, Sýna meira": Sýna meira
+    - button "No."
+    - textbox "No."
+    - button "Buy-from Vendor No."
+    - button "Buy-from Vendor No. 30000": "30000"
+    - button "Buy-from Contact No."
+    - button "Buy-from Contact No. CT000133": CT000133
+    - heading "Buy-from" [level=4]
+    - button "Name"
+    - textbox "Name"
+    - button "Address"
+    - textbox "Address"
+    - button "Address 2"
+    - textbox "Address 2"
+    - button "City"
+    - button "City Portsmouth": Portsmouth
+    - button "Post Code"
+    - button "Post Code PO7 2HI": PO7 2HI
+    - button "Country/Region"
+    - button "Country/Region GB": GB
+    - button "Contact"
+    - textbox "Contact"
+    - button "Posting Date"
+    - textbox "Posting Date"
+    - button "Document Date"
+    - textbox "Document Date"
+    - button "Return Order No."
+    - textbox "Return Order No."
+    - button "Vendor Authorization No."
+    - textbox "Vendor Authorization No."
+    - button "Order Address Code"
+    - button "Order Address Code (Autt)"
+    - button "Purchaser Code"
+    - button "Purchaser Code RB": RB
+    - button "Responsibility Center"
+    - button "Responsibility Center (Autt)"
+    - button "No. Printed"
+    - textbox "No. Printed"
+    - menubar:
+      - heading "Lines" [level=3]:
+        - button "Lines"
+      - menuitem "Stjórna" [expanded]
+      - menuitem "Functions"
+      - menuitem "Line"
+      - menuitem "Deila": 
+      - menuitemcheckbox "Sýna/fela fókusstillingu": 
+    - menubar:
+      - menuitem "Ný lína" [disabled]
+      - menuitem "Eyða línu" [disabled]
+    - button "Festa" [pressed]: 
+    - grid "Lines":
+      - rowgroup:
+        - row "Villa Type Opna valmynd fyrir Type Fleiri valkostir No. Opna valmynd fyrir No. Item Reference No. Opna valmynd fyrir Item Reference No. Description Opna valmynd fyrir Description Return Reason Code Opna valmynd fyrir Return Reason Code Location Code Opna valmynd fyrir Location Code Quantity Opna valmynd fyrir Quantity Unit of Measure Code Opna valmynd fyrir Unit of Measure Code Direct Unit Cost Opna valmynd fyrir Direct Unit Cost Quantity Invoiced Opna valmynd fyrir Quantity Invoiced" [selected]:
+          - columnheader "Villa"
+          - columnheader "Type Opna valmynd fyrir Type":
+            - button "Type"
+            - button "Opna valmynd fyrir Type"
+          - columnheader "Fleiri valkostir"
+          - columnheader "No. Opna valmynd fyrir No.":
+            - button "No."
+            - button "Opna valmynd fyrir No."
+          - columnheader "Item Reference No. Opna valmynd fyrir Item Reference No.":
+            - button "Item Reference No."
+            - button "Opna valmynd fyrir Item Reference No."
+          - columnheader "Description Opna valmynd fyrir Description":
+            - button "Description"
+            - button "Opna valmynd fyrir Description"
+          - columnheader "Return Reason Code Opna valmynd fyrir Return Reason Code":
+            - button "Return Reason Code"
+            - button "Opna valmynd fyrir Return Reason Code"
+          - columnheader "Location Code Opna valmynd fyrir Location Code":
+            - button "Location Code"
+            - button "Opna valmynd fyrir Location Code"
+          - columnheader "Quantity Opna valmynd fyrir Quantity":
+            - button "Quantity"
+            - button "Opna valmynd fyrir Quantity"
+          - columnheader "Unit of Measure Code Opna valmynd fyrir Unit of Measure Code":
+            - button "Unit of Measure Code"
+            - button "Opna valmynd fyrir Unit of Measure Code"
+          - columnheader "Direct Unit Cost Opna valmynd fyrir Direct Unit Cost":
+            - button "Direct Unit Cost"
+            - button "Opna valmynd fyrir Direct Unit Cost"
+          - columnheader "Quantity Invoiced Opna valmynd fyrir Quantity Invoiced":
+            - button "Quantity Invoiced"
+            - button "Opna valmynd fyrir Quantity Invoiced"
+      - row "Type No. 1968-W Item Reference No. Description Return Reason Code (Autt) Location Code (Autt) Quantity Unit of Measure Code PCS Direct Unit Cost Quantity Invoiced" [selected]:
+        - rowheader
+        - gridcell "Type":
+          - textbox "Type"
+        - gridcell:
+          - button "Sýna fleiri valkosti"
+        - gridcell "No. 1968-W":
+          - button "No. 1968-W": 1968-W
+        - gridcell "Item Reference No.":
+          - textbox "Item Reference No."
+        - gridcell "Description":
+          - textbox "Description"
+        - gridcell "Return Reason Code (Autt)":
+          - button "Return Reason Code (Autt)"
+        - gridcell "Location Code (Autt)":
+          - button "Location Code (Autt)"
+        - gridcell "Quantity":
+          - textbox "Quantity"
+        - gridcell "Unit of Measure Code PCS":
+          - button "Unit of Measure Code PCS": PCS
+        - gridcell "Direct Unit Cost":
+          - textbox "Direct Unit Cost"
+        - gridcell "Quantity Invoiced":
+          - textbox "Quantity Invoiced"
+    - button "Invoicing":
+      - heading "Invoicing" [level=3]
+    - text: "30000"
+    - button "Shipping":
+      - heading "Shipping" [level=3]
+    - button "Foreign Trade":
+      - heading "Foreign Trade" [level=3]
+    - button "Breyttu stærð upplýsingareitsins."
+    - heading "Athugasemdir" [level=3]
+    - button "Athugasemdir Ný lína"
+    - grid:
+      - row
+      - text: (Það eru engin atriði til að sýna í þessu yfirliti)
+    - button "Fara á næsta skjal sömu gerðar"
+- form "Purchase Return Orders":
+  - main:
+    - button "Bakka"
+    - heading "Purchase Return Orders" [level=1]:
+      - button "Purchase Return Orders"
+    - button "Ekki bókamerkt": 
+    - button "Þessari síðu verður lokað í þessum glugga og hún opnast í sprettiglugga.": 
+    - menubar:
+      - menuitem "Leita Purchase Return Orders":
+        - searchbox "Leita Purchase Return Orders"
+      - menuitem "Fara í greiningarstillingu"
+      - menuitem "Nýtt"
+      - menuitem "Stjórna"
+      - menuitem "Heim" [expanded]
+      - menuitem "Release":
+        - button "Release"
+        - button "Sjá tengdar aðgerðir fyrir Release"
+      - menuitem "Post...":
+        - button "Post..."
+        - button "Sjá tengdar aðgerðir fyrir Post..."
+      - menuitem "Print/Send"
+      - menuitem "Return Order"
+      - menuitem "Fleiri valkostir"
+      - menuitem "Deila": 
+      - menuitemcheckbox "Sýna/fela afmörkun": 
+      - menuitem "Listi útlit valið"
+      - menuitemcheckbox "Sýna/fela upplýsingakassa" [checked]: 
+    - menubar:
+      - menuitem "Send IC Return Order"
+      - menuitem "Get Posted Document Lines to Reverse..."
+      - menuitem "Create Warehouse Shipment"
+    - button "Festa" [pressed]: 
+    - grid "Purchase Return Order List":
+      - rowgroup:
+        - row "No., raðað í pöntunina Hækkandi Hækkandi Opna valmynd fyrir No. Fleiri valkostir Buy-from Vendor No. Opna valmynd fyrir Buy-from Vendor No. Buy-from Vendor Name Opna valmynd fyrir Buy-from Vendor Name Vendor Authorization No. Opna valmynd fyrir Vendor Authorization No. Location Code Opna valmynd fyrir Location Code Assigned User ID Opna valmynd fyrir Assigned User ID Status Opna valmynd fyrir Status":
+          - columnheader "No., raðað í pöntunina Hækkandi Hækkandi Opna valmynd fyrir No.":
+            - button "No., raðað í pöntunina Hækkandi": No.
+            - img "Hækkandi"
+            - button "Opna valmynd fyrir No."
+          - columnheader "Fleiri valkostir"
+          - columnheader "Buy-from Vendor No. Opna valmynd fyrir Buy-from Vendor No.":
+            - button "Buy-from Vendor No."
+            - button "Opna valmynd fyrir Buy-from Vendor No."
+          - columnheader "Buy-from Vendor Name Opna valmynd fyrir Buy-from Vendor Name":
+            - button "Buy-from Vendor Name"
+            - button "Opna valmynd fyrir Buy-from Vendor Name"
+          - columnheader "Vendor Authorization No. Opna valmynd fyrir Vendor Authorization No.":
+            - button "Vendor Authorization No."
+            - button "Opna valmynd fyrir Vendor Authorization No."
+          - columnheader "Location Code Opna valmynd fyrir Location Code":
+            - button "Location Code"
+            - button "Opna valmynd fyrir Location Code"
+          - columnheader "Assigned User ID Opna valmynd fyrir Assigned User ID":
+            - button "Assigned User ID"
+            - button "Opna valmynd fyrir Assigned User ID"
+          - columnheader "Status Opna valmynd fyrir Status":
+            - button "Status"
+            - button "Opna valmynd fyrir Status"
+      - row "No., raðað í pöntunina Hækkandi 1001 Sýna fleiri valkosti Buy-from Vendor No. BIFTQ13-R6-1033 Buy-from Vendor Name BIFTQ13-R6-1033 Vendor Authorization No. (Autt) Location Code (Autt) Assigned User ID (Autt) Status Open":
+        - gridcell "No., raðað í pöntunina Hækkandi 1001":
+          - button "No., raðað í pöntunina Hækkandi 1001": "1001"
+        - gridcell "Sýna fleiri valkosti":
+          - button "Sýna fleiri valkosti"
+        - gridcell "Buy-from Vendor No. BIFTQ13-R6-1033":
+          - button "Buy-from Vendor No. BIFTQ13-R6-1033": BIFTQ13-R6-1033
+        - gridcell "Buy-from Vendor Name BIFTQ13-R6-1033":
+          - button "Buy-from Vendor Name BIFTQ13-R6-1033": BIFTQ13-R6-1033
+        - gridcell "Vendor Authorization No. (Autt)":
+          - textbox "Vendor Authorization No. (Autt)"
+        - gridcell "Location Code (Autt)":
+          - button "Location Code (Autt)"
+        - gridcell "Assigned User ID (Autt)":
+          - button "Assigned User ID (Autt)"
+        - gridcell "Status Open":
+          - textbox "Status Open"
+      - row "No., raðað í pöntunina Hækkandi 1002 Buy-from Vendor No. BIFTQ13-R6-1039 Buy-from Vendor Name BIFTQ13-R6-1039 Vendor Authorization No. Location Code (Autt) Assigned User ID (Autt) Status" [selected]:
+        - gridcell "No., raðað í pöntunina Hækkandi 1002":
+          - button "No., raðað í pöntunina Hækkandi 1002": "1002"
+        - gridcell:
+          - button "Sýna fleiri valkosti"
+        - gridcell "Buy-from Vendor No. BIFTQ13-R6-1039":
+          - button "Buy-from Vendor No. BIFTQ13-R6-1039": BIFTQ13-R6-1039
+        - gridcell "Buy-from Vendor Name BIFTQ13-R6-1039":
+          - button "Buy-from Vendor Name BIFTQ13-R6-1039": BIFTQ13-R6-1039
+        - gridcell "Vendor Authorization No.":
+          - textbox "Vendor Authorization No."
+        - gridcell "Location Code (Autt)":
+          - button "Location Code (Autt)"
+        - gridcell "Assigned User ID (Autt)":
+          - button "Assigned User ID (Autt)"
+        - gridcell "Status":
+          - textbox "Status"
+    - button "Breyttu stærð upplýsingareitsins."
+    - tablist:
+      - tab "Upplýsingar" [selected]
+      - tab "Viðhengi (0)"
+    - tabpanel "Upplýsingar":
+      - heading "Vendor Details" [level=2]:
+        - button "Vendor Details"
+      - button "Vendor No."
+      - button "Vendor No. BIFTQ13-R6-1039": BIFTQ13-R6-1039
+      - button "Name"
+      - textbox "Name"
+      - button "Phone No."
+      - textbox "Phone No."
+      - button "Email"
+      - textbox "Email"
+      - button "Fax No."
+      - textbox "Fax No."
+      - button "Contact"
+      - textbox "Contact"
+- form "Purchase Return Order":
+  - main:
+    - button "Fara á fyrra skjal sömu gerðar"
+    - button "Bakka"
+    - 'heading "Purchase Return Order | Vinnudagsetning: 1/27/2028" [level=1]'
+    - button "Opna síðuna skrifvarða" [pressed]
+    - button "Deila þessari síðu með öðrum notendum eða forritum"
+    - button "Stofna nýja færslu."
+    - button "Eyða upplýsingunum"
+    - text: Vistað
+    - button "Þessari síðu verður lokað í þessum glugga og hún opnast í sprettiglugga.": 
+    - heading "1002 ∙ BIFTQ13-R6-1039" [level=2]
+    - button "Hafna"
+    - text: Start validating data in documents and journals while you work. Messages are shown in the Document Check FactBox.
+    - button "Enable this for me"
+    - text: "|"
+    - button "Don't show again"
+    - button "Opna tilkynningaboð"
+    - menubar:
+      - menuitem "Heim" [expanded]
+      - menuitem "Prepare"
+      - menuitem "Print/Send"
+      - menuitem "Request Approval"
+      - menuitem "Return Order"
+      - menuitem "Fleiri valkostir"
+      - menuitemcheckbox "Sýna/fela upplýsingakassa" [checked]: 
+    - menubar:
+      - menuitem "Post...":
+        - button "Post..."
+        - button "Sjá tengdar aðgerðir fyrir Post..."
+      - menuitem "Release":
+        - button "Release"
+        - button "Sjá tengdar aðgerðir fyrir Release"
+      - menuitem "Create Warehouse Shipment"
+      - menuitem "Apply Entries"
+      - menuitem "Archive Document"
+    - button "Festa" [pressed]: 
+    - button "General" [expanded]:
+      - heading "General" [level=3]
+    - button "General, Sýna meira": Sýna meira
+    - button "Vendor Name"
+    - button "Velja gildi fyrir Vendor Name"
+    - combobox "Vendor Name": BIFTQ13-R6-1039
+    - button "Contact"
+    - button "Velja gildi fyrir Contact"
+    - combobox "Contact"
+    - button "Document Date"
+    - button "Opna dagsetningarval fyrir Document Date"
+    - combobox "Document Date": 11/10/2026
+    - button "Vendor Cr. Memo No."
+    - textbox "Vendor Cr. Memo No.": BIFTQ13-R6-1039
+    - button "Purchaser Code"
+    - button "Velja gildi fyrir Purchaser Code"
+    - combobox "Purchaser Code"
+    - button "Campaign No."
+    - button "Velja gildi fyrir Campaign No."
+    - combobox "Campaign No."
+    - button "Status"
+    - textbox "Status"
+    - menubar:
+      - heading "Lines" [level=3]:
+        - button "Lines"
+      - menuitem "Stjórna" [expanded]
+      - menuitem "Functions"
+      - menuitem "Line"
+      - menuitem "Deila": 
+      - menuitemcheckbox "Sýna/fela fókusstillingu": 
+    - menubar:
+      - menuitem "Ný lína"
+      - menuitem "Eyða línu"
+    - button "Festa" [pressed]: 
+    - grid "Lines":
+      - rowgroup:
+        - row:
+          - columnheader "Villa"
+          - columnheader "Type Opna valmynd fyrir Type":
+            - text: Type
+            - button "Opna valmynd fyrir Type"
+          - columnheader "Fleiri valkostir"
+          - columnheader "No. Opna valmynd fyrir No.":
+            - button "No."
+            - button "Opna valmynd fyrir No."
+          - columnheader "Item Reference No. Opna valmynd fyrir Item Reference No.":
+            - button "Item Reference No."
+            - button "Opna valmynd fyrir Item Reference No."
+          - columnheader "Description Opna valmynd fyrir Description":
+            - button "Description"
+            - button "Opna valmynd fyrir Description"
+          - columnheader "Return Reason Code Opna valmynd fyrir Return Reason Code":
+            - button "Return Reason Code"
+            - button "Opna valmynd fyrir Return Reason Code"
+          - columnheader "Location Code Opna valmynd fyrir Location Code":
+            - button "Location Code"
+            - button "Opna valmynd fyrir Location Code"
+          - columnheader "Quantity Opna valmynd fyrir Quantity":
+            - button "Quantity"
+            - button "Opna valmynd fyrir Quantity"
+          - columnheader "Direct Unit Cost Excl. VAT Opna valmynd fyrir Direct Unit Cost Excl. VAT":
+            - button "Direct Unit Cost Excl. VAT"
+            - button "Opna valmynd fyrir Direct Unit Cost Excl. VAT"
+          - columnheader "Line Discount % Opna valmynd fyrir Line Discount %":
+            - button "Line Discount %"
+            - button "Opna valmynd fyrir Line Discount %"
+          - columnheader "Line Amount Excl. VAT Opna valmynd fyrir Line Amount Excl. VAT":
+            - button "Line Amount Excl. VAT"
+            - button "Opna valmynd fyrir Line Amount Excl. VAT"
+          - columnheader "Return Qty. to Ship Opna valmynd fyrir Return Qty. to Ship":
+            - button "Return Qty. to Ship"
+            - button "Opna valmynd fyrir Return Qty. to Ship"
+          - columnheader "Return Qty. Shipped Opna valmynd fyrir Return Qty. Shipped":
+            - button "Return Qty. Shipped"
+            - button "Opna valmynd fyrir Return Qty. Shipped"
+          - columnheader "Qty. to Invoice Opna valmynd fyrir Qty. to Invoice":
+            - button "Qty. to Invoice"
+            - button "Opna valmynd fyrir Qty. to Invoice"
+          - columnheader "Quantity Invoiced Opna valmynd fyrir Quantity Invoiced":
+            - button "Quantity Invoiced"
+            - button "Opna valmynd fyrir Quantity Invoiced"
+          - columnheader "Qty. to Assign Opna valmynd fyrir Qty. to Assign":
+            - button "Qty. to Assign"
+            - button "Opna valmynd fyrir Qty. to Assign"
+          - columnheader "Gildir fyrir þjónustuyfirlýsingu Opna valmynd fyrir Gildir fyrir þjónustuyfirlýsingu":
+            - button "Gildir fyrir þjónustuyfirlýsingu"
+            - button "Opna valmynd fyrir Gildir fyrir þjónustuyfirlýsingu"
+          - columnheader "Qty. Assigned Opna valmynd fyrir Qty. Assigned":
+            - button "Qty. Assigned"
+            - button "Opna valmynd fyrir Qty. Assigned"
+          - columnheader "Department Code Opna valmynd fyrir Department Code":
+            - button "Department Code"
+            - button "Opna valmynd fyrir Department Code"
+          - columnheader "Project Code Opna valmynd fyrir Project Code":
+            - button "Project Code"
+            - button "Opna valmynd fyrir Project Code"
+          - columnheader "Customergroup Code Opna valmynd fyrir":
+            - text: Customergroup Code
+            - button "Opna valmynd fyrir"
+          - columnheader "Area Code Opna valmynd fyrir":
+            - text: Area Code
+            - button "Opna valmynd fyrir"
+          - columnheader "Businessgroup Code Opna valmynd fyrir":
+            - text: Businessgroup Code
+            - button "Opna valmynd fyrir"
+          - columnheader "Salescampaign Code Opna valmynd fyrir":
+            - text: Salescampaign Code
+            - button "Opna valmynd fyrir"
+      - row "Type No. Item Reference No. Description Return Reason Code Location Code (Autt) Quantity Direct Unit Cost Excl. VAT Line Discount % Line Amount Excl. VAT Return Qty. to Ship Return Qty. Shipped Qty. to Invoice Quantity Invoiced (Autt) Qty. to Assign 0 Gildir fyrir þjónustuyfirlýsingu Qty. Assigned (Autt) Department Code Project Code Customergroup Code Area Code Businessgroup Code Salescampaign Code" [selected]:
+        - rowheader
+        - gridcell "Type":
+          - combobox "Type": Comment
+        - gridcell:
+          - button "Sýna fleiri valkosti"
+        - gridcell "No.":
+          - combobox "No."
+        - gridcell "Item Reference No.":
+          - combobox "Item Reference No."
+        - gridcell "Description":
+          - combobox "Description": "Receipt No. BIFTQ13-R6-1039:"
+        - gridcell "Return Reason Code":
+          - combobox "Return Reason Code"
+        - gridcell "Location Code (Autt)":
+          - button "Location Code (Autt)"
+        - gridcell "Quantity":
+          - textbox "Quantity"
+        - gridcell "Direct Unit Cost Excl. VAT":
+          - textbox "Direct Unit Cost Excl. VAT"
+        - gridcell "Line Discount %":
+          - textbox "Line Discount %"
+        - gridcell "Line Amount Excl. VAT":
+          - textbox "Line Amount Excl. VAT"
+        - gridcell "Return Qty. to Ship":
+          - textbox "Return Qty. to Ship"
+        - gridcell "Return Qty. Shipped":
+          - textbox "Return Qty. Shipped"
+        - gridcell "Qty. to Invoice":
+          - textbox "Qty. to Invoice"
+        - gridcell "Quantity Invoiced (Autt)":
+          - button "Quantity Invoiced (Autt)"
+        - gridcell "Qty. to Assign 0":
+          - button "Qty. to Assign 0": "0"
+        - gridcell "Gildir fyrir þjónustuyfirlýsingu":
+          - checkbox "Gildir fyrir þjónustuyfirlýsingu"
+        - gridcell "Qty. Assigned (Autt)":
+          - button "Qty. Assigned (Autt)"
+        - gridcell "Department Code":
+          - combobox "Department Code"
+        - gridcell "Project Code":
+          - combobox "Project Code"
+        - gridcell "Customergroup Code":
+          - combobox "Customergroup Code"
+        - gridcell "Area Code":
+          - combobox "Area Code"
+        - gridcell "Businessgroup Code":
+          - combobox "Businessgroup Code"
+        - gridcell "Salescampaign Code":
+          - combobox "Salescampaign Code"
+      - row "Type Item Sýna fleiri valkosti No. BIFTQ13-R6-1039 Item Reference No. (Autt) Description BIFTQ13-R6-1039 Return Reason Code (Autt) Location Code (Autt) Quantity 3 Direct Unit Cost Excl. VAT (Autt) Line Discount % (Autt) Line Amount Excl. VAT (Autt) Return Qty. to Ship 3 Return Qty. Shipped Qty. to Invoice 3 Quantity Invoiced Qty. to Assign 0 Gildir fyrir þjónustuyfirlýsingu (Autt) Qty. Assigned Department Code (Autt) Project Code (Autt) Customergroup Code (Autt) Area Code (Autt) Businessgroup Code (Autt) Salescampaign Code (Autt)":
+        - rowheader
+        - gridcell "Type Item":
+          - textbox "Type Item"
+        - gridcell "Sýna fleiri valkosti":
+          - button "Sýna fleiri valkosti"
+        - gridcell "No. BIFTQ13-R6-1039":
+          - textbox "No. BIFTQ13-R6-1039"
+        - gridcell "Item Reference No. (Autt)":
+          - textbox "Item Reference No. (Autt)"
+        - gridcell "Description BIFTQ13-R6-1039":
+          - textbox "Description BIFTQ13-R6-1039"
+        - gridcell "Return Reason Code (Autt)":
+          - textbox "Return Reason Code (Autt)"
+        - gridcell "Location Code (Autt)":
+          - button "Location Code (Autt)"
+        - gridcell "Quantity 3":
+          - textbox "Quantity 3"
+        - gridcell "Direct Unit Cost Excl. VAT (Autt)":
+          - textbox "Direct Unit Cost Excl. VAT (Autt)"
+        - gridcell "Line Discount % (Autt)":
+          - textbox "Line Discount % (Autt)"
+        - gridcell "Line Amount Excl. VAT (Autt)":
+          - textbox "Line Amount Excl. VAT (Autt)"
+        - gridcell "Return Qty. to Ship 3":
+          - textbox "Return Qty. to Ship 3"
+        - gridcell "Return Qty. Shipped":
+          - button "Return Qty. Shipped"
+        - gridcell "Qty. to Invoice 3":
+          - textbox "Qty. to Invoice 3"
+        - gridcell "Quantity Invoiced":
+          - button "Quantity Invoiced"
+        - gridcell "Qty. to Assign 0":
+          - button "Qty. to Assign 0": "0"
+        - gridcell "Gildir fyrir þjónustuyfirlýsingu (Autt)":
+          - checkbox "Gildir fyrir þjónustuyfirlýsingu (Autt)"
+        - gridcell "Qty. Assigned":
+          - button "Qty. Assigned"
+        - gridcell "Department Code (Autt)":
+          - textbox "Department Code (Autt)"
+        - gridcell "Project Code (Autt)":
+          - textbox "Project Code (Autt)"
+        - gridcell "Customergroup Code (Autt)":
+          - textbox "Customergroup Code (Autt)"
+        - gridcell "Area Code (Autt)":
+          - textbox "Area Code (Autt)"
+        - gridcell "Businessgroup Code (Autt)":
+          - textbox "Businessgroup Code (Autt)"
+        - gridcell "Salescampaign Code (Autt)":
+          - textbox "Salescampaign Code (Autt)"
+      - row "Type (Autt) No. (Autt) Item Reference No. (Autt) Description (Autt) Return Reason Code (Autt) Location Code (Autt) Quantity (Autt) Direct Unit Cost Excl. VAT (Autt) Line Discount % (Autt) Line Amount Excl. VAT (Autt) Return Qty. to Ship (Autt) Return Qty. Shipped Qty. to Invoice (Autt) Quantity Invoiced Qty. to Assign Gildir fyrir þjónustuyfirlýsingu (Autt) Qty. Assigned Department Code (Autt) Project Code (Autt) Customergroup Code (Autt) Area Code (Autt) Businessgroup Code (Autt) Salescampaign Code (Autt)":
+        - rowheader
+        - gridcell "Type (Autt)":
+          - textbox "Type (Autt)"
+        - gridcell
+        - gridcell "No. (Autt)":
+          - textbox "No. (Autt)"
+        - gridcell "Item Reference No. (Autt)":
+          - textbox "Item Reference No. (Autt)"
+        - gridcell "Description (Autt)":
+          - textbox "Description (Autt)"
+        - gridcell "Return Reason Code (Autt)":
+          - textbox "Return Reason Code (Autt)"
+        - gridcell "Location Code (Autt)":
+          - button "Location Code (Autt)"
+        - gridcell "Quantity (Autt)":
+          - textbox "Quantity (Autt)"
+        - gridcell "Direct Unit Cost Excl. VAT (Autt)":
+          - textbox "Direct Unit Cost Excl. VAT (Autt)"
+        - gridcell "Line Discount % (Autt)":
+          - textbox "Line Discount % (Autt)"
+        - gridcell "Line Amount Excl. VAT (Autt)":
+          - textbox "Line Amount Excl. VAT (Autt)"
+        - gridcell "Return Qty. to Ship (Autt)":
+          - textbox "Return Qty. to Ship (Autt)"
+        - gridcell "Return Qty. Shipped":
+          - button "Return Qty. Shipped"
+        - gridcell "Qty. to Invoice (Autt)":
+          - textbox "Qty. to Invoice (Autt)"
+        - gridcell "Quantity Invoiced":
+          - button "Quantity Invoiced"
+        - gridcell "Qty. to Assign":
+          - button "Qty. to Assign"
+        - gridcell "Gildir fyrir þjónustuyfirlýsingu (Autt)":
+          - checkbox "Gildir fyrir þjónustuyfirlýsingu (Autt)"
+        - gridcell "Qty. Assigned":
+          - button "Qty. Assigned"
+        - gridcell "Department Code (Autt)":
+          - textbox "Department Code (Autt)"
+        - gridcell "Project Code (Autt)":
+          - textbox "Project Code (Autt)"
+        - gridcell "Customergroup Code (Autt)":
+          - textbox "Customergroup Code (Autt)"
+        - gridcell "Area Code (Autt)":
+          - textbox "Area Code (Autt)"
+        - gridcell "Businessgroup Code (Autt)":
+          - textbox "Businessgroup Code (Autt)"
+        - gridcell "Salescampaign Code (Autt)":
+          - textbox "Salescampaign Code (Autt)"
+      - row "Type (Autt) No. (Autt) Item Reference No. (Autt) Description (Autt) Return Reason Code (Autt) Location Code (Autt) Quantity (Autt) Direct Unit Cost Excl. VAT (Autt) Line Discount % (Autt) Line Amount Excl. VAT (Autt) Return Qty. to Ship (Autt) Return Qty. Shipped Qty. to Invoice (Autt) Quantity Invoiced Qty. to Assign Gildir fyrir þjónustuyfirlýsingu (Autt) Qty. Assigned Department Code (Autt) Project Code (Autt) Customergroup Code (Autt) Area Code (Autt) Businessgroup Code (Autt) Salescampaign Code (Autt)":
+        - rowheader
+        - gridcell "Type (Autt)":
+          - textbox "Type (Autt)"
+        - gridcell
+        - gridcell "No. (Autt)":
+          - textbox "No. (Autt)"
+        - gridcell "Item Reference No. (Autt)":
+          - textbox "Item Reference No. (Autt)"
+        - gridcell "Description (Autt)":
+          - textbox "Description (Autt)"
+        - gridcell "Return Reason Code (Autt)":
+          - textbox "Return Reason Code (Autt)"
+        - gridcell "Location Code (Autt)":
+          - button "Location Code (Autt)"
+        - gridcell "Quantity (Autt)":
+          - textbox "Quantity (Autt)"
+        - gridcell "Direct Unit Cost Excl. VAT (Autt)":
+          - textbox "Direct Unit Cost Excl. VAT (Autt)"
+        - gridcell "Line Discount % (Autt)":
+          - textbox "Line Discount % (Autt)"
+        - gridcell "Line Amount Excl. VAT (Autt)":
+          - textbox "Line Amount Excl. VAT (Autt)"
+        - gridcell "Return Qty. to Ship (Autt)":
+          - textbox "Return Qty. to Ship (Autt)"
+        - gridcell "Return Qty. Shipped":
+          - button "Return Qty. Shipped"
+        - gridcell "Qty. to Invoice (Autt)":
+          - textbox "Qty. to Invoice (Autt)"
+        - gridcell "Quantity Invoiced":
+          - button "Quantity Invoiced"
+        - gridcell "Qty. to Assign":
+          - button "Qty. to Assign"
+        - gridcell "Gildir fyrir þjónustuyfirlýsingu (Autt)":
+          - checkbox "Gildir fyrir þjónustuyfirlýsingu (Autt)"
+        - gridcell "Qty. Assigned":
+          - button "Qty. Assigned"
+        - gridcell "Department Code (Autt)":
+          - textbox "Department Code (Autt)"
+        - gridcell "Project Code (Autt)":
+          - textbox "Project Code (Autt)"
+        - gridcell "Customergroup Code (Autt)":
+          - textbox "Customergroup Code (Autt)"
+        - gridcell "Area Code (Autt)":
+          - textbox "Area Code (Autt)"
+        - gridcell "Businessgroup Code (Autt)":
+          - textbox "Businessgroup Code (Autt)"
+        - gridcell "Salescampaign Code (Autt)":
+          - textbox "Salescampaign Code (Autt)"
+      - row "Type (Autt) No. (Autt) Item Reference No. (Autt) Description (Autt) Return Reason Code (Autt) Location Code (Autt) Quantity (Autt) Direct Unit Cost Excl. VAT (Autt) Line Discount % (Autt) Line Amount Excl. VAT (Autt) Return Qty. to Ship (Autt) Return Qty. Shipped Qty. to Invoice (Autt) Quantity Invoiced Qty. to Assign Gildir fyrir þjónustuyfirlýsingu (Autt) Qty. Assigned Department Code (Autt) Project Code (Autt) Customergroup Code (Autt) Area Code (Autt) Businessgroup Code (Autt) Salescampaign Code (Autt)":
+        - rowheader
+        - gridcell "Type (Autt)":
+          - textbox "Type (Autt)"
+        - gridcell
+        - gridcell "No. (Autt)":
+          - textbox "No. (Autt)"
+        - gridcell "Item Reference No. (Autt)":
+          - textbox "Item Reference No. (Autt)"
+        - gridcell "Description (Autt)":
+          - textbox "Description (Autt)"
+        - gridcell "Return Reason Code (Autt)":
+          - textbox "Return Reason Code (Autt)"
+        - gridcell "Location Code (Autt)":
+          - button "Location Code (Autt)"
+        - gridcell "Quantity (Autt)":
+          - textbox "Quantity (Autt)"
+        - gridcell "Direct Unit Cost Excl. VAT (Autt)":
+          - textbox "Direct Unit Cost Excl. VAT (Autt)"
+        - gridcell "Line Discount % (Autt)":
+          - textbox "Line Discount % (Autt)"
+        - gridcell "Line Amount Excl. VAT (Autt)":
+          - textbox "Line Amount Excl. VAT (Autt)"
+        - gridcell "Return Qty. to Ship (Autt)":
+          - textbox "Return Qty. to Ship (Autt)"
+        - gridcell "Return Qty. Shipped":
+          - button "Return Qty. Shipped"
+        - gridcell "Qty. to Invoice (Autt)":
+          - textbox "Qty. to Invoice (Autt)"
+        - gridcell "Quantity Invoiced":
+          - button "Quantity Invoiced"
+        - gridcell "Qty. to Assign":
+          - button "Qty. to Assign"
+        - gridcell "Gildir fyrir þjónustuyfirlýsingu (Autt)":
+          - checkbox "Gildir fyrir þjónustuyfirlýsingu (Autt)"
+        - gridcell "Qty. Assigned":
+          - button "Qty. Assigned"
+        - gridcell "Department Code (Autt)":
+          - textbox "Department Code (Autt)"
+        - gridcell "Project Code (Autt)":
+          - textbox "Project Code (Autt)"
+        - gridcell "Customergroup Code (Autt)":
+          - textbox "Customergroup Code (Autt)"
+        - gridcell "Area Code (Autt)":
+          - textbox "Area Code (Autt)"
+        - gridcell "Businessgroup Code (Autt)":
+          - textbox "Businessgroup Code (Autt)"
+        - gridcell "Salescampaign Code (Autt)":
+          - textbox "Salescampaign Code (Autt)"
+    - button "Subtotal Excl. VAT (GBP)"
+    - textbox "Subtotal Excl. VAT (GBP)"
+    - button "Inv. Discount Amount (GBP)"
+    - textbox "Inv. Discount Amount (GBP)": "0.00"
+    - button "Invoice Discount %"
+    - textbox "Invoice Discount %": "0"
+    - button "Total Excl. VAT (GBP)"
+    - textbox "Total Excl. VAT (GBP)"
+    - button "Total VAT (GBP)"
+    - textbox "Total VAT (GBP)"
+    - button "Total Incl. VAT (GBP)"
+    - textbox "Total Incl. VAT (GBP)"
+    - button "Invoice Details":
+      - heading "Invoice Details" [level=3]
+    - button "Shipping and Payment":
+      - heading "Shipping and Payment" [level=3]
+    - text: BIFTQ13-R6-1039
+    - button "Foreign Trade":
+      - heading "Foreign Trade" [level=3]
+    - button "Breyttu stærð upplýsingareitsins."
+    - tablist:
+      - tab "Upplýsingar" [selected]
+      - tab "Viðhengi (0)"
+    - tabpanel "Upplýsingar":
+      - heading "Vendor Statistics" [level=3]
+      - button "Vendor No."
+      - button "Balance (LCY)"
+      - button "Balance (LCY) As Customer"
+      - button "Outstanding Orders (LCY)"
+      - button "Amt. Rcd. Not Invd. (LCY)"
+      - button "Outstanding Invoices (LCY)"
+      - button "Total (LCY)"
+      - button "Balance Due (LCY)"
+      - button "Invoiced Prepayment Amount (LCY)"
+      - button "Payments (LCY)"
+      - button "Refunds (LCY)"
+      - button "Last Payment Date"
+      - heading "Incoming Document Files" [level=3]
+      - treegrid "Incoming Document Files":
+        - rowgroup:
+          - row "Name Opna valmynd fyrir Name Fleiri valkostir File Extension Opna valmynd fyrir File Extension":
+            - columnheader "Name Opna valmynd fyrir Name":
+              - text: Name
+              - button "Opna valmynd fyrir Name"
+            - columnheader "Fleiri valkostir"
+            - columnheader "File Extension Opna valmynd fyrir File Extension":
+              - text: File Extension
+              - button "Opna valmynd fyrir File Extension"
+        - text: (Hleður yfirliti ...)
+      - heading "Buy-from Vendor History" [level=3]
+      - button "Vendor No."
+      - list:
+        - listitem:
+          - button "0 - Quotes": Quotes
+        - listitem:
+          - button "0 - Blanket Orders": Blanket Orders
+        - listitem:
+          - button "0 - Orders": Orders
+        - listitem:
+          - button "0 - Invoices": Invoices
+        - listitem:
+          - button "0 - Return Orders": Return Orders
+        - listitem:
+          - button "0 - Credit Memos": Credit Memos
+        - listitem:
+          - button "0 - Pstd. Return Shipments": Pstd. Return Shipments
+        - listitem:
+          - button "0 - Pstd. Receipts": Pstd. Receipts
+        - listitem:
+          - button "0 - Pstd. Invoices": Pstd. Invoices
+        - listitem:
+          - button "0 - Pstd. Credit Memos": Pstd. Credit Memos
+        - listitem:
+          - button "0 - Incoming Documents": Incoming Documents
+        - listitem:
+          - button "0 - Áskriftarsamningar lánardrottins": Áskriftarsamningar lánardrottins
+      - heading "Purchase Line Details" [level=3]
+      - button "Item No."
+      - button "Availability"
+      - button "Purchase Prices"
+      - button "Purchase Line Discounts"
+      - heading "Attachments" [level=4]
+      - button "Documents"
+    - button "Fara á næsta skjal sömu gerðar"
+- text: Notaðu hægri og vinstri örvalyklana til að stilla stærðina. Notaðu Escape-lykilinn til að afturkalla eða Enter-lykilinn til að staðfesta.
+- paragraph: "105001 ∙ CoolWood Technologies. Posted Return Shipment | Vinnudagsetning: 1/27/2028"
+- paragraph: Listi með titilinn „Lines“ hefur nú eitt atriði
+- paragraph: Listi með titilinn „Purchase Return Orders“ hefur nú 2 atriði
+- paragraph: No., raðað í pöntunina Hækkandi
+- paragraph: "1002 ∙ BIFTQ13-R6-1039. Purchase Return Order | Vinnudagsetning: 1/27/2028"
+- paragraph: Listi með titilinn „Lines“ hefur nú 5 atriði

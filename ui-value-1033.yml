@@ -1,0 +1,120 @@
+- form "Quality Inspection":
+  - main:
+    - button "Go to the previous document of the same type"
+    - button "Back"
+    - 'heading "Quality Inspection | Work Date: 1/27/2028" [level=1]':
+      - 'button "Quality Inspection | Work Date: 1/27/2028"'
+    - button "Make changes on the page"
+    - button "Share this page with other users or apps"
+    - button "Add a link" [disabled]
+    - button "Delete the information"
+    - button "This page will close in this window and it will open in a pop-up window.": 
+    - heading "BIFTQ6-R6-1033 - BIFTQ6-R6-1033 - - - - Open" [level=2]
+    - menubar:
+      - menuitem "Home" [expanded]
+      - menuitem "Reports"
+      - menuitem "More options"
+      - menuitemcheckbox "Toggle FactBox" [checked]: 
+    - menubar:
+      - menuitem "Create Re-inspection"
+      - menuitem "Finish"
+      - menuitem "Reopen" [disabled]
+    - button "Pin" [pressed]: 
+    - button "General" [expanded]:
+      - heading "General" [level=3]
+    - button "General, Show more": Show more
+    - button "No."
+    - textbox "No."
+    - button "Re-inspection No."
+    - textbox "Re-inspection No."
+    - button "Template Code"
+    - button "Template Code BIFTQ6-R6-1033": BIFTQ6-R6-1033
+    - button "Description"
+    - textbox "Description"
+    - heading "Quantity" [level=4]
+    - button "Quantity (Base)"
+    - textbox "Quantity (Base)"
+    - button "Passed Quantity"
+    - textbox "Passed Quantity"
+    - button "Failed Quantity"
+    - textbox "Failed Quantity"
+    - heading "Status" [level=4]
+    - button "Status"
+    - textbox "Status"
+    - button "Finished Date"
+    - textbox "Finished Date"
+    - button "Result"
+    - button "Result (Blank)"
+    - heading "Item Tracking" [level=4]
+    - button "Item No."
+    - button "Item No. (Blank)"
+    - button "Variant Code"
+    - button "Variant Code (Blank)"
+    - button "Lot No."
+    - button "Review or update the value for Lot No."
+    - textbox "Lot No."
+    - button "Serial No."
+    - button "Review or update the value for Serial No."
+    - textbox "Serial No."
+    - button "Package No."
+    - button "Review or update the value for Package No."
+    - textbox "Package No."
+    - heading "Statistics" [level=4]
+    - button "Assigned User ID"
+    - button "Assigned User ID GUNNAR": GUNNAR
+    - menubar:
+      - heading "Lines" [level=3]:
+        - button "Lines"
+      - menuitem "Share": 
+      - menuitemcheckbox "Toggle focus mode": 
+    - grid "Lines":
+      - rowgroup:
+        - row "Error Test Code Open menu for Test Code More Options Description Open menu for Description Test Value Open menu for Test Value Pass Description Open menu for Pass Description Result Open menu for Result Note Open menu for Note" [selected]:
+          - columnheader "Error"
+          - columnheader "Test Code Open menu for Test Code":
+            - button "Test Code"
+            - button "Open menu for Test Code"
+          - columnheader "More Options"
+          - columnheader "Description Open menu for Description":
+            - button "Description"
+            - button "Open menu for Description"
+          - columnheader "Test Value Open menu for Test Value":
+            - button "Test Value"
+            - button "Open menu for Test Value"
+          - columnheader "Pass Description Open menu for Pass Description":
+            - text: Pass Description
+            - button "Open menu for Pass Description"
+          - columnheader "Result Open menu for Result":
+            - button "Result"
+            - button "Open menu for Result"
+          - columnheader "Note Open menu for Note":
+            - text: Note
+            - button "Open menu for Note"
+      - row "Test Code BIFTQ6-R6-1033 Description Test Value 20 Pass Description Result (Blank) Note (Blank)" [selected]:
+        - rowheader
+        - gridcell "Test Code BIFTQ6-R6-1033":
+          - button "Test Code BIFTQ6-R6-1033": BIFTQ6-R6-1033
+        - gridcell:
+          - button "Show more options"
+        - gridcell "Description":
+          - textbox "Description"
+        - gridcell "Test Value 20":
+          - button "Test Value 20": "20"
+        - gridcell "Pass Description":
+          - textbox "Pass Description"
+        - gridcell "Result (Blank)":
+          - button "Result (Blank)"
+        - gridcell "Note (Blank)":
+          - button "Note (Blank)"
+    - button "Source Reference":
+      - heading "Source Reference" [level=3]
+    - button "Resize the factbox area."
+    - tablist:
+      - tab "Details" [selected]
+      - tab "Attachments (0)"
+    - tabpanel "Details":
+      - heading "Picture" [level=3]:
+        - button "Picture"
+      - img "Specifies the most recent picture. Additionally, pictures can be uploaded to document attachments and OneDrive automatically."
+    - button "Go to the next document of the same type"
+- text: Use the Left and Right arrow keys to adjust the size. Use the Escape key to undo or the Enter key to accept.

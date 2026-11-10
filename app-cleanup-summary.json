@@ -1,0 +1,29 @@
+{
+  "tenant": "w129-16",
+  "sha": "7ebdcc23544f449a9a444e3896906171574bc10a",
+  "uninstalledAndDeletedExtensionData": [
+    {
+      "id": "9193f6a2-0926-49bb-9fec-3c36a60c8b0e",
+      "packageId": "d771f541-d520-453d-b70e-b5b0ea017a09",
+      "name": "Bifrost Quality Management - Tests"
+    },
+    {
+      "id": "d3ca6790-e2c1-44c1-a026-fd75a3f5b52d",
+      "packageId": "55e41abb-7930-4e6d-a1e4-e9fa0b532c83",
+      "name": "Bifrost Quality Management"
+    },
+    {
+      "id": "9db1a0c9-c503-4793-a9e4-bcda3d3f3c94",
+      "packageId": "4bcb0914-5eb7-46bb-bfee-c9a2cd2e4691",
+      "name": "Bifrost Foundation - Tests"
+    },
+    {
+      "id": "7505e808-6e52-4b96-a328-82573391297a",
+      "packageId": "2595fc66-fab7-41b8-bf87-ef98009a059a",
+      "name": "Bifrost Foundation"
+    }
+  ],
+  "unpublished": 4,
+  "remainingOrigoApps": 0,
+  "finishedAt": "2026-11-10T08:23:16.625Z"
+}

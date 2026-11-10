@@ -1,0 +1,118 @@
+- form "Gæðaeftirlit":
+  - main:
+    - button "Fara á fyrra skjal sömu gerðar"
+    - button "Bakka"
+    - 'heading "Gæðaeftirlit | Vinnudagsetning: 1/27/2028" [level=1]':
+      - 'button "Gæðaeftirlit | Vinnudagsetning: 1/27/2028"'
+    - button "Gera breytingar á síðunni"
+    - button "Deila þessari síðu með öðrum notendum eða forritum"
+    - button "Bæta við tengli" [disabled]
+    - button "Eyða upplýsingunum"
+    - button "Þessari síðu verður lokað í þessum glugga og hún opnast í sprettiglugga.": 
+    - heading "BIFTQ6-R6-1039 - BIFTQ6-R6-1039 - - - - Opið" [level=2]
+    - menubar:
+      - menuitem "Heim" [expanded]
+      - menuitem "Skýrslur"
+      - menuitem "Fleiri valkostir"
+      - menuitemcheckbox "Sýna/fela upplýsingakassa" [checked]: 
+    - menubar:
+      - menuitem "Búa til endur-eftirlit"
+      - menuitem "Ljúka"
+      - menuitem "Enduropna" [disabled]
+    - button "Festa" [pressed]: 
+    - button "Almennt" [expanded]:
+      - heading "Almennt" [level=3]
+    - button "Almennt, Sýna meira": Sýna meira
+    - button "Nr."
+    - textbox "Nr."
+    - button "Númer endur-eftirlits"
+    - textbox "Númer endur-eftirlits"
+    - button "Sniðmátskóði"
+    - button "Sniðmátskóði BIFTQ6-R6-1039": BIFTQ6-R6-1039
+    - button "Lýsing"
+    - textbox "Lýsing"
+    - heading "Magn" [level=4]
+    - button "Magn (stofn)"
+    - textbox "Magn (stofn)"
+    - button "Staðfest magn"
+    - textbox "Staðfest magn"
+    - button "Magn mistókst"
+    - textbox "Magn mistókst"
+    - heading "Staða" [level=4]
+    - button "Staða"
+    - textbox "Staða"
+    - button "Lokadagsetning"
+    - textbox "Lokadagsetning"
+    - button "Niðurstaða"
+    - button "Niðurstaða (Autt)"
+    - heading "Vörurakning" [level=4]
+    - button "Vörunúmer"
+    - button "Vörunúmer (Autt)"
+    - button "Afbrigðiskóði"
+    - button "Afbrigðiskóði (Autt)"
+    - button "Lotunr."
+    - button "Það þarf að endurskoða eða uppfæra gildið fyrir Lotunr."
+    - textbox "Lotunr."
+    - button "Raðnr."
+    - button "Það þarf að endurskoða eða uppfæra gildið fyrir Raðnr."
+    - textbox "Raðnr."
+    - button "Pakki númer"
+    - button "Það þarf að endurskoða eða uppfæra gildið fyrir Pakki númer"
+    - textbox "Pakki númer"
+    - heading "Talnagögn" [level=4]
+    - button "Úthlutað notandaauðkenni"
+    - button "Úthlutað notandaauðkenni GUNNAR": GUNNAR
+    - menubar:
+      - heading "Línur" [level=3]:
+        - button "Línur"
+      - menuitem "Deila": 
+      - menuitemcheckbox "Sýna/fela fókusstillingu": 
+    - grid "Línur":
+      - rowgroup:
+        - row "Villa Prófunarkóði Opna valmynd fyrir Prófunarkóði Fleiri valkostir Lýsing Opna valmynd fyrir Lýsing Prófunargildi Opna valmynd fyrir Prófunargildi Lýsing Pass Opna valmynd fyrir Lýsing Pass Niðurstaða Opna valmynd fyrir Niðurstaða Minnismiði Opna valmynd fyrir Minnismiði" [selected]:
+          - columnheader "Villa"
+          - columnheader "Prófunarkóði Opna valmynd fyrir Prófunarkóði":
+            - button "Prófunarkóði"
+            - button "Opna valmynd fyrir Prófunarkóði"
+          - columnheader "Fleiri valkostir"
+          - columnheader "Lýsing Opna valmynd fyrir Lýsing":
+            - button "Lýsing"
+            - button "Opna valmynd fyrir Lýsing"
+          - columnheader "Prófunargildi Opna valmynd fyrir Prófunargildi":
+            - button "Prófunargildi"
+            - button "Opna valmynd fyrir Prófunargildi"
+          - columnheader "Lýsing Pass Opna valmynd fyrir Lýsing Pass":
+            - text: Lýsing Pass
+            - button "Opna valmynd fyrir Lýsing Pass"
+          - columnheader "Niðurstaða Opna valmynd fyrir Niðurstaða":
+            - button "Niðurstaða"
+            - button "Opna valmynd fyrir Niðurstaða"
+          - columnheader "Minnismiði Opna valmynd fyrir Minnismiði":
+            - text: Minnismiði
+            - button "Opna valmynd fyrir Minnismiði"
+      - row "Prófunarkóði BIFTQ6-R6-1039 Lýsing Prófunargildi 20 Lýsing Pass Niðurstaða (Autt) Minnismiði (Autt)" [selected]:
+        - rowheader
+        - gridcell "Prófunarkóði BIFTQ6-R6-1039":
+          - button "Prófunarkóði BIFTQ6-R6-1039": BIFTQ6-R6-1039
+        - gridcell:
+          - button "Sýna fleiri valkosti"
+        - gridcell "Lýsing":
+          - textbox "Lýsing"
+        - gridcell "Prófunargildi 20":
+          - button "Prófunargildi 20": "20"
+        - gridcell "Lýsing Pass":
+          - textbox "Lýsing Pass"
+        - gridcell "Niðurstaða (Autt)":
+          - button "Niðurstaða (Autt)"
+        - gridcell "Minnismiði (Autt)":
+          - button "Minnismiði (Autt)"
+    - button "Upprunatilvísun":
+      - heading "Upprunatilvísun" [level=3]
+    - button "Breyttu stærð upplýsingareitsins."
+    - tablist:
+      - tab "Upplýsingar" [selected]
+      - tab "Viðhengi (0)"
+    - tabpanel "Upplýsingar":
+      - heading "Mynd" [level=3]
+    - button "Fara á næsta skjal sömu gerðar"
+- text: Notaðu hægri og vinstri örvalyklana til að stilla stærðina. Notaðu Escape-lykilinn til að afturkalla eða Enter-lykilinn til að staðfesta.

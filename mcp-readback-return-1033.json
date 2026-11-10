@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"table\": \"Qlty. Inspection Header\",\n  \"skip\": 0,\n  \"take\": 50,\n  \"count\": 1,\n  \"records\": [\n    {\n      \"id\": \"AC5B17FA-DEDC-F111-B6F8-00090FFE0001\",\n      \"primaryKey\": {\n        \"No_\": \"BIFTQ13-R6-1033\",\n        \"ReinspectionNo_\": \"0\"\n      },\n      \"fields\": {\n        \"ResultCode\": \"\"\n      }\n    }\n  ],\n  \"noOfRecords\": 1\n}"
+    }
+  ]
+}

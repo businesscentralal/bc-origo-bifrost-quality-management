@@ -1,0 +1,52 @@
+{
+  "sha": "7ebdcc23544f449a9a444e3896906171574bc10a",
+  "issue": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/6",
+  "criteria": [
+    {
+      "id": "AC01",
+      "status": "PASS developer; independent pending",
+      "evidence": "Native catalogue/contract and bilingual MCP discovery/help for SetTestValue; original interface retained."
+    },
+    {
+      "id": "AC02",
+      "status": "PASS developer; independent pending",
+      "evidence": "Native input guards plus MCP missing, unknown, malformed GUID and overlong refusal in1033/1039."
+    },
+    {
+      "id": "AC03",
+      "status": "PASS developer; independent pending",
+      "evidence": "Native Microsoft SetTestValue/UpdateResultFromLines implementation unchanged; MCP header result readback and UI value20."
+    },
+    {
+      "id": "AC04",
+      "status": "PASS developer; independent pending",
+      "evidence": "Native business refusal/late fault/subscriber commit rollback regressions passed in full45-test suite."
+    },
+    {
+      "id": "AC05",
+      "status": "PASS developer; independent pending",
+      "evidence": "Native restrictive Full positive and Read/no-app negative tests passed; merge retains both capability grants and Inspector inclusion."
+    },
+    {
+      "id": "AC06",
+      "status": "PASS developer; independent pending",
+      "evidence": "Union40unique XLF units; bilingual MCP help/errors and actual Web Client locales1033/1039."
+    },
+    {
+      "id": "AC07",
+      "status": "PASS developer; independent pending",
+      "evidence": "Unchanged bilingual SetTestValue help and effect/idempotency contract read through MCP."
+    },
+    {
+      "id": "AC08",
+      "status": "PASS developer; independent pending",
+      "evidence": "All45merged native tests passed, including product permissions and both message types; no exclusions/assertion changes."
+    }
+  ],
+  "issueCompletion": false,
+  "remaining": [
+    "independent current-head verification",
+    "Grok clearance and approval",
+    "Architect merge/deployment and applicable UAT"
+  ]
+}

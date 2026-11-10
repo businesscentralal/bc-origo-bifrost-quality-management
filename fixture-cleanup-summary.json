@@ -1,0 +1,90 @@
+{
+  "sha": "7ebdcc23544f449a9a444e3896906171574bc10a",
+  "tenant": "w129-16",
+  "fixturesRemoved": 4,
+  "verifiedTables": 16,
+  "remainingOwnedRecords": 0,
+  "checks": [
+    {
+      "table": "Qlty. Inspection Header",
+      "filter": "BIFTQ6-*|BIFTQ13-*",
+      "count": 0
+    },
+    {
+      "table": "Qlty. Inspection Line",
+      "filter": "BIFTQ6-*",
+      "count": 0
+    },
+    {
+      "table": "Qlty. Test",
+      "filter": "BIFTQ6-*",
+      "count": 0
+    },
+    {
+      "table": "Qlty. Inspection Template Hdr.",
+      "filter": "BIFTQ6-*",
+      "count": 0
+    },
+    {
+      "table": "Qlty. Inspection Template Line",
+      "filter": "BIFTQ6-*",
+      "count": 0
+    },
+    {
+      "table": "Qlty. Inspection Result",
+      "filter": "BIFTQ6-*",
+      "count": 0
+    },
+    {
+      "table": "Qlty. I. Result Condit. Conf.",
+      "filter": "BIFTQ6-*",
+      "count": 0
+    },
+    {
+      "table": "Purchase Header",
+      "filter": "BIFTQ13-*",
+      "count": 0
+    },
+    {
+      "table": "Purchase Line",
+      "filter": "BIFTQ13-*",
+      "count": 0
+    },
+    {
+      "table": "Purch. Rcpt. Header",
+      "filter": "BIFTQ13-*",
+      "count": 0
+    },
+    {
+      "table": "Purch. Rcpt. Line",
+      "filter": "BIFTQ13-*",
+      "count": 0
+    },
+    {
+      "table": "Item Ledger Entry",
+      "filter": "BIFTQ13-*",
+      "count": 0
+    },
+    {
+      "table": "Item",
+      "filter": "BIFTQ13-*",
+      "count": 0
+    },
+    {
+      "table": "Item Unit of Measure",
+      "filter": "BIFTQ13-*",
+      "count": 0
+    },
+    {
+      "table": "Vendor",
+      "filter": "BIFTQ13-*",
+      "count": 0
+    },
+    {
+      "table": "Return Reason",
+      "filter": "R6-103*",
+      "count": 0
+    }
+  ],
+  "finishedAt": "2026-11-10T08:22:40.030Z"
+}

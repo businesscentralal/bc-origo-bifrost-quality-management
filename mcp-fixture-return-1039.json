@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"company\": \"CRONUS International Ltd.\",\n  \"messageType\": \"Test.Quality.ReturnFixture\",\n  \"inspectionSystemId\": \"7BD90F00-DFDC-F111-B6F8-00090FFE0001\",\n  \"inspectionNo\": \"BIFTQ13-R6-1039\",\n  \"status\": \"Success\"\n}"
+    }
+  ]
+}

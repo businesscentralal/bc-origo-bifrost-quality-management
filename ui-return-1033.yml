@@ -1,0 +1,338 @@
+- form "Purchase Return Order":
+  - main:
+    - button "Go to the previous document of the same type"
+    - button "Back"
+    - 'heading "Purchase Return Order | Work Date: 1/27/2028" [level=1]'
+    - button "Make changes on the page"
+    - button "Share this page with other users or apps"
+    - button "Create a new entry."
+    - button "Delete the information"
+    - button "This page will close in this window and it will open in a pop-up window.": 
+    - heading "1001 ∙ BIFTQ13-R6-1033" [level=2]
+    - button "Dismiss"
+    - text: Start validating data in documents and journals while you work. Messages are shown in the Document Check FactBox.
+    - button "Enable this for me"
+    - text: "|"
+    - button "Don't show again"
+    - button "Expand notification message"
+    - menubar:
+      - menuitem "Home" [expanded]
+      - menuitem "Prepare"
+      - menuitem "Print/Send"
+      - menuitem "Request Approval"
+      - menuitem "Return Order"
+      - menuitem "More options"
+      - menuitemcheckbox "Toggle FactBox" [checked]: 
+    - menubar:
+      - menuitem "Post...":
+        - button "Post..."
+        - button "Related actions for Post..."
+      - menuitem "Release":
+        - button "Release"
+        - button "Related actions for Release"
+      - menuitem "Create Warehouse Shipment"
+      - menuitem "Apply Entries"
+      - menuitem "Archive Document"
+    - button "Pin" [pressed]: 
+    - button "General" [expanded]:
+      - heading "General" [level=3]
+    - button "General, Show more": Show more
+    - button "Vendor Name"
+    - button "Vendor Name BIFTQ13-R6-1033": BIFTQ13-R6-1033
+    - button "Contact"
+    - textbox "Contact"
+    - button "Document Date"
+    - textbox "Document Date"
+    - button "Vendor Cr. Memo No."
+    - textbox "Vendor Cr. Memo No."
+    - button "Purchaser Code"
+    - button "Purchaser Code (Blank)"
+    - button "Campaign No."
+    - button "Campaign No. (Blank)"
+    - button "Status"
+    - textbox "Status"
+    - menubar:
+      - heading "Lines" [level=3]:
+        - button "Lines"
+      - menuitem "Manage" [expanded]
+      - menuitem "Functions"
+      - menuitem "Line"
+      - menuitem "Share": 
+      - menuitemcheckbox "Toggle focus mode": 
+    - menubar:
+      - menuitem "New Line" [disabled]
+      - menuitem "Delete Line" [disabled]
+    - button "Pin" [pressed]: 
+    - grid "Lines":
+      - rowgroup:
+        - row:
+          - columnheader "Error"
+          - columnheader "Type Open menu for Type":
+            - text: Type
+            - button "Open menu for Type"
+          - columnheader "More Options"
+          - columnheader "No. Open menu for No.":
+            - button "No."
+            - button "Open menu for No."
+          - columnheader "Item Reference No. Open menu for Item Reference No.":
+            - button "Item Reference No."
+            - button "Open menu for Item Reference No."
+          - columnheader "Description Open menu for Description":
+            - button "Description"
+            - button "Open menu for Description"
+          - columnheader "Return Reason Code Open menu for Return Reason Code":
+            - button "Return Reason Code"
+            - button "Open menu for Return Reason Code"
+          - columnheader "Location Code Open menu for Location Code":
+            - button "Location Code"
+            - button "Open menu for Location Code"
+          - columnheader "Quantity Open menu for Quantity":
+            - button "Quantity"
+            - button "Open menu for Quantity"
+          - columnheader "Direct Unit Cost Excl. VAT Open menu for Direct Unit Cost Excl. VAT":
+            - button "Direct Unit Cost Excl. VAT"
+            - button "Open menu for Direct Unit Cost Excl. VAT"
+          - columnheader "Line Discount % Open menu for Line Discount %":
+            - button "Line Discount %"
+            - button "Open menu for Line Discount %"
+          - columnheader "Line Amount Excl. VAT Open menu for Line Amount Excl. VAT":
+            - button "Line Amount Excl. VAT"
+            - button "Open menu for Line Amount Excl. VAT"
+          - columnheader "Return Qty. to Ship Open menu for Return Qty. to Ship":
+            - button "Return Qty. to Ship"
+            - button "Open menu for Return Qty. to Ship"
+          - columnheader "Return Qty. Shipped Open menu for Return Qty. Shipped":
+            - button "Return Qty. Shipped"
+            - button "Open menu for Return Qty. Shipped"
+          - columnheader "Qty. to Invoice Open menu for Qty. to Invoice":
+            - button "Qty. to Invoice"
+            - button "Open menu for Qty. to Invoice"
+          - columnheader "Quantity Invoiced Open menu for Quantity Invoiced":
+            - button "Quantity Invoiced"
+            - button "Open menu for Quantity Invoiced"
+          - columnheader "Qty. to Assign Open menu for Qty. to Assign":
+            - button "Qty. to Assign"
+            - button "Open menu for Qty. to Assign"
+          - columnheader "Applicable For Service Declaration Open menu for Applicable For Service Declaration":
+            - button "Applicable For Service Declaration"
+            - button "Open menu for Applicable For Service Declaration"
+          - columnheader "Qty. Assigned Open menu for Qty. Assigned":
+            - button "Qty. Assigned"
+            - button "Open menu for Qty. Assigned"
+          - columnheader "Department Code Open menu for Department Code":
+            - button "Department Code"
+            - button "Open menu for Department Code"
+          - columnheader "Project Code Open menu for Project Code":
+            - button "Project Code"
+            - button "Open menu for Project Code"
+          - columnheader "Customergroup Code Open menu for":
+            - text: Customergroup Code
+            - button "Open menu for"
+          - columnheader "Area Code Open menu for":
+            - text: Area Code
+            - button "Open menu for"
+          - columnheader "Businessgroup Code Open menu for":
+            - text: Businessgroup Code
+            - button "Open menu for"
+          - columnheader "Salescampaign Code Open menu for":
+            - text: Salescampaign Code
+            - button "Open menu for"
+      - 'row "Type Comment No. (Blank) Item Reference No. Description Receipt No. BIFTQ13-R6-1033: Return Reason Code (Blank) Location Code (Blank) Quantity Direct Unit Cost Excl. VAT Line Discount % Line Amount Excl. VAT Return Qty. to Ship Return Qty. Shipped Qty. to Invoice Quantity Invoiced (Blank) Qty. to Assign 0 Applicable For Service Declaration Qty. Assigned (Blank) Department Code (Blank) Project Code (Blank) Customergroup Code Area Code Businessgroup Code Salescampaign Code" [selected]':
+        - rowheader
+        - gridcell "Type Comment":
+          - button "Type Comment": Comment
+        - gridcell:
+          - button "Show more options"
+        - gridcell "No. (Blank)":
+          - button "No. (Blank)"
+        - gridcell "Item Reference No.":
+          - textbox "Item Reference No."
+        - gridcell "Description Receipt No. BIFTQ13-R6-1033:":
+          - button "Description Receipt No. BIFTQ13-R6-1033:": "Receipt No. BIFTQ13-R6-1033:"
+        - gridcell "Return Reason Code (Blank)":
+          - button "Return Reason Code (Blank)"
+        - gridcell "Location Code (Blank)":
+          - button "Location Code (Blank)"
+        - gridcell "Quantity":
+          - textbox "Quantity"
+        - gridcell "Direct Unit Cost Excl. VAT":
+          - textbox "Direct Unit Cost Excl. VAT"
+        - gridcell "Line Discount %":
+          - textbox "Line Discount %"
+        - gridcell "Line Amount Excl. VAT":
+          - textbox "Line Amount Excl. VAT"
+        - gridcell "Return Qty. to Ship":
+          - textbox "Return Qty. to Ship"
+        - gridcell "Return Qty. Shipped":
+          - textbox "Return Qty. Shipped"
+        - gridcell "Qty. to Invoice":
+          - textbox "Qty. to Invoice"
+        - gridcell "Quantity Invoiced (Blank)":
+          - button "Quantity Invoiced (Blank)"
+        - gridcell "Qty. to Assign 0":
+          - button "Qty. to Assign 0": "0"
+        - gridcell "Applicable For Service Declaration":
+          - checkbox "Applicable For Service Declaration" [disabled]
+        - gridcell "Qty. Assigned (Blank)":
+          - button "Qty. Assigned (Blank)"
+        - gridcell "Department Code (Blank)":
+          - button "Department Code (Blank)"
+        - gridcell "Project Code (Blank)":
+          - button "Project Code (Blank)"
+        - gridcell "Customergroup Code":
+          - combobox "Customergroup Code"
+        - gridcell "Area Code":
+          - combobox "Area Code"
+        - gridcell "Businessgroup Code":
+          - combobox "Businessgroup Code"
+        - gridcell "Salescampaign Code":
+          - combobox "Salescampaign Code"
+      - row "Type Item Show more options No. BIFTQ13-R6-1033 Item Reference No. (Blank) Description BIFTQ13-R6-1033 Return Reason Code (Blank) Location Code (Blank) Quantity 3 Direct Unit Cost Excl. VAT (Blank) Line Discount % (Blank) Line Amount Excl. VAT (Blank) Return Qty. to Ship 3 Return Qty. Shipped Qty. to Invoice 3 Quantity Invoiced Qty. to Assign 0 Applicable For Service Declaration (Blank) Qty. Assigned Department Code (Blank) Project Code (Blank) Customergroup Code (Blank) Area Code (Blank) Businessgroup Code (Blank) Salescampaign Code (Blank)":
+        - rowheader
+        - gridcell "Type Item":
+          - button "Type Item": Item
+        - gridcell "Show more options":
+          - button "Show more options"
+        - gridcell "No. BIFTQ13-R6-1033":
+          - button "No. BIFTQ13-R6-1033": BIFTQ13-R6-1033
+        - gridcell "Item Reference No. (Blank)":
+          - textbox "Item Reference No. (Blank)"
+        - gridcell "Description BIFTQ13-R6-1033":
+          - button "Description BIFTQ13-R6-1033": BIFTQ13-R6-1033
+        - gridcell "Return Reason Code (Blank)":
+          - button "Return Reason Code (Blank)"
+        - gridcell "Location Code (Blank)":
+          - button "Location Code (Blank)"
+        - gridcell "Quantity 3":
+          - textbox "Quantity 3"
+        - gridcell "Direct Unit Cost Excl. VAT (Blank)":
+          - textbox "Direct Unit Cost Excl. VAT (Blank)"
+        - gridcell "Line Discount % (Blank)":
+          - textbox "Line Discount % (Blank)"
+        - gridcell "Line Amount Excl. VAT (Blank)":
+          - textbox "Line Amount Excl. VAT (Blank)"
+        - gridcell "Return Qty. to Ship 3":
+          - textbox "Return Qty. to Ship 3"
+        - gridcell "Return Qty. Shipped":
+          - button "Return Qty. Shipped"
+        - gridcell "Qty. to Invoice 3":
+          - textbox "Qty. to Invoice 3"
+        - gridcell "Quantity Invoiced":
+          - button "Quantity Invoiced"
+        - gridcell "Qty. to Assign 0":
+          - button "Qty. to Assign 0": "0"
+        - gridcell "Applicable For Service Declaration (Blank)":
+          - checkbox "Applicable For Service Declaration (Blank)"
+        - gridcell "Qty. Assigned":
+          - button "Qty. Assigned"
+        - gridcell "Department Code (Blank)":
+          - button "Department Code (Blank)"
+        - gridcell "Project Code (Blank)":
+          - button "Project Code (Blank)"
+        - gridcell "Customergroup Code (Blank)":
+          - button "Customergroup Code (Blank)"
+        - gridcell "Area Code (Blank)":
+          - button "Area Code (Blank)"
+        - gridcell "Businessgroup Code (Blank)":
+          - button "Businessgroup Code (Blank)"
+        - gridcell "Salescampaign Code (Blank)":
+          - button "Salescampaign Code (Blank)"
+    - button "Subtotal Excl. VAT (GBP)"
+    - textbox "Subtotal Excl. VAT (GBP)"
+    - button "Inv. Discount Amount (GBP)"
+    - textbox "Inv. Discount Amount (GBP)"
+    - button "Invoice Discount %"
+    - textbox "Invoice Discount %"
+    - button "Total Excl. VAT (GBP)"
+    - textbox "Total Excl. VAT (GBP)"
+    - button "Total VAT (GBP)"
+    - textbox "Total VAT (GBP)"
+    - button "Total Incl. VAT (GBP)"
+    - textbox "Total Incl. VAT (GBP)"
+    - button "Invoice Details":
+      - heading "Invoice Details" [level=3]
+    - button "Shipping and Payment":
+      - heading "Shipping and Payment" [level=3]
+    - text: BIFTQ13-R6-1033
+    - button "Foreign Trade":
+      - heading "Foreign Trade" [level=3]
+    - button "Resize the factbox area."
+    - tablist:
+      - tab "Details" [selected]
+      - tab "Attachments (0)"
+    - tabpanel "Details":
+      - heading "Vendor Statistics" [level=3]
+      - button "Vendor No."
+      - button "Vendor No. BIFTQ13-R6-1033": BIFTQ13-R6-1033
+      - button "Balance (LCY)"
+      - button "Balance (LCY) 0.00": "0.00"
+      - button "Balance (LCY) As Customer"
+      - textbox "Balance (LCY) As Customer"
+      - button "Outstanding Orders (LCY)"
+      - button "Outstanding Orders (LCY) 0.00": "0.00"
+      - button "Amt. Rcd. Not Invd. (LCY)"
+      - button "Amt. Rcd. Not Invd. (LCY) 0.00": "0.00"
+      - button "Outstanding Invoices (LCY)"
+      - button "Outstanding Invoices (LCY) 0.00": "0.00"
+      - button "Total (LCY)"
+      - textbox "Total (LCY)"
+      - button "Overdue Amounts (LCY) as of 01/27/28"
+      - button "Overdue Amounts (LCY) as of 01/27/28 0.00": "0.00"
+      - button "Invoiced Prepayment Amount (LCY)"
+      - textbox "Invoiced Prepayment Amount (LCY)"
+      - button "Payments (LCY)"
+      - button "Payments (LCY) 0.00": "0.00"
+      - button "Refunds (LCY)"
+      - button "Refunds (LCY) 0.00": "0.00"
+      - button "Last Payment Date"
+      - button "Last Payment Date (Blank)"
+      - heading "Incoming Document Files" [level=3]
+      - treegrid "Incoming Document Files":
+        - rowgroup:
+          - row "Name Open menu for Name More Options File Extension Open menu for File Extension":
+            - columnheader "Name Open menu for Name":
+              - text: Name
+              - button "Open menu for Name"
+            - columnheader "More Options"
+            - columnheader "File Extension Open menu for File Extension":
+              - text: File Extension
+              - button "Open menu for File Extension"
+        - text: (Loading view...)
+      - heading "Buy-from Vendor History" [level=3]
+      - button "Vendor No."
+      - list:
+        - listitem:
+          - button "0 - Quotes": Quotes
+        - listitem:
+          - button "0 - Blanket Orders": Blanket Orders
+        - listitem:
+          - button "0 - Orders": Orders
+        - listitem:
+          - button "0 - Invoices": Invoices
+        - listitem:
+          - button "0 - Return Orders": Return Orders
+        - listitem:
+          - button "0 - Credit Memos": Credit Memos
+        - listitem:
+          - button "0 - Pstd. Return Shipments": Pstd. Return Shipments
+        - listitem:
+          - button "0 - Pstd. Receipts": Pstd. Receipts
+        - listitem:
+          - button "0 - Pstd. Invoices": Pstd. Invoices
+        - listitem:
+          - button "0 - Pstd. Credit Memos": Pstd. Credit Memos
+        - listitem:
+          - button "0 - Incoming Documents": Incoming Documents
+        - listitem:
+          - button "0 - Vendor Subscription Contracts": Vendor Subscription Contracts
+      - heading "Purchase Line Details" [level=3]
+      - button "Item No."
+      - button "Availability"
+      - button "Purchase Prices"
+      - button "Purchase Line Discounts"
+      - heading "Attachments" [level=4]
+      - button "Documents"
+    - button "Go to the next document of the same type"
+- text: Use the Left and Right arrow keys to adjust the size. Use the Escape key to undo or the Enter key to accept.
+- paragraph: "1001 ∙ BIFTQ13-R6-1033. Purchase Return Order | Work Date: 1/27/2028"
+- paragraph: List with title "Lines" now has 2 items

@@ -1,0 +1,51 @@
+{
+  "sha": "7ebdcc23544f449a9a444e3896906171574bc10a",
+  "tenant": "w129-16",
+  "tool": "Playwright MCP",
+  "status": "PASSED",
+  "scenarios": [
+    {
+      "lcid": 1033,
+      "type": "value",
+      "assertions": 2,
+      "evidence": [
+        "/workspace/evidence/quality25-repair-reginn-20261110/ui-value-1033.yml",
+        "/workspace/evidence/quality25-repair-reginn-20261110/ui-value-1033.png"
+      ]
+    },
+    {
+      "lcid": 1033,
+      "type": "return",
+      "assertions": 3,
+      "evidence": [
+        "/workspace/evidence/quality25-repair-reginn-20261110/ui-return-1033.yml",
+        "/workspace/evidence/quality25-repair-reginn-20261110/ui-return-1033.png"
+      ]
+    },
+    {
+      "lcid": 1039,
+      "type": "value",
+      "assertions": 2,
+      "evidence": [
+        "/workspace/evidence/quality25-repair-reginn-20261110/ui-value-1039.yml",
+        "/workspace/evidence/quality25-repair-reginn-20261110/ui-value-1039.png"
+      ]
+    },
+    {
+      "lcid": 1039,
+      "type": "return",
+      "assertions": 3,
+      "evidence": [
+        "/workspace/evidence/quality25-repair-reginn-20261110/ui-return-1039.yml",
+        "/workspace/evidence/quality25-repair-reginn-20261110/ui-return-1039.png"
+      ]
+    }
+  ],
+  "executed": 10,
+  "passed": 10,
+  "failed": 0,
+  "skipped": 0,
+  "summary": "Persisted test value20and fixture identity; purchase return fixture vendor/memo, unposted Open and Item quantity3in both locales. Native header ResultCode verified by MCP; UI description blank by fixture design.",
+  "finishedAt": "2026-11-10T08:21:49.372911+00:00",
+  "languageRestored": 1033
+}

@@ -1,0 +1,295 @@
+{
+  "sha": "7ebdcc23544f449a9a444e3896906171574bc10a",
+  "tenant": "w129-16",
+  "startedAt": "2026-11-10T08:16:14.807Z",
+  "checks": [
+    {
+      "label": "catalogue-1033",
+      "tool": "list_message_types",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "help-value-1033",
+      "tool": "get_message_type_help",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "fixture-value-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "missing-value-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "unknown-value-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "badGuid-value-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "overlong-value-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "happy-value-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "readback-value-1033",
+      "tool": "get_records",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "help-return-1033",
+      "tool": "get_message_type_help",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "fixture-return-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "missing-return-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "unknown-return-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "badGuid-return-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "overlong-return-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "happy-return-1033",
+      "tool": "invoke_message_type",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "readback-return-1033",
+      "tool": "get_records",
+      "lcid": 1033,
+      "passed": true
+    },
+    {
+      "label": "catalogue-1039",
+      "tool": "list_message_types",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "help-value-1039",
+      "tool": "get_message_type_help",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "fixture-value-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "missing-value-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "unknown-value-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "badGuid-value-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "overlong-value-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "happy-value-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "readback-value-1039",
+      "tool": "get_records",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "help-return-1039",
+      "tool": "get_message_type_help",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "fixture-return-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "missing-return-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "unknown-return-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "badGuid-return-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "overlong-return-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "happy-return-1039",
+      "tool": "invoke_message_type",
+      "lcid": 1039,
+      "passed": true
+    },
+    {
+      "label": "readback-return-1039",
+      "tool": "get_records",
+      "lcid": 1039,
+      "passed": true
+    }
+  ],
+  "fixtures": [
+    {
+      "kind": "value",
+      "lcid": 1033,
+      "runCode": "BIFTQ6-R6-1033",
+      "company": "CRONUS International Ltd.",
+      "messageType": "Test.Quality.ValueFixture",
+      "inspectionSystemId": "744EE7D3-DEDC-F111-B6F8-00090FFE0001",
+      "testCode": "BIFTQ6-R6-1033",
+      "inspectionNo": "BIFTQ6-R6-1033",
+      "status": "Success",
+      "result": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Quality.Inspection.SetTestValue",
+        "status": "Success",
+        "inspectionSystemId": "744EE7D3-DEDC-F111-B6F8-00090FFE0001",
+        "inspectionNo": "BIFTQ6-R6-1033",
+        "reinspectionNo": 0,
+        "testCode": "BIFTQ6-R6-1033",
+        "resultCode": "BIFTQ6-R6-1033"
+      }
+    },
+    {
+      "kind": "return",
+      "lcid": 1033,
+      "runCode": "BIFTQ13-R6-1033",
+      "company": "CRONUS International Ltd.",
+      "messageType": "Test.Quality.ReturnFixture",
+      "inspectionSystemId": "AC5B17FA-DEDC-F111-B6F8-00090FFE0001",
+      "inspectionNo": "BIFTQ13-R6-1033",
+      "status": "Success",
+      "result": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Quality.Disposition.CreatePurchaseReturn",
+        "status": "Success",
+        "inspectionSystemId": "AC5B17FA-DEDC-F111-B6F8-00090FFE0001",
+        "returnOrderNo": "1001"
+      }
+    },
+    {
+      "kind": "value",
+      "lcid": 1039,
+      "runCode": "BIFTQ6-R6-1039",
+      "company": "CRONUS International Ltd.",
+      "messageType": "Test.Quality.ValueFixture",
+      "inspectionSystemId": "C25B17FA-DEDC-F111-B6F8-00090FFE0001",
+      "testCode": "BIFTQ6-R6-1039",
+      "inspectionNo": "BIFTQ6-R6-1039",
+      "status": "Success",
+      "result": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Quality.Inspection.SetTestValue",
+        "status": "Success",
+        "inspectionSystemId": "C25B17FA-DEDC-F111-B6F8-00090FFE0001",
+        "inspectionNo": "BIFTQ6-R6-1039",
+        "reinspectionNo": 0,
+        "testCode": "BIFTQ6-R6-1039",
+        "resultCode": "BIFTQ6-R6-1039"
+      }
+    },
+    {
+      "kind": "return",
+      "lcid": 1039,
+      "runCode": "BIFTQ13-R6-1039",
+      "company": "CRONUS International Ltd.",
+      "messageType": "Test.Quality.ReturnFixture",
+      "inspectionSystemId": "7BD90F00-DFDC-F111-B6F8-00090FFE0001",
+      "inspectionNo": "BIFTQ13-R6-1039",
+      "status": "Success",
+      "result": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Quality.Disposition.CreatePurchaseReturn",
+        "status": "Success",
+        "inspectionSystemId": "7BD90F00-DFDC-F111-B6F8-00090FFE0001",
+        "returnOrderNo": "1002"
+      }
+    }
+  ],
+  "executed": 34,
+  "passed": 34,
+  "failed": 0,
+  "skipped": 0,
+  "finishedAt": "2026-11-10T08:16:18.281Z",
+  "status": "PASSED; fixtures retained for UI then cleanup"
+}

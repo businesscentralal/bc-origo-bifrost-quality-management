@@ -1,0 +1,25 @@
+{
+  "sha": "7ebdcc23544f449a9a444e3896906171574bc10a",
+  "tenant": "w129-16",
+  "owner": "worker-6",
+  "appVersion": "28.0.0.0",
+  "foundationSource": "76efa12f04388c37463aac380eca8a64fbc045dc",
+  "artifacts": [
+    {
+      "name": "Foundation-app.app",
+      "sha256": "ea6d8e4c3675a33ea3a0662065f4acd3fd51770dac1cfe036b450a0429ffd701"
+    },
+    {
+      "name": "Foundation-test.app",
+      "sha256": "2e61861541c72925faa1c31147a866a8ae2d624ab609171928b46bf832d4240b"
+    },
+    {
+      "name": "Quality-app.app",
+      "sha256": "46ab7d4deab239db7311d50ad0b67529b4511d426d6218915e7cd29f4c487def"
+    },
+    {
+      "name": "Quality-test.app",
+      "sha256": "5daf9c9ad4cdfb302c8c3df4f6ac8be0153bc0c4f3f9cc23d83bc824da7926f2"
+    }
+  ]
+}
