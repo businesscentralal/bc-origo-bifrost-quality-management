@@ -777,6 +777,12 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Áhrif: lokin skoðun verður opin með staðlaðri ReopenInspection aðgerð. Magn sem stóðst og féll helst eins og aðgerðin skilur við það. Ídempotent: annað kall á opna skoðun breytir engu. Síðari endurskoðun er höfnun og breytir engu. Ekkert Commit er á staðlaðri leið. Viðskiptahöfnun bakfærir. Í ham án staðfestingar ber kallandi ábyrgð á bakfærslu.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - Method GetNotes - NamedType NotesLbl</note>
         </trans-unit>
+        <trans-unit id="PermissionSet 1954955672 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bifrost Quality Notifications</source>
+          <target>Bifröst - gæði tilkynningar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - gæði tilkynningar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST QM Notify ori - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>

@@ -15,6 +15,7 @@
 
 ### Fixed
 
+- [#4](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/4): the Full role (10035237) now includes the non-assignable permission set 10035285, which grants read access to My Notifications (table 1518). Since #32 added Quality Admin, Microsoft offers to assign a finished inspection to the user in interactive sessions and reads that setting; without the grant, `Quality.Inspection.Finish` under the Full role alone failed with a permission error.
 - [#4](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/4): enforce the Full app role through empty capability table 10035284, including callers with Foundation API wildcard execution and native inspection permissions. Dispatcher tests verify read/API refusals without changing an inspection. Native Inspector users need Modify permission, not Delete permission. Contract help chapters and notes now have Icelandic translations.
 
 ### Added
