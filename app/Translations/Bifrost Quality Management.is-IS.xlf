@@ -399,6 +399,78 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Gæðabókun tilgreindi ekki færslubókarlínu. Hætt var við birgðaflutning.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Posting ori - NamedType MissingFilterErr</note>
         </trans-unit>
+        <trans-unit id="Table 3190541962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality reopen access</source>
+          <target>Aðgangur að enduropnun skoðunar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðgangur að enduropnun skoðunar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Reopen Access ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3190541962 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary key</source>
+          <target>Aðallykill</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Reopen Access ori - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2772215590 - NamedType 1477048533" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an existing inspection SystemId</source>
+          <target>SystemId skoðunar sem er til</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId skoðunar sem er til</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType ExpectedIdTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2772215590 - NamedType 180107814" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read the inspection SystemId with Data.Records.Get.</source>
+          <target>Lestu SystemId skoðunarinnar með Data.Records.Get.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu SystemId skoðunarinnar með Data.Records.Get.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType FixIdTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2772215590 - NamedType 3820335595" size-unit="char" translate="yes" xml:space="preserve">
+          <source>inspectionSystemId must be a non-empty GUID.</source>
+          <target>inspectionSystemId verður að vera GUID sem er ekki tómt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=inspectionSystemId verður að vera GUID sem er ekki tómt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType InvalidIdErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2772215590 - NamedType 823878488" size-unit="char" translate="yes" xml:space="preserve">
+          <source>inspectionSystemId is required and must identify an existing inspection.</source>
+          <target>inspectionSystemId er áskilið og verður að auðkenna skoðun sem er til.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=inspectionSystemId er áskilið og verður að auðkenna skoðun sem er til.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType MissingIdErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2772215590 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You need BIFROST QM Full ori to reopen an inspection.</source>
+          <target>Þú þarft BIFROST QM Full ori til að enduropna skoðun.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú þarft BIFROST QM Full ori til að enduropna skoðun.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType PermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2772215590 - NamedType 1738233936" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for the Bifrost Quality Full role. Microsoft also requires the Quality Admin &amp; Supervisor role, or SUPER, before ReopenInspection runs.</source>
+          <target>Biddu stjórnanda um hlutverkið Bifrost Quality Full. Microsoft krefst einnig hlutverksins Quality Admin &amp; Supervisor, eða SUPER, áður en ReopenInspection keyrir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu stjórnanda um hlutverkið Bifrost Quality Full. Microsoft krefst einnig hlutverksins Quality Admin &amp; Supervisor, eða SUPER, áður en ReopenInspection keyrir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType PermissionNextTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2772215590 - NamedType 2912406318" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unknown parameter %1. Nothing was changed.</source>
+          <target>Óþekkt viðfang %1. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = request key, is-IS=Óþekkt viðfang %1. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - NamedType UnknownKeyErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2772215590 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Reopens a finished quality inspection through the standard ReopenInspection action so test values can be changed again.</source>
+          <target>Enduropnar lokinni gæðaskoðun með staðlaðri ReopenInspection aðgerð svo prófunargildum megi breyta aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Enduropnar lokinni gæðaskoðun með staðlaðri ReopenInspection aðgerð svo prófunargildum megi breyta aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2772215590 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>reopen, finished inspection, quality inspection, test values, open status</source>
+          <target>enduropna, lokin skoðun, gæðaskoðun, prófunargildi, opin staða</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=enduropna, lokin skoðun, gæðaskoðun, prófunargildi, opin staða</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2772215590 - Method 3650283039 - NamedType 2344026547" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Effect: a finished inspection becomes open by the standard ReopenInspection action. Pass and fail quantities stay as that action leaves them. Idempotent: calling it again on the open inspection changes nothing. A later re-inspection is a refusal and changes nothing. There is no Commit on the standard path. A business refusal rolls back. In omit-commit mode the caller owns rollback.</source>
+          <target>Áhrif: lokin skoðun verður opin með staðlaðri ReopenInspection aðgerð. Magn sem stóðst og féll helst eins og aðgerðin skilur við það. Ídempotent: annað kall á opna skoðun breytir engu. Síðari endurskoðun er höfnun og breytir engu. Ekkert Commit er á staðlaðri leið. Viðskiptahöfnun bakfærir. Í ham án staðfestingar ber kallandi ábyrgð á bakfærslu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Áhrif: lokin skoðun verður opin með staðlaðri ReopenInspection aðgerð. Magn sem stóðst og féll helst eins og aðgerðin skilur við það. Ídempotent: annað kall á opna skoðun breytir engu. Síðari endurskoðun er höfnun og breytir engu. Ekkert Commit er á staðlaðri leið. Viðskiptahöfnun bakfærir. Í ham án staðfestingar ber kallandi ábyrgð á bakfærslu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - Method GetNotes - NamedType NotesLbl</note>
+        </trans-unit>
       </group>
     </body>
   </file>
