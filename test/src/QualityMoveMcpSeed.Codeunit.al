@@ -12,7 +12,7 @@ using Microsoft.QualityManagement.Setup;
 /// Invoked explicitly by the verification harness; it never changes Foundation guards, licensing or consent.
 /// All fixture data is removed when that owned ephemeral container is deleted after MCP/UI verification.
 /// </summary>
-codeunit 97224 "Quality Move MCP Seed ori"
+codeunit 97253 "Quality Move MCP Seed ori"
 {
     Access = Internal;
 

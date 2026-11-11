@@ -18,7 +18,7 @@ using System.TestLibraries.Security.AccessControl;
 using System.TestLibraries.Utilities;
 
 /// <summary>Issue 12: real standard journal creation, validation, rollback and permission refusals through the dispatcher.</summary>
-codeunit 97220 "Quality Move Tst ori"
+codeunit 97250 "Quality Move Tst ori"
 {
     Subtype = Test;
     TestPermissions = Restrictive;

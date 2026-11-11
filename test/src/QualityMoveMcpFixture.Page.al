@@ -1,7 +1,7 @@
 namespace Origo.Bifrost.QualityManagement.Test;
 
 /// <summary>Explicit, test-only UI entry point for creating the worker-owned MCP inventory fixture.</summary>
-page 97225 "Quality Move MCP Fixture ori"
+page 97254 "Quality Move MCP Fixture ori"
 {
     PageType = Card;
     Caption = 'Owned quality MCP fixture', Locked = true;

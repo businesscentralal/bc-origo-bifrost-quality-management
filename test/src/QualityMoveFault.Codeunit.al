@@ -8,7 +8,7 @@ using Microsoft.QualityManagement.Document;
 using Microsoft.QualityManagement.Integration.Inventory;
 
 /// <summary>Injects a late failure after standard movement line creation to verify transaction rollback.</summary>
-codeunit 97221 "Quality Move Fault ori"
+codeunit 97251 "Quality Move Fault ori"
 {
     EventSubscriberInstance = Manual;
 
