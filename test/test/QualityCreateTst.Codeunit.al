@@ -316,6 +316,7 @@ codeunit 97240 "Quality Create Tst ori"
         end else begin
             Assert.AreEqual('Error', ReadText(Response, 'status'), 'Expected refusal.');
             Assert.IsTrue(Inspection.IsEmpty(), 'A refusal must leave no inspection.');
+            AssertRefusalCode(Scenario, Response);
             case Scenario of
                 'late': Assert.IsTrue(ReadText(Response, 'error').Contains('Injected late'), 'Error must occur after native insertion.');
                 'read', 'noApp': Assert.IsTrue(LowerCase(ReadText(Response, 'error')).Contains('permission'), 'Missing app permission must be refused.');
@@ -328,6 +329,55 @@ codeunit 97240 "Quality Create Tst ori"
             end;
         end;
         CleanupFixture(FixtureCode);
+    end;
+
+    local procedure AssertRefusalCode(Scenario: Text; Response: JsonObject)
+    var
+        ExpectedCode: Text;
+        ExpectedParameter: Text;
+    begin
+        case Scenario of
+            'missing':
+                begin
+                    ExpectedCode := 'MissingParameter';
+                    ExpectedParameter := 'sourceSystemId';
+                end;
+            'null', 'guid':
+                begin
+                    ExpectedCode := 'InvalidParameter';
+                    ExpectedParameter := 'sourceSystemId';
+                end;
+            'table', 'stringTable':
+                begin
+                    ExpectedCode := 'InvalidParameter';
+                    ExpectedParameter := 'sourceTableId';
+                end;
+            'long', 'empty', 'blank':
+                begin
+                    ExpectedCode := 'InvalidParameter';
+                    ExpectedParameter := 'templateCode';
+                end;
+            'noSource':
+                begin
+                    ExpectedCode := 'RecordNotFound';
+                    ExpectedParameter := 'sourceSystemId';
+                end;
+            'read', 'noApp':
+                begin
+                    ExpectedCode := 'PermissionDenied';
+                    ExpectedParameter := 'permissionSet';
+                end;
+            'unknown':
+                begin
+                    ExpectedCode := 'UnknownParameter';
+                    ExpectedParameter := 'skip';
+                end;
+            else
+                exit;
+        end;
+        Assert.AreEqual(ExpectedCode, ReadText(Response, 'code'), 'Typed refusal code for ' + Scenario);
+        Assert.AreEqual(ExpectedParameter, ReadText(Response, 'parameter'), 'Refusal parameter for ' + Scenario);
+        Assert.IsTrue(ReadText(Response, 'nextStep') <> '', 'Recovery guidance for ' + Scenario);
     end;
 
     local procedure Initialize()

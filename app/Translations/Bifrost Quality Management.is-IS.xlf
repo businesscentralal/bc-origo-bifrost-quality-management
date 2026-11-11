@@ -375,6 +375,76 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Quality.Disposition.CreatePurchaseReturn, gæði, skoðun, innkaup, skil, fallið magn</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Purch Return Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
         </trans-unit>
+
+        <trans-unit id="Codeunit 2755627535 - NamedType 132850674" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Business Central refusal</source>
+          <target>Höfnun frá Business Central</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Höfnun frá Business Central</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType BusinessRefusalLbl</note>
+        </trans-unit>
+
+        <trans-unit id="Codeunit 2755627535 - NamedType 2401348933" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a non-empty SystemId GUID of an existing source record</source>
+          <target>SystemId GUID upprunafærslu sem er til og er ekki tómt</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId GUID upprunafærslu sem er til og er ekki tómt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType ExpectedGuidLbl</note>
+        </trans-unit>
+
+        <trans-unit id="Codeunit 2755627535 - NamedType 550874918" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a positive integer table ID</source>
+          <target>jákvætt heiltölutöfluauðkenni</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=jákvætt heiltölutöfluauðkenni</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType ExpectedTableLbl</note>
+        </trans-unit>
+
+        <trans-unit id="Codeunit 2755627535 - NamedType 1576944784" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a non-blank template code with at most 20 characters</source>
+          <target>sniðmátskóði sem er ekki tómur og hefur að hámarki 20 stafi</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=sniðmátskóði sem er ekki tómur og hefur að hámarki 20 stafi</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType ExpectedTemplateLbl</note>
+        </trans-unit>
+
+        <trans-unit id="Codeunit 2755627535 - NamedType 3501123091" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a text value</source>
+          <target>textagildi</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=textagildi</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType ExpectedTextLbl</note>
+        </trans-unit>
+
+        <trans-unit id="Codeunit 2755627535 - NamedType 3541817246" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read the source SystemId with Data.Records.Get and supply sourceTableId and sourceSystemId.</source>
+          <target>Lestu SystemId upprunafærslunnar með Data.Records.Get og sendu sourceTableId og sourceSystemId.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu SystemId upprunafærslunnar með Data.Records.Get og sendu sourceTableId og sourceSystemId.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType FindSourceLbl</note>
+        </trans-unit>
+
+        <trans-unit id="Codeunit 2755627535 - NamedType 4195077024" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the named request parameter and retry.</source>
+          <target>Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType FixParameterLbl</note>
+        </trans-unit>
+
+        <trans-unit id="Codeunit 2755627535 - NamedType 3545113691" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a created or resolved quality inspection for the source record</source>
+          <target>stofnuð eða fundin gæðaskoðun fyrir upprunafærsluna</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=stofnuð eða fundin gæðaskoðun fyrir upprunafærsluna</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType NotCreatedExpectedLbl</note>
+        </trans-unit>
+
+        <trans-unit id="Codeunit 2755627535 - NamedType 2093184316" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Check Quality Management setup, source mappings and generation rules before retrying; nothing was changed.</source>
+          <target>Athugaðu uppsetningu gæðastjórnunar, upprunavarpanir og stofnunarreglur áður en þú reynir aftur; engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Athugaðu uppsetningu gæðastjórnunar, upprunavarpanir og stofnunarreglur áður en þú reynir aftur; engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType NotCreatedNextLbl</note>
+        </trans-unit>
+
+        <trans-unit id="Codeunit 2755627535 - NamedType 3932376842" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for BIFROST QM Full ori.</source>
+          <target>Biddu stjórnanda um BIFROST QM Full ori.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu stjórnanda um BIFROST QM Full ori.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - NamedType PermissionNextLbl</note>
+        </trans-unit>
       </group>
     </body>
   </file>
