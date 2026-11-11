@@ -1,7 +1,7 @@
 namespace Origo.Bifrost.QualityManagement;
 
 /// <summary>
-/// Grants Quality Management scaffold execution without access to Microsoft business data.
+/// Grants Quality Management registration and capability discovery without write access or Microsoft business data.
 /// </summary>
 permissionset 10035236 "BIFROST Quality ori"
 {
@@ -12,5 +12,8 @@ permissionset 10035236 "BIFROST Quality ori"
         table "Quality Reinspect Access ori" = X,
         tabledata "Quality Reinspect Access ori" = R,
         codeunit "Quality Reinspect Impl ori" = X,
-        codeunit "Quality Reinspect Proc ori" = X;
+        codeunit "Quality Reinspect Proc ori" = X,
+        codeunit "Quality Reopen Impl ori" = X,
+        table "Quality Reopen Access ori" = X,
+        tabledata "Quality Reopen Access ori" = R;
 }
