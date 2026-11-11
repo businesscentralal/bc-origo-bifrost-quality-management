@@ -249,6 +249,12 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType FixParameterLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 4026014561" size-unit="char" translate="yes" xml:space="preserve">
+          <source>inspectionSystemId is not a valid GUID, or testCode or value is not text or is longer than its field allows.</source>
+          <target>inspectionSystemId er ekki gilt GUID, eða testCode eða value er ekki texti eða er lengra en reiturinn leyfir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=inspectionSystemId er ekki gilt GUID, eða testCode eða value er ekki texti eða er lengra en reiturinn leyfir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType InvalidWhenLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1135174596 - NamedType 2052369097" size-unit="char" translate="yes" xml:space="preserve">
           <source>text with at most %1 characters</source>
           <target>texti með að hámarki %1 stöfum</target>

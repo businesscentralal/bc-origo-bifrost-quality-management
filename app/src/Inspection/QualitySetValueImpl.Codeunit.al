@@ -18,6 +18,7 @@ codeunit 10035242 "Quality Set Value Impl ori" implements "Msg Interface ori", "
         NotFoundErr: Label 'The quality inspection was not found.', Comment = 'is-IS=Gæðaskoðunin fannst ekki.';
         ExpectedIdLbl: Label 'a non-empty SystemId GUID of an existing quality inspection', Comment = 'is-IS=SystemId GUID skoðunar sem er til og er ekki tómt';
         FindInspectionLbl: Label 'Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.', Comment = 'is-IS=Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.';
+        InvalidWhenLbl: Label 'inspectionSystemId is not a valid GUID, or testCode or value is not text or is longer than its field allows.', Comment = 'is-IS=inspectionSystemId er ekki gilt GUID, eða testCode eða value er ekki texti eða er lengra en reiturinn leyfir.';
         TextExpectedLbl: Label 'a text value', Comment = 'is-IS=textagildi';
         NonEmptyTextLbl: Label 'a non-empty text value', Comment = 'is-IS=textagildi sem er ekki tómt';
         FixParameterLbl: Label 'Correct the named request parameter and retry.', Comment = 'is-IS=Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.';
@@ -223,26 +224,18 @@ codeunit 10035242 "Quality Set Value Impl ori" implements "Msg Interface ori", "
 
     /// <summary>Provides the errors contract chapter.</summary>
     procedure GetErrors(var Errors: JsonArray): Boolean
+    var
+        Contract: Codeunit "Msg Contract Mgt ori";
     begin
         Clear(Errors);
-        AddErrorContract(Errors, 'MissingParameter', StrSubstNo(MissingKeyErr, 'inspectionSystemId / testCode / value'), FixParameterLbl);
-        AddErrorContract(Errors, 'InvalidParameter', TextExpectedLbl, FixParameterLbl);
-        AddErrorContract(Errors, 'UnknownParameter', StrSubstNo(UnknownKeyErr, 'data'), FixParameterLbl);
-        AddErrorContract(Errors, 'PermissionDenied', PermissionErr, PermissionNextLbl);
-        AddErrorContract(Errors, 'RecordNotFound', NotFoundErr, FindInspectionLbl);
-        AddErrorContract(Errors, 'PreconditionFailed', StatusErr, OpenNextLbl);
-        AddErrorContract(Errors, 'BusinessCentralError', NativeRefusalLbl, NativeNextLbl);
+        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::MissingParameter, StrSubstNo(MissingKeyErr, 'inspectionSystemId / testCode / value'), FixParameterLbl));
+        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::InvalidParameter, InvalidWhenLbl, FixParameterLbl));
+        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::UnknownParameter, StrSubstNo(UnknownKeyErr, 'data'), FixParameterLbl));
+        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::PermissionDenied, PermissionErr, PermissionNextLbl));
+        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::RecordNotFound, NotFoundErr, FindInspectionLbl));
+        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::PreconditionFailed, StatusErr, OpenNextLbl));
+        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::BusinessCentralError, NativeRefusalLbl, NativeNextLbl));
         exit(true);
-    end;
-
-    local procedure AddErrorContract(var Errors: JsonArray; ErrorCode: Text; WhenText: Text; FixText: Text)
-    var
-        Entry: JsonObject;
-    begin
-        Entry.Add('error', ErrorCode);
-        Entry.Add('when', WhenText);
-        Entry.Add('fix', FixText);
-        Errors.Add(Entry);
     end;
 
     /// <summary>Provides the effect contract chapter.</summary>

@@ -171,6 +171,38 @@ codeunit 97202 "Quality Set Value Tst ori"
         Assert.IsTrue(Contract.Contains('overview'), 'The help chapter must exist.');
     end;
 
+    /// <summary>Checks that the published errors chapter exposes each stable code in the code field.</summary>
+    [Test]
+    procedure Scenario_AC03_ErrorsChapter_PublishesStableCodes()
+    var
+        ContractMgt: Codeunit "Msg Contract Mgt ori";
+        Contract: JsonObject;
+        ErrorsToken: JsonToken;
+        EntryToken: JsonToken;
+        Entry: JsonObject;
+        Codes: Text;
+        Index: Integer;
+        ExpectedCode: Text;
+    begin
+        // Story #34, AC03 | Time: independent of Today and WorkDate | Risk: None
+        // [GIVEN] The app's enum extension is installed.
+        Initialize();
+        // [WHEN] Foundation resolves the public contract.
+        Assert.IsTrue(ContractMgt.GetContract(Enum::"Message Type ori"::"Quality.Inspection.SetTestValue", Contract), 'The registered type must expose its contract.');
+        // [THEN] Every entry of the errors chapter has code, when and fix, and all typed codes are published.
+        Assert.IsTrue(Contract.Get('errors', ErrorsToken), 'The errors chapter is required.');
+        for Index := 0 to ErrorsToken.AsArray().Count() - 1 do begin
+            ErrorsToken.AsArray().Get(Index, EntryToken);
+            Entry := EntryToken.AsObject();
+            Assert.IsTrue(Entry.Contains('code'), 'Each error entry must carry code.');
+            Assert.IsTrue(Entry.Contains('when'), 'Each error entry must carry when.');
+            Assert.IsTrue(Entry.Contains('fix'), 'Each error entry must carry fix.');
+            Codes += '|' + ReadText(Entry, 'code') + '|';
+        end;
+        foreach ExpectedCode in 'MissingParameter,InvalidParameter,UnknownParameter,PermissionDenied,RecordNotFound,PreconditionFailed,BusinessCentralError'.Split(',') do
+            Assert.IsTrue(Codes.Contains('|' + ExpectedCode + '|'), 'Published codes must include ' + ExpectedCode);
+    end;
+
     /// <summary>Verifies that a GUID selects the exact re-inspection and preserves the original.</summary>
     [Test]
     procedure Scenario_AC02_Reinspection_ChangesOnlySelectedRecord()
