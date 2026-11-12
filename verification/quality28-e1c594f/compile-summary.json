@@ -1,0 +1,15 @@
+{
+  "sha": "e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+  "app": {
+    "sha": "e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+    "errors": 0,
+    "warnings": 0,
+    "informationalDiagnostics": 0
+  },
+  "test": {
+    "sha": "e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+    "errors": 0,
+    "warnings": 0,
+    "informationalDiagnostics": 2
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "sha": "e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+  "issue": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/3",
+  "repairAcceptance": {
+    "conflictFree": true,
+    "bothDocumentationBlocksPreserved": true,
+    "manualALOrTestChanges": false,
+    "xlf97UnitsUnchanged": true
+  },
+  "issueAcceptance": [
+    {
+      "id": "AC01",
+      "criterion": "`Quality.Inspection.Create` is registered with Bifr\u00f6st Foundation and appears in the message type catalogue with a contract (effect, changes, idempotent, permissionSet, preconditions) that matches what the wrapped Business Central object really does, including any `Commit()` on its path.",
+      "status": "developer-verified at e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+      "evidence": "full-suite.json; mcp-results.json; ui-summary.json; independent Claude/Grok pending"
+    },
+    {
+      "id": "AC02",
+      "criterion": "The request keys needed to identify the source record(s) and options are documented in the contract. A request with a missing or unknown required key is refused with a clear, translated refusal and changes nothing.",
+      "status": "developer-verified at e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+      "evidence": "full-suite.json; mcp-results.json; ui-summary.json; independent Claude/Grok pending"
+    },
+    {
+      "id": "AC03",
+      "criterion": "The type calls the standard Business Central object named above, so Business Central's own validation and checks run. It does not write fields directly around them.",
+      "status": "developer-verified at e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+      "evidence": "full-suite.json; mcp-results.json; ui-summary.json; independent Claude/Grok pending"
+    },
+    {
+      "id": "AC04",
+      "criterion": "A business refusal from Business Central (blocked record, wrong status, missing setup) is returned as a refusal in the response, not as an unhandled error, and leaves no partial data.",
+      "status": "developer-verified at e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+      "evidence": "full-suite.json; mcp-results.json; ui-summary.json; independent Claude/Grok pending"
+    },
+    {
+      "id": "AC05",
+      "criterion": "The caller needs the app's permission set; a user without it is refused. The type is granted through the Foundation role extensions like the other types of this app.",
+      "status": "developer-verified at e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+      "evidence": "full-suite.json; mcp-results.json; ui-summary.json; independent Claude/Grok pending"
+    },
+    {
+      "id": "AC06",
+      "criterion": "Captions, help text and refusal texts exist in en-US and is-IS, and the is-IS XLF is in sync.",
+      "status": "developer-verified at e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+      "evidence": "full-suite.json; mcp-results.json; ui-summary.json; independent Claude/Grok pending"
+    },
+    {
+      "id": "AC07",
+      "criterion": "The help chapter for this type exists and states its effect and idempotency.",
+      "status": "developer-verified at e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+      "evidence": "full-suite.json; mcp-results.json; ui-summary.json; independent Claude/Grok pending"
+    },
+    {
+      "id": "AC08",
+      "criterion": "Tests cover the happy path, a missing-key refusal, a Business Central refusal, and a permission refusal.",
+      "status": "developer-verified at e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+      "evidence": "full-suite.json; mcp-results.json; ui-summary.json; independent Claude/Grok pending"
+    }
+  ],
+  "delivery": "Not delivered: current-tip paired CI/independent verification/clearance/approval/Architect merge/deployment/UAT remain separate"
+}

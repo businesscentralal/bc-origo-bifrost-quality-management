@@ -1,0 +1,37 @@
+{
+  "sha": "e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+  "history": [
+    {
+      "sha": "5840512ecb42616a0b892a1f9af36603acf25990",
+      "nativePassed": 114,
+      "mcpPassed": 51,
+      "uiPassed": 2,
+      "cleanupVerified": true,
+      "notes": [
+        "MCP transport-help parsing corrected using retained response; native missing-template wrapper expectation corrected to documented BusinessCentralError.",
+        "XLF order guard failed;97 normalized units retained during reorder."
+      ]
+    },
+    {
+      "sha": "e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+      "nativePassed": 114,
+      "mcpPassed": 48,
+      "uiPassed": 2,
+      "cleanupVerified": true,
+      "notes": [
+        "Fresh fixtures and rerun after XLF-only candidate change; final MCP completed in one execution.",
+        "Language UI uses lookup; selected exact own record and revision."
+      ]
+    }
+  ],
+  "staticGateway": "21/23 mechanical categories pass; Locked identifier captions and procedure parameter separators are reviewed false positives. See gateway-review.json.",
+  "notClaimed": [
+    "External CI completion",
+    "Independent Claude verification",
+    "Grok clearance",
+    "Approval",
+    "Merge",
+    "Deployment",
+    "UAT"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "sha": "e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+  "verified": true,
+  "fixtures": [
+    "XQ3S311121953",
+    "BIFTQ6-S311121953",
+    "BIFTQ13-S311121953"
+  ],
+  "helperResults": [
+    "cleanup-create.json",
+    "cleanup-value.json",
+    "cleanup-return.json"
+  ],
+  "independentReads": {
+    "headers": 0,
+    "items": 0,
+    "vendors": 0,
+    "purchaseHeaders": 0
+  },
+  "savedCreateSetup": "restored by fixture helper",
+  "ownTenantRetained": true,
+  "historicalFixtures": "Unchanged; only current-session fixtures removed",
+  "containersCreated": 0,
+  "customerWrites": 0
+}

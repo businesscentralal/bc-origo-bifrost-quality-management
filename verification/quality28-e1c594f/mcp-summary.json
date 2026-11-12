@@ -1,0 +1,23 @@
+{
+  "sha": "e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+  "verified": true,
+  "createsOwnData": true,
+  "total": 48,
+  "passed": 48,
+  "failed": 0,
+  "skipped": 0,
+  "touchedMessageTypes": [
+    "Quality.Disposition.CreatePurchaseReturn",
+    "Quality.Inspection.Create",
+    "Quality.Inspection.CreateReinspection",
+    "Quality.Inspection.Reopen",
+    "Quality.Inspection.SetTestValue"
+  ],
+  "summary": "Five types: bilingual contract/discovery, missing/unknown input refusals; Create missing-source typed metadata, native template refusal and unchanged inspection snapshots, native template/rule creation; Reopen open-state calls; SetTestValue native updates; native purchase returns; native reinspection revision1. All three fixtures self-seeded and cleaned; independent zero-record readbacks. Permissions exercised by full native suite, no restricted-user MCP session claimed.",
+  "fixtureCodes": [
+    "XQ3S311121953",
+    "BIFTQ6-S311121953",
+    "BIFTQ13-S311121953"
+  ],
+  "attemptNotes": "Final-tip verifier completed in one execution; earlier5840512 parser/expectation corrections retained in parent evidence and not counted here."
+}

@@ -1,0 +1,14 @@
+{
+  "sha": "e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+  "verified": true,
+  "passed": 2,
+  "failed": 0,
+  "skipped": 0,
+  "lcids": [
+    1033,
+    1039
+  ],
+  "summary": "Own native inspection revision1 card: source/template, measurement line, Open status and native Create Re-inspection action verified in both languages. Original Icelandic user profile restored.",
+  "originalLanguage": 1039,
+  "restoredLanguage": 1039
+}

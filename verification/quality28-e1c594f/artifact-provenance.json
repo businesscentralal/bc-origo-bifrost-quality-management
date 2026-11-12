@@ -1,0 +1,51 @@
+{
+  "sha": "e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+  "tenant": "w129-13",
+  "server": "BC290",
+  "owner": "worker-3",
+  "company": "CRONUS International Ltd.",
+  "apps": [
+    {
+      "appId": "d3ca6790-e2c1-44c1-a026-fd75a3f5b52d",
+      "packageId": "68149389-4dac-4746-9289-453489c4ba0f",
+      "sha256": "dfe29a75607c9a9bc0ed57e60948acdf8be1247e3be2070e1cd0f098c8edc895",
+      "version": "28.0.0.0",
+      "installedPackageMatches": true
+    },
+    {
+      "appId": "9193f6a2-0926-49bb-9fec-3c36a60c8b0e",
+      "packageId": "bc4194d3-cfac-4e13-9ce2-565342b3c405",
+      "sha256": "a7dd5c0415c9413c1cd0ad1dfba2c9a1290d82ac390b20c7d21c350f124033bb",
+      "version": "28.0.0.0",
+      "installedPackageMatches": true
+    }
+  ],
+  "dependencies": [
+    {
+      "@odata.etag": "W/\"JzIwOzEwMTkyMDU3MzA4MDkwMjY0MDU0MTswMDsn\"",
+      "packageId": "3d843c3b-acde-423a-bee1-d3ab6f1b3fcd",
+      "id": "7505e808-6e52-4b96-a328-82573391297a",
+      "displayName": "Bifrost Foundation",
+      "publisher": "Origo",
+      "versionMajor": 28,
+      "versionMinor": 0,
+      "versionBuild": 13,
+      "versionRevision": 0,
+      "isInstalled": true,
+      "publishedAs": " Dev"
+    },
+    {
+      "@odata.etag": "W/\"JzIwOzE3MDUzMzI5OTExNDgxOTc5NzA1MTswMDsn\"",
+      "packageId": "34edcd16-1a24-49c8-838d-8354837b6f11",
+      "id": "bc7b3891-f61b-4883-bbb3-384cdef88bec",
+      "displayName": "Quality Management",
+      "publisher": "Microsoft",
+      "versionMajor": 29,
+      "versionMinor": 0,
+      "versionBuild": 54011,
+      "versionRevision": 55407,
+      "isInstalled": true,
+      "publishedAs": "Global"
+    }
+  ]
+}

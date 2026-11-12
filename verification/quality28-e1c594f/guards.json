@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Test-ObjectIdsUnique",
+    "exitCode": 0,
+    "summary": "Object ID uniqueness check passed: no duplicate object type and ID within any app.\n"
+  },
+  {
+    "name": "Test-PermissionCoverage",
+    "exitCode": 0,
+    "summary": "Every page, query, report and xmlport is granted by an assignable permission set.\n"
+  },
+  {
+    "name": "Test-NoObsolete",
+    "exitCode": 0,
+    "summary": "No obsolete declaration and no AL0432/AL0667 pragma in the app, apart from the allow-listed VAT Amount Line pragmas.\n"
+  },
+  {
+    "name": "Test-NoClientCallstack",
+    "exitCode": 0,
+    "summary": "No call stack is returned or documented to callers.\n"
+  },
+  {
+    "name": "Test-IcelandicKeywordCounts",
+    "exitCode": 0,
+    "summary": "Every Icelandic keyword list has at least as many entries as the English one (5 in the source, 5 in the xlf).\n"
+  },
+  {
+    "name": "Test-IcelandicXlfInSync",
+    "exitCode": 0,
+    "summary": "Final e1c594f guard passes after order-only regeneration; initial5840512 failure retained privately."
+  },
+  {
+    "name": "Test-MixedLanguageLabels",
+    "exitCode": 0,
+    "summary": "No procedure answers a Locked English sentence.\n"
+  },
+  {
+    "name": "Test-ValidatedTableView",
+    "exitCode": 0,
+    "summary": "Every applied tableView is validated first.\n"
+  },
+  {
+    "name": "Test-ContractParameterKeys",
+    "exitCode": 0,
+    "summary": "Every contract parameter is a key the code reads, and every key the code reads is declared (0 allow-listed).\n"
+  },
+  {
+    "name": "Test-HelpLinks",
+    "exitCode": 0,
+    "summary": "hecked the app.json links and 0 page(s)\nThe app has no pages and no help instance; help, privacyStatement, EULA and contextSensitiveHelpUrl point at the app's pages on https://docs.bifrost.origo.is/.\n"
+  }
+]

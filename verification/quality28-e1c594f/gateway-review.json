@@ -1,0 +1,31 @@
+{
+  "sha": "e1c594f4cd3628d5253486178bb353cf6ca6e34b",
+  "manualChangeScope": "README and CHANGELOG union, XLF ordering/formatting only; no authored AL or test source changes",
+  "layer1": {
+    "passed": 21,
+    "total": 23,
+    "ready": false,
+    "failed": 2
+  },
+  "findingsDisposition": {
+    "caption_translation": "Two message enum captions are Locked identifiers and intentionally unlocalized; translated discovery/help is verified.",
+    "one_statement_per_line": "Three AL procedure signatures contain semicolon-delimited parameter lists; no multiple executable statements. Compiler and all source guards pass."
+  },
+  "layer2": {
+    "compiler": "Both apps0errors0warnings with all3analyzers",
+    "IDsAndNaming": "No manual ID/name changes; ObjectIdsUnique passes",
+    "compatibility": "No authored public signature/field removals; imported main preserved",
+    "appManifest": "No change to app IDs, versions, dependencies or warnings configuration",
+    "documentation": "Both creation and re-inspection entries/permission descriptions preserved; no new semantic permission contract",
+    "translations": "97normalized units identical; compiler order synchronized; bilingual runtime verification",
+    "tests": "Full configured114/114/0/0 at final candidate; no test/assertion changes",
+    "permissions": "Main grants preserved; Read/no-app regressions retained in full suite",
+    "logic": "git remerge-diff manual resolution only docs; final chore changes unit order only",
+    "limits": "External paired CI and independent exact-tip verification/review remain pending; no merge/UAT claim"
+  },
+  "lessons": [
+    "core-pr853-worker8-20261004-conflict-preservation",
+    "quality32-claude6762673977-read-execute-litr-20261110",
+    "quality6-worker4-api-wildcard-execute-20261110"
+  ]
+}
