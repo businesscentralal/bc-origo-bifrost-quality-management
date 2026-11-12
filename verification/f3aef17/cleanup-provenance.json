@@ -1,0 +1,25 @@
+{
+  "owner": "worker-7",
+  "tenant": "w129-17",
+  "purpose": "Temporary tenant-only native cleanup test for exactly the self-seeded Q12M-D7/D12M-D7 fixture. Not part of the shipping app or its acceptance-test count.",
+  "productCandidateSha": "f3aef17157f529dd2e83e00d081060324fdd4f4f",
+  "appId": "a802f593-0a5e-4307-a052-3cfc0fecb4e7",
+  "testCodeunit": 97299,
+  "compile": {
+    "errors": 0,
+    "warnings": 0,
+    "analyzers": [
+      "CodeCop",
+      "UICop",
+      "PerTenantExtensionCop"
+    ]
+  },
+  "appSha256": "073c8ba89cfab5288baa7004b6d1add94bcbb2c500c421f6e7057e5df3fa7f53",
+  "preconditions": [
+    "Company CRONUS International Ltd. on worker-owned w129-17",
+    "No item or location ledger entries",
+    "Only four known owned Q12M-D7 transfer lines",
+    "Original setup batch name empty per setup-before.json"
+  ],
+  "nextAction": "Publish tenant-only, execute one cleanup test with isolation Disabled, verify all fixture tables and setup, uninstall/unpublish temporary helper."
+}
