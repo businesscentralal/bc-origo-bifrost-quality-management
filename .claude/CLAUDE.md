@@ -21,6 +21,12 @@ Tests: 97200-97299
 | Permission set | 10035238 | BIFROST QM Read ori |
 | Permission set extension | 10035239 | Quality Full Role ori |
 | Permission set extension | 10035240 | Quality Read Role ori |
+| Table | 10035320 | Quality Reinspect Access ori |
+| Codeunit | 10035321 | Quality Reinspect Impl ori |
+| Codeunit | 10035322 | Quality Reinspect Proc ori |
+| Enum extension | 10035323 | Quality Reinspect Types ori |
+| Test codeunit | 97207 | Quality Reinspect Tst ori |
+| Test codeunit | 97208 | Quality Action Perm Tst ori |
 | Enum extension | 10035255 | Quality Reopen Types ori (`Quality.Inspection.Reopen`) |
 | Codeunit | 10035256 | Quality Reopen Impl ori |
 | Table | 10035258 | Quality Reopen Access ori |

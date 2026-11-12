@@ -28,5 +28,7 @@ permissionset 10035237 "BIFROST QM Full ori"
         tabledata "Qlty Finish Access ori" = RIMD,
         codeunit "Qlty Insp Finish Ctr ori" = X,
         codeunit "Qlty Insp Finish Impl ori" = X,
-        codeunit "Qlty Insp Finish Proc ori" = X;
+        codeunit "Qlty Insp Finish Proc ori" = X,
+        table "Quality Reinspect Access ori" = X,
+        tabledata "Quality Reinspect Access ori" = RIMD;
 }
