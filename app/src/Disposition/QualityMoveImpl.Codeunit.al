@@ -13,6 +13,8 @@ codeunit 10035270 "Quality Move Impl ori" implements "Msg Interface ori", "Msg D
     var
         DescriptionLbl: Label 'Moves failed or passed inspection inventory using standard quality disposition and optional posting.', MaxLength = 250, Comment = 'is-IS=Flytur birgðir sem standast eða falla í gæðaskoðun með staðlaðri ráðstöfun og valfrjálsri bókun.';
         MissingKeyErr: Label 'The required parameter %1 is missing or invalid.', Comment = '%1 = parameter name|is-IS=Nauðsynlega færibreytu %1 vantar eða hún er ógild.';
+        ExpectedIdLbl: Label 'a non-empty quality inspection SystemId GUID', Comment = 'is-IS=SystemId GUID gæðaskoðunar sem er ekki tómt';
+        FindInspectionLbl: Label 'Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.', Comment = 'is-IS=Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.';
         UnknownKeyErr: Label 'Unknown parameter %1.', Comment = '%1 = parameter name|is-IS=Óþekkt færibreyta %1.';
         TooLongErr: Label 'Parameter %1 exceeds %2 characters.', Comment = '%1 = parameter name, %2 = limit|is-IS=Færibreytan %1 er lengri en %2 stafir.';
         PermissionErr: Label 'The BIFROST QM Full ori permission set is required.', Comment = 'is-IS=Heimildasafnið BIFROST QM Full ori er nauðsynlegt.';
@@ -61,10 +63,7 @@ codeunit 10035270 "Quality Move Impl ori" implements "Msg Interface ori", "Msg D
         foreach ParameterName in Request.Keys() do
             if not (ParameterName in ['inspectionSystemId', 'quantityBasis', 'method', 'sourceLocationCode', 'sourceBinCode', 'destinationLocationCode', 'destinationBinCode', 'postImmediately', 'confirm', 'expectedCount']) then
                 Error(ErrorInfo.Create(StrSubstNo(UnknownKeyErr, ParameterName)));
-        if not Evaluate(InspectionId, ReadText(Request, 'inspectionSystemId', true, 50)) then
-            Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, 'inspectionSystemId')));
-        if IsNullGuid(InspectionId) then
-            Error(ErrorInfo.Create(StrSubstNo(MissingKeyErr, 'inspectionSystemId')));
+        InspectionId := ReadInspectionId(Request, Argument);
         if not ReadBoolean(Request, 'confirm') then
             Error(ErrorInfo.Create(ConfirmErr));
         PostImmediately := ReadBoolean(Request, 'postImmediately');
@@ -113,6 +112,32 @@ codeunit 10035270 "Quality Move Impl ori" implements "Msg Interface ori", "Msg D
         Response.Add('posted', PostImmediately);
         Argument.SetResponseJson(Response);
         Argument."Content Type" := Argument.GetContentTypeJson();
+    end;
+
+    local procedure ReadInspectionId(Request: JsonObject; var Argument: Record "Message Argument ori") InspectionId: Guid
+    var
+        Token: JsonToken;
+        Serialized: Text;
+    begin
+        if not Request.Get('inspectionSystemId', Token) then
+            RefuseInspectionId(Argument);
+        Token.WriteTo(Serialized);
+        if CopyStr(Serialized, 1, 1) <> '"' then
+            RefuseInspectionId(Argument);
+        if not Evaluate(InspectionId, Token.AsValue().AsText()) then
+            RefuseInspectionId(Argument);
+        if IsNullGuid(InspectionId) then
+            RefuseInspectionId(Argument);
+    end;
+
+    local procedure RefuseInspectionId(var Argument: Record "Message Argument ori")
+    var
+        Message: Text;
+    begin
+        Message := StrSubstNo(MissingKeyErr, 'inspectionSystemId');
+        // Preserve the typed refusal across the isolated Codeunit.Run rollback.
+        Argument.AddError("Bifrost Error Code ori"::MissingParameter, Message, 'inspectionSystemId', '', ExpectedIdLbl, FindInspectionLbl);
+        Argument.RaiseCollectedErrors("Bifrost Error Code ori"::MissingParameter, Message);
     end;
 
     local procedure ValidateSourceCode(Value: Text; ParameterName: Text)
@@ -257,8 +282,11 @@ codeunit 10035270 "Quality Move Impl ori" implements "Msg Interface ori", "Msg D
 
     /// <summary>Returns the errors contract chapter.</summary>
     procedure GetErrors(var Errors: JsonArray): Boolean
+    var
+        Contract: Codeunit "Msg Contract Mgt ori";
     begin
         Errors.ReadFrom('[{"code":"UnknownParameter","when":"An unknown data key is sent.","fix":"Use only declared parameters."},{"error":"Business Central refusal","when":"Input, confirmation, permissions, stock, bin, inspection quantity or movement setup are invalid; standard validation or posting fails.","fix":"Correct the request, setup or permissions and retry. No movement from the failed call remains."}]');
+        Errors.Add(Contract.ErrorEntry("Bifrost Error Code ori"::MissingParameter, StrSubstNo(MissingKeyErr, 'inspectionSystemId'), FindInspectionLbl));
         exit(true);
     end;
 

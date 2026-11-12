@@ -203,6 +203,51 @@ codeunit 97250 "Quality Move Tst ori"
         Assert.IsTrue(Contract.Contains('overview'), 'The help chapter is required.');
     end;
 
+    /// <summary>Invalid inspection identifiers return the typed refusal without creating a movement.</summary>
+    [Test]
+    procedure Scenario_AC02_missingId_ReturnsMissingParameter()
+    begin
+        // Story #12, AC02 | Time: WorkDate | Risk: owned Q12 fixtures only
+        VerifyScenario('missingId', 1033);
+        VerifyScenario('missingId', 1039);
+    end;
+
+    /// <summary>Invalid inspection identifiers return the typed refusal without creating a movement.</summary>
+    [Test]
+    procedure Scenario_AC02_emptyId_ReturnsMissingParameter()
+    begin
+        // Story #12, AC02 | Time: WorkDate | Risk: owned Q12 fixtures only
+        VerifyScenario('emptyId', 1033);
+        VerifyScenario('emptyId', 1039);
+    end;
+
+    /// <summary>Invalid inspection identifiers return the typed refusal without creating a movement.</summary>
+    [Test]
+    procedure Scenario_AC02_malformedId_ReturnsMissingParameter()
+    begin
+        // Story #12, AC02 | Time: WorkDate | Risk: owned Q12 fixtures only
+        VerifyScenario('malformedId', 1033);
+        VerifyScenario('malformedId', 1039);
+    end;
+
+    /// <summary>Invalid inspection identifiers return the typed refusal without creating a movement.</summary>
+    [Test]
+    procedure Scenario_AC02_nullId_ReturnsMissingParameter()
+    begin
+        // Story #12, AC02 | Time: WorkDate | Risk: owned Q12 fixtures only
+        VerifyScenario('nullId', 1033);
+        VerifyScenario('nullId', 1039);
+    end;
+
+    /// <summary>Invalid inspection identifiers return the typed refusal without creating a movement.</summary>
+    [Test]
+    procedure Scenario_AC02_nonTextId_ReturnsMissingParameter()
+    begin
+        // Story #12, AC02 | Time: WorkDate | Risk: owned Q12 fixtures only
+        VerifyScenario('nonTextId', 1033);
+        VerifyScenario('nonTextId', 1039);
+    end;
+
     local procedure VerifyScenario(Scenario: Text; LanguageId: Integer)
     var
         Inspection: Record "Qlty. Inspection Header";
@@ -230,6 +275,11 @@ codeunit 97250 "Quality Move Tst ori"
             'passed': Request.Replace('quantityBasis', 'passed');
             'count': Request.Replace('expectedCount', 0);
             'missing': Request.Remove('quantityBasis');
+            'missingId': Request.Remove('inspectionSystemId');
+            'emptyId': Request.Replace('inspectionSystemId', '');
+            'malformedId': Request.Replace('inspectionSystemId', 'not-a-guid');
+            'nullId': Request.Replace('inspectionSystemId', '00000000-0000-0000-0000-000000000000');
+            'nonTextId': Request.Replace('inspectionSystemId', 42);
             'unknown': Request.Add('unexpected', true);
             'boolean': Request.Add('postImmediately', 'true');
             'confirm': Request.Remove('confirm');
@@ -290,6 +340,8 @@ codeunit 97250 "Quality Move Tst ori"
         end else begin
             Assert.AreEqual('Error', ReadText(Response, 'status'), 'The operation must return a refusal.');
             Assert.AreEqual(0, JournalLine.Count(), 'A refusal must leave no prepared lines.');
+            if Scenario in ['missingId', 'emptyId', 'malformedId', 'nullId', 'nonTextId'] then
+                VerifyTypedIdRefusal(Response, LanguageId);
             if Scenario = 'latePost' then
                 Assert.IsTrue(ReadText(Response, 'error').Contains('Q12 late posting failure'), 'The refusal must occur after real standard posting.');
             if Scenario = 'late' then
@@ -302,6 +354,21 @@ codeunit 97250 "Quality Move Tst ori"
             exit; // The isolated test runner rolls back the self-seeded stock and setup.
         end;
         Cleanup(Inspection);
+    end;
+
+    local procedure VerifyTypedIdRefusal(Response: JsonObject; LanguageId: Integer)
+    var
+        Token: JsonToken;
+        Detail: JsonObject;
+    begin
+        Assert.AreEqual('MissingParameter', ReadText(Response, 'code'), 'The inspection identifier refusal must retain its typed code.');
+        Assert.IsTrue(Response.Get('errors', Token), 'The refusal must include parameter details.');
+        Token.AsArray().Get(0, Token);
+        Detail := Token.AsObject();
+        Assert.AreEqual('inspectionSystemId', ReadText(Detail, 'parameter'), 'Identify the invalid parameter.');
+        Assert.IsTrue(ReadText(Detail, 'nextStep').Contains('Data.Records.Get'), 'Provide an actionable inspection lookup.');
+        if LanguageId = 1039 then
+            Assert.IsTrue(ReadText(Detail, 'nextStep').Contains('Lestu'), 'Recovery guidance must be Icelandic.');
     end;
 
     local procedure Initialize()

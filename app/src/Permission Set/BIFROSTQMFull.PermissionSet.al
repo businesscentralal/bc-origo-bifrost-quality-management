@@ -25,5 +25,7 @@ permissionset 10035237 "BIFROST QM Full ori"
         codeunit "Quality Move Impl ori" = X,
         codeunit "Quality Move Posting ori" = X,
         table "Quality Move Access ori" = X,
-        tabledata "Quality Move Access ori" = RIMD;
+        tabledata "Quality Move Access ori" = RIMD,
+        table "Quality Reinspect Access ori" = X,
+        tabledata "Quality Reinspect Access ori" = RIMD;
 }

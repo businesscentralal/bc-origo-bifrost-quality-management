@@ -15,3 +15,5 @@ This is **not idempotent**. A repeated successful request may create another mov
 Microsoft's ordinary quality posting commits before individual lines. The wrapper binds standard item/warehouse posting with commit suppression and prohibits explicit commits during the disposition. A business refusal rolls back line creation and posting together. Normal success commits once through the isolated wrapper. With `Omit Commit`, the calling extension owns the transaction and rollback. No trial, licence, consent or external-provider state is changed.
 
 Foundation also applies its standard irreversible-operation preview: send `expectedCount=1` for the single inspection. A stale count is refused before movement. This does not replace `confirm=true`.
+
+A missing, empty, non-text, malformed or zero `inspectionSystemId` returns `MissingParameter`, with `parameter=inspectionSystemId` and a translated `nextStep` explaining how to read the inspection SystemId. No movement is created.

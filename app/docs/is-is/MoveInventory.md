@@ -11,3 +11,5 @@ Aðgerðin er **ekki ídempótent**. Endurtekið heppnað kall getur stofnað an
 Venjuleg gæðabókun Microsoft staðfestir fyrir hverja línu. Viðbótin bindur staðlaða bókun vöru eða vöruhúss með bældri staðfestingu og bannar beinar staðfestingar meðan ráðstöfun stendur. Viðskiptahöfnun bakfærir stofnun lína og bókun saman. Venjuleg heppnuð keyrsla staðfestir einangraða færslu einu sinni. Með `Omit Commit` ber kallandi viðbót ábyrgð á færslu og bakfærslu. Engu ástandi prufu, leyfis, samþykkis eða ytri þjónustu er breytt.
 
 Foundation notar einnig staðlaða forskoðun óafturkræfra aðgerða: sendu `expectedCount=1` fyrir eina skoðun. Röngum fjölda er hafnað áður en flutningur hefst. Þetta kemur ekki í stað `confirm=true`.
+
+Ef `inspectionSystemId` vantar, er tómt, er ekki texti, er gallað eða er núll-GUID er svarað með `MissingParameter`, `parameter=inspectionSystemId` og þýddri `nextStep` leiðbeiningu um hvernig á að lesa SystemId skoðunar. Enginn flutningur er stofnaður.
