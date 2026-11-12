@@ -3,6 +3,84 @@
   <file datatype="xml" source-language="en-US" target-language="is-IS" original="Bifrost Quality Management">
     <body>
       <group id="body">
+        <trans-unit id="Table 548483976 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality action access</source>
+          <target>Aðgangur að gæðaaðgerðum</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðgangur að gæðaaðgerðum</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Reinspect Access ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 548483976 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary key</source>
+          <target>Aðallykill</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Reinspect Access ori - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1542610788 - NamedType 1477048533" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an existing inspection SystemId</source>
+          <target>SystemId skoðunar sem er til</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId skoðunar sem er til</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Impl ori - NamedType ExpectedIdTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1542610788 - NamedType 180107814" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read the source inspection SystemId using Data.Records.Get.</source>
+          <target>Lestu SystemId upprunalegrar skoðunar með Data.Records.Get.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu SystemId upprunalegrar skoðunar með Data.Records.Get.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Impl ori - NamedType FixIdTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1542610788 - NamedType 3820335595" size-unit="char" translate="yes" xml:space="preserve">
+          <source>inspectionSystemId must be a non-empty GUID.</source>
+          <target>inspectionSystemId verður að vera GUID sem er ekki tómt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=inspectionSystemId verður að vera GUID sem er ekki tómt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Impl ori - NamedType InvalidIdErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1542610788 - NamedType 823878488" size-unit="char" translate="yes" xml:space="preserve">
+          <source>inspectionSystemId is required and must identify an existing inspection.</source>
+          <target>inspectionSystemId er áskilið og verður að auðkenna skoðun sem er til.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=inspectionSystemId er áskilið og verður að auðkenna skoðun sem er til.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Impl ori - NamedType MissingIdErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1542610788 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You need BIFROST QM Full ori to create a re-inspection.</source>
+          <target>Þú þarft BIFROST QM Full ori til að stofna endurskoðun.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú þarft BIFROST QM Full ori til að stofna endurskoðun.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Impl ori - NamedType PermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1542610788 - NamedType 1738233936" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for the Bifrost Quality Full role and the standard Quality Inspector permissions.</source>
+          <target>Biddu stjórnanda um hlutverkið Bifrost Quality Full og staðlaðar heimildir gæðaskoðunarmanns.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu stjórnanda um hlutverkið Bifrost Quality Full og staðlaðar heimildir gæðaskoðunarmanns.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Impl ori - NamedType PermissionNextTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1542610788 - NamedType 2912406318" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unknown parameter %1. Nothing was changed.</source>
+          <target>Óþekkt viðfang %1. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = request key, is-IS=Óþekkt viðfang %1. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Impl ori - NamedType UnknownKeyErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1542610788 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creates the next re-inspection from an existing quality inspection using standard Business Central validation.</source>
+          <target>Stofnar næstu endurskoðun úr gæðaskoðun með stöðluðum sannprófunum Business Central.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Stofnar næstu endurskoðun úr gæðaskoðun með stöðluðum sannprófunum Business Central.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1542610788 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>reinspection, re-inspection, inspect again, failed quality inspection, retest</source>
+          <target>endurskoðun, endurtaka skoðun, fallin gæðaskoðun, endurprófun, skoða aftur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=endurskoðun, endurtaka skoðun, fallin gæðaskoðun, endurprófun, skoða aftur</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1542610788 - Method 3650283039 - NamedType 2344026547" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not idempotent: each successful retry creates another revision. Read the result before retrying. Native refusals leave no partial inspection or source-status change. In omit-commit mode native errors propagate to the enclosing task transaction for rollback.</source>
+          <target>Ekki ídempotent: hver endurtekning sem tekst stofnar nýja útgáfu. Lestu niðurstöðuna áður en þú reynir aftur. Höfnun staðlaðrar aðgerðar skilur hvorki eftir hluta skoðunar né breytta stöðu upprunalegrar skoðunar. Í ham án staðfestingar berast villur til umlykjandi færslu til afturköllunar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Ekki ídempotent: hver endurtekning sem tekst stofnar nýja útgáfu. Lestu niðurstöðuna áður en þú reynir aftur. Höfnun staðlaðrar aðgerðar skilur hvorki eftir hluta skoðunar né breytta stöðu upprunalegrar skoðunar. Í ham án staðfestingar berast villur til umlykjandi færslu til afturköllunar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Impl ori - Method GetNotes - NamedType NotesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3770574194 - NamedType 3910898602" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No re-inspection was created. The operation was cancelled.</source>
+          <target>Engin endurskoðun var stofnuð. Hætt var við aðgerðina.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Engin endurskoðun var stofnuð. Hætt var við aðgerðina.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Proc ori - NamedType CancelledErr</note>
+        </trans-unit>
         <trans-unit id="Table 1183539652 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quality Write Access</source>
           <target>Skrifaðgangur að gæðastjórnun</target>
