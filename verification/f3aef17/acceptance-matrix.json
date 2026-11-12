@@ -1,0 +1,50 @@
+{
+  "sha": "f3aef17157f529dd2e83e00d081060324fdd4f4f",
+  "issue": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/12",
+  "reviewFinding": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/pull/30#issuecomment-6833506983",
+  "matrix": [
+    {
+      "criterion": "AC01",
+      "status": "PASS",
+      "evidence": "Native discovery and atomic-effect contract test; live help in 1033/1039."
+    },
+    {
+      "criterion": "AC02",
+      "status": "PASS",
+      "evidence": "Five new native tests, each in 1033/1039, assert MissingParameter/parameter/expected/nextStep and zero new lines; six identifier MCP variants per language."
+    },
+    {
+      "criterion": "AC03",
+      "status": "PASS",
+      "evidence": "Full suite includes standard failed/passed movement and successful posting. MCP creates four standard reclassification lines; UI displays them."
+    },
+    {
+      "criterion": "AC04",
+      "status": "PASS",
+      "evidence": "Full suite includes late preparation and posting rollback. MCP immediate posting without stock refuses with no new lines."
+    },
+    {
+      "criterion": "AC05",
+      "status": "PASS",
+      "evidence": "Full suite includes restrictive no-app-role refusal and merged roles. No production permission changes in the amendment."
+    },
+    {
+      "criterion": "AC06",
+      "status": "PASS",
+      "evidence": "93 Icelandic XLF targets synchronized; MCP and actual Web Client languages en-US/is-IS verified; user language restored."
+    },
+    {
+      "criterion": "AC07",
+      "status": "PASS",
+      "evidence": "Bilingual call guides and live help include the MissingParameter refusal."
+    },
+    {
+      "criterion": "AC08",
+      "status": "PASS",
+      "evidence": "Full 97200..97299 suite:116 executed/116 passed/0 failed/0 skipped. Temporary cleanup test separately1/1."
+    }
+  ],
+  "independentClaude": "PENDING at this new SHA",
+  "grokClearance": "PENDING at this new SHA",
+  "delivery": "Not complete; hosted paired CI, independent amendment closure/review and Architect merge/deploy/UAT remain."
+}

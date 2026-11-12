@@ -1,0 +1,8 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"fileName\": \"app.app\",\n  \"bytes\": 66807,\n  \"statusCode\": 200,\n  \"durationMs\": 3260,\n  \"developerBaseUrl\": \"http://host.docker.internal:7049/BC290\",\n  \"body\": null,\n  \"ok\": true\n}"
+    }
+  ]
+}

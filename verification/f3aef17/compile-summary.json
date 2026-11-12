@@ -1,0 +1,24 @@
+[
+  {
+    "lane": "app",
+    "sourceSha": "f3aef17157f529dd2e83e00d081060324fdd4f4f",
+    "workingDiffSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exitCode": 0,
+    "errors": 0,
+    "warnings": 0,
+    "version": "28.0.0.0",
+    "appPath": "/workspace/private/quality30-amend/app.app",
+    "sha256": "ba95174e7381e9b1a91d121cf36338f4604ad72165ca4958c5cb47b53af46d55"
+  },
+  {
+    "lane": "test",
+    "sourceSha": "f3aef17157f529dd2e83e00d081060324fdd4f4f",
+    "workingDiffSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exitCode": 0,
+    "errors": 0,
+    "warnings": 0,
+    "version": "28.0.0.0",
+    "appPath": "/workspace/private/quality30-amend/test.app",
+    "sha256": "81714b93cc6d533901304847421b75a03b7a92e1a7b36171148dfa1b13826b86"
+  }
+]

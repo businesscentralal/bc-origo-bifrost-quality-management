@@ -1,0 +1,60 @@
+{
+  "sha": "f3aef17157f529dd2e83e00d081060324fdd4f4f",
+  "tenant": "w129-17",
+  "owner": "worker-7",
+  "cleanupHelperSource": {
+    "repo": "businesscentralal/bc-origo-bifrost-quality-management",
+    "branch": "evidence/dainn-quality30-f3aef17",
+    "sha": "b3e01568114507410848b72a2c097b0ac4edbec5",
+    "branchUrl": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/tree/evidence/dainn-quality30-f3aef17",
+    "commitUrl": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/commit/b3e01568114507410848b72a2c097b0ac4edbec5",
+    "remoteVerifiedAt": "2026-11-12T19:52:39.079Z"
+  },
+  "cleanupTest": {
+    "executed": 1,
+    "passed": 1,
+    "failed": 0,
+    "skipped": 0
+  },
+  "tables": [
+    {
+      "table": "Item Journal Line",
+      "count": 0
+    },
+    {
+      "table": "Qlty. Inspection Header",
+      "count": 0
+    },
+    {
+      "table": "Item",
+      "count": 0
+    },
+    {
+      "table": "Item Unit of Measure",
+      "count": 0
+    },
+    {
+      "table": "Unit of Measure",
+      "count": 0
+    },
+    {
+      "table": "Location",
+      "count": 0
+    },
+    {
+      "table": "Item Journal Batch",
+      "count": 0
+    },
+    {
+      "table": "Item Journal Template",
+      "count": 0
+    },
+    {
+      "table": "Item Ledger Entry",
+      "count": 0
+    }
+  ],
+  "verified": true,
+  "setupRestored": true,
+  "verifiedAt": "2026-11-12T19:56:15.838Z"
+}

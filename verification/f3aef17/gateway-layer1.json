@@ -1,0 +1,132 @@
+{
+  "publisher": "Origo",
+  "project": "Bifrost Quality Management",
+  "summary": {
+    "ready": false,
+    "passed": 21,
+    "total": 23,
+    "failed": 2
+  },
+  "version": "28.0.0.0",
+  "total_al_files": 24,
+  "mode": "diff (vs origin/main)",
+  "checks": {
+    "reserved_var_names": {
+      "findings": [],
+      "pass": true
+    },
+    "changelog": {
+      "findings": [],
+      "pass": true
+    },
+    "caption_translation": {
+      "skipped": null,
+      "pass": false,
+      "findings": [
+        {
+          "line": 10,
+          "file": "QualityMoveTypes.EnumExt.al",
+          "text": "Caption = 'Quality.Disposition.MoveInventory', Locked = true;"
+        }
+      ]
+    },
+    "commit_in_loop": {
+      "findings": [],
+      "pass": true
+    },
+    "confirm_in_page": {
+      "findings": [],
+      "pass": true
+    },
+    "app_json": {
+      "findings": [],
+      "pass": true
+    },
+    "event_subscriber_placement": {
+      "findings": [],
+      "pass": true
+    },
+    "format_evaluate_enum": {
+      "findings": [],
+      "pass": true
+    },
+    "read_isolation": {
+      "findings": [],
+      "pass": true
+    },
+    "set_load_fields": {
+      "advisory": "Loops without SetLoadFields - consider it only for wide tables; not a gate failure",
+      "pass": true,
+      "findings": []
+    },
+    "data_classification": {
+      "findings": [],
+      "pass": true
+    },
+    "object_naming": {
+      "findings": [],
+      "pass": true
+    },
+    "with_statements": {
+      "findings": [],
+      "pass": true
+    },
+    "one_statement_per_line": {
+      "findings": [
+        {
+          "line": 155,
+          "file": "QualityMoveImpl.Codeunit.al",
+          "text": "local procedure ReadText(Request: JsonObject; ParameterName: Text; Required: Boolean; MaximumLength: Integer) Value: Text"
+        },
+        {
+          "line": 25,
+          "file": "QualityMovePosting.Codeunit.al",
+          "text": "local procedure PostItemJournal(var QltyInspectionHeader: Record \"Qlty. Inspection Header\"; var TempInstructionQltyDispositionBuffer: Record \"Qlty. Disposition Buffer\" temporary; var ItemJournalLine: Record \"Item Journal Line\"; var AllLinesPosted: Boolean; var IsHandled: Boolean)"
+        },
+        {
+          "line": 49,
+          "file": "QualityMovePosting.Codeunit.al",
+          "text": "local procedure PostWarehouseJournal(var QltyInspectionHeader: Record \"Qlty. Inspection Header\"; var TempInstructionQltyDispositionBuffer: Record \"Qlty. Disposition Buffer\" temporary; var WarehouseJournalLine: Record \"Warehouse Journal Line\"; var AllLinesPosted: Boolean; var IsHandled: Boolean)"
+        }
+      ],
+      "pass": false
+    },
+    "today_vs_workdate": {
+      "findings": [],
+      "pass": true
+    },
+    "page_code_minimal": {
+      "findings": [],
+      "pass": true
+    },
+    "xml_doc_comments": {
+      "findings": [],
+      "pass": true
+    },
+    "format_guid": {
+      "findings": [],
+      "pass": true
+    },
+    "hardcoded_values": {
+      "findings": [],
+      "pass": true
+    },
+    "try_prefix_convention": {
+      "findings": [],
+      "pass": true
+    },
+    "global_variables": {
+      "findings": [],
+      "pass": true
+    },
+    "namespace": {
+      "findings": [],
+      "pass": true
+    },
+    "modernization": {
+      "findings": [],
+      "pass": true
+    }
+  },
+  "files_scanned": 5
+}

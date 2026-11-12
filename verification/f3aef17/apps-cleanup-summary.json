@@ -1,0 +1,12 @@
+{
+  "tenant": "w129-17",
+  "owner": "worker-7",
+  "removed": [
+    "a802f593-0a5e-4307-a052-3cfc0fecb4e7",
+    "9193f6a2-0926-49bb-9fec-3c36a60c8b0e",
+    "d3ca6790-e2c1-44c1-a026-fd75a3f5b52d"
+  ],
+  "baselineAppsPreserved": true,
+  "verified": true,
+  "verifiedAt": "2026-11-12T19:57:14.598Z"
+}

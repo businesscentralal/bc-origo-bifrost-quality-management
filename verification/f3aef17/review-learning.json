@@ -1,0 +1,41 @@
+{
+  "id": "quality30-claude6833506983-inspectionid-typed-refusal",
+  "source": {
+    "url": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/pull/30#issuecomment-6833506983",
+    "reviewer": "gunnargestsson / Claude Code",
+    "submittedAt": "2026-11-12T19:17:39Z"
+  },
+  "repo": "businesscentralal/bc-origo-bifrost-quality-management",
+  "reviewedSha": "8662be0dfa99b8a32a3aba97104a0272718c1fce",
+  "category": "runtime-refusal-contract",
+  "finding": "Missing or invalid inspectionSystemId emitted BusinessCentralError rather than the typed MissingParameter refusal.",
+  "rootCause": "The isolated process raised a plain ErrorInfo. Prior negative tests checked Error status, translated text and no movement, but did not assert code, parameter or recovery guidance.",
+  "prevention": "Use Foundation AddError/RaiseCollectedErrors to preserve the structured refusal across rollback. Assert top-level code, parameter, expected and translated nextStep through the actual dispatcher for missing, empty, malformed, zero and non-text identifiers in both languages. A single collected refusal is flattened by Foundation; arrays apply to multiple errors.",
+  "status": "runtime-regression-verified-developer",
+  "evidence": [
+    "/workspace/evidence/quality30-amend-dainn-20261112/checkpoint.json",
+    "/workspace/evidence/quality30-amend-dainn-20261112/full-suite.json",
+    "/workspace/evidence/quality30-amend-dainn-20261112/mcp-summary.json"
+  ],
+  "relatedLessons": [
+    "inventory175-review5731279910-error-code-parity-worker9"
+  ],
+  "candidateSha": "f3aef17157f529dd2e83e00d081060324fdd4f4f",
+  "verification": {
+    "compile": "both apps0errors0warnings",
+    "fullSuite": {
+      "executed": 116,
+      "passed": 116,
+      "failed": 0,
+      "skipped": 0
+    },
+    "mcp": {
+      "executed": 28,
+      "passed": 28,
+      "failed": 0,
+      "skipped": 0
+    },
+    "ui": "pending",
+    "independentClaude": "pending"
+  }
+}

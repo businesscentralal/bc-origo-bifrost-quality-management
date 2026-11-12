@@ -1,0 +1,32 @@
+{
+  "sha": "f3aef17157f529dd2e83e00d081060324fdd4f4f",
+  "projectTier": "Standard",
+  "target": "main",
+  "standardsSnapshot": "52ba4754cfd614e4a7c50af87b30149b18b313e3",
+  "diff": "8662be0..f3aef17 including merge of main1bc5075",
+  "result": "Developer source checks passed; independent review and hosted CI pending.",
+  "checks": [
+    "Both product/test compile with CodeCop/UICop/AppSourceCop0errors0warnings.",
+    "No public procedure, message type, field or object IDs removed or changed; amendment adds private parsing/refusal helpers.",
+    "Conflicts resolved by union of Move and Reinspection grants/documentation; no pipeline files changed.",
+    "No new suppression, skip, disabled test or weakened business assertion. Five new tests exercise both languages and assert exact runtime error fields and no new movement.",
+    "Mutable inspection reads remain whole-record; no partial-load regressions introduced.",
+    "Contract, bilingual call guides, CHANGELOG and Icelandic XLF synchronized.",
+    "All ten relevant repository guards passed; object IDs and permissions unchanged by amendment.",
+    "Native posting and rollback assertions pass;28 self-seeded MCP and4 final UI scenarios pass; fixtures/setup/language restored;3 new verification apps removed."
+  ],
+  "layer1Triage": {
+    "caption_translation": "Locked technical message-type caption is intentionally invariant.",
+    "one_statement_per_line": "Three method signatures with semicolon-separated AL parameters are regex false positives, not multiple executable statements."
+  },
+  "testHistory": {
+    "sha": "5d14b621a9f30fdce8d7c8c9ff0fd4f0e274d157",
+    "executed": 116,
+    "passed": 111,
+    "failed": 5,
+    "skipped": 0,
+    "cause": "New test expected errors[]; single refusal is flattened at top level by Foundation. Corrected to assert code/parameter/expected/nextStep. Finalf3aef17 rerun116/116/0/0."
+  },
+  "uiHarnessRetries": "Company query encoded with + rather than %20 and a hidden template-dialog OK button caused harness retries; corrected and final journal/message scenarios verified in both languages.",
+  "cleanupScope": "Only this execution on w129-17. Prior worker26 ledger fixtures on w129-36 are historical foreign-owned resources; no deletion or cleanup claim for them."
+}

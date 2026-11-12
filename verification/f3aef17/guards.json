@@ -1,0 +1,52 @@
+[
+  {
+    "guard": "ObjectIdsUnique",
+    "exitCode": 0,
+    "output": "Object ID uniqueness check passed: no duplicate object type and ID within any app.\n"
+  },
+  {
+    "guard": "PermissionCoverage",
+    "exitCode": 0,
+    "output": "Every page, query, report and xmlport is granted by an assignable permission set.\n"
+  },
+  {
+    "guard": "NoObsolete",
+    "exitCode": 0,
+    "output": "No obsolete declaration and no AL0432/AL0667 pragma in the app, apart from the allow-listed VAT Amount Line pragmas.\n"
+  },
+  {
+    "guard": "NoClientCallstack",
+    "exitCode": 0,
+    "output": "No call stack is returned or documented to callers.\n"
+  },
+  {
+    "guard": "ValidatedTableView",
+    "exitCode": 0,
+    "output": "Every applied tableView is validated first.\n"
+  },
+  {
+    "guard": "IcelandicKeywordCounts",
+    "exitCode": 0,
+    "output": "Every Icelandic keyword list has at least as many entries as the English one (5 in the source, 5 in the xlf).\n"
+  },
+  {
+    "guard": "IcelandicXlfInSync",
+    "exitCode": 0,
+    "output": "The committed is-IS.xlf is what tools/Update-IcelandicXlf.ps1 generates from the build.\n"
+  },
+  {
+    "guard": "ContractParameterKeys",
+    "exitCode": 0,
+    "output": "Every contract parameter is a key the code reads, and every key the code reads is declared (0 allow-listed).\n"
+  },
+  {
+    "guard": "HelpLinks",
+    "exitCode": 0,
+    "output": "Checked the app.json links and 0 page(s)\nThe app has no pages and no help instance; help, privacyStatement, EULA and contextSensitiveHelpUrl point at the app's pages on https://docs.bifrost.origo.is/.\n"
+  },
+  {
+    "guard": "MixedLanguageLabels",
+    "exitCode": 0,
+    "output": "No procedure answers a Locked English sentence.\n"
+  }
+]
