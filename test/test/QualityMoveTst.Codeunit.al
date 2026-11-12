@@ -357,18 +357,13 @@ codeunit 97250 "Quality Move Tst ori"
     end;
 
     local procedure VerifyTypedIdRefusal(Response: JsonObject; LanguageId: Integer)
-    var
-        Token: JsonToken;
-        Detail: JsonObject;
     begin
         Assert.AreEqual('MissingParameter', ReadText(Response, 'code'), 'The inspection identifier refusal must retain its typed code.');
-        Assert.IsTrue(Response.Get('errors', Token), 'The refusal must include parameter details.');
-        Token.AsArray().Get(0, Token);
-        Detail := Token.AsObject();
-        Assert.AreEqual('inspectionSystemId', ReadText(Detail, 'parameter'), 'Identify the invalid parameter.');
-        Assert.IsTrue(ReadText(Detail, 'nextStep').Contains('Data.Records.Get'), 'Provide an actionable inspection lookup.');
+        Assert.AreEqual('inspectionSystemId', ReadText(Response, 'parameter'), 'Identify the invalid parameter.');
+        Assert.IsTrue(ReadText(Response, 'expected') <> '', 'Describe the required inspection identifier.');
+        Assert.IsTrue(ReadText(Response, 'nextStep').Contains('Data.Records.Get'), 'Provide an actionable inspection lookup.');
         if LanguageId = 1039 then
-            Assert.IsTrue(ReadText(Detail, 'nextStep').Contains('Lestu'), 'Recovery guidance must be Icelandic.');
+            Assert.IsTrue(ReadText(Response, 'nextStep').Contains('Lestu'), 'Recovery guidance must be Icelandic.');
     end;
 
     local procedure Initialize()
