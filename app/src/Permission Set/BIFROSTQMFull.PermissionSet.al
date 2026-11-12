@@ -23,5 +23,7 @@ permissionset 10035237 "BIFROST QM Full ori"
         codeunit "Quality Purch Return Impl ori" = X,
         codeunit "Quality Return Receipt ori" = X,
         table "Quality Return Access ori" = X,
-        tabledata "Quality Return Access ori" = RIMD;
+        tabledata "Quality Return Access ori" = RIMD,
+        table "Quality Reinspect Access ori" = X,
+        tabledata "Quality Reinspect Access ori" = RIMD;
 }

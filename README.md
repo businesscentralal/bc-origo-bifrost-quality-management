@@ -11,11 +11,11 @@ Bifröst message types, so an agent can operate it end to end. It is built on th
 
 **Microsoft source:** <https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management>
 
-**Message types:** `Quality.Inspection.Create` creates or resolves an inspection using Microsoft generation rules, optionally selecting a template; `Quality.Inspection.Reopen` reopens an inspection through the native Microsoft action; `Quality.Inspection.SetTestValue` validates a named test value and recalculates the open inspection result; `Quality.Disposition.CreatePurchaseReturn` creates a purchase return through the native disposition workflow. See the contract guides for [inspection creation](app/docs/en-us/CreateInspection.md) ([íslenska](app/docs/is-is/CreateInspection.md)) and [test values](app/docs/en-us/SetTestValue.md) ([íslenska](app/docs/is-is/SetTestValue.md)).
+**Message types:** `Quality.Inspection.Create` creates or resolves an inspection using Microsoft generation rules, optionally selecting a template; `Quality.Inspection.CreateReinspection` creates the next inspection revision through the native action; `Quality.Inspection.Reopen` reopens an inspection through the native Microsoft action; `Quality.Inspection.SetTestValue` validates a named test value and recalculates the open inspection result; `Quality.Disposition.CreatePurchaseReturn` creates a purchase return through the native disposition workflow. See the contract guides for [inspection creation](app/docs/en-us/CreateInspection.md) ([íslenska](app/docs/is-is/CreateInspection.md)) and [test values](app/docs/en-us/SetTestValue.md) ([íslenska](app/docs/is-is/SetTestValue.md)).
 
 Foundation discovers this app on **Bifrost Setup** through its application registry. All setup notifications stay on that Foundation page. Quality Management has no setup page of its own.
 
-Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. The Full role grants inspection creation, reopen, test-value and purchase-return execution and includes Microsoft `QltyMgmt - Admin` and `QltyMgmt - Inspector` permissions. Microsoft `ReopenInspection` still requires the Quality Admin & Supervisor role, or SUPER, to be assigned to the user. Callers also need native source-record permissions and, for purchase returns, purchase-document permissions. The base and Read roles grant registration and permission-safe Reopen discovery; the Reopen capability marker is read-only, so the action remains disabled. Dedicated empty capability tables enforce the app Full grant even when a Foundation API role grants wildcard codeunit execution. Neither role grants these write operations.
+Assign `BIFROST Quality ori`, `BIFROST QM Full ori` or `BIFROST QM Read ori` alongside the appropriate Foundation role. Foundation Full and Read already include the matching Quality Management set. The Full role grants inspection creation, reopen, test-value, purchase-return and re-inspection execution and includes Microsoft `QltyMgmt - Admin` and `QltyMgmt - Inspector` permissions. Microsoft `ReopenInspection` still requires the Quality Admin & Supervisor role, or SUPER, to be assigned to the user. Callers also need native source-record permissions and, for purchase returns, purchase-document permissions. The base and Read roles grant registration and permission-safe Reopen discovery; the Reopen capability marker is read-only, so the action remains disabled. Dedicated empty capability tables enforce the app Full grant even when a Foundation API role grants wildcard codeunit execution. Neither role grants these write operations.
 
 The app manifest exposes the `quality-management` documentation entry in English and Icelandic. The complete object allocation is recorded in [.claude/CLAUDE.md](.claude/CLAUDE.md).
 
@@ -36,8 +36,12 @@ The app manifest exposes the `quality-management` documentation entry in English
 | --- | --- | --- | --- |
 | `Quality.Inspection.Reopen` | Reopens an inspection through Microsoft `ReopenInspection` | Idempotent; an already open inspection stays open | [English](app/docs/en-us/Reopen.md), [íslenska](app/docs/is-is/Reopen.md) |
 | `Quality.Disposition.CreatePurchaseReturn` | Creates an unposted purchase return for the failed quantity | Not idempotent; a retry can create another return | [English](app/docs/en-us/CreatePurchaseReturn.md), [íslenska](app/docs/is-is/CreatePurchaseReturn.md) |
+| `Quality.Inspection.CreateReinspection` | Creates the next revision of a quality inspection | Not idempotent | [English](docs/en-us/quality-inspection-create-reinspection.md), [íslenska](docs/is-is/quality-inspection-create-reinspection.md) |
 
 ## Documentation
+
+- Re-inspection request, effects and retry behavior: [English](docs/en-us/quality-inspection-create-reinspection.md) / [Íslenska](docs/is-is/quality-inspection-create-reinspection.md).
+- The live contract is available through `Help.Implementation.Get` for `Quality.Inspection.CreateReinspection`.
 
 All public documentation lives in the [businesscentralal/bifrost](https://github.com/businesscentralal/bifrost)
 site repository and is published at <https://docs.bifrost.origo.is>.
