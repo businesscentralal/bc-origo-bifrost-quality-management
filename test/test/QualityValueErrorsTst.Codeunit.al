@@ -4,7 +4,7 @@ using Origo.Bifrost;
 using System.TestLibraries.Utilities;
 
 /// <summary>Checks issue 34 typed SetTestValue refusals through the public dispatcher in both languages.</summary>
-codeunit 97207 "Quality Value Errors Tst ori"
+codeunit 97209 "Quality Value Errors Tst ori"
 {
     Subtype = Test;
     TestPermissions = Disabled;
