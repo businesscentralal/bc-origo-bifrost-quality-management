@@ -1,0 +1,13 @@
+{
+  "company": "CRONUS International Ltd.",
+  "messageType": "Quality.Inspection.Reopen",
+  "status": "Success",
+  "noOfRecords": 1,
+  "result": [
+    {
+      "systemId": "68518EF9-39DE-F111-B6F8-00090FFE0001",
+      "inspectionNo": "XQ3W2N12000001",
+      "reinspectionNo": 0
+    }
+  ]
+}

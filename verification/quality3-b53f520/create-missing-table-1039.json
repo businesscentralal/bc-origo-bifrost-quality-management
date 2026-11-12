@@ -1,0 +1,9 @@
+{
+  "status": "Error",
+  "code": "MissingParameter",
+  "error": "Nauðsynlega færibreytu 'sourceTableId' vantar eða hún er ógild.",
+  "parameter": "sourceTableId",
+  "expected": "jákvætt heiltölutöfluauðkenni",
+  "nextStep": "Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.",
+  "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Create\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+}

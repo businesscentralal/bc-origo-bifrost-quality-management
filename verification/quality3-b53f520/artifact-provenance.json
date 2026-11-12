@@ -1,0 +1,44 @@
+{
+  "candidateSha": "b53f520609176b3910834109ff9348a09839de97",
+  "owner": "worker-2",
+  "tenant": "w129-12",
+  "BC": "29.0.54011.55407",
+  "Foundation": "28.0.13.0",
+  "appVersion": "28.0.0.0",
+  "sourceChanged": false,
+  "artifacts": [
+    {
+      "name": "Bifrost Quality Management",
+      "appId": "d3ca6790-e2c1-44c1-a026-fd75a3f5b52d",
+      "version": "28.0.0.0",
+      "sha256": "f569584264b2075219eb02b32dcff3adc78c75438a540db73703e1a73ac074e6",
+      "bytes": 56776,
+      "build": {
+        "Timestamp": "2026-11-12T01:35:51.4836317Z",
+        "CompilerVersion": "30.0.42.60748"
+      }
+    },
+    {
+      "name": "Bifrost Quality Management - Tests",
+      "appId": "9193f6a2-0926-49bb-9fec-3c36a60c8b0e",
+      "version": "28.0.0.0",
+      "sha256": "772d508ce6b00473d2c220e02e14385a1f1ccc166d92b2b7509f87a177a32cc7",
+      "bytes": 46960,
+      "build": {
+        "Timestamp": "2026-11-12T01:36:01.1256008Z",
+        "CompilerVersion": "30.0.42.60748"
+      }
+    }
+  ],
+  "compile": {
+    "app": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "testApp": {
+      "errors": 0,
+      "warnings": 0
+    }
+  },
+  "reset": "Prior own issue7 deployment contains a removed table; initial Synchronize refused and restored originals. Own Quality test/product uninstallAndDeleteExtensionData then unpublish, followed by Synchronize publication returned HTTP200 for both. Foundation and unrelated apps untouched."
+}

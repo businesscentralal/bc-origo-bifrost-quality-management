@@ -1,0 +1,232 @@
+{
+  "sha": "b53f520609176b3910834109ff9348a09839de97",
+  "tenant": "w129-12",
+  "createsOwnData": true,
+  "touchedMessageTypes": [
+    "Quality.Inspection.Create",
+    "Quality.Inspection.SetTestValue",
+    "Quality.Disposition.CreatePurchaseReturn",
+    "Quality.Inspection.Reopen"
+  ],
+  "scenarios": [
+    {
+      "lcid": 1033,
+      "name": "Quality.Inspection.Create catalogue/contract",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Quality.Inspection.SetTestValue catalogue/contract",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Quality.Disposition.CreatePurchaseReturn catalogue/contract",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Quality.Inspection.Reopen catalogue/contract",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Create missing-table refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Create missing-id refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Create invalid-table refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Create table-string refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Create null-guid refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Create invalid-guid refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Create unknown-source refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Create long-template refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Create blank-template refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Create unknown-key refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Create native bad-template refuses without partial writes",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Create happy path through Microsoft action",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Quality.Inspection.Create catalogue/contract",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Quality.Inspection.SetTestValue catalogue/contract",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Quality.Disposition.CreatePurchaseReturn catalogue/contract",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Quality.Inspection.Reopen catalogue/contract",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Create missing-table refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Create missing-id refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Create invalid-table refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Create table-string refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Create null-guid refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Create invalid-guid refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Create unknown-source refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Create long-template refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Create blank-template refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Create unknown-key refuses without changes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Create native bad-template refuses without partial writes",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Create happy path through Microsoft action",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "SetTestValue invalid integer refuses",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "SetTestValue native validation happy path",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "SetTestValue invalid integer refuses",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "SetTestValue native validation happy path",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "CreatePurchaseReturn missing argument refuses",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "CreatePurchaseReturn missing argument refuses",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "CreatePurchaseReturn native happy path",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Reopen missing argument refuses",
+      "passed": true
+    },
+    {
+      "lcid": 1033,
+      "name": "Reopen already open is native no-op",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Reopen missing argument refuses",
+      "passed": true
+    },
+    {
+      "lcid": 1039,
+      "name": "Reopen already open is native no-op",
+      "passed": true
+    }
+  ],
+  "total": 43,
+  "passed": 43,
+  "failed": 0,
+  "skipped": 0
+}

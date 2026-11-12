@@ -1,0 +1,10 @@
+{
+  "status": "Error",
+  "code": "RecordNotFound",
+  "error": "Upprunafærslan fannst ekki.",
+  "parameter": "sourceSystemId",
+  "received": "FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF",
+  "expected": "SystemId GUID upprunafærslu sem er til og er ekki tómt",
+  "nextStep": "Lestu SystemId upprunafærslunnar með Data.Records.Get og sendu sourceTableId og sourceSystemId.",
+  "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Create\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+}

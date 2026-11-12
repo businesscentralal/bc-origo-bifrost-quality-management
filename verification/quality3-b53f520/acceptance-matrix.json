@@ -1,0 +1,47 @@
+{
+  "sha": "b53f520609176b3910834109ff9348a09839de97",
+  "issue": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/3",
+  "criteria": [
+    {
+      "id": "AC01",
+      "status": "developer-verified",
+      "evidence": "Catalogue/contract checked in both languages: write, non-idempotent creation, permissions and Commit behavior; native source uses isolated Codeunit.Run and CommitBehavior::Error."
+    },
+    {
+      "id": "AC02",
+      "status": "developer-verified",
+      "evidence": "MCP asserts typed code/parameter/nextStep for missing, invalid, unknown and overlong requests; inspection snapshots unchanged after refusals."
+    },
+    {
+      "id": "AC03",
+      "status": "developer-verified",
+      "evidence": "Native Microsoft creation API and source-scoped template event; both bilingual MCP happy paths created exactly one inspection."
+    },
+    {
+      "id": "AC04",
+      "status": "developer-verified",
+      "evidence": "Native nonexistent-template refusal returned BusinessCentralError with zero partial inspections in both languages; full-suite late injected native fault tests prove rollback."
+    },
+    {
+      "id": "AC05",
+      "status": "developer-verified",
+      "evidence": "Full capability and Foundation role grants; restrictive permission tests passed in full suite; cold Reopen Read-role regression passed separately. No claim of restricted-user MCP session."
+    },
+    {
+      "id": "AC06",
+      "status": "developer-verified",
+      "evidence": "XLF kept unchanged; translated discovery/refusals and Web Client LCIDs1033/1039 verified."
+    },
+    {
+      "id": "AC07",
+      "status": "developer-verified",
+      "evidence": "Bilingual help chapters describe effects, idempotency, parameters, rollback and roles; live catalogue contracts checked."
+    },
+    {
+      "id": "AC08",
+      "status": "developer-verified",
+      "evidence": "Full96-test suite: Create23, SetTestValue20, Return21, ReturnErrors16, Reopen9, ReopenPermissions3, Scaffold4; zero failed/skipped."
+    }
+  ],
+  "independentVerification": "Claude exact-tip receipt, clearance, approval, Architect merge/deploy and Tester UAT remain separate pending stages."
+}

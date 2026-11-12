@@ -1,0 +1,57 @@
+{
+  "sha": "b53f520609176b3910834109ff9348a09839de97",
+  "tenant": "w129-12",
+  "cleaned": [
+    {
+      "kind": "return",
+      "result": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Test.Quality.ReturnFixture",
+        "remainingInspections": 0,
+        "remainingFixtures": 0,
+        "status": "Success"
+      }
+    },
+    {
+      "kind": "value",
+      "result": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Test.Quality.ValueFixture",
+        "remainingInspections": 0,
+        "remainingLines": 0,
+        "status": "Success"
+      }
+    },
+    {
+      "kind": "create",
+      "result": {
+        "company": "CRONUS International Ltd.",
+        "messageType": "Test.Quality.CreateFixture",
+        "remainingInspections": 0,
+        "remainingSources": 0,
+        "remainingFixtureState": 0,
+        "status": "Success"
+      }
+    }
+  ],
+  "readback": [
+    {
+      "kind": "create",
+      "remaining": 0
+    },
+    {
+      "kind": "value",
+      "remaining": 0
+    },
+    {
+      "kind": "return",
+      "remaining": 0
+    }
+  ],
+  "remainingOwnedInspections": 0,
+  "remainingOwnedItems": 0,
+  "setupRestoredByCreateFixtureCleanup": true,
+  "retained": "Permanent worker2 tenant and current own app/test deployment; unrelated apps untouched.",
+  "recovery": "Initial combined read-back filter refused OR on distinct fields; used three separate filters. Cleanup writes were not replayed.",
+  "languageRestored": 1033
+}

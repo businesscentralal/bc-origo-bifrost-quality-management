@@ -1,0 +1,19 @@
+{
+  "sha": "b53f520609176b3910834109ff9348a09839de97",
+  "owner": "worker-2",
+  "displayName": "Brokkr",
+  "standardsSnapshot": "52ba4754cfd614e4a7c50af87b30149b18b313e3",
+  "sourceChanged": false,
+  "lessonsApplied": [
+    "quality31-worker7-request-reader-shape-20261110",
+    "quality32-claude6762673977-read-execute-litr-20261110"
+  ],
+  "learning": "Retain typed code/parameter/nextStep assertions and run cold permission regression before full suite; exact-tip runtime evidence replaces older-head evidence.",
+  "attempts": [
+    "Initial Synchronize refused prior own issue7 table removal; authorized uninstall-delete-data/unpublish reset then both own artifacts published successfully.",
+    "Harness initially classified expected MCP business refusals as transport failures. Corrected harness, read back existing owned source and resumed without repeating fixture creation.",
+    "Icelandic selector first used an assumed caption; replaced with actual Microsoft Gæðaeftirlit caption and verified the same two assertions.",
+    "Cleanup read-back OR across distinct fields refused by BC; inspected successful cleanup receipts then used individual filters, never replaying cleanup writes."
+  ],
+  "evidenceCommitIsNotCandidate": "This evidence-only commit records execution at the candidate SHA above. It changes no candidate implementation."
+}

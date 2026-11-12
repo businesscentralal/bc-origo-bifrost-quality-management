@@ -1,0 +1,17 @@
+{
+  "sha": "b53f520609176b3910834109ff9348a09839de97",
+  "app": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "testApp": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "analyzers": [
+    "CodeCop",
+    "UICop",
+    "AppSourceCop"
+  ],
+  "existingSuppressionsUnchanged": true
+}

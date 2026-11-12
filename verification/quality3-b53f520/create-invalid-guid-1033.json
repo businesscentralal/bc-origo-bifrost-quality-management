@@ -1,0 +1,10 @@
+{
+  "status": "Error",
+  "code": "InvalidParameter",
+  "error": "The required parameter 'sourceSystemId' is missing or invalid.",
+  "parameter": "sourceSystemId",
+  "received": "invalid",
+  "expected": "a non-empty SystemId GUID of an existing source record",
+  "nextStep": "Correct the named request parameter and retry.",
+  "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.Create\". Always read the help before calling a message type."
+}

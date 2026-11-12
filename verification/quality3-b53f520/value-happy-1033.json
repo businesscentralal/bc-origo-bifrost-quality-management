@@ -1,0 +1,10 @@
+{
+  "company": "CRONUS International Ltd.",
+  "messageType": "Quality.Inspection.SetTestValue",
+  "status": "Success",
+  "inspectionSystemId": "2040E71B-3ADE-F111-B6F8-00090FFE0001",
+  "inspectionNo": "BIFTQ6-W2N12",
+  "reinspectionNo": 0,
+  "testCode": "BIFTQ6-W2N12",
+  "resultCode": "BIFTQ6-W2N12"
+}

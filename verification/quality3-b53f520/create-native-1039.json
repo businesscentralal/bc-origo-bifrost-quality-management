@@ -1,0 +1,6 @@
+{
+  "status": "Error",
+  "code": "BusinessCentralError",
+  "error": "The field Sniðmátskóði of table Haus gæðaeftirlitsprófs contains a value (XQ3W2NONEXIST) that cannot be found in the related table (Sniðmátshaus fyrir gæðaeftirlit).",
+  "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Create\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+}
