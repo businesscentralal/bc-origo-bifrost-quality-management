@@ -1,0 +1,68 @@
+{
+  "version": "0.2",
+  "toolInfo": {
+    "toolName": "Microsoft (R) AL Compiler",
+    "productVersion": "30.0.42",
+    "fileVersion": "30.0.42"
+  },
+  "issues": [
+    {
+      "ruleId": "AA0477",
+      "locations": [
+        {
+          "analysisTarget": [
+            {
+              "uri": "/workspace/private/qm3-w27-b06e7d7/test/test/QualityReturnTst.Codeunit.al",
+              "region": {
+                "startLine": 11,
+                "startColumn": 1,
+                "endLine": 11,
+                "endColumn": 36
+              }
+            }
+          ]
+        }
+      ],
+      "shortMessage": "The using statements are not in a sorted order.",
+      "fullMessage": "Using statements are not ordered alphabetically.",
+      "properties": {
+        "severity": "Info",
+        "defaultSeverity": "Info",
+        "title": "Unordered using statements",
+        "category": "Readability",
+        "helpLink": "https://learn.microsoft.com/dynamics365/business-central/dev-itpro/developer/analyzers/codecop-aa0477?wt.mc_id=d365bc_inproduct_alextension",
+        "isEnabledByDefault": "True",
+        "isSuppressedInSource": "False"
+      }
+    },
+    {
+      "ruleId": "AA0477",
+      "locations": [
+        {
+          "analysisTarget": [
+            {
+              "uri": "/workspace/private/qm3-w27-b06e7d7/test/test/QualityCreateTst.Codeunit.al",
+              "region": {
+                "startLine": 10,
+                "startColumn": 1,
+                "endLine": 10,
+                "endColumn": 56
+              }
+            }
+          ]
+        }
+      ],
+      "shortMessage": "The using statements are not in a sorted order.",
+      "fullMessage": "Using statements are not ordered alphabetically.",
+      "properties": {
+        "severity": "Info",
+        "defaultSeverity": "Info",
+        "title": "Unordered using statements",
+        "category": "Readability",
+        "helpLink": "https://learn.microsoft.com/dynamics365/business-central/dev-itpro/developer/analyzers/codecop-aa0477?wt.mc_id=d365bc_inproduct_alextension",
+        "isEnabledByDefault": "True",
+        "isSuppressedInSource": "False"
+      }
+    }
+  ]
+}

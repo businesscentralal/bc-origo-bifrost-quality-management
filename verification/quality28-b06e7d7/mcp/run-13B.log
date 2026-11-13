@@ -1,0 +1,53 @@
+fixtures [{"company": "CRONUS International Ltd.", "messageType": "Test.Quality.CreateFixture", "sourceSystemId": "2703384B-31DF-F111-B6FB-00090FFE0001", "sourceTableId": 27, "templateCode": "XQ3W27E13B", "status": "Success"}, {"company": "CRONUS International Ltd.", "messageType": "Test.Quality.ValueFixture", "inspectionSystemId": "3303384B-31DF-F111-B6FB-00090FFE0001", "testCode": "BIFTQ6-WE13B", "inspectionNo": "BIFTQ6-WE13B", "status": "Success"}, {"company": "CRONUS International Ltd.", "messageType": "Test.Quality.ReturnFixture", "inspectionSystemId": "4103384B-31DF-F111-B6FB-00090FFE0001", "inspectionNo": "BIFTQ13-WE13B", "status": "Success"}]
+PASS 1033 Quality.Inspection.Create contract/discovery
+PASS 1033 Quality.Inspection.Create missing input
+PASS 1033 Quality.Inspection.Create unknown key
+PASS 1033 Quality.Inspection.SetTestValue contract/discovery
+FAIL 1033 Quality.Inspection.SetTestValue missing input
+PASS 1033 Quality.Inspection.SetTestValue unknown key
+PASS 1033 Quality.Disposition.CreatePurchaseReturn contract/discovery
+PASS 1033 Quality.Disposition.CreatePurchaseReturn missing input
+PASS 1033 Quality.Disposition.CreatePurchaseReturn unknown key
+PASS 1033 Quality.Inspection.Reopen contract/discovery
+PASS 1033 Quality.Inspection.Reopen missing input
+PASS 1033 Quality.Inspection.Reopen unknown key
+PASS 1033 Quality.Inspection.CreateReinspection contract/discovery
+PASS 1033 Quality.Inspection.CreateReinspection missing input
+PASS 1033 Quality.Inspection.CreateReinspection unknown key
+PASS 1033 Quality.Inspection.Create native missing template refusal
+PASS 1033 Quality.Inspection.Create native refusal unchanged inspection snapshot
+PASS 1033 Quality.Inspection.Create typed missing source
+PASS 1033 Quality.Inspection.Create native template creation
+PASS 1033 Quality.Inspection.Create native generation-rule creation
+PASS 1033 Quality.Inspection.Reopen open-state idempotent call
+PASS 1033 Quality.Inspection.SetTestValue native owned measurement
+PASS 1033 Quality.Disposition.CreatePurchaseReturn native owned return creation
+PASS 1033 Quality.Inspection.CreateReinspection native next revision
+fixtures [{"company": "CRONUS International Ltd.", "messageType": "Test.Quality.CreateFixture", "sourceSystemId": "7403384B-31DF-F111-B6FB-00090FFE0001", "sourceTableId": 27, "templateCode": "XQ3W27I13B", "status": "Success"}, {"company": "CRONUS International Ltd.", "messageType": "Test.Quality.ValueFixture", "inspectionSystemId": "8003384B-31DF-F111-B6FB-00090FFE0001", "testCode": "BIFTQ6-WI13B", "inspectionNo": "BIFTQ6-WI13B", "status": "Success"}, {"company": "CRONUS International Ltd.", "messageType": "Test.Quality.ReturnFixture", "inspectionSystemId": "8E03384B-31DF-F111-B6FB-00090FFE0001", "inspectionNo": "BIFTQ13-WI13B", "status": "Success"}]
+PASS 1039 Quality.Inspection.Create contract/discovery
+PASS 1039 Quality.Inspection.Create missing input
+PASS 1039 Quality.Inspection.Create unknown key
+PASS 1039 Quality.Inspection.SetTestValue contract/discovery
+FAIL 1039 Quality.Inspection.SetTestValue missing input
+PASS 1039 Quality.Inspection.SetTestValue unknown key
+PASS 1039 Quality.Disposition.CreatePurchaseReturn contract/discovery
+PASS 1039 Quality.Disposition.CreatePurchaseReturn missing input
+PASS 1039 Quality.Disposition.CreatePurchaseReturn unknown key
+PASS 1039 Quality.Inspection.Reopen contract/discovery
+PASS 1039 Quality.Inspection.Reopen missing input
+PASS 1039 Quality.Inspection.Reopen unknown key
+PASS 1039 Quality.Inspection.CreateReinspection contract/discovery
+PASS 1039 Quality.Inspection.CreateReinspection missing input
+PASS 1039 Quality.Inspection.CreateReinspection unknown key
+PASS 1039 Quality.Inspection.Create native missing template refusal
+PASS 1039 Quality.Inspection.Create native refusal unchanged inspection snapshot
+PASS 1039 Quality.Inspection.Create typed missing source
+PASS 1039 Quality.Inspection.Create native template creation
+PASS 1039 Quality.Inspection.Create native generation-rule creation
+PASS 1039 Quality.Inspection.Reopen open-state idempotent call
+PASS 1039 Quality.Inspection.SetTestValue native owned measurement
+PASS 1039 Quality.Disposition.CreatePurchaseReturn native owned return creation
+PASS 1039 Quality.Inspection.CreateReinspection native next revision
+TOTAL 48 PASSED 46 FAILED 2
+CLEANUP {"XQ3W27E13B": {"company": "CRONUS International Ltd.", "messageType": "Test.Quality.CreateFixture", "remainingInspections": 0, "remainingSources": 0, "remainingFixtureState": 0, "status": "Success"}, "BIFTQ6-WE13B": {"company": "CRONUS International Ltd.", "messageType": "Test.Quality.ValueFixture", "remainingInspections": 0, "remainingLines": 0, "status": "Success"}, "BIFTQ13-WE13B": {"company": "CRONUS International Ltd.", "messageType": "Test.Quality.ReturnFixture", "remainingInspections": 0, "remainingFixtures": 0, "status": "Success"}, "XQ3W27I13B": {"company": "CRONUS International Ltd.", "messageType": "Test.Quality.CreateFixture", "remainingInspections": 0, "remainingSources": 0, "remainingFixtureState": 0, "status": "Success"}, "BIFTQ6-WI13B": {"company": "CRONUS International Lt
+READS {'XQ3W27E13B': {'inspections': 0, 'items': 0}, 'BIFTQ6-WE13B': {'inspections': 0, 'items': 0}, 'BIFTQ13-WE13B': {'inspections': 0, 'items': 0}, 'XQ3W27I13B': {'inspections': 0, 'items': 0}, 'BIFTQ6-WI13B': {'inspections': 0, 'items': 0}, 'BIFTQ13-WI13B': {'inspections': 0, 'items': 0}}

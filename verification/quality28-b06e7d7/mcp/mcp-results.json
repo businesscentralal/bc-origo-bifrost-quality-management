@@ -1,0 +1,1004 @@
+[
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "contract/discovery",
+  "lcid": 1033,
+  "data": null,
+  "response": {
+   "status": "Success",
+   "messageType": "Quality.Inspection.Create",
+   "catalogue": {
+    "name": "Quality.Inspection.Create",
+    "isEnabled": true,
+    "filterTableNo": 0,
+    "description": "Creates or resolves a quality inspection for one source record through Microsoft generation rules.",
+    "selectionDescription": "Creates or resolves a quality inspection for one source record through Microsoft generation rules.",
+    "messageDirection": "Inbound",
+    "keywords": [
+     "quality.inspection.create",
+     "quality",
+     "inspection",
+     "create",
+     "template",
+     "source"
+    ],
+    "chargeable": true
+   }
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "missing input",
+  "lcid": 1033,
+  "data": {},
+  "response": {
+   "status": "Error",
+   "code": "MissingParameter",
+   "error": "The required parameter 'sourceTableId' is missing or invalid.",
+   "parameter": "sourceTableId",
+   "expected": "a positive integer table ID",
+   "nextStep": "Correct the named request parameter and retry.",
+   "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.Create\". Always read the help before calling a message type."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "unknown key",
+  "lcid": 1033,
+  "data": {
+   "inspectionSystemId": "00000000-0000-0000-0000-000000000001",
+   "typo": true
+  },
+  "response": {
+   "status": "Error",
+   "code": "UnknownParameter",
+   "error": "Unknown parameters: inspectionSystemId, typo. Nothing was executed.",
+   "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.Create\". Always read the help before calling a message type.",
+   "errors": [
+    {
+     "code": "UnknownParameter",
+     "error": "Parameter \"inspectionSystemId\" is not declared by this message type. Nothing was executed.",
+     "parameter": "inspectionSystemId",
+     "received": "00000000-0000-0000-0000-000000000001",
+     "expected": "declared request parameters",
+     "nextStep": "Remove this key or consult Help.Implementation.Get for the declared parameters."
+    },
+    {
+     "code": "UnknownParameter",
+     "error": "Parameter \"typo\" is not declared by this message type. Nothing was executed.",
+     "parameter": "typo",
+     "received": "true",
+     "expected": "declared request parameters",
+     "nextStep": "Remove this key or consult Help.Implementation.Get for the declared parameters."
+    }
+   ]
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.SetTestValue",
+  "scenario": "contract/discovery",
+  "lcid": 1033,
+  "data": null,
+  "response": {
+   "status": "Success",
+   "messageType": "Quality.Inspection.SetTestValue",
+   "catalogue": {
+    "name": "Quality.Inspection.SetTestValue",
+    "isEnabled": true,
+    "filterTableNo": 20405,
+    "description": "Sets a test value on an open quality inspection and recalculates its result.",
+    "selectionDescription": "Sets a test value on an open quality inspection and recalculates its result.",
+    "messageDirection": "Inbound",
+    "keywords": [
+     "quality.inspection.settestvalue",
+     "quality",
+     "inspection",
+     "test value",
+     "measurement",
+     "result"
+    ],
+    "chargeable": true
+   }
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.SetTestValue",
+  "scenario": "missing input",
+  "lcid": 1033,
+  "data": {},
+  "response": {
+   "status": "Error",
+   "code": "BusinessCentralError",
+   "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+   "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+  },
+  "passed": true,
+  "strictTypedCheck": "failed: code BusinessCentralError instead of MissingParameter (pre-existing main #25 QualitySetValueImpl, not touched by PR28)",
+  "criterion": "refused with status Error naming the missing parameter; nothing executed (same criterion as the e1c594f run)"
+ },
+ {
+  "type": "Quality.Inspection.SetTestValue",
+  "scenario": "unknown key",
+  "lcid": 1033,
+  "data": {
+   "inspectionSystemId": "00000000-0000-0000-0000-000000000001",
+   "typo": true
+  },
+  "response": {
+   "status": "Error",
+   "code": "UnknownParameter",
+   "error": "Parameter \"typo\" is not declared by this message type. Nothing was executed.",
+   "parameter": "typo",
+   "received": "true",
+   "expected": "declared request parameters",
+   "nextStep": "Remove this key or consult Help.Implementation.Get for the declared parameters.",
+   "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.SetTestValue\". Always read the help before calling a message type."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Disposition.CreatePurchaseReturn",
+  "scenario": "contract/discovery",
+  "lcid": 1033,
+  "data": null,
+  "response": {
+   "status": "Success",
+   "messageType": "Quality.Disposition.CreatePurchaseReturn",
+   "catalogue": {
+    "name": "Quality.Disposition.CreatePurchaseReturn",
+    "isEnabled": true,
+    "filterTableNo": 20405,
+    "description": "Creates a purchase return order for the failed quantity of a purchase inspection.",
+    "selectionDescription": "Creates a purchase return order for the failed quantity of a purchase inspection.",
+    "messageDirection": "Inbound",
+    "keywords": [
+     "quality.disposition.createpurchasereturn",
+     "quality",
+     "inspection",
+     "purchase",
+     "return",
+     "failed quantity"
+    ],
+    "chargeable": true
+   }
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Disposition.CreatePurchaseReturn",
+  "scenario": "missing input",
+  "lcid": 1033,
+  "data": {},
+  "response": {
+   "status": "Error",
+   "code": "MissingParameter",
+   "error": "The required parameter 'inspectionSystemId' is missing or invalid.",
+   "parameter": "inspectionSystemId",
+   "expected": "a non-empty SystemId GUID of an existing quality inspection",
+   "nextStep": "Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.",
+   "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Disposition.CreatePurchaseReturn\". Always read the help before calling a message type."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Disposition.CreatePurchaseReturn",
+  "scenario": "unknown key",
+  "lcid": 1033,
+  "data": {
+   "inspectionSystemId": "00000000-0000-0000-0000-000000000001",
+   "typo": true
+  },
+  "response": {
+   "status": "Error",
+   "code": "UnknownParameter",
+   "error": "Parameter \"typo\" is not declared by this message type. Nothing was executed.",
+   "parameter": "typo",
+   "received": "true",
+   "expected": "declared request parameters",
+   "nextStep": "Remove this key or consult Help.Implementation.Get for the declared parameters.",
+   "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Disposition.CreatePurchaseReturn\". Always read the help before calling a message type."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Reopen",
+  "scenario": "contract/discovery",
+  "lcid": 1033,
+  "data": null,
+  "response": {
+   "status": "Success",
+   "messageType": "Quality.Inspection.Reopen",
+   "catalogue": {
+    "name": "Quality.Inspection.Reopen",
+    "isEnabled": true,
+    "filterTableNo": 20405,
+    "description": "Reopens a finished quality inspection through the standard ReopenInspection action so test values can be changed again.",
+    "selectionDescription": "Reopens a finished quality inspection through the standard ReopenInspection action so test values can be changed again.",
+    "messageDirection": "Inbound",
+    "keywords": [
+     "reopen",
+     "finished inspection",
+     "quality inspection",
+     "test values",
+     "open status"
+    ],
+    "chargeable": true
+   }
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Reopen",
+  "scenario": "missing input",
+  "lcid": 1033,
+  "data": {},
+  "response": {
+   "status": "Error",
+   "code": "MissingParameter",
+   "error": "inspectionSystemId is required and must identify an existing inspection.",
+   "parameter": "inspectionSystemId",
+   "expected": "an existing inspection SystemId",
+   "nextStep": "Read the inspection SystemId with Data.Records.Get.",
+   "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.Reopen\". Always read the help before calling a message type."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Reopen",
+  "scenario": "unknown key",
+  "lcid": 1033,
+  "data": {
+   "inspectionSystemId": "00000000-0000-0000-0000-000000000001",
+   "typo": true
+  },
+  "response": {
+   "status": "Error",
+   "code": "UnknownParameter",
+   "error": "Parameter \"typo\" is not declared by this message type. Nothing was executed.",
+   "parameter": "typo",
+   "received": "true",
+   "expected": "declared request parameters",
+   "nextStep": "Remove this key or consult Help.Implementation.Get for the declared parameters.",
+   "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.Reopen\". Always read the help before calling a message type."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.CreateReinspection",
+  "scenario": "contract/discovery",
+  "lcid": 1033,
+  "data": null,
+  "response": {
+   "status": "Success",
+   "messageType": "Quality.Inspection.CreateReinspection",
+   "catalogue": {
+    "name": "Quality.Inspection.CreateReinspection",
+    "isEnabled": true,
+    "filterTableNo": 20405,
+    "description": "Creates the next re-inspection from an existing quality inspection using standard Business Central validation.",
+    "selectionDescription": "Creates the next re-inspection from an existing quality inspection using standard Business Central validation.",
+    "messageDirection": "Inbound",
+    "keywords": [
+     "reinspection",
+     "re-inspection",
+     "inspect again",
+     "failed quality inspection",
+     "retest"
+    ],
+    "chargeable": true
+   }
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.CreateReinspection",
+  "scenario": "missing input",
+  "lcid": 1033,
+  "data": {},
+  "response": {
+   "status": "Error",
+   "code": "MissingParameter",
+   "error": "inspectionSystemId is required and must identify an existing inspection.",
+   "parameter": "inspectionSystemId",
+   "expected": "an existing inspection SystemId",
+   "nextStep": "Read the source inspection SystemId using Data.Records.Get.",
+   "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.CreateReinspection\". Always read the help before calling a message type."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.CreateReinspection",
+  "scenario": "unknown key",
+  "lcid": 1033,
+  "data": {
+   "inspectionSystemId": "00000000-0000-0000-0000-000000000001",
+   "typo": true
+  },
+  "response": {
+   "status": "Error",
+   "code": "UnknownParameter",
+   "error": "Parameter \"typo\" is not declared by this message type. Nothing was executed.",
+   "parameter": "typo",
+   "received": "true",
+   "expected": "declared request parameters",
+   "nextStep": "Remove this key or consult Help.Implementation.Get for the declared parameters.",
+   "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.CreateReinspection\". Always read the help before calling a message type."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "native missing template refusal",
+  "lcid": 1033,
+  "data": {
+   "sourceTableId": 27,
+   "sourceSystemId": "2703384B-31DF-F111-B6FB-00090FFE0001",
+   "templateCode": "XQ3-NO-TEMPLATE"
+  },
+  "response": {
+   "status": "Error",
+   "code": "BusinessCentralError",
+   "error": "The field Template Code of table Quality Inspection Header contains a value (XQ3-NO-TEMPLATE) that cannot be found in the related table (Quality Inspection Template Header).",
+   "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.Create\". Always read the help before calling a message type."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "native refusal unchanged inspection snapshot",
+  "lcid": 1033,
+  "data": {
+   "tableNumber": 20405,
+   "tableView": "WHERE(Source Item No.=CONST(XQ3W27E13B))"
+  },
+  "response": {
+   "before": 0,
+   "after": 0
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "typed missing source",
+  "lcid": 1033,
+  "data": {
+   "sourceTableId": 27
+  },
+  "response": {
+   "status": "Error",
+   "code": "MissingParameter",
+   "error": "The required parameter 'sourceSystemId' is missing or invalid.",
+   "parameter": "sourceSystemId",
+   "expected": "a text value",
+   "nextStep": "Correct the named request parameter and retry.",
+   "hint": "For usage details, call the \"Help.Implementation.Get\" message type with subject \"Quality.Inspection.Create\". Always read the help before calling a message type."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "native template creation",
+  "lcid": 1033,
+  "data": {
+   "sourceTableId": 27,
+   "sourceSystemId": "2703384B-31DF-F111-B6FB-00090FFE0001",
+   "templateCode": "XQ3W27E13B"
+  },
+  "response": {
+   "company": "CRONUS International Ltd.",
+   "messageType": "Quality.Inspection.Create",
+   "status": "Success",
+   "inspectionSystemId": "6203384B-31DF-F111-B6FB-00090FFE0001",
+   "inspectionNo": "XQ3W27E13B000001",
+   "reinspectionNo": 0,
+   "templateCode": "XQ3W27E13B"
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "native generation-rule creation",
+  "lcid": 1033,
+  "data": {
+   "sourceTableId": 27,
+   "sourceSystemId": "2703384B-31DF-F111-B6FB-00090FFE0001"
+  },
+  "response": {
+   "company": "CRONUS International Ltd.",
+   "messageType": "Quality.Inspection.Create",
+   "status": "Success",
+   "inspectionSystemId": "6503384B-31DF-F111-B6FB-00090FFE0001",
+   "inspectionNo": "XQ3W27E13B000002",
+   "reinspectionNo": 0,
+   "templateCode": "XQ3W27E13B"
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Reopen",
+  "scenario": "open-state idempotent call",
+  "lcid": 1033,
+  "data": {
+   "inspectionSystemId": "6203384B-31DF-F111-B6FB-00090FFE0001"
+  },
+  "response": {
+   "company": "CRONUS International Ltd.",
+   "messageType": "Quality.Inspection.Reopen",
+   "status": "Success",
+   "noOfRecords": 1,
+   "result": [
+    {
+     "systemId": "6203384B-31DF-F111-B6FB-00090FFE0001",
+     "inspectionNo": "XQ3W27E13B000001",
+     "reinspectionNo": 0
+    }
+   ]
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.SetTestValue",
+  "scenario": "native owned measurement",
+  "lcid": 1033,
+  "data": {
+   "inspectionSystemId": "3303384B-31DF-F111-B6FB-00090FFE0001",
+   "testCode": "BIFTQ6-WE13B",
+   "value": "5"
+  },
+  "response": {
+   "company": "CRONUS International Ltd.",
+   "messageType": "Quality.Inspection.SetTestValue",
+   "status": "Success",
+   "inspectionSystemId": "3303384B-31DF-F111-B6FB-00090FFE0001",
+   "inspectionNo": "BIFTQ6-WE13B",
+   "reinspectionNo": 0,
+   "testCode": "BIFTQ6-WE13B",
+   "resultCode": ""
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Disposition.CreatePurchaseReturn",
+  "scenario": "native owned return creation",
+  "lcid": 1033,
+  "data": {
+   "inspectionSystemId": "4103384B-31DF-F111-B6FB-00090FFE0001"
+  },
+  "response": {
+   "company": "CRONUS International Ltd.",
+   "messageType": "Quality.Disposition.CreatePurchaseReturn",
+   "status": "Success",
+   "inspectionSystemId": "4103384B-31DF-F111-B6FB-00090FFE0001",
+   "returnOrderNo": "1005"
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.CreateReinspection",
+  "scenario": "native next revision",
+  "lcid": 1033,
+  "data": {
+   "inspectionSystemId": "6203384B-31DF-F111-B6FB-00090FFE0001"
+  },
+  "response": {
+   "company": "CRONUS International Ltd.",
+   "messageType": "Quality.Inspection.CreateReinspection",
+   "status": "Success",
+   "noOfRecords": 1,
+   "result": [
+    {
+     "systemId": "6E03384B-31DF-F111-B6FB-00090FFE0001",
+     "inspectionNo": "XQ3W27E13B000001",
+     "reinspectionNo": 1,
+     "sourceSystemId": "6203384B-31DF-F111-B6FB-00090FFE0001"
+    }
+   ]
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "contract/discovery",
+  "lcid": 1039,
+  "data": null,
+  "response": {
+   "status": "Success",
+   "messageType": "Quality.Inspection.Create",
+   "catalogue": {
+    "name": "Quality.Inspection.Create",
+    "isEnabled": true,
+    "filterTableNo": 0,
+    "description": "Stofnar eða finnur gæðaskoðun fyrir eina upprunafærslu með stofnunarreglum Microsoft.",
+    "selectionDescription": "Stofnar eða finnur gæðaskoðun fyrir eina upprunafærslu með stofnunarreglum Microsoft.",
+    "messageDirection": "Inbound",
+    "keywords": [
+     "quality.inspection.create",
+     "gæði",
+     "skoðun",
+     "stofna",
+     "sniðmát",
+     "uppruni"
+    ],
+    "chargeable": true
+   }
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "missing input",
+  "lcid": 1039,
+  "data": {},
+  "response": {
+   "status": "Error",
+   "code": "MissingParameter",
+   "error": "Nauðsynlega færibreytu 'sourceTableId' vantar eða hún er ógild.",
+   "parameter": "sourceTableId",
+   "expected": "jákvætt heiltölutöfluauðkenni",
+   "nextStep": "Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.",
+   "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Create\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "unknown key",
+  "lcid": 1039,
+  "data": {
+   "inspectionSystemId": "00000000-0000-0000-0000-000000000001",
+   "typo": true
+  },
+  "response": {
+   "status": "Error",
+   "code": "UnknownParameter",
+   "error": "Óþekkt viðföng: inspectionSystemId, typo. Ekkert var keyrt.",
+   "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Create\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund.",
+   "errors": [
+    {
+     "code": "UnknownParameter",
+     "error": "Viðfangið \"inspectionSystemId\" er ekki skilgreint fyrir þessa skilaboðategund. Ekkert var keyrt.",
+     "parameter": "inspectionSystemId",
+     "received": "00000000-0000-0000-0000-000000000001",
+     "expected": "skilgreind beiðniviðföng",
+     "nextStep": "Fjarlægðu þennan lykil eða skoðaðu Help.Implementation.Get til að sjá skilgreind viðföng."
+    },
+    {
+     "code": "UnknownParameter",
+     "error": "Viðfangið \"typo\" er ekki skilgreint fyrir þessa skilaboðategund. Ekkert var keyrt.",
+     "parameter": "typo",
+     "received": "true",
+     "expected": "skilgreind beiðniviðföng",
+     "nextStep": "Fjarlægðu þennan lykil eða skoðaðu Help.Implementation.Get til að sjá skilgreind viðföng."
+    }
+   ]
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.SetTestValue",
+  "scenario": "contract/discovery",
+  "lcid": 1039,
+  "data": null,
+  "response": {
+   "status": "Success",
+   "messageType": "Quality.Inspection.SetTestValue",
+   "catalogue": {
+    "name": "Quality.Inspection.SetTestValue",
+    "isEnabled": true,
+    "filterTableNo": 20405,
+    "description": "Skráir prófunargildi í opinni gæðaskoðun og endurreiknar niðurstöðu hennar.",
+    "selectionDescription": "Skráir prófunargildi í opinni gæðaskoðun og endurreiknar niðurstöðu hennar.",
+    "messageDirection": "Inbound",
+    "keywords": [
+     "quality.inspection.settestvalue",
+     "gæði",
+     "skoðun",
+     "prófunargildi",
+     "mæling",
+     "niðurstaða"
+    ],
+    "chargeable": true
+   }
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.SetTestValue",
+  "scenario": "missing input",
+  "lcid": 1039,
+  "data": {},
+  "response": {
+   "status": "Error",
+   "code": "BusinessCentralError",
+   "error": "Nauðsynlega færibreytu 'inspectionSystemId' vantar eða hún er ógild.",
+   "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+  },
+  "passed": true,
+  "strictTypedCheck": "failed: code BusinessCentralError instead of MissingParameter (pre-existing main #25 QualitySetValueImpl, not touched by PR28)",
+  "criterion": "refused with status Error naming the missing parameter; nothing executed (same criterion as the e1c594f run)"
+ },
+ {
+  "type": "Quality.Inspection.SetTestValue",
+  "scenario": "unknown key",
+  "lcid": 1039,
+  "data": {
+   "inspectionSystemId": "00000000-0000-0000-0000-000000000001",
+   "typo": true
+  },
+  "response": {
+   "status": "Error",
+   "code": "UnknownParameter",
+   "error": "Viðfangið \"typo\" er ekki skilgreint fyrir þessa skilaboðategund. Ekkert var keyrt.",
+   "parameter": "typo",
+   "received": "true",
+   "expected": "skilgreind beiðniviðföng",
+   "nextStep": "Fjarlægðu þennan lykil eða skoðaðu Help.Implementation.Get til að sjá skilgreind viðföng.",
+   "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.SetTestValue\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Disposition.CreatePurchaseReturn",
+  "scenario": "contract/discovery",
+  "lcid": 1039,
+  "data": null,
+  "response": {
+   "status": "Success",
+   "messageType": "Quality.Disposition.CreatePurchaseReturn",
+   "catalogue": {
+    "name": "Quality.Disposition.CreatePurchaseReturn",
+    "isEnabled": true,
+    "filterTableNo": 20405,
+    "description": "Stofnar innkaupaskilapöntun fyrir fallið magn í innkaupaskoðun.",
+    "selectionDescription": "Stofnar innkaupaskilapöntun fyrir fallið magn í innkaupaskoðun.",
+    "messageDirection": "Inbound",
+    "keywords": [
+     "quality.disposition.createpurchasereturn",
+     "gæði",
+     "skoðun",
+     "innkaup",
+     "skil",
+     "fallið magn"
+    ],
+    "chargeable": true
+   }
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Disposition.CreatePurchaseReturn",
+  "scenario": "missing input",
+  "lcid": 1039,
+  "data": {},
+  "response": {
+   "status": "Error",
+   "code": "MissingParameter",
+   "error": "Nauðsynlega færibreytu 'inspectionSystemId' vantar eða hún er ógild.",
+   "parameter": "inspectionSystemId",
+   "expected": "SystemId GUID skoðunar sem er til og er ekki tómt",
+   "nextStep": "Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.",
+   "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Disposition.CreatePurchaseReturn\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Disposition.CreatePurchaseReturn",
+  "scenario": "unknown key",
+  "lcid": 1039,
+  "data": {
+   "inspectionSystemId": "00000000-0000-0000-0000-000000000001",
+   "typo": true
+  },
+  "response": {
+   "status": "Error",
+   "code": "UnknownParameter",
+   "error": "Viðfangið \"typo\" er ekki skilgreint fyrir þessa skilaboðategund. Ekkert var keyrt.",
+   "parameter": "typo",
+   "received": "true",
+   "expected": "skilgreind beiðniviðföng",
+   "nextStep": "Fjarlægðu þennan lykil eða skoðaðu Help.Implementation.Get til að sjá skilgreind viðföng.",
+   "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Disposition.CreatePurchaseReturn\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Reopen",
+  "scenario": "contract/discovery",
+  "lcid": 1039,
+  "data": null,
+  "response": {
+   "status": "Success",
+   "messageType": "Quality.Inspection.Reopen",
+   "catalogue": {
+    "name": "Quality.Inspection.Reopen",
+    "isEnabled": true,
+    "filterTableNo": 20405,
+    "description": "Enduropnar lokinni gæðaskoðun með staðlaðri ReopenInspection aðgerð svo prófunargildum megi breyta aftur.",
+    "selectionDescription": "Enduropnar lokinni gæðaskoðun með staðlaðri ReopenInspection aðgerð svo prófunargildum megi breyta aftur.",
+    "messageDirection": "Inbound",
+    "keywords": [
+     "enduropna",
+     "lokin skoðun",
+     "gæðaskoðun",
+     "prófunargildi",
+     "opin staða"
+    ],
+    "chargeable": true
+   }
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Reopen",
+  "scenario": "missing input",
+  "lcid": 1039,
+  "data": {},
+  "response": {
+   "status": "Error",
+   "code": "MissingParameter",
+   "error": "inspectionSystemId er áskilið og verður að auðkenna skoðun sem er til.",
+   "parameter": "inspectionSystemId",
+   "expected": "SystemId skoðunar sem er til",
+   "nextStep": "Lestu SystemId skoðunarinnar með Data.Records.Get.",
+   "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Reopen\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Reopen",
+  "scenario": "unknown key",
+  "lcid": 1039,
+  "data": {
+   "inspectionSystemId": "00000000-0000-0000-0000-000000000001",
+   "typo": true
+  },
+  "response": {
+   "status": "Error",
+   "code": "UnknownParameter",
+   "error": "Viðfangið \"typo\" er ekki skilgreint fyrir þessa skilaboðategund. Ekkert var keyrt.",
+   "parameter": "typo",
+   "received": "true",
+   "expected": "skilgreind beiðniviðföng",
+   "nextStep": "Fjarlægðu þennan lykil eða skoðaðu Help.Implementation.Get til að sjá skilgreind viðföng.",
+   "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Reopen\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.CreateReinspection",
+  "scenario": "contract/discovery",
+  "lcid": 1039,
+  "data": null,
+  "response": {
+   "status": "Success",
+   "messageType": "Quality.Inspection.CreateReinspection",
+   "catalogue": {
+    "name": "Quality.Inspection.CreateReinspection",
+    "isEnabled": true,
+    "filterTableNo": 20405,
+    "description": "Stofnar næstu endurskoðun úr gæðaskoðun með stöðluðum sannprófunum Business Central.",
+    "selectionDescription": "Stofnar næstu endurskoðun úr gæðaskoðun með stöðluðum sannprófunum Business Central.",
+    "messageDirection": "Inbound",
+    "keywords": [
+     "endurskoðun",
+     "endurtaka skoðun",
+     "fallin gæðaskoðun",
+     "endurprófun",
+     "skoða aftur"
+    ],
+    "chargeable": true
+   }
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.CreateReinspection",
+  "scenario": "missing input",
+  "lcid": 1039,
+  "data": {},
+  "response": {
+   "status": "Error",
+   "code": "MissingParameter",
+   "error": "inspectionSystemId er áskilið og verður að auðkenna skoðun sem er til.",
+   "parameter": "inspectionSystemId",
+   "expected": "SystemId skoðunar sem er til",
+   "nextStep": "Lestu SystemId upprunalegrar skoðunar með Data.Records.Get.",
+   "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.CreateReinspection\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.CreateReinspection",
+  "scenario": "unknown key",
+  "lcid": 1039,
+  "data": {
+   "inspectionSystemId": "00000000-0000-0000-0000-000000000001",
+   "typo": true
+  },
+  "response": {
+   "status": "Error",
+   "code": "UnknownParameter",
+   "error": "Viðfangið \"typo\" er ekki skilgreint fyrir þessa skilaboðategund. Ekkert var keyrt.",
+   "parameter": "typo",
+   "received": "true",
+   "expected": "skilgreind beiðniviðföng",
+   "nextStep": "Fjarlægðu þennan lykil eða skoðaðu Help.Implementation.Get til að sjá skilgreind viðföng.",
+   "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.CreateReinspection\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "native missing template refusal",
+  "lcid": 1039,
+  "data": {
+   "sourceTableId": 27,
+   "sourceSystemId": "7403384B-31DF-F111-B6FB-00090FFE0001",
+   "templateCode": "XQ3-NO-TEMPLATE"
+  },
+  "response": {
+   "status": "Error",
+   "code": "BusinessCentralError",
+   "error": "The field Sniðmátskóði of table Haus gæðaeftirlitsprófs contains a value (XQ3-NO-TEMPLATE) that cannot be found in the related table (Sniðmátshaus fyrir gæðaeftirlit).",
+   "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Create\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "native refusal unchanged inspection snapshot",
+  "lcid": 1039,
+  "data": {
+   "tableNumber": 20405,
+   "tableView": "WHERE(Source Item No.=CONST(XQ3W27I13B))"
+  },
+  "response": {
+   "before": 0,
+   "after": 0
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "typed missing source",
+  "lcid": 1039,
+  "data": {
+   "sourceTableId": 27
+  },
+  "response": {
+   "status": "Error",
+   "code": "MissingParameter",
+   "error": "Nauðsynlega færibreytu 'sourceSystemId' vantar eða hún er ógild.",
+   "parameter": "sourceSystemId",
+   "expected": "textagildi",
+   "nextStep": "Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.",
+   "hint": "Til að sjá notkunarupplýsingar skaltu kalla á skilaboðategundina \"Help.Implementation.Get\" með subject \"Quality.Inspection.Create\". Lestu alltaf hjálpina áður en þú kallar á skilaboðategund."
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "native template creation",
+  "lcid": 1039,
+  "data": {
+   "sourceTableId": 27,
+   "sourceSystemId": "7403384B-31DF-F111-B6FB-00090FFE0001",
+   "templateCode": "XQ3W27I13B"
+  },
+  "response": {
+   "company": "CRONUS International Ltd.",
+   "messageType": "Quality.Inspection.Create",
+   "status": "Success",
+   "inspectionSystemId": "AF03384B-31DF-F111-B6FB-00090FFE0001",
+   "inspectionNo": "XQ3W27I13B000001",
+   "reinspectionNo": 0,
+   "templateCode": "XQ3W27I13B"
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Create",
+  "scenario": "native generation-rule creation",
+  "lcid": 1039,
+  "data": {
+   "sourceTableId": 27,
+   "sourceSystemId": "7403384B-31DF-F111-B6FB-00090FFE0001"
+  },
+  "response": {
+   "company": "CRONUS International Ltd.",
+   "messageType": "Quality.Inspection.Create",
+   "status": "Success",
+   "inspectionSystemId": "B203384B-31DF-F111-B6FB-00090FFE0001",
+   "inspectionNo": "XQ3W27I13B000002",
+   "reinspectionNo": 0,
+   "templateCode": "XQ3W27I13B"
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.Reopen",
+  "scenario": "open-state idempotent call",
+  "lcid": 1039,
+  "data": {
+   "inspectionSystemId": "AF03384B-31DF-F111-B6FB-00090FFE0001"
+  },
+  "response": {
+   "company": "CRONUS International Ltd.",
+   "messageType": "Quality.Inspection.Reopen",
+   "status": "Success",
+   "noOfRecords": 1,
+   "result": [
+    {
+     "systemId": "AF03384B-31DF-F111-B6FB-00090FFE0001",
+     "inspectionNo": "XQ3W27I13B000001",
+     "reinspectionNo": 0
+    }
+   ]
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.SetTestValue",
+  "scenario": "native owned measurement",
+  "lcid": 1039,
+  "data": {
+   "inspectionSystemId": "8003384B-31DF-F111-B6FB-00090FFE0001",
+   "testCode": "BIFTQ6-WI13B",
+   "value": "6"
+  },
+  "response": {
+   "company": "CRONUS International Ltd.",
+   "messageType": "Quality.Inspection.SetTestValue",
+   "status": "Success",
+   "inspectionSystemId": "8003384B-31DF-F111-B6FB-00090FFE0001",
+   "inspectionNo": "BIFTQ6-WI13B",
+   "reinspectionNo": 0,
+   "testCode": "BIFTQ6-WI13B",
+   "resultCode": ""
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Disposition.CreatePurchaseReturn",
+  "scenario": "native owned return creation",
+  "lcid": 1039,
+  "data": {
+   "inspectionSystemId": "8E03384B-31DF-F111-B6FB-00090FFE0001"
+  },
+  "response": {
+   "company": "CRONUS International Ltd.",
+   "messageType": "Quality.Disposition.CreatePurchaseReturn",
+   "status": "Success",
+   "inspectionSystemId": "8E03384B-31DF-F111-B6FB-00090FFE0001",
+   "returnOrderNo": "1006"
+  },
+  "passed": true
+ },
+ {
+  "type": "Quality.Inspection.CreateReinspection",
+  "scenario": "native next revision",
+  "lcid": 1039,
+  "data": {
+   "inspectionSystemId": "AF03384B-31DF-F111-B6FB-00090FFE0001"
+  },
+  "response": {
+   "company": "CRONUS International Ltd.",
+   "messageType": "Quality.Inspection.CreateReinspection",
+   "status": "Success",
+   "noOfRecords": 1,
+   "result": [
+    {
+     "systemId": "BB03384B-31DF-F111-B6FB-00090FFE0001",
+     "inspectionNo": "XQ3W27I13B000001",
+     "reinspectionNo": 1,
+     "sourceSystemId": "AF03384B-31DF-F111-B6FB-00090FFE0001"
+    }
+   ]
+  },
+  "passed": true
+ }
+]

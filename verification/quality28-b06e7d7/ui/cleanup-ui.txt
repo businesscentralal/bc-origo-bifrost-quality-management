@@ -1,0 +1,16 @@
+{
+  "company": "CRONUS International Ltd.",
+  "messageType": "Test.Quality.CreateFixture",
+  "remainingInspections": 0,
+  "remainingSources": 0,
+  "remainingFixtureState": 0,
+  "status": "Success"
+}
+{
+  "company": "CRONUS International Ltd.",
+  "messageType": "Data.Records.Get",
+  "status": "Success",
+  "noOfRecords": 0,
+  "securityFiltered": false,
+  "result": []
+}

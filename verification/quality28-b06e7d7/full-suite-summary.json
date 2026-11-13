@@ -1,0 +1,14 @@
+{
+ "ok": true,
+ "mode": "local",
+ "exitCode": 0,
+ "passed": 114,
+ "failed": 0,
+ "skipped": 0,
+ "errors": 0,
+ "sha": "b06e7d7a1de90c19dc5811e8b017e71baafa607f",
+ "tenant": "w129-37",
+ "range": "97200..97299",
+ "fullSuite": true,
+ "total": 114
+}

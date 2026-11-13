@@ -1,0 +1,11 @@
+{
+ "lcid": 1033,
+ "url": "http://host.docker.internal:8080/BC290/?company=CRONUS%20International%20Ltd.&tenant=w129-37&page=20406&filter=%27Qlty.%20Inspection%20Header%27.%27No.%27%20IS%20%27%40*XQ3W27U13C000001*%27&dc=0",
+ "inspection": true,
+ "source": true,
+ "measurement": true,
+ "translated": true,
+ "reinspectionAction": true,
+ "passed": true,
+ "snippet": "  Quality Inspection | Work Date: 1/27/2028       XQ3W27U13C000001 - XQ3W27U13C - XQ3W27U13C - - - Open Home Reports More options  Create Re-inspection Finish Reopen  General Show more No. XQ3W27U13C000001 Re-inspection No. Template Code XQ3W27U13C Description Quantity Quantity (Base) 0 Passed Quantity 0 Failed Quantity 0 Status Status Open Finished Date Result Item Tracking Item No. XQ3W27U13C Variant Code Lot No. Serial No. Package No. Statistics Assigned User ID Lines   Test Code Description Test Value Pass Description Result Note XQ3W27U13C XQ3 owned measurement Source Referenc"
+}

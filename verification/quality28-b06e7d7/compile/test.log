@@ -1,0 +1,10 @@
+Microsoft (R) AL Compiler version 30.0.42.60748
+Copyright (C) Microsoft Corporation. All rights reserved
+
+Compilation started for project 'Bifrost Quality Management - Tests' containing '23' files at '06:45:45.584'.
+
+private/qm3-w27-b06e7d7/test/test/QualityReturnTst.Codeunit.al(11,1): info AA0477: The using statements are not in a sorted order.
+private/qm3-w27-b06e7d7/test/test/QualityCreateTst.Codeunit.al(10,1): info AA0477: The using statements are not in a sorted order.
+
+Compilation ended at '06:45:53.687'.
+

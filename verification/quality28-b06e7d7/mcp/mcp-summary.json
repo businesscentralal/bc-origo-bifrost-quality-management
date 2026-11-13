@@ -1,0 +1,30 @@
+{
+ "sha": "b06e7d7a1de90c19dc5811e8b017e71baafa607f",
+ "tenant": "w129-37",
+ "verified": true,
+ "createsOwnData": true,
+ "total": 48,
+ "passed": 48,
+ "failed": 0,
+ "skipped": 0,
+ "touchedMessageTypes": [
+  "Quality.Disposition.CreatePurchaseReturn",
+  "Quality.Inspection.Create",
+  "Quality.Inspection.CreateReinspection",
+  "Quality.Inspection.Reopen",
+  "Quality.Inspection.SetTestValue"
+ ],
+ "lcids": [
+  1033,
+  1039
+ ],
+ "fixtureCodes": [
+  "XQ3W27E13B",
+  "XQ3W27I13B",
+  "BIFTQ6-WE13B",
+  "BIFTQ6-WI13B",
+  "BIFTQ13-WE13B",
+  "BIFTQ13-WI13B"
+ ],
+ "note": "SetTestValue missing-input is refused naming inspectionSystemId but with code BusinessCentralError, not MissingParameter. That is existing main #25 behaviour and PR28 does not touch it; disclosed as a wider finding. An earlier aborted run (13A, helper timeout) was fully cleaned (cleanup-13A-aborted.log) and is not counted."
+}
