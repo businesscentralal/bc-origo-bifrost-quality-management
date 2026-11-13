@@ -22,3 +22,5 @@ Unknown keys, absent keys, non-text values, invalid identifiers and overlong val
 Success returns `status`, `inspectionSystemId`, `inspectionNo`, `reinspectionNo`, `testCode` and `resultCode`. The line value, related expressions and header result may change; Microsoft triggers and subscribers run. Repeating the value is **not guaranteed idempotent**. Assign `BIFROST QM Full ori` with a Foundation processing role; the Full set includes Microsoft's inspector permissions. The Read and base sets cannot execute this operation. No external provider is called.
 
 Use Foundation `Data.Records.Get` for ordinary reads. A direct `Data.Records.Set` is not equivalent to this operation's validation and result recalculation.
+
+Own input, access, not-found and status checks return `MissingParameter`, `InvalidParameter`, `UnknownParameter`, `PermissionDenied`, `RecordNotFound` or `PreconditionFailed`. The response includes `parameter`, `expected` and `nextStep`, plus `received` when available. Codes and parameter names are language-neutral; guidance is translated. Native Microsoft validation can return `BusinessCentralError`.

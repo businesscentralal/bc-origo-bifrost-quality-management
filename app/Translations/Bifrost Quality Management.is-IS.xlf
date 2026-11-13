@@ -369,6 +369,84 @@
           <note from="Developer" annotates="general" priority="2">is-IS=SystemId skoðunar sem er til</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reinspect Impl ori - NamedType ExpectedIdTxt</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 938906475" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a non-empty SystemId GUID of an existing quality inspection</source>
+          <target>SystemId GUID skoðunar sem er til og er ekki tómt</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId GUID skoðunar sem er til og er ekki tómt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType ExpectedIdLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 1884902963" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.</source>
+          <target>Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType FindInspectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 4195077024" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the named request parameter and retry.</source>
+          <target>Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType FixParameterLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 4026014561" size-unit="char" translate="yes" xml:space="preserve">
+          <source>inspectionSystemId is not a valid GUID, or testCode or value is not text or is longer than its field allows.</source>
+          <target>inspectionSystemId er ekki gilt GUID, eða testCode eða value er ekki texti eða er lengra en reiturinn leyfir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=inspectionSystemId er ekki gilt GUID, eða testCode eða value er ekki texti eða er lengra en reiturinn leyfir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType InvalidWhenLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 2052369097" size-unit="char" translate="yes" xml:space="preserve">
+          <source>text with at most %1 characters</source>
+          <target>texti með að hámarki %1 stöfum</target>
+          <note from="Developer" annotates="general" priority="2">%1 = maximum length|is-IS=texti með að hámarki %1 stöfum</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType MaximumTextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 2612954968" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the inspection test, value or setup and retry.</source>
+          <target>Leiðréttu skoðunarprófun, gildi eða uppsetningu og reyndu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu skoðunarprófun, gildi eða uppsetningu og reyndu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType NativeNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 2645344923" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Microsoft validation refused the test value, test selection or setup.</source>
+          <target>Staðfesting Microsoft hafnaði prófunargildi, vali á prófun eða uppsetningu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Staðfesting Microsoft hafnaði prófunargildi, vali á prófun eða uppsetningu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType NativeRefusalLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 963943359" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a non-empty text value</source>
+          <target>textagildi sem er ekki tómt</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=textagildi sem er ekki tómt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType NonEmptyTextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 3543965372" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an open quality inspection</source>
+          <target>opin gæðaskoðun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=opin gæðaskoðun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType OpenExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 2072120555" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Select an open inspection before setting a test value; nothing was changed.</source>
+          <target>Veldu opna skoðun áður en prófunargildi er skráð; engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Veldu opna skoðun áður en prófunargildi er skráð; engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType OpenNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 3932376842" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for BIFROST QM Full ori and the native Quality Management permissions.</source>
+          <target>Biddu stjórnanda um BIFROST QM Full ori og staðlaðar gæðastjórnunarheimildir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu stjórnanda um BIFROST QM Full ori og staðlaðar gæðastjórnunarheimildir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType PermissionNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 3152294443" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The quality inspection Status must be Open.</source>
+          <target>Staða gæðaskoðunar verður að vera Opin.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Staða gæðaskoðunar verður að vera Opin.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType StatusErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1135174596 - NamedType 1879669363" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a text value</source>
+          <target>textagildi</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=textagildi</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - NamedType TextExpectedLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1542610788 - NamedType 180107814" size-unit="char" translate="yes" xml:space="preserve">
           <source>Read the source inspection SystemId using Data.Records.Get.</source>
           <target>Lestu SystemId upprunalegrar skoðunar með Data.Records.Get.</target>

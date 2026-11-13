@@ -9,6 +9,8 @@
 - #31: Purchase-return refusals now provide typed codes, parameter details and translated recovery guidance. Missing or empty inspection IDs use `MissingParameter`; unknown IDs use `RecordNotFound`. App-owned permission, format, source and result checks preserve transaction rollback (codeunit 10035245; tests 97210/97215).
 
 - #5 / PR #32: the base role (10035236) now grants Reopen handler execution (10035256) and read access to its capability marker (10035258), so Read callers can evaluate the disabled action on BC29. Marker writes remain exclusive to Full (10035237); tests 97220/97221 are unchanged.
+- #34: `Quality.Inspection.SetTestValue` now returns typed input, access, inspection-not-found and status refusals with actionable structured fields in English and Icelandic (codeunit 10035242; tests 97209). Native Microsoft validation and atomic rollback remain in place.
+- #34 / PR #35 amendment: the published `errors` chapter of `Quality.Inspection.SetTestValue` now emits `{code, when, fix}` through the Foundation `ErrorEntry` contract (codeunit 10035242; test 97209 `Scenario_AC03_ErrorsChapter_PublishesStableCodes`).
 
 ### Added
 - #13: `Quality.Disposition.CreatePurchaseReturn` wraps the standard failed-quantity purchase return disposition, with strict inputs, transaction rollback, permission capability, bilingual contract/help and tests (10035244–10035247; tests 97210–97214).
