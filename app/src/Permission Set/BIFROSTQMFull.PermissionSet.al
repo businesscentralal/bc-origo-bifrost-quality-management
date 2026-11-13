@@ -3,7 +3,7 @@ namespace Origo.Bifrost.QualityManagement;
 using Microsoft.QualityManagement.Permissions;
 
 /// <summary>
-/// Grants inspection finish, reopen, test-value and purchase-return execution with Microsoft Quality Admin and Inspector permissions.
+/// Grants inspection finish, reopen, test-value, purchase-return and inventory disposition execution with Microsoft Quality Admin and Inspector permissions; other Microsoft business-data permissions remain required.
 /// Microsoft ReopenInspection still requires the Quality Admin role, or SUPER, to be assigned to the user.
 /// With Quality Admin write access, Microsoft offers to assign a modified inspection to the user in interactive sessions,
 /// which reads the user's own My Notifications setting; the read grant lets finish run under this role alone.
@@ -29,6 +29,10 @@ permissionset 10035237 "BIFROST QM Full ori"
         codeunit "Qlty Insp Finish Ctr ori" = X,
         codeunit "Qlty Insp Finish Impl ori" = X,
         codeunit "Qlty Insp Finish Proc ori" = X,
+        codeunit "Quality Move Impl ori" = X,
+        codeunit "Quality Move Posting ori" = X,
+        table "Quality Move Access ori" = X,
+        tabledata "Quality Move Access ori" = RIMD,
         table "Quality Reinspect Access ori" = X,
         tabledata "Quality Reinspect Access ori" = RIMD;
 }
