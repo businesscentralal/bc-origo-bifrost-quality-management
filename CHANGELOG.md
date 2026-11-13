@@ -17,6 +17,11 @@
 
 - Repository scaffolded from Bifrost Subscription Billing setup.
 
+### Fixed
+
+- [#4](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/4): the Full role (10035237) now includes the non-assignable permission set 10035285, which grants read access to My Notifications (table 1518). Since #32 added Quality Admin, Microsoft offers to assign a finished inspection to the user in interactive sessions and reads that setting; without the grant, `Quality.Inspection.Finish` under the Full role alone failed with a permission error.
+- [#4](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/4): enforce the Full app role through empty capability table 10035284, including callers with Foundation API wildcard execution and native inspection permissions. Dispatcher tests verify read/API refusals without changing an inspection. Native Inspector users need Modify permission, not Delete permission. Contract help chapters and notes now have Icelandic translations.
+
 ### Added
 
 - [#7](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/7): `Quality.Inspection.CreateReinspection` wraps the native header action with strict source-ID validation, transactional refusal handling, translated discovery/help and full-role authorization (table 10035320, codeunits 10035321–10035322, enum extension 10035323; tests 97207–97208).
@@ -24,6 +29,7 @@
 - [#6](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/6): `Quality.Inspection.SetTestValue` validates a named test and recalculates the open inspection result through Microsoft’s standard methods. Added enum extension 10035241, implementation 10035242, empty write-permission capability table 10035243, Full-role inspector permissions, bilingual help and regression tests and owned fixture helpers 97202–97206. Missing, malformed, unknown and overlong parameters are refused; transaction failures preserve header and line data.
 - [#12](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/12): `Quality.Disposition.MoveInventory`, standard disposition interface wrapper with explicit confirmation, atomic item/warehouse posting, capability check and bilingual help (enumextension/codeunit 10035270, capability table 10035271, bound posting codeunit 10035272). Native dispatcher tests and late-failure injection use 97250–97252; the owned MCP fixture builder and explicit test UI use 97253–97254 without changing write guards or licensing.
 
+- [#4](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/4): message type `Quality.Inspection.Finish` (enum extension 10035280, contract 10035281, implementation 10035282, process 10035283, capability table 10035284; test 97230). Calls `FinishInspection` on the quality inspection header. Execute permission is on `BIFROST QM Full ori` (10035237), which includes the Microsoft inspector role and which the Foundation full role extension already includes. The read role does not grant the type.
 - [#1](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/1): Foundation application registration (codeunit 10035235), base/full/read permission sets (10035236–10035238) and Foundation role extensions (10035239–10035240). The scaffold adds no message types or Microsoft business-data grants.
 - Registration, repeat-discovery and English/Icelandic licence-admin setup coverage in test codeunit 97200 (platform-only test permission set 97201), with Icelandic permission captions and the `quality-management` help entry.
 - Corrected keyword-translation validation for the message-free scaffold; message declarations without keyword coverage still fail the guard, with regression checks for both cases.
