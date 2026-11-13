@@ -939,7 +939,6 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - gæði tilkynningar</note>
           <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST QM Notify ori - Property Caption</note>
         </trans-unit>
-      </group>
       <trans-unit id="Table 2199334912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quality inventory movement</source>
           <target>Birgðaflutningur gæðastjórnunar</target>
@@ -1054,6 +1053,7 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Gæðabókun tilgreindi ekki færslubókarlínu. Hætt var við birgðaflutning.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Posting ori - NamedType MissingFilterErr</note>
         </trans-unit>
+      </group>
     </body>
   </file>
 </xliff>
