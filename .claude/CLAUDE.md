@@ -50,6 +50,11 @@ Tests: 97200-97299
 | Test codeunit | 97200 | Quality Scaffold Tst ori |
 | Test codeunit | 97220 | Quality Reopen Tst ori |
 | Test codeunit | 97221 | Quality Reopen Perm Tst ori |
+| Test codeunit | 97250 | Quality Move Tst ori |
+| Test codeunit | 97251 | Quality Move Fault ori |
+| Test permission set | 97252 | QM Move Test ori |
+| Test codeunit | 97253 | Quality Move MCP Seed ori |
+| Test page | 97254 | Quality Move MCP Fixture ori |
 | Test permission set | 97201 | QM Setup Test ori |
 
 | Enum extension | 10035244 | Quality Return Types ori |
