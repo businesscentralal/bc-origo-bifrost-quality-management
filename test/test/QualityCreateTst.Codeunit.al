@@ -2,6 +2,7 @@ namespace Origo.Bifrost.QualityManagement.Test;
 
 using Microsoft.Foundation.NoSeries;
 using Microsoft.Inventory.Item;
+using Microsoft.QualityManagement.Configuration;
 using Microsoft.QualityManagement.Configuration.GenerationRule;
 using Microsoft.QualityManagement.Configuration.SourceConfiguration;
 using Microsoft.QualityManagement.Configuration.Template;
@@ -273,6 +274,12 @@ codeunit 97240 "Quality Create Tst ori"
                 end;
         end;
         Commit();
+        // SUPER from the test library does not always include Quality Management table data.
+        // Success and ordinary refusals need the real admin role so setup can be read.
+        if not (Scenario in ['read', 'noApp', 'template']) then begin
+            LowerPermissions.AddPermissionSet('QltyMgmt - Admin');
+            LowerPermissions.AddPermissionSet('BIFROST QM Full ori');
+        end;
         if Scenario in ['read', 'noApp'] then begin
             LowerPermissions.SetExactPermissionSet('BIFROST API ori');
             LowerPermissions.AddPermissionSet('QltyMgmt - Admin');
@@ -407,8 +414,8 @@ codeunit 97240 "Quality Create Tst ori"
         SavedSetup."Previous Series" := QualitySetup."Quality Inspection Nos.";
         SavedSetup."Previous Creation Option" := QualitySetup."Inspection Creation Option".AsInteger();
         SavedSetup.Insert(false);
-        if not SavedSetup."Setup Existed" then
-            QualitySetup.Insert(false);
+        EnsureCompanyQualitySetup();
+        QualitySetup.Get();
         NoSeries.Code := FixtureCode;
         NoSeries."Default Nos." := true;
         NoSeries.Insert(false);
@@ -441,6 +448,7 @@ codeunit 97240 "Quality Create Tst ori"
             GenerationRule."Entry No." += 1
         else
             GenerationRule."Entry No." := 1;
+        GenerationRule."Sort Order" := -1000000;
         GenerationRule."Template Code" := FixtureCode;
         GenerationRule."Source Table No." := Database::Item;
         Item.SetRecFilter();
@@ -462,6 +470,21 @@ codeunit 97240 "Quality Create Tst ori"
         FieldConfig."To Field No." := Inspection.FieldNo("Source Item No.");
         FieldConfig."To Type" := FieldConfig."To Type"::Inspection;
         FieldConfig.Insert(false);
+    end;
+
+    /// <summary>
+    /// Installs the company Quality Management basics when a recreated company has none.
+    /// Microsoft creation returns no inspection, without an error, when the setup record is missing.
+    /// </summary>
+    local procedure EnsureCompanyQualitySetup()
+    var
+        QualitySetup: Record "Qlty. Management Setup";
+        InspectionResult: Record "Qlty. Inspection Result";
+        AutoConfigure: Codeunit "Qlty. Auto Configure";
+    begin
+        if QualitySetup.Get() and (not InspectionResult.IsEmpty()) then
+            exit;
+        AutoConfigure.EnsureBasicSetupExists(false);
     end;
 
     /// <summary>Deletes only the owned fixture and restores the exact setup fields changed by seeding.</summary>
