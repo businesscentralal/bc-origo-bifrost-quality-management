@@ -39,6 +39,7 @@ Tests: 97200-97299
 | Test codeunit | 97203 | Quality Value Fault ori |
 | Test permission set | 97204 | QM Message Test ori |
 | Test enum extension | 97205 | Quality Fixture Types ori |
+| Test codeunit | 97209 | Quality Value Errors Tst ori (issue 34 typed refusals) |
 | Test codeunit | 97206 | Quality Value Fixture ori |
 | Test codeunit | 97240 | Quality Create Tst ori |
 | Test enum extension | 97211 | Quality Create Fixtures ori |
