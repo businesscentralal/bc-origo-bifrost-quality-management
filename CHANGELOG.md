@@ -4,6 +4,8 @@
 
 ### Fixed
 
+- #3: Reconcile creation with the merged purchase-return implementation, preserving Microsoft Inspector permissions and both app capabilities. Allocate creation test objects 97240/97242/97244 to avoid collisions with purchase-return tests.
+- #3 / PR #28 amendment: creation fixture cleanup now removes only the native Quality Management defaults (setup, number series, results, result conditions, source and field configurations) that seeding created, and preserves pre-existing defaults (tracking table 97216; tests 97240 `Scenario_AC08_FixtureCleanup_*`, fixture message type via 97242).
 - #12 / PR #30: missing or invalid `inspectionSystemId` returns `MissingParameter` with parameter details and bilingual recovery guidance across the isolated transaction (codeunit 10035270; tests 97250).
 
 - #31: Purchase-return refusals now provide typed codes, parameter details and translated recovery guidance. Missing or empty inspection IDs use `MissingParameter`; unknown IDs use `RecordNotFound`. App-owned permission, format, source and result checks preserve transaction rollback (codeunit 10035245; tests 97210/97215).
@@ -19,6 +21,7 @@
 
 ### Added
 
+- [#3](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/3): `Quality.Inspection.Create` resolves one source record by table ID and SystemId and calls the standard Microsoft creation API, with optional template selection, native generation rules and atomic refusal handling and typed refusals (MissingParameter, InvalidParameter, UnknownParameter, RecordNotFound, PermissionDenied, PreconditionFailed) with parameter, expected and nextStep (codeunits 10035250–10035251, enum extension 10035241 and permission capability table 10035243). Full access and native Quality permissions are required; Read access cannot create inspections. Includes English/Icelandic contract help and regression codeunit 97240.
 - [#7](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/7): `Quality.Inspection.CreateReinspection` wraps the native header action with strict source-ID validation, transactional refusal handling, translated discovery/help and full-role authorization (table 10035320, codeunits 10035321–10035322, enum extension 10035323; tests 97207–97208).
 - [#5](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/5): `Quality.Inspection.Reopen` (enum extension 10035255, codeunit 10035256, permission marker table 10035258). The type calls `Qlty. Inspection Header.ReopenInspection` and does not write Status or quantities itself. `BIFROST QM Full ori` (10035237) includes `QltyMgmt - Admin` so the role can run the action; Microsoft still requires that admin role, or SUPER, to be assigned to the user. Tests 97220 and 97221.
 - [#6](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/6): `Quality.Inspection.SetTestValue` validates a named test and recalculates the open inspection result through Microsoft’s standard methods. Added enum extension 10035241, implementation 10035242, empty write-permission capability table 10035243, Full-role inspector permissions, bilingual help and regression tests and owned fixture helpers 97202–97206. Missing, malformed, unknown and overlong parameters are refused; transaction failures preserve header and line data.
