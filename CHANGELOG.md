@@ -5,6 +5,7 @@
 ### Fixed
 
 - #3: Reconcile creation with the merged purchase-return implementation, preserving Microsoft Inspector permissions and both app capabilities. Allocate creation test objects 97240/97242/97244 to avoid collisions with purchase-return tests.
+- #3 / PR #28 amendment: creation fixture cleanup now removes only the native Quality Management defaults (setup, number series, results, result conditions, source and field configurations) that seeding created, and preserves pre-existing defaults (tracking table 97216; tests 97240 `Scenario_AC08_FixtureCleanup_*`, fixture message type via 97242).
 
 - #31: Purchase-return refusals now provide typed codes, parameter details and translated recovery guidance. Missing or empty inspection IDs use `MissingParameter`; unknown IDs use `RecordNotFound`. App-owned permission, format, source and result checks preserve transaction rollback (codeunit 10035245; tests 97210/97215).
 

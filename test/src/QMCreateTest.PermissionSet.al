@@ -12,5 +12,7 @@ permissionset 97244 "QM Create Test ori"
     IncludedPermissionSets = "QM Setup Test ori";
     Permissions = table "Name/Value Buffer" = X, tabledata Item = R, tabledata "Record Link" = R,
         table "Quality Create Fixture ori" = X,
-        tabledata "Quality Create Fixture ori" = RIMD;
+        tabledata "Quality Create Fixture ori" = RIMD,
+        table "Quality Fixture Default ori" = X,
+        tabledata "Quality Fixture Default ori" = RIMD;
 }

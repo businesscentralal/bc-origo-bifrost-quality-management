@@ -205,6 +205,98 @@ codeunit 97240 "Quality Create Tst ori"
         VerifyScenario('null', 1033);
     end;
 
+    /// <summary>Fixture cleanup removes the native defaults it created when setup, results and configurations were absent.</summary>
+    [Test]
+    procedure Scenario_AC08_FixtureCleanup_RemovesCreatedDefaults()
+    var
+        Item: Record Item;
+        QualitySetup: Record "Qlty. Management Setup";
+        InspectionResult: Record "Qlty. Inspection Result";
+        ResultCondition: Record "Qlty. I. Result Condit. Conf.";
+        SourceConfig: Record "Qlty. Inspect. Source Config.";
+        FieldConfig: Record "Qlty. Inspect. Src. Fld. Conf.";
+        NoSeries: Record "No. Series";
+        NoSeriesLine: Record "No. Series Line";
+        Created: Record "Quality Fixture Default ori";
+        FixtureCode: Code[20];
+        NoSeriesCount: Integer;
+        NoSeriesLineCount: Integer;
+    begin
+        // [GIVEN] A company without Quality Management setup, results, configurations or the native default series.
+        QualitySetup.DeleteAll(false);
+        ResultCondition.DeleteAll(false);
+        InspectionResult.DeleteAll(false);
+        FieldConfig.DeleteAll(false);
+        SourceConfig.DeleteAll(false);
+        NoSeriesLine.SetRange("Series Code", 'QltyDEFAULT');
+        NoSeriesLine.DeleteAll(false);
+        NoSeriesLine.Reset();
+        if NoSeries.Get('QltyDEFAULT') then
+            NoSeries.Delete(false);
+        NoSeriesCount := NoSeries.Count();
+        NoSeriesLineCount := NoSeriesLine.Count();
+        Initialize();
+        FixtureCode := CopyStr('XQ3' + DelChr(Format(CreateGuid(), 0, 4), '=', '-'), 1, 20);
+
+        // [WHEN] The fixture is seeded, which installs the native defaults.
+        SeedFixture(FixtureCode, Item);
+        Assert.IsTrue(QualitySetup.Get(), 'Seeding installs the setup record.');
+        Assert.IsFalse(InspectionResult.IsEmpty(), 'Seeding installs default results.');
+        Created.SetRange("Fixture Code", FixtureCode);
+        Assert.IsFalse(Created.IsEmpty(), 'Seeding tracks the native defaults it created.');
+
+        // [WHEN] The fixture is cleaned up.
+        CleanupFixture(FixtureCode);
+
+        // [THEN] The company is returned to its original state.
+        Assert.IsFalse(QualitySetup.Get(), 'Cleanup removes the setup it created.');
+        Assert.IsTrue(InspectionResult.IsEmpty(), 'Cleanup removes created default results.');
+        Assert.IsTrue(ResultCondition.IsEmpty(), 'Cleanup removes created result conditions.');
+        Assert.IsTrue(SourceConfig.IsEmpty(), 'Cleanup removes created source configurations.');
+        Assert.IsTrue(FieldConfig.IsEmpty(), 'Cleanup removes created field configurations.');
+        Assert.IsFalse(NoSeries.Get('QltyDEFAULT'), 'Cleanup removes the created default series.');
+        Assert.AreEqual(NoSeriesCount, NoSeries.Count(), 'No number series remains from the fixture.');
+        Assert.AreEqual(NoSeriesLineCount, NoSeriesLine.Count(), 'No number series line remains from the fixture.');
+        Assert.IsTrue(Created.IsEmpty(), 'Cleanup removes its tracking records.');
+    end;
+
+    /// <summary>Fixture cleanup preserves native defaults that existed before seeding.</summary>
+    [Test]
+    procedure Scenario_AC08_FixtureCleanup_PreservesExistingDefaults()
+    var
+        Item: Record Item;
+        QualitySetup: Record "Qlty. Management Setup";
+        InspectionResult: Record "Qlty. Inspection Result";
+        SourceConfig: Record "Qlty. Inspect. Source Config.";
+        Created: Record "Quality Fixture Default ori";
+        AutoConfigure: Codeunit "Qlty. Auto Configure";
+        FixtureCode: Code[20];
+        ResultCount: Integer;
+        SourceConfigCount: Integer;
+        PreviousSeries: Code[20];
+    begin
+        // [GIVEN] A company with Quality Management basics already installed.
+        AutoConfigure.EnsureBasicSetupExists(false);
+        QualitySetup.Get();
+        PreviousSeries := QualitySetup."Quality Inspection Nos.";
+        ResultCount := InspectionResult.Count();
+        SourceConfigCount := SourceConfig.Count();
+        Initialize();
+        FixtureCode := CopyStr('XQ3' + DelChr(Format(CreateGuid(), 0, 4), '=', '-'), 1, 20);
+
+        // [WHEN] The fixture is seeded and cleaned up.
+        SeedFixture(FixtureCode, Item);
+        Created.SetRange("Fixture Code", FixtureCode);
+        Assert.IsTrue(Created.IsEmpty(), 'Existing defaults are not tracked as fixture-created.');
+        CleanupFixture(FixtureCode);
+
+        // [THEN] The existing defaults remain unchanged.
+        Assert.IsTrue(QualitySetup.Get(), 'Existing setup is preserved.');
+        Assert.AreEqual(PreviousSeries, QualitySetup."Quality Inspection Nos.", 'Existing series assignment is restored.');
+        Assert.AreEqual(ResultCount, InspectionResult.Count(), 'Existing results are preserved.');
+        Assert.AreEqual(SourceConfigCount, SourceConfig.Count(), 'Existing source configurations are preserved.');
+    end;
+
     /// <summary>Verifies catalogue and effect/help chapters through the public contract API.</summary>
     [Test]
     procedure Scenario_AC01_RegisteredType_ExposesContract()
@@ -414,7 +506,7 @@ codeunit 97240 "Quality Create Tst ori"
         SavedSetup."Previous Series" := QualitySetup."Quality Inspection Nos.";
         SavedSetup."Previous Creation Option" := QualitySetup."Inspection Creation Option".AsInteger();
         SavedSetup.Insert(false);
-        EnsureCompanyQualitySetup();
+        EnsureCompanyQualitySetup(FixtureCode);
         QualitySetup.Get();
         NoSeries.Code := FixtureCode;
         NoSeries."Default Nos." := true;
@@ -475,16 +567,89 @@ codeunit 97240 "Quality Create Tst ori"
     /// <summary>
     /// Installs the company Quality Management basics when a recreated company has none.
     /// Microsoft creation returns no inspection, without an error, when the setup record is missing.
+    /// Every native default record created here is tracked so that cleanup removes only those records.
     /// </summary>
-    local procedure EnsureCompanyQualitySetup()
+    local procedure EnsureCompanyQualitySetup(FixtureCode: Code[20])
     var
         QualitySetup: Record "Qlty. Management Setup";
         InspectionResult: Record "Qlty. Inspection Result";
+        TempExisting: Record "Quality Fixture Default ori" temporary;
         AutoConfigure: Codeunit "Qlty. Auto Configure";
+        TableNos: List of [Integer];
+        TableNo: Integer;
     begin
         if QualitySetup.Get() and (not InspectionResult.IsEmpty()) then
             exit;
+        GetTrackedDefaultTables(TableNos);
+        foreach TableNo in TableNos do
+            SnapshotTable(TableNo, TempExisting);
         AutoConfigure.EnsureBasicSetupExists(false);
+        foreach TableNo in TableNos do
+            TrackCreatedRecords(FixtureCode, TableNo, TableNos.IndexOf(TableNo), TempExisting);
+    end;
+
+    /// <summary>Lists the tables in which the native initializer can create default records, in delete order (dependents first).</summary>
+    local procedure GetTrackedDefaultTables(var TableNos: List of [Integer])
+    begin
+        TableNos.Add(Database::"Qlty. Inspect. Src. Fld. Conf.");
+        TableNos.Add(Database::"Qlty. Inspect. Source Config.");
+        TableNos.Add(Database::"Qlty. I. Result Condit. Conf.");
+        TableNos.Add(Database::"Qlty. Inspection Result");
+        TableNos.Add(Database::"No. Series Line");
+        TableNos.Add(Database::"No. Series");
+    end;
+
+    local procedure SnapshotTable(TableNo: Integer; var TempExisting: Record "Quality Fixture Default ori" temporary)
+    var
+        SourceRef: RecordRef;
+    begin
+        SourceRef.Open(TableNo);
+        if SourceRef.FindSet() then
+            repeat
+                TempExisting."Table No." := TableNo;
+                TempExisting."Record SystemId" := SourceRef.Field(SourceRef.SystemIdNo()).Value();
+                TempExisting.Insert(false);
+            until SourceRef.Next() = 0;
+        SourceRef.Close();
+    end;
+
+    local procedure TrackCreatedRecords(FixtureCode: Code[20]; TableNo: Integer; DeleteOrder: Integer; var TempExisting: Record "Quality Fixture Default ori" temporary)
+    var
+        Created: Record "Quality Fixture Default ori";
+        SourceRef: RecordRef;
+        RecordSystemId: Guid;
+    begin
+        SourceRef.Open(TableNo);
+        if SourceRef.FindSet() then
+            repeat
+                RecordSystemId := SourceRef.Field(SourceRef.SystemIdNo()).Value();
+                if not TempExisting.Get('', TableNo, RecordSystemId) then begin
+                    Created."Fixture Code" := FixtureCode;
+                    Created."Table No." := TableNo;
+                    Created."Record SystemId" := RecordSystemId;
+                    Created."Delete Order" := DeleteOrder;
+                    Created.Insert(false);
+                end;
+            until SourceRef.Next() = 0;
+        SourceRef.Close();
+    end;
+
+    /// <summary>Deletes only the native default records that seeding this fixture created.</summary>
+    local procedure RemoveCreatedDefaults(FixtureCode: Code[20])
+    var
+        Created: Record "Quality Fixture Default ori";
+        SourceRef: RecordRef;
+    begin
+        Created.SetCurrentKey("Fixture Code", "Delete Order");
+        Created.SetRange("Fixture Code", FixtureCode);
+        if Created.FindSet() then
+            repeat
+                SourceRef.Open(Created."Table No.");
+                if SourceRef.GetBySystemId(Created."Record SystemId") then
+                    SourceRef.Delete(false);
+                SourceRef.Close();
+            until Created.Next() = 0;
+        Created.DeleteAll(false);
     end;
 
     /// <summary>Deletes only the owned fixture and restores the exact setup fields changed by seeding.</summary>
@@ -546,6 +711,7 @@ codeunit 97240 "Quality Create Tst ori"
         NoSeriesLine.DeleteAll(false);
         NoSeries.Get(FixtureCode);
         NoSeries.Delete(false);
+        RemoveCreatedDefaults(FixtureCode);
         SavedSetup.Delete(false);
         Commit();
     end;
