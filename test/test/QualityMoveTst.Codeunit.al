@@ -203,6 +203,58 @@ codeunit 97250 "Quality Move Tst ori"
         Assert.IsTrue(Contract.Contains('overview'), 'The help chapter is required.');
     end;
 
+    /// <summary>The irreversible effect names what expectedCount counts and how to read it without a side effect, in English and Icelandic (#36).</summary>
+    [Test]
+    procedure Scenario_Issue36_CountUnit_NamedInEffectParameterAndHelp()
+    var
+        Impl: Interface "Msg Contract ori";
+        Overview: Text;
+        PreviousLanguage: Integer;
+    begin
+        // Story #36, AC01-AC03 | Time: none | Risk: read only; session language restored
+        Initialize();
+        PreviousLanguage := GlobalLanguage();
+        GlobalLanguage(1033);
+        VerifyCountUnitChapters(Overview);
+        Assert.IsTrue(Overview.Contains('expectedCount counts the one quality inspection'), 'The en-US help must name the count unit.');
+        Assert.IsTrue(Overview.Contains('without expectedCount and read expected'), 'The en-US help must name the side-effect-free preview.');
+        // Foundation renders contract chapters in English at every language (#1239); the translated help sentence is read from the type's own overview.
+        GlobalLanguage(1039);
+        Impl := Enum::"Message Type ori"::"Quality.Disposition.MoveInventory";
+        Assert.IsTrue(Impl.GetOverview(Overview), 'The type must publish an overview.');
+        GlobalLanguage(PreviousLanguage);
+        Assert.IsTrue(Overview.Contains('expectedCount telur eina gæðaskoðun'), 'The is-IS help must name the count unit.');
+        Assert.IsTrue(Overview.Contains('án expectedCount'), 'The is-IS help must name the side-effect-free preview.');
+    end;
+
+    local procedure VerifyCountUnitChapters(var Overview: Text)
+    var
+        ContractMgt: Codeunit "Msg Contract Mgt ori";
+        Contract: JsonObject;
+        Effect: JsonObject;
+        Parameter: JsonObject;
+        Token: JsonToken;
+        Entry: JsonToken;
+        Found: Boolean;
+    begin
+        Assert.IsTrue(ContractMgt.GetContract(Enum::"Message Type ori"::"Quality.Disposition.MoveInventory", Contract), 'Registered type must have a contract.');
+        Contract.Get('effect', Token);
+        Effect := Token.AsObject();
+        Assert.AreEqual('irreversible', ReadText(Effect, 'effect'), 'The type posts inventory and stays irreversible.');
+        Assert.IsTrue(ReadText(Effect, 'changes').Contains('The expectedCount unit is the one quality inspection named by inspectionSystemId (1 per call), not the movement lines'), 'effect.changes must name the count unit.');
+        Contract.Get('parameters', Token);
+        foreach Entry in Token.AsArray() do begin
+            Parameter := Entry.AsObject();
+            if ReadText(Parameter, 'name') = 'expectedCount' then begin
+                Found := true;
+                Assert.IsTrue(ReadText(Parameter, 'description').Contains('expectedCount counts the one quality inspection'), 'The expectedCount parameter must name the count unit.');
+            end;
+        end;
+        Assert.IsTrue(Found, 'expectedCount must be declared once.');
+        Contract.Get('overview', Token);
+        Overview := Token.AsValue().AsText();
+    end;
+
     /// <summary>Invalid inspection identifiers return the typed refusal without creating a movement.</summary>
     [Test]
     procedure Scenario_AC02_missingId_ReturnsMissingParameter()
