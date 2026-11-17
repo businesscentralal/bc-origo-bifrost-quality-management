@@ -203,7 +203,7 @@ codeunit 97250 "Quality Move Tst ori"
         Assert.IsTrue(Contract.Contains('overview'), 'The help chapter is required.');
     end;
 
-    /// <summary>The irreversible effect names what expectedCount counts and how to read it without a side effect, in English and Icelandic (#36).</summary>
+    /// <summary>The irreversible effect names what expectedCount counts, and the preview is side-effect free only while confirmation is required (#36).</summary>
     [Test]
     procedure Scenario_Issue36_CountUnit_NamedInEffectParameterAndHelp()
     var
@@ -217,14 +217,18 @@ codeunit 97250 "Quality Move Tst ori"
         GlobalLanguage(1033);
         VerifyCountUnitChapters(Overview);
         Assert.IsTrue(Overview.Contains('expectedCount counts the one quality inspection'), 'The en-US help must name the count unit.');
-        Assert.IsTrue(Overview.Contains('without expectedCount and read expected'), 'The en-US help must name the side-effect-free preview.');
+        Assert.IsTrue(Overview.Contains('Require Confirmation for Irreversible Messages is enabled'), 'The en-US help must name the setup that makes omission a preview.');
+        Assert.IsTrue(Overview.Contains('When that setup is disabled, omitting expectedCount can execute the movement'), 'The en-US help must say omission can execute when confirmation is disabled.');
+        Assert.IsFalse(Overview.Contains('nothing is changed'), 'The en-US help must not promise that omitting expectedCount is always side-effect free.');
         // Foundation renders contract chapters in English at every language (#1239); the translated help sentence is read from the type's own overview.
         GlobalLanguage(1039);
         Impl := Enum::"Message Type ori"::"Quality.Disposition.MoveInventory";
         Assert.IsTrue(Impl.GetOverview(Overview), 'The type must publish an overview.');
         GlobalLanguage(PreviousLanguage);
         Assert.IsTrue(Overview.Contains('expectedCount telur eina gæðaskoðun'), 'The is-IS help must name the count unit.');
-        Assert.IsTrue(Overview.Contains('án expectedCount'), 'The is-IS help must name the side-effect-free preview.');
+        Assert.IsTrue(Overview.Contains('Krefjast staðfestingar fyrir óafturkræf skilaboð'), 'The is-IS help must name the setup that makes omission a preview.');
+        Assert.IsTrue(Overview.Contains('getur það að sleppa expectedCount keyrt flutninginn'), 'The is-IS help must say omission can execute when confirmation is disabled.');
+        Assert.IsFalse(Overview.Contains('engu er breytt'), 'The is-IS help must not promise that omitting expectedCount is always side-effect free.');
     end;
 
     local procedure VerifyCountUnitChapters(var Overview: Text)
@@ -248,6 +252,9 @@ codeunit 97250 "Quality Move Tst ori"
             if ReadText(Parameter, 'name') = 'expectedCount' then begin
                 Found := true;
                 Assert.IsTrue(ReadText(Parameter, 'description').Contains('expectedCount counts the one quality inspection'), 'The expectedCount parameter must name the count unit.');
+                Assert.IsTrue(ReadText(Parameter, 'description').Contains('Require Confirmation for Irreversible Messages is enabled'), 'The expectedCount parameter must name the setup that makes omission a preview.');
+                Assert.IsTrue(ReadText(Parameter, 'description').Contains('omitting expectedCount can execute the movement'), 'The expectedCount parameter must say omission can execute when confirmation is disabled.');
+                Assert.IsFalse(ReadText(Parameter, 'description').Contains('nothing is changed'), 'The expectedCount parameter must not promise that omission is always side-effect free.');
             end;
         end;
         Assert.IsTrue(Found, 'expectedCount must be declared once.');
