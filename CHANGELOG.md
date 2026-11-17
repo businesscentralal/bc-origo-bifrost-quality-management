@@ -4,6 +4,7 @@
 
 ### Fixed
 
+- #36: `Quality.Disposition.MoveInventory` now states that `expectedCount` counts the one inspection named by `inspectionSystemId` (1 per call, not movement lines or entries). Omitting `expectedCount` reads that count and changes nothing only when Require Confirmation for Irreversible Messages is enabled in Bifrost Setup; when that setup is disabled, omission can execute the movement. The unit is in `effect.changes` (as "The expectedCount unit is ...": Foundation strips a feature-app sentence that starts with "expectedCount counts"), the `expectedCount` parameter and en-US/is-IS help. The type stays `irreversible` (it can post inventory). No new object ID (codeunit 10035270; test 97250 `Scenario_Issue36_CountUnit_NamedInEffectParameterAndHelp`).
 - #3: Reconcile creation with the merged purchase-return implementation, preserving Microsoft Inspector permissions and both app capabilities. Allocate creation test objects 97240/97242/97244 to avoid collisions with purchase-return tests.
 - #3 / PR #28 amendment: creation fixture cleanup now removes only the native Quality Management defaults (setup, number series, results, result conditions, source and field configurations) that seeding created, and preserves pre-existing defaults (tracking table 97216; tests 97240 `Scenario_AC08_FixtureCleanup_*`, fixture message type via 97242).
 - #12 / PR #30: missing or invalid `inspectionSystemId` returns `MissingParameter` with parameter details and bilingual recovery guidance across the isolated transaction (codeunit 10035270; tests 97250).
