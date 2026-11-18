@@ -30,15 +30,23 @@ Tests: 97200-97299
 | Enum extension | 10035255 | Quality Reopen Types ori (`Quality.Inspection.Reopen`) |
 | Codeunit | 10035256 | Quality Reopen Impl ori |
 | Table | 10035258 | Quality Reopen Access ori |
-| Enum extension | 10035241 | Quality Message Types ori |
+| Enum extension | 10035241 | Quality Message Types ori (shared by issues 3 and 6) |
 | Codeunit | 10035242 | Quality Set Value Impl ori |
-| Table | 10035243 | Quality Write Access ori (empty permission capability) |
+| Table | 10035243 | Quality Write Access ori (shared empty permission capability) |
+| Codeunit | 10035250 | Quality Create Impl ori |
+| Codeunit | 10035251 | Quality Create Context ori |
 | Test codeunit | 97202 | Quality Set Value Tst ori |
 | Test codeunit | 97203 | Quality Value Fault ori |
 | Test permission set | 97204 | QM Message Test ori |
 | Test enum extension | 97205 | Quality Fixture Types ori |
 | Test codeunit | 97209 | Quality Value Errors Tst ori (issue 34 typed refusals) |
 | Test codeunit | 97206 | Quality Value Fixture ori |
+| Test codeunit | 97240 | Quality Create Tst ori |
+| Test enum extension | 97211 | Quality Create Fixtures ori |
+| Test codeunit | 97242 | Quality Create Fixture Mgt ori |
+| Test codeunit | 97213 | Quality Create Fault ori |
+| Test permission set | 97244 | QM Create Test ori |
+| Test table | 97215 | Quality Create Fixture ori |
 | Test codeunit | 97200 | Quality Scaffold Tst ori |
 | Test codeunit | 97220 | Quality Reopen Tst ori |
 | Test codeunit | 97221 | Quality Reopen Perm Tst ori |
