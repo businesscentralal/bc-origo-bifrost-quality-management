@@ -4,7 +4,7 @@
 
 ### Fixed
 
-- #39: Raise the Foundation dependency minimum to 28.0.15.6 in both apps and correct the context-sensitive help URL to include `/help/`. Regenerate the Icelandic XLF order without changing its 198 translations. No new object IDs.
+- #39: Raise the Foundation dependency minimum to 28.0.15.6 in both apps and correct the context-sensitive help URL to include `/help/`. Align the standalone help-link checker with the release help instance and add six regression cases. Regenerate the Icelandic XLF order without changing its 198 translations. No new object IDs.
 
 - #36: `Quality.Disposition.MoveInventory` now states that `expectedCount` counts the one inspection named by `inspectionSystemId` (1 per call, not movement lines or entries). Omitting `expectedCount` reads that count and changes nothing only when Require Confirmation for Irreversible Messages is enabled in Bifrost Setup; when that setup is disabled, omission can execute the movement. The unit is in `effect.changes` (as "The expectedCount unit is ...": Foundation strips a feature-app sentence that starts with "expectedCount counts"), the `expectedCount` parameter and en-US/is-IS help. The type stays `irreversible` (it can post inventory). No new object ID (codeunit 10035270; test 97250 `Scenario_Issue36_CountUnit_NamedInEffectParameterAndHelp`).
 - #3: Reconcile creation with the merged purchase-return implementation, preserving Microsoft Inspector permissions and both app capabilities. Allocate creation test objects 97240/97242/97244 to avoid collisions with purchase-return tests.

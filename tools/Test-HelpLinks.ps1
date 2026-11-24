@@ -8,9 +8,9 @@
 
       help, privacyStatement, EULA   must point at the public site, https://docs.bifrost.origo.is/.
       contextSensitiveHelpUrl        the help instance of the app, <site>{0}/help/<app>/, when the app has pages.
-                                     An app with no pages of its own has no help instance on the site, but
-                                     AppSourceCop (AS0051) still requires the property, so it then points at the
-                                     app's own page, <site>{0}/<app>/, and never at a help instance.
+                                     Quality Management has a help instance as part of its first release (#39),
+                                     even though it exposes no pages of its own. Other apps without pages keep
+                                     the app landing-page convention, <site>{0}/<app>/.
 
     Every page and page extension under app/src must declare ContextSensitiveHelpPage, and the help
     page it names must exist on the documentation site (businesscentralal/bifrost) in both locales:
@@ -37,10 +37,57 @@
 param(
     [string]$DocsPath = '',
     [string]$AppFolder = (Join-Path $PSScriptRoot '..\app'),
-    [string]$DocsApp = 'quality-management'
+    [string]$DocsApp = 'quality-management',
+    [switch]$SelfTest
 )
 
 $ErrorActionPreference = 'Stop'
+
+if ($SelfTest) {
+    $fixtureRoot = Join-Path ([System.IO.Path]::GetTempPath()) ([guid]::NewGuid().ToString('N'))
+    $fixtureApp = Join-Path $fixtureRoot 'app'
+    $fixtureDocs = Join-Path $fixtureRoot 'docs'
+    $scriptPath = $PSCommandPath
+    try {
+        New-Item -ItemType Directory -Path (Join-Path $fixtureApp 'src') -Force | Out-Null
+        $english = Join-Path $fixtureDocs 'help/quality-management'
+        $icelandic = Join-Path $fixtureDocs 'i18n/is-IS/docusaurus-plugin-content-docs-help-quality-management/current'
+        New-Item -ItemType Directory -Path $english, $icelandic -Force | Out-Null
+        Set-Content -LiteralPath (Join-Path $english 'inspection.md') -Value '# Inspection'
+        Set-Content -LiteralPath (Join-Path $icelandic 'inspection.md') -Value '# Skoðun'
+        $cases = @(
+            @{ Name = 'Quality help instance without pages'; Slug = 'quality-management'; Url = 'https://docs.bifrost.origo.is/{0}/help/quality-management/'; Page = $false; MissingTranslation = $false; Expected = $true },
+            @{ Name = 'Old Quality landing URL refused'; Slug = 'quality-management'; Url = 'https://docs.bifrost.origo.is/{0}/quality-management/'; Page = $false; MissingTranslation = $false; Expected = $false },
+            @{ Name = 'Wrong help instance refused'; Slug = 'quality-management'; Url = 'https://docs.bifrost.origo.is/{0}/help/other/'; Page = $false; MissingTranslation = $false; Expected = $false },
+            @{ Name = 'Bilingual page links accepted'; Slug = 'quality-management'; Url = 'https://docs.bifrost.origo.is/{0}/help/quality-management/'; Page = $true; MissingTranslation = $false; Expected = $true },
+            @{ Name = 'Missing Icelandic page refused'; Slug = 'quality-management'; Url = 'https://docs.bifrost.origo.is/{0}/help/quality-management/'; Page = $true; MissingTranslation = $true; Expected = $false },
+            @{ Name = 'Other pageless app keeps its landing URL'; Slug = 'other'; Url = 'https://docs.bifrost.origo.is/{0}/other/'; Page = $false; MissingTranslation = $false; Expected = $true }
+        )
+        foreach ($case in $cases) {
+            $manifest = @{ help = 'https://docs.bifrost.origo.is/en-us/quality-management/'; privacyStatement = 'https://docs.bifrost.origo.is/en-us/licensing/privacy/'; EULA = 'https://docs.bifrost.origo.is/en-us/licensing/eula/'; contextSensitiveHelpUrl = $case.Url }
+            $manifest | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $fixtureApp 'app.json')
+            $pagePath = Join-Path $fixtureApp 'src/Inspection.Page.al'
+            Remove-Item -LiteralPath $pagePath -ErrorAction SilentlyContinue
+            if ($case.Page) {
+                Set-Content -LiteralPath $pagePath -Value "page 50100 `"Inspection`" { ContextSensitiveHelpPage = 'inspection'; }"
+            }
+            $translatedPage = Join-Path $icelandic 'inspection.md'
+            Set-Content -LiteralPath $translatedPage -Value '# Skoðun'
+            if ($case.MissingTranslation) { Remove-Item -LiteralPath $translatedPage }
+            $passed = $true
+            try {
+                & $scriptPath -AppFolder $fixtureApp -DocsPath $fixtureDocs -DocsApp $case.Slug *> $null
+            } catch {
+                $passed = $false
+            }
+            if ($passed -ne $case.Expected) { throw "Self-test failed: $($case.Name)" }
+        }
+        Write-Host "$($cases.Count) help-link regression cases passed."
+    } finally {
+        Remove-Item -LiteralPath $fixtureRoot -Recurse -Force -ErrorAction SilentlyContinue
+    }
+    return
+}
 $siteRoot = 'https://docs.bifrost.origo.is/'
 $problems = [System.Collections.Generic.List[string]]::new()
 
@@ -56,12 +103,15 @@ foreach ($property in 'help', 'privacyStatement', 'EULA') {
     if (-not $value.StartsWith($siteRoot)) { $problems.Add("app.json $property is '$value' - it must start with $siteRoot") }
 }
 $helpUrl = [string]$appJson.contextSensitiveHelpUrl
-if ($pages.Count -eq 0) {
+$hasHelpInstance = $pages.Count -gt 0 -or $DocsApp -eq 'quality-management'
+if (-not $hasHelpInstance) {
     $expected = "$siteRoot{0}/$DocsApp/"
     if ($helpUrl -ne $expected) { $problems.Add("app.json contextSensitiveHelpUrl is '$helpUrl', but the app has no pages and so no help instance - point it at the app's own page, $expected") }
 } else {
     $expected = "$siteRoot{0}/help/$DocsApp/"
     if ($helpUrl -ne $expected) { $problems.Add("app.json contextSensitiveHelpUrl is '$helpUrl' - it must be $expected") }
+}
+if ($pages.Count -gt 0) {
     if ($DocsPath -eq '') { throw "The app has $($pages.Count) page(s): pass -DocsPath with a checkout of businesscentralal/bifrost." }
     $enDir = Join-Path $DocsPath "help/$DocsApp"
     $isDir = Join-Path $DocsPath "i18n/is-IS/docusaurus-plugin-content-docs-help-$DocsApp/current"
@@ -92,8 +142,10 @@ if ($problems.Count -gt 0) {
     $problems | ForEach-Object { Write-Host "::error::$_" }
     throw "$($problems.Count) help link problem(s)."
 }
-if ($pages.Count -eq 0) {
+if (-not $hasHelpInstance) {
     Write-Host "The app has no pages and no help instance; help, privacyStatement, EULA and contextSensitiveHelpUrl point at the app's pages on $siteRoot."
+} elseif ($pages.Count -eq 0) {
+    Write-Host "The app has no pages; contextSensitiveHelpUrl points at its release help instance on $siteRoot."
 } else {
     Write-Host 'Every page links to a help page that exists in en-US and is-IS.'
 }
