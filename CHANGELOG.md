@@ -4,6 +4,8 @@
 
 ### Fixed
 
+- #39: Raise the Foundation dependency minimum to 28.0.15.6 in both apps and correct the context-sensitive help URL to include `/help/`. Align the standalone help-link checker with the release help instance and add six regression cases. Regenerate the Icelandic XLF order without changing its 198 translations. No new object IDs.
+
 - #36: `Quality.Disposition.MoveInventory` now states that `expectedCount` counts the one inspection named by `inspectionSystemId` (1 per call, not movement lines or entries). Omitting `expectedCount` reads that count and changes nothing only when Require Confirmation for Irreversible Messages is enabled in Bifrost Setup; when that setup is disabled, omission can execute the movement. The unit is in `effect.changes` (as "The expectedCount unit is ...": Foundation strips a feature-app sentence that starts with "expectedCount counts"), the `expectedCount` parameter and en-US/is-IS help. The type stays `irreversible` (it can post inventory). No new object ID (codeunit 10035270; test 97250 `Scenario_Issue36_CountUnit_NamedInEffectParameterAndHelp`).
 - #3: Reconcile creation with the merged purchase-return implementation, preserving Microsoft Inspector permissions and both app capabilities. Allocate creation test objects 97240/97242/97244 to avoid collisions with purchase-return tests.
 - #3 / PR #28 amendment: creation fixture cleanup now removes only the native Quality Management defaults (setup, number series, results, result conditions, source and field configurations) that seeding created, and preserves pre-existing defaults (tracking table 97216; tests 97240 `Scenario_AC08_FixtureCleanup_*`, fixture message type via 97242).
@@ -15,17 +17,13 @@
 - #34: `Quality.Inspection.SetTestValue` now returns typed input, access, inspection-not-found and status refusals with actionable structured fields in English and Icelandic (codeunit 10035242; tests 97209). Native Microsoft validation and atomic rollback remain in place.
 - #34 / PR #35 amendment: the published `errors` chapter of `Quality.Inspection.SetTestValue` now emits `{code, when, fix}` through the Foundation `ErrorEntry` contract (codeunit 10035242; test 97209 `Scenario_AC03_ErrorsChapter_PublishesStableCodes`).
 
-### Added
-- #13: `Quality.Disposition.CreatePurchaseReturn` wraps the standard failed-quantity purchase return disposition, with strict inputs, transaction rollback, permission capability, bilingual contract/help and tests (10035244–10035247; tests 97210–97214).
-
-- Repository scaffolded from Bifrost Subscription Billing setup.
-
-### Fixed
-
 - [#4](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/4): the Full role (10035237) now includes the non-assignable permission set 10035285, which grants read access to My Notifications (table 1518). Since #32 added Quality Admin, Microsoft offers to assign a finished inspection to the user in interactive sessions and reads that setting; without the grant, `Quality.Inspection.Finish` under the Full role alone failed with a permission error.
 - [#4](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/4): enforce the Full app role through empty capability table 10035284, including callers with Foundation API wildcard execution and native inspection permissions. Dispatcher tests verify read/API refusals without changing an inspection. Native Inspector users need Modify permission, not Delete permission. Contract help chapters and notes now have Icelandic translations.
 
 ### Added
+- #13: `Quality.Disposition.CreatePurchaseReturn` wraps the standard failed-quantity purchase return disposition, with strict inputs, transaction rollback, permission capability, bilingual contract/help and tests (10035244–10035247; tests 97210–97214).
+
+- Repository scaffolded from Bifrost Subscription Billing setup.
 
 - [#3](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/3): `Quality.Inspection.Create` resolves one source record by table ID and SystemId and calls the standard Microsoft creation API, with optional template selection, native generation rules and atomic refusal handling and typed refusals (MissingParameter, InvalidParameter, UnknownParameter, RecordNotFound, PermissionDenied, PreconditionFailed) with parameter, expected and nextStep (codeunits 10035250–10035251, enum extension 10035241 and permission capability table 10035243). Full access and native Quality permissions are required; Read access cannot create inspections. Includes English/Icelandic contract help and regression codeunit 97240.
 - [#7](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/7): `Quality.Inspection.CreateReinspection` wraps the native header action with strict source-ID validation, transactional refusal handling, translated discovery/help and full-role authorization (table 10035320, codeunits 10035321–10035322, enum extension 10035323; tests 97207–97208).
