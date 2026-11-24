@@ -95,7 +95,7 @@ Repository: bc-origo-bifrost-quality-management
 Default branch: main
 
 ## Dependencies
-- Bifrost Foundation (`7505e808-6e52-4b96-a328-82573391297a`, 28.0.5.590, same floor as Bifrost Subscription Billing)
+- Bifrost Foundation (`7505e808-6e52-4b96-a328-82573391297a`, 28.0.15.6, current released Foundation minimum for first-release readiness)
 - Quality Management (Microsoft, 28.5.0.0; application floor 28.5.0.0)
 
 ## Naming Rules
