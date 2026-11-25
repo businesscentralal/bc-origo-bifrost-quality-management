@@ -8,9 +8,8 @@
 
       help, privacyStatement, EULA   must point at the public site, https://docs.bifrost.origo.is/.
       contextSensitiveHelpUrl        the help instance of the app, <site>{0}/help/<app>/, when the app has pages.
-                                     Quality Management has a help instance as part of its first release (#39),
-                                     even though it exposes no pages of its own. Other apps without pages keep
-                                     the app landing-page convention, <site>{0}/<app>/.
+                                     An app without pages has no help instance and points at its own page,
+                                     <site>{0}/<app>/ (documentation rules; Architect 24.11.2026, #39).
 
     Every page and page extension under app/src must declare ContextSensitiveHelpPage, and the help
     page it names must exist on the documentation site (businesscentralal/bifrost) in both locales:
@@ -56,8 +55,8 @@ if ($SelfTest) {
         Set-Content -LiteralPath (Join-Path $english 'inspection.md') -Value '# Inspection'
         Set-Content -LiteralPath (Join-Path $icelandic 'inspection.md') -Value '# Skoðun'
         $cases = @(
-            @{ Name = 'Quality help instance without pages'; Slug = 'quality-management'; Url = 'https://docs.bifrost.origo.is/{0}/help/quality-management/'; Page = $false; MissingTranslation = $false; Expected = $true },
-            @{ Name = 'Old Quality landing URL refused'; Slug = 'quality-management'; Url = 'https://docs.bifrost.origo.is/{0}/quality-management/'; Page = $false; MissingTranslation = $false; Expected = $false },
+            @{ Name = 'App without pages: help instance URL refused'; Slug = 'quality-management'; Url = 'https://docs.bifrost.origo.is/{0}/help/quality-management/'; Page = $false; MissingTranslation = $false; Expected = $false },
+            @{ Name = 'App without pages: own page accepted'; Slug = 'quality-management'; Url = 'https://docs.bifrost.origo.is/{0}/quality-management/'; Page = $false; MissingTranslation = $false; Expected = $true },
             @{ Name = 'Wrong help instance refused'; Slug = 'quality-management'; Url = 'https://docs.bifrost.origo.is/{0}/help/other/'; Page = $false; MissingTranslation = $false; Expected = $false },
             @{ Name = 'Bilingual page links accepted'; Slug = 'quality-management'; Url = 'https://docs.bifrost.origo.is/{0}/help/quality-management/'; Page = $true; MissingTranslation = $false; Expected = $true },
             @{ Name = 'Missing Icelandic page refused'; Slug = 'quality-management'; Url = 'https://docs.bifrost.origo.is/{0}/help/quality-management/'; Page = $true; MissingTranslation = $true; Expected = $false },
@@ -103,7 +102,7 @@ foreach ($property in 'help', 'privacyStatement', 'EULA') {
     if (-not $value.StartsWith($siteRoot)) { $problems.Add("app.json $property is '$value' - it must start with $siteRoot") }
 }
 $helpUrl = [string]$appJson.contextSensitiveHelpUrl
-$hasHelpInstance = $pages.Count -gt 0 -or $DocsApp -eq 'quality-management'
+$hasHelpInstance = $pages.Count -gt 0
 if (-not $hasHelpInstance) {
     $expected = "$siteRoot{0}/$DocsApp/"
     if ($helpUrl -ne $expected) { $problems.Add("app.json contextSensitiveHelpUrl is '$helpUrl', but the app has no pages and so no help instance - point it at the app's own page, $expected") }
