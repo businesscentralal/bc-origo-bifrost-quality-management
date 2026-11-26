@@ -361,7 +361,9 @@ codeunit 97207 "Quality Reinspect Tst ori"
         BifrostSetup.InsertIfNotExists();
         if not Setup.Get() then
             Setup.Insert();
-        InspectionTemplate.Code := CopyStr('Q7' + DelChr(Format(CreateGuid(), 0, 4), '=', '-'), 1, 20);
+        // BC 28.0 CreateReinspection() builds the friendly id '<No.>,<Re-inspection No.>' into a Text[20];
+        // keep the fixture number at 16 characters so ',<n>' fits.
+        InspectionTemplate.Code := CopyStr('Q7' + DelChr(Format(CreateGuid(), 0, 4), '=', '-'), 1, 16);
         InspectionTemplate.Insert();
         Inspection."No." := InspectionTemplate.Code;
         Inspection."Template Code" := InspectionTemplate.Code;
