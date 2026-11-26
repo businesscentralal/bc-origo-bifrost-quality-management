@@ -664,10 +664,11 @@ codeunit 97280 "Quality Track Tst ori"
         Location.Code := FixtureCode;
         Location.Insert(false);
         // Microsoft selects the standard reclassification template; use the one it will find.
-        JournalTemplate.SetRange(Type, JournalTemplate.Type::Transfer);
-        JournalTemplate.SetRange("Page ID", Page::"Item Reclass. Journal");
-        JournalTemplate.SetRange(Recurring, false);
-        JournalTemplate.FindFirst();
+        // Own reclassification template, so the fixture also works in a company without demo journal templates.
+        JournalTemplate.Name := FixtureCode;
+        JournalTemplate.Type := JournalTemplate.Type::Transfer;
+        JournalTemplate."Page ID" := Page::"Item Reclass. Journal";
+        JournalTemplate.Insert(false);
         TemplateCode := JournalTemplate.Name;
         JournalBatch."Journal Template Name" := TemplateCode;
         JournalBatch.Name := FixtureCode;
@@ -894,6 +895,7 @@ codeunit 97280 "Quality Track Tst ori"
         Location: Record Location;
         JournalLine: Record "Item Journal Line";
         JournalBatch: Record "Item Journal Batch";
+        JournalTemplate: Record "Item Journal Template";
         Reservation: Record "Reservation Entry";
         Setup: Record "Qlty. Management Setup";
         BifrostSetup: Record "Setup ori";
@@ -913,6 +915,8 @@ codeunit 97280 "Quality Track Tst ori"
         JournalBatch.SetRange("Journal Template Name", TemplateCode);
         JournalBatch.SetRange(Name, FixtureCode);
         JournalBatch.DeleteAll(false);
+        if JournalTemplate.Get(TemplateCode) then
+            JournalTemplate.Delete(false);
         if Inspection.Find() then
             Inspection.Delete(false);
         ItemUnit.SetRange("Item No.", FixtureCode);
