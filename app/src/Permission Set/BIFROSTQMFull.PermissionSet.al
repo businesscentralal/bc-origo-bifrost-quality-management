@@ -38,6 +38,10 @@ permissionset 10035237 "BIFROST QM Full ori"
         codeunit "Quality Neg Adj Impl ori" = X,
         table "Quality Neg Adj Access ori" = X,
         tabledata "Quality Neg Adj Access ori" = RIMD,
+        codeunit "Quality Transfer Impl ori" = X,
+        codeunit "Quality Transfer Capture ori" = X,
+        table "Quality Transfer Access ori" = X,
+        tabledata "Quality Transfer Access ori" = RIMD,
         table "Quality Reinspect Access ori" = X,
         tabledata "Quality Reinspect Access ori" = RIMD;
 }

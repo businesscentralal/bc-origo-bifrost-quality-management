@@ -80,6 +80,13 @@ Tests: 97200-97299
 | Enum extension | 10035304 | Quality Neg Adj Types ori (value 10035302) |
 | Test codeunit | 97272 | Quality Neg Adj Tst ori |
 | Test codeunit | 97273 | Quality Neg Adj Fault ori |
+| Enum extension | 10035298 | Quality Transfer Types ori (`Quality.Disposition.CreateTransferOrder`) |
+| Codeunit | 10035299 | Quality Transfer Impl ori |
+| Table | 10035300 | Quality Transfer Access ori (permission capability) |
+| Codeunit | 10035301 | Quality Transfer Capture ori |
+| Test codeunit | 97268 | Quality Transfer Tst ori |
+| Test codeunit | 97269 | Quality Transfer Fault ori |
+| Test permission set | 97270 | QM Transfer Test ori |
 
 ## Microsoft source
 Wrapped Microsoft app: Quality Management (`bc7b3891-f61b-4883-bbb3-384cdef88bec`, 28.5.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management
