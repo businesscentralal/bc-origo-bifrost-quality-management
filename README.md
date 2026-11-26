@@ -1,5 +1,7 @@
 # Bifröst Quality Management
 
+`Quality.Inspection.AddPicture` replaces an open inspection's most recent JPEG, PNG or BMP picture from base64 or an owned Foundation staged upload (maximum 1 MiB). See [English](app/docs/en-us/AddPicture.md) / [íslenska](app/docs/is-is/AddPicture.md).
+
 **App name:** Bifrost Quality Management
 **Publisher:** Origo — **Version:** 28.0.0.0 — **Target:** Cloud (BC 28.5, runtime 17.0)
 **App ID:** `d3ca6790-e2c1-44c1-a026-fd75a3f5b52d` — **Test app ID:** `9193f6a2-0926-49bb-9fec-3c36a60c8b0e`
