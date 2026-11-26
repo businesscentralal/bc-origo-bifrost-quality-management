@@ -83,6 +83,7 @@ Tests: 97200-97299
 | Codeunit | 10035329 | Quality Schedule Impl ori |
 | Table | 10035330 | Quality Schedule Access ori |
 | Codeunit | 10035331 | Quality Schedule Contract ori |
+| Permission set | 10035331 | BIFROST QM Schedule ori (native grants; separate object type from contract codeunit) |
 | Test codeunit | 97292 | Quality Schedule Tst ori |
 | Test codeunit | 97293 | Quality Schedule Fixture ori |
 | Test enum extension | 97294 | Quality Schedule Fixtures ori |

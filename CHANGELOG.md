@@ -21,6 +21,7 @@
 - [#4](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/4): enforce the Full app role through empty capability table 10035284, including callers with Foundation API wildcard execution and native inspection permissions. Dispatcher tests verify read/API refusals without changing an inspection. Native Inspector users need Modify permission, not Delete permission. Contract help chapters and notes now have Icelandic translations.
 
 ### Added
+- [#20](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/20): `Quality.GenerationRule.Schedule` creates one recurring scheduled-inspection job on hold by default, with explicit activation, duplicate/filter guards, typed bilingual refusals and a one-job confirmation count. App objects: enum extension 10035328, handler codeunit 10035329, capability table 10035330, contract codeunit and native scheduling permission set 10035331 (distinct object types). Tests/fixtures: 97292–97295. No help page or context-sensitive help URL change.
 - #13: `Quality.Disposition.CreatePurchaseReturn` wraps the standard failed-quantity purchase return disposition, with strict inputs, transaction rollback, permission capability, bilingual contract/help and tests (10035244–10035247; tests 97210–97214).
 
 - Repository scaffolded from Bifrost Subscription Billing setup.

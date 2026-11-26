@@ -2,34 +2,34 @@
   "issue": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/20",
   "criteria": {
     "AC01": {
-      "implemented": false,
+      "implemented": true,
       "verified": false,
-      "pending": "Implementation and exact-head verification"
+      "pending": "Exact-head build, targeted AL and bilingual MCP verification; paired CI"
     },
     "AC02": {
-      "implemented": false,
+      "implemented": true,
       "verified": false,
-      "pending": "Implementation and exact-head verification"
+      "pending": "Exact-head build, targeted AL and bilingual MCP verification; paired CI"
     },
     "AC03": {
-      "implemented": false,
+      "implemented": true,
       "verified": false,
-      "pending": "Implementation and exact-head verification"
+      "pending": "Exact-head build, targeted AL and bilingual MCP verification; paired CI"
     },
     "AC04": {
-      "implemented": false,
+      "implemented": true,
       "verified": false,
-      "pending": "Implementation and exact-head verification"
+      "pending": "Exact-head build, targeted AL and bilingual MCP verification; paired CI"
     },
     "AC05": {
-      "implemented": false,
+      "implemented": true,
       "verified": false,
-      "pending": "Implementation and exact-head verification"
+      "pending": "Exact-head build, targeted AL and bilingual MCP verification; paired CI"
     },
     "AC06": {
-      "implemented": false,
+      "implemented": true,
       "verified": false,
-      "pending": "Implementation and exact-head verification"
+      "pending": "Exact-head build, targeted AL and bilingual MCP verification; paired CI"
     }
   }
 }
