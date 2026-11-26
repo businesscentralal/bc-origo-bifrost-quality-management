@@ -1,57 +1,45 @@
 # Issue 11: Quality.Inspection.AddPicture
 
 Source: https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/11
+PR: https://github.com/businesscentralal/bc-origo-bifrost-quality-management/pull/46
 
-Gunnar approved the new type on 26 November 2026 (decision card
-`d-20261126-qm-backlog-message-types`, recorded in issue comment 7194410653).
-No implementation or validation pass is claimed by this planning draft.
+Gunnar approved this message type on 26 November 2026. The Architect accepted
+transactional Take plus rollback in issue comment 7196544393 and aligned public
+contract chapters with Foundation's English help convention. No core change is needed.
 
 | Criterion | Implemented | Verified | Remaining |
 | --- | --- | --- | --- |
-| AC01 registration, write discovery, bilingual contract | No | No | Implement after staging contract clarification |
-| AC02 base64/staging JPEG, PNG, BMP and response | No | No | Public non-consuming staging access or clarified transaction semantics |
-| AC03 typed refusals before any write | No | No | Resolve pre-write staging validation requirement, then implement all refusals |
-| AC04 expectedCount and staging lifetime | No | No | Prove success consumes and all failures preserve staging |
-| AC05 Full capability, Read/base refusal, native modify permission | No | No | Dedicated marker and dispatcher permission tests |
-| AC06 translations, guides, README, changelog and guards | No | No | Produce with implementation; no help pages or manifest URL change |
+| AC01 registration, write discovery, bilingual app-owned contract | Yes | Static: enum/three interfaces and translated labels | Runtime discovery/help in 1033/1039 |
+| AC02 base64/staging JPEG, PNG, BMP and response | Yes | Dispatcher tests implemented for both paths, replacement and exact size/name boundaries | Final-head AL/MCP evidence |
+| AC03 typed refusals before inspection/media writes | Yes | Strict keys, GUIDs, source exclusivity, decoder/size, status, permission checks | Final-head AL/MCP evidence |
+| AC04 count and staging lifetime | Yes | Take only through public facade; raising boundary; old-picture/Exists assertions and late media-write failure injection | Final-head AL/MCP evidence |
+| AC05 Full capability, Read/base refusal, native Modify | Yes | Dedicated capability table; strict dispatcher tests including capability without native Modify | Final-head AL evidence |
+| AC06 translations, guides, README, changelog and guards | Yes | en-US/is-IS guides and contract labels; XLF generated; object IDs documented | Final-head build/guard report |
 
-## Dependency assessment
+## Transaction and ownership review
 
-Downloaded Foundation symbols from worker-6 tenant `w129-16` on 26 November
-2026. Request minimum was 28.0.15.6; the actual symbol package is 28.0.17.0.
-Codeunit 10078382 `Blob Staging ori` exposes `Create`, two `Take` overloads,
-`NormalizeMetadata` and `Exists`. `Read` is internal. Its table is also internal.
-Both `Take` overloads delete the owned staging row in the caller transaction
-before returning bytes. `Exists` does not return bytes or their size.
+Foundation's public `Blob Staging ori.Take` restricts the row to the current
+company and platform-stamped creator. AddPicture never reads the internal table,
+uses a generic-table bypass or calls internal Foundation methods. Unknown and
+foreign identifiers take the same non-disclosing refusal branch. Foundation owns
+that boundary; this app tests unknown identifiers and its own staging transaction.
 
-The story requires byte-format and size validation before **any write** and
-staging consumption only after success. A transactional Take followed by an
-error could roll back consumption, but still performs a staging delete before
-validating its bytes. Do not silently substitute that interpretation for the
-literal pre-write requirement. Do not bypass the facade using generic record
-access, add a friend assembly, or change Foundation in this repository.
+All post-Take validation refusals raise collected typed errors. Normal execution
+uses Boolean Codeunit.Run and Foundation RespondWithLastError after rollback;
+omit-commit mode propagates the error to the caller's transaction. Explicit
+subscriber commits are prohibited. Tests assert Exists after invalid format/size,
+finished/count refusals and a failure after media import, and consumption after success.
 
-Recommendation: arrange a public non-consuming, ownership-scoped Foundation
-read API, retaining the existing same-user/company boundary, then validate
-bytes and use Take within the picture-write transaction. Alternatively, an
-explicit story clarification may authorize Take plus rollback for staging
-validation while requiring all inspection/media writes after validation.
+Microsoft BCApps releases/28.0 inspection-header source confirms Most Recent Picture
+(field 41) is public, interactive import procedures are internal, and additional
+handling is local. The implementation uses Media.ImportStream directly, reports
+additionalHandlingApplied=false and does not call camera, attachment or OneDrive paths.
 
-Microsoft BCApps `releases/28.0` inspection-header source confirms public
-`Most Recent Picture` (field 41), internal interactive import procedures, and
-local additional-picture handling. The intended implementation must avoid
-camera/file dialogs and OneDrive calls. The story permits reporting
-`additionalHandlingApplied=false` with a documented limitation.
+App objects: enum extension 10035294, implementation 10035295, capability table
+10035296, processor 10035297. Test objects: regression codeunit 97264, fixture
+codeunit 97265, permission set and fault codeunit 97266 (different object kinds),
+fixture enum extension 97267. Main and open PRs use the reserved story blocks.
 
-## Reserved IDs and continuation
-
-The reserved app block is 10035294–10035297; tests are 97264–97267. The
-project object map records these as reservations, not implemented objects.
-Main source and currently open PRs were checked; none uses this block.
-Continue this branch/PR rather than opening another one. On resolution,
-implement the public dispatcher path, generated-byte tests, bilingual contract
-and guides, then run the required ordered checks on worker-6's local tenant.
-
-Product/test compilation, targeted AL tests, MCP and UI: NOT_RUN, because no
-AL implementation exists in this draft. No page or action is changed.
-Licence-path checks: NOT_RUN; verified before release.
+UI scope: no page or action changes, so Web Client runtime checks and UI clips are
+not applicable. Licence-path checks: NOT_RUN; verified before release.
+The exact-head Current state PR comment records final runtime evidence and the CI URL.

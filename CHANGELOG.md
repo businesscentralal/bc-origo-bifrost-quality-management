@@ -21,6 +21,8 @@
 - [#4](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/4): enforce the Full app role through empty capability table 10035284, including callers with Foundation API wildcard execution and native inspection permissions. Dispatcher tests verify read/API refusals without changing an inspection. Native Inspector users need Modify permission, not Delete permission. Contract help chapters and notes now have Icelandic translations.
 
 ### Added
+- [#11](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/11): `Quality.Inspection.AddPicture` replaces the most recent picture of an open inspection from base64 or owned staging, with byte-decoded JPEG/PNG/BMP validation, a 1 MiB limit, typed refusals, atomic staging/media rollback and Full capability checks. Adds enum extension 10035294, implementation 10035295, capability table 10035296 and processor 10035297; dispatcher tests/fixtures/permission set/enum extension 97264–97267 and bilingual contract/guides. Additional attachment and OneDrive handling is not applied.
+
 - #13: `Quality.Disposition.CreatePurchaseReturn` wraps the standard failed-quantity purchase return disposition, with strict inputs, transaction rollback, permission capability, bilingual contract/help and tests (10035244–10035247; tests 97210–97214).
 
 - Repository scaffolded from Bifrost Subscription Billing setup.
