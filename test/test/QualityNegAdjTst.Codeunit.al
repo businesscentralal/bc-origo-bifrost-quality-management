@@ -277,6 +277,8 @@ codeunit 97272 "Quality Neg Adj Tst ori"
         Fault: Codeunit "Quality Neg Adj Fault ori";
         Request: JsonObject;
         Response: JsonObject;
+        LineToken: JsonToken;
+        QuantityToken: JsonToken;
         ExpectSuccess: Boolean;
         Posting: Boolean;
     begin
@@ -375,6 +377,10 @@ codeunit 97272 "Quality Neg Adj Tst ori"
                 Assert.AreEqual(ExpectedQuantity(Scenario), JournalLine.Quantity, 'The line quantity must follow the request.');
                 Assert.AreEqual(0, LedgerQuantity('Negative Adjmt.'), 'Preparing must write no item ledger entry.');
                 Assert.AreEqual(1, ReadArrayCount(Response, 'journalLines'), 'The response must list the line created.');
+                Response.Get('journalLines', LineToken);
+                LineToken.AsArray().Get(0, QuantityToken);
+                QuantityToken.AsObject().Get('quantity', LineToken);
+                Assert.AreEqual(JournalLine.Quantity, LineToken.AsValue().AsDecimal(), 'The response must preserve the native journal quantity and sign.');
                 Assert.AreEqual(0, ReadArrayCount(Response, 'ledgerEntries'), 'The response must list no entry.');
             end;
         end else begin

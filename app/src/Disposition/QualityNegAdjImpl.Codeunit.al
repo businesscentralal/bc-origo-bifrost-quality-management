@@ -120,6 +120,10 @@ codeunit 10035303 "Quality Neg Adj Impl ori" implements "Msg Interface ori", "Ms
         // Remember where the journal and ledger ended so the response lists only what this call created.
         Setup.Get();
         TemplateName := Setup.GetInventoryAdjustmentJournalTemplate();
+        JournalLine.ReadIsolation := IsolationLevel::ReadCommitted;
+        JournalLine.SetLoadFields("Journal Template Name", "Journal Batch Name", "Line No.", "Item No.", "Location Code", "Bin Code", Quantity);
+        Ledger.ReadIsolation := IsolationLevel::ReadCommitted;
+        Ledger.SetLoadFields("Entry No.", "Item No.", "Location Code", Quantity);
         JournalLine.SetRange("Journal Template Name", TemplateName);
         JournalLine.SetRange("Journal Batch Name", Setup."Item Journal Batch Name");
         if JournalLine.FindLast() then
@@ -369,7 +373,7 @@ codeunit 10035303 "Quality Neg Adj Impl ori" implements "Msg Interface ori", "Ms
     /// <summary>Returns the examples contract chapter.</summary>
     procedure GetExamples(var Examples: JsonArray): Boolean
     begin
-        Examples.ReadFrom('[{"title":"Leave a failed-quantity write-off in the journal","request":{"type":"Quality.Disposition.CreateNegativeAdjustment","data":{"inspectionSystemId":"00000000-0000-0000-0000-000000000001","quantityBasis":"failed","reasonCode":"SCRAP","confirm":true,"expectedCount":1}},"response":{"status":"Success","inspectionSystemId":"00000000-0000-0000-0000-000000000001","inspectionNo":"QI00001","reinspectionNo":0,"quantityBasis":"failed","posted":false,"journalLines":[{"journalTemplateName":"ITEM","journalBatchName":"QUALITY","lineNo":10000,"itemNo":"1000","locationCode":"","binCode":"","quantity":-3}],"ledgerEntries":[]}}]');
+        Examples.ReadFrom('[{"title":"Leave a failed-quantity write-off in the journal","request":{"type":"Quality.Disposition.CreateNegativeAdjustment","data":{"inspectionSystemId":"00000000-0000-0000-0000-000000000001","quantityBasis":"failed","reasonCode":"SCRAP","confirm":true,"expectedCount":1}},"response":{"status":"Success","inspectionSystemId":"00000000-0000-0000-0000-000000000001","inspectionNo":"QI00001","reinspectionNo":0,"quantityBasis":"failed","posted":false,"journalLines":[{"journalTemplateName":"ITEM","journalBatchName":"QUALITY","lineNo":10000,"itemNo":"1000","locationCode":"","binCode":"","quantity":3}],"ledgerEntries":[]}}]');
         exit(true);
     end;
 

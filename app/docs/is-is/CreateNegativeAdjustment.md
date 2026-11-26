@@ -19,3 +19,5 @@ Staðlað bókun Microsoft keyrir með bældar staðfestingar og bannaðar beina
 Foundation notar einnig staðlaða forskoðun óafturkræfra aðgerða: sendu `expectedCount=1` fyrir eina skoðun. Fjölda sem er ekki 1 er hafnað áður en nokkru er breytt. Þetta kemur ekki í stað `confirm=true`.
 
 Sérhver höfnun áður en staðlaða ráðstöfunin keyrir er týpuð með `parameter`, `expected` og `nextStep`: `inspectionSystemId` vantar eða er gallað, `confirm` er ekki true, óþekktir lyklar, síunarsetningafræði, óþekkt skoðun, núllmagn og ástæðukóði lengri en 10 stafir.
+
+Færslubókarlínur nota staðlað jákvætt magn með færslugerðinni Neikvæð leiðrétting. Bókaðar birgðafærslur bera neikvætt birgðamagn.

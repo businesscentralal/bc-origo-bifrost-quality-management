@@ -10,6 +10,8 @@ Identify the exact inspection, including its re-inspection, with `inspectionSyst
 
 The response states whether the lines were posted (`posted`), lists the journal lines left in the journal (`journalLines`) and the item ledger entries written (`ledgerEntries`).
 
+Journal lines use the standard positive quantity with the Negative Adjmt. entry type. Posted item ledger entries carry the negative inventory quantity.
+
 The caller needs `BIFROST QM Full ori` and the standard Microsoft item journal and posting permissions. The Read role and base roles are refused.
 
 This is **not idempotent**. Posted entries change inventory and a repeated request can write off more stock. Prepared lines are duplicated by a repeat as well. There is no delete type and no "reverse adjustment" type. Do not retry a successful request automatically.
