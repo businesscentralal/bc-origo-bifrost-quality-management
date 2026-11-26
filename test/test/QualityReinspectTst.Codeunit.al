@@ -64,6 +64,51 @@ codeunit 97207 "Quality Reinspect Tst ori"
         Assert.AreEqual(2, Created."Re-inspection No.", 'The operation is not idempotent.');
     end;
 
+    /// <summary>The BC 28.0 receipt returns the exact native revision when the caller supplies an older source.</summary>
+    [Test]
+    [HandlerFunctions('ConfirmYes')]
+    procedure Scenario_Issue42_OlderSource_ReturnsCreatedSystemId()
+    var
+        Source: Record "Qlty. Inspection Header";
+        Created: Record "Qlty. Inspection Header";
+        Response: JsonObject;
+        Result: JsonObject;
+    begin
+        Initialize(Source);
+        Response := Invoke(IdRequest(Source.SystemId));
+        Assert.AreEqual('Success', Response.GetText('status'), Serialize(Response));
+        Response := Invoke(IdRequest(Source.SystemId));
+        Assert.AreEqual('Success', Response.GetText('status'), Serialize(Response));
+        Created.Get(Source."No.", 2);
+        Result := Response.GetArray('result').GetObject(0);
+        Assert.AreEqual(Format(Created.SystemId, 0, 4), Result.GetText('systemId'), 'Receipt must identify the second native revision.');
+        Assert.AreEqual(2, Result.GetInteger('reinspectionNo'), 'Receipt must carry the native revision number.');
+        Assert.AreEqual(Format(Source.SystemId, 0, 4), Result.GetText('sourceSystemId'), 'Response must retain the requested older source.');
+    end;
+
+    /// <summary>Each bound receipt captures only its own action, including consecutive unrelated inspections.</summary>
+    [Test]
+    [HandlerFunctions('ConfirmYes')]
+    procedure Scenario_Issue42_ConsecutiveSources_DoNotReuseReceipt()
+    var
+        FirstSource: Record "Qlty. Inspection Header";
+        SecondSource: Record "Qlty. Inspection Header";
+        Created: Record "Qlty. Inspection Header";
+        Response: JsonObject;
+        Result: JsonObject;
+    begin
+        Initialize(FirstSource);
+        Initialize(SecondSource);
+        Response := Invoke(IdRequest(FirstSource.SystemId));
+        Assert.AreEqual('Success', Response.GetText('status'), Serialize(Response));
+        Response := Invoke(IdRequest(SecondSource.SystemId));
+        Assert.AreEqual('Success', Response.GetText('status'), Serialize(Response));
+        Created.Get(SecondSource."No.", 1);
+        Result := Response.GetArray('result').GetObject(0);
+        Assert.AreEqual(Format(Created.SystemId, 0, 4), Result.GetText('systemId'), 'A previous action must not supply the receipt.');
+        Assert.AreEqual(SecondSource."No.", Result.GetText('inspectionNo'), 'Receipt must belong to this inspection.');
+    end;
+
     /// <summary>Missing input refuses without writing.</summary>
     [Test]
     procedure Scenario_AC02_MissingId_RefusesWithoutChanges()

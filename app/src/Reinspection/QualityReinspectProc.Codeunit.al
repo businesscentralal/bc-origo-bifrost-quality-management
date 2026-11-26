@@ -44,7 +44,13 @@ codeunit 10035322 "Quality Reinspect Proc ori"
     // so a native validation failure cannot leave a finished source or partial revision.
     [CommitBehavior(CommitBehavior::Error)]
     local procedure CreateReinspection(var Inspection: Record "Qlty. Inspection Header"; var Reinspection: Record "Qlty. Inspection Header")
+    var
+        Receipt: Codeunit "Quality Reinspect Receipt ori";
     begin
-        Inspection.CreateReinspection(Reinspection);
+        Receipt.SetSource(Inspection."No.");
+        BindSubscription(Receipt);
+        Inspection.CreateReinspection();
+        UnbindSubscription(Receipt);
+        Receipt.GetCreated(Reinspection);
     end;
 }

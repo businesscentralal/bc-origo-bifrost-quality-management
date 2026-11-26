@@ -13,6 +13,7 @@ permissionset 10035236 "BIFROST Quality ori"
         tabledata "Quality Reinspect Access ori" = R,
         codeunit "Quality Reinspect Impl ori" = X,
         codeunit "Quality Reinspect Proc ori" = X,
+        codeunit "Quality Reinspect Receipt ori" = X,
         codeunit "Quality Reopen Impl ori" = X,
         table "Quality Reopen Access ori" = X,
         tabledata "Quality Reopen Access ori" = R;

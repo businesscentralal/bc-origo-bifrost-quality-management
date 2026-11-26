@@ -24,6 +24,8 @@ Tests: 97200-97299
 | Table | 10035320 | Quality Reinspect Access ori |
 | Codeunit | 10035321 | Quality Reinspect Impl ori |
 | Codeunit | 10035322 | Quality Reinspect Proc ori |
+| Codeunit | 10035324 | Quality Reinspect Receipt ori |
+| Test helper codeunit | 97255 | Quality Setup Library ori |
 | Enum extension | 10035323 | Quality Reinspect Types ori |
 | Test codeunit | 97207 | Quality Reinspect Tst ori |
 | Test codeunit | 97208 | Quality Action Perm Tst ori |
@@ -76,7 +78,7 @@ Tests: 97200-97299
 | Test codeunit | 97230 | Qlty Insp Finish Tst ori |
 
 ## Microsoft source
-Wrapped Microsoft app: Quality Management (`bc7b3891-f61b-4883-bbb3-384cdef88bec`, 28.5.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management
+Wrapped Microsoft app: Quality Management (`bc7b3891-f61b-4883-bbb3-384cdef88bec`, 28.0.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management
 Read it there before designing message types.
 
 ## Setup Notifications
@@ -86,7 +88,7 @@ app's module id, its display name and its setup page id (`0` while the app has n
 `app/src/Common/SubRegistration.Codeunit.al` in Bifrost Subscription Billing.
 
 ## Target BC Version
-28.5 (application 28.5.0.0, platform 28.0.0.0, runtime 17.0)
+28.0 (application 28.0.0.0, platform 28.0.0.0, runtime 17.0)
 
 ## Source Control
 Platform: GitHub
@@ -96,7 +98,7 @@ Default branch: main
 
 ## Dependencies
 - Bifrost Foundation (`7505e808-6e52-4b96-a328-82573391297a`, 28.0.15.6, current released Foundation minimum for first-release readiness)
-- Quality Management (Microsoft, 28.5.0.0; application floor 28.5.0.0)
+- Quality Management (Microsoft, 28.0.0.0; application floor 28.0.0.0)
 
 ## Naming Rules
 - Every object carries the `ori` suffix (AppSource mandatory affix), max 30 characters.

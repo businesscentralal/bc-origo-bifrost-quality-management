@@ -180,7 +180,7 @@ codeunit 10035321 "Quality Reinspect Impl ori" implements "Msg Interface ori", "
         Preconditions.Add('Quality Management setup exists and native validation allows the action.');
         Preconditions.Add('The caller has BIFROST QM Full ori plus standard Quality Inspector data permissions.');
         Effect.Add('effect', 'write');
-        Effect.Add('changes', 'Calls Qlty. Inspection Header.CreateReinspection(var header). An open source is finished first. The latest revision with the same inspection number supplies the next revision, even when an older source SystemId is sent. Copies the header, clears completion/result values and generates lines from the template. The preceding revision loses its most-recent flag. No explicit Commit occurs on this native path; the page-only Commit is not called. Explicit subscriber commits are rejected; normal task success commits, business errors roll back.');
+        Effect.Add('changes', 'Calls Qlty. Inspection Header.CreateReinspection(). An open source is finished first. The latest revision with the same inspection number supplies the next revision, even when an older source SystemId is sent. Copies the header, clears completion/result values and generates lines from the template. The preceding revision loses its most-recent flag. No explicit Commit occurs on this native path; the page-only Commit is not called. Explicit subscriber commits are rejected; normal task success commits, business errors roll back.');
         Effect.Add('idempotent', false);
         Effect.Add('permissionSet', 'BIFROST QM Full ori');
         Effect.Add('preconditions', Preconditions);

@@ -321,9 +321,9 @@ codeunit 97230 "Qlty Insp Finish Tst ori"
 
     local procedure CreateOpenInspection(var Header: Record "Qlty. Inspection Header"; ResultCode: Code[20])
     var
-        Configure: Codeunit "Qlty. Auto Configure";
+        SetupLibrary: Codeunit "Quality Setup Library ori";
     begin
-        Configure.EnsureBasicSetupExists(false);
+        SetupLibrary.Initialize();
         Header.Init();
         Header."No." := NewNo();
         Header."Re-inspection No." := 0;

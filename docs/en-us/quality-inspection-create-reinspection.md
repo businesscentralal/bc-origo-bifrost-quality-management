@@ -1,6 +1,6 @@
 # Quality.Inspection.CreateReinspection
 
-Creates a re-inspection through `Qlty. Inspection Header.CreateReinspection(var header)` and the standard `Qlty. Inspection - Create` codeunit. Requires `BIFROST QM Full ori` and native Quality Inspector data permissions; the Foundation Full role includes the Bifrost action permission. The Read role cannot execute it.
+Creates a re-inspection through `Qlty. Inspection Header.CreateReinspection()` and the standard `Qlty. Inspection - Create` codeunit. Requires `BIFROST QM Full ori` and native Quality Inspector data permissions; the Foundation Full role includes the Bifrost action permission. The Read role cannot execute it.
 
 ```json
 {"type":"Quality.Inspection.CreateReinspection","data":{"inspectionSystemId":"<source-systemId>"}}

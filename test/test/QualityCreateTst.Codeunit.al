@@ -269,14 +269,14 @@ codeunit 97240 "Quality Create Tst ori"
         InspectionResult: Record "Qlty. Inspection Result";
         SourceConfig: Record "Qlty. Inspect. Source Config.";
         Created: Record "Quality Fixture Default ori";
-        AutoConfigure: Codeunit "Qlty. Auto Configure";
+        SetupLibrary: Codeunit "Quality Setup Library ori";
         FixtureCode: Code[20];
         ResultCount: Integer;
         SourceConfigCount: Integer;
         PreviousSeries: Code[20];
     begin
         // [GIVEN] A company with Quality Management basics already installed.
-        AutoConfigure.EnsureBasicSetupExists(false);
+        SetupLibrary.Initialize();
         QualitySetup.Get();
         PreviousSeries := QualitySetup."Quality Inspection Nos.";
         ResultCount := InspectionResult.Count();
@@ -295,6 +295,43 @@ codeunit 97240 "Quality Create Tst ori"
         Assert.AreEqual(PreviousSeries, QualitySetup."Quality Inspection Nos.", 'Existing series assignment is restored.');
         Assert.AreEqual(ResultCount, InspectionResult.Count(), 'Existing results are preserved.');
         Assert.AreEqual(SourceConfigCount, SourceConfig.Count(), 'Existing source configurations are preserved.');
+    end;
+
+    /// <summary>The BC28 setup helper fills a missing native result without changing an existing setup or result.</summary>
+    [Test]
+    procedure Scenario_Issue42_Setup_PreservesExistingAndFillsMissingResult()
+    var
+        QualitySetup: Record "Qlty. Management Setup";
+        InspectionResult: Record "Qlty. Inspection Result";
+        Configure: Codeunit "Qlty. Auto Configure";
+        SetupLibrary: Codeunit "Quality Setup Library ori";
+        SetupId: Guid;
+        ExistingResultId: Guid;
+        PreviousSeries: Code[20];
+    begin
+        Initialize();
+        SetupLibrary.Initialize();
+        QualitySetup.Get();
+        SetupId := QualitySetup.SystemId;
+        PreviousSeries := QualitySetup."Quality Inspection Nos.";
+        InspectionResult.Get(Configure.GetDefaultPassResult());
+        ExistingResultId := InspectionResult.SystemId;
+        InspectionResult.Description := 'XQ42 customized existing result';
+        InspectionResult.Modify(false);
+        InspectionResult.Get(Configure.GetDefaultFailResult());
+        InspectionResult.Delete(false);
+
+        SetupLibrary.Initialize();
+
+        QualitySetup.Get();
+        Assert.AreEqual(SetupId, QualitySetup.SystemId, 'Existing setup must not be recreated.');
+        Assert.AreEqual(PreviousSeries, QualitySetup."Quality Inspection Nos.", 'Existing numbering must be preserved.');
+        InspectionResult.Get(Configure.GetDefaultPassResult());
+        Assert.AreEqual(ExistingResultId, InspectionResult.SystemId, 'Existing result must not be recreated.');
+        Assert.AreEqual('XQ42 customized existing result', InspectionResult.Description, 'Existing customizations must be preserved.');
+        InspectionResult.Get(Configure.GetDefaultFailResult());
+        Assert.AreEqual(Configure.GetDefaultFailResultDescription(), InspectionResult.Description, 'Missing result uses the native public description.');
+        Assert.AreEqual(InspectionResult."Finish Allowed"::"Allow Finish", InspectionResult."Finish Allowed", 'Missing fail result must allow native finish tests.');
     end;
 
     /// <summary>Verifies catalogue and effect/help chapters through the public contract API.</summary>
@@ -574,7 +611,7 @@ codeunit 97240 "Quality Create Tst ori"
         QualitySetup: Record "Qlty. Management Setup";
         InspectionResult: Record "Qlty. Inspection Result";
         TempExisting: Record "Quality Fixture Default ori" temporary;
-        AutoConfigure: Codeunit "Qlty. Auto Configure";
+        SetupLibrary: Codeunit "Quality Setup Library ori";
         TableNos: List of [Integer];
         TableNo: Integer;
     begin
@@ -583,7 +620,7 @@ codeunit 97240 "Quality Create Tst ori"
         GetTrackedDefaultTables(TableNos);
         foreach TableNo in TableNos do
             SnapshotTable(TableNo, TempExisting);
-        AutoConfigure.EnsureBasicSetupExists(false);
+        SetupLibrary.Initialize();
         foreach TableNo in TableNos do
             TrackCreatedRecords(FixtureCode, TableNo, TableNos.IndexOf(TableNo), TempExisting);
     end;

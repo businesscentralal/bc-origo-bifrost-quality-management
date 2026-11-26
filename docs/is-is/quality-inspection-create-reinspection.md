@@ -1,6 +1,6 @@
 # Quality.Inspection.CreateReinspection
 
-Stofnar endurskoðun með stöðluðu aðferðinni `Qlty. Inspection Header.CreateReinspection(var header)` og kótaeiningunni `Qlty. Inspection - Create`. Krefst `BIFROST QM Full ori` og staðlaðra gagnaheimilda gæðaskoðunarmanns. Fullt Foundation-hlutverk veitir Bifröst-aðgerðarheimildina; leshlutverk heimilar ekki aðgerðina.
+Stofnar endurskoðun með stöðluðu aðferðinni `Qlty. Inspection Header.CreateReinspection()` og kótaeiningunni `Qlty. Inspection - Create`. Krefst `BIFROST QM Full ori` og staðlaðra gagnaheimilda gæðaskoðunarmanns. Fullt Foundation-hlutverk veitir Bifröst-aðgerðarheimildina; leshlutverk heimilar ekki aðgerðina.
 
 ```json
 {"type":"Quality.Inspection.CreateReinspection","data":{"inspectionSystemId":"<SystemId-upprunalegrar-skoðunar>"}}
