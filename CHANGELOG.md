@@ -21,6 +21,7 @@
 - [#4](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/4): enforce the Full app role through empty capability table 10035284, including callers with Foundation API wildcard execution and native inspection permissions. Dispatcher tests verify read/API refusals without changing an inspection. Native Inspector users need Modify permission, not Delete permission. Contract help chapters and notes now have Icelandic translations.
 
 ### Added
+- #14: `Quality.Disposition.CreateTransferOrder` creates unposted transfer order(s) for the failed or passed stock of one inspection through the standard `Create Transfer Order` disposition (not idempotent; typed refusals; rollback on any failure; `BIFROST QM Full ori` capability). Objects: enum extension 10035298, codeunits 10035299 and 10035301, table 10035300; tests 97268 (codeunit), 97269 (fault), 97270 (permission set); guides in English and Icelandic.
 - #13: `Quality.Disposition.CreatePurchaseReturn` wraps the standard failed-quantity purchase return disposition, with strict inputs, transaction rollback, permission capability, bilingual contract/help and tests (10035244–10035247; tests 97210–97214).
 
 - Repository scaffolded from Bifrost Subscription Billing setup.
