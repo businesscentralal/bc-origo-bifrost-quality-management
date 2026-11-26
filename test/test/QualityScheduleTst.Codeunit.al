@@ -676,6 +676,34 @@ codeunit 97292 "Quality Schedule Tst ori"
         Cleanup(GroupCode);
     end;
 
+    /// <summary>AC02 accepts the native integer upper bound and last valid second on hold.</summary>
+    [Test]
+    procedure Scenario_AC02_MaximumMinutesAndLastSecond()
+    var
+        Job: Record "Job Queue Entry";
+        Request: JsonObject;
+        Response: JsonObject;
+        Days: JsonArray;
+        GroupCode: Code[20];
+        JobId: Guid;
+    begin
+        // AC02/AC03 | Time: upper 23:59:59 boundary | Risk: On Hold, no task execution.
+        GroupCode := Initialize();
+        Request := NewRequest(GroupCode);
+        Request.Replace('startTime', '23:59:59');
+        Request.Add('repeatEveryMinutes', 2147483647);
+        Days.Add(7);
+        Request.Add('daysOfWeek', Days);
+        Response := Invoke(Request);
+        AssertSuccess(Response);
+        Evaluate(JobId, Response.GetText('jobQueueEntryId'));
+        Job.Get(JobId);
+        Assert.AreEqual(2147483647, Job."No. of Minutes between Runs", 'Native integer boundary');
+        Assert.AreEqual(235959T, Job."Starting Time", 'Last valid second');
+        Assert.IsTrue(Job."Run on Sundays" and not Job."Run on Mondays", 'Upper day boundary');
+        Cleanup(GroupCode);
+    end;
+
     local procedure SetConfirmation(Enabled: Boolean) Previous: Boolean
     var
         Setup: Record "Setup ori";
