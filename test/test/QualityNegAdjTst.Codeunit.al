@@ -242,7 +242,7 @@ codeunit 97272 "Quality Neg Adj Tst ori"
     var
         Inspection: Record "Qlty. Inspection Header";
         JournalLine: Record "Item Journal Line";
-        Template: Record "Item Journal Template";
+        JournalTemplate: Record "Item Journal Template";
         Setup: Record "Qlty. Management Setup";
         Fault: Codeunit "Quality Neg Adj Fault ori";
         Request: JsonObject;
@@ -300,9 +300,9 @@ codeunit 97272 "Quality Neg Adj Tst ori"
                 end;
             'forcedReport':
                 begin
-                    Template.Get(TemplateCode);
-                    Template."Force Posting Report" := true;
-                    Template.Modify(false);
+                    JournalTemplate.Get(TemplateCode);
+                    JournalTemplate."Force Posting Report" := true;
+                    JournalTemplate.Modify(false);
                 end;
         end;
         Commit();
