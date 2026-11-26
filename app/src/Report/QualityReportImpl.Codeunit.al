@@ -239,7 +239,7 @@ codeunit 10035319 "Quality Report Impl ori" implements "Msg Interface ori", "Msg
         Preconditions.Add('The caller can read the inspection and run the Microsoft report.');
         Effect.Add('effect', 'read');
         Effect.Add('changes', 'Changes no inspection, line, setup or journal data. Renders the Microsoft report for the one inspection with Report.SaveAs (PDF) and stores the PDF as one Foundation Blob Staging row owned by the caller; that scratch row is the only write. Read it with the staging types using stagingId. The Microsoft report object is rendered with its default layout; a custom Report Selections entry is not used, because Report Selections is not readable under the Read role. Results over 10485760 bytes are refused.');
-        Effect.Add('idempotent', true);
+        Effect.Add('idempotent', false);
         Effect.Add('permissionSet', 'BIFROST QM Read ori');
         Effect.Add('preconditions', Preconditions);
         exit(true);
