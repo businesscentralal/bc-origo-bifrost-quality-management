@@ -1,10 +1,16 @@
 # Changelog
 
-## [28.0.0.0] - Unreleased
+## [29.0.0.0] - Unreleased
+
+### Changed
+
+- Raised the floor to Business Central 29.0: version, application and platform 29.0.0.0, runtime 18.0, Microsoft Quality Management 29.0.0.0, and the CI artifact on 29.0 (Test Current on 29.1). Gunnar 26.11.2026. Supersedes the 28.0 floor work in #42.
 
 ### Added
 
 - [#22](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/22): message type `Quality.Report.Print` renders the Certificate of Analysis, Non-Conformance or general inspection report for one inspection as a PDF with `Report.SaveAs` and returns it through Foundation staging (enum extension 10035318, implementation 10035319, process 10035332; tests 97255-97256). Read type: the only write is the Foundation staging row. Results over 10,485,760 bytes are refused. `BIFROST Quality ori` (10035236) grants execute on the two codeunits. Guides `PrintReport.md` in English and Icelandic.
+- #9: `Quality.Inspection.FindForRecord` reads inspections using Microsoft's public source-matching method, newest first, with latest-revision selection, a 100-row limit, typed refusals and Read-role execution. Added enum extension 10035290 and implementation/message ordinal 10035291; tests 97260 (codeunit), 97261/97263 (permission sets) and 97262 (source table), with English/Icelandic contracts and guides.
+
 - [#17](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/17): `Quality.Disposition.ChangeItemTracking` changes the lot, serial or package number or the expiration date of one inspection's stock through Microsoft's `Change Item Tracking` disposition (item or warehouse reclassification journal), prepared or posted with `postImmediately=true`. Irreversible when posting, not idempotent; standard posting is bound through `Quality Move Posting ori` (10035272) so a late refusal rolls back lines and entries. Typed refusals before any change; an inspection without lot, serial or package number is refused. Objects: enum extension 10035310 `Quality Track Types ori` (value 10035310), codeunit 10035311 `Quality Track Impl ori`, table 10035312 `Quality Track Access ori` (capability granted by `BIFROST QM Full ori`); tests 97280 `Quality Track Tst ori`, 97281 `Quality Track Fault ori`. Guides in English and Icelandic.
 
 ### Fixed
