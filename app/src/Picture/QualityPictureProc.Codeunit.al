@@ -11,12 +11,6 @@ using System.Security.User;
 codeunit 10035297 "Quality Picture Proc ori"
 {
     Access = Internal;
-    TableNo = "Message Argument ori";
-
-    trigger OnRun()
-    begin
-        Apply(Rec);
-    end;
 
     var
         InvalidLbl: Label 'Parameter %1 is invalid.', Comment = '%1 = parameter name|is-IS=Færibreytan %1 er ógild.';
@@ -108,7 +102,7 @@ codeunit 10035297 "Quality Picture Proc ori"
             Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(InvalidLbl, 'base64/stagingId'), SourceParameter(Request), ImageLbl);
         Blob.CreateInStream(Input);
         Clear(Inspection."Most Recent Picture");
-        Inspection."Most Recent Picture".ImportStream(Input, FileName + Extension, Mime);
+        Inspection."Most Recent Picture".ImportStream(Input, CopyStr(FileName, 1, 250 - StrLen(Extension)) + Extension, Mime);
         Inspection.Modify();
         Response.Add('status', 'Success');
         Response.Add('inspectionSystemId', Format(Inspection.SystemId, 0, 4));

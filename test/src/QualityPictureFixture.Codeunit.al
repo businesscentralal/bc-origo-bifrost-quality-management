@@ -23,7 +23,7 @@ codeunit 97265 "Quality Picture Fixture ori" implements "Msg Interface ori"
     /// <summary>Describes this test-only message.</summary>
     procedure GetDescription(): Text[250]
     begin
-        exit('Test-only: seed, stage, inspect or cleanup an owned BIFTQ6-P picture fixture.');
+        exit('Test-only: seed, stage or inspect an owned BIFTQ6-P picture fixture.');
     end;
 
     /// <summary>Declares test fixture writes.</summary>
@@ -67,6 +67,7 @@ codeunit 97265 "Quality Picture Fixture ori" implements "Msg Interface ori"
                     StageId := Staging.Create(Input, 'fixture.' + FormatName, '', 'quality11-test');
                     Response.Add('stagingId', Format(StageId, 0, 4));
                     Response.Add('base64', Encoded(Blob));
+                    Response.Add('size', Blob.Length());
                 end;
             'inspect':
                 begin
@@ -83,15 +84,6 @@ codeunit 97265 "Quality Picture Fixture ori" implements "Msg Interface ori"
                     Inspection.Get(RunCode, 0);
                     Inspection.Status := Inspection.Status::Finished;
                     Inspection.Modify();
-                end;
-            'cleanup':
-                begin
-                    if Request.Contains('stagingId') then begin
-                        Evaluate(StageId, Request.GetText('stagingId'));
-                        Staging.Take(StageId, Blob);
-                    end;
-                    Cleanup(RunCode);
-                    Response.Add('remainingInspections', 0);
                 end;
             else
                 Error('Unknown fixture action.');
@@ -131,7 +123,9 @@ codeunit 97265 "Quality Picture Fixture ori" implements "Msg Interface ori"
         Picture: Codeunit Image;
         Input: InStream;
         Output: OutStream;
-        Padding: Text;
+        PaddingByte: Byte;
+        Index: Integer;
+        TargetSize: Integer;
     begin
         Clear(Blob);
         Blob.CreateOutStream(Output);
@@ -158,10 +152,14 @@ codeunit 97265 "Quality Picture Fixture ori" implements "Msg Interface ori"
         end;
         if FormatName in ['limit', 'oversize'] then begin
             // Output still points to the BMP blob; append harmless trailing bytes to exercise exact size limits.
-            Padding := PadStr('', 1048576 - Blob.Length(), 'x');
-            Output.WriteText(Padding);
+            TargetSize := 1048576;
             if FormatName = 'oversize' then
-                Output.WriteText('x');
+                TargetSize += 1;
+            PaddingByte := 0;
+            for Index := Blob.Length() + 1 to TargetSize do
+                Output.Write(PaddingByte);
+            if Blob.Length() <> TargetSize then
+                Error('Generated fixture has %1 bytes; expected %2.', Blob.Length(), TargetSize);
         end;
     end;
 

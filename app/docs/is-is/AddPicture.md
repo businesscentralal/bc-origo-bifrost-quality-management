@@ -27,7 +27,7 @@ Hámark base64-texta er 1398104 stafir áður en afkóðun hefst.
 | `fileName` | Valfrjálst heiti, 1–250 stafir án slóðaskilja; sjálfgefið `inspection-picture` |
 | `expectedCount` | Valfrjáls heiltala; verður að vera 1 (ein skoðun) |
 
-Viðskeyti myndsniðs sem greint er úr bætunum er bætt við heitið. Óþekktum lyklum er hafnað.
+Viðskeyti myndsniðs sem greint er úr bætunum er bætt við heitið; grunnheitið er stytt svo vistað heiti rúmist í 250 stöfum. Óþekktum lyklum er hafnað.
 
 ```json
 {

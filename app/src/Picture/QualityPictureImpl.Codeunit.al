@@ -7,6 +7,14 @@ using Origo.Bifrost;
 codeunit 10035295 "Quality Picture Impl ori" implements "Msg Interface ori", "Msg Discovery ori", "Msg Contract ori"
 {
     Access = Internal;
+    TableNo = "Message Argument ori";
+
+    trigger OnRun()
+    var
+        Processor: Codeunit "Quality Picture Proc ori";
+    begin
+        Processor.Apply(Rec);
+    end;
 
     /// <summary>Validates the envelope and runs the rollback boundary.</summary>
     /// <param name="Argument">Public dispatcher argument.</param>
@@ -19,7 +27,7 @@ codeunit 10035295 "Quality Picture Impl ori" implements "Msg Interface ori", "Ms
         if Argument."Omit Commit" then
             Processor.Apply(Argument)
         else
-            if not Codeunit.Run(Codeunit::"Quality Picture Proc ori", Argument) then
+            if not Codeunit.Run(Codeunit::"Quality Picture Impl ori", Argument) then
                 Argument.RespondWithLastError();
     end;
 
@@ -210,7 +218,7 @@ codeunit 10035295 "Quality Picture Impl ori" implements "Msg Interface ori", "Ms
         IdentityLbl: Label 'SystemId of an open quality inspection.', Comment = 'is-IS=SystemId opinnar gæðaskoðunar.';
         Base64Lbl: Label 'Exactly one of base64 and stagingId. JPEG, PNG or BMP bytes; maximum 1048576 decoded bytes (1 MiB). Format is detected from bytes, never the file name.', Comment = 'is-IS=Nákvæmlega annað af base64 og stagingId. JPEG-, PNG- eða BMP-bæti; að hámarki 1048576 afkóðuð bæti (1 MiB). Snið er greint úr bætum, aldrei skráarheiti.';
         StagingLbl: Label 'SystemId of an upload owned by this user in this company. Consumed on success; retained after every failure.', Comment = 'is-IS=SystemId upphleðslu í eigu þessa notanda í þessu fyrirtæki. Fjarlægð við árangur; varðveitt eftir sérhverja bilun.';
-        FileLbl: Label 'Optional image name, 1 to 250 characters without path separators. A byte-detected image extension is appended. Default: inspection-picture.', Comment = 'is-IS=Valfrjálst myndheiti, 1 til 250 stafir án slóðaskilja. Viðskeyti greint úr bætum er bætt við. Sjálfgefið: inspection-picture.';
+        FileLbl: Label 'Optional image name, 1 to 250 characters without path separators. A byte-detected image extension is appended, truncating the base name to fit 250 characters. Default: inspection-picture.', Comment = 'is-IS=Valfrjálst myndheiti, 1 til 250 stafir án slóðaskilja. Viðskeyti greint úr bætum er bætt við og grunnheitið stytt svo heildin rúmist í 250 stöfum. Sjálfgefið: inspection-picture.';
         CountLbl: Label 'Must equal 1 when supplied. Counts the one inspection, not its existing pictures.', Comment = 'is-IS=Verður að vera 1 ef sent. Telur eina skoðun, ekki myndir sem fyrir eru.';
         HandlingLbl: Label 'Always false. Native extra attachment and OneDrive handling is local/internal and is not called.', Comment = 'is-IS=Alltaf false. Staðlað viðbótarferli fyrir viðhengi og OneDrive er staðbundið/innra og er ekki kallað.';
         ErrorsLbl: Label 'Missing, invalid or unknown input; finished or unknown inspection; unavailable staged upload; missing Full or native modify permission. Refusals carry parameter, expected and nextStep.', Comment = 'is-IS=Inntak vantar, er ógilt eða óþekkt; lokin eða óþekkt skoðun; sviðssett upphleðsla ekki tiltæk; Full eða staðlaðar breytingaheimildir vantar. Höfnun inniheldur parameter, expected og nextStep.';

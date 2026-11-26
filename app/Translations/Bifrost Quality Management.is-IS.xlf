@@ -754,9 +754,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType ExampleLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 2766104975 - NamedType 3039504856" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Optional image name, 1 to 250 characters without path separators. A byte-detected image extension is appended. Default: inspection-picture.</source>
-          <target>Valfrjálst myndheiti, 1 til 250 stafir án slóðaskilja. Viðskeyti greint úr bætum er bætt við. Sjálfgefið: inspection-picture.</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=Valfrjálst myndheiti, 1 til 250 stafir án slóðaskilja. Viðskeyti greint úr bætum er bætt við. Sjálfgefið: inspection-picture.</note>
+          <source>Optional image name, 1 to 250 characters without path separators. A byte-detected image extension is appended, truncating the base name to fit 250 characters. Default: inspection-picture.</source>
+          <target>Valfrjálst myndheiti, 1 til 250 stafir án slóðaskilja. Viðskeyti greint úr bætum er bætt við og grunnheitið stytt svo heildin rúmist í 250 stöfum. Sjálfgefið: inspection-picture.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Valfrjálst myndheiti, 1 til 250 stafir án slóðaskilja. Viðskeyti greint úr bætum er bætt við og grunnheitið stytt svo heildin rúmist í 250 stöfum. Sjálfgefið: inspection-picture.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType FileLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 2766104975 - NamedType 2078768823" size-unit="char" translate="yes" xml:space="preserve">

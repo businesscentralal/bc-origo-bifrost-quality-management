@@ -654,6 +654,32 @@ codeunit 97264 "Quality Picture Tst ori"
         RefusedImage('gif', true);
     end;
 
+    /// <summary>Omit-commit mode propagates refusal so the caller can roll back the staged Take.</summary>
+    [Test]
+    procedure Scenario_AC04_OmitCommit_ErrorRestoresStaging()
+    var
+        Inspection: Record "Qlty. Inspection Header";
+        Staging: Codeunit "Blob Staging ori";
+        Dispatcher: Codeunit "Dispatcher ori";
+        RequestContent: BigText;
+        ResponseContent: BigText;
+        Request: JsonObject;
+        ResponseType: Text[100];
+        Serialized: Text;
+        StageId: Guid;
+        Exists: Boolean;
+    begin
+        // Story #11 AC04 | Time: none | Risk: owned staging committed before the expected rollback.
+        Initialize(Inspection);
+        Request := ImageRequest(Inspection, 'invalid', true, StageId);
+        Request.WriteTo(Serialized);
+        RequestContent.AddText(Serialized);
+        asserterror Dispatcher.Execute(Enum::"Message Type ori"::"Quality.Inspection.AddPicture", Enum::"Message Version ori"::"1.0", '', 'quality11-omit', 'application/json', RequestContent, ResponseContent, ResponseType, true);
+        Exists := Staging.Exists(StageId);
+        Cleanup(Inspection, StageId);
+        Assert.IsTrue(Exists, 'The caller rollback must restore staging after an omit-commit refusal.');
+    end;
+
     local procedure Initialize(var Inspection: Record "Qlty. Inspection Header")
     var
         RunCode: Code[20];

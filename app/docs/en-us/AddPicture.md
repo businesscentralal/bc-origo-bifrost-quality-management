@@ -27,7 +27,7 @@ The base64 text is also bounded to 1398104 characters before decoding.
 | `fileName` | Optional 1–250 character name without path separators; default `inspection-picture` |
 | `expectedCount` | Optional integer; must equal 1 (one inspection) |
 
-The detected image extension is appended to the name. Unknown keys are refused.
+The detected image extension is appended to the name; the base name is shortened to keep the stored name within 250 characters. Unknown keys are refused.
 
 ```json
 {
