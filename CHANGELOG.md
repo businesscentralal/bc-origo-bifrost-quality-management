@@ -23,6 +23,7 @@
 ### Added
 
 - `Quality.Disposition.CreatePutAway` creates unregistered internal/warehouse put-away documents through Microsoft disposition; bilingual contracts and guides, capability table and dispatcher tests (#16). Objects: enum extension 10035306, table 10035307, codeunits 10035308–10035309; tests 97276–97279 (reserved block).
+- #14: `Quality.Disposition.CreateTransferOrder` creates unposted transfer order(s) for the failed or passed stock of one inspection through the standard `Create Transfer Order` disposition (not idempotent; typed refusals; rollback on any failure; `BIFROST QM Full ori` capability). Objects: enum extension 10035298, codeunits 10035299 and 10035301, table 10035300; tests 97268 (codeunit), 97269 (fault), 97270 (permission set); guides in English and Icelandic.
 - #13: `Quality.Disposition.CreatePurchaseReturn` wraps the standard failed-quantity purchase return disposition, with strict inputs, transaction rollback, permission capability, bilingual contract/help and tests (10035244–10035247; tests 97210–97214).
 
 - Repository scaffolded from Bifrost Subscription Billing setup.
