@@ -707,34 +707,25 @@ codeunit 97292 "Quality Schedule Tst ori"
     local procedure SetConfirmation(Enabled: Boolean) Previous: Boolean
     var
         Setup: Record "Setup ori";
-        Dispatcher: Codeunit "Dispatcher ori";
-        Input: BigText;
-        Output: BigText;
         SetupRef: RecordRef;
         ConfirmationField: FieldRef;
-        MessageType: Enum "Message Type ori";
-        ContentType: Text[100];
-        Payload: JsonObject;
-        Fields: JsonObject;
-        Result: JsonObject;
-        ResponseText: Text;
-        TypeIndex: Integer;
+        SetupPage: TestPage "Setup ori";
+        Persisted: Boolean;
     begin
+        // Foundation's public administrator page enforces its own write gate.
+        // This fixture needs no Foundation Tests app and never bypasses that gate.
+        SetupPage.OpenEdit();
+        Previous := SetupPage."Require Irreversible Confirm".AsBoolean();
+        Assert.IsTrue(SetupPage."Require Irreversible Confirm".Editable(), 'Confirmation setup requires a Bifrost administrator.');
+        SetupPage."Require Irreversible Confirm".SetValue(Enabled);
+        SetupPage.Close();
+        Commit();
         Setup.Get();
         SetupRef.GetTable(Setup);
         ConfirmationField := SetupRef.Field(36);
-        Previous := ConfirmationField.Value();
+        Persisted := ConfirmationField.Value();
         SetupRef.Close();
-        Fields.Add('Require Irreversible Confirm', Enabled);
-        Payload.Add('fields', Fields);
-        Input.AddText(Serialize(Payload));
-        TypeIndex := MessageType.Names().IndexOf('Test.Setup.Set');
-        Assert.IsTrue(TypeIndex > 0, 'Foundation Tests must be installed for approved setup changes.');
-        MessageType := Enum::"Message Type ori".FromInteger(MessageType.Ordinals().Get(TypeIndex));
-        Dispatcher.Execute(MessageType, Enum::"Message Version ori"::"1.0", '', 'quality20-test-setup', 'application/json', Input, Output, ContentType, false);
-        Output.GetSubText(ResponseText, 1);
-        Result.ReadFrom(ResponseText);
-        Assert.AreEqual('Success', Result.GetText('status'), ResponseText);
+        Assert.AreEqual(Enabled, Persisted, 'The public Setup page must persist the requested confirmation setting.');
     end;
 
     local procedure AssertRoleRefusal(RoleName: Code[20])
