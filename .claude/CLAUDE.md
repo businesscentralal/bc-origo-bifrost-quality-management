@@ -75,6 +75,14 @@ Tests: 97200-97299
 | Table | 10035284 | Qlty Finish Access ori (empty permission capability) |
 | Test codeunit | 97230 | Qlty Insp Finish Tst ori |
 
+| Table | 10035314 | Quality Copy Access ori (issue 18, empty permission capability) |
+| Codeunit | 10035315 | Quality Copy Impl ori (`Quality.Template.Copy`) |
+| Enum extension | 10035316 | Quality Copy Types ori |
+| (reserved) | 10035317 | issue 18 block |
+| Test codeunit | 97284 | Quality Template Copy Tst ori |
+| Test codeunit | 97285 | Quality Copy Perm Tst ori |
+| (reserved) | 97286-97287 | issue 18 block |
+
 ## Microsoft source
 Wrapped Microsoft app: Quality Management (`bc7b3891-f61b-4883-bbb3-384cdef88bec`, 28.5.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management
 Read it there before designing message types.

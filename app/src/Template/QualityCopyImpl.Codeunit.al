@@ -161,9 +161,13 @@ codeunit 10035315 "Quality Copy Impl ori" implements "Msg Interface ori", "Msg D
         Report.Execute(Report::"Qlty. Inspection Copy Template", BuildRequestParameters(SourceCode, TargetCode, TargetDescription));
         TargetTemplate.Reset();
         TargetTemplate.ReadIsolation := IsolationLevel::Default;
-        TargetTemplate.SetLoadFields(Code, Description, "Copied From Template Code");
-        if not TargetTemplate.Get(TargetCode) then
+                if not TargetTemplate.Get(TargetCode) then
             Error(ErrorInfo.Create(StrSubstNo(NotCopiedErr, TargetCode)));
+        // The report falls back to the source description when its Description option is not applied headless; set the requested one on the new header only.
+        if TargetTemplate.Description <> TargetDescription then begin
+            TargetTemplate.Description := TargetDescription;
+            TargetTemplate.Modify(false);
+        end;
         TargetLine.SetRange("Template Code", TargetCode);
         Result.Add('templateCode', TargetTemplate.Code);
         Result.Add('description', TargetTemplate.Description);
@@ -189,13 +193,13 @@ codeunit 10035315 "Quality Copy Impl ori" implements "Msg Interface ori", "Msg D
                 Argument.RespondWithError("Bifrost Error Code ori"::UnknownParameter, StrSubstNo(UnknownKeyErr, KeyName), KeyName, '', AllowedKeysTxt, FixParameterTxt);
                 exit(false);
             end;
-        if not ReadText(Argument, Request, SourceKeyTok, true, MaxStrLen(SourceCode), CodeExpectedTxt, Value) then
+        if not ReadText(Request, 'sourceTemplateCode', Argument, true, MaxStrLen(SourceCode), CodeExpectedTxt, Value) then
             exit(false);
         SourceCode := CopyStr(Value, 1, MaxStrLen(SourceCode));
-        if not ReadText(Argument, Request, TargetKeyTok, true, MaxStrLen(TargetCode), CodeExpectedTxt, Value) then
+        if not ReadText(Request, 'targetTemplateCode', Argument, true, MaxStrLen(TargetCode), CodeExpectedTxt, Value) then
             exit(false);
         TargetCode := CopyStr(Value, 1, MaxStrLen(TargetCode));
-        if not ReadText(Argument, Request, DescriptionKeyTok, false, MaxStrLen(TargetDescription), DescriptionExpectedTxt, Value) then
+        if not ReadText(Request, 'targetDescription', Argument, false, MaxStrLen(TargetDescription), DescriptionExpectedTxt, Value) then
             exit(false);
         TargetDescription := CopyStr(Value, 1, MaxStrLen(TargetDescription));
         if SourceCode = TargetCode then begin
@@ -205,25 +209,18 @@ codeunit 10035315 "Quality Copy Impl ori" implements "Msg Interface ori", "Msg D
         exit(true);
     end;
 
-    local procedure ReadText(var Argument: Record "Message Argument ori"; Request: JsonObject; KeyName: Text; Required: Boolean; MaxLength: Integer; ExpectedTxt: Text; var Value: Text): Boolean
+    local procedure ReadText(Request: JsonObject; KeyName: Text; var Argument: Record "Message Argument ori"; Required: Boolean; MaxLength: Integer; ExpectedTxt: Text; var Value: Text): Boolean
     var
         Token: JsonToken;
     begin
         Value := '';
         if Request.Get(KeyName, Token) then
-            if Token.IsValue() then
-                if Token.AsValue().IsNull() or Token.AsValue().IsUndefined() then
-                    Clear(Token);
-        if Token.IsValue() then begin
-            if not IsJsonString(Token) then begin
-                Argument.RespondWithError("Bifrost Error Code ori"::InvalidParameter, StrSubstNo(InvalidTextErr, KeyName), KeyName, '', ExpectedTxt, FixParameterTxt);
-                exit(false);
-            end;
-            Value := Token.AsValue().AsText().Trim();
-        end else
-            if Request.Contains(KeyName) and not IsNullToken(Request, KeyName) then begin
-                Argument.RespondWithError("Bifrost Error Code ori"::InvalidParameter, StrSubstNo(InvalidTextErr, KeyName), KeyName, '', ExpectedTxt, FixParameterTxt);
-                exit(false);
+            if not IsNullToken(Token) then begin
+                if not IsJsonString(Token) then begin
+                    Argument.RespondWithError("Bifrost Error Code ori"::InvalidParameter, StrSubstNo(InvalidTextErr, KeyName), KeyName, '', ExpectedTxt, FixParameterTxt);
+                    exit(false);
+                end;
+                Value := Token.AsValue().AsText().Trim();
             end;
         if StrLen(Value) > MaxLength then begin
             Argument.RespondWithError("Bifrost Error Code ori"::InvalidParameter, StrSubstNo(TooLongErr, KeyName, MaxLength), KeyName, CopyStr(Value, 1, 250), ExpectedTxt, FixParameterTxt);
@@ -236,22 +233,19 @@ codeunit 10035315 "Quality Copy Impl ori" implements "Msg Interface ori", "Msg D
         exit(true);
     end;
 
+    local procedure IsNullToken(Token: JsonToken): Boolean
+    begin
+        if Token.IsValue() then
+            exit(Token.AsValue().IsNull() or Token.AsValue().IsUndefined());
+        exit(false);
+    end;
+
     local procedure IsJsonString(Token: JsonToken): Boolean
     var
         Serialized: Text;
     begin
         Token.WriteTo(Serialized);
         exit(CopyStr(Serialized, 1, 1) = '"');
-    end;
-
-    local procedure IsNullToken(Request: JsonObject; KeyName: Text): Boolean
-    var
-        Token: JsonToken;
-    begin
-        Request.Get(KeyName, Token);
-        if Token.IsValue() then
-            exit(Token.AsValue().IsNull() or Token.AsValue().IsUndefined());
-        exit(false);
     end;
 
     local procedure CheckTemplates(var Argument: Record "Message Argument ori"; SourceCode: Code[20]; TargetCode: Code[20]; TargetDescription: Text[100]): Boolean
