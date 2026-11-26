@@ -75,6 +75,14 @@ Tests: 97200-97299
 | Table | 10035284 | Qlty Finish Access ori (empty permission capability) |
 | Test codeunit | 97230 | Qlty Insp Finish Tst ori |
 
+| Enum extension | 10035298 | Quality Transfer Types ori (`Quality.Disposition.CreateTransferOrder`) |
+| Codeunit | 10035299 | Quality Transfer Impl ori |
+| Table | 10035300 | Quality Transfer Access ori (permission capability) |
+| Codeunit | 10035301 | Quality Transfer Capture ori |
+| Test codeunit | 97268 | Quality Transfer Tst ori |
+| Test codeunit | 97269 | Quality Transfer Fault ori |
+| Test permission set | 97270 | QM Transfer Test ori |
+
 ## Issue 20 reserved objects
 
 | Type | ID | Name |
