@@ -366,6 +366,7 @@ codeunit 97276 "Quality PutAway Tst ori"
         Token: JsonToken;
         DocumentToken: JsonToken;
         ExpectedSuccess: Boolean;
+        ConfirmationOn: Boolean;
         LanguageId: Integer;
         InitialEntries: Integer;
     begin
@@ -424,7 +425,12 @@ codeunit 97276 "Quality PutAway Tst ori"
                 Location.Modify(false);
             end;
             'count': Request.Replace('expectedCount', 0);
-            'preview': Request.Remove('expectedCount');
+            'preview': begin
+                Request.Remove('expectedCount');
+                // Omission previews only while Foundation's irreversible confirmation is on; when it is off the documented omission path executes.
+                ConfirmationOn := IrreversibleConfirmationEnabled();
+                ExpectedSuccess := not ConfirmationOn;
+            end;
         end;
         WarehouseEntry.SetRange("Item No.", Inspection."Source Item No.");
         InitialEntries := WarehouseEntry.Count();
@@ -488,13 +494,27 @@ codeunit 97276 "Quality PutAway Tst ori"
                 Assert.IsTrue(ReadText(Response, 'expected') <> '', 'Typed expectation required.');
                 Assert.IsTrue(ReadText(Response, 'nextStep') <> '', 'Typed recovery required.');
             end;
-            if Scenario = 'preview' then
+            if (Scenario = 'preview') and ConfirmationOn then
                 Assert.AreEqual('ConfirmationRequired', ReadText(Response, 'code'), 'Preview must use count protocol.');
             if Scenario = 'count' then
                 Assert.AreEqual('ConfirmationMismatch', ReadText(Response, 'code'), 'Mismatch must use count protocol.');
         end;
         Assert.AreEqual(InitialEntries, WarehouseEntry.Count(), 'No warehouse stock registration or posting.');
         Fixture.Cleanup(Inspection, Location);
+    end;
+
+    local procedure IrreversibleConfirmationEnabled(): Boolean
+    var
+        SetupRef: RecordRef;
+        ConfirmField: FieldRef;
+    begin
+        // The flag is internal to Foundation (field 36, on by default); read it by number so the assertion matches the tenant setup.
+        SetupRef.Open(Database::"Setup ori");
+        if not SetupRef.FindFirst() then
+            exit(true);
+        ConfirmField := SetupRef.Field(36);
+        Assert.AreEqual('Require Irreversible Confirm', ConfirmField.Name(), 'Foundation field 36 must be the irreversible confirmation flag.');
+        exit(ConfirmField.Value());
     end;
 
     local procedure Dispatch(Request: JsonObject; LanguageId: Integer) Response: JsonObject
