@@ -134,7 +134,10 @@ codeunit 10035297 "Quality Picture Proc ori"
         exit('base64');
     end;
 
-    local procedure ReadText(Request: JsonObject; Name: Text; var Argument: Record "Message Argument ori") Value: Text
+    local procedure ReadText(
+        Request: JsonObject;
+        Name: Text;
+        var Argument: Record "Message Argument ori") Value: Text
     var
         Token: JsonToken;
         Serialized: Text;
@@ -149,7 +152,10 @@ codeunit 10035297 "Quality Picture Proc ori"
             Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(InvalidLbl, Name), Name, TextExpectedLbl);
     end;
 
-    local procedure ReadGuid(Request: JsonObject; Name: Text; var Argument: Record "Message Argument ori") Value: Guid
+    local procedure ReadGuid(
+        Request: JsonObject;
+        Name: Text;
+        var Argument: Record "Message Argument ori") Value: Guid
     begin
         if not Evaluate(Value, ReadText(Request, Name, Argument)) then
             Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(InvalidLbl, Name), Name, GuidLbl);
@@ -199,7 +205,12 @@ codeunit 10035297 "Quality Picture Proc ori"
         Picture.FromStream(Input);
     end;
 
-    local procedure Refuse(var Argument: Record "Message Argument ori"; Code: Enum "Bifrost Error Code ori"; Message: Text; Parameter: Text; Expected: Text)
+    local procedure Refuse(
+        var Argument: Record "Message Argument ori";
+        Code: Enum "Bifrost Error Code ori";
+        Message: Text;
+        Parameter: Text;
+        Expected: Text)
     begin
         Argument.AddError(Code, Message, Parameter, '', Expected, NextLbl);
         Argument.RaiseCollectedErrors(Code, Message);

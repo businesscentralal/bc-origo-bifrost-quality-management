@@ -1,7 +1,7 @@
 namespace Origo.Bifrost.QualityManagement.Test;
 
-using Origo.Bifrost.QualityManagement;
 using Microsoft.QualityManagement.Document;
+using Origo.Bifrost.QualityManagement;
 
 /// <summary>Grants the app capability without native inspection modify permission, for a strict-user negative test.</summary>
 permissionset 97266 "QM Picture Test ori"

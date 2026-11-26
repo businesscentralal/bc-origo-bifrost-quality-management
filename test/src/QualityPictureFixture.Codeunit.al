@@ -144,13 +144,14 @@ codeunit 97265 "Quality Picture Fixture ori" implements "Msg Interface ori"
         if FormatName in ['png', 'jpg', 'gif'] then begin
             Blob.CreateInStream(Input);
             Picture.FromStream(Input);
-            if FormatName = 'png' then
-                Picture.SetFormat(Enum::"Image Format"::Png)
-            else
-                if FormatName = 'gif' then
-                    Picture.SetFormat(Enum::"Image Format"::Gif)
+            case FormatName of
+                'png':
+                    Picture.SetFormat(Enum::"Image Format"::Png);
+                'gif':
+                    Picture.SetFormat(Enum::"Image Format"::Gif);
                 else
                     Picture.SetFormat(Enum::"Image Format"::Jpeg);
+            end;
             Clear(Blob);
             Blob.CreateOutStream(Output);
             Picture.Save(Output);
