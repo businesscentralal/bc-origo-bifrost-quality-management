@@ -3,7 +3,7 @@ namespace Origo.Bifrost.QualityManagement;
 using Microsoft.QualityManagement.Permissions;
 
 /// <summary>
-/// Grants inspection creation, finish, reopen, test-value, purchase-return and inventory disposition execution, app write capabilities and Microsoft Quality Admin and Inspector permissions; other Microsoft business-data permissions remain required.
+/// Grants inspection creation, finish, reopen, test-value, purchase-return, inventory and item tracking disposition execution, app write capabilities and Microsoft Quality Admin and Inspector permissions; other Microsoft business-data permissions remain required.
 /// Microsoft ReopenInspection still requires the Quality Admin role, or SUPER, to be assigned to the user.
 /// With Quality Admin write access, Microsoft offers to assign a modified inspection to the user in interactive sessions,
 /// which reads the user's own My Notifications setting; the read grant lets finish run under this role alone.
@@ -14,7 +14,11 @@ permissionset 10035237 "BIFROST QM Full ori"
     Access = Public;
     Caption = 'Bifrost Quality Full', MaxLength = 30, Comment = 'is-IS=Bifröst - gæði fullur aðgangur';
     IncludedPermissionSets = "BIFROST Quality ori", "QltyMgmt - Admin", "QltyMgmt - Inspector", "BIFROST QM Notify ori";
-    Permissions = codeunit "Quality Create Impl ori" = X,
+    Permissions = codeunit "Quality Picture Impl ori" = X,
+        codeunit "Quality Picture Proc ori" = X,
+        table "Quality Picture Access ori" = X,
+        tabledata "Quality Picture Access ori" = RIMD,
+        codeunit "Quality Create Impl ori" = X,
         codeunit "Quality Create Context ori" = X,
         codeunit "Quality Set Value Impl ori" = X,
         table "Quality Write Access ori" = X,
@@ -38,6 +42,9 @@ permissionset 10035237 "BIFROST QM Full ori"
         codeunit "Quality Neg Adj Impl ori" = X,
         table "Quality Neg Adj Access ori" = X,
         tabledata "Quality Neg Adj Access ori" = RIMD,
+        codeunit "Quality Track Impl ori" = X,
+        table "Quality Track Access ori" = X,
+        tabledata "Quality Track Access ori" = RIMD,
         codeunit "Quality Transfer Impl ori" = X,
         codeunit "Quality Transfer Capture ori" = X,
         table "Quality Transfer Access ori" = X,
