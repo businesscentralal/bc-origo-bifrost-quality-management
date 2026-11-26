@@ -19,6 +19,7 @@ codeunit 97279 "Quality PutAway Fixture ori"
 {
     var
         HadSetup: Boolean;
+        HadInternalPutAwayNos: Boolean;
 
     /// <summary>Seeds demo stock in a native warehouse location created solely for this invocation.</summary>
     procedure Seed(var Inspection: Record "Qlty. Inspection Header"; var Location: Record Location; var SourceBin: Record Bin)
@@ -30,6 +31,7 @@ codeunit 97279 "Quality PutAway Fixture ori"
         Entry: Record "Warehouse Entry";
         Setup: Record "Qlty. Management Setup";
         Employee: Record "Warehouse Employee";
+        WarehouseSetup: Record "Warehouse Setup";
         Warehouse: Codeunit "Library - Warehouse";
         FixtureNo: Code[10];
         NextEntryNo: Integer;
@@ -45,6 +47,11 @@ codeunit 97279 "Quality PutAway Fixture ori"
         ItemUnit.Code := FixtureNo;
         ItemUnit."Qty. per Unit of Measure" := 1;
         ItemUnit.Insert(false);
+        if not WarehouseSetup.Get() then
+            WarehouseSetup.Insert(false);
+        HadInternalPutAwayNos := WarehouseSetup."Whse. Internal Put-away Nos." <> '';
+        if not HadInternalPutAwayNos then
+            Warehouse.NoSeriesSetup(WarehouseSetup);
         Warehouse.CreateFullWMSLocation(Location, 3);
         Warehouse.CreateWarehouseEmployee(Employee, Location.Code, false);
         Warehouse.FindBin(SourceBin, Location.Code, 'QC', 1);
@@ -98,6 +105,7 @@ codeunit 97279 "Quality PutAway Fixture ori"
         ItemUnit: Record "Item Unit of Measure";
         Unit: Record "Unit of Measure";
         Setup: Record "Qlty. Management Setup";
+        WarehouseSetup: Record "Warehouse Setup";
     begin
         if (CopyStr(Inspection."No.", 1, 3) <> 'Q16') or (Inspection."Location Code" <> Location.Code) then
             Error('Only the supplied owned Q16 fixture may be removed.');
@@ -142,5 +150,10 @@ codeunit 97279 "Quality PutAway Fixture ori"
         if not HadSetup then
             if Setup.Get() then
                 Setup.Delete(false);
+        if not HadInternalPutAwayNos then
+            if WarehouseSetup.Get() then begin
+                WarehouseSetup."Whse. Internal Put-away Nos." := '';
+                WarehouseSetup.Modify(false);
+            end;
     end;
 }
