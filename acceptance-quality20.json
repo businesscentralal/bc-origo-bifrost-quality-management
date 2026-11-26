@@ -1,0 +1,35 @@
+{
+  "issue": "https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/20",
+  "criteria": {
+    "AC01": {
+      "implemented": false,
+      "verified": false,
+      "pending": "Implementation and exact-head verification"
+    },
+    "AC02": {
+      "implemented": false,
+      "verified": false,
+      "pending": "Implementation and exact-head verification"
+    },
+    "AC03": {
+      "implemented": false,
+      "verified": false,
+      "pending": "Implementation and exact-head verification"
+    },
+    "AC04": {
+      "implemented": false,
+      "verified": false,
+      "pending": "Implementation and exact-head verification"
+    },
+    "AC05": {
+      "implemented": false,
+      "verified": false,
+      "pending": "Implementation and exact-head verification"
+    },
+    "AC06": {
+      "implemented": false,
+      "verified": false,
+      "pending": "Implementation and exact-head verification"
+    }
+  }
+}
