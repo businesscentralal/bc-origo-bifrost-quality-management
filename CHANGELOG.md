@@ -1,6 +1,10 @@
 # Changelog
 
-## [28.0.0.0] - Unreleased
+## [29.0.0.0] - Unreleased
+
+### Changed
+
+- Raised the floor to Business Central 29.0: version, application and platform 29.0.0.0, runtime 18.0, Microsoft Quality Management 29.0.0.0, and the CI artifact on 29.0 (Test Current on 29.1). Gunnar 26.11.2026. Supersedes the 28.0 floor work in #42.
 
 ### Added
 
