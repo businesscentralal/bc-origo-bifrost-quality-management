@@ -121,22 +121,25 @@ codeunit 97265 "Quality Picture Fixture ori" implements "Msg Interface ori"
     var
         Convert: Codeunit "Base64 Convert";
         Picture: Codeunit Image;
+        SeedBlob: Codeunit "Temp Blob";
         Input: InStream;
         Output: OutStream;
-        PaddingByte: Byte;
+        SeedOutput: OutStream;
+        Value: Byte;
         Index: Integer;
         TargetSize: Integer;
     begin
         Clear(Blob);
-        Blob.CreateOutStream(Output);
         if FormatName = 'invalid' then begin
+            Blob.CreateOutStream(Output);
             Output.WriteText('not an image');
             exit;
         end;
         // Generated BMP file header, BITMAPINFOHEADER and one red pixel; no external file or provider.
-        Convert.FromBase64('Qk06AAAAAAAAADYAAAAoAAAAAQAAAAEAAAABABgAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AA==', Output);
+        SeedBlob.CreateOutStream(SeedOutput);
+        Convert.FromBase64('Qk06AAAAAAAAADYAAAAoAAAAAQAAAAEAAAABABgAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AA==', SeedOutput);
+        SeedBlob.CreateInStream(Input);
         if FormatName in ['png', 'jpg', 'gif'] then begin
-            Blob.CreateInStream(Input);
             Picture.FromStream(Input);
             case FormatName of
                 'png':
@@ -146,18 +149,23 @@ codeunit 97265 "Quality Picture Fixture ori" implements "Msg Interface ori"
                 else
                     Picture.SetFormat(Enum::"Image Format"::Jpeg);
             end;
-            Clear(Blob);
             Blob.CreateOutStream(Output);
             Picture.Save(Output);
+            exit;
+        end;
+        // One writer owns the entire output cursor. Do not reuse the Base64 Convert writer for appending.
+        Blob.CreateOutStream(Output);
+        while not Input.EOS() do begin
+            Input.Read(Value);
+            Output.Write(Value);
         end;
         if FormatName in ['limit', 'oversize'] then begin
-            // Output still points to the BMP blob; append harmless trailing bytes to exercise exact size limits.
             TargetSize := 1048576;
             if FormatName = 'oversize' then
                 TargetSize += 1;
-            PaddingByte := 0;
-            for Index := Blob.Length() + 1 to TargetSize do
-                Output.Write(PaddingByte);
+            Value := 0;
+            for Index := SeedBlob.Length() + 1 to TargetSize do
+                Output.Write(Value);
             if Blob.Length() <> TargetSize then
                 Error('Generated fixture has %1 bytes; expected %2.', Blob.Length(), TargetSize);
         end;

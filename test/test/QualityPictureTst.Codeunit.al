@@ -675,6 +675,7 @@ codeunit 97264 "Quality Picture Tst ori"
         Request.WriteTo(Serialized);
         RequestContent.AddText(Serialized);
         asserterror Dispatcher.Execute(Enum::"Message Type ori"::"Quality.Inspection.AddPicture", Enum::"Message Version ori"::"1.0", '', 'quality11-omit', 'application/json', RequestContent, ResponseContent, ResponseType, true);
+        Assert.ExpectedError('Parameter base64/stagingId is invalid.');
         Exists := Staging.Exists(StageId);
         Cleanup(Inspection, StageId);
         Assert.IsTrue(Exists, 'The caller rollback must restore staging after an omit-commit refusal.');
