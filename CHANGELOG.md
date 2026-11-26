@@ -2,6 +2,10 @@
 
 ## [28.0.0.0] - Unreleased
 
+### Added
+
+- #15: `Quality.Disposition.CreateNegativeAdjustment` writes off the failed or passed quantity of one inspection with a negative inventory adjustment through Microsoft's `Qlty. Disp. Neg. Adjust Inv.` disposition, left in the journal or posted with `postImmediately=true` (irreversible when posting, not idempotent, atomic rollback). Objects: table 10035302 `Quality Neg Adj Access ori`, codeunit 10035303 `Quality Neg Adj Impl ori`, enum extension 10035304 `Quality Neg Adj Types ori` (value 10035302); tests 97272 `Quality Neg Adj Tst ori`, 97273 `Quality Neg Adj Fault ori`. Guides in English and Icelandic.
+
 ### Fixed
 
 - #39: Raise the Foundation dependency minimum to 28.0.15.6 in both apps and correct the context-sensitive help URL to include `/help/`. Align the standalone help-link checker with the release help instance and add six regression cases. Regenerate the Icelandic XLF order without changing its 198 translations. No new object IDs.

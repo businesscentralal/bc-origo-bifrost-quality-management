@@ -75,6 +75,12 @@ Tests: 97200-97299
 | Table | 10035284 | Qlty Finish Access ori (empty permission capability) |
 | Test codeunit | 97230 | Qlty Insp Finish Tst ori |
 
+| Table | 10035302 | Quality Neg Adj Access ori (permission capability, issue 15) |
+| Codeunit | 10035303 | Quality Neg Adj Impl ori (`Quality.Disposition.CreateNegativeAdjustment`) |
+| Enum extension | 10035304 | Quality Neg Adj Types ori (value 10035302) |
+| Test codeunit | 97272 | Quality Neg Adj Tst ori |
+| Test codeunit | 97273 | Quality Neg Adj Fault ori |
+
 ## Microsoft source
 Wrapped Microsoft app: Quality Management (`bc7b3891-f61b-4883-bbb3-384cdef88bec`, 28.5.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management
 Read it there before designing message types.
