@@ -14,6 +14,7 @@ using Microsoft.Inventory.Setup;
 using Microsoft.QualityManagement.Document;
 using Microsoft.QualityManagement.Setup;
 using Origo.Bifrost;
+using System.Security.User;
 using System.TestLibraries.Security.AccessControl;
 using System.TestLibraries.Utilities;
 
@@ -25,6 +26,8 @@ codeunit 97272 "Quality Neg Adj Tst ori"
 
     var
         PriorSetup: Record "Qlty. Management Setup";
+        PriorGeneralLedgerSetup: Record "General Ledger Setup";
+        PriorUserSetup: Record "User Setup";
         Assert: Codeunit "Library Assert";
         LowerPermissions: Codeunit "Library - Lower Permissions";
         FixtureCode: Code[10];
@@ -32,6 +35,7 @@ codeunit 97272 "Quality Neg Adj Tst ori"
         PriorForceReport: Boolean;
         PriorWorkDate: Date;
         HadSetup: Boolean;
+        HadUserSetup: Boolean;
 
     /// <summary>The ordinal of the new enum value is pinned.</summary>
     [Test]
@@ -449,8 +453,22 @@ codeunit 97272 "Quality Neg Adj Tst ori"
         JournalTemplate: Record "Item Journal Template";
         JournalBatch: Record "Item Journal Batch";
         InventoryPeriod: Record "Inventory Period";
+        GeneralLedgerSetup: Record "General Ledger Setup";
+        UserSetup: Record "User Setup";
         Setup: Record "Qlty. Management Setup";
     begin
+        GeneralLedgerSetup.Get();
+        PriorGeneralLedgerSetup := GeneralLedgerSetup;
+        GeneralLedgerSetup."Allow Posting From" := 0D;
+        GeneralLedgerSetup."Allow Posting To" := 0D;
+        GeneralLedgerSetup.Modify(false);
+        HadUserSetup := UserSetup.Get(UserId());
+        if HadUserSetup then begin
+            PriorUserSetup := UserSetup;
+            UserSetup."Allow Posting From" := 0D;
+            UserSetup."Allow Posting To" := 0D;
+            UserSetup.Modify(false);
+        end;
         PriorWorkDate := WorkDate();
         InventoryPeriod.SetRange(Closed, true);
         if InventoryPeriod.FindLast() then
@@ -600,6 +618,8 @@ codeunit 97272 "Quality Neg Adj Tst ori"
         JournalTemplate: Record "Item Journal Template";
         JournalBatch: Record "Item Journal Batch";
         Setup: Record "Qlty. Management Setup";
+        GeneralLedgerSetup: Record "General Ledger Setup";
+        UserSetup: Record "User Setup";
     begin
         if CopyStr(FixtureCode, 1, 4) <> 'Q15-' then
             Error('Only owned Q15 fixtures may be removed.');
@@ -623,6 +643,16 @@ codeunit 97272 "Quality Neg Adj Tst ori"
         Unit.Delete(false);
         Location.Get(FixtureCode);
         Location.Delete(false);
+        GeneralLedgerSetup.Get();
+        GeneralLedgerSetup."Allow Posting From" := PriorGeneralLedgerSetup."Allow Posting From";
+        GeneralLedgerSetup."Allow Posting To" := PriorGeneralLedgerSetup."Allow Posting To";
+        GeneralLedgerSetup.Modify(false);
+        if HadUserSetup then begin
+            UserSetup.Get(UserId());
+            UserSetup."Allow Posting From" := PriorUserSetup."Allow Posting From";
+            UserSetup."Allow Posting To" := PriorUserSetup."Allow Posting To";
+            UserSetup.Modify(false);
+        end;
         WorkDate(PriorWorkDate);
         if HadSetup then begin
             Setup.Get();
