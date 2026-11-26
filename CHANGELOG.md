@@ -2,6 +2,10 @@
 
 ## [28.0.0.0] - Unreleased
 
+### Added
+
+- [#17](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/17): `Quality.Disposition.ChangeItemTracking` changes the lot, serial or package number or the expiration date of one inspection's stock through Microsoft's `Change Item Tracking` disposition (item or warehouse reclassification journal), prepared or posted with `postImmediately=true`. Irreversible when posting, not idempotent; standard posting is bound through `Quality Move Posting ori` (10035272) so a late refusal rolls back lines and entries. Typed refusals before any change; an inspection without lot, serial or package number is refused. Objects: enum extension 10035310 `Quality Track Types ori` (value 10035310), codeunit 10035311 `Quality Track Impl ori`, table 10035312 `Quality Track Access ori` (capability granted by `BIFROST QM Full ori`); tests 97280 `Quality Track Tst ori`, 97281 `Quality Track Fault ori`. Guides in English and Icelandic.
+
 ### Fixed
 
 - #39: Raise the Foundation dependency minimum to 28.0.15.6 in both apps and correct the context-sensitive help URL to include `/help/`. Align the standalone help-link checker with the release help instance and add six regression cases. Regenerate the Icelandic XLF order without changing its 198 translations. No new object IDs.

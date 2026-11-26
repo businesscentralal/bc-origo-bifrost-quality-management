@@ -74,6 +74,13 @@ Tests: 97200-97299
 | Codeunit | 10035283 | Qlty Insp Finish Proc ori |
 | Table | 10035284 | Qlty Finish Access ori (empty permission capability) |
 | Test codeunit | 97230 | Qlty Insp Finish Tst ori |
+| Enum extension | 10035310 | Quality Track Types ori (`Quality.Disposition.ChangeItemTracking`, value 10035310, issue 17) |
+| Codeunit | 10035311 | Quality Track Impl ori |
+| Table | 10035312 | Quality Track Access ori (permission capability) |
+| Reserved | 10035313 | issue 17 reserve (unused) |
+| Test codeunit | 97280 | Quality Track Tst ori |
+| Test codeunit | 97281 | Quality Track Fault ori |
+| Reserved | 97282-97283 | issue 17 reserve (unused) |
 
 ## Microsoft source
 Wrapped Microsoft app: Quality Management (`bc7b3891-f61b-4883-bbb3-384cdef88bec`, 28.5.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management
