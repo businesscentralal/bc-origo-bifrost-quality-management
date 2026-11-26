@@ -438,6 +438,7 @@ codeunit 97276 "Quality PutAway Tst ori"
                 if Scenario in ['fullRole', 'noNative'] then
                     LowerPermissions.AddPermissionSet('BIFROST QM Full ori');
                 if Scenario = 'fullRole' then
+                    LowerPermissions.AddPermissionSet('D365 BUS FULL ACCESS');
                     LowerPermissions.AddPermissionSet('D365 WHSE, EDIT');
             end;
         end;

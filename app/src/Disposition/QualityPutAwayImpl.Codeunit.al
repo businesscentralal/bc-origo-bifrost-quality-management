@@ -40,7 +40,8 @@ codeunit 10035308 "Quality PutAway Impl ori" implements "Msg Interface ori", "Ms
             Argument.RespondWithLastError();
     end;
 
-    [CommitBehavior(CommitBehavior::Error)]
+    // Native release and put-away creation call Commit(); Ignore keeps the whole operation in one transaction, so any later refusal rolls back every document.
+    [CommitBehavior(CommitBehavior::Ignore)]
     local procedure PerformPutAway(var Argument: Record "Message Argument ori")
     var
         Capability: Record "Quality PutAway Access ori";

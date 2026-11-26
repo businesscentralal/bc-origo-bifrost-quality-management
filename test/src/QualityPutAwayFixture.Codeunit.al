@@ -68,6 +68,7 @@ codeunit 97279 "Quality PutAway Fixture ori"
             Setup.Insert(false);
         Inspection."No." := FixtureNo;
         Inspection."Source Item No." := Item."No.";
+        Inspection."Source RecordId" := Item.RecordId();
         Inspection."Location Code" := Location.Code;
         Inspection."Source Quantity (Base)" := 5;
         Inspection."Fail Quantity" := 3;
