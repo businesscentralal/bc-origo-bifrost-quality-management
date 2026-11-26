@@ -2,6 +2,10 @@
 
 ## [28.0.0.0] - Unreleased
 
+### Added
+
+- [#22](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/22): message type `Quality.Report.Print` renders the Certificate of Analysis, Non-Conformance or general inspection report for one inspection as a PDF with `Report.SaveAs` and returns it through Foundation staging (enum extension 10035318, implementation 10035319, process 10035332; tests 97255-97256). Read type: the only write is the Foundation staging row. Results over 10,485,760 bytes are refused. `BIFROST Quality ori` (10035236) grants execute on the two codeunits. Guides `PrintReport.md` in English and Icelandic.
+
 ### Fixed
 
 - #39: Raise the Foundation dependency minimum to 28.0.15.6 in both apps and correct the context-sensitive help URL to include `/help/`. Align the standalone help-link checker with the release help instance and add six regression cases. Regenerate the Icelandic XLF order without changing its 198 translations. No new object IDs.

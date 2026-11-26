@@ -1035,6 +1035,126 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Áhrif: lokin skoðun verður opin með staðlaðri ReopenInspection aðgerð. Magn sem stóðst og féll helst eins og aðgerðin skilur við það. Ídempotent: annað kall á opna skoðun breytir engu. Síðari endurskoðun er höfnun og breytir engu. Ekkert Commit er á staðlaðri leið. Viðskiptahöfnun bakfærir. Í ham án staðfestingar ber kallandi ábyrgð á bakfærslu.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Reopen Impl ori - Method GetNotes - NamedType NotesLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 1477048533" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an existing inspection SystemId</source>
+          <target>SystemId skoðunar sem er til</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId skoðunar sem er til</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType ExpectedIdTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 2056664512" size-unit="char" translate="yes" xml:space="preserve">
+          <source>en-US or is-IS</source>
+          <target>en-US eða is-IS</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=en-US eða is-IS</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType ExpectedLanguageTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 3045797580" size-unit="char" translate="yes" xml:space="preserve">
+          <source>certificateOfAnalysis, nonConformance or general</source>
+          <target>certificateOfAnalysis, nonConformance eða general</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=certificateOfAnalysis, nonConformance eða general</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType ExpectedReportTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 180107814" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read the inspection SystemId using Data.Records.Get.</source>
+          <target>Lestu SystemId skoðunar með Data.Records.Get.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu SystemId skoðunar með Data.Records.Get.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType FixIdTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 4050215807" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use en-US or is-IS, or omit languageCode.</source>
+          <target>Notaðu en-US eða is-IS, eða slepptu languageCode.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notaðu en-US eða is-IS, eða slepptu languageCode.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType FixLanguageTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 967965275" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use certificateOfAnalysis, nonConformance or general.</source>
+          <target>Notaðu certificateOfAnalysis, nonConformance eða general.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notaðu certificateOfAnalysis, nonConformance eða general.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType FixReportTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 3820335595" size-unit="char" translate="yes" xml:space="preserve">
+          <source>inspectionSystemId must be a non-empty GUID.</source>
+          <target>inspectionSystemId verður að vera GUID sem er ekki tómt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=inspectionSystemId verður að vera GUID sem er ekki tómt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType InvalidIdErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 2930502762" size-unit="char" translate="yes" xml:space="preserve">
+          <source>languageCode must be en-US or is-IS.</source>
+          <target>languageCode verður að vera en-US eða is-IS.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=languageCode verður að vera en-US eða is-IS.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType InvalidLanguageErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 3715240390" size-unit="char" translate="yes" xml:space="preserve">
+          <source>report must be certificateOfAnalysis, nonConformance or general.</source>
+          <target>report verður að vera certificateOfAnalysis, nonConformance eða general.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=report verður að vera certificateOfAnalysis, nonConformance eða general.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType InvalidReportErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 823878488" size-unit="char" translate="yes" xml:space="preserve">
+          <source>inspectionSystemId is required and must identify an existing inspection.</source>
+          <target>inspectionSystemId er áskilið og verður að auðkenna skoðun sem er til.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=inspectionSystemId er áskilið og verður að auðkenna skoðun sem er til.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType MissingIdErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 3557925809" size-unit="char" translate="yes" xml:space="preserve">
+          <source>report is required: certificateOfAnalysis, nonConformance or general.</source>
+          <target>report er áskilið: certificateOfAnalysis, nonConformance eða general.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=report er áskilið: certificateOfAnalysis, nonConformance eða general.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType MissingReportErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You need read access to the quality inspection and permission to run the report.</source>
+          <target>Þú þarft lesaðgang að gæðaskoðuninni og heimild til að keyra skýrsluna.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú þarft lesaðgang að gæðaskoðuninni og heimild til að keyra skýrsluna.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType PermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 1738233936" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for the Bifrost Quality Read role and the Microsoft Quality Management read permissions.</source>
+          <target>Biddu stjórnanda um hlutverkið Bifrost Quality Read og lesheimildir Microsoft Quality Management.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu stjórnanda um hlutverkið Bifrost Quality Read og lesheimildir Microsoft Quality Management.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType PermissionNextTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - NamedType 2912406318" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unknown parameter %1. Nothing was rendered.</source>
+          <target>Óþekkt viðfang %1. Engin skýrsla var búin til.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = request key, is-IS=Óþekkt viðfang %1. Engin skýrsla var búin til.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - NamedType UnknownKeyErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - Method 4077369804 - NamedType 3569966352" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Renders the Certificate of Analysis, Non-Conformance or general inspection report for one quality inspection as a PDF and returns it through Foundation staging. Changes no business data.</source>
+          <target>Býr til greiningarvottorð, frávikaskýrslu eða almenna skoðunarskýrslu fyrir eina gæðaskoðun sem PDF og skilar henni í gegnum biðsvæði Foundation. Breytir engum viðskiptagögnum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Býr til greiningarvottorð, frávikaskýrslu eða almenna skoðunarskýrslu fyrir eina gæðaskoðun sem PDF og skilar henni í gegnum biðsvæði Foundation. Breytir engum viðskiptagögnum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>quality report, certificate of analysis, non-conformance report, inspection report, pdf, print</source>
+          <target>gæðaskýrsla, greiningarvottorð, frávikaskýrsla, skoðunarskýrsla, pdf, prenta</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=gæðaskýrsla, greiningarvottorð, frávikaskýrsla, skoðunarskýrsla, pdf, prenta</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2748960201 - Method 3650283039 - NamedType 2344026547" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Each call stages a new PDF; retrying creates another staging row. Results over 10485760 bytes are refused. The caller reads the staged PDF with the existing staging types. The session language is restored after rendering, also after a refusal.</source>
+          <target>Hvert kall býr til nýtt PDF í biðsvæði; endurtekning býr til aðra biðsvæðisfærslu. Niðurstöður yfir 10485760 bætum er hafnað. Kallandi les PDF úr biðsvæðinu með biðsvæðistegundum. Tungumál lotunnar er endurheimt eftir myndun, einnig eftir höfnun.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Hvert kall býr til nýtt PDF í biðsvæði; endurtekning býr til aðra biðsvæðisfærslu. Niðurstöður yfir 10485760 bætum er hafnað. Kallandi les PDF úr biðsvæðinu með biðsvæðistegundum. Tungumál lotunnar er endurheimt eftir myndun, einnig eftir höfnun.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Impl ori - Method GetNotes - NamedType NotesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1285969915 - NamedType 2296006256" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The rendered report is %1 bytes, which is over the limit of %2 bytes. Nothing was staged.</source>
+          <target>Skýrslan er %1 bæti sem er yfir mörkunum %2 bæti. Engu var komið fyrir í biðsvæði.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = rendered size, %2 = limit, is-IS=Skýrslan er %1 bæti sem er yfir mörkunum %2 bæti. Engu var komið fyrir í biðsvæði.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Proc ori - NamedType TooLargeErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1285969915 - NamedType 369842593" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a rendered report of at most 10485760 bytes</source>
+          <target>skýrsla sem er í mesta lagi 10485760 bæti</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=skýrsla sem er í mesta lagi 10485760 bæti</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Proc ori - NamedType TooLargeExpectedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1285969915 - NamedType 3722098594" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Print a smaller inspection, or read the data with Data.Records.Get.</source>
+          <target>Prentaðu minni skoðun eða lestu gögnin með Data.Records.Get.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Prentaðu minni skoðun eða lestu gögnin með Data.Records.Get.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Report Proc ori - NamedType TooLargeNextTxt</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1135174596 - NamedType 3569966352" maxwidth="250" size-unit="char" translate="yes" xml:space="preserve">
           <source>Sets a test value on an open quality inspection and recalculates its result.</source>
           <target>Skráir prófunargildi í opinni gæðaskoðun og endurreiknar niðurstöðu hennar.</target>

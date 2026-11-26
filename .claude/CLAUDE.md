@@ -75,6 +75,12 @@ Tests: 97200-97299
 | Table | 10035284 | Qlty Finish Access ori (empty permission capability) |
 | Test codeunit | 97230 | Qlty Insp Finish Tst ori |
 
+| Enum extension | 10035318 | Quality Report Types ori (`Quality.Report.Print`) |
+| Codeunit | 10035319 | Quality Report Impl ori |
+| Codeunit | 10035332 | Quality Report Proc ori |
+| Test codeunit | 97255 | Quality Report Tst ori |
+| Test codeunit | 97256 | Quality Report Limit ori |
+
 ## Microsoft source
 Wrapped Microsoft app: Quality Management (`bc7b3891-f61b-4883-bbb3-384cdef88bec`, 28.5.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management
 Read it there before designing message types.
