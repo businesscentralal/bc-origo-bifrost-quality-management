@@ -81,6 +81,11 @@ Tests: 97200-97299
 | Test codeunit | 97280 | Quality Track Tst ori |
 | Test codeunit | 97281 | Quality Track Fault ori |
 | Reserved | 97282-97283 | issue 17 reserve (unused) |
+| Enum extension | 10035318 | Quality Report Types ori (`Quality.Report.Print`) |
+| Codeunit | 10035319 | Quality Report Impl ori |
+| Codeunit | 10035332 | Quality Report Proc ori |
+| Test codeunit | 97255 | Quality Report Tst ori |
+| Test codeunit | 97256 | Quality Report Limit ori |
 
 ## Issue 11 objects
 
