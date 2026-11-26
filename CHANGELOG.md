@@ -1,5 +1,8 @@
 # Changelog
 
+- #9: `Quality.Inspection.FindForRecord` reads inspections using Microsoft's public source-matching method, newest first, with latest-revision selection, a 100-row limit, typed refusals and Read-role execution. Added enum extension 10035290 and implementation/message ordinal 10035291; tests 97260 (codeunit), 97261/97263 (permission sets) and 97262 (source table), with English/Icelandic contracts and guides.
+
+
 ## [28.0.0.0] - Unreleased
 
 ### Fixed

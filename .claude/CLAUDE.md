@@ -146,3 +146,16 @@ Key rules always in effect:
 
 ## Testing Through the MCP Server
 - Keep MCP calls serial - parallel bursts crash the server.
+
+## Issue 9 object allocation
+
+| Type | ID | Name |
+| --- | --- | --- |
+| Enum extension | 10035290 | Quality Find Types ori |
+| Codeunit and message ordinal | 10035291 | Quality Find Impl ori / Quality.Inspection.FindForRecord |
+| Test codeunit | 97260 | Quality Find Tst ori |
+| Test permission set | 97261 | QM Find Test ori |
+| Test table | 97262 | Quality Find Source ori |
+| Test permission set | 97263 | QM Find Read ori |
+
+10035292-10035293 remain reserved for issue 9.
