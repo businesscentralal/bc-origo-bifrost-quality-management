@@ -2,6 +2,10 @@
 
 ## [28.0.0.0] - Unreleased
 
+### Added
+
+- [#17](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/17): `Quality.Disposition.ChangeItemTracking` changes the lot, serial or package number or the expiration date of one inspection's stock through Microsoft's `Change Item Tracking` disposition (item or warehouse reclassification journal), prepared or posted with `postImmediately=true`. Irreversible when posting, not idempotent; standard posting is bound through `Quality Move Posting ori` (10035272) so a late refusal rolls back lines and entries. Typed refusals before any change; an inspection without lot, serial or package number is refused. Objects: enum extension 10035310 `Quality Track Types ori` (value 10035310), codeunit 10035311 `Quality Track Impl ori`, table 10035312 `Quality Track Access ori` (capability granted by `BIFROST QM Full ori`); tests 97280 `Quality Track Tst ori`, 97281 `Quality Track Fault ori`. Guides in English and Icelandic.
+
 ### Fixed
 
 - #39: Raise the Foundation dependency minimum to 28.0.15.6 in both apps and correct the context-sensitive help URL to include `/help/`. Align the standalone help-link checker with the release help instance and add six regression cases. Regenerate the Icelandic XLF order without changing its 198 translations. No new object IDs.
@@ -22,6 +26,7 @@
 
 ### Added
 - [#18](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/18): `Quality.Template.Copy` copies one inspection template with all lines and result conditions to a new code through Microsoft report 20402 `Qlty. Inspection Copy Template` (single-copy path, `Report.Execute`). The target must not exist (`PreconditionFailed`); every input check and the `expectedCount` gate (count 1, Foundation `Confirm Gate ori`) run before any change. Permission marker table 10035314, implementation codeunit 10035315, enum extension 10035316 (10035317 reserved); granted by `BIFROST QM Full ori` (10035237), discovery-only in the base role (10035236). Guides `app/docs/en-us/CopyTemplate.md` and `app/docs/is-is/CopyTemplate.md`. Tests 97284 and 97285 (97286–97287 reserved).
+- [#11](https://github.com/businesscentralal/bc-origo-bifrost-quality-management/issues/11): `Quality.Inspection.AddPicture` replaces the most recent picture of an open inspection from base64 or owned staging, with byte-decoded JPEG/PNG/BMP validation, a 1 MiB limit, typed refusals, atomic staging/media rollback and Full capability checks. Adds enum extension 10035294, implementation 10035295, capability table 10035296 and processor 10035297; dispatcher tests/fixtures/permission set/enum extension 97264–97267 and bilingual contract/guides. Additional attachment and OneDrive handling is not applied.
 - #14: `Quality.Disposition.CreateTransferOrder` creates unposted transfer order(s) for the failed or passed stock of one inspection through the standard `Create Transfer Order` disposition (not idempotent; typed refusals; rollback on any failure; `BIFROST QM Full ori` capability). Objects: enum extension 10035298, codeunits 10035299 and 10035301, table 10035300; tests 97268 (codeunit), 97269 (fault), 97270 (permission set); guides in English and Icelandic.
 - #13: `Quality.Disposition.CreatePurchaseReturn` wraps the standard failed-quantity purchase return disposition, with strict inputs, transaction rollback, permission capability, bilingual contract/help and tests (10035244–10035247; tests 97210–97214).
 

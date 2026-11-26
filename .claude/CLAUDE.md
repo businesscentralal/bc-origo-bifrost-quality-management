@@ -74,6 +74,13 @@ Tests: 97200-97299
 | Codeunit | 10035283 | Qlty Insp Finish Proc ori |
 | Table | 10035284 | Qlty Finish Access ori (empty permission capability) |
 | Test codeunit | 97230 | Qlty Insp Finish Tst ori |
+| Enum extension | 10035310 | Quality Track Types ori (`Quality.Disposition.ChangeItemTracking`, value 10035310, issue 17) |
+| Codeunit | 10035311 | Quality Track Impl ori |
+| Table | 10035312 | Quality Track Access ori (permission capability) |
+| Reserved | 10035313 | issue 17 reserve (unused) |
+| Test codeunit | 97280 | Quality Track Tst ori |
+| Test codeunit | 97281 | Quality Track Fault ori |
+| Reserved | 97282-97283 | issue 17 reserve (unused) |
 
 | Table | 10035314 | Quality Copy Access ori (issue 18, empty permission capability) |
 | Codeunit | 10035315 | Quality Copy Impl ori (`Quality.Template.Copy`) |
@@ -82,6 +89,19 @@ Tests: 97200-97299
 | Test codeunit | 97284 | Quality Template Copy Tst ori |
 | Test codeunit | 97285 | Quality Copy Perm Tst ori |
 | (reserved) | 97286-97287 | issue 18 block |
+## Issue 11 objects
+
+| Type | ID | Name |
+| --- | --- | --- |
+| Enum extension | 10035294 | Quality Picture Types ori |
+| Codeunit | 10035295 | Quality Picture Impl ori |
+| Table | 10035296 | Quality Picture Access ori |
+| Codeunit | 10035297 | Quality Picture Proc ori |
+| Test codeunit | 97264 | Quality Picture Tst ori |
+| Test fixture codeunit | 97265 | Quality Picture Fixture ori |
+| Test permission set | 97266 | QM Picture Test ori |
+| Test fault codeunit | 97266 | Quality Picture Fault ori |
+| Test enum extension | 97267 | Quality Picture Fixtures ori |
 | Enum extension | 10035298 | Quality Transfer Types ori (`Quality.Disposition.CreateTransferOrder`) |
 | Codeunit | 10035299 | Quality Transfer Impl ori |
 | Table | 10035300 | Quality Transfer Access ori (permission capability) |

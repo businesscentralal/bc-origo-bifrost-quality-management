@@ -155,8 +155,8 @@ codeunit 97268 "Quality Transfer Tst ori"
     var
         Inspection: Record "Qlty. Inspection Header";
         Setup: Record "Setup ori";
-        PriorConfirm: Boolean;
         Fault: Codeunit "Quality Transfer Fault ori";
+        PriorConfirm: Boolean;
         Request: JsonObject;
         Response: JsonObject;
         ExpectSuccess: Boolean;
