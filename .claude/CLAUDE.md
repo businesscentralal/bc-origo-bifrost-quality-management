@@ -179,3 +179,16 @@ Key rules always in effect:
 | Test codeunit | 97277 | Quality PutAway Fault ori |
 | Test permission set | 97278 | QM PutAway Test ori |
 | Reserved test fixtures | 97279 | Issue 16 fixture reservation |
+
+## Issue 9 object allocation
+
+| Type | ID | Name |
+| --- | --- | --- |
+| Enum extension | 10035290 | Quality Find Types ori |
+| Codeunit and message ordinal | 10035291 | Quality Find Impl ori / Quality.Inspection.FindForRecord |
+| Test codeunit | 97260 | Quality Find Tst ori |
+| Test permission set | 97261 | QM Find Test ori |
+| Test table | 97262 | Quality Find Source ori |
+| Test permission set | 97263 | QM Find Read ori |
+
+10035292-10035293 remain reserved for issue 9.
