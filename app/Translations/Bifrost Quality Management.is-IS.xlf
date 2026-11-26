@@ -645,6 +645,132 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Quality.Inspection.Create, gæði, skoðun, stofna, sniðmát, uppruni</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Create Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
         </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 3569966352" maxwidth="250" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Finds quality inspections for one source record using Microsoft matching rules.</source>
+          <target>Finnur gæðaskoðanir fyrir eina upprunafærslu með samsvörunarreglum Microsoft.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Finnur gæðaskoðanir fyrir eina upprunafærslu með samsvörunarreglum Microsoft.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 3893098046" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a JSON boolean: true or false</source>
+          <target>JSON-rökgildi: true eða false</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=JSON-rökgildi: true eða false</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType ExpectedBoolLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 2401348933" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a non-empty SystemId GUID of an existing source record</source>
+          <target>SystemId GUID upprunafærslu sem er til og er ekki tómt</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId GUID upprunafærslu sem er til og er ekki tómt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType ExpectedGuidLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 1446145921" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a non-empty array of item, tracking and/or document with configured source values</source>
+          <target>ótómt fylki með item, tracking og/eða document og uppsettum upprunagildum</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=ótómt fylki með item, tracking og/eða document og uppsettum upprunagildum</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType ExpectedMatchLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 550874918" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a positive integer ID of an existing readable table</source>
+          <target>jákvætt heiltöluauðkenni töflu sem er til og má lesa</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=jákvætt heiltöluauðkenni töflu sem er til og má lesa</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType ExpectedTableLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 3501123091" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a text value</source>
+          <target>textagildi</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=textagildi</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType ExpectedTextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 3541817246" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read the source SystemId with Data.Records.Get and supply tableId and systemId.</source>
+          <target>Lestu SystemId upprunafærslunnar með Data.Records.Get og sendu tableId og systemId.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu SystemId upprunafærslunnar með Data.Records.Get og sendu tableId og systemId.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType FindSourceLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 4195077024" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the named request parameter and retry.</source>
+          <target>Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu tilgreinda færibreytu beiðninnar og reyndu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType FixParameterLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 79249435" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Defaults to true: only the most recent re-inspection of each inspection. false also returns superseded revisions.</source>
+          <target>Sjálfgefið true: aðeins nýjasta endurskoðun hverrar skoðunar. false skilar einnig eldri útgáfum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sjálfgefið true: aðeins nýjasta endurskoðun hverrar skoðunar. false skilar einnig eldri útgáfum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType LatestLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 3748526387" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Required non-empty array: item, tracking and/or document. The selected Microsoft filters are combined.</source>
+          <target>Nauðsynlegt ótómt fylki: item, tracking og/eða document. Valdar síur Microsoft eru sameinaðar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Nauðsynlegt ótómt fylki: item, tracking og/eða document. Valdar síur Microsoft eru sameinaðar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType MatchLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 1575191754" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The required parameter '%1' is missing or invalid.</source>
+          <target>Nauðsynlega færibreytu '%1' vantar eða hún er ógild.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name|is-IS=Nauðsynlega færibreytu '%1' vantar eða hún er ógild.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType MissingKeyErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 2344026547" size-unit="char" translate="yes" xml:space="preserve">
+          <source>tableId and systemId identify a visible source record. matchOn selects item, tracking and/or document matching using Microsoft source configuration. latestOnly defaults to true and selects the most recent re-inspection of each inspection. result is the native result code; status is the English enum name in both languages. truncated is true when more than 100 visible rows match. Missing source mappings or unavailable selected source values are InvalidParameter on matchOn. Native read permissions remain required.</source>
+          <target>tableId og systemId auðkenna sýnilega upprunafærslu. matchOn velur samsvörun eftir vöru, rakningu og/eða skjali með upprunauppsetningu Microsoft. latestOnly er sjálfgefið true og velur nýjustu endurskoðun hverrar skoðunar. result er staðlaður niðurstöðukóði; status er enskt heiti talningargildis á báðum tungumálum. truncated er true þegar fleiri en 100 sýnilegar línur passa. Ef upprunavörpun eða valin upprunagildi vantar er skilað InvalidParameter fyrir matchOn. Staðlaðar lesheimildir eru nauðsynlegar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=tableId og systemId auðkenna sýnilega upprunafærslu. matchOn velur samsvörun eftir vöru, rakningu og/eða skjali með upprunauppsetningu Microsoft. latestOnly er sjálfgefið true og velur nýjustu endurskoðun hverrar skoðunar. result er staðlaður niðurstöðukóði; status er enskt heiti talningargildis á báðum tungumálum. truncated er true þegar fleiri en 100 sýnilegar línur passa. Ef upprunavörpun eða valin upprunagildi vantar er skilað InvalidParameter fyrir matchOn. Staðlaðar lesheimildir eru nauðsynlegar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType NotesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The source record was not found.</source>
+          <target>Upprunafærslan fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Upprunafærslan fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType NotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 3593894611" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Returns up to 100 matching inspections, newest first by creation time, then inspection number and re-inspection number descending. No inspection is created or changed.</source>
+          <target>Skilar allt að 100 samsvarandi skoðunum, nýjustu fyrst eftir stofnunartíma, síðan skoðunarnúmeri og endurskoðunarnúmeri í lækkandi röð. Engin skoðun er stofnuð eða henni breytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Skilar allt að 100 samsvarandi skoðunum, nýjustu fyrst eftir stofnunartíma, síðan skoðunarnúmeri og endurskoðunarnúmeri í lækkandi röð. Engin skoðun er stofnuð eða henni breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType OverviewLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read permission on the source record and quality inspection header is required.</source>
+          <target>Lesheimild á upprunafærslu og gæðaskoðunarhaus er nauðsynleg.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lesheimild á upprunafærslu og gæðaskoðunarhaus er nauðsynleg.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType PermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 3932376842" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for native read permissions and BIFROST QM Read ori.</source>
+          <target>Biddu stjórnanda um staðlaðar lesheimildir og BIFROST QM Read ori.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu stjórnanda um staðlaðar lesheimildir og BIFROST QM Read ori.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType PermissionNextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 1352505902" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SystemId of the source record as a non-empty GUID string.</source>
+          <target>SystemId upprunafærslunnar sem ótómur GUID-strengur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId upprunafærslunnar sem ótómur GUID-strengur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType SourceIdLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 2089525003" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Numeric table ID of the source record in the current company.</source>
+          <target>Tölulegt töfluauðkenni upprunafærslunnar í núverandi fyrirtæki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Tölulegt töfluauðkenni upprunafærslunnar í núverandi fyrirtæki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType SourceTableLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 16173077" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SystemId in the table identified by tableId.</source>
+          <target>SystemId í töflunni sem tableId auðkennir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId í töflunni sem tableId auðkennir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType TargetLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - NamedType 2912406318" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unknown parameter '%1'.</source>
+          <target>Óþekkt færibreyta '%1'.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name|is-IS=Óþekkt færibreyta '%1'.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - NamedType UnknownKeyErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1044786624 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality.Inspection.FindForRecord, quality, inspection, find, item, tracking, document</source>
+          <target>Quality.Inspection.FindForRecord, gæði, skoðun, finna, vara, rakning, skjal</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Quality.Inspection.FindForRecord, gæði, skoðun, finna, vara, rakning, skjal</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Find Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 1955794892 - NamedType 3649760385" size-unit="char" translate="yes" xml:space="preserve">
           <source>Set confirm to true to authorize this inventory movement.</source>
           <target>Stilltu confirm á true til að heimila þennan birgðaflutning.</target>

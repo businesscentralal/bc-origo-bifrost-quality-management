@@ -13,7 +13,7 @@ permissionset 10035237 "BIFROST QM Full ori"
     Assignable = true;
     Access = Public;
     Caption = 'Bifrost Quality Full', MaxLength = 30, Comment = 'is-IS=Bifröst - gæði fullur aðgangur';
-    IncludedPermissionSets = "BIFROST Quality ori", "QltyMgmt - Admin", "QltyMgmt - Inspector", "BIFROST QM Notify ori", "BIFROST QM Schedule ori";
+    IncludedPermissionSets = "BIFROST Quality ori", "BIFROST QM Read ori", "QltyMgmt - Admin", "QltyMgmt - Inspector", "BIFROST QM Notify ori", "BIFROST QM Schedule ori";
     Permissions = tabledata "Quality Schedule Access ori" = RIMD,
         codeunit "Quality Picture Impl ori" = X,
         codeunit "Quality Picture Proc ori" = X,
