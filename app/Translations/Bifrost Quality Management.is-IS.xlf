@@ -27,6 +27,18 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Quality Move Access ori - Field Primary Key - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 1152976395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality picture access</source>
+          <target>Aðgangur að mynd skoðunar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðgangur að mynd skoðunar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Picture Access ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 1152976395 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary key</source>
+          <target>Aðallykill</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Picture Access ori - Field Primary Key - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 548483976 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quality action access</source>
           <target>Aðgangur að gæðaaðgerðum</target>
@@ -62,6 +74,18 @@
           <target>Aðallykill</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Quality Return Access ori - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3449367886 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality item tracking change</source>
+          <target>Breyting rakningar í gæðastjórnun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Breyting rakningar í gæðastjórnun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Track Access ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3449367886 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <target>Aðallykill</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Track Access ori - Field Primary Key - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 660877962 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quality transfer order</source>
@@ -849,6 +873,186 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Gæðabókun tilgreindi ekki færslubókarlínu. Hætt var við birgðaflutning.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Move Posting ori - NamedType MissingFilterErr</note>
         </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - NamedType 2059281007" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exactly one of base64 and stagingId. JPEG, PNG or BMP bytes; maximum 1048576 decoded bytes (1 MiB). Format is detected from bytes, never the file name.</source>
+          <target>Nákvæmlega annað af base64 og stagingId. JPEG-, PNG- eða BMP-bæti; að hámarki 1048576 afkóðuð bæti (1 MiB). Snið er greint úr bætum, aldrei skráarheiti.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Nákvæmlega annað af base64 og stagingId. JPEG-, PNG- eða BMP-bæti; að hámarki 1048576 afkóðuð bæti (1 MiB). Snið er greint úr bætum, aldrei skráarheiti.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType Base64Lbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - NamedType 1449450473" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Replaces Most Recent Picture using Media.ImportStream. Earlier pictures are not retained. No camera, file dialog, attachment or OneDrive handling. No external call.</source>
+          <target>Skiptir út Most Recent Picture með Media.ImportStream. Fyrri myndir eru ekki varðveittar. Engin myndavél, skráargluggi, viðhengi eða OneDrive-vinnsla. Engin ytri köll.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Skiptir út Most Recent Picture með Media.ImportStream. Fyrri myndir eru ekki varðveittar. Engin myndavél, skráargluggi, viðhengi eða OneDrive-vinnsla. Engin ytri köll.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType ChangesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - NamedType 3071622107" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Must equal 1 when supplied. Counts the one inspection, not its existing pictures.</source>
+          <target>Verður að vera 1 ef sent. Telur eina skoðun, ekki myndir sem fyrir eru.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Verður að vera 1 ef sent. Telur eina skoðun, ekki myndir sem fyrir eru.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType CountLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - NamedType 1670204571" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Missing, invalid or unknown input; finished or unknown inspection; unavailable staged upload; missing Full or native modify permission. Refusals carry parameter, expected and nextStep.</source>
+          <target>Inntak vantar, er ógilt eða óþekkt; lokin eða óþekkt skoðun; sviðssett upphleðsla ekki tiltæk; Full eða staðlaðar breytingaheimildir vantar. Höfnun inniheldur parameter, expected og nextStep.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Inntak vantar, er ógilt eða óþekkt; lokin eða óþekkt skoðun; sviðssett upphleðsla ekki tiltæk; Full eða staðlaðar breytingaheimildir vantar. Höfnun inniheldur parameter, expected og nextStep.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType ErrorsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - NamedType 36270934" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Attach an inspection picture</source>
+          <target>Bæta mynd við skoðun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Bæta mynd við skoðun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType ExampleLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - NamedType 3039504856" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Optional image name, 1 to 250 characters without path separators. A byte-detected image extension is appended, truncating the base name to fit 250 characters. Default: inspection-picture.</source>
+          <target>Valfrjálst myndheiti, 1 til 250 stafir án slóðaskilja. Viðskeyti greint úr bætum er bætt við og grunnheitið stytt svo heildin rúmist í 250 stöfum. Sjálfgefið: inspection-picture.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Valfrjálst myndheiti, 1 til 250 stafir án slóðaskilja. Viðskeyti greint úr bætum er bætt við og grunnheitið stytt svo heildin rúmist í 250 stöfum. Sjálfgefið: inspection-picture.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType FileLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - NamedType 2078768823" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the parameter or permission and retry. Failed calls preserve the old picture and staged upload.</source>
+          <target>Leiðréttu færibreytu eða heimild og reyndu aftur. Misheppnuð köll varðveita fyrri mynd og sviðsetta upphleðslu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu færibreytu eða heimild og reyndu aftur. Misheppnuð köll varðveita fyrri mynd og sviðsetta upphleðslu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType FixLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - NamedType 2007763471" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Always false. Native extra attachment and OneDrive handling is local/internal and is not called.</source>
+          <target>Alltaf false. Staðlað viðbótarferli fyrir viðhengi og OneDrive er staðbundið/innra og er ekki kallað.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Alltaf false. Staðlað viðbótarferli fyrir viðhengi og OneDrive er staðbundið/innra og er ekki kallað.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType HandlingLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - NamedType 4264074168" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SystemId of an open quality inspection.</source>
+          <target>SystemId opinnar gæðaskoðunar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId opinnar gæðaskoðunar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType IdentityLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - NamedType 2344026547" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The maximum image size is 1 MiB (1048576 bytes). Exactly one of base64 and stagingId is required. The public staging Take API consumes in the same transaction; all failures raise and roll back staging and media changes. In omit-commit mode the caller owns rollback and commit. Repeating a base64 call creates replacement media, so it is not idempotent. A staged upload can succeed only once. Unknown or foreign staging identifiers have the same refusal. Additional handling is unavailable through public Quality Management APIs; additionalHandlingApplied is false.</source>
+          <target>Hámarksstærð myndar er 1 MiB (1048576 bæti). Nákvæmlega annað af base64 og stagingId er áskilið. Opinbera Take-viðmótið fjarlægir sviðsetningu í sömu færslu; allar bilanir valda villu og bakfæra sviðsetningu og myndbreytingar. Í ham án staðfestingar ber kallandi ábyrgð á bakfærslu og staðfestingu. Endurtekið base64-kall býr til nýja mynd og er því ekki ídempotent. Sviðssett upphleðsla getur aðeins tekist einu sinni. Óþekkt auðkenni sviðsetningar og auðkenni í eigu annarra fá sömu höfnun. Viðbótarferli er ekki tiltækt í opinberum gæðastjórnunarviðmótum; additionalHandlingApplied er false.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Hámarksstærð myndar er 1 MiB (1048576 bæti). Nákvæmlega annað af base64 og stagingId er áskilið. Opinbera Take-viðmótið fjarlægir sviðsetningu í sömu færslu; allar bilanir valda villu og bakfæra sviðsetningu og myndbreytingar. Í ham án staðfestingar ber kallandi ábyrgð á bakfærslu og staðfestingu. Endurtekið base64-kall býr til nýja mynd og er því ekki ídempotent. Sviðssett upphleðsla getur aðeins tekist einu sinni. Óþekkt auðkenni sviðsetningar og auðkenni í eigu annarra fá sömu höfnun. Viðbótarferli er ekki tiltækt í opinberum gæðastjórnunarviðmótum; additionalHandlingApplied er false.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType NotesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - NamedType 4278021287" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Open inspection, BIFROST QM Full ori and native inspection modify permission.</source>
+          <target>Opin skoðun, BIFROST QM Full ori og staðlaðar breytingaheimildir á skoðun.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Opin skoðun, BIFROST QM Full ori og staðlaðar breytingaheimildir á skoðun.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType PreconditionsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - NamedType 4116846157" size-unit="char" translate="yes" xml:space="preserve">
+          <source>SystemId of an upload owned by this user in this company. Consumed on success; retained after every failure.</source>
+          <target>SystemId upphleðslu í eigu þessa notanda í þessu fyrirtæki. Fjarlægð við árangur; varðveitt eftir sérhverja bilun.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId upphleðslu í eigu þessa notanda í þessu fyrirtæki. Fjarlægð við árangur; varðveitt eftir sérhverja bilun.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType StagingLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - NamedType 16173077" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use data.inspectionSystemId.</source>
+          <target>Notaðu data.inspectionSystemId.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notaðu data.inspectionSystemId.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - NamedType TargetLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - Method 4077369804 - NamedType 3569966352" maxwidth="250" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Replaces the most recent picture of one open quality inspection with JPEG, PNG or BMP bytes from base64 or an owned staged upload.</source>
+          <target>Skiptir út nýjustu mynd einnar opinnar gæðaskoðunar fyrir JPEG-, PNG- eða BMP-bæti úr base64 eða eigin sviðssettri upphleðslu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Skiptir út nýjustu mynd einnar opinnar gæðaskoðunar fyrir JPEG-, PNG- eða BMP-bæti úr base64 eða eigin sviðssettri upphleðslu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - Method GetDescription - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 2766104975 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>quality, inspection, picture, photo, image, upload, evidence, staging</source>
+          <target>gæði, skoðun, mynd, ljósmynd, myndskrá, upphleðsla, sönnun, sviðsetning</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=gæði, skoðun, mynd, ljósmynd, myndskrá, upphleðsla, sönnun, sviðsetning</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 1786934718" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a file name of 1 to 250 characters without path separators</source>
+          <target>skráarheiti með 1 til 250 stöfum án slóðaskilja</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=skráarheiti með 1 til 250 stöfum án slóðaskilja</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType FileExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 212328767" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a non-empty SystemId GUID</source>
+          <target>SystemId GUID sem er ekki tómt</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId GUID sem er ekki tómt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType GuidLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 2161360639" size-unit="char" translate="yes" xml:space="preserve">
+          <source>JPEG, PNG or BMP bytes, at most 1048576 bytes</source>
+          <target>JPEG-, PNG- eða BMP-bæti, að hámarki 1048576 bæti</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=JPEG-, PNG- eða BMP-bæti, að hámarki 1048576 bæti</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType ImageLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 1066607173" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter %1 is invalid.</source>
+          <target>Færibreytan %1 er ógild.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name|is-IS=Færibreytan %1 er ógild.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType InvalidLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 1881555068" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The inspection was not found.</source>
+          <target>Skoðunin fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Skoðunin fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType MissingInspectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 1128910002" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter %1 is required.</source>
+          <target>Færibreytan %1 er áskilin.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name|is-IS=Færibreytan %1 er áskilin.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType MissingLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 2029447175" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the named parameter and retry; nothing was changed.</source>
+          <target>Leiðréttu tilgreinda færibreytu og reyndu aftur; engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu tilgreinda færibreytu og reyndu aftur; engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType NextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 3543965372" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an open inspection</source>
+          <target>opin skoðun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=opin skoðun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType OpenExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 4013669850" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The inspection must be open.</source>
+          <target>Skoðunin verður að vera opin.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Skoðunin verður að vera opin.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType OpenLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 1780497417" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BIFROST QM Full ori and native inspection modify permission</source>
+          <target>BIFROST QM Full ori og staðlaðar breytingaheimildir á skoðun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=BIFROST QM Full ori og staðlaðar breytingaheimildir á skoðun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType PermissionExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 2009142491" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BIFROST QM Full ori and native inspection modify permission are required.</source>
+          <target>BIFROST QM Full ori og staðlaðar breytingaheimildir á skoðun eru nauðsynlegar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=BIFROST QM Full ori og staðlaðar breytingaheimildir á skoðun eru nauðsynlegar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType PermissionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 1895768393" size-unit="char" translate="yes" xml:space="preserve">
+          <source>exactly one of base64 and stagingId</source>
+          <target>nákvæmlega annað af base64 og stagingId</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=nákvæmlega annað af base64 og stagingId</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType SourceLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 1381894812" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an upload owned by the current user in the current company</source>
+          <target>upphleðsla í eigu núverandi notanda í núverandi fyrirtæki</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=upphleðsla í eigu núverandi notanda í núverandi fyrirtæki</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType StageExpectedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 4116846157" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The staged upload is unavailable.</source>
+          <target>Sviðssetta upphleðslan er ekki tiltæk.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sviðssetta upphleðslan er ekki tiltæk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType StagingLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3883377797 - NamedType 1879669363" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a non-empty text value</source>
+          <target>textagildi sem er ekki tómt</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=textagildi sem er ekki tómt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Picture Proc ori - NamedType TextExpectedLbl</note>
+        </trans-unit>
         <trans-unit id="Codeunit 3642161633 - NamedType 132850674" size-unit="char" translate="yes" xml:space="preserve">
           <source>Business Central refusal</source>
           <target>Höfnun frá Business Central</target>
@@ -1304,6 +1508,234 @@
           <target>Quality.Inspection.SetTestValue, gæði, skoðun, prófunargildi, mæling, niðurstaða</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Quality.Inspection.SetTestValue, gæði, skoðun, prófunargildi, mæling, niðurstaða</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Set Value Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 3182862839" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send quantityBasis as failed or passed.</source>
+          <target>Sendu quantityBasis sem failed eða passed.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu quantityBasis sem failed eða passed.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType BasisNextStepLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 707992661" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send a JSON boolean.</source>
+          <target>Sendu JSON boolean gildi.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu JSON boolean gildi.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType BooleanNextStepLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 3611343619" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send newLotNo, newSerialNo, newPackageNo or newExpirationDate.</source>
+          <target>Sendu newLotNo, newSerialNo, newPackageNo eða newExpirationDate.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu newLotNo, newSerialNo, newPackageNo eða newExpirationDate.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ChangeNextStepLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 768128046" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send the exact location or bin code; filter syntax is not accepted.</source>
+          <target>Sendu nákvæman staðar- eða hólfskóða; síunarsetningafræði er ekki studd.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu nákvæman staðar- eða hólfskóða; síunarsetningafræði er ekki studd.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType CodeNextStepLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 3649760385" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Set confirm to true to authorize this item tracking change.</source>
+          <target>Stilltu confirm á true til að heimila þessa breytingu á rakningu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Stilltu confirm á true til að heimila þessa breytingu á rakningu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ConfirmErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 2402842631" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send confirm=true after the user has approved the item tracking change.</source>
+          <target>Sendu confirm=true þegar notandinn hefur samþykkt breytinguna á rakningu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu confirm=true þegar notandinn hefur samþykkt breytinguna á rakningu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ConfirmNextStepLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 3458237341" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send newExpirationDate as a JSON string such as 2027-06-30.</source>
+          <target>Sendu newExpirationDate sem JSON streng, t.d. 2027-06-30.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu newExpirationDate sem JSON streng, t.d. 2027-06-30.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType DateNextStepLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 3569966352" maxwidth="250" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Changes the lot, serial or package number or the expiration date of one quality inspection's stock with a reclassification journal, left prepared or posted now.</source>
+          <target>Breytir lotu-, rað- eða pakkanúmeri eða fyrningardagsetningu birgða einnar gæðaskoðunar með endurflokkunarbók, undirbúið eða bókað strax.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Breytir lotu-, rað- eða pakkanúmeri eða fyrningardagsetningu birgða einnar gæðaskoðunar með endurflokkunarbók, undirbúið eða bókað strax.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 1325809201" size-unit="char" translate="yes" xml:space="preserve">
+          <source>the SystemId of an existing inspection</source>
+          <target>SystemId núverandi skoðunar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId núverandi skoðunar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ExistingInspectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 1909209066" size-unit="char" translate="yes" xml:space="preserve">
+          <source>failed or passed</source>
+          <target>failed eða passed</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=failed eða passed</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ExpectedBasisLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 3412509508" size-unit="char" translate="yes" xml:space="preserve">
+          <source>true or false</source>
+          <target>true eða false</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=true eða false</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ExpectedBooleanLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 700243910" size-unit="char" translate="yes" xml:space="preserve">
+          <source>at least one new tracking value</source>
+          <target>að minnsta kosti eitt nýtt rakningargildi</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=að minnsta kosti eitt nýtt rakningargildi</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ExpectedChangeLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 1872587371" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an exact code without filter syntax</source>
+          <target>nákvæmur kóði án síunarsetningafræði</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=nákvæmur kóði án síunarsetningafræði</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ExpectedCodeLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 377467836" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a date in the form YYYY-MM-DD</source>
+          <target>dagsetning á forminu YYYY-MM-DD</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=dagsetning á forminu YYYY-MM-DD</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ExpectedDateLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 938906475" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a non-empty quality inspection SystemId GUID</source>
+          <target>SystemId GUID gæðaskoðunar sem er ekki tómt</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId GUID gæðaskoðunar sem er ekki tómt</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ExpectedIdLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 926790188" size-unit="char" translate="yes" xml:space="preserve">
+          <source>only the declared parameters</source>
+          <target>aðeins tilgreindar færibreytur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=aðeins tilgreindar færibreytur</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ExpectedKeysLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 2615093092" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a value within the stated maximum length</source>
+          <target>gildi innan tilgreindrar hámarkslengdar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=gildi innan tilgreindrar hámarkslengdar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ExpectedLengthLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 1885258209" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a JSON number greater than zero (base quantity)</source>
+          <target>JSON tala hærri en núll (grunneining)</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=JSON tala hærri en núll (grunneining)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ExpectedQuantityLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 3501123091" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a JSON string</source>
+          <target>JSON strengur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=JSON strengur</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ExpectedTextLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 4127545358" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an inspection of lot, serial or package tracked stock</source>
+          <target>skoðun á birgðum með lotu-, rað- eða pakkarakningu</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=skoðun á birgðum með lotu-, rað- eða pakkarakningu</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType ExpectedTrackedLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 1884902963" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read the inspection SystemId using Data.Records.Get and supply inspectionSystemId.</source>
+          <target>Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu SystemId skoðunar með Data.Records.Get og sendu inspectionSystemId.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType FindInspectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 248097893" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The required parameter %1 is missing or invalid.</source>
+          <target>Nauðsynlega færibreytu %1 vantar eða hún er ógild.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name|is-IS=Nauðsynlega færibreytu %1 vantar eða hún er ógild.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType InvalidKeyErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 1374767949" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Remove the parameter; only the declared parameters are accepted.</source>
+          <target>Fjarlægðu færibreytuna; aðeins tilgreindar færibreytur eru samþykktar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Fjarlægðu færibreytuna; aðeins tilgreindar færibreytur eru samþykktar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType KeysNextStepLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 135139493" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Shorten the value.</source>
+          <target>Styttu gildið.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Styttu gildið.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType LengthNextStepLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 1545318942" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specify at least one of newLotNo, newSerialNo, newPackageNo or newExpirationDate.</source>
+          <target>Tilgreindu að minnsta kosti eitt af newLotNo, newSerialNo, newPackageNo eða newExpirationDate.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Tilgreindu að minnsta kosti eitt af newLotNo, newSerialNo, newPackageNo eða newExpirationDate.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType NoChangeErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 3351274" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The quality inspection was not found.</source>
+          <target>Gæðaskoðunin fannst ekki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Gæðaskoðunin fannst ekki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType NotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 16123206" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Business Central did not create or post an item tracking change. Check the inspection quantity, stock and the reclassification batches in Quality Management Setup.</source>
+          <target>Business Central stofnaði ekki eða bókaði breytingu á rakningu. Athugaðu magn skoðunar, birgðir og endurflokkunarbunka í uppsetningu gæðastjórnunar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Business Central stofnaði ekki eða bókaði breytingu á rakningu. Athugaðu magn skoðunar, birgðir og endurflokkunarbunka í uppsetningu gæðastjórnunar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType NothingChangedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 1258913306" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The inspection has no lot, serial or package number, so its stock has no item tracking to change.</source>
+          <target>Skoðunin hefur ekkert lotu-, rað- eða pakkanúmer og því er engin rakning á birgðum hennar til að breyta.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Skoðunin hefur ekkert lotu-, rað- eða pakkanúmer og því er engin rakning á birgðum hennar til að breyta.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType NotTrackedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The BIFROST QM Full ori permission set is required.</source>
+          <target>Heimildasafnið BIFROST QM Full ori er nauðsynlegt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Heimildasafnið BIFROST QM Full ori er nauðsynlegt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType PermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 1202302840" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Assign the BIFROST QM Full ori permission set.</source>
+          <target>Úthlutaðu heimildasafninu BIFROST QM Full ori.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Úthlutaðu heimildasafninu BIFROST QM Full ori.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType PermissionNextStepLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 2759986912" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send quantity as a positive number, or omit it to use the inspection quantity.</source>
+          <target>Sendu quantity sem jákvæða tölu eða slepptu því til að nota magn skoðunar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu quantity sem jákvæða tölu eða slepptu því til að nota magn skoðunar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType QuantityNextStepLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 2431576598" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send the value as a JSON string.</source>
+          <target>Sendu gildið sem JSON streng.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu gildið sem JSON streng.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType TextNextStepLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 3255873965" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Parameter %1 exceeds %2 characters.</source>
+          <target>Færibreytan %1 er lengri en %2 stafir.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name, %2 = limit|is-IS=Færibreytan %1 er lengri en %2 stafir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType TooLongErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 2403604507" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Choose an inspection of tracked stock; this type does not add tracking to untracked stock.</source>
+          <target>Veldu skoðun á rakningarbirgðum; þessi tegund bætir ekki rakningu við birgðir án rakningar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Veldu skoðun á rakningarbirgðum; þessi tegund bætir ekki rakningu við birgðir án rakningar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType TrackedNextStepLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - NamedType 2912406318" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unknown parameter %1.</source>
+          <target>Óþekkt færibreyta %1.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name|is-IS=Óþekkt færibreyta %1.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - NamedType UnknownKeyErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - Method 1027590672 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>quality, disposition, item tracking, lot number, serial number, package number, expiration date, reclassification</source>
+          <target>gæði, ráðstöfun, vörurakning, lotunúmer, raðnúmer, pakkanúmer, fyrningardagsetning, endurflokkun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=gæði, ráðstöfun, vörurakning, lotunúmer, raðnúmer, pakkanúmer, fyrningardagsetning, endurflokkun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - Method GetKeywords - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - Method 3650283039 - NamedType 2938128749" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Not idempotent: posted entries change the identity of stock and cannot be undone by repeating the call; a repeated call creates another change. There is no delete type and no undo type. Tracking is not added to untracked stock. Microsoft changes the expiration date of a lot only for its whole remaining quantity. Posting is atomic; a refusal rolls back journal creation and posting. Normal success commits the isolated transaction; with Omit Commit the caller owns the transaction.</source>
+          <target>Ekki ídempótent: bókaðar færslur breyta auðkenni birgða og endurtekið kall afturkallar þær ekki; endurtekið kall stofnar aðra breytingu. Engin eyðingartegund og engin afturköllunartegund er til. Rakningu er ekki bætt við birgðir án rakningar. Microsoft breytir fyrningardagsetningu lotu aðeins fyrir allt eftirstandandi magn hennar. Bókun er ein heild; höfnun bakfærir stofnun færslubókar og bókun. Venjuleg heppnuð keyrsla staðfestir einangraða færslu; með Omit Commit ber kallandi ábyrgð á færslunni.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Ekki ídempótent: bókaðar færslur breyta auðkenni birgða og endurtekið kall afturkallar þær ekki; endurtekið kall stofnar aðra breytingu. Engin eyðingartegund og engin afturköllunartegund er til. Rakningu er ekki bætt við birgðir án rakningar. Microsoft breytir fyrningardagsetningu lotu aðeins fyrir allt eftirstandandi magn hennar. Bókun er ein heild; höfnun bakfærir stofnun færslubókar og bókun. Venjuleg heppnuð keyrsla staðfestir einangraða færslu; með Omit Commit ber kallandi ábyrgð á færslunni.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - Method GetNotes - NamedType HelpLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 3074379298 - Method 2340569551 - NamedType 2938128749" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Changes the lot, serial or package number or the expiration date of the failed or passed quantity of one quality inspection through standard Microsoft disposition, using an item or warehouse reclassification journal. With postImmediately=false (default) the lines stay in the reclassification batch named in Quality Management Setup; with postImmediately=true they are posted. confirm=true and at least one new value are required. expectedCount counts the one quality inspection named by inspectionSystemId (1 per call), not the journal lines or entries the call creates. Omitting expectedCount reads that count and changes nothing only when Require Confirmation for Irreversible Messages is enabled in Bifrost Setup (on by default). When that setup is disabled, omitting expectedCount can execute the change.</source>
+          <target>Breytir lotu-, rað- eða pakkanúmeri eða fyrningardagsetningu fallins eða staðins magns einnar gæðaskoðunar með staðlaðri ráðstöfun Microsoft, með endurflokkunarbók vöru eða vöruhúss. Með postImmediately=false (sjálfgefið) eru línurnar áfram í endurflokkunarbunkanum sem er tilgreindur í uppsetningu gæðastjórnunar; með postImmediately=true eru þær bókaðar. confirm=true og að minnsta kosti eitt nýtt gildi eru nauðsynleg. expectedCount telur eina gæðaskoðun sem inspectionSystemId nefnir (1 fyrir hvert kall), ekki færslubókarlínurnar eða færslurnar sem kallið stofnar. Að sleppa expectedCount les þann fjölda og breytir engu aðeins þegar Krefjast staðfestingar fyrir óafturkræf skilaboð er virkt í Uppsetningu Bifröst (virkt sjálfgefið). Þegar sú uppsetning er óvirk getur það að sleppa expectedCount keyrt breytinguna.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Breytir lotu-, rað- eða pakkanúmeri eða fyrningardagsetningu fallins eða staðins magns einnar gæðaskoðunar með staðlaðri ráðstöfun Microsoft, með endurflokkunarbók vöru eða vöruhúss. Með postImmediately=false (sjálfgefið) eru línurnar áfram í endurflokkunarbunkanum sem er tilgreindur í uppsetningu gæðastjórnunar; með postImmediately=true eru þær bókaðar. confirm=true og að minnsta kosti eitt nýtt gildi eru nauðsynleg. expectedCount telur eina gæðaskoðun sem inspectionSystemId nefnir (1 fyrir hvert kall), ekki færslubókarlínurnar eða færslurnar sem kallið stofnar. Að sleppa expectedCount les þann fjölda og breytir engu aðeins þegar Krefjast staðfestingar fyrir óafturkræf skilaboð er virkt í Uppsetningu Bifröst (virkt sjálfgefið). Þegar sú uppsetning er óvirk getur það að sleppa expectedCount keyrt breytinguna.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Track Impl ori - Method GetOverview - NamedType HelpLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 603376422 - NamedType 3536789434" size-unit="char" translate="yes" xml:space="preserve">
           <source>failed or passed</source>
