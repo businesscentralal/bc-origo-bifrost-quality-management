@@ -75,6 +75,21 @@ Tests: 97200-97299
 | Table | 10035284 | Qlty Finish Access ori (empty permission capability) |
 | Test codeunit | 97230 | Qlty Insp Finish Tst ori |
 
+## Issue 11 reserved block (not implemented)
+
+Reserved for `Quality.Inspection.AddPicture`; these objects do not exist yet.
+
+| Type | Reserved ID | Planned purpose |
+| --- | --- | --- |
+| Enum extension | 10035294 | AddPicture message registration |
+| Codeunit | 10035295 | AddPicture implementation and contract |
+| Table | 10035296 | AddPicture write capability |
+| Codeunit | 10035297 | AddPicture transaction processor, if needed |
+| Test codeunit | 97264 | AddPicture dispatcher regressions |
+| Test codeunit | 97265 | AddPicture fixture helper, if needed |
+| Test permission set | 97266 | AddPicture strict-user fixtures, if needed |
+| Test enum extension | 97267 | AddPicture fixture messages, if needed |
+
 ## Microsoft source
 Wrapped Microsoft app: Quality Management (`bc7b3891-f61b-4883-bbb3-384cdef88bec`, 28.5.0.0). Source: https://github.com/microsoft/BCApps/tree/main/src/Apps/W1/Quality%20Management
 Read it there before designing message types.
