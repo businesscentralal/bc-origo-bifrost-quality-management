@@ -204,10 +204,16 @@ codeunit 10035329 "Quality Schedule Impl ori" implements "Msg Interface ori", "M
         KeyName: Text;
         InputText: Text;
         DayNumber: Integer;
+        ExpectedCount: Integer;
     begin
         foreach KeyName in RequestJson.Keys() do
             if not (KeyName in ['scheduleGroup', 'startTime', 'daysOfWeek', 'repeatEveryMinutes', 'activate', 'expectedCount']) then begin
                 Argument.RespondWithError("Bifrost Error Code ori"::UnknownParameter, StrSubstNo(UnknownErr, KeyName), KeyName, '', 'scheduleGroup, startTime, daysOfWeek, repeatEveryMinutes, activate, expectedCount', CorrectTxt);
+                exit(false);
+            end;
+        if RequestJson.Get('expectedCount', Token) then
+            if not ReadInteger(Token, ExpectedCount) then begin
+                Argument.RespondWithError("Bifrost Error Code ori"::InvalidParameterFormat, StrSubstNo(InvalidErr, 'expectedCount'), 'expectedCount', '', '1', CorrectTxt);
                 exit(false);
             end;
         ScheduleGroup := 'QM';
