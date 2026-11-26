@@ -45,6 +45,7 @@ codeunit 97293 "Quality Schedule Fixture ori" implements "Msg Interface ori"
         GroupCode: Code[20];
         GroupText: Text;
         JobId: Guid;
+        WithFilter: Boolean;
     begin
         if not IsEnabled() then
             Error('CRONUS required.');
@@ -58,7 +59,10 @@ codeunit 97293 "Quality Schedule Fixture ori" implements "Msg Interface ori"
                 Rule.SetRange("Schedule Group", GroupCode);
                 if not Rule.IsEmpty() then
                     Error('Fixture exists.');
-                Seed(GroupCode, not Request.GetBoolean('unfiltered', false));
+                WithFilter := true;
+                if Request.Contains('unfiltered') then
+                    WithFilter := not Request.GetBoolean('unfiltered');
+                Seed(GroupCode, WithFilter);
             end;
             'read': begin
                 Evaluate(JobId, Request.GetText('jobQueueEntryId'));
