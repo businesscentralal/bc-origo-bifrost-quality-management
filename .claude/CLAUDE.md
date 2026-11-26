@@ -74,6 +74,13 @@ Tests: 97200-97299
 | Codeunit | 10035283 | Qlty Insp Finish Proc ori |
 | Table | 10035284 | Qlty Finish Access ori (empty permission capability) |
 | Test codeunit | 97230 | Qlty Insp Finish Tst ori |
+| Enum extension | 10035310 | Quality Track Types ori (`Quality.Disposition.ChangeItemTracking`, value 10035310, issue 17) |
+| Codeunit | 10035311 | Quality Track Impl ori |
+| Table | 10035312 | Quality Track Access ori (permission capability) |
+| Reserved | 10035313 | issue 17 reserve (unused) |
+| Test codeunit | 97280 | Quality Track Tst ori |
+| Test codeunit | 97281 | Quality Track Fault ori |
+| Reserved | 97282-97283 | issue 17 reserve (unused) |
 
 ## Issue 11 objects
 
