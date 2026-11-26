@@ -246,9 +246,27 @@ codeunit 10035308 "Quality PutAway Impl ori" implements "Msg Interface ori", "Ms
     /// <summary>Returns the localized parameters contract chapter.</summary>
     procedure GetParameters(var Parameters: JsonArray): Boolean
     var
-        ChapterLbl: Label '[{"name":"inspectionSystemId","type":"string","required":true,"description":"Existing inspection SystemId."},{"name":"kind","type":"string","required":true,"description":"internal or warehouse."},{"name":"quantityBasis","type":"string","required":true,"description":"failed or passed."},{"name":"quantity","type":"number","required":false,"description":"Positive base quantity, at most the selected inspection quantity. Omitted: selected inspection quantity."},{"name":"sourceLocationCode","type":"string","required":false,"description":"Exact source location, at most 10 characters; no filters."},{"name":"sourceBinCode","type":"string","required":false,"description":"Exact source bin, at most 20 characters; no filters."},{"name":"releaseImmediately","type":"boolean","required":false,"description":"Internal only; default false. Release the internal document without registering. Refused even when false for warehouse."},{"name":"confirm","type":"boolean","required":true,"description":"Must be true."},{"name":"expectedCount","type":"integer","required":false,"description":"Counts one inspection (1), not documents or lines. Omission previews with no changes when Require Confirmation for Irreversible Messages is enabled. Always checked when supplied."}]', Comment = 'is-IS=[{"name":"inspectionSystemId","type":"string","required":true,"description":"SystemId gæðaskoðunar sem er til."},{"name":"kind","type":"string","required":true,"description":"internal eða warehouse."},{"name":"quantityBasis","type":"string","required":true,"description":"failed eða passed."},{"name":"quantity","type":"number","required":false,"description":"Jákvætt grunnmagn, mest valið magn skoðunar. Sleppirðu því er valið magn skoðunar notað."},{"name":"sourceLocationCode","type":"string","required":false,"description":"Nákvæm upprunastaðsetning, mest 10 stafir; engar síur."},{"name":"sourceBinCode","type":"string","required":false,"description":"Nákvæmt upprunahólf, mest 20 stafir; engar síur."},{"name":"releaseImmediately","type":"boolean","required":false,"description":"Aðeins innri frágangur; sjálfgefið false. Losa innra skjal án skráningar. Hafnað jafnvel sem false fyrir warehouse."},{"name":"confirm","type":"boolean","required":true,"description":"Verður að vera true."},{"name":"expectedCount","type":"integer","required":false,"description":"Telur eina skoðun (1), ekki skjöl eða línur. Ef sleppt er forskoðað án breytinga þegar krafist er staðfestingar fyrir óafturkræf skilaboð. Alltaf athugað ef sent."}]';
+        ContractMgt: Codeunit "Msg Contract Mgt ori";
+        InspectionIdLbl: Label 'Existing inspection SystemId.', Comment = 'is-IS=SystemId gæðaskoðunar sem er til.';
+        KindLbl: Label 'internal or warehouse.', Comment = 'is-IS=internal eða warehouse.';
+        BasisLbl: Label 'failed or passed.', Comment = 'is-IS=failed eða passed.';
+        ParamQuantityLbl: Label 'Positive base quantity, at most the selected inspection quantity. Omitted: selected inspection quantity.', Comment = 'is-IS=Jákvætt grunnmagn, mest valið magn skoðunar. Sleppirðu því er valið magn skoðunar notað.';
+        LocationLbl: Label 'Exact source location, at most 10 characters; no filters.', Comment = 'is-IS=Nákvæm upprunastaðsetning, mest 10 stafir; engar síur.';
+        BinLbl: Label 'Exact source bin, at most 20 characters; no filters.', Comment = 'is-IS=Nákvæmt upprunahólf, mest 20 stafir; engar síur.';
+        ReleaseLbl: Label 'Internal only; default false. Release the internal document without registering. Refused even when false for warehouse.', Comment = 'is-IS=Aðeins innri frágangur; sjálfgefið false. Losa innra skjal án skráningar. Hafnað jafnvel sem false fyrir warehouse.';
+        ConfirmLbl: Label 'Must be true.', Comment = 'is-IS=Verður að vera true.';
+        ParamCountLbl: Label 'Counts one inspection (1), not documents or lines. Omission previews with no changes when Require Confirmation for Irreversible Messages is enabled. Always checked when supplied.', Comment = 'is-IS=Telur eina skoðun (1), ekki skjöl eða línur. Ef sleppt er forskoðað án breytinga þegar krafist er staðfestingar fyrir óafturkræf skilaboð. Alltaf athugað ef sent.';
     begin
-        Parameters.ReadFrom(ChapterLbl);
+        Clear(Parameters);
+        Parameters.Add(ContractMgt.Parameter('inspectionSystemId', 'string', true, InspectionIdLbl));
+        Parameters.Add(ContractMgt.Parameter('kind', 'string', true, KindLbl));
+        Parameters.Add(ContractMgt.Parameter('quantityBasis', 'string', true, BasisLbl));
+        Parameters.Add(ContractMgt.Parameter('quantity', 'number', false, ParamQuantityLbl));
+        Parameters.Add(ContractMgt.Parameter('sourceLocationCode', 'string', false, LocationLbl));
+        Parameters.Add(ContractMgt.Parameter('sourceBinCode', 'string', false, BinLbl));
+        Parameters.Add(ContractMgt.Parameter('releaseImmediately', 'boolean', false, ReleaseLbl));
+        Parameters.Add(ContractMgt.Parameter('confirm', 'boolean', true, ConfirmLbl));
+        Parameters.Add(ContractMgt.Parameter('expectedCount', 'integer', false, ParamCountLbl));
         exit(true);
     end;
 
@@ -264,7 +282,7 @@ codeunit 10035308 "Quality PutAway Impl ori" implements "Msg Interface ori", "Ms
     /// <summary>Returns the localized errors contract chapter.</summary>
     procedure GetErrors(var Errors: JsonArray): Boolean
     var
-        ChapterLbl: Label '[{"code":"InvalidParameter","when":"Invalid input; no changes.","fix":"Use parameter, expected and nextStep to correct the request."},{"code":"Business Central refusal","when":"Native setup, permissions or stock are invalid; any late failure rolls back the entire call.","fix":"Correct warehouse setup, stock or native caller permissions."}]', Comment = 'is-IS=[{"code":"InvalidParameter","when":"Ógilt inntak; engar breytingar.","fix":"Notaðu parameter, expected og nextStep til að leiðrétta beiðnina."},{"code":"Business Central refusal","when":"Ógild uppsetning, heimildir eða birgðir; sein villa afturkallar allt kallið.","fix":"Leiðréttu uppsetningu vöruhúss, birgðir eða innbyggðar heimildir kallanda."}]';
+        ChapterLbl: Label '[{"code":"InvalidParameter","when":"Invalid input; no changes.","fix":"Use parameter, expected and nextStep to correct the request."},{"error":"Business Central refusal","when":"Native setup, permissions or stock are invalid; any late failure rolls back the entire call.","fix":"Correct warehouse setup, stock or native caller permissions."}]', Comment = 'is-IS=[{"code":"InvalidParameter","when":"Ógilt inntak; engar breytingar.","fix":"Notaðu parameter, expected og nextStep til að leiðrétta beiðnina."},{"error":"Business Central refusal","when":"Ógild uppsetning, heimildir eða birgðir; sein villa afturkallar allt kallið.","fix":"Leiðréttu uppsetningu vöruhúss, birgðir eða innbyggðar heimildir kallanda."}]';
     begin
         Errors.ReadFrom(ChapterLbl);
         exit(true);

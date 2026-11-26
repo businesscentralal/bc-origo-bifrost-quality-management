@@ -27,18 +27,6 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Quality Move Access ori - Field Primary Key - Property Caption</note>
         </trans-unit>
-        <trans-unit id="Table 419784718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Quality put-away</source>
-          <target>Frágangur gæðastjórnunar</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=Frágangur gæðastjórnunar</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Quality PutAway Access ori - Property Caption</note>
-        </trans-unit>
-        <trans-unit id="Table 419784718 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
-          <source>Primary Key</source>
-          <target>Aðallykill</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Table Quality PutAway Access ori - Field Primary Key - Property Caption</note>
-        </trans-unit>
         <trans-unit id="Table 1152976395 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quality picture access</source>
           <target>Aðgangur að mynd skoðunar</target>
@@ -50,6 +38,18 @@
           <target>Aðallykill</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Quality Picture Access ori - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 419784718 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality put-away</source>
+          <target>Frágangur gæðastjórnunar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Frágangur gæðastjórnunar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality PutAway Access ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 419784718 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary Key</source>
+          <target>Aðallykill</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality PutAway Access ori - Field Primary Key - Property Caption</note>
         </trans-unit>
         <trans-unit id="Table 548483976 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quality action access</source>
@@ -1210,9 +1210,9 @@
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality PutAway Impl ori - Method GetEnvelope - NamedType ChapterLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 105748962 - Method 1158096087 - NamedType 116212053" size-unit="char" translate="yes" xml:space="preserve">
-          <source>[{"code":"InvalidParameter","when":"Invalid input; no changes.","fix":"Use parameter, expected and nextStep to correct the request."},{"code":"Business Central refusal","when":"Native setup, permissions or stock are invalid; any late failure rolls back the entire call.","fix":"Correct warehouse setup, stock or native caller permissions."}]</source>
-          <target>[{"code":"InvalidParameter","when":"Ógilt inntak; engar breytingar.","fix":"Notaðu parameter, expected og nextStep til að leiðrétta beiðnina."},{"code":"Business Central refusal","when":"Ógild uppsetning, heimildir eða birgðir; sein villa afturkallar allt kallið.","fix":"Leiðréttu uppsetningu vöruhúss, birgðir eða innbyggðar heimildir kallanda."}]</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=[{"code":"InvalidParameter","when":"Ógilt inntak; engar breytingar.","fix":"Notaðu parameter, expected og nextStep til að leiðrétta beiðnina."},{"code":"Business Central refusal","when":"Ógild uppsetning, heimildir eða birgðir; sein villa afturkallar allt kallið.","fix":"Leiðréttu uppsetningu vöruhúss, birgðir eða innbyggðar heimildir kallanda."}]</note>
+          <source>[{"code":"InvalidParameter","when":"Invalid input; no changes.","fix":"Use parameter, expected and nextStep to correct the request."},{"error":"Business Central refusal","when":"Native setup, permissions or stock are invalid; any late failure rolls back the entire call.","fix":"Correct warehouse setup, stock or native caller permissions."}]</source>
+          <target>[{"code":"InvalidParameter","when":"Ógilt inntak; engar breytingar.","fix":"Notaðu parameter, expected og nextStep til að leiðrétta beiðnina."},{"error":"Business Central refusal","when":"Ógild uppsetning, heimildir eða birgðir; sein villa afturkallar allt kallið.","fix":"Leiðréttu uppsetningu vöruhúss, birgðir eða innbyggðar heimildir kallanda."}]</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=[{"code":"InvalidParameter","when":"Ógilt inntak; engar breytingar.","fix":"Notaðu parameter, expected og nextStep til að leiðrétta beiðnina."},{"error":"Business Central refusal","when":"Ógild uppsetning, heimildir eða birgðir; sein villa afturkallar allt kallið.","fix":"Leiðréttu uppsetningu vöruhúss, birgðir eða innbyggðar heimildir kallanda."}]</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality PutAway Impl ori - Method GetErrors - NamedType ChapterLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 105748962 - Method 3255554567 - NamedType 116212053" size-unit="char" translate="yes" xml:space="preserve">
@@ -1239,11 +1239,59 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Stofnar innri frágang eða vöruhúsafrágang fyrir eina skoðun. confirm=true er nauðsynlegt. Innbyggðar vöruhúsaheimildir, stýrður frágangur, hólf og birgðir eru nauðsynleg. expectedCount telur eina skoðun; ef sleppt er forskoðað án breytinga þegar staðfesting er virk.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality PutAway Impl ori - Method GetOverview - NamedType HelpLbl</note>
         </trans-unit>
-        <trans-unit id="Codeunit 105748962 - Method 3615801952 - NamedType 116212053" size-unit="char" translate="yes" xml:space="preserve">
-          <source>[{"name":"inspectionSystemId","type":"string","required":true,"description":"Existing inspection SystemId."},{"name":"kind","type":"string","required":true,"description":"internal or warehouse."},{"name":"quantityBasis","type":"string","required":true,"description":"failed or passed."},{"name":"quantity","type":"number","required":false,"description":"Positive base quantity, at most the selected inspection quantity. Omitted: selected inspection quantity."},{"name":"sourceLocationCode","type":"string","required":false,"description":"Exact source location, at most 10 characters; no filters."},{"name":"sourceBinCode","type":"string","required":false,"description":"Exact source bin, at most 20 characters; no filters."},{"name":"releaseImmediately","type":"boolean","required":false,"description":"Internal only; default false. Release the internal document without registering. Refused even when false for warehouse."},{"name":"confirm","type":"boolean","required":true,"description":"Must be true."},{"name":"expectedCount","type":"integer","required":false,"description":"Counts one inspection (1), not documents or lines. Omission previews with no changes when Require Confirmation for Irreversible Messages is enabled. Always checked when supplied."}]</source>
-          <target>[{"name":"inspectionSystemId","type":"string","required":true,"description":"SystemId gæðaskoðunar sem er til."},{"name":"kind","type":"string","required":true,"description":"internal eða warehouse."},{"name":"quantityBasis","type":"string","required":true,"description":"failed eða passed."},{"name":"quantity","type":"number","required":false,"description":"Jákvætt grunnmagn, mest valið magn skoðunar. Sleppirðu því er valið magn skoðunar notað."},{"name":"sourceLocationCode","type":"string","required":false,"description":"Nákvæm upprunastaðsetning, mest 10 stafir; engar síur."},{"name":"sourceBinCode","type":"string","required":false,"description":"Nákvæmt upprunahólf, mest 20 stafir; engar síur."},{"name":"releaseImmediately","type":"boolean","required":false,"description":"Aðeins innri frágangur; sjálfgefið false. Losa innra skjal án skráningar. Hafnað jafnvel sem false fyrir warehouse."},{"name":"confirm","type":"boolean","required":true,"description":"Verður að vera true."},{"name":"expectedCount","type":"integer","required":false,"description":"Telur eina skoðun (1), ekki skjöl eða línur. Ef sleppt er forskoðað án breytinga þegar krafist er staðfestingar fyrir óafturkræf skilaboð. Alltaf athugað ef sent."}]</target>
-          <note from="Developer" annotates="general" priority="2">is-IS=[{"name":"inspectionSystemId","type":"string","required":true,"description":"SystemId gæðaskoðunar sem er til."},{"name":"kind","type":"string","required":true,"description":"internal eða warehouse."},{"name":"quantityBasis","type":"string","required":true,"description":"failed eða passed."},{"name":"quantity","type":"number","required":false,"description":"Jákvætt grunnmagn, mest valið magn skoðunar. Sleppirðu því er valið magn skoðunar notað."},{"name":"sourceLocationCode","type":"string","required":false,"description":"Nákvæm upprunastaðsetning, mest 10 stafir; engar síur."},{"name":"sourceBinCode","type":"string","required":false,"description":"Nákvæmt upprunahólf, mest 20 stafir; engar síur."},{"name":"releaseImmediately","type":"boolean","required":false,"description":"Aðeins innri frágangur; sjálfgefið false. Losa innra skjal án skráningar. Hafnað jafnvel sem false fyrir warehouse."},{"name":"confirm","type":"boolean","required":true,"description":"Verður að vera true."},{"name":"expectedCount","type":"integer","required":false,"description":"Telur eina skoðun (1), ekki skjöl eða línur. Ef sleppt er forskoðað án breytinga þegar krafist er staðfestingar fyrir óafturkræf skilaboð. Alltaf athugað ef sent."}]</note>
-          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality PutAway Impl ori - Method GetParameters - NamedType ChapterLbl</note>
+        <trans-unit id="Codeunit 105748962 - Method 3615801952 - NamedType 2957502995" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Existing inspection SystemId.</source>
+          <target>SystemId gæðaskoðunar sem er til.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=SystemId gæðaskoðunar sem er til.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality PutAway Impl ori - Method GetParameters - NamedType InspectionIdLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 105748962 - Method 3615801952 - NamedType 2567782990" size-unit="char" translate="yes" xml:space="preserve">
+          <source>internal or warehouse.</source>
+          <target>internal eða warehouse.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=internal eða warehouse.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality PutAway Impl ori - Method GetParameters - NamedType KindLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 105748962 - Method 3615801952 - NamedType 73661084" size-unit="char" translate="yes" xml:space="preserve">
+          <source>failed or passed.</source>
+          <target>failed eða passed.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=failed eða passed.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality PutAway Impl ori - Method GetParameters - NamedType BasisLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 105748962 - Method 3615801952 - NamedType 3514232194" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Positive base quantity, at most the selected inspection quantity. Omitted: selected inspection quantity.</source>
+          <target>Jákvætt grunnmagn, mest valið magn skoðunar. Sleppirðu því er valið magn skoðunar notað.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Jákvætt grunnmagn, mest valið magn skoðunar. Sleppirðu því er valið magn skoðunar notað.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality PutAway Impl ori - Method GetParameters - NamedType ParamQuantityLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 105748962 - Method 3615801952 - NamedType 3629245473" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exact source location, at most 10 characters; no filters.</source>
+          <target>Nákvæm upprunastaðsetning, mest 10 stafir; engar síur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Nákvæm upprunastaðsetning, mest 10 stafir; engar síur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality PutAway Impl ori - Method GetParameters - NamedType LocationLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 105748962 - Method 3615801952 - NamedType 1785548201" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exact source bin, at most 20 characters; no filters.</source>
+          <target>Nákvæmt upprunahólf, mest 20 stafir; engar síur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Nákvæmt upprunahólf, mest 20 stafir; engar síur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality PutAway Impl ori - Method GetParameters - NamedType BinLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 105748962 - Method 3615801952 - NamedType 648905157" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Internal only; default false. Release the internal document without registering. Refused even when false for warehouse.</source>
+          <target>Aðeins innri frágangur; sjálfgefið false. Losa innra skjal án skráningar. Hafnað jafnvel sem false fyrir warehouse.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðeins innri frágangur; sjálfgefið false. Losa innra skjal án skráningar. Hafnað jafnvel sem false fyrir warehouse.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality PutAway Impl ori - Method GetParameters - NamedType ReleaseLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 105748962 - Method 3615801952 - NamedType 3764383116" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Must be true.</source>
+          <target>Verður að vera true.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Verður að vera true.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality PutAway Impl ori - Method GetParameters - NamedType ConfirmLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 105748962 - Method 3615801952 - NamedType 3408025362" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Counts one inspection (1), not documents or lines. Omission previews with no changes when Require Confirmation for Irreversible Messages is enabled. Always checked when supplied.</source>
+          <target>Telur eina skoðun (1), ekki skjöl eða línur. Ef sleppt er forskoðað án breytinga þegar krafist er staðfestingar fyrir óafturkræf skilaboð. Alltaf athugað ef sent.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Telur eina skoðun (1), ekki skjöl eða línur. Ef sleppt er forskoðað án breytinga þegar krafist er staðfestingar fyrir óafturkræf skilaboð. Alltaf athugað ef sent.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality PutAway Impl ori - Method GetParameters - NamedType ParamCountLbl</note>
         </trans-unit>
         <trans-unit id="Codeunit 105748962 - Method 4268477247 - NamedType 116212053" size-unit="char" translate="yes" xml:space="preserve">
           <source>{"contentType":"application/json","fields":[{"name":"status","type":"string","description":"Success."},{"name":"inspectionSystemId","type":"string","description":"Selected inspection."},{"name":"kind","type":"string","description":"Requested kind."},{"name":"documentNumbers","type":"array","description":"Final created document numbers."},{"name":"released","type":"boolean","description":"Internal release requested and completed."},{"name":"registered","type":"boolean","description":"Always false."}]}</source>
