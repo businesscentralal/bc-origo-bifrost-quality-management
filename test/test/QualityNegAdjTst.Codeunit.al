@@ -4,6 +4,7 @@ using Microsoft.Finance.GeneralLedger.Account;
 using Microsoft.Finance.GeneralLedger.Setup;
 using Microsoft.Foundation.AuditCodes;
 using Microsoft.Foundation.UOM;
+using Microsoft.Inventory.Costing;
 using Microsoft.Inventory.Item;
 using Microsoft.Inventory.Journal;
 using Microsoft.Inventory.Ledger;
@@ -29,6 +30,7 @@ codeunit 97272 "Quality Neg Adj Tst ori"
         FixtureCode: Code[10];
         TemplateCode: Code[10];
         PriorForceReport: Boolean;
+        PriorWorkDate: Date;
         HadSetup: Boolean;
 
     /// <summary>The ordinal of the new enum value is pinned.</summary>
@@ -423,7 +425,7 @@ codeunit 97272 "Quality Neg Adj Tst ori"
         Assert.IsTrue(ReadText(Response, 'expected') <> '', 'Describe what is expected.');
         Assert.IsTrue(ReadText(Response, 'nextStep') <> '', 'Give a next step.');
         if (LanguageId = 1039) and (Scenario = 'unknown') then
-            Assert.AreEqual('aðeins tilgreindar færibreytur', ReadText(Response, 'expected'), 'Expected parameters must be Icelandic.');
+            Assert.AreEqual('skilgreind beiðniviðföng', ReadText(Response, 'expected'), 'Expected parameters must be Icelandic.');
         if Scenario = 'invalidText' then
             if LanguageId = 1039 then
                 Assert.AreEqual('JSON textastrengur', ReadText(Response, 'expected'), 'Expected value type must be Icelandic.')
@@ -446,8 +448,14 @@ codeunit 97272 "Quality Neg Adj Tst ori"
         Location: Record Location;
         JournalTemplate: Record "Item Journal Template";
         JournalBatch: Record "Item Journal Batch";
+        InventoryPeriod: Record "Inventory Period";
         Setup: Record "Qlty. Management Setup";
     begin
+        PriorWorkDate := WorkDate();
+        InventoryPeriod.SetRange(Closed, true);
+        if InventoryPeriod.FindLast() then
+            if WorkDate() <= InventoryPeriod."Ending Date" then
+                WorkDate(InventoryPeriod."Ending Date" + 1);
         FixtureCode := CopyStr('Q15-' + DelChr(Format(CreateGuid(), 0, 4), '=', '-'), 1, 10);
         Unit.Code := FixtureCode;
         Unit.Insert(false);
@@ -615,6 +623,7 @@ codeunit 97272 "Quality Neg Adj Tst ori"
         Unit.Delete(false);
         Location.Get(FixtureCode);
         Location.Delete(false);
+        WorkDate(PriorWorkDate);
         if HadSetup then begin
             Setup.Get();
             Setup."Item Journal Batch Name" := PriorSetup."Item Journal Batch Name";
