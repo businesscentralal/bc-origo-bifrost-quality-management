@@ -37,6 +37,8 @@ codeunit 10035303 "Quality Neg Adj Impl ori" implements "Msg Interface ori", "Ms
         ConfirmNextStepLbl: Label 'Send confirm=true after the user has approved the write-off.', Comment = 'is-IS=Sendu confirm=true þegar notandinn hefur samþykkt afskriftina.';
         KeysNextStepLbl: Label 'Remove the parameter; only the declared parameters are accepted.', Comment = 'is-IS=Fjarlægðu færibreytuna; aðeins tilgreindar færibreytur eru samþykktar.';
         PermissionNextStepLbl: Label 'Assign the BIFROST QM Full ori permission set.', Comment = 'is-IS=Úthlutaðu heimildasafninu BIFROST QM Full ori.';
+        ExpectedKeysLbl: Label 'only declared parameters', Comment = 'is-IS=aðeins tilgreindar færibreytur';
+        ExpectedTextLbl: Label 'a JSON string', Comment = 'is-IS=JSON textastrengur';
         ExistingInspectionLbl: Label 'the SystemId of an existing inspection', Comment = 'is-IS=SystemId núverandi skoðunar';
 
     trigger OnRun()
@@ -87,7 +89,7 @@ codeunit 10035303 "Quality Neg Adj Impl ori" implements "Msg Interface ori", "Ms
         Request := Argument.GetRequestJson();
         foreach ParameterName in Request.Keys() do
             if not (ParameterName in ['inspectionSystemId', 'quantityBasis', 'quantity', 'sourceLocationCode', 'sourceBinCode', 'reasonCode', 'postImmediately', 'confirm', 'expectedCount']) then
-                Refuse(Argument, "Bifrost Error Code ori"::UnknownParameter, StrSubstNo(UnknownKeyErr, ParameterName), ParameterName, '', 'only declared parameters', KeysNextStepLbl);
+                Refuse(Argument, "Bifrost Error Code ori"::UnknownParameter, StrSubstNo(UnknownKeyErr, ParameterName), ParameterName, '', ExpectedKeysLbl, KeysNextStepLbl);
         InspectionId := ReadInspectionId(Request, Argument);
         if not ReadBoolean(Request, 'confirm', Argument) then
             Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, ConfirmErr, 'confirm', 'false', 'true', ConfirmNextStepLbl);
@@ -219,7 +221,7 @@ codeunit 10035303 "Quality Neg Adj Impl ori" implements "Msg Interface ori", "Ms
         end;
         Token.WriteTo(Serialized);
         if CopyStr(Serialized, 1, 1) <> '"' then
-            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(InvalidKeyErr, ParameterName), ParameterName, Serialized, 'a JSON string', FindInspectionLbl);
+            Refuse(Argument, "Bifrost Error Code ori"::InvalidParameter, StrSubstNo(InvalidKeyErr, ParameterName), ParameterName, Serialized, ExpectedTextLbl, FindInspectionLbl);
         Value := Token.AsValue().AsText();
         if Required and (Value = '') then
             Refuse(Argument, "Bifrost Error Code ori"::MissingParameter, StrSubstNo(InvalidKeyErr, ParameterName), ParameterName, '', ParameterName, FindInspectionLbl);

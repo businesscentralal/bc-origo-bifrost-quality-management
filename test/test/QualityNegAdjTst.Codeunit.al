@@ -238,6 +238,30 @@ codeunit 97272 "Quality Neg Adj Tst ori"
         VerifyScenario('readRole', 1033);
     end;
 
+    /// <summary>Unknown parameter guidance is fully Icelandic.</summary>
+    [Test]
+    procedure Scenario_AC03_UnknownKeyIcelandic_Translated()
+    begin
+        // Story #15, AC03/AC06 | Time: none | Risk: owned Q15 fixtures only
+        VerifyScenario('unknown', 1039);
+    end;
+
+    /// <summary>A non-string basis has typed English guidance.</summary>
+    [Test]
+    procedure Scenario_AC03_NonStringBasis_Refused()
+    begin
+        // Story #15, AC03/AC06 | Time: none | Risk: owned Q15 fixtures only
+        VerifyScenario('invalidText', 1033);
+    end;
+
+    /// <summary>A non-string basis has typed Icelandic guidance.</summary>
+    [Test]
+    procedure Scenario_AC03_NonStringBasisIcelandic_Translated()
+    begin
+        // Story #15, AC03/AC06 | Time: none | Risk: owned Q15 fixtures only
+        VerifyScenario('invalidText', 1039);
+    end;
+
     local procedure VerifyScenario(Scenario: Text; LanguageId: Integer)
     var
         Inspection: Record "Qlty. Inspection Header";
@@ -279,6 +303,8 @@ codeunit 97272 "Quality Neg Adj Tst ori"
                 Request.Replace('inspectionSystemId', Format(CreateGuid(), 0, 4));
             'confirm':
                 Request.Replace('confirm', false);
+            'invalidText':
+                Request.Replace('quantityBasis', 42);
             'unknown':
                 Request.Add('unexpected', true);
             'filter':
@@ -349,7 +375,7 @@ codeunit 97272 "Quality Neg Adj Tst ori"
             Assert.AreEqual('Error', ReadText(Response, 'status'), 'The operation must return a refusal.');
             Assert.IsTrue(JournalLine.IsEmpty(), 'A refusal must leave no lines.');
             Assert.AreEqual(0, LedgerQuantity('Negative Adjmt.'), 'A refusal must leave no entries.');
-            if Scenario in ['missingId', 'malformedId', 'notFound', 'confirm', 'unknown', 'filter', 'zero', 'longReason'] then
+            if Scenario in ['missingId', 'malformedId', 'notFound', 'confirm', 'unknown', 'invalidText', 'filter', 'zero', 'longReason'] then
                 VerifyTyped(Response, Scenario, LanguageId);
             if Scenario = 'late' then
                 Assert.IsTrue(ReadText(Response, 'error').Contains('Q15 late failure'), 'The fault must occur after real line creation.');
@@ -382,6 +408,8 @@ codeunit 97272 "Quality Neg Adj Tst ori"
                 Expected := 'inspectionSystemId';
             'confirm':
                 Expected := 'confirm';
+            'invalidText':
+                Expected := 'quantityBasis';
             'unknown':
                 Expected := 'unexpected';
             'filter':
@@ -394,6 +422,13 @@ codeunit 97272 "Quality Neg Adj Tst ori"
         Assert.AreEqual(Expected, ReadText(Response, 'parameter'), 'Identify the invalid parameter.');
         Assert.IsTrue(ReadText(Response, 'expected') <> '', 'Describe what is expected.');
         Assert.IsTrue(ReadText(Response, 'nextStep') <> '', 'Give a next step.');
+        if (LanguageId = 1039) and (Scenario = 'unknown') then
+            Assert.AreEqual('aðeins tilgreindar færibreytur', ReadText(Response, 'expected'), 'Expected parameters must be Icelandic.');
+        if Scenario = 'invalidText' then
+            if LanguageId = 1039 then
+                Assert.AreEqual('JSON textastrengur', ReadText(Response, 'expected'), 'Expected value type must be Icelandic.')
+            else
+                Assert.AreEqual('a JSON string', ReadText(Response, 'expected'), 'Expected value type must be English.');
         if (LanguageId = 1039) and (Scenario = 'missingId') then
             Assert.IsTrue(ReadText(Response, 'nextStep').Contains('Lestu'), 'Recovery guidance must be Icelandic.');
     end;
