@@ -365,11 +365,11 @@ codeunit 97272 "Quality Neg Adj Tst ori"
     begin
         case Scenario of
             'passed':
-                exit(-2);
+                exit(2);
             'quantity':
-                exit(-1);
+                exit(1);
             else
-                exit(-3);
+                exit(3);
         end;
     end;
 
