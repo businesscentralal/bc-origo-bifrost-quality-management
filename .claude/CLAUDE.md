@@ -86,6 +86,11 @@ Tests: 97200-97299
 | Enum extension | 10035304 | Quality Neg Adj Types ori (value 10035302) |
 | Test codeunit | 97272 | Quality Neg Adj Tst ori |
 | Test codeunit | 97273 | Quality Neg Adj Fault ori |
+| Enum extension | 10035318 | Quality Report Types ori (`Quality.Report.Print`) |
+| Codeunit | 10035319 | Quality Report Impl ori |
+| Codeunit | 10035332 | Quality Report Proc ori |
+| Test codeunit | 97255 | Quality Report Tst ori |
+| Test codeunit | 97256 | Quality Report Limit ori |
 
 ## Issue 11 objects
 
