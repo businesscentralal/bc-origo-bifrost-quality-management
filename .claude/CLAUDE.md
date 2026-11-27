@@ -81,6 +81,11 @@ Tests: 97200-97299
 | Test codeunit | 97280 | Quality Track Tst ori |
 | Test codeunit | 97281 | Quality Track Fault ori |
 | Reserved | 97282-97283 | issue 17 reserve (unused) |
+| Table | 10035302 | Quality Neg Adj Access ori (permission capability, issue 15) |
+| Codeunit | 10035303 | Quality Neg Adj Impl ori (`Quality.Disposition.CreateNegativeAdjustment`) |
+| Enum extension | 10035304 | Quality Neg Adj Types ori (value 10035302) |
+| Test codeunit | 97272 | Quality Neg Adj Tst ori |
+| Test codeunit | 97273 | Quality Neg Adj Fault ori |
 | Enum extension | 10035318 | Quality Report Types ori (`Quality.Report.Print`) |
 | Codeunit | 10035319 | Quality Report Impl ori |
 | Codeunit | 10035332 | Quality Report Proc ori |
@@ -185,6 +190,19 @@ Key rules always in effect:
 
 ## Testing Through the MCP Server
 - Keep MCP calls serial - parallel bursts crash the server.
+
+## Issue 16 object allocation
+
+| Type | ID | Name |
+| --- | --- | --- |
+| Enum extension | 10035306 | Quality PutAway Types ori |
+| Table | 10035307 | Quality PutAway Access ori |
+| Codeunit | 10035308 | Quality PutAway Impl ori |
+| Codeunit | 10035309 | Quality PutAway Receipt ori |
+| Test codeunit | 97276 | Quality PutAway Tst ori |
+| Test codeunit | 97277 | Quality PutAway Fault ori |
+| Test permission set | 97278 | QM PutAway Test ori |
+| Reserved test fixtures | 97279 | Issue 16 fixture reservation |
 
 ## Issue 9 object allocation
 
