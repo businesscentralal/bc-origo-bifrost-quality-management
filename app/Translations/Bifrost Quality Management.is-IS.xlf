@@ -2427,6 +2427,324 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - gæðastjórnun</note>
           <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST Quality ori - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 59398644 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality schedule access</source>
+          <target>Aðgangur að tímaáætlun gæða</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðgangur að tímaáætlun gæða</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Schedule Access ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 59398644 - Field 1663593181 - Property 1295455071" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Specifies the permission capability key. No business records are stored.</source>
+          <target>Tilgreinir lykil aðgangsheimildar. Engar viðskiptafærslur eru geymdar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Tilgreinir lykil aðgangsheimildar. Engar viðskiptafærslur eru geymdar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Schedule Access ori - Field Primary Key - Property ToolTip</note>
+        </trans-unit>
+        <trans-unit id="Table 59398644 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary key</source>
+          <target>Aðallykill</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Schedule Access ori - Field Primary Key - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 2859249683" size-unit="char" translate="yes" xml:space="preserve">
+          <source>False by default: create On Hold. True makes the entry Ready through standard scheduling; the report is never run synchronously.</source>
+          <target>Sjálfgefið false: stofna í bið. True gerir færsluna tilbúna með staðlaðri tímaáætlun; skýrslan er aldrei keyrð samstillt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sjálfgefið false: stofna í bið. True gerir færsluna tilbúna með staðlaðri tímaáætlun; skýrslan er aldrei keyrð samstillt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType ActivateTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 2221040095" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read expected and resend the same request with expectedCount 1.</source>
+          <target>Lestu expected og sendu sömu beiðni aftur með expectedCount 1.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu expected og sendu sömu beiðni aftur með expectedCount 1.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType ConfirmNextTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 218166550" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The count is missing while confirmation is enabled, or does not equal one. Nothing is changed.</source>
+          <target>Fjöldann vantar á meðan staðfesting er virk, eða hann er ekki einn. Engu er breytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Fjöldann vantar á meðan staðfesting er virk, eða hann er ekki einn. Engu er breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType ConfirmTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 3154282853" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Counts one job queue entry, not future inspections. Must equal 1 when sent. If Require Confirmation for Irreversible Messages is enabled, omission returns expected 1 without writing; otherwise omission permits creation.</source>
+          <target>Telur eina verkbiðraðarfærslu, ekki framtíðarskoðanir. Verður að vera 1 við sendingu. Ef Krefjast staðfestingar fyrir óafturkræf skilaboð er virkt skilar vöntun expected 1 án skrifa; annars leyfir vöntun stofnun.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Telur eina verkbiðraðarfærslu, ekki framtíðarskoðanir. Verður að vera 1 við sendingu. Ef Krefjast staðfestingar fyrir óafturkræf skilaboð er virkt skilar vöntun expected 1 án skrifa; annars leyfir vöntun stofnun.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType CountTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 2072192433" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unique integer weekdays 1=Monday through 7=Sunday. Omit for all seven days. An empty array is refused.</source>
+          <target>Einkvæmir heiltöluvikudagar 1=mánudagur til 7=sunnudagur. Slepptu fyrir alla sjö dagana. Tómu fylki er hafnað.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Einkvæmir heiltöluvikudagar 1=mánudagur til 7=sunnudagur. Slepptu fyrir alla sjö dagana. Tómu fylki er hafnað.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType DaysTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 1427565258" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creates one scheduled-inspection job for a generation-rule group, on hold by default. Activation must be explicit.</source>
+          <target>Stofnar eitt verk fyrir áætlaðar skoðanir í stofnunarregluflokki, sjálfgefið í bið. Virkjun verður að vera skýr.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Stofnar eitt verk fyrir áætlaðar skoðanir í stofnunarregluflokki, sjálfgefið í bið. Virkjun verður að vera skýr.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType DescriptionTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 1196522881" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Creates a recurring Job Queue Entry for Qlty. Schedule Inspection with standard report parameters. The expectedCount unit is one job queue entry. The entry is On Hold unless activate=true schedules it as Ready. No inspection is created by this call. Success commits once; failure rolls back; Omit Commit leaves the transaction with the caller.</source>
+          <target>Stofnar endurtekna verkbiðraðarfærslu fyrir Qlty. Schedule Inspection með stöðluðum skýrsluviðföngum. Eining expectedCount er ein verkbiðraðarfærsla. Færslan er í bið nema activate=true áætli hana tilbúna. Engin skoðun er stofnuð af þessu kalli. Árangur staðfestir einu sinni; bilun afturkallar; Omit Commit skilur færsluna eftir hjá kallanda.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Stofnar endurtekna verkbiðraðarfærslu fyrir Qlty. Schedule Inspection með stöðluðum skýrsluviðföngum. Eining expectedCount er ein verkbiðraðarfærsla. Færslan er í bið nema activate=true áætli hana tilbúna. Engin skoðun er stofnuð af þessu kalli. Árangur staðfestir einu sinni; bilun afturkallar; Omit Commit skilur færsluna eftir hjá kallanda.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType EffectTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 3624064204" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Prepare a weekday schedule on hold</source>
+          <target>Undirbúa tímaáætlun virka daga í bið</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Undirbúa tímaáætlun virka daga í bið</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType ExampleTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 1713966473" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Schedule group, default QM. Code of 1 to 20 characters. Every rule must have at least one filter.</source>
+          <target>Tímaáætlunarflokkur, sjálfgefið QM. Kóði með 1 til 20 stöfum. Hver regla verður að hafa að minnsta kosti eina síu.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Tímaáætlunarflokkur, sjálfgefið QM. Kóði með 1 til 20 stöfum. Hver regla verður að hafa að minnsta kosti eina síu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType GroupTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 619833935" size-unit="char" translate="yes" xml:space="preserve">
+          <source>ID of the new Job Queue Entry, as a GUID.</source>
+          <target>Auðkenni nýrrar verkbiðraðarfærslu sem GUID.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Auðkenni nýrrar verkbiðraðarfærslu sem GUID.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType IdTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 3818687853" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Missing or malformed input, including null, wrong JSON types, invalid time or weekdays, group length or unknown keys.</source>
+          <target>Viðfang vantar eða er ógilt, þar á meðal null, röng JSON-gagnagerð, ógildur tími eða vikudagar, lengd flokks eða óþekktir lyklar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Viðfang vantar eða er ógilt, þar á meðal null, röng JSON-gagnagerð, ógildur tími eða vikudagar, lengd flokks eða óþekktir lyklar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType InputErrTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 1147911555" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Use only the documented keys and formats.</source>
+          <target>Notaðu aðeins skjalfesta lykla og snið.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Notaðu aðeins skjalfesta lykla og snið.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType InputNextTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 4104032151" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Whole minutes between runs, 1 to 2147483647. Default 1440 (daily). Maps to No. of Minutes between Runs.</source>
+          <target>Heilar mínútur milli keyrslna, 1 til 2147483647. Sjálfgefið 1440 (daglega). Varpað á fjölda mínútna milli keyrslna.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Heilar mínútur milli keyrslna, 1 til 2147483647. Sjálfgefið 1440 (daglega). Varpað á fjölda mínútna milli keyrslna.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType MinutesTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 467218835" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Business Central rejected job creation or activation; the entire write is rolled back.</source>
+          <target>Business Central hafnaði stofnun eða virkjun verks; öll skrif eru afturkölluð.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Business Central hafnaði stofnun eða virkjun verks; öll skrif eru afturkölluð.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType NativeTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 774924109" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Duplicate requests are refused; edit existing jobs on Job Queue Entries. No rules or setup are changed. Always-create options can generate inspections on every future run. No delete, run-now or pause operation is provided. Midnight is accepted as the standard 0T starting-time value.</source>
+          <target>Tvíteknum beiðnum er hafnað; breyttu fyrirliggjandi verkum á Verkbiðraðarfærslum. Engum reglum eða uppsetningu er breytt. Valkostir sem stofna alltaf geta myndað skoðanir við hverja framtíðarkeyrslu. Engin eyðing, tafarlaus keyrsla eða biðaðgerð er í boði. Miðnætti er samþykkt sem staðlað 0T upphafstímagildi.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Tvíteknum beiðnum er hafnað; breyttu fyrirliggjandi verkum á Verkbiðraðarfærslum. Engum reglum eða uppsetningu er breytt. Valkostir sem stofna alltaf geta myndað skoðanir við hverja framtíðarkeyrslu. Engin eyðing, tafarlaus keyrsla eða biðaðgerð er í boði. Miðnætti er samþykkt sem staðlað 0T upphafstímagildi.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType NotesTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 57156200" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Exactly one job queue entry.</source>
+          <target>Nákvæmlega ein verkbiðraðarfærsla.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Nákvæmlega ein verkbiðraðarfærsla.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType OneTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 948426933" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invariant name of the current Inspection Creation Option from Quality Management Setup.</source>
+          <target>Óstaðfært heiti núverandi valkosts fyrir stofnun skoðana úr uppsetningu gæðastjórnunar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Óstaðfært heiti núverandi valkosts fyrir stofnun skoðana úr uppsetningu gæðastjórnunar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType OptionTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 1738233936" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for the required roles.</source>
+          <target>Biddu stjórnanda um nauðsynleg hlutverk.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu stjórnanda um nauðsynleg hlutverk.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType PermissionNextTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 2091803237" size-unit="char" translate="yes" xml:space="preserve">
+          <source>BIFROST QM Full ori and native job queue permissions are required. Read and base roles are refused.</source>
+          <target>BIFROST QM Full ori og staðlaðar heimildir að verkbiðröð eru nauðsynlegar. Les- og grunnhlutverkum er hafnað.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=BIFROST QM Full ori og staðlaðar heimildir að verkbiðröð eru nauðsynlegar. Les- og grunnhlutverkum er hafnað.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType PermissionTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 3083357053" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Review generation rules, Quality Management Setup and Job Queue Entries. Existing jobs are never replaced.</source>
+          <target>Farðu yfir stofnunarreglur, uppsetningu gæðastjórnunar og verkbiðraðarfærslur. Aldrei er skipt út fyrirliggjandi verkum.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Farðu yfir stofnunarreglur, uppsetningu gæðastjórnunar og verkbiðraðarfærslur. Aldrei er skipt út fyrirliggjandi verkum.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType PreconditionNextTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 1722734536" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No rule in the group, a rule without filters, missing setup, or an existing scheduled-inspection job covering the group.</source>
+          <target>Engin regla í flokknum, regla án síu, uppsetningu vantar eða fyrirliggjandi verk fyrir áætlaðar skoðanir nær yfir flokkinn.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Engin regla í flokknum, regla án síu, uppsetningu vantar eða fyrirliggjandi verk fyrir áætlaðar skoðanir nær yfir flokkinn.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType PreconditionTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 2444345320" size-unit="char" translate="yes" xml:space="preserve">
+          <source>On Hold or Ready. The outer status describes message success.</source>
+          <target>On Hold eða Ready. Ytra status lýsir árangri skilaboðanna.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=On Hold eða Ready. Ytra status lýsir árangri skilaboðanna.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType StatusTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 2401401079" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Required HH:mm:ss time, 00:00:00 through 23:59:59, mapped to Job Queue Entry Starting Time in the scheduling user time zone.</source>
+          <target>Áskilinn tími HH:mm:ss, 00:00:00 til 23:59:59, varpað á upphafstíma verkbiðraðarfærslu í tímabelti notandans sem áætlar verkið.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Áskilinn tími HH:mm:ss, 00:00:00 til 23:59:59, varpað á upphafstíma verkbiðraðarfærslu í tímabelti notandans sem áætlar verkið.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType TimeTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 375895034 - NamedType 3492639454" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Present only for Always create new inspection or Always create re-inspection. Review the setup before activating.</source>
+          <target>Aðeins til staðar fyrir Always create new inspection eða Always create re-inspection. Farðu yfir uppsetningu fyrir virkjun.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðeins til staðar fyrir Always create new inspection eða Always create re-inspection. Farðu yfir uppsetningu fyrir virkjun.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Contract ori - NamedType WarningTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 3480846878" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a JSON Boolean, true or false</source>
+          <target>JSON-rökgildi, true eða false</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=JSON-rökgildi, true eða false</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType BooleanExpectedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 3915612882" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct this parameter and send the request again.</source>
+          <target>Leiðréttu þetta viðfang og sendu beiðnina aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu þetta viðfang og sendu beiðnina aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType CorrectTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 3154282853" size-unit="char" translate="yes" xml:space="preserve">
+          <source>one job queue entry, not the inspections generated later</source>
+          <target>ein verkbiðraðarfærsla, ekki skoðanirnar sem verða stofnaðar síðar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=ein verkbiðraðarfærsla, ekki skoðanirnar sem verða stofnaðar síðar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType CountTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 1810251747" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a non-empty array of unique integers 1 (Monday) to 7 (Sunday)</source>
+          <target>fylki sem er ekki tómt með einkvæmum heiltölum 1 (mánudagur) til 7 (sunnudagur)</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=fylki sem er ekki tómt með einkvæmum heiltölum 1 (mánudagur) til 7 (sunnudagur)</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType DaysExpectedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 1427565258" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Schedule inspection: %1</source>
+          <target>Áætluð skoðun: %1</target>
+          <note from="Developer" annotates="general" priority="2">%1 = schedule group, is-IS=Áætluð skoðun: %1</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType DescriptionTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 624188174" size-unit="char" translate="yes" xml:space="preserve">
+          <source>A scheduled-inspection job already covers group %1.</source>
+          <target>Verk fyrir áætlaðar skoðanir nær þegar yfir flokk %1.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = schedule group, is-IS=Verk fyrir áætlaðar skoðanir nær þegar yfir flokk %1.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType DuplicateErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 344109595" size-unit="char" translate="yes" xml:space="preserve">
+          <source>no existing job queue entry for this schedule group</source>
+          <target>engin fyrirliggjandi verkbiðraðarfærsla fyrir þennan tímaáætlunarflokk</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=engin fyrirliggjandi verkbiðraðarfærsla fyrir þennan tímaáætlunarflokk</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType DuplicateExpectedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 81240876" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Review the existing job on the Job Queue Entries page. This message never replaces it.</source>
+          <target>Farðu yfir fyrirliggjandi verk á síðunni Verkbiðraðarfærslur. Þessi skilaboð koma aldrei í stað þess.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Farðu yfir fyrirliggjandi verk á síðunni Verkbiðraðarfærslur. Þessi skilaboð koma aldrei í stað þess.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType DuplicateNextTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 199971095" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Every generation rule in schedule group %1 must have at least one filter.</source>
+          <target>Sérhver stofnunarregla í tímaáætlunarflokki %1 verður að hafa að minnsta kosti eina síu.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = schedule group, is-IS=Sérhver stofnunarregla í tímaáætlunarflokki %1 verður að hafa að minnsta kosti eina síu.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType FilterErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 4047950283" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a non-empty schedule group of at most 20 characters</source>
+          <target>tímaáætlunarflokkur sem er ekki tómur og hefur mest 20 stafi</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=tímaáætlunarflokkur sem er ekki tómur og hefur mest 20 stafi</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType GroupExpectedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 3177803720" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Invalid parameter %1. Nothing was changed.</source>
+          <target>Ógilt viðfang %1. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name, is-IS=Ógilt viðfang %1. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType InvalidErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 2631324069" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a JSON object</source>
+          <target>JSON-hlutur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=JSON-hlutur</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType JsonObjectExpectedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 2052423741" size-unit="char" translate="yes" xml:space="preserve">
+          <source>an integer from 1 to 2147483647 minutes</source>
+          <target>heiltala frá 1 til 2147483647 mínútna</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=heiltala frá 1 til 2147483647 mínútna</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType MinutesExpectedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 749507531" size-unit="char" translate="yes" xml:space="preserve">
+          <source>No generation rule exists in schedule group %1.</source>
+          <target>Engin stofnunarregla er til í tímaáætlunarflokki %1.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = schedule group, is-IS=Engin stofnunarregla er til í tímaáætlunarflokki %1.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType NoRulesErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Scheduling requires BIFROST QM Full ori and native job queue permissions.</source>
+          <target>Tímaáætlun krefst BIFROST QM Full ori og staðlaðra heimilda að verkbiðröð.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Tímaáætlun krefst BIFROST QM Full ori og staðlaðra heimilda að verkbiðröð.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType PermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 1738233936" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for BIFROST QM Full ori and job queue permissions.</source>
+          <target>Biddu stjórnanda um BIFROST QM Full ori og heimildir að verkbiðröð.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu stjórnanda um BIFROST QM Full ori og heimildir að verkbiðröð.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType PermissionNextTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 98567292" size-unit="char" translate="yes" xml:space="preserve">
+          <source>at least one generation rule, with a condition, item or item attribute filter on every rule</source>
+          <target>að minnsta kosti ein stofnunarregla með skilyrðis-, vöru- eða vörueiginleikasíu á hverri reglu</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=að minnsta kosti ein stofnunarregla með skilyrðis-, vöru- eða vörueiginleikasíu á hverri reglu</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType RuleExpectedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 1991689467" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Review the Quality Inspection Generation Rules page and set a filter on every rule in this group.</source>
+          <target>Farðu yfir síðuna með stofnunarreglum gæðaskoðana og stilltu síu á hverja reglu í þessum flokki.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Farðu yfir síðuna með stofnunarreglum gæðaskoðana og stilltu síu á hverja reglu í þessum flokki.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType RuleNextTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 2685700126" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality Management Setup is missing.</source>
+          <target>Uppsetningu gæðastjórnunar vantar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Uppsetningu gæðastjórnunar vantar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType SetupErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 3469631275" size-unit="char" translate="yes" xml:space="preserve">
+          <source>existing Quality Management Setup</source>
+          <target>fyrirliggjandi uppsetning gæðastjórnunar</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=fyrirliggjandi uppsetning gæðastjórnunar</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType SetupExpectedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 3818741020" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Complete Quality Management Setup before scheduling inspections.</source>
+          <target>Ljúktu uppsetningu gæðastjórnunar áður en skoðanir eru settar á tímaáætlun.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Ljúktu uppsetningu gæðastjórnunar áður en skoðanir eru settar á tímaáætlun.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType SetupNextTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 4091787997" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a time string HH:mm:ss from 00:00:00 to 23:59:59</source>
+          <target>tímastrengur HH:mm:ss frá 00:00:00 til 23:59:59</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=tímastrengur HH:mm:ss frá 00:00:00 til 23:59:59</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType TimeExpectedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 1668614503" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unknown parameter %1. Nothing was changed.</source>
+          <target>Óþekkt viðfang %1. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name, is-IS=Óþekkt viðfang %1. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType UnknownErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - NamedType 3492639454" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The current Inspection Creation Option creates inspections on every run even when inspections already exist. Review this setting before activating the job.</source>
+          <target>Núverandi valkostur fyrir stofnun skoðana stofnar skoðanir við hverja keyrslu þótt skoðanir séu þegar til. Farðu yfir þessa stillingu áður en verkið er virkjað.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Núverandi valkostur fyrir stofnun skoðana stofnar skoðanir við hverja keyrslu þótt skoðanir séu þegar til. Farðu yfir þessa stillingu áður en verkið er virkjað.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - NamedType WarningTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 891491544 - Method 1027590672 - NamedType 1255087830" size-unit="char" translate="yes" xml:space="preserve">
+          <source>quality, generation rule, schedule, job queue, inspection</source>
+          <target>gæði, stofnunarregla, tímaáætlun, verkbiðröð, skoðun</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=gæði, stofnunarregla, tímaáætlun, verkbiðröð, skoðun</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Schedule Impl ori - Method GetKeywords - NamedType KeywordsTxt</note>
+        </trans-unit>
+        <trans-unit id="PermissionSet 3841356070 - Property 2879900210" maxwidth="30" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Bifrost Quality Scheduling</source>
+          <target>Bifröst - tímaáætlun gæða</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Bifröst - tímaáætlun gæða</note>
+          <note from="Xliff Generator" annotates="general" priority="3">PermissionSet BIFROST QM Schedule ori - Property Caption</note>
+        </trans-unit>
       </group>
     </body>
   </file>

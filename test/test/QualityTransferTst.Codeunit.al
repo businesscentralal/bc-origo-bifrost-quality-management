@@ -156,9 +156,9 @@ codeunit 97268 "Quality Transfer Tst ori"
         Inspection: Record "Qlty. Inspection Header";
         Setup: Record "Setup ori";
         Fault: Codeunit "Quality Transfer Fault ori";
-        PriorConfirm: Boolean;
         Request: JsonObject;
         Response: JsonObject;
+        PriorConfirm: Boolean;
         ExpectSuccess: Boolean;
     begin
         // [GIVEN] All business fixture records are created for this test, including the locations.

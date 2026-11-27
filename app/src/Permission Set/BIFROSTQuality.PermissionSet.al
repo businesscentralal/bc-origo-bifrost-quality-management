@@ -8,7 +8,11 @@ permissionset 10035236 "BIFROST Quality ori"
     Assignable = true;
     Access = Public;
     Caption = 'Bifrost Quality Management', MaxLength = 30, Comment = 'is-IS=Bifröst - gæðastjórnun';
-    Permissions = codeunit "Quality Picture Impl ori" = X,
+    Permissions = codeunit "Quality Schedule Impl ori" = X,
+        codeunit "Quality Schedule Contract ori" = X,
+        table "Quality Schedule Access ori" = X,
+        tabledata "Quality Schedule Access ori" = R,
+        codeunit "Quality Picture Impl ori" = X,
         codeunit "Quality Picture Proc ori" = X,
         table "Quality Picture Access ori" = X,
         tabledata "Quality Picture Access ori" = R,

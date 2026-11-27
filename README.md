@@ -36,6 +36,7 @@ The app manifest exposes the `quality-management` documentation entry in English
 
 | Type | Effect | Retry behavior | Help |
 | --- | --- | --- | --- |
+| `Quality.GenerationRule.Schedule` | Creates one scheduled-inspection job, on hold unless activated | Duplicate group jobs refused; expectedCount counts one job | [English](app/docs/en-us/ScheduleGenerationRule.md) · [Íslenska](app/docs/is-is/ScheduleGenerationRule.md) |
 | `Quality.Inspection.Reopen` | Reopens an inspection through Microsoft `ReopenInspection` | Idempotent; an already open inspection stays open | [English](app/docs/en-us/Reopen.md), [íslenska](app/docs/is-is/Reopen.md) |
 | `Quality.Disposition.CreatePurchaseReturn` | Creates an unposted purchase return for the failed quantity | Not idempotent; a retry can create another return | [English](app/docs/en-us/CreatePurchaseReturn.md), [íslenska](app/docs/is-is/CreatePurchaseReturn.md) |
 | `Quality.Report.Print` | Renders an inspection report as a PDF and stages it; changes no business data | Read; each call stages a new PDF | [English](app/docs/en-us/PrintReport.md), [íslenska](app/docs/is-is/PrintReport.md) |
