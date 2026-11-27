@@ -81,6 +81,11 @@ Tests: 97200-97299
 | Test codeunit | 97280 | Quality Track Tst ori |
 | Test codeunit | 97281 | Quality Track Fault ori |
 | Reserved | 97282-97283 | issue 17 reserve (unused) |
+| Table | 10035302 | Quality Neg Adj Access ori (permission capability, issue 15) |
+| Codeunit | 10035303 | Quality Neg Adj Impl ori (`Quality.Disposition.CreateNegativeAdjustment`) |
+| Enum extension | 10035304 | Quality Neg Adj Types ori (value 10035302) |
+| Test codeunit | 97272 | Quality Neg Adj Tst ori |
+| Test codeunit | 97273 | Quality Neg Adj Fault ori |
 | Enum extension | 10035318 | Quality Report Types ori (`Quality.Report.Print`) |
 | Codeunit | 10035319 | Quality Report Impl ori |
 | Codeunit | 10035332 | Quality Report Proc ori |
