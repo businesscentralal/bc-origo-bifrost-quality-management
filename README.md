@@ -78,3 +78,5 @@ site repository and is published at <https://docs.bifrost.origo.is>.
 | `.AL-Go/`, `.github/`, `.alpaca/` | AL-Go for GitHub / COSMO Alpaca pipeline configuration |
 
 `Quality.Inspection.SetTestValue` returns typed input, access, not-found and status refusals with `parameter`, `expected`, `nextStep` and the received value when available. Recovery guidance is available in English and Icelandic. Native Microsoft validation and transaction rollback are preserved.
+
+- [`Quality.Disposition.CreatePutAway`](app/docs/en-us/CreatePutAway.md) — create an internal or warehouse put-away without registration; [íslenska](app/docs/is-is/CreatePutAway.md).

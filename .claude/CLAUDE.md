@@ -184,6 +184,19 @@ Key rules always in effect:
 ## Testing Through the MCP Server
 - Keep MCP calls serial - parallel bursts crash the server.
 
+## Issue 16 object allocation
+
+| Type | ID | Name |
+| --- | --- | --- |
+| Enum extension | 10035306 | Quality PutAway Types ori |
+| Table | 10035307 | Quality PutAway Access ori |
+| Codeunit | 10035308 | Quality PutAway Impl ori |
+| Codeunit | 10035309 | Quality PutAway Receipt ori |
+| Test codeunit | 97276 | Quality PutAway Tst ori |
+| Test codeunit | 97277 | Quality PutAway Fault ori |
+| Test permission set | 97278 | QM PutAway Test ori |
+| Reserved test fixtures | 97279 | Issue 16 fixture reservation |
+
 ## Issue 9 object allocation
 
 | Type | ID | Name |
