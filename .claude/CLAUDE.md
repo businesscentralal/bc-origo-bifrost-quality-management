@@ -92,6 +92,13 @@ Tests: 97200-97299
 | Test codeunit | 97255 | Quality Report Tst ori |
 | Test codeunit | 97256 | Quality Report Limit ori |
 
+| Table | 10035314 | Quality Copy Access ori (issue 18, empty permission capability) |
+| Codeunit | 10035315 | Quality Copy Impl ori (`Quality.Template.Copy`) |
+| Enum extension | 10035316 | Quality Copy Types ori |
+| (reserved) | 10035317 | issue 18 block |
+| Test codeunit | 97284 | Quality Template Copy Tst ori |
+| Test codeunit | 97285 | Quality Copy Perm Tst ori |
+| (reserved) | 97286-97287 | issue 18 block |
 ## Issue 11 objects
 
 | Type | ID | Name |

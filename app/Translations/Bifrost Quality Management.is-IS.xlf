@@ -15,6 +15,18 @@
           <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
           <note from="Xliff Generator" annotates="general" priority="3">Table Qlty Finish Access ori - Field Primary Key - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Table 3630980228 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Quality template copy access</source>
+          <target>Aðgangur að afritun skoðunarsniðmáts</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðgangur að afritun skoðunarsniðmáts</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Copy Access ori - Property Caption</note>
+        </trans-unit>
+        <trans-unit id="Table 3630980228 - Field 1663593181 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Primary key</source>
+          <target>Aðallykill</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Aðallykill</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Table Quality Copy Access ori - Field Primary Key - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Table 2199334912 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>Quality inventory movement</source>
           <target>Birgðaflutningur gæðastjórnunar</target>
@@ -530,6 +542,198 @@
           <target>Ljúktu einni opinni gæðaskoðun svo Business Central læsi niðurstöðunni. Sendu no. Sendu reinspectionNo aðeins þegar skoðunin er ekki sú upphaflega. Lokið skoðun er óbreytt þegar athugun rekjanleika tekst.</target>
           <note from="Developer" annotates="general" priority="2">is-IS=Ljúktu einni opinni gæðaskoðun svo Business Central læsi niðurstöðunni. Sendu no. Sendu reinspectionNo aðeins þegar skoðunin er ekki sú upphaflega. Lokið skoðun er óbreytt þegar athugun rekjanleika tekst.</note>
           <note from="Xliff Generator" annotates="general" priority="3">Codeunit Qlty Insp Finish Impl ori - Method GetSelectionDescription - NamedType SelectionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 1672407257" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Send targetDescription.</source>
+          <target>Sendu targetDescription.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Sendu targetDescription.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType AddDescriptionTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 1559616880" size-unit="char" translate="yes" xml:space="preserve">
+          <source>sourceTemplateCode, targetTemplateCode, targetDescription, expectedCount</source>
+          <target>sourceTemplateCode, targetTemplateCode, targetDescription, expectedCount</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=sourceTemplateCode, targetTemplateCode, targetDescription, expectedCount</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType AllowedKeysTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 1449450473" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Runs report Qlty. Inspection Copy Template (20402) with Create from Item Nos. off. It inserts the target template header with the source settings, every source line with the same Line No., Test Code and values, and the result conditions of every line. Header and lines get Copied From Template Code = the source code. The source template is not changed.</source>
+          <target>Keyrir skýrsluna Qlty. Inspection Copy Template (20402) með Stofna úr vörunúmerum óvirkt. Hún stofnar markhaus sniðmátsins með stillingum upprunans, hverja upprunalínu með sama línunúmeri, prófunarkóða og gildum, og niðurstöðuskilyrði hverrar línu. Haus og línur fá Afritað úr sniðmátskóða = upprunakóðann. Upprunasniðmátinu er ekki breytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Keyrir skýrsluna Qlty. Inspection Copy Template (20402) með Stofna úr vörunúmerum óvirkt. Hún stofnar markhaus sniðmátsins með stillingum upprunans, hverja upprunalínu með sama línunúmeri, prófunarkóða og gildum, og niðurstöðuskilyrði hverrar línu. Haus og línur fá Afritað úr sniðmátskóða = upprunakóðann. Upprunasniðmátinu er ekki breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType ChangesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 3627494746" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Check the source template and try again.</source>
+          <target>Athugaðu upprunasniðmátið og reyndu aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Athugaðu upprunasniðmátið og reyndu aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType CheckTemplateTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 2340060896" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Choose a target code that does not exist. To change an existing template, use Data.Records.Set or the Quality Inspection Template page.</source>
+          <target>Veldu markkóða sem er ekki til. Til að breyta sniðmáti sem er til skaltu nota Data.Records.Set eða síðuna Gæðaskoðunarsniðmát.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Veldu markkóða sem er ekki til. Til að breyta sniðmáti sem er til skaltu nota Data.Records.Set eða síðuna Gæðaskoðunarsniðmát.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType ChooseNewCodeTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 2803736837" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a template code of at most 20 characters</source>
+          <target>sniðmátskóði sem er í mesta lagi 20 stafir</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=sniðmátskóði sem er í mesta lagi 20 stafir</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType CodeExpectedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 510232882" size-unit="char" translate="yes" xml:space="preserve">
+          <source>one new inspection template %1 with %2 lines copied from %3</source>
+          <target>eitt nýtt skoðunarsniðmát %1 með %2 línum afritað úr %3</target>
+          <note from="Developer" annotates="general" priority="2">%1 = target code, %2 = line count, %3 = source code, is-IS=eitt nýtt skoðunarsniðmát %1 með %2 línum afritað úr %3</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType ConfirmSummaryTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 2744069436" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a description of at most 100 characters</source>
+          <target>lýsing sem er í mesta lagi 100 stafir</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=lýsing sem er í mesta lagi 100 stafir</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType DescriptionExpectedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 3569966352" maxwidth="250" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copies one quality inspection template with all its lines and result conditions to a new template code through the standard Copy Template report.</source>
+          <target>Afritar eitt gæðaskoðunarsniðmát með öllum línum þess og niðurstöðuskilyrðum í nýjan sniðmátskóða með staðlaðri skýrslunni Afrita sniðmát.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Afritar eitt gæðaskoðunarsniðmát með öllum línum þess og niðurstöðuskilyrðum í nýjan sniðmátskóða með staðlaðri skýrslunni Afrita sniðmát.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType DescriptionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 952421902" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The source template has no description, so targetDescription is required. Nothing was changed.</source>
+          <target>Upprunasniðmátið hefur enga lýsingu og því er targetDescription áskilið. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Upprunasniðmátið hefur enga lýsingu og því er targetDescription áskilið. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType DescriptionRequiredErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 2044214119" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Read the template codes with Data.Records.Get on Qlty. Inspection Template Hdr.</source>
+          <target>Lestu sniðmátskóðana með Data.Records.Get á Qlty. Inspection Template Hdr.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Lestu sniðmátskóðana með Data.Records.Get á Qlty. Inspection Template Hdr.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType FindTemplateTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 350279418" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Correct the parameter and send the request again.</source>
+          <target>Leiðréttu færibreytuna og sendu beiðnina aftur.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Leiðréttu færibreytuna og sendu beiðnina aftur.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType FixParameterTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 45121459" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The parameter %1 must be a text value.</source>
+          <target>Færibreytan %1 verður að vera textagildi.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name, is-IS=Færibreytan %1 verður að vera textagildi.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType InvalidTextErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 1290244428" size-unit="char" translate="yes" xml:space="preserve">
+          <source>copy template, inspection template, duplicate template, quality template, template lines</source>
+          <target>afrita sniðmát, skoðunarsniðmát, tvöfalda sniðmát, gæðasniðmát, sniðmátslínur</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=afrita sniðmát, skoðunarsniðmát, tvöfalda sniðmát, gæðasniðmát, sniðmátslínur</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType KeywordsLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 1830439019" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The parameter %1 is required.</source>
+          <target>Færibreytan %1 er áskilin.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name, is-IS=Færibreytan %1 er áskilin.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType MissingErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 2714564737" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You need permission to insert quality inspection templates, template lines and result conditions.</source>
+          <target>Þú þarft heimild til að stofna gæðaskoðunarsniðmát, sniðmátslínur og niðurstöðuskilyrði.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú þarft heimild til að stofna gæðaskoðunarsniðmát, sniðmátslínur og niðurstöðuskilyrði.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType NativePermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 1666837983" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for the QltyMgmt - Admin permission set.</source>
+          <target>Biddu stjórnanda um heimildasafnið QltyMgmt - Admin.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu stjórnanda um heimildasafnið QltyMgmt - Admin.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType NativePermissionNextTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 2728005669" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Standard Quality Management refused the copy. The translated message is returned and no header or line remains.</source>
+          <target>Stöðluð gæðastjórnun hafnaði afrituninni. Þýdd skilaboð eru send til baka og enginn haus eða lína situr eftir.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Stöðluð gæðastjórnun hafnaði afrituninni. Þýdd skilaboð eru send til baka og enginn haus eða lína situr eftir.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType NativeRefusalTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 312034969" size-unit="char" translate="yes" xml:space="preserve">
+          <source>a template code that does not exist yet</source>
+          <target>sniðmátskóði sem er ekki til enn</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=sniðmátskóði sem er ekki til enn</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType NewCodeExpectedTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 690841808" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Business Central did not create the template %1. Nothing was changed.</source>
+          <target>Business Central stofnaði ekki sniðmátið %1. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = template code, is-IS=Business Central stofnaði ekki sniðmátið %1. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType NotCopiedErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 2344026547" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Effect: inserts one template header, its lines and their result conditions. Not idempotent: a second call with the same target is refused because the target then exists, and nothing changes. All input checks run before any change. expectedCount counts the one new template (always 1). With Require Confirmation for Irreversible Messages enabled, a call without expectedCount returns the count and changes nothing. There is no Commit on the standard path: a refusal or error rolls back the whole copy. In omit-commit mode the caller owns rollback. Copying from items (bulk copy) and merging into an existing template are not supported.</source>
+          <target>Áhrif: stofnar einn sniðmátshaus, línur hans og niðurstöðuskilyrði þeirra. Ekki ídempotent: öðru kalli með sama mark er hafnað því markið er þá til, og engu er breytt. Allar inntaksathuganir keyra áður en nokkru er breytt. expectedCount telur eina nýja sniðmátið (alltaf 1). Þegar Krefjast staðfestingar fyrir óafturkræf skilaboð er virkt skilar kall án expectedCount fjöldanum og breytir engu. Ekkert Commit er á staðlaðri leið: höfnun eða villa bakfærir alla afritunina. Í ham án staðfestingar ber kallandi ábyrgð á bakfærslu. Afritun úr vörum (fjöldaafritun) og sameining við sniðmát sem er til eru ekki studdar.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Áhrif: stofnar einn sniðmátshaus, línur hans og niðurstöðuskilyrði þeirra. Ekki ídempotent: öðru kalli með sama mark er hafnað því markið er þá til, og engu er breytt. Allar inntaksathuganir keyra áður en nokkru er breytt. expectedCount telur eina nýja sniðmátið (alltaf 1). Þegar Krefjast staðfestingar fyrir óafturkræf skilaboð er virkt skilar kall án expectedCount fjöldanum og breytir engu. Ekkert Commit er á staðlaðri leið: höfnun eða villa bakfærir alla afritunina. Í ham án staðfestingar ber kallandi ábyrgð á bakfærslu. Afritun úr vörum (fjöldaafritun) og sameining við sniðmát sem er til eru ekki studdar.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType NotesLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 3593894611" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Copies one quality inspection template with all its lines and result conditions to a new template code in one call. It runs the standard Copy Template report on its single-copy path, so every line keeps its test and conditions and both header and lines show the source in Copied From Template Code. It creates a new template only: an existing target code is refused, and no template or line is changed or removed.</source>
+          <target>Afritar eitt gæðaskoðunarsniðmát með öllum línum þess og niðurstöðuskilyrðum í nýjan sniðmátskóða í einu kalli. Það keyrir staðlaðu skýrsluna Afrita sniðmát á leið stakrar afritunar, svo hver lína heldur prófun sinni og skilyrðum og bæði haus og línur sýna upprunann í Afritað úr sniðmátskóða. Það stofnar aðeins nýtt sniðmát: markkóða sem er til er hafnað og engu sniðmáti eða línu er breytt eða þeim eytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Afritar eitt gæðaskoðunarsniðmát með öllum línum þess og niðurstöðuskilyrðum í nýjan sniðmátskóða í einu kalli. Það keyrir staðlaðu skýrsluna Afrita sniðmát á leið stakrar afritunar, svo hver lína heldur prófun sinni og skilyrðum og bæði haus og línur sýna upprunann í Afritað úr sniðmátskóða. Það stofnar aðeins nýtt sniðmát: markkóða sem er til er hafnað og engu sniðmáti eða línu er breytt eða þeim eytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType OverviewLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 315309378" size-unit="char" translate="yes" xml:space="preserve">
+          <source>You need BIFROST QM Full ori to copy an inspection template.</source>
+          <target>Þú þarft BIFROST QM Full ori til að afrita skoðunarsniðmát.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Þú þarft BIFROST QM Full ori til að afrita skoðunarsniðmát.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType PermissionErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 1738233936" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Ask an administrator for the Bifrost Quality Full role.</source>
+          <target>Biddu stjórnanda um hlutverkið Bifrost Quality Full.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Biddu stjórnanda um hlutverkið Bifrost Quality Full.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType PermissionNextTxt</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 2530995935" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The caller has BIFROST QM Full ori and native insert permission on the template header, line and result condition tables.</source>
+          <target>Kallandi hefur BIFROST QM Full ori og innbyggða heimild til að stofna í töflum sniðmátshauss, sniðmátslína og niðurstöðuskilyrða.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Kallandi hefur BIFROST QM Full ori og innbyggða heimild til að stofna í töflum sniðmátshauss, sniðmátslína og niðurstöðuskilyrða.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType PermissionPreconditionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 2338505806" size-unit="char" translate="yes" xml:space="preserve">
+          <source>targetTemplateCode must differ from sourceTemplateCode. Nothing was changed.</source>
+          <target>targetTemplateCode verður að vera annar en sourceTemplateCode. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=targetTemplateCode verður að vera annar en sourceTemplateCode. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType SameCodeErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 1672472045" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The inspection template %1 does not exist. Nothing was changed.</source>
+          <target>Skoðunarsniðmátið %1 er ekki til. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = template code, is-IS=Skoðunarsniðmátið %1 er ekki til. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType SourceNotFoundErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 3234484725" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The source template exists.</source>
+          <target>Upprunasniðmátið er til.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Upprunasniðmátið er til.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType SourcePreconditionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 2547689768" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The inspection template %1 already exists. This type only creates a new template; nothing was changed.</source>
+          <target>Skoðunarsniðmátið %1 er þegar til. Þessi tegund stofnar aðeins nýtt sniðmát; engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = template code, is-IS=Skoðunarsniðmátið %1 er þegar til. Þessi tegund stofnar aðeins nýtt sniðmát; engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType TargetExistsErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 3706086649" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The target template code does not exist.</source>
+          <target>Marksniðmátskóðinn er ekki til.</target>
+          <note from="Developer" annotates="general" priority="2">is-IS=Marksniðmátskóðinn er ekki til.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType TargetPreconditionLbl</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 3255873965" size-unit="char" translate="yes" xml:space="preserve">
+          <source>The parameter %1 is longer than %2 characters. Nothing was changed.</source>
+          <target>Færibreytan %1 er lengri en %2 stafir. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name, %2 = maximum length, is-IS=Færibreytan %1 er lengri en %2 stafir. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType TooLongErr</note>
+        </trans-unit>
+        <trans-unit id="Codeunit 1047977352 - NamedType 2912406318" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Unknown parameter %1. Nothing was changed.</source>
+          <target>Óþekkt færibreyta %1. Engu var breytt.</target>
+          <note from="Developer" annotates="general" priority="2">%1 = parameter name, is-IS=Óþekkt færibreyta %1. Engu var breytt.</note>
+          <note from="Xliff Generator" annotates="general" priority="3">Codeunit Quality Copy Impl ori - NamedType UnknownKeyErr</note>
         </trans-unit>
         <trans-unit id="Codeunit 2755627535 - NamedType 132850674" size-unit="char" translate="yes" xml:space="preserve">
           <source>Business Central refusal</source>

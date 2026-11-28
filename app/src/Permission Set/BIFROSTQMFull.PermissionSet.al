@@ -3,7 +3,7 @@ namespace Origo.Bifrost.QualityManagement;
 using Microsoft.QualityManagement.Permissions;
 
 /// <summary>
-/// Grants inspection creation, finish, reopen, test-value, purchase-return, inventory and item tracking disposition execution, app write capabilities and Microsoft Quality Admin and Inspector permissions; other Microsoft business-data permissions remain required.
+/// Grants inspection creation, finish, reopen, template copy, test-value, purchase-return, inventory and item tracking disposition execution, app write capabilities and Microsoft Quality Admin and Inspector permissions; other Microsoft business-data permissions remain required.
 /// Microsoft ReopenInspection still requires the Quality Admin role, or SUPER, to be assigned to the user.
 /// With Quality Admin write access, Microsoft offers to assign a modified inspection to the user in interactive sessions,
 /// which reads the user's own My Notifications setting; the read grant lets finish run under this role alone.
@@ -55,5 +55,8 @@ permissionset 10035237 "BIFROST QM Full ori"
         table "Quality Transfer Access ori" = X,
         tabledata "Quality Transfer Access ori" = RIMD,
         table "Quality Reinspect Access ori" = X,
-        tabledata "Quality Reinspect Access ori" = RIMD;
+        tabledata "Quality Reinspect Access ori" = RIMD,
+        codeunit "Quality Copy Impl ori" = X,
+        table "Quality Copy Access ori" = X,
+        tabledata "Quality Copy Access ori" = RIMD;
 }
